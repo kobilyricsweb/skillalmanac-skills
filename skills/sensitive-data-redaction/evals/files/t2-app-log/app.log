@@ -1,0 +1,5 @@
+2026-10-30T11:02:10Z INFO  start worker=3 build=4.18.2
+2026-10-30T11:02:11Z ERROR upstream https://api.example.test/v1/sync?client=acme&access_token=FAKETOKEN-1234-ABCD failed status=502
+2026-10-30T11:02:11Z DEBUG env AWS_ACCESS_KEY_ID=AKIAFAKEFAKEFAKE1111 loaded
+2026-10-30T11:02:12Z INFO  retry from 198.51.100.9 attempt=2 user=ops.fake@example.test
+2026-10-30T11:02:14Z ERROR timeout after 30000 ms, request 9876543210

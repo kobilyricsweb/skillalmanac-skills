@@ -1,0 +1,8 @@
+2026-11-20T11:00:00Z ERROR io Cannot open /var/lib/app/data/shard-12.db: permission denied
+2026-11-20T11:00:01Z ERROR io Cannot open /var/lib/app/data/shard-98.db: permission denied
+2026-11-20T11:00:02Z ERROR io Cannot open C:\Data\app\cache\7.bin: permission denied
+2026-11-20T11:00:03Z ERROR net Request 3f2a9c1e-4b7d-4e2a-9a11-0c5d8e7f6a21 to https://api.example.com:8443/v2/items?id=5 failed with status 503
+2026-11-20T11:00:04Z ERROR net Request 9b1d3e5f-1a2b-4c3d-8e4f-5a6b7c8d9e0f to https://api.example.com:8443/v2/orders failed with status 503
+2026-11-20T11:00:05Z ERROR job Job "nightly-report" crashed at 0x7ffd1234abcd on node 4
+2026-11-20T11:00:06Z ERROR job Job "weekly-digest" crashed at 0x7ffe9876cdef on node 9
+2026-11-20T11:00:07Z ERROR job can't parse 'abc' near column 12

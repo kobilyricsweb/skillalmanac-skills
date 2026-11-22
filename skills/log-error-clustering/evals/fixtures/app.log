@@ -1,0 +1,24 @@
+2026-11-20 10:00:01,100 INFO  app.server Started on port 8080
+2026-11-20 10:00:05,000 ERROR app.db Connection refused to 10.0.0.5:5432 after 3 retries
+2026-11-20 10:01:05,000 ERROR app.db Connection refused to 10.0.0.9:5432 after 5 retries
+2026-11-20 10:02:05,000 ERROR app.db Connection refused to 10.0.0.7:5432 after 3 retries
+2026-11-20 10:03:00,000 WARN  app.cache Slow response 1532 ms for key "user:42"
+2026-11-20 10:03:10,000 ERROR app.api Unhandled exception for user 1001 request 9f3a2b7c1d
+Traceback (most recent call last):
+  File "/srv/app/api.py", line 88, in handle
+    return render(user)
+KeyError: 'email'
+2026-11-20 10:03:40,000 ERROR app.api Unhandled exception for user 1002 request 11aa22bb33
+Traceback (most recent call last):
+  File "/srv/app/api.py", line 88, in handle
+    return render(user)
+KeyError: 'email'
+2026-11-20 10:04:00,000 ERROR app.auth Login failed for alice@example.com password=hunter2 token=AKIAABCDEFGHIJKLMNOP
+2026-11-20 10:04:30,000 ERROR app.api Unhandled exception for user 1003 request 77cc88dd99
+Traceback (most recent call last):
+  File "/srv/app/api.py", line 91, in handle
+    return parse(body)
+ValueError: bad payload
+2026-11-20 10:05:00,000 FATAL app.main Out of memory killing worker 4
+this is a stray line with no timestamp
+2026-11-20 10:05:30,000 ERROR app.db Connection refused to 10.0.0.5:5432 after 3 retries

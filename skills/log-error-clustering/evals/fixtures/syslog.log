@@ -1,0 +1,3 @@
+Nov 20 10:15:30 web1 sshd[991]: error: connect to 10.1.1.1 port 22 failed
+Nov 20 10:15:35 web1 sshd[992]: error: connect to 10.1.1.2 port 22 failed
+Nov 20 10:16:10 web1 cron[77]: job started

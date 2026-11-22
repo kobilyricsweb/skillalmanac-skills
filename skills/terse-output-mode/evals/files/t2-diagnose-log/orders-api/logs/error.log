@@ -1,0 +1,15 @@
+2026-11-18T09:14:02.118Z info  GET /orders/8812 200 14ms
+2026-11-18T09:14:02.301Z info  GET /orders/8813 200 11ms
+2026-11-18T09:14:03.977Z error GET /orders/8841 500
+error: sorry, too many clients already
+    at Parser.parseErrorMessage (/app/node_modules/pg-protocol/dist/parser.js:283:98)
+    at Parser.handlePacket (/app/node_modules/pg-protocol/dist/parser.js:122:29)
+    at /app/src/routes/orders.js:8:33 {
+  length: 85,
+  severity: 'FATAL',
+  code: '53300',
+  routine: 'InitializePostgres'
+}
+2026-11-18T09:14:04.020Z error GET /orders/8842 500
+error: sorry, too many clients already
+2026-11-18T09:14:04.512Z error unhandledRejection, exiting

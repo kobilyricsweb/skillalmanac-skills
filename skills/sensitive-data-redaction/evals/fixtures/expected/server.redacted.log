@@ -1,0 +1,9 @@
+2026-11-03T09:15:01Z INFO  login ok user=[EMAIL_1] ip=[IPV4_1]
+2026-11-03T09:15:02Z WARN  login failed user=[EMAIL_1] ip=[IPV4_2] password=[CREDENTIAL_1]
+2026-11-03T09:15:09Z INFO  GET /api/export?format=csv&api_key=[CREDENTIAL_2] from [IPV4_3] status=200
+2026-11-03T09:16:40Z DEBUG aws creds [API_KEY_1] loaded for worker 7
+2026-11-03T09:16:41Z DEBUG Authorization: Bearer [CREDENTIAL_3]
+2026-11-03T09:17:00Z INFO  request id 1234567890 took 1.5s build 10.0.19045 ok
+2026-11-03T09:17:05Z INFO  connect from [[IPV6_1]] to ::1 and 127.0.0.1 and [IPV4_1]
+[PRIVATE_KEY_1]
+2026-11-03T09:18:00Z INFO  done

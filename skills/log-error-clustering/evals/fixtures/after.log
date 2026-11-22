@@ -1,0 +1,27 @@
+2026-11-20T10:00:00Z ERROR inventory Timeout calling inventory service after 30 s
+2026-11-20T10:01:00Z ERROR cache Cache eviction failed for key "b1"
+2026-11-20T10:02:00Z ERROR inventory Timeout calling inventory service after 31 s
+2026-11-20T10:05:00Z ERROR inventory Timeout calling inventory service after 30 s
+2026-11-20T10:06:00Z ERROR cache Cache eviction failed for key "b2"
+2026-11-20T10:08:00Z ERROR sched Worker heartbeat lost for node 7
+2026-11-20T10:08:01Z ERROR sched Worker heartbeat lost for node 8
+2026-11-20T10:08:02Z ERROR sched Worker heartbeat lost for node 7
+2026-11-20T10:08:03Z ERROR sched Worker heartbeat lost for node 8
+2026-11-20T10:08:04Z ERROR sched Worker heartbeat lost for node 7
+2026-11-20T10:08:05Z ERROR sched Worker heartbeat lost for node 8
+2026-11-20T10:08:06Z ERROR sched Worker heartbeat lost for node 7
+2026-11-20T10:08:07Z ERROR sched Worker heartbeat lost for node 8
+2026-11-20T10:08:08Z ERROR sched Worker heartbeat lost for node 7
+2026-11-20T10:08:09Z ERROR sched Worker heartbeat lost for node 8
+2026-11-20T10:08:10Z ERROR sched Worker heartbeat lost for node 7
+2026-11-20T10:08:11Z ERROR sched Worker heartbeat lost for node 8
+2026-11-20T10:10:00Z ERROR payments Payment gateway returned 502 for order 77
+2026-11-20T10:13:00Z ERROR inventory Timeout calling inventory service after 30 s
+2026-11-20T10:14:00Z ERROR cache Cache eviction failed for key "b3"
+2026-11-20T10:15:00Z ERROR inventory Timeout calling inventory service after 30 s
+2026-11-20T10:17:00Z ERROR inventory Timeout calling inventory service after 32 s
+2026-11-20T10:19:00Z ERROR inventory Timeout calling inventory service after 30 s
+2026-11-20T10:20:00Z ERROR cache Cache eviction failed for key "b4"
+2026-11-20T10:21:00Z ERROR inventory Timeout calling inventory service after 30 s
+2026-11-20T10:23:00Z ERROR inventory Timeout calling inventory service after 30 s
+2026-11-20T10:24:00Z ERROR payments Payment gateway returned 502 for order 78

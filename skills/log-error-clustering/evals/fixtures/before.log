@@ -1,0 +1,10 @@
+2026-11-20T09:00:00Z ERROR inventory Timeout calling inventory service after 30 s
+2026-11-20T09:05:00Z ERROR inventory Timeout calling inventory service after 30 s
+2026-11-20T09:10:00Z ERROR cache Cache eviction failed for key "a1"
+2026-11-20T09:11:00Z ERROR cache Cache eviction failed for key "a2"
+2026-11-20T09:12:00Z ERROR cache Cache eviction failed for key "a3"
+2026-11-20T09:13:00Z ERROR cache Cache eviction failed for key "a4"
+2026-11-20T09:14:00Z ERROR sched Worker heartbeat lost for node 3
+2026-11-20T09:20:00Z ERROR disk Disk almost full on volume "data1"
+2026-11-20T09:21:00Z ERROR disk Disk almost full on volume "data2"
+2026-11-20T09:22:00Z ERROR disk Disk almost full on volume "data3"

@@ -1,0 +1,11 @@
+2026-11-03T09:15:01Z INFO  login ok user=sam.fake@example.test ip=198.51.100.7
+2026-11-03T09:15:02Z WARN  login failed user=sam.fake@example.test ip=198.51.100.23 password=hunter2-fake
+2026-11-03T09:15:09Z INFO  GET /api/export?format=csv&api_key=FAKEKEY0123456789 from 10.0.0.12 status=200
+2026-11-03T09:16:40Z DEBUG aws creds AKIAFAKEFAKEFAKE0000 loaded for worker 7
+2026-11-03T09:16:41Z DEBUG Authorization: Bearer FAKEBEARERTOKEN0123456789
+2026-11-03T09:17:00Z INFO  request id 1234567890 took 1.5s build 10.0.19045 ok
+2026-11-03T09:17:05Z INFO  connect from [2001:db8::1] to ::1 and 127.0.0.1 and 198.51.100.7
+-----BEGIN RSA PRIVATE KEY-----
+FAKEFAKEFAKEFAKEFAKEFAKEFAKEFAKE
+-----END RSA PRIVATE KEY-----
+2026-11-03T09:18:00Z INFO  done

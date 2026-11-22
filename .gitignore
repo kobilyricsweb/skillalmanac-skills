@@ -7,3 +7,6 @@ Thumbs.db
 .env.*
 *.pem
 *.log
+
+# eval fixtures may legitimately contain fake .env files, logs and keys
+!skills/*/evals/**
