@@ -1,0 +1,24 @@
+{
+  "answer": "Our conversion problem is pricing.",
+  "summary": "Conversion is down because of pricing.",
+  "issue_tree": {
+    "id": "Q",
+    "text": "Why did trial-to-paid conversion drop",
+    "universe": ["acquisition", "onboarding", "pricing", "product"],
+    "children": [
+      {"id": "A", "text": "Marketing", "covers": ["acquisition", "pricing"]},
+      {"id": "B", "text": "Pricing", "covers": ["pricing"]},
+      {"id": "C", "text": "Onboarding", "covers": ["onboarding"]}
+    ]
+  },
+  "hypotheses": [
+    {"id": "H1", "node": "B", "statement": "Trial users find the price too high", "falsifier": "Price is rarely named in cancellation reasons", "status": "supported"},
+    {"id": "H2", "node": "C", "statement": "Fewer users complete setup", "falsifier": "Setup completion rate is flat", "status": "open"}
+  ],
+  "evidence": [
+    {"id": "E1", "hypothesis": "H1", "direction": "supports", "claim": "Customers say the plan feels expensive", "source": "", "source_type": "assumption", "confidence": 0.9}
+  ],
+  "sections": [
+    {"id": "S1", "title": "Pricing is the problem", "body": "Customers say the plan feels expensive.", "so_what": "", "supports": ["H1"]}
+  ]
+}

@@ -1,0 +1,10 @@
+PASS bad wiki, default thresholds
+PASS bad wiki, stale threshold 400 days
+PASS bad wiki with --fail-on-findings exits 1
+PASS clean wiki has no findings
+PASS missing folder exits 2
+PASS bad date argument exits 2
+PASS mtime fallback, mtime collapse note, empty folder
+PASS notion-style encoded links, ids in names, owner and date lines
+PASS fixture files unchanged after all runs (read-only)
+9/9 checks passed

@@ -1,0 +1,29 @@
+{
+  "composition": {"fps": 30, "width": 1920, "height": 1080, "duration": 10},
+  "assets": {
+    "intro": {"type": "video", "path": "assets/intro.mp4", "fps": 30, "width": 1920, "height": 1080, "duration": 6, "license": "own footage"},
+    "broll": {"type": "video", "path": "assets/broll.mp4", "fps": 25, "width": 1280, "height": 720, "duration": 4, "license": "own footage"},
+    "song": {"type": "audio", "path": "assets/song.mp3", "duration": 30},
+    "gone": {"type": "image", "path": "assets/gone.png", "width": 1920, "height": 1080, "license": "own graphic"}
+  },
+  "tracks": [
+    {"id": "v1", "kind": "video", "clips": [
+      {"id": "c1", "asset": "intro", "start": 0, "duration": 5},
+      {"id": "c2", "asset": "broll", "start": 4, "duration": 5},
+      {"id": "c3", "asset": "gone", "start": 9, "duration": 2}
+    ]},
+    {"id": "a1", "kind": "audio", "clips": [
+      {"id": "m1", "asset": "song", "start": 0, "duration": 10}
+    ]},
+    {"id": "ov", "kind": "overlay", "clips": [
+      {"id": "o1", "asset": "nope", "start": 0, "duration": 1}
+    ]},
+    {"id": "cap", "kind": "caption", "clips": [
+      {"id": "k1", "start": 0, "duration": 3, "text": "This caption line is far too long for any screen"},
+      {"id": "k2", "start": 3, "duration": 1, "text": "Hello there my friend"},
+      {"id": "k3", "start": 4, "duration": 2, "text": "Low box", "box": {"x": 0, "y": 1000, "w": 500, "h": 80}},
+      {"id": "k4", "start": 6, "duration": 2, "text": "a\nb\nc"},
+      {"id": "k5", "start": 8.01, "duration": 1.5, "text": "Fine"}
+    ]}
+  ]
+}

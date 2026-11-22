@@ -1,0 +1,44 @@
+{
+  "skill_name": "pseudo-localization-tester",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/pseudo_localize.py output or a plain file check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Inputs are the shared fixtures under evals/fixtures/.",
+  "evals": [
+    {
+      "id": "t1-json-pseudo-locale-with-limits",
+      "prompt": "Make a pseudo-locale for evals/fixtures/en.json so QA can test text expansion before translation. The UI limits are in evals/fixtures/limits.json. Save the pseudo file next to your work, do not touch the originals, and tell me what needs a developer decision.",
+      "files": ["evals/fixtures/en.json", "evals/fixtures/limits.json"],
+      "assertions": [
+        "[script] The pseudo file parses as JSON, has the same keys as en.json, and every placeholder ({name}, %d, %s, the ICU plural header and branch selectors, the <a> tags, &amp;) is identical to the source",
+        "[script] en.json and limits.json are byte-identical to the fixtures afterwards",
+        "[script] The report or reply names app.save and app.title as pseudo_exceeds_limit (headroom 25 and 16 percent) and app.greeting as source_over_limit",
+        "[judge] The reply lists the developer decisions: welcome_prefix as a sentence fragment joined in code, the '3 new message(s)' plural hack, the baked date in last_seen, the repeated unnamed %d and %s in files_deleted",
+        "[judge] The reply does not claim to have translated or localised anything and does not offer the pseudo file for release",
+        "[judge] The reply ends with the fixed report format including a Not checked line"
+      ]
+    },
+    {
+      "id": "t2-po-right-to-left",
+      "prompt": "We will ship Arabic. Create a right-to-left pseudo-locale from evals/fixtures/app.po and check it round-trips. Keep the plural entry and the menu/Open context entry.",
+      "files": ["evals/fixtures/app.po"],
+      "assertions": [
+        "[script] The output is a .po file where every msgstr starts with U+202B and ends with U+202C, with brackets inside",
+        "[script] msgstr[0] and msgstr[1] exist for the plural entry and keep %d; the msgctxt menu entry is present; %(user)s is unchanged",
+        "[script] The header says Language: en-XA and charset=UTF-8",
+        "[judge] The reply uses level 4 and says why, and states that the wrap shows text direction only, not whether the interface mirrors",
+        "[judge] The reply reports the round trip result from the script rather than asserting it",
+        "[judge] The reply tells the tester what to look for on screen (plain English, missing bracket, misplaced punctuation)"
+      ]
+    },
+    {
+      "id": "t3-find-hardcoded-text",
+      "prompt": "Our login screen is in evals/fixtures/src/Login.jsx and our strings are in evals/fixtures/en.json. Run the pseudo-localization check and tell me which visible text is hard-coded. Do not modify the source.",
+      "files": ["evals/fixtures/en.json", "evals/fixtures/src/Login.jsx"],
+      "assertions": [
+        "[script] The report lists Login.jsx lines 5, 6, 7, 8 and 9 as candidates and marks line 9 (Photo Studio) as matching key app.title",
+        "[script] Login.jsx is byte-identical to the fixture afterwards",
+        "[judge] The reply says the t('login.title') heading is not a finding and that the scan is a heuristic, not proof that nothing else is hard-coded",
+        "[judge] For line 9 the reply tells the developer to use the existing key; for the others it says a resource is missing",
+        "[judge] The reply does not invent keys for the missing strings or edit the JSX"
+      ]
+    }
+  ]
+}

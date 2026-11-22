@@ -1,0 +1,7 @@
+a0a0a01 feat(api): add pagination to the list endpoint (#7)
+a0a0a02 fix(api): remove the deprecated filter parameter
+a0a0a03 feat: bulk import
+a0a0a04 fix(ui): refactor the click handler so that the modal closes when you press escape on the keyboard
+a0a0a05 feat(core)!: change the default timeout
+a0a0a06 fix(auth): patch CVE-2026-1234 in the token check
+a0a0a07 perf(db): speed up the report query

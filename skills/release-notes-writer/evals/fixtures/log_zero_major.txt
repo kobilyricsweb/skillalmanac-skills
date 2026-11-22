@@ -1,0 +1,3 @@
+f1f1f1f feat(config)!: rename the settings file
+BREAKING CHANGE: settings.ini is now settings.toml; run the migrate command once.
+f2f2f2f fix(cli): print the real error message

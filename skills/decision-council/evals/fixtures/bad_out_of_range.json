@@ -1,0 +1,1 @@
+{"criteria": [{"name": "Cost", "weight": 1}], "options": [{"name": "A", "scores": {"Cost": 7}}, {"name": "B", "scores": {"Cost": 3}}]}

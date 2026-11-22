@@ -1,0 +1,22 @@
+[
+  {"query": "summarize this council report for my boss in one short paragraph, the numbers have to be right", "should_trigger": true},
+  {"query": "give me a TL;DR of this 3,000-word article but don't add anything that isn't in it", "should_trigger": true},
+  {"query": "write an executive summary of the attached audit report, about 5 percent of the length", "should_trigger": true},
+  {"query": "condense this research paper into a summary I can send to the team, keep the caveats", "should_trigger": true},
+  {"query": "shorten this report to a third of the length without changing any facts or figures", "should_trigger": true},
+  {"query": "summarize the call transcript in order of what happened, and make sure nothing is made up", "should_trigger": true},
+  {"query": "my last AI summary invented a statistic, can you summarize this PDF text and check every number against it", "should_trigger": true},
+  {"query": "I need a summary of this contract dispute article that keeps who said what", "should_trigger": true},
+  {"query": "make a detailed summary of this long policy document, then verify it only says things from the document", "should_trigger": true},
+  {"query": "summarise this white paper and tell me if the summary drops any hedges like 'may' or 'suggests'", "should_trigger": true},
+  {"query": "combine these five articles into one overview of the topic", "should_trigger": false},
+  {"query": "turn this meeting recording into minutes with action items and owners", "should_trigger": false},
+  {"query": "translate this article into French", "should_trigger": false},
+  {"query": "is the claim in this article that crime fell 12 percent actually true? check it online", "should_trigger": false},
+  {"query": "rewrite this paragraph so it sounds less like AI", "should_trigger": false},
+  {"query": "write a 500-word article about the library pilot from these bullet points", "should_trigger": false},
+  {"query": "make a table mapping each claim in this essay to its supporting evidence", "should_trigger": false},
+  {"query": "shorten this email subject line", "should_trigger": false},
+  {"query": "outline the key sections for my literature review from these notes", "should_trigger": false},
+  {"query": "explain this paper to me like I'm twelve", "should_trigger": false}
+]

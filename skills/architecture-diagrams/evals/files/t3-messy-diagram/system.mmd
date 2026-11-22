@@ -1,0 +1,30 @@
+graph
+A[Browser] --> B[CDN]
+B --> C[Load Balancer]
+C --> D[Web Server]
+D --> E[Auth Service]
+D --> F[Orders Service]
+D --> G[Catalog Service]
+E --> H[(Users DB)]
+F --> I[(Orders DB)]
+G --> J[(Catalog DB)]
+F --> K[Kafka]
+K --> L[Email Worker]
+K --> M[Inventory Worker]
+M --> J
+L --> N[SMTP Provider]
+F --> O[validateOrder()]
+O --> P[order_rules.py]
+O --> Q[PricingEngine.compute()]
+E --> R[Redis]
+G --> R
+F --> R
+D --> S[Metrics]
+E --> S
+F --> S
+G --> S
+L --> S
+M --> S
+S --> T[Grafana]
+S --> U[Alert Manager]
+U --> V[PagerDuty]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "chat2023",
+    "type": "software",
+    "title": "ChatGPT",
+    "author": [{"literal": "OpenAI"}],
+    "issued": {"date-parts": [[2023, 3, 8]]},
+    "version": "Mar 14",
+    "description": "Describe the main causes of the 1929 stock market crash",
+    "URL": "https://chat.openai.com/chat"
+  }
+]

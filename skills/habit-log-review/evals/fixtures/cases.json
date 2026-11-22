@@ -1,0 +1,83 @@
+{
+  "note": "Each case runs scripts/habit_review.py with args (paths ending in .csv are relative to evals/fixtures/). Expected values were worked out by hand from the CSV rows before being saved; see VERIFICATION.md. 'habits' maps a habit name to dotted-path fields of its JSON entry; 'warning_codes' is the sorted list of text before the first colon in each warning.",
+  "cases": [
+    {
+      "name": "two habits and a weekly goal, as of Saturday 2026-11-21",
+      "args": ["log_two_habits.csv", "--as-of", "2026-11-21", "--goal", "Reading=daily>=20", "--goal", "Run=3/week", "--goal", "Journal=daily"],
+      "exit": 0,
+      "global": {"rows_read": 50, "rows_used": 50, "warning_codes": [], "summary": {"on_pace": 2, "slipping": 1}},
+      "habits": {
+        "Reading": {"verdict": "on_pace", "pattern": "steady", "streak_current": 10, "streak_longest": 10, "streak_unit": "days", "days_done": 18, "days_missed": 2, "rate_7": 100.0, "rate_28": 90.0, "rate_all": 90.0, "adherence_28": 90.0, "gaps_total": 0, "best_weekday": null, "trend.direction": "insufficient", "days_since_last_done": 1, "value_type": "number"},
+        "Run": {"verdict": "on_pace", "pattern": "steady", "streak_current": 3, "streak_longest": 3, "streak_unit": "weeks", "days_done": 9, "days_missed": 10, "rate_7": 50.0, "rate_28": 47.4, "adherence_28": 100.0, "weeks.closed": 2, "weeks.met": 2, "weeks.pct": 100.0, "weeks.open.status": "open_met", "weeks.open.done": 3, "weekday_profile.Tue.done": 0, "weekday_profile.Mon.days": 3},
+        "Journal": {"verdict": "slipping", "pattern": "uneven", "streak_current": 4, "streak_longest": 5, "days_done": 14, "days_missed": 6, "rate_7": 66.7, "rate_28": 70.0, "adherence_28": 70.0, "gaps_total": 3, "days_since_last_done": 1}
+      }
+    },
+    {
+      "name": "fading habit: 88.9 percent a month ago, 28.6 percent now",
+      "args": ["log_fading.csv", "--as-of", "2026-11-21", "--goal", "Stretch=daily"],
+      "exit": 0,
+      "global": {"warning_codes": [], "summary": {"stalled": 1}},
+      "habits": {
+        "Stretch": {"verdict": "stalled", "pattern": "fading", "streak_current": 0, "streak_longest": 11, "days_done": 32, "days_missed": 23, "rate_7": 14.3, "rate_28": 28.6, "rate_all": 58.2, "adherence_28": 28.6, "trend.recent_rate": 28.6, "trend.prior_rate": 88.9, "trend.delta_pts": -60.3, "trend.direction": "down", "best_weekday": "Tue", "worst_weekday": "Sat", "gaps_total": 4, "days_since_last_done": 4, "last_done_date": "2026-11-17",
+          "weekday_profile": {"Mon": {"done": 5, "days": 8, "rate": 62.5}, "Tue": {"done": 8, "days": 8, "rate": 100.0}, "Wed": {"done": 6, "days": 8, "rate": 75.0}, "Thu": {"done": 4, "days": 8, "rate": 50.0}, "Fri": {"done": 4, "days": 8, "rate": 50.0}, "Sat": {"done": 1, "days": 8, "rate": 12.5}, "Sun": {"done": 4, "days": 7, "rate": 57.1}}}
+      }
+    },
+    {
+      "name": "messy log without a goal: duplicate, mixed units, unreadable value, future date",
+      "args": ["log_messy.csv", "--as-of", "2026-11-14"],
+      "exit": 1,
+      "global": {"rows_read": 16, "rows_used": 14, "warning_codes": ["future_dates", "skipped_rows"], "summary": {"no_goal": 1}},
+      "habits": {
+        "Yoga": {"verdict": "no_goal", "pattern": null, "value_type": "mixed", "days_done": 12, "days_missed": 1, "days_unknown": 1, "streak_current": 7, "streak_longest": 7, "rate_7": 100.0, "rate_28": 92.3, "rate_all": 92.3, "adherence_28": null, "goal": null, "warning_codes": ["duplicate_rows", "mixed_units", "unknown_days"]}
+      }
+    },
+    {
+      "name": "same messy log with blank meaning no",
+      "args": ["log_messy.csv", "--as-of", "2026-11-14", "--blank-means-no"],
+      "exit": 1,
+      "global": {"blank_means": "not_done", "warning_codes": ["future_dates", "skipped_rows"]},
+      "habits": {
+        "Yoga": {"days_done": 12, "days_missed": 2, "days_unknown": 0, "rate_all": 85.7, "streak_current": 7, "warning_codes": ["duplicate_rows", "mixed_units"]}
+      }
+    },
+    {
+      "name": "five days of data gives too early",
+      "args": ["log_too_early.csv", "--as-of", "2026-11-21", "--goal", "journal=daily"],
+      "exit": 0,
+      "global": {"warning_codes": [], "summary": {"too_early": 1}},
+      "habits": {
+        "Journal": {"verdict": "too_early", "pattern": null, "span_days": 5, "streak_current": 1, "streak_longest": 3, "rate_all": 80.0}
+      }
+    },
+    {
+      "name": "ambiguous day/month dates are refused, not guessed",
+      "args": ["log_ambiguous_dates.csv"],
+      "exit": 2,
+      "global": {},
+      "habits": {}
+    },
+    {
+      "name": "ambiguous dates are read once the order is given",
+      "args": ["log_ambiguous_dates.csv", "--date-order", "dmy", "--goal", "Run=daily"],
+      "exit": 0,
+      "global": {"as_of": "2026-04-04", "rows_used": 2, "summary": {"too_early": 1}},
+      "habits": {
+        "Run": {"first_date": "2026-04-03", "span_days": 2, "verdict": "too_early"}
+      }
+    },
+    {
+      "name": "missing file",
+      "args": ["no_such_log.csv"],
+      "exit": 2,
+      "global": {},
+      "habits": {}
+    },
+    {
+      "name": "malformed goal",
+      "args": ["log_two_habits.csv", "--goal", "Run=weekly"],
+      "exit": 2,
+      "global": {},
+      "habits": {}
+    }
+  ]
+}

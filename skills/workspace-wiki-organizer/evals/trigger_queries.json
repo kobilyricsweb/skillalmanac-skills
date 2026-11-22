@@ -1,0 +1,22 @@
+[
+  {"query": "our Confluence space is a mess, I exported it as HTML, can you find what's stale and who owns what", "should_trigger": true},
+  {"query": "audit this Notion export for pages with no owner and docs nobody has touched in six months", "should_trigger": true},
+  {"query": "find duplicate pages across our team spaces and tell me which ones to merge", "should_trigger": true},
+  {"query": "what can we archive from the company wiki? here's the markdown export folder", "should_trigger": true},
+  {"query": "check our wiki export for broken internal links and orphan pages", "should_trigger": true},
+  {"query": "wiki cleanup: list outdated docs older than 90 days and make an archive plan", "should_trigger": true},
+  {"query": "who owns these wiki pages? a lot of them have no owner line", "should_trigger": true},
+  {"query": "we have three versions of the onboarding guide in different spaces, help me consolidate", "should_trigger": true},
+  {"query": "run a staleness report on our internal docs export and group the results by owner", "should_trigger": true},
+  {"query": "the engineering wiki has hundreds of pages nobody links to, find the orphans", "should_trigger": true},
+  {"query": "organize my personal Obsidian vault with tags and daily notes", "should_trigger": false},
+  {"query": "write a new onboarding page for our wiki about the deploy process", "should_trigger": false},
+  {"query": "pull the latest pages from our live Confluence using the API and edit them", "should_trigger": false},
+  {"query": "audit my website for SEO problems and broken links", "should_trigger": false},
+  {"query": "rewrite this wiki page so it is shorter and clearer", "should_trigger": false},
+  {"query": "set up a Notion template for sprint planning", "should_trigger": false},
+  {"query": "summarize this meeting notes page into action items", "should_trigger": false},
+  {"query": "check my Python repo for dead code and unused imports", "should_trigger": false},
+  {"query": "translate our wiki home page into German", "should_trigger": false},
+  {"query": "organize the files in my Downloads folder by type", "should_trigger": false}
+]

@@ -1,0 +1,18 @@
+{
+  "skill_name": "your-skill-name",
+  "evals": [
+    {
+      "id": "task-1",
+      "prompt": "A realistic request, written the way a user would send it.",
+      "files": ["evals/files/task-1/"],
+      "checks": [
+        {"type": "file_exists", "path": "out/result.md", "label": "output written"},
+        {"type": "file_contains", "path": "out/result.md", "pattern": "not checked", "label": "states what was not checked"},
+        {"type": "max_lines", "path": "out/result.md", "max": 60, "label": "stays short"}
+      ],
+      "judge": [
+        "A judged assertion, graded blind with a quoted line as evidence."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "file": "bad_note.md",
+  "ok": false,
+  "counts": {
+    "PROBLEM": 14,
+    "NOTE": 5
+  },
+  "findings": [
+    {
+      "level": "PROBLEM",
+      "code": "missing_date",
+      "line": 1,
+      "message": "no 'Written: YYYY-MM-DD' line; a reader cannot tell how stale the note is."
+    },
+    {
+      "level": "PROBLEM",
+      "code": "missing_repo_state",
+      "line": 1,
+      "message": "no 'Repo state:' line with branch and commit (or 'no git')."
+    },
+    {
+      "level": "PROBLEM",
+      "code": "missing_section",
+      "line": 1,
+      "message": "required section '## Not verified' is missing."
+    },
+    {
+      "level": "PROBLEM",
+      "code": "claim_without_evidence",
+      "line": 9,
+      "message": "success claim with no result on the line; move it to Verification with the command and output: '- Everything works now and all tests pass.'"
+    },
+    {
+      "level": "NOTE",
+      "code": "vague_item",
+      "line": 9,
+      "message": "vague wording 'works now'; name the file, the behaviour or the number."
+    },
+    {
+      "level": "NOTE",
+      "code": "vague_item",
+      "line": 10,
+      "message": "vague wording 'some stuff'; name the file, the behaviour or the number."
+    },
+    {
+      "level": "PROBLEM",
+      "code": "change_without_path",
+      "line": 14,
+      "message": "change names no file in backticks: 'Fixed stuff in the cart module'"
+    },
+    {
+      "level": "NOTE",
+      "code": "vague_item",
+      "line": 14,
+      "message": "vague wording 'Fixed stuff'; name the file, the behaviour or the number."
+    },
+    {
+      "level": "PROBLEM",
+      "code": "change_without_path",
+      "line": 15,
+      "message": "change names no file in backticks: 'Various tweaks etc.'"
+    },
+    {
+      "level": "NOTE",
+      "code": "vague_item",
+      "line": 15,
+      "message": "vague wording 'Various tweaks'; name the file, the behaviour or the number."
+    },
+    {
+      "level": "PROBLEM",
+      "code": "path_missing",
+      "line": 16,
+      "message": "path 'src/missing_cart.py' does not exist under the given root."
+    },
+    {
+      "level": "PROBLEM",
+      "code": "verification_no_command",
+      "line": 20,
+      "message": "verification line shows no command in backticks: 'Tests pass.'"
+    },
+    {
+      "level": "PROBLEM",
+      "code": "verification_no_result",
+      "line": 21,
+      "message": "verification line shows a command but no result (exit code, counts or output): 'Ran `make test`.'"
+    },
+    {
+      "level": "NOTE",
+      "code": "decision_no_default",
+      "line": 25,
+      "message": "open decision names no options or default; the next session cannot proceed without the owner."
+    },
+    {
+      "level": "PROBLEM",
+      "code": "decision_not_a_question",
+      "line": 25,
+      "message": "open decision is not phrased as a question: 'Decide about the PDF thing.'"
+    },
+    {
+      "level": "PROBLEM",
+      "code": "next_not_numbered",
+      "line": 27,
+      "message": "next steps are not a numbered list in the order to do them."
+    },
+    {
+      "level": "PROBLEM",
+      "code": "commands_not_literal",
+      "line": 31,
+      "message": "no literal command (fenced block or backticks); prose like 'run the tests' is not a command."
+    },
+    {
+      "level": "PROBLEM",
+      "code": "credential_like",
+      "line": 35,
+      "message": "credential-like string; remove it and say where the value comes from. Value not repeated here."
+    },
+    {
+      "level": "PROBLEM",
+      "code": "placeholder_left",
+      "line": 37,
+      "message": "unfilled placeholder or TODO marker."
+    }
+  ]
+}

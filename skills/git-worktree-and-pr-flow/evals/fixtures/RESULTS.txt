@@ -1,0 +1,8 @@
+PASS bad repo: every finding class
+PASS good repo: clean
+PASS good repo audited from inside its linked worktree
+PASS policy override: --types fix flags feat/ branch
+PASS tight limits: chore/local-only becomes stale, detached-task and mid-rebase become idle (13 + 3 warn)
+PASS not a repository exits 2
+PASS reftable repository is reported, not misread
+7/7 cases passed

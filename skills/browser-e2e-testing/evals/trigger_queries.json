@@ -1,0 +1,22 @@
+[
+  {"query": "write Playwright tests for our login and signup flow", "should_trigger": true},
+  {"query": "my e2e test passes locally but randomly fails in GitHub Actions, help me find out why", "should_trigger": true},
+  {"query": "this cypress spec uses cy.wait(5000) everywhere, make it reliable", "should_trigger": true},
+  {"query": "audit our spec files for flaky patterns like sleeps and nth-child selectors", "should_trigger": true},
+  {"query": "someone left a test.only in the repo and CI went green, how do I stop that", "should_trigger": true},
+  {"query": "set up browser tests with traces and screenshots uploaded on failure, running in parallel shards", "should_trigger": true},
+  {"query": "which parts of this checkout feature should be end-to-end tests and which should be unit tests?", "should_trigger": true},
+  {"query": "convert my selenium tests to use explicit waits and stable selectors", "should_trigger": true},
+  {"query": "our UI tests interfere with each other when they run in parallel, how do I isolate test data", "should_trigger": true},
+  {"query": "review this pytest-playwright file for brittle locators and missing assertions", "should_trigger": true},
+  {"query": "write unit tests for this pure function that parses dates", "should_trigger": false},
+  {"query": "use TDD to build a shopping cart class, tests first", "should_trigger": false},
+  {"query": "write a script that scrapes product prices from a website with Playwright", "should_trigger": false},
+  {"query": "set up Percy visual regression snapshots for our storybook", "should_trigger": false},
+  {"query": "load test our API with 10,000 concurrent users using k6", "should_trigger": false},
+  {"query": "write API tests for the /orders REST endpoints with supertest", "should_trigger": false},
+  {"query": "automate filling this web form in my browser for me", "should_trigger": false},
+  {"query": "test my React component with React Testing Library and jest", "should_trigger": false},
+  {"query": "debug why this Node function throws a TypeError in production", "should_trigger": false},
+  {"query": "write manual QA test cases in a spreadsheet for the release", "should_trigger": false}
+]

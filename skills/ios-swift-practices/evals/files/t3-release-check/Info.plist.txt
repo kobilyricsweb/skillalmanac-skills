@@ -1,0 +1,15 @@
+Info.plist excerpt (keys only that exist in the file)
+    CFBundleShortVersionString = 2.1.0
+    CFBundleVersion = 41
+    NSLocationWhenInUseUsageDescription = "Shows stores near you."
+    NSAppTransportSecurity
+        NSAllowsArbitraryLoads = true
+
+Target source files (names and one-line summaries)
+    ScanView.swift       uses AVCaptureDevice.requestAccess(for: .video) to scan barcodes
+    Settings.swift       stores the selected store id with UserDefaults.standard
+    Cache.swift          reads FileManager attributesOfItem(...)[.modificationDate] on cached images
+    AuthView.swift       offers "Continue with Google" and email sign-up; account creation is in the app
+    Profile.swift        no delete-account action exists
+    No PrivacyInfo.xcprivacy file exists in the project.
+    Last uploaded build for version 2.1.0 was build 41.

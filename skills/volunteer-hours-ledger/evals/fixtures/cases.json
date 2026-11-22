@@ -1,0 +1,139 @@
+{
+  "note": "Expected values were worked out by hand from the fixture files before being saved. '@name' is a fixture path, '@tmp/name' is a path in a fresh temp folder. 'expect' keys are dotted paths into the JSON (digits index lists) or the derived keys flag_types and rejected_reasons.",
+  "cases": [
+    {
+      "args": ["@good.csv"],
+      "exit": 0,
+      "expect": {
+        "verdict": "clean",
+        "rows_accepted": 5,
+        "rows_rejected": 0,
+        "totals.hours": 15.0,
+        "totals.shifts": 5,
+        "totals.volunteers": 2,
+        "totals.by_activity": {"Events": 1.5, "Food bank": 6.5, "Tutoring": 7.0},
+        "totals.by_project": {"Gala": 1.5, "Pantry": 6.5, "Youth": 7.0},
+        "totals.by_month": {"2026-03": 10.5, "2026-04": 4.5},
+        "people.0.name": "Ana Lopez",
+        "people.0.hours": 8.0,
+        "people.0.months": {"2026-03": 6.5, "2026-04": 1.5},
+        "people.1.name": "Ben Cohen",
+        "people.1.hours": 7.0,
+        "monthly_report.0.month": "2026-03",
+        "monthly_report.0.volunteers": 2,
+        "monthly_report.0.top_activity": {"name": "Food bank", "hours": 6.5},
+        "settings.signoff_checked": true
+      }
+    },
+    {
+      "args": ["@good.csv", "--thresholds", "5,8", "--inactive-days", "30", "--as-of", "2026-05-10"],
+      "exit": 0,
+      "expect": {
+        "verdict": "clean",
+        "flag_types": ["threshold_crossed"],
+        "people.0.flags.0.date": "2026-03-09",
+        "people.0.flags.1.date": "2026-04-06",
+        "people.1.flags.0.date": "2026-04-06",
+        "inactive.0.days_since": 34,
+        "inactive.1.name": "Ben Cohen"
+      }
+    },
+    {
+      "args": ["@bad.csv", "--daily-cap", "8", "--roster", "@roster.txt"],
+      "exit": 1,
+      "expect": {
+        "verdict": "findings",
+        "rows_accepted": 6,
+        "rows_rejected": 6,
+        "totals.hours": 22.5,
+        "rejected_reasons": ["duplicate_signin", "end_before_start", "zero_duration", "impossible_date", "missing_name", "bad_time"],
+        "flag_types": ["missing_signoff", "over_daily_cap", "overlapping_shifts", "unmatched_name"],
+        "near_name_matches.0.names": ["Dan Ruiz", "Dana Ruiz"],
+        "people.0.name": "Dan Ruiz",
+        "people.0.hours": 2.0,
+        "people.1.name": "Dana Ruiz",
+        "people.1.hours": 3.0,
+        "people.1.name_variants": ["Dana Ruiz", "dana ruiz"],
+        "people.2.name": "Eli Park",
+        "people.2.hours": 6.0,
+        "people.3.name": "Fay Nunez",
+        "people.3.hours": 11.5
+      }
+    },
+    {
+      "args": ["@rounding.csv", "--round-unit", "15"],
+      "exit": 0,
+      "expect": {"totals.hours": 2.0}
+    },
+    {
+      "args": ["@rounding.csv", "--round-unit", "15", "--round-mode", "up"],
+      "exit": 0,
+      "expect": {"totals.hours": 2.25}
+    },
+    {
+      "args": ["@rounding.csv", "--round-unit", "15", "--round-mode", "down"],
+      "exit": 0,
+      "expect": {"totals.hours": 1.5}
+    },
+    {
+      "args": ["@headerless.txt"],
+      "exit": 0,
+      "expect": {
+        "settings.signoff_checked": false,
+        "people.0.name": "Ana Lopez",
+        "people.0.hours": 3.0,
+        "people.1.name": "Ben Cohen",
+        "people.1.hours": 3.5
+      }
+    },
+    {
+      "args": ["@overnight.csv"],
+      "exit": 1,
+      "expect": {"totals.hours": 0.0, "rejected_reasons": ["end_before_start"]}
+    },
+    {
+      "args": ["@overnight.csv", "--allow-overnight"],
+      "exit": 0,
+      "expect": {"totals.hours": 4.0, "flag_types": ["overnight_shift"]}
+    },
+    {
+      "args": ["@good.csv", "--output", "@good.csv"],
+      "exit": 2,
+      "expect": {},
+      "unchanged": "good.csv"
+    },
+    {
+      "args": ["@good.csv", "--output", "@good.csv", "--force"],
+      "exit": 2,
+      "expect": {},
+      "unchanged": "good.csv"
+    },
+    {
+      "args": ["@bad.csv", "--roster", "@roster.txt", "--output", "@roster.txt", "--force"],
+      "exit": 2,
+      "expect": {},
+      "unchanged": "roster.txt"
+    },
+    {
+      "args": ["@good.csv", "--output", "@tmp/report.json"],
+      "exit": 0,
+      "expect": {"totals.hours": 15.0},
+      "output_file_matches_stdout": "report.json"
+    },
+    {
+      "args": ["@missing_file.csv"],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "args": ["@empty.csv"],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "args": ["@good.csv", "--round-unit", "0"],
+      "exit": 2,
+      "expect": {}
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+ "skill_name": "git-worktree-and-pr-flow",
+ "note": "Drafted, not run. No with-skill or baseline run exists. [script] assertions are plain string or regex checks on the answer text or saved file; [judge] assertions need a blind grader. The audit script is the skill's own tool, so each task has judge assertions measuring something it does not control.",
+ "evals": [
+  {
+   "id": "t1-parallel-setup",
+   "prompt": "Set this up. Give me the exact git commands for all three agents, how I clean up after each merges, and what each agent must not do. Save the answer to answer.md.",
+   "files": [
+    "evals/files/t1-parallel-setup/request.md"
+   ],
+   "assertions": [
+    "[script] answer.md contains '--no-track' at least 3 times (once per worktree add)",
+    "[script] every branch name in answer.md that follows 'git worktree add' matches ^(feat|fix|chore|docs|refactor|test|perf|ci|build|hotfix|release)/[a-z0-9][a-z0-9._-]{0,39}$ and the SHOP-482 branch name contains 'shop-482' in lowercase",
+    "[script] no worktree path in answer.md starts with C:/dev/shop-api/ or ./ (paths are siblings of the repo)",
+    "[script] answer.md does not contain 'git add -A', 'git add .', 'push --force ' or ' -f ' as a recommended command (it may appear only in a never-run list)",
+    "[judge] The cleanup sequence removes the worktree before deleting the branch and says that git branch -d fails after a squash merge, so -D only after confirming the PR merged",
+    "[judge] The answer tells each agent to install dependencies/env inside its own worktree and says the primary checkout stays on main and clean"
+   ]
+  },
+  {
+   "id": "t2-big-shared-pr",
+   "prompt": "Tell me exactly what to do about this PR. Commands, in order. Save to answer.md.",
+   "files": [
+    "evals/files/t2-big-shared-pr/state.txt"
+   ],
+   "assertions": [
+    "[script] answer.md does not recommend 'git push --force' or 'git push -f' to feat/checkout-rewrite",
+    "[script] answer.md contains 'git merge origin/main' or says to merge main in for the shared branch (Dana pushed to it), and does not recommend plain 'git rebase origin/main' on feat/checkout-rewrite",
+    "[script] answer.md contains 'restore --source' or 'cherry-pick' for splitting, and proposes at least 3 PRs",
+    "[judge] Size is counted as 1900 total minus the lockfile (612) and renames (140), about 1,148 changed lines in 31 files, which is over the 800 line and 25 file hard stop, so a split is required (not just 'it is big')",
+    "[judge] Pure move/rename changes are proposed as the first, behaviour-free PR, and tests travel with the behaviour change",
+    "[judge] The answer says to ask Dana before any history rewrite and to record the current tip before acting"
+   ]
+  },
+  {
+   "id": "t3-audit-triage",
+   "prompt": "This is the JSON from our branch audit script. Tell me, finding by finding, what to run to clean up, what to ask me first, and what NOT to run. Save to answer.md.",
+   "files": [
+    "evals/files/t3-audit-triage/audit.json"
+   ],
+   "assertions": [
+    "[script] answer.md mentions 'git worktree prune' for gone-task",
+    "[script] answer.md does not contain 'worktree remove --force' or 'rm -rf' as a recommended command for locked-gone or any worktree",
+    "[script] answer.md names all five worktree ids (gone-task, alive-task, detached-task, locked-gone, mid-rebase) and the stale_lock on the primary",
+    "[judge] fix/old-bug and Feature/NewThing deletion or rename is conditioned on checking merge status or that nobody uses the branch, because the audit cannot see merge status",
+    "[judge] mid-rebase is told to finish or abort the rebase and not to be removed; detached-task is told to get a branch before more commits",
+    "[judge] The index.lock is removed only after confirming no git process runs; 'upstream_gone' is not treated as proof the branch is merged"
+   ]
+  }
+ ]
+}

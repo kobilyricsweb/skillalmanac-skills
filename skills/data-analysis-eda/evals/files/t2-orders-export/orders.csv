@@ -1,0 +1,21 @@
+order_id,order_date,customer,amount,status
+1001,01/02/2024,"Acme, Inc",120.50,shipped
+1002,01/03/2024,Birch LLC,89.99,shipped
+1003,01/05/2024,"Acme, Inc","1,250.00",Shipped
+1004,01/07/2024,Cedar Co,45.00,cancelled
+1005,01/09/2024,Delta Ltd,230.75,shipped
+1006,01/11/2024,Birch LLC,89.99,shipped
+1007,02/01/2024,Echo GmbH,15.25,
+1008,02/03/2024,"Acme, Inc",310.00,shipped
+1009,02/05/2024,Cedar Co,45.00,shipped
+1010,02/07/2024,Delta Ltd,-20.00,refunded
+1011,02/09/2024,Echo GmbH
+1012,02/11/2024,Birch LLC,99.00,shipped
+1013,03/01/2024,"Acme, Inc",410.00,shipped
+1014,03/02/2024,Cedar Co,45.00,shipped,extra
+1015,03/04/2024,Delta Ltd,230.75,shipped
+1016,03/06/2024,Echo GmbH,15.25,cancelled
+1017,03/08/2024,Birch LLC,"1,080.00",shipped
+1018,03/10/2024,"Acme, Inc",120.50,shipped
+1019,03/12/2024,Cedar Co,45.00,shipped
+1020,04/01/2024,Delta Ltd,230.75,shipped

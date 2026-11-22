@@ -1,0 +1,25 @@
+{
+  "currency": "EUR",
+  "invoices": [
+    {
+      "number": "C-001", "supplier": "Corner Shop", "tax_rate": "0",
+      "rounding": {"method": "line"},
+      "lines": [
+        {"description": "Sweet A", "quantity": "1", "unit_price": "0.333"},
+        {"description": "Sweet B", "quantity": "1", "unit_price": "0.333"},
+        {"description": "Sweet C", "quantity": "1", "unit_price": "0.333"}
+      ],
+      "stated_total": "1.00"
+    },
+    {
+      "number": "C-002", "supplier": "Corner Shop", "tax_rate": "10",
+      "rounding": {"method": "line_tax"},
+      "lines": [
+        {"description": "Gum A", "quantity": "1", "unit_price": "0.15"},
+        {"description": "Gum B", "quantity": "1", "unit_price": "0.15"},
+        {"description": "Gum C", "quantity": "1", "unit_price": "0.15"}
+      ],
+      "stated_total": "0.50"
+    }
+  ]
+}

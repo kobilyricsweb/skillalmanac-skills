@@ -1,0 +1,61 @@
+{
+  "note": "Written by hand from the fixture definitions in evals/run_fixtures.py before the first run. Each finding is [category, file, line, key]; line is null when the file format has no useful line.",
+  "good": {"verdict": "pass", "exit": 0, "findings": []},
+  "bad_env": {
+    "verdict": "fail", "exit": 1,
+    "findings": [
+      ["env_secret_not_ignored", ".env", 3, "SUPABASE_SERVICE_ROLE_KEY"],
+      ["env_secret_not_ignored", ".env", 4, "STRIPE_WEBHOOK_SECRET"],
+      ["env_public_var_secret", ".env", 5, "NEXT_PUBLIC_ADMIN_SECRET"],
+      ["env_secret_not_ignored", ".env", 6, "DATABASE_URL"],
+      ["env_public_var_secret", ".env.production", 1, "NEXT_PUBLIC_SERVICE_ROLE_KEY"],
+      ["env_example_real_value", ".env.example", 1, "SUPABASE_SERVICE_ROLE_KEY"],
+      ["env_file_not_ignored", ".env.production", null, null]
+    ]
+  },
+  "drift": {
+    "verdict": "fail", "exit": 1,
+    "findings": [
+      ["env_prod_points_to_local", ".env.production", 1, "API_URL"],
+      ["env_value_shared_with_prod", ".env.development", 2, "PROJECT_URL"],
+      ["env_key_drift", ".env.production", null, "FEATURE_X"],
+      ["env_key_drift", ".env.development", null, "SENTRY_DSN"]
+    ]
+  },
+  "bad_rules": {
+    "verdict": "fail", "exit": 1,
+    "findings": [
+      ["rules_open", "firestore.rules", 6, "read, write"],
+      ["rules_auth_only", "firestore.rules", 9, "read"],
+      ["rules_time_bounded_open", "firestore.rules", 12, "write"],
+      ["rules_open", "firestore.rules", 15, "read"],
+      ["rules_open", "database.rules.json", null, "rules/.read"],
+      ["rules_auth_only", "database.rules.json", null, "rules/users/$uid/.read"],
+      ["rules_time_bounded_open", "database.rules.json", null, "rules/queue/.write"],
+      ["rules_file_missing", "firebase.json", null, "storage"],
+      ["rules_not_configured", "firebase.json", null, "database"],
+      ["table_without_rls", "supabase/migrations/001.sql", 2, "notes"],
+      ["policy_open", "supabase/migrations/001.sql", 5, "profiles"],
+      ["rls_without_policy", "supabase/migrations/001.sql", 6, "things"],
+      ["grant_to_anon", "supabase/migrations/001.sql", 8, null],
+      ["definer_no_search_path", "supabase/migrations/001.sql", 9, null],
+      ["public_bucket", "supabase/config.toml", 1, "avatars"],
+      ["rules_open", "appwrite.json", 1, "create(any)"]
+    ]
+  },
+  "bad_source": {
+    "verdict": "fail", "exit": 1,
+    "findings": [
+      ["source_secret", "certs/deploy.pem", 2, "private_key_block"],
+      ["source_secret", "public/config.js", 1, "service_role_jwt"],
+      ["source_secret", "public/config.js", 2, "adminKey"],
+      ["source_secret", "server/seed.py", 1, "payment_live_secret"]
+    ]
+  },
+  "tracked": {
+    "verdict": "fail", "exit": 1,
+    "findings": [
+      ["env_secret_tracked", ".env", 1, "SUPABASE_SERVICE_ROLE_KEY"]
+    ]
+  }
+}

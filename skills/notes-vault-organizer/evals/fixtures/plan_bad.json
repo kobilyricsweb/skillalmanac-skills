@@ -1,0 +1,11 @@
+{"schema_version": "1", "moves": [
+  {"from": "Home.md", "to": "Ideas.md"},
+  {"from": "Nope.md", "to": "X/Nope.md"},
+  {"from": "Gamma.md", "to": "../outside/Gamma.md"},
+  {"action": "delete", "from": "Scratch.md", "to": ""},
+  {"from": "Quick thought.md", "to": "_review/Q.md"},
+  {"from": "Quick thought.md", "to": "_review/Q2.md"},
+  {"from": "attachments/data.csv", "to": "x/data.csv"},
+  {"from": "Scratch.md", "to": "_review/Dup.md"},
+  {"from": "Scratch copy.md", "to": "_review/dup.md"}
+]}

@@ -1,0 +1,22 @@
+[
+  {"query": "can you make a pseudo-locale out of our en.json so we can test text expansion before sending to translators", "should_trigger": true},
+  {"query": "set up pseudolocalization for our .properties files, accented characters and brackets", "should_trigger": true},
+  {"query": "I need an i18n smoke test, find hard-coded strings in the React components that are not in the locale file", "should_trigger": true},
+  {"query": "generate an en-XA style fake language from this .po file to see which buttons will truncate in German", "should_trigger": true},
+  {"query": "our layout breaks when text gets 40% longer, make a longer test version of messages.json that keeps {name} placeholders intact", "should_trigger": true},
+  {"query": "make a right to left test locale from my resource file to check mirroring before we add Arabic", "should_trigger": true},
+  {"query": "which strings in strings.json would overflow a 20 character field if translated? generate the pseudo locale and tell me", "should_trigger": true},
+  {"query": "find concatenated sentences and baked-in dates in our translation keys before we hand them to the vendor", "should_trigger": true},
+  {"query": "pseudo localize this gettext file and give me a report of fragments and strings with repeated %s", "should_trigger": true},
+  {"query": "we haven't hired translators yet, how do I check the app is ready for localization using a dummy locale?", "should_trigger": true},
+  {"query": "translate my en.json into Spanish and French", "should_trigger": false},
+  {"query": "the vendor sent back de.json, check that all the {placeholders} survived translation", "should_trigger": false},
+  {"query": "what should the fallback locale be for pt-BR when the string is missing?", "should_trigger": false},
+  {"query": "write a localization strategy and style guide for our product launch in Japan", "should_trigger": false},
+  {"query": "generate lorem ipsum filler text for my landing page mockup", "should_trigger": false},
+  {"query": "convert my resource file from .properties to JSON without changing the text", "should_trigger": false},
+  {"query": "audit this React page for accessibility issues like missing alt text", "should_trigger": false},
+  {"query": "set up i18next in my Next.js app and show me how to switch language", "should_trigger": false},
+  {"query": "check my CSV for duplicate rows and blank keys", "should_trigger": false},
+  {"query": "proofread the English UI copy in this strings file for tone and typos", "should_trigger": false}
+]

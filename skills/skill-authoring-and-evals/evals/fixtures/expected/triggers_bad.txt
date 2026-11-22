@@ -1,0 +1,11 @@
+all queries   should-trigger 10 (loaded 73%, bar >= 90%) | near-miss 10 (false-loaded 20%, bar <= 10%)
+held-out 40%  should-trigger 4 (loaded 67%, bar >= 90%) | near-miss 4 (false-loaded 17%, bar <= 10%)
+MISSED    1/3 loaded: my skill never loads on its own, what's wrong with the description
+MISSED    1/3 loaded: claude ignores my skill half the time, how do I make it trigger
+MISSED    1/3 loaded: is this a skill or should it just go in AGENTS.md
+MISSED    1/3 loaded: benchmark my skill with and without it installed
+FALSE-HIT 2/3 loaded: write an AGENTS.md for this repo with the build commands
+FALSE-HIT 2/3 loaded: what does SKILL.md stand for in this tutorial video
+FALSE-HIT 2/3 loaded: create a subagent that reviews database migrations
+RESULT: FAIL
+[exit 1]

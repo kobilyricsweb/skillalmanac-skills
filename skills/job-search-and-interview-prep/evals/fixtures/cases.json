@@ -1,0 +1,73 @@
+{
+  "note": "Expected values were derived by reading the fixture files by hand and then compared with the script output; see VERIFICATION.md. Paths are relative to evals/fixtures.",
+  "cases": [
+    {
+      "name": "bad tracker with bad stories",
+      "args": ["tracker_bad.csv", "--stories", "stories_bad.json", "--today", "2026-11-21"],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "issue_counts": {"error": 6, "warn": 7, "info": 2},
+        "issue_codes": [
+          "bad_status", "duplicate_application", "duplicate_company", "duplicate_story_id",
+          "future_date", "missing_date", "missing_next_action", "overdue_next_action",
+          "stale_application", "story_bank_thin", "story_missing_component", "story_missing_component",
+          "story_missing_source", "story_result_not_quantified", "story_thin_component"
+        ],
+        "plan_kinds": [
+          "interview_prep", "follow_up", "overdue_action", "due_this_week", "due_this_week",
+          "due_this_week", "set_next_action", "submit_application", "submit_application",
+          "fix_stories", "build_story_bank"
+        ],
+        "first_plan_company": "Contoso Inc.",
+        "stale_subjects": ["row 1: Northwind Labs, Data Analyst"]
+      }
+    },
+    {
+      "name": "stale window widened to 30 days removes the stale finding",
+      "args": ["tracker_bad.csv", "--today", "2026-11-21", "--stale-days", "30"],
+      "exit": 1,
+      "expect": {
+        "stale_subjects": [],
+        "plan_has_kind_follow_up": false
+      }
+    },
+    {
+      "name": "good tracker with embedded story",
+      "args": ["tracker_good.json", "--today", "2026-11-21"],
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "issue_counts": {"error": 0, "warn": 0, "info": 0},
+        "issue_codes": [],
+        "plan_kinds": ["due_this_week", "due_this_week", "submit_application"]
+      }
+    },
+    {
+      "name": "task 1 tracker (no stories file) asks for a story bank because an interview is open",
+      "args": ["../files/t1-tracker-audit/tracker.csv", "--today", "2026-11-21"],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "issue_counts": {"error": 1, "warn": 4, "info": 0},
+        "issue_codes": ["duplicate_application", "duplicate_company", "missing_next_action", "overdue_next_action", "stale_application"],
+        "plan_kinds": [
+          "interview_prep", "follow_up", "overdue_action", "due_this_week", "due_this_week",
+          "due_this_week", "set_next_action", "submit_application", "submit_application", "build_story_bank"
+        ]
+      }
+    },
+    {
+      "name": "csv without a status column is rejected",
+      "args": ["tracker_nocolumn.csv", "--today", "2026-11-21"],
+      "exit": 2,
+      "expect": {"error_contains": "missing required column(s): status"}
+    },
+    {
+      "name": "missing file is rejected",
+      "args": ["no_such_file.csv", "--today", "2026-11-21"],
+      "exit": 2,
+      "expect": {"error_contains": "cannot read"}
+    }
+  ]
+}

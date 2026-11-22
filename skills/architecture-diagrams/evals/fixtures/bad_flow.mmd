@@ -1,0 +1,11 @@
+flowchart
+    subgraph backend
+        api[Orders API]
+        db[(Orders DB)]
+        api --> db
+    api2[Orders API]
+    cache[Cache (Redis)]
+    api --> cache
+    lonely[Audit Log]
+    db --> db_copy[Orders DB]
+    api[Billing API]

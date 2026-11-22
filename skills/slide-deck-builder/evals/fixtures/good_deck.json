@@ -1,0 +1,25 @@
+{
+  "slides": [
+    {
+      "headline": "Support tickets fell 40% after we added in-app help",
+      "body": ["Pilot with 2,000 accounts, March to May"],
+      "notes": "Lead with the result. The pilot covered two thousand accounts over three months, and we compared ticket volume per account against a matched control group that did not see the help panel."
+    },
+    {
+      "headline": "Tickets per 100 accounts dropped from 12.5 to 7.5",
+      "body": [],
+      "charts": [{"description": "Bar chart of tickets per 100 accounts, control against pilot", "source": "Support desk export, Mar-May 2026"}],
+      "images": [{"alt": "Bar chart: control 12.5 tickets per 100 accounts, pilot 7.5"}],
+      "notes": "Point at the gap between the two bars and say it out loud: five fewer tickets per hundred accounts. The control group stayed flat, so seasonality does not explain the drop."
+    },
+    {
+      "headline": "Roll the help panel out to all accounts by June",
+      "body": ["Engineering: three weeks", "Support: no extra hiring needed", "Risk: help content must stay current"],
+      "notes": "This is the decision we need today. Engineering has confirmed three weeks of work, and the support team will own the content review each month so the answers do not go stale."
+    },
+    {
+      "headline": "Appendix: pilot method",
+      "body": ["Matched control by plan size and signup month", "Tickets deduplicated by account and day"]
+    }
+  ]
+}

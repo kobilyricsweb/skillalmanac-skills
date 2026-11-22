@@ -1,0 +1,45 @@
+{
+  "skill_name": "volunteer-hours-ledger",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/volunteer_ledger.py on the task files or a plain string check on the reply; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Expected numbers were computed by hand from the fixture files in evals/fixtures/.",
+  "evals": [
+    {
+      "id": "t1-monthly-report",
+      "prompt": "Here is our pantry's volunteer log for March and April (evals/fixtures/good.csv). Give me per-person totals, the totals by activity and a monthly report. We round nothing.",
+      "files": ["evals/fixtures/good.csv"],
+      "assertions": [
+        "[script] The reply states 15 total hours and 5 shifts",
+        "[script] The reply states Ana Lopez 8 hours and Ben Cohen 7 hours",
+        "[script] The reply gives March as 10.5 hours and April as 4.5 hours",
+        "[script] The reply gives Food bank 6.5, Tutoring 7 and Events 1.5 hours",
+        "[judge] The reply ends with what was not checked, including that attendance and what the hours count for are outside the report",
+        "[judge] The reply says nothing about tax, legal or benefit treatment of the hours"
+      ]
+    },
+    {
+      "id": "t2-dirty-log",
+      "prompt": "Our coordinator wants a cleaned total for this log (evals/fixtures/bad.csv). Nobody works more than 8 hours a day, and the expected volunteers are Dana Ruiz, Eli Park, Fay Nunez and Gus Wu (evals/fixtures/roster.txt). Tell me what you can total and what you cannot.",
+      "files": ["evals/fixtures/bad.csv", "evals/fixtures/roster.txt"],
+      "assertions": [
+        "[script] The reply reports 6 accepted rows, 6 rejected rows and 22.5 total hours",
+        "[script] The reply lists the rejected reasons duplicate sign-in, end before start, zero duration, impossible date (2026-02-30), missing name and bad time",
+        "[script] The reply reports Eli Park's overlapping shifts on 2026-03-05 and Fay Nunez over the 8 hour cap on 2026-03-06 (11.5 hours)",
+        "[judge] Dan Ruiz and Dana Ruiz are presented as a possible match for a human to confirm and are not silently merged",
+        "[judge] The overnight shelter shift is not counted as 8 hours without asking the user whether it was an overnight shift",
+        "[judge] The missing sign-off for Eli Park on 2026-03-05 is reported"
+      ]
+    },
+    {
+      "id": "t3-rounding-and-milestones",
+      "prompt": "Round each shift in evals/fixtures/rounding.csv up to 15 minutes and tell me the total. Then, for evals/fixtures/good.csv, tell me when each person reached 5 and 8 hours, and who has been quiet for more than 30 days as of 2026-05-10.",
+      "files": ["evals/fixtures/rounding.csv", "evals/fixtures/good.csv"],
+      "assertions": [
+        "[script] The reply gives 2.25 hours for Cy Dean with rounding up",
+        "[script] The reply says Ana Lopez reached 5 hours on 2026-03-09 and 8 hours on 2026-04-06",
+        "[script] The reply says Ben Cohen reached 5 hours on 2026-04-06 and has not reached 8",
+        "[script] The reply lists both Ana Lopez and Ben Cohen as inactive, 34 days since 2026-04-06",
+        "[judge] The reply states the rounding direction and unit it used and does not mix rounded and unrounded figures",
+        "[judge] The reply does not state what the milestone hours qualify for"
+      ]
+    }
+  ]
+}

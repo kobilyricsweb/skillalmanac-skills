@@ -1,0 +1,13 @@
+{
+  "name": "accounts-client",
+  "version": "1.4.0",
+  "private": true,
+  "scripts": {
+    "generate": "openapi-typescript openapi.yaml -o src/api/client.gen.ts",
+    "build": "tsc -p ."
+  },
+  "devDependencies": {
+    "openapi-typescript": "^6.7.0",
+    "typescript": "^5.4.0"
+  }
+}

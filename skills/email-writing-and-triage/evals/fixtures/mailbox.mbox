@@ -1,0 +1,44 @@
+From anna@client.example Mon Nov 16 09:00:00 2026
+From: Anna Lind <anna@client.example>
+To: dana@example.com
+Subject: Re: Site visit
+Date: Mon, 16 Nov 2026 09:00:00 +0000
+Message-ID: <v1@client.example>
+
+Yes, Thursday works for us.
+
+Anna
+-- 
+Anna Lind, Operations
+
+On Fri, 13 Nov 2026, Dana Cohen wrote:
+> Can you confirm by Monday whether the visit is on?
+
+From ben@cafe.example Tue Nov 17 08:30:00 2026
+From: Ben <ben@cafe.example>
+To: dana@example.com
+Subject: =?utf-8?q?Caf=C3=A9_menu_review?=
+Date: Tue, 17 Nov 2026 08:30:00 +0000
+Message-ID: <v2@cafe.example>
+
+Could you review the new menu before 2026-11-20?
+
+From MAILER-DAEMON@mail.example Tue Nov 17 12:00:00 2026
+From: Mail Delivery System <MAILER-DAEMON@mail.example>
+To: dana@example.com
+Subject: Undelivered Mail Returned to Sender
+Date: Tue, 17 Nov 2026 12:00:00 +0000
+Auto-Submitted: auto-replied
+Message-ID: <v3@mail.example>
+
+Your message could not be delivered.
+>From the postmaster: no such user.
+
+From dana@example.com Wed Nov 18 10:00:00 2026
+From: Dana Cohen <dana@example.com>
+To: anna@client.example
+Subject: Re: Site visit
+Date: Wed, 18 Nov 2026 10:00:00 +0000
+Message-ID: <v4@example.com>
+
+Great, can you also send the parking details?

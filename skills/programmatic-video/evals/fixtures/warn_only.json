@@ -1,0 +1,9 @@
+{
+  "composition": {"fps": 30, "width": 1920, "height": 1080, "duration": 5},
+  "assets": {
+    "clip": {"type": "video", "path": "assets/clip-24fps.mp4", "fps": 24, "width": 1920, "height": 1080, "duration": 5, "license": "own footage"}
+  },
+  "tracks": [
+    {"id": "v1", "kind": "video", "clips": [{"id": "c1", "asset": "clip", "start": 0, "duration": 5}]}
+  ]
+}

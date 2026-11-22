@@ -1,0 +1,9 @@
+PASS check bad_tests.py
+PASS check good_tests.py
+PASS check bad_tests.test.js
+PASS check good_tests.test.js
+PASS check heavy_tests.py
+PASS check empty.py
+PASS check syntax_error.py
+PASS check does_not_exist.py
+8/8 cases passed

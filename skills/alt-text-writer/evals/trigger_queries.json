@@ -1,0 +1,22 @@
+[
+  {"query": "write alt text for the images on this product page, I'll tell you what each one shows", "should_trigger": true},
+  {"query": "our site was flagged because half the images have no alt attributes, can you fix them", "should_trigger": true},
+  {"query": "review the alt text in my README, some of it says 'image of' and I think it's wrong", "should_trigger": true},
+  {"query": "what should the alt be for a bar chart? screen reader users can't tell what it shows", "should_trigger": true},
+  {"query": "which of my images should have empty alt because they're decorative?", "should_trigger": true},
+  {"query": "scan this folder of markdown docs and tell me which images are missing alt text", "should_trigger": true},
+  {"query": "write a long description for this infographic so it's accessible", "should_trigger": true},
+  {"query": "the logo is a link to the homepage, what alt text does it need?", "should_trigger": true},
+  {"query": "my CMS filled alt with the file names like IMG_2231.jpg, help me replace them properly", "should_trigger": true},
+  {"query": "alt text is too long on these slides' exported HTML, shorten it without losing the point", "should_trigger": true},
+  {"query": "run a full WCAG 2.2 accessibility audit of my homepage", "should_trigger": false},
+  {"query": "write a caption for this photo for our newsletter", "should_trigger": false},
+  {"query": "give me a Midjourney prompt for a lighthouse at dusk", "should_trigger": false},
+  {"query": "describe this image for me", "should_trigger": false},
+  {"query": "compress and resize my product images for faster page loads", "should_trigger": false},
+  {"query": "check the color contrast of my button text", "should_trigger": false},
+  {"query": "add schema.org ImageObject markup to my gallery page", "should_trigger": false},
+  {"query": "transcribe the text in this scanned PDF page", "should_trigger": false},
+  {"query": "write captions and subtitles for this video", "should_trigger": false},
+  {"query": "improve the SEO title and meta description of my blog post", "should_trigger": false}
+]

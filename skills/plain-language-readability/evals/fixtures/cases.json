@@ -1,0 +1,30 @@
+{
+  "note": "Each case runs scripts/readability.py main() with args (a bare name that exists under evals/fixtures is expanded to its path; {tmp} is a temp directory). 'expect' maps dotted paths into the JSON report (integers index lists) to expected values. 'unchanged' lists fixture files whose bytes must be identical after the run. Expected values were computed by hand where marked.",
+  "cases": [
+    {"name": "hand-computed scores", "args": ["hand_check.md"], "exit": 0,
+     "expect": {"input.words": 15, "input.sentences": 2, "input.syllables": 18, "scores.flesch_reading_ease": 97.7, "scores.fk_grade": 1.5, "scores.avg_sentence_words": 7.5, "input.low_reliability": true, "scores.passive_count": 0}},
+    {"name": "hard notice misses grade 8", "args": ["notice_original.md", "--grade", "8"], "exit": 1,
+     "expect": {"input.words": 144, "input.sentences": 7, "scores.fk_grade": 11.1, "scores.flesch_reading_ease": 52.0, "scores.long_sentence_count": 3, "scores.passive_count": 8, "scores.passive_share": 0.57, "target.met": false, "failures": ["Flesch-Kincaid grade 11.1 is above the target 8.0"], "input.excluded.headings": 1}},
+    {"name": "good rewrite keeps numbers and links", "args": ["notice_original.md", "--rewrite", "notice_good.md", "--jargon", "jargon.txt", "--grade", "8"], "exit": 0,
+     "expect": {"scored": "rewrite", "numbers_preserved": true, "ok": true, "comparison.numbers.missing": [], "comparison.numbers.added": [], "comparison.links.missing": [], "scores.fk_grade": 4.0, "scores.long_sentence_count": 0, "comparison.metrics.fk_grade.before": 11.1, "comparison.metrics.fk_grade.improved": true, "comparison.modals.can.after": 0, "jargon.0.status": "replaced_or_absent", "jargon.3.status": "kept_no_gloss", "target.met": true}},
+    {"name": "bad rewrite changes a number and drops an email", "args": ["notice_original.md", "--rewrite", "notice_bad.md"], "exit": 1,
+     "expect": {"numbers_preserved": false, "ok": false, "comparison.numbers.missing": ["14"], "comparison.numbers.added": ["10"], "comparison.links.missing": ["claims@benefits.example"], "comparison.modals.may.after": 1}},
+    {"name": "spelled-out number is not an error, symbol change is a warning", "args": ["num_orig.md", "--rewrite", "num_spelled.md"], "exit": 0,
+     "expect": {"numbers_preserved": true, "comparison.numbers.spelled_out_in_rewrite": ["3"], "comparison.numbers.missing": []}},
+    {"name": "lists and headings excluded from sentence counts", "args": ["list_heavy.md"], "exit": 0,
+     "expect": {"input.words": 11, "input.sentences": 1, "input.excluded.headings": 2, "input.excluded.list_items": 5, "input.excluded.list_item_words": 27, "scores.passive_count": 1}},
+    {"name": "non-English text refused", "args": ["spanish.md"], "exit": 2, "expect": {}},
+    {"name": "headings and lists only: no sentences", "args": ["headings_only.md"], "exit": 2, "expect": {}},
+    {"name": "missing file", "args": ["does_not_exist.md"], "exit": 2, "expect": {}},
+    {"name": "empty file", "args": ["empty.md"], "exit": 2, "expect": {}},
+    {"name": "refuses --out over the input, even with --force", "args": ["notice_original.md", "--out", "notice_original.md", "--force"], "exit": 2, "expect": {}, "unchanged": ["notice_original.md"]},
+    {"name": "refuses --out over the rewrite, even with --force", "args": ["notice_original.md", "--rewrite", "notice_good.md", "--out", "notice_good.md", "--force"], "exit": 2, "expect": {}, "unchanged": ["notice_good.md"]},
+    {"name": "refuses --out over the jargon file, even with --force", "args": ["notice_original.md", "--jargon", "jargon.txt", "--out", "jargon.txt", "--force"], "exit": 2, "expect": {}, "unchanged": ["jargon.txt"]},
+    {"name": "writes a valid report to a new --out file", "args": ["notice_original.md", "--out", "{tmp}/report.json"], "exit": 0, "expect": {"input.words": 144}, "out_json": "{tmp}/report.json"},
+    {"name": "refuses to replace an existing --out without --force", "args": ["notice_original.md", "--out", "{tmp}/existing.json"], "exit": 2, "expect": {}, "precreate": {"{tmp}/existing.json": "old"}, "content_equals": {"{tmp}/existing.json": "old"}}
+  ],
+  "syllables": {
+    "note": "Counts assigned by hand from the author's knowledge of English. 'chargeback' and the words in SYLLABLE_OVERRIDES were fixed after a first run showed the vowel-group rule miss them, so this list is not an independent accuracy measure.",
+    "words": {"cat": 1, "office": 2, "early": 2, "friday": 2, "close": 1, "please": 1, "table": 2, "little": 2, "happy": 2, "agree": 2, "agreed": 2, "needed": 2, "asked": 1, "used": 1, "wanted": 2, "makes": 1, "boxes": 2, "places": 2, "goes": 1, "water": 2, "information": 4, "application": 4, "payment": 2, "benefit": 3, "eligible": 4, "documentation": 5, "notification": 5, "photosynthesis": 5, "chargeback": 2, "service": 2, "provide": 2, "available": 4, "important": 3, "between": 2, "through": 1, "queue": 1, "made": 1, "there": 1, "where": 1, "hours": 1, "deadline": 2, "because": 2, "before": 2, "example": 3, "people": 2, "reimbursement": 4, "required": 2, "receive": 2, "apply": 2, "applied": 2, "notice": 2, "complete": 2, "completed": 3, "decision": 3, "appointment": 3, "insurance": 3, "language": 2, "minutes": 2, "states": 1, "cases": 2, "change": 1, "changes": 2, "changed": 1, "guarantee": 3, "unless": 2, "whole": 1, "while": 1}
+  }
+}

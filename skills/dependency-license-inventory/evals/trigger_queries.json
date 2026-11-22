@@ -1,0 +1,22 @@
+[
+  {"query": "can you list the licenses of all the packages in my node_modules? I need it for a customer questionnaire", "should_trigger": true},
+  {"query": "which of our python dependencies are GPL or have no license at all", "should_trigger": true},
+  {"query": "make me an open source license inventory of this repo's dependencies", "should_trigger": true},
+  {"query": "I need the input for a third-party notices file, what license does each installed package declare", "should_trigger": true},
+  {"query": "scan site-packages and tell me which packages don't declare a license in METADATA", "should_trigger": true},
+  {"query": "here's our policy: MIT and Apache ok, LGPL review, GPL flag. run it over the dependencies and show what trips it", "should_trigger": true},
+  {"query": "our lawyer wants a spreadsheet of dependency licenses, can you pull the data from package.json files", "should_trigger": true},
+  {"query": "do any of the npm packages we ship say AGPL or SSPL in their package.json?", "should_trigger": true},
+  {"query": "I have go.sum and package-lock.json only, tell me which dependency licenses are unknown", "should_trigger": true},
+  {"query": "audit dependency licences before the due diligence review, just what's declared locally, no web lookups", "should_trigger": true},
+  {"query": "is it legal to ship GPL code inside our proprietary app?", "should_trigger": false},
+  {"query": "which of my dependencies have known security vulnerabilities", "should_trigger": false},
+  {"query": "what breaks if I upgrade react from 17 to 18, map the impact on our code", "should_trigger": false},
+  {"query": "look up the docs for the requests library's retry options", "should_trigger": false},
+  {"query": "write an Apache 2.0 LICENSE file and headers for my new repo", "should_trigger": false},
+  {"query": "which license should I pick for my open source library, MIT or GPL?", "should_trigger": false},
+  {"query": "generate a CycloneDX SBOM with hashes and purls for the container image", "should_trigger": false},
+  {"query": "pin all the versions in requirements.txt and tell me which are outdated", "should_trigger": false},
+  {"query": "review my Terraform modules for unpinned provider versions", "should_trigger": false},
+  {"query": "read the license agreement in this PDF and summarise the termination clause", "should_trigger": false}
+]

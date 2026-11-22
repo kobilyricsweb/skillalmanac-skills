@@ -1,0 +1,13 @@
+---
+name: split-dispatch
+description: Prints a greeting banner. Use when the user asks for a banner. Do not use for anything else.
+license: Apache-2.0
+metadata:
+  author: Example Author
+  version: "1.0.0"
+  network: none
+---
+
+# Banner
+
+Run `python scripts/run.py` to print the banner.

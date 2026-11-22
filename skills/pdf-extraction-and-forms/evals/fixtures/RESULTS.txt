@@ -1,0 +1,18 @@
+PASS pdf_inspect text_flate.pdf
+PASS pdf_inspect text_plain_2pages.pdf
+PASS pdf_inspect scanned.pdf
+PASS pdf_inspect scanned_ocr.pdf
+PASS pdf_inspect mixed.pdf
+PASS pdf_inspect form_filled.pdf
+PASS pdf_inspect form_xfa.pdf
+PASS pdf_inspect encrypted.pdf
+PASS pdf_inspect objstm.pdf
+PASS pdf_inspect not_a_pdf.pdf
+PASS pdf_inspect missing.pdf
+PASS table_check invoice_good.csv --rows 3 --total-row --sum Amount=1234.50
+PASS table_check invoice_bad.csv --rows 7 --total-row --sum Amount=1300
+PASS table_check missing.csv
+PASS form_verify mapping.json @form_filled --original @form_blank
+PASS form_verify mapping.json @form_filled_bad --original @form_blank
+PASS form_verify mapping.json @form_blank --original @form_blank
+17/17 cases passed

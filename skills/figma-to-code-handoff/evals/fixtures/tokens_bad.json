@@ -1,0 +1,35 @@
+{
+  "$modes": ["light", "dark"],
+  "color": {
+    "$type": "color",
+    "Brand Blue": { "$value": "#0b5fff" },
+    "brand": {
+      "primary": { "$value": "#0B5FFF" },
+      "secondary": { "$value": "#0b5fff" }
+    },
+    "text": {
+      "default": { "$value": "{color.brand.missing}" }
+    },
+    "surface": {
+      "default": {
+        "$value": "#fff",
+        "$extensions": { "modes": { "light": "#ffffff", "contrast": "#000000" } }
+      }
+    },
+    "bg": { "$value": "{color.bg2}" },
+    "bg2": { "$value": "{color.bg}" },
+    "accent_color": { "$value": "red" }
+  },
+  "space": {
+    "$type": "dimension",
+    "md": { "$value": "16" },
+    "gap": { "$value": "{color.brand.primary}" }
+  },
+  "size": {
+    "lg": { "$value": "24px" }
+  },
+  "legacy": {
+    "$type": "number",
+    "x": { "value": 3 }
+  }
+}

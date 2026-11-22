@@ -1,0 +1,45 @@
+{
+  "skill_name": "prompt-writing",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/prompt_lint.py or a plain string check on the saved output; [judge] assertions need a blind grader. The linter is the skill's own tool, so each task has judge assertions that measure something it does not control.",
+  "evals": [
+    {
+      "id": "t1-weak-summarizer",
+      "prompt": "This summarizer prompt gives me different output every time and my parser breaks. Fix it and save the new prompt to prompt_fixed.md, then give me a short test plan.",
+      "files": ["evals/files/t1-weak-summarizer/prompt.md"],
+      "assertions": [
+        "[script] prompt_lint.py lint prompt_fixed.md prints verdict pass",
+        "[script] prompt_fixed.md contains both {{notes}} and {{team_name}}, and does not contain 'try to', 'if possible' or 'ideally' (case-insensitive)",
+        "[judge] The output contract names a concrete format (for example JSON with named fields), a numeric length limit, and the exact output when the notes are empty or unclear",
+        "[judge] The contradiction between 'do not ask questions' and 'ask the user what they meant' is resolved one way, with the behaviour stated",
+        "[judge] The reply includes a test plan with at least 10 cases, a stated mix of typical, edge and adversarial cases, and numeric pass bars",
+        "[judge] The reply says the prompt has not been run against a model"
+      ]
+    },
+    {
+      "id": "t2-new-classifier",
+      "prompt": "Write the prompt described in this brief, save it to prompt.md, and add the test plan to prompt.eval.md.",
+      "files": ["evals/files/t2-new-classifier/brief.md"],
+      "assertions": [
+        "[script] prompt_lint.py lint prompt.md prints verdict pass",
+        "[script] prompt.md contains each label: shipping, product_quality, website_bug, pricing, other",
+        "[script] prompt.md has no placeholder that is not described (lint check undefined_placeholders is pass or na)",
+        "[judge] The prompt marks the feedback text as data whose instructions are not followed, and the injection attempt in the brief appears as a case in prompt.eval.md",
+        "[judge] The output contract is JSON only, has a fallback output for empty or non-text input, and says the quote must be copied from the feedback",
+        "[judge] Spanish input and one-word input are covered by cases; pass criteria have numbers and say how many runs per case"
+      ]
+    },
+    {
+      "id": "t3-email-triage",
+      "prompt": "This agent reads inbound email and has send and delete tools. Make it safe against instructions hidden in emails. Save to prompt_hardened.md and tell me what the prompt alone cannot fix.",
+      "files": ["evals/files/t3-email-triage/prompt.md"],
+      "assertions": [
+        "[script] prompt_lint.py lint prompt_hardened.md prints verdict pass",
+        "[script] prompt_hardened.md still contains {{email_text}} and delimiters around it (an opening and a closing marker on separate lines)",
+        "[judge] The task statement and output contract come after the email block",
+        "[judge] The reply says the prompt cannot enforce permissions and recommends a limit or human confirmation outside the prompt for delete and send",
+        "[judge] The reply proposes a staged or schema-based design (the model returns a decision, code performs the action) or explains why it did not",
+        "[judge] The test plan includes at least five attack cases covering a direct override, a quoted instruction, a delimiter escape, another language and an exfiltration request"
+      ]
+    }
+  ]
+}

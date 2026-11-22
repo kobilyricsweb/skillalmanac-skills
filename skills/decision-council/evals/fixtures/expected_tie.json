@@ -1,0 +1,114 @@
+{
+  "ok": true,
+  "command": "score",
+  "scale": {
+    "min": 1.0,
+    "max": 5.0
+  },
+  "criteria": [
+    {
+      "name": "Impact",
+      "weight_raw": 5.0,
+      "weight": 0.5,
+      "direction": "benefit"
+    },
+    {
+      "name": "Effort",
+      "weight_raw": 3.0,
+      "weight": 0.3,
+      "direction": "cost"
+    },
+    {
+      "name": "Risk",
+      "weight_raw": 2.0,
+      "weight": 0.2,
+      "direction": "cost"
+    }
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "option": "X",
+      "score": 4.0,
+      "score_pct": 75.0,
+      "contributions": {
+        "Impact": 2.0,
+        "Effort": 1.2,
+        "Risk": 0.8
+      }
+    },
+    {
+      "rank": 1,
+      "option": "Y",
+      "score": 4.0,
+      "score_pct": 75.0,
+      "contributions": {
+        "Impact": 2.5,
+        "Effort": 0.9,
+        "Risk": 0.6
+      }
+    },
+    {
+      "rank": 3,
+      "option": "Z",
+      "score": 2.5,
+      "score_pct": 37.5,
+      "contributions": {
+        "Impact": 1.0,
+        "Effort": 0.9,
+        "Risk": 0.6
+      }
+    }
+  ],
+  "winner": {
+    "option": null,
+    "unique": false,
+    "tied_for_first": [
+      "X",
+      "Y"
+    ]
+  },
+  "margin": {
+    "leader_minus_runner_up": 0.0,
+    "pct_of_scale": 0.0
+  },
+  "tie_report": {
+    "exact_ties": [
+      {
+        "rank": 1,
+        "options": [
+          "X",
+          "Y"
+        ],
+        "resolved_by": {
+          "criterion": "Impact",
+          "favours": [
+            "Y"
+          ]
+        }
+      }
+    ],
+    "near_ties": [],
+    "near_tie_threshold_pct": 2.0
+  },
+  "sensitivity": {
+    "label": "tied",
+    "top_tied": true,
+    "per_criterion": [],
+    "smallest_flip": null,
+    "equal_weights_leaders": [
+      "X"
+    ],
+    "equal_weights_same_winner": false
+  },
+  "dominated": [
+    {
+      "option": "Z",
+      "dominated_by": [
+        "X",
+        "Y"
+      ]
+    }
+  ],
+  "warnings": []
+}

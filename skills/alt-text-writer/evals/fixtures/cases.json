@@ -1,0 +1,76 @@
+{
+  "note": "Expected values were worked out by hand from the fixture files before they were compared with script output. flags_by_line maps source line to the sorted flag list; only lines with flags are listed.",
+  "cases": [
+    {
+      "args": ["bad_page.html"],
+      "exit": 1,
+      "expect": {
+        "images_total": 15,
+        "images_flagged": 15,
+        "needs_user_description": 15,
+        "verdict": "findings",
+        "counts_by_flag": {
+          "caption_duplicate": 1, "complex_no_long_description": 1, "decorative_candidate": 2,
+          "empty_alt_in_link": 1, "filename_alt": 1, "generic_alt": 1, "long_alt": 1, "missing_alt": 4,
+          "presentation_role_with_alt": 1, "redundant_prefix": 1, "repeated_alt": 2, "title_without_alt": 1
+        },
+        "flags_by_line": {
+          "6": ["filename_alt"], "7": ["missing_alt"], "8": ["generic_alt"], "9": ["redundant_prefix"],
+          "10": ["decorative_candidate"], "11": ["empty_alt_in_link"], "13": ["complex_no_long_description"],
+          "14": ["caption_duplicate"], "15": ["long_alt"], "16": ["missing_alt", "title_without_alt"],
+          "17": ["missing_alt"], "18": ["repeated_alt"], "19": ["repeated_alt"], "20": ["missing_alt"],
+          "21": ["decorative_candidate", "presentation_role_with_alt"]
+        }
+      }
+    },
+    {
+      "args": ["good_page.html"],
+      "exit": 0,
+      "expect": {"images_total": 6, "images_flagged": 0, "needs_user_description": 0, "verdict": "clean", "counts_by_flag": {}, "flags_by_line": {}}
+    },
+    {
+      "args": ["mixed.md"],
+      "exit": 1,
+      "expect": {
+        "images_total": 7,
+        "needs_user_description": 5,
+        "counts_by_flag": {"caption_duplicate": 1, "complex_no_long_description": 2, "empty_alt_in_link": 1, "generic_alt": 1, "title_without_alt": 1},
+        "flags_by_line": {
+          "7": ["generic_alt"], "9": ["empty_alt_in_link"], "11": ["caption_duplicate", "complex_no_long_description"],
+          "18": ["complex_no_long_description"], "20": ["title_without_alt"]
+        }
+      }
+    },
+    {
+      "args": ["no_images.md"],
+      "exit": 0,
+      "expect": {"images_total": 0, "verdict": "clean", "counts_by_flag": {}}
+    },
+    {
+      "args": ["bad_page.html", "--described", "described.json"],
+      "exit": 1,
+      "expect": {
+        "needs_user_description": 10,
+        "proposals_total": 6,
+        "proposals_failing": 2,
+        "proposal_flags": {"/img/office.jpg": ["redundant_prefix"], "/img/revenue-chart.png": ["complex_without_long_description"]},
+        "unmatched_descriptions": ["/img/nowhere.png"]
+      }
+    },
+    {
+      "args": ["good_page.html", "--max-length", "20"],
+      "exit": 1,
+      "expect": {"counts_by_flag": {"long_alt": 3}, "flags_by_line": {"6": ["long_alt"], "9": ["long_alt"], "11": ["long_alt"]}}
+    },
+    {
+      "args": ["missing_file.html"],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "args": ["bad_page.html", "--described", "bad_described.json"],
+      "exit": 2,
+      "expect": {}
+    }
+  ]
+}

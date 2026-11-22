@@ -1,0 +1,45 @@
+{
+  "skill_name": "technical-docs-writer",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/docs_audit.py or a plain check; [judge] assertions need a blind grader. docs_audit.py is the skill's own tool, so judge assertions measure something it does not control.",
+  "evals": [
+    {
+      "id": "t1-readme-verified-examples",
+      "prompt": "Write a README.md for this small tool. The examples in it must be real output, not guesses. Save it as README.md next to textstat.py.",
+      "files": ["evals/files/t1-readme/textstat.py", "evals/files/t1-readme/sample.txt"],
+      "assertions": [
+        "[script] docs_audit.py README.md exits 0 with --today set to the run date",
+        "[script] README.md contains the exact text 'words: 5  lines: 2  chars: 24' and '{\"words\": 5, \"lines\": 2, \"chars\": 24}'",
+        "[script] every fenced block in README.md has a language tag (docs_audit.py reports no code-no-language)",
+        "[judge] The transcript shows textstat.py was actually executed on sample.txt before the output was pasted",
+        "[judge] The README states the exit codes 0 and 2 and does not claim any option the script lacks",
+        "[judge] The reply ends with the fixed report that lists what was run and what was not"
+      ]
+    },
+    {
+      "id": "t2-fix-docs-folder",
+      "prompt": "Audit the docs in evals/fixtures/docs_bad and fix everything the audit reports. Today is 2026-11-21. Where a fix needs a fact you cannot check, say so instead of inventing it.",
+      "files": ["evals/fixtures/docs_bad"],
+      "assertions": [
+        "[script] docs_audit.py on the fixed folder with --today 2026-11-21 exits 0 (no error-severity findings)",
+        "[script] No fenced block without a language tag remains and no relative link is broken",
+        "[script] The string AKIAQ7ZR2LMN5TPXW4DK appears nowhere in the folder",
+        "[judge] No 'Last verified' date newer than the run date is invented to silence stale-verified; any date that was re-verified is backed by a command that was run",
+        "[judge] The report tells the user the exposed key must be revoked, not only removed from the file",
+        "[judge] Missing runbook sections (rollback, escalation) contain real content from the folder or are marked as unknown for the owner to fill, not made-up contacts"
+      ]
+    },
+    {
+      "id": "t3-runbook-from-incident",
+      "prompt": "Turn these incident notes into a runbook for the sessions cache problem. Save it as runbooks/sessions-cache-eviction.md.",
+      "files": ["evals/files/t3-runbook/incident_notes.md"],
+      "assertions": [
+        "[script] docs_audit.py runbooks/sessions-cache-eviction.md detects doc_type runbook and reports no missing-section",
+        "[script] The file contains 'redis-cli -h sessions-1 info stats' and 'config set maxmemory 4gb'",
+        "[script] The file contains a 'Last verified' line; with --today set to the run date there is no stale-verified or future-verified-date finding",
+        "[judge] The open question about persisting maxmemory is carried as an open item, not turned into an invented command",
+        "[judge] The rollback section does not claim that rolling back the deploy is the right fix, since the notes say that was untested",
+        "[judge] Each step has a command, an expected result and what to do if the result differs, or says it is unknown"
+      ]
+    }
+  ]
+}

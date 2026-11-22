@@ -1,0 +1,5 @@
+# Bin Collection Changes From 4 January 2027
+
+Pursuant to the revised waste collection schedule that has been approved by the Council, residents whose properties are located within zones A through D will experience a modification to their collection day, which will commence on 4 January 2027 and will remain in effect until further notification is provided. Households that have been allocated a green bin are required to present it at the kerbside no later than 7:00 on the designated day, as bins that are presented after this time may not be collected. Residents who are unable to comply with the revised arrangements, for instance on account of a disability, should contact the Waste Team on 020 7946 0123 or at waste@council.example prior to 18 December 2026 in order that an assisted collection can be arranged. Missed collections must be reported within 48 hours, and a fee of £35 will be charged for bulky items that are not booked in advance.
+
+Your new collection day is shown on the enclosed card.

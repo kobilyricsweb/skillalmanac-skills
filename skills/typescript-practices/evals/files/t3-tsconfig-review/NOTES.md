@@ -1,0 +1,1 @@
+This is a Node 22 library published to npm, bundler-free, built with tsc. About 400 files, nothing is strict today. I want the strictest sensible config and also need to know: for our `Options` (an object shape that other packages extend) and `Id` (a string-or-number alias) should I use type or interface?

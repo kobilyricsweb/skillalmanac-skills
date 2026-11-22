@@ -1,0 +1,17 @@
+{"output": "{\"title\": \"Solid kettle\", \"rating\": 4, \"sentiment\": \"positive\", \"tags\": [\"kitchen\", \"fast-boil\"]}"}
+{"output": "```json\n{\"title\": \"Quiet blender\", \"rating\": 5, \"sentiment\": \"positive\", \"tags\": [\"quiet\"]}\n```"}
+{"output": "Here is the review summary:\n{\"title\": \"Okay toaster\", \"rating\": 3, \"sentiment\": \"neutral\", \"tags\": [\"toaster\"]}\nHope that helps!"}
+{"output": "{\"title\": \"Loud fan\", \"rating\": 2, \"sentiment\": \"negative\", \"tags\": [\"noise\",]}"}
+{"output": "{\"title\": \"Fine lamp\", \"rating\": \"4\", \"sentiment\": \"positive\", \"tags\": [\"lamp\"]}"}
+{"output": "{\"title\": \"Sturdy pan\", \"rating\": 5, \"tags\": [\"pan\"]}"}
+{"output": "{\"title\": \"Neat mug\", \"rating\": 4, \"sentiment\": \"positive\", \"tags\": [\"mug\"], \"notes\": \"arrived early\"}"}
+{"output": "{\"title\": \"Great desk\", \"rating\": 7, \"sentiment\": \"positive\", \"tags\": [\"desk\"]}"}
+{"output": "{\"title\": \"Odd chair\", \"rating\": 3, \"sentiment\": \"great\", \"tags\": [\"chair\"]}"}
+{"output": "{\"title\": \"Plain cup\", \"rating\": 3, \"sentiment\": \"neutral\", \"tags\": []}"}
+{"output": "{\"title\": \"Tidy rack\", \"rating\": 4, \"sentiment\": \"positive\", \"tags\": [\"Kitchen Gear\"]}"}
+{"output": "{\"title\": \"Cut off\", \"rating\": 3, \"sentiment\": \"neutral\", \"tags\": [\"a\","}
+{"output": "I'm sorry, I can't help with that."}
+{"output": "{\"title\": \"A\", \"title\": \"B\", \"rating\": 3, \"sentiment\": \"neutral\", \"tags\": [\"x\"]}"}
+{"output": "{'title': 'Old mug', 'rating': 3, 'sentiment': 'neutral', 'tags': ['mug']}"}
+{"output": ""}
+

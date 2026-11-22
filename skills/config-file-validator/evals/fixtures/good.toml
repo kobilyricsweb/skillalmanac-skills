@@ -1,0 +1,8 @@
+mode = "prod"
+debug = false
+timeout_seconds = 30
+tags = ["web", "blue"]
+
+[server]
+host = "0.0.0.0"
+port = 8080

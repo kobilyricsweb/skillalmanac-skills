@@ -1,0 +1,124 @@
+{
+  "note": "Expected values were derived by hand from the fixture contents before the script was run. Each case runs scripts/plan_check.py on a fixture and compares the exit code and the listed fields. codes_error and codes_warning are the finding codes in output order.",
+  "cases": [
+    {
+      "file": "good.json",
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "steps": 4,
+        "counts": {
+          "error": 0,
+          "warning": 0
+        },
+        "day_totals": {
+          "mon": 45,
+          "tue": 55
+        },
+        "codes_error": [],
+        "codes_warning": []
+      }
+    },
+    {
+      "file": "bad.json",
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "steps": 7,
+        "counts": {
+          "error": 9,
+          "warning": 3
+        },
+        "day_totals": {
+          "mon": 160,
+          "tue": 50
+        },
+        "codes_error": [
+          "first_action_not_concrete",
+          "first_action_too_long",
+          "step_not_concrete",
+          "step_over_limit",
+          "step_not_concrete",
+          "missing_context",
+          "missing_energy",
+          "day_overbooked",
+          "bad_next_action"
+        ],
+        "codes_warning": [
+          "step_under_min",
+          "verb_not_recognized",
+          "day_too_many_steps"
+        ]
+      }
+    },
+    {
+      "file": "good.md",
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "steps": 3,
+        "counts": {
+          "error": 0,
+          "warning": 0
+        },
+        "day_totals": {
+          "sat": 45
+        },
+        "codes_error": [],
+        "codes_warning": []
+      }
+    },
+    {
+      "file": "no_first.md",
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "steps": 2,
+        "counts": {
+          "error": 1,
+          "warning": 1
+        },
+        "day_totals": {
+          "1": 40
+        },
+        "codes_error": [
+          "missing_first_action"
+        ],
+        "codes_warning": [
+          "no_next_action"
+        ]
+      }
+    },
+    {
+      "file": "empty.md",
+      "exit": 2,
+      "expect": null
+    },
+    {
+      "file": "gather_two_high.json",
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "steps": 2,
+        "counts": {
+          "error": 1,
+          "warning": 1
+        },
+        "day_totals": {
+          "mon": 60
+        },
+        "codes_error": [
+          "first_action_not_concrete"
+        ],
+        "codes_warning": [
+          "two_high_energy_steps_in_day"
+        ]
+      }
+    },
+    {
+      "file": "does_not_exist.md",
+      "exit": 2,
+      "expect": null
+    }
+  ]
+}

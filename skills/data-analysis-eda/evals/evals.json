@@ -1,0 +1,48 @@
+{
+  "skill_name": "data-analysis-eda",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions are plain string or JSON checks on report.md or on the profile JSON and can fail for a run that ignores the skill; [judge] assertions need a blind grader. The skill's own script is the profiler, so the judge assertions are the measure the skill does not control. Reference facts for the inputs are in evals/fixtures/cases.json (messy.csv is the same file as t1 and t3 customers.csv).",
+  "evals": [
+    {
+      "id": "t1-churn-prep",
+      "prompt": "Here is customers.csv. I want to build a churn model next week. Do an exploratory analysis first and save a report to report.md. Do not clean the file.",
+      "files": ["evals/files/t1-churn-prep/customers.csv"],
+      "assertions": [
+        "[script] report.md states 36 rows and 9 columns",
+        "[script] report.md mentions 999 and the column age, and calls 999 a likely missing-value code or sentinel",
+        "[script] report.md names cancel_reason as a leakage risk and churned as the outcome column",
+        "[script] report.md does not contain the words 'causes', 'drives' or 'proves' (case-insensitive)",
+        "[script] customers.csv is byte-identical after the run",
+        "[judge] Each finding has a claim, evidence with counts, a concrete caveat and a status; no finding is 'more data would help' as its only caveat",
+        "[judge] The report notes the zip column holds codes with leading zeros, the region spelling variant (west, West with a trailing space), and monthly_spend and annual_spend as redundant (r about 1) without proposing to delete any row silently",
+        "[judge] The report ends with a Not checked list and numbered questions for the data owner"
+      ]
+    },
+    {
+      "id": "t2-orders-export",
+      "prompt": "orders.csv is a raw export from our order system. Profile it and tell me what I need to know before I load it anywhere. Save the answer to report.md.",
+      "files": ["evals/files/t2-orders-export/orders.csv"],
+      "assertions": [
+        "[script] report.md says 2 rows were excluded as bad and gives lines 12 and 15",
+        "[script] report.md says 18 rows were profiled",
+        "[script] report.md states that the order_date values can be read day-first or month-first and gives a different range for each reading (2024-01-02 to 2024-04-01 month-first; 2024-01-02 to 2024-12-03 day-first)",
+        "[script] report.md mentions the status spelling variant shipped and Shipped",
+        "[judge] The report does not guess which date order is right and asks the owner to confirm",
+        "[judge] The negative amount (-20.00) and the two amounts written with thousands separators are mentioned as coding or integrity observations, not silently fixed",
+        "[judge] The one missing status is reported with its count and the report does not say it is missing at random"
+      ]
+    },
+    {
+      "id": "t3-churn-driver",
+      "prompt": "Look at customers.csv and tell me what drives churn. I need a one-line answer for my boss.",
+      "files": ["evals/files/t3-churn-driver/customers.csv"],
+      "assertions": [
+        "[script] The reply does not state that any column drives, causes or leads to churn",
+        "[script] The reply mentions cancel_reason as only filled for churned customers (or as a leakage candidate)",
+        "[script] The reply includes the counts 12 churned and 24 not churned (or 33.3% and 66.7%)",
+        "[judge] The reply gives a usable one-line answer for the boss that is phrased as an association with a caveat, and explains briefly why a cause cannot be named from this file",
+        "[judge] The reply does not present cancel_reason as the answer to what drives churn",
+        "[judge] The reply says what additional data or check would be needed (timing of events, an experiment or a model with a holdout) without running or promising a model"
+      ]
+    }
+  ]
+}

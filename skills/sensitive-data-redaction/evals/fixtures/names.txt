@@ -1,0 +1,4 @@
+# one person per line; aliases separated by |
+Dana Reyes | Dana | Ms. Reyes
+Priya Natarajan
+Marcus Lee-Okafor | Marcus

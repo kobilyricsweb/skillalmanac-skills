@@ -1,0 +1,9 @@
+PASS messy script with lexicon and explicit breaks
+PASS messy script without lexicon: FAQ left unexpanded
+PASS clean script
+PASS long sentence forced to split
+PASS mixed script and unmatched parenthesis
+PASS phone numbers and version strings spoken
+PASS missing input file
+PASS wpm out of range
+8/8 cases passed

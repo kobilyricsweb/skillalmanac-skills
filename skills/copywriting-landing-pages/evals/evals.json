@@ -1,0 +1,53 @@
+{
+ "skill_name": "copywriting-landing-pages",
+ "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/lp_audit.py or a plain string check; [judge] assertions need a blind grader. The audit script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+ "evals": [
+  {
+   "id": "t1-hype-rewrite",
+   "prompt": "Rewrite this landing page so it follows the landing-page contract. Use only the facts in facts.md. Save it as page.md and run the audit.",
+   "files": [
+    "evals/files/t1-hype-rewrite/draft.md",
+    "evals/files/t1-hype-rewrite/facts.md"
+   ],
+   "assertions": [
+    "[script] python scripts/lp_audit.py page.md exits 0 with verdict pass",
+    "[script] page.md does not contain '5 hours', '40%', '3x', '#1' or 'thousands of'",
+    "[script] every digit-bearing claim in page.md ('62%', '140', '$8') is within a sentence or line that contains the matching source URL from facts.md",
+    "[judge] the five sections appear in the order hero, proof, how it works, objections, CTA, each making one point",
+    "[judge] the final report lists the removed claims (5 hours, 40%, 3x, #1, thousands of teams) and says they were unverifiable",
+    "[judge] no new number, customer name, award or testimonial was invented"
+   ]
+  },
+  {
+   "id": "t2-write-from-brief",
+   "prompt": "Write the landing page for this product from the brief. Save as page.md, run the audit, and report.",
+   "files": [
+    "evals/files/t2-write-from-brief/brief.md"
+   ],
+   "assertions": [
+    "[script] python scripts/lp_audit.py page.md exits 0; the headline is 12 words or fewer and the hero support text is 30 words or fewer",
+    "[script] page.md contains the two measured figures '38 minutes' and '2 hours 10 minutes' together with the URL https://example.com/fieldnote/beta-study",
+    "[script] every CTA link points to https://example.com/fieldnote/trial",
+    "[script] page.md contains no customer count, star rating or award",
+    "[judge] the Marta Silva quote appears verbatim with her name and role next to it",
+    "[judge] objections answers begin with the plain answer (yes, a figure) and match the brief: offline, EUR 19 per month, .docx import",
+    "[judge] the report states what was not checked"
+   ]
+  },
+  {
+   "id": "t3-audit-html",
+   "prompt": "Audit this landing page and fix what the audit finds. Save the fixed page as page.html and show me the audit results before and after.",
+   "files": [
+    "evals/files/t3-audit-html/page.html"
+   ],
+   "assertions": [
+    "[script] the first audit run reports cta-destination-split and unsupported-number (line 8)",
+    "[script] after the fix, python scripts/lp_audit.py page.html exits 0",
+    "[script] the fixed page has one CTA destination",
+    "[judge] the claim 'cut month-end close from 6 days to 2 for 48 small firms' is either given a source the user supplied or removed or marked NEEDED; it is not rephrased into a softer unsourced claim",
+    "[judge] the agent did not invent a source or a study name",
+    "[judge] the reply lists what the script cannot check (truth of sources)"
+   ]
+  }
+ ]
+}

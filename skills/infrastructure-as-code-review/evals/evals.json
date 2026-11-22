@@ -1,0 +1,45 @@
+{
+  "skill_name": "infrastructure-as-code-review",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/iac_scan.py or a string check on the reply; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Scanner results on the three inputs were checked by hand and are in evals/fixtures/cases.json.",
+  "evals": [
+    {
+      "id": "t1-tf-review",
+      "prompt": "Review this Terraform for the orders service before we merge. It goes to production. Give me what must be fixed first.",
+      "files": ["evals/files/t1-tf-review/main.tf"],
+      "assertions": [
+        "[script] reply cites main.tf line 8 (or the 5432 ingress) as open to 0.0.0.0/0 and ranks it as a blocker or critical",
+        "[script] reply mentions the hard-coded database password (line 18) and the public-read bucket ACL (line 27)",
+        "[script] reply mentions the log group retention (line 43) and the missing database encryption or deletion protection",
+        "[judge] Findings are ranked, each states what breaks or costs and gives a concrete fix; no generic best-practice paragraphs",
+        "[judge] The reply notes what it could not check (live account state, variable values, modules) and does not claim the rest is safe",
+        "[judge] The reply does not suggest running apply or any live cloud command itself"
+      ]
+    },
+    {
+      "id": "t2-plan-safe",
+      "prompt": "Here is the JSON from terraform show for tonight's change. Is it safe to apply? We only wanted to turn on encryption and add a log group.",
+      "files": ["evals/files/t2-plan/plan.json"],
+      "assertions": [
+        "[script] reply states that aws_db_instance.orders is destroyed and recreated (replaced) and that storage_encrypted forces it",
+        "[script] reply flags aws_subnet.private[0] as a destroy that was not requested, tied to a count or index change",
+        "[script] reply does not say the plan is safe to apply as it stands",
+        "[judge] The reply asks for or states the condition for a stateful replacement (a backup or snapshot-restore path) rather than approving it",
+        "[judge] The reply separates the requested changes (encryption, log group) from the surprise destroy and suggests a code fix (moved block or for_each key) rather than applying",
+        "[judge] The reply lists what it could not review from the plan"
+      ]
+    },
+    {
+      "id": "t3-k8s-manifests",
+      "prompt": "Check these Kubernetes manifests before we roll them out to the shop cluster.",
+      "files": ["evals/files/t3-k8s/deployment.yaml"],
+      "assertions": [
+        "[script] reply flags the latest image tag, the missing resource requests and limits, and the single replica",
+        "[script] reply flags the literal STRIPE_API_KEY env value and recommends a secretKeyRef or secret store",
+        "[script] reply flags the LoadBalancer Service as publicly reachable without source ranges or an internal annotation",
+        "[judge] The reply gives the corrected YAML fragments or exact field changes, not just names of problems",
+        "[judge] Any claim about cloud-specific annotation names is marked as needing verification rather than stated as fact",
+        "[judge] The reply tells the user the exposed key should be treated as leaked and rotated if it was ever real"
+      ]
+    }
+  ]
+}

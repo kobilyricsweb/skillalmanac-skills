@@ -1,0 +1,26 @@
+{
+  "note": "Expected values were derived by reading each fixture by hand (counting nodes, edges, orphans and defects in the source) before being saved. Each case runs scripts/mermaid_check.py on a file in evals/fixtures/ and compares exit code, verdict and, per diagram, type, nodes, edges, sorted finding codes, orphans and duplicate_ids.",
+  "cases": [
+    {"file": "good_flow.mmd", "exit": 0, "verdict": "pass",
+     "diagrams": [{"type": "flowchart", "nodes": 7, "edges": 6, "codes": [], "orphans": [], "duplicate_ids": []}]},
+    {"file": "bad_flow.mmd", "exit": 1, "verdict": "fail",
+     "diagrams": [{"type": "flowchart", "nodes": 6, "edges": 3,
+                   "codes": ["duplicate_id", "duplicate_label", "no_direction", "orphan_node", "risky_unquoted_label", "unbalanced_subgraph"],
+                   "orphans": ["api2", "lonely"], "duplicate_ids": ["api", "api2", "db", "db_copy"]}]},
+    {"file": "dense_flow.mmd", "exit": 1, "verdict": "fail",
+     "diagrams": [{"type": "flowchart", "nodes": 26, "edges": 25, "codes": ["too_dense"], "orphans": [], "duplicate_ids": []}]},
+    {"file": "good_seq.mmd", "exit": 0, "verdict": "pass",
+     "diagrams": [{"type": "sequence", "nodes": 4, "edges": 7, "codes": [], "orphans": [], "duplicate_ids": []}]},
+    {"file": "bad_seq.mmd", "exit": 1, "verdict": "fail",
+     "diagrams": [{"type": "sequence", "nodes": 4, "edges": 3,
+                   "codes": ["orphan_node", "unbalanced_activation", "unbalanced_block", "undeclared_participant"],
+                   "orphans": ["Audit"], "duplicate_ids": []}]},
+    {"file": "mixed_levels.md", "exit": 0, "verdict": "warn",
+     "diagrams": [{"type": "flowchart", "nodes": 5, "edges": 4, "codes": ["mixed_levels"], "orphans": [], "duplicate_ids": []},
+                  {"type": "classDiagram", "nodes": 0, "edges": 0, "codes": ["unsupported_type"], "orphans": [], "duplicate_ids": []}]},
+    {"file": "one_symbol.mmd", "exit": 0, "verdict": "warn",
+     "diagrams": [{"type": "flowchart", "nodes": 2, "edges": 1, "codes": ["mixed_levels"], "orphans": [], "duplicate_ids": []}]},
+    {"file": "empty.mmd", "exit": 2, "verdict": null, "diagrams": []},
+    {"file": "missing_file.mmd", "exit": 2, "verdict": null, "diagrams": []}
+  ]
+}

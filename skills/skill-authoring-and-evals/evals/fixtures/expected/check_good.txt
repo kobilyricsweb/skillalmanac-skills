@@ -1,0 +1,4 @@
+OK    summary              no ERROR findings
+
+RESULT: 0 error(s), 0 warning(s). Form only: run the trigger and task evals before trusting the skill.
+[exit 0]

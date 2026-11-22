@@ -1,0 +1,141 @@
+{
+ "note": "Each case runs scripts/android_scan.py from the evals/fixtures folder on the paths given and compares the exit code, the summary, files_scanned, skipped and the list of [file, line, rule, severity, confidence]. Expected values were derived by reading each fixture with numbered lines (see VERIFICATION.md), before the script was run on it.",
+ "cases": [
+  {
+   "args": ["bad/GlobalScopeUse.kt"],
+   "exit": 1,
+   "summary": {"warn": 2, "info": 0},
+   "files_scanned": 1,
+   "findings": [
+    ["bad/GlobalScopeUse.kt", 13, "global-scope", "warn", "high"],
+    ["bad/GlobalScopeUse.kt", 16, "global-scope", "warn", "high"]
+   ]
+  },
+  {
+   "args": ["bad/BlockingViewModel.kt"],
+   "exit": 1,
+   "summary": {"warn": 1, "info": 0},
+   "files_scanned": 1,
+   "findings": [
+    ["bad/BlockingViewModel.kt", 9, "runblocking-in-ui", "warn", "high"]
+   ]
+  },
+  {
+   "args": ["bad/BlockingHelper.kt"],
+   "exit": 0,
+   "summary": {"warn": 0, "info": 1},
+   "files_scanned": 1,
+   "findings": [
+    ["bad/BlockingHelper.kt", 7, "runblocking-in-ui", "info", "medium"]
+   ]
+  },
+  {
+   "args": ["bad/Bangs.kt"],
+   "exit": 1,
+   "summary": {"warn": 1, "info": 0},
+   "files_scanned": 1,
+   "findings": [
+    ["bad/Bangs.kt", 6, "null-assertion-density", "warn", "high"]
+   ]
+  },
+  {
+   "args": ["bad/FewBangs.kt"],
+   "exit": 0,
+   "summary": {"warn": 0, "info": 1},
+   "files_scanned": 1,
+   "findings": [
+    ["bad/FewBangs.kt", 5, "null-assertion-density", "info", "high"]
+   ]
+  },
+  {
+   "args": ["bad/Logs.kt"],
+   "exit": 1,
+   "summary": {"warn": 3, "info": 2},
+   "files_scanned": 1,
+   "findings": [
+    ["bad/Logs.kt", 8, "log-in-release", "warn", "high"],
+    ["bad/Logs.kt", 9, "log-in-release", "warn", "high"],
+    ["bad/Logs.kt", 16, "log-in-release", "info", "medium"],
+    ["bad/Logs.kt", 20, "log-in-release", "info", "medium"],
+    ["bad/Logs.kt", 31, "log-in-release", "warn", "high"]
+   ]
+  },
+  {
+   "args": ["bad/Strings.kt"],
+   "exit": 0,
+   "summary": {"warn": 0, "info": 6},
+   "files_scanned": 1,
+   "findings": [
+    ["bad/Strings.kt", 8, "hardcoded-string-in-composable", "info", "high"],
+    ["bad/Strings.kt", 9, "hardcoded-string-in-composable", "info", "high"],
+    ["bad/Strings.kt", 14, "hardcoded-string-in-composable", "info", "high"],
+    ["bad/Strings.kt", 17, "hardcoded-string-in-composable", "info", "high"],
+    ["bad/Strings.kt", 19, "hardcoded-string-in-composable", "info", "medium"],
+    ["bad/Strings.kt", 20, "hardcoded-string-in-composable", "info", "high"]
+   ]
+  },
+  {
+   "args": ["bad/Leaky.kt"],
+   "exit": 1,
+   "summary": {"warn": 5, "info": 0},
+   "files_scanned": 1,
+   "findings": [
+    ["bad/Leaky.kt", 6, "context-leak-static", "warn", "medium"],
+    ["bad/Leaky.kt", 7, "context-leak-static", "warn", "high"],
+    ["bad/Leaky.kt", 19, "context-leak-static", "warn", "high"],
+    ["bad/Leaky.kt", 20, "context-leak-static", "warn", "medium"],
+    ["bad/Leaky.kt", 26, "context-leak-static", "warn", "high"]
+   ]
+  },
+  {
+   "args": ["good"],
+   "exit": 0,
+   "summary": {"warn": 0, "info": 0},
+   "files_scanned": 3,
+   "findings": [],
+   "skipped": [
+    ["good/app/src/main/java/Generated.kt", "generated file"],
+    ["good/app/src/test/java/SearchViewModelTest.kt", "test file"]
+   ]
+  },
+  {
+   "args": ["../files/t1-sync-viewmodel"],
+   "exit": 1,
+   "summary": {"warn": 4, "info": 0},
+   "files_scanned": 1,
+   "findings": [
+    ["../files/t1-sync-viewmodel/SyncViewModel.kt", 19, "log-in-release", "warn", "high"],
+    ["../files/t1-sync-viewmodel/SyncViewModel.kt", 20, "runblocking-in-ui", "warn", "high"],
+    ["../files/t1-sync-viewmodel/SyncViewModel.kt", 27, "global-scope", "warn", "high"],
+    ["../files/t1-sync-viewmodel/SyncViewModel.kt", 30, "log-in-release", "warn", "high"]
+   ]
+  },
+  {
+   "args": ["../files/t2-image-cache"],
+   "exit": 1,
+   "summary": {"warn": 2, "info": 0},
+   "files_scanned": 1,
+   "findings": [
+    ["../files/t2-image-cache/ImageCache.kt", 19, "context-leak-static", "warn", "high"],
+    ["../files/t2-image-cache/ImageCache.kt", 20, "context-leak-static", "warn", "medium"]
+   ]
+  },
+  {
+   "args": ["../files/t3-prerelease-review"],
+   "exit": 1,
+   "summary": {"warn": 1, "info": 3},
+   "files_scanned": 1,
+   "findings": [
+    ["../files/t3-prerelease-review/ProfileScreen.kt", 9, "log-in-release", "warn", "high"],
+    ["../files/t3-prerelease-review/ProfileScreen.kt", 11, "hardcoded-string-in-composable", "info", "high"],
+    ["../files/t3-prerelease-review/ProfileScreen.kt", 12, "hardcoded-string-in-composable", "info", "high"],
+    ["../files/t3-prerelease-review/ProfileScreen.kt", 15, "hardcoded-string-in-composable", "info", "high"]
+   ]
+  },
+  {
+   "args": ["does_not_exist"],
+   "exit": 2,
+   "findings": null
+  }
+ ]
+}

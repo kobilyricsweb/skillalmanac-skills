@@ -1,0 +1,22 @@
+[
+  {"query": "I want to automate: when a form is submitted, create a CRM contact and ping Slack. Design it so it doesn't break quietly", "should_trigger": true},
+  {"query": "our Zapier flow keeps creating duplicate invoices when the webhook retries, how should I redesign it?", "should_trigger": true},
+  {"query": "design a Make scenario that syncs new orders to our accounting tool every night, with error handling and a runbook", "should_trigger": true},
+  {"query": "write me an n8n workflow spec for onboarding new hires with retries and a dead-letter queue", "should_trigger": true},
+  {"query": "my automation stopped running three weeks ago and nobody noticed. How do I set up alerts and a test plan so that never happens again?", "should_trigger": true},
+  {"query": "check this workflow JSON for missing idempotency keys and hardcoded API tokens before I build it", "should_trigger": true},
+  {"query": "help me plan a no-code automation between our helpdesk and billing system, including rate limits and secrets handling", "should_trigger": true},
+  {"query": "what synthetic test events should I send to a new webhook-triggered automation before going live?", "should_trigger": true},
+  {"query": "I need a runbook for our lead-routing automation: what to do when it fails, how to replay dead letters", "should_trigger": true},
+  {"query": "turn this process into a zap: invoice paid -> update spreadsheet -> email customer. Make sure it can't double-send", "should_trigger": true},
+  {"query": "write a Python script that calls the Stripe API with retries", "should_trigger": false},
+  {"query": "analyse my webhook delivery log CSV and tell me which deliveries were retried too often", "should_trigger": false},
+  {"query": "build an RPA bot that clicks through our legacy desktop app and copies rows into Excel", "should_trigger": false},
+  {"query": "set up a GitHub Actions workflow to run tests on every pull request", "should_trigger": false},
+  {"query": "explain the difference between a webhook and polling", "should_trigger": false},
+  {"query": "write a cron job in bash that backs up my database nightly", "should_trigger": false},
+  {"query": "review my Airflow DAG code for style issues", "should_trigger": false},
+  {"query": "draft an email sequence for onboarding new customers", "should_trigger": false},
+  {"query": "which is cheaper for a small business, Zapier or Make?", "should_trigger": false},
+  {"query": "write unit tests for my Express webhook handler", "should_trigger": false}
+]

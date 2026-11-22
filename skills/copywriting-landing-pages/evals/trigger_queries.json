@@ -1,0 +1,82 @@
+[
+ {
+  "query": "write the landing page copy for my invoicing app, I need hero, proof, how it works and a CTA",
+  "should_trigger": true
+ },
+ {
+  "query": "my landing page isn't converting, can you rewrite the copy without all the hype",
+  "should_trigger": true
+ },
+ {
+  "query": "give me a hero headline and subhead for a signup page for my scheduling tool",
+  "should_trigger": true
+ },
+ {
+  "query": "review this homepage draft: every statistic needs a source or it goes",
+  "should_trigger": true
+ },
+ {
+  "query": "rewrite my SaaS home page copy, it sounds like every other startup page",
+  "should_trigger": true
+ },
+ {
+  "query": "audit this landing page html for unsupported claims, banned buzzwords and too many CTAs",
+  "should_trigger": true
+ },
+ {
+  "query": "what should the FAQ and objections section of a product landing page say? draft it from my notes",
+  "should_trigger": true
+ },
+ {
+  "query": "tighten the hero on my pricing page, headline is 25 words long",
+  "should_trigger": true
+ },
+ {
+  "query": "write conversion copy for a waitlist page, no fake urgency or made-up numbers",
+  "should_trigger": true
+ },
+ {
+  "query": "check my page copy for a consistent call to action and reading level",
+  "should_trigger": true
+ },
+ {
+  "query": "make a marketing campaign brief for our spring launch with budget and channels",
+  "should_trigger": false
+ },
+ {
+  "query": "write five Google Ads headlines for my plumbing business",
+  "should_trigger": false
+ },
+ {
+  "query": "draft a cold outreach email sequence to SaaS founders",
+  "should_trigger": false
+ },
+ {
+  "query": "do keyword research and a content plan for my blog",
+  "should_trigger": false
+ },
+ {
+  "query": "design the layout and color palette for my homepage in Figma",
+  "should_trigger": false
+ },
+ {
+  "query": "write a product description for my Shopify listing of a leather wallet",
+  "should_trigger": false
+ },
+ {
+  "query": "proofread this essay for grammar and spelling",
+  "should_trigger": false
+ },
+ {
+  "query": "write a press release for our funding round",
+  "should_trigger": false
+ },
+ {
+  "query": "plan a social media calendar for next month",
+  "should_trigger": false
+ },
+ {
+  "query": "fix the Core Web Vitals on my landing page, LCP is 4 seconds",
+  "should_trigger": false
+ }
+]

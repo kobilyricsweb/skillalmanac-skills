@@ -1,0 +1,82 @@
+[
+  {
+    "query": "my skill never loads on its own, what's wrong with the description",
+    "should_trigger": true
+  },
+  {
+    "query": "turn this deploy runbook into a SKILL.md the agent can load on demand",
+    "should_trigger": true
+  },
+  {
+    "query": "how do I test that my skill actually makes the agent better",
+    "should_trigger": true
+  },
+  {
+    "query": "write evals for the skill in .claude/skills/pdf-notes",
+    "should_trigger": true
+  },
+  {
+    "query": "claude ignores my skill half the time, how do I make it trigger",
+    "should_trigger": true
+  },
+  {
+    "query": "is this a skill or should it just go in AGENTS.md",
+    "should_trigger": true
+  },
+  {
+    "query": "review my skill folder before I publish it",
+    "should_trigger": true
+  },
+  {
+    "query": "I wrote a SKILL.md, can you check the frontmatter and tell me what's missing",
+    "should_trigger": true
+  },
+  {
+    "query": "create a skill that teaches the agent our release process and prove it works",
+    "should_trigger": true
+  },
+  {
+    "query": "benchmark my skill with and without it installed",
+    "should_trigger": true
+  },
+  {
+    "query": "write an AGENTS.md for this repo with the build commands",
+    "should_trigger": false
+  },
+  {
+    "query": "make a hook that runs prettier after every edit",
+    "should_trigger": false
+  },
+  {
+    "query": "what does SKILL.md stand for in this tutorial video",
+    "should_trigger": false
+  },
+  {
+    "query": "create a subagent that reviews database migrations",
+    "should_trigger": false
+  },
+  {
+    "query": "build an MCP server that exposes our internal wiki",
+    "should_trigger": false
+  },
+  {
+    "query": "write unit tests for my parser module",
+    "should_trigger": false
+  },
+  {
+    "query": "explain how the Python import system finds modules",
+    "should_trigger": false
+  },
+  {
+    "query": "add a slash command that prints the git status",
+    "should_trigger": false
+  },
+  {
+    "query": "summarise this README for a new teammate",
+    "should_trigger": false
+  },
+  {
+    "query": "set up eslint and prettier for the project",
+    "should_trigger": false
+  }
+]

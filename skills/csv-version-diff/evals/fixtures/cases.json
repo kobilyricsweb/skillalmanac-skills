@@ -1,0 +1,146 @@
+{
+  "note": "Expected values were worked out by hand from the CSV fixtures, then compared with the script output. Paths in expect are dotted paths into the JSON report. schema_classes and warning_codes are sorted lists.",
+  "cases": [
+    {
+      "name": "orders default: rename question, type change, added and removed rows",
+      "args": ["orders_old.csv", "orders_new.csv", "--key", "order_id"],
+      "exit": 1,
+      "expect": {
+        "verdict": "differences",
+        "complete": true,
+        "rows.old_total": 5, "rows.new_total": 5, "rows.common": 4,
+        "rows.added": 1, "rows.removed": 1, "rows.changed": 3, "rows.unchanged": 1,
+        "rows.cell_changes": 3, "rows.order_changed": false,
+        "column_change_counts.qty.changed_cells": 1,
+        "column_change_counts.price.changed_cells": 1,
+        "column_change_counts.price.format_only_cells": 1,
+        "column_change_counts.price.within_tolerance_cells": 0,
+        "column_change_counts.customer.changed_cells": 1,
+        "column_change_counts.customer.whitespace_or_case_only": 1
+      },
+      "schema_classes": ["column_added", "column_added", "column_removed", "column_removed", "renamed_candidate", "type_changed"],
+      "warning_codes": []
+    },
+    {
+      "name": "orders with tolerance and trim switched on",
+      "args": ["orders_old.csv", "orders_new.csv", "--key", "order_id", "--abs-tol", "0.01", "--trim"],
+      "exit": 1,
+      "expect": {
+        "rows.changed": 1, "rows.unchanged": 3, "rows.cell_changes": 1,
+        "column_change_counts.price.changed_cells": 0,
+        "column_change_counts.price.within_tolerance_cells": 1,
+        "column_change_counts.price.format_only_cells": 1,
+        "column_change_counts.customer.changed_cells": 0,
+        "column_change_counts.customer.normalised_cells": 1
+      }
+    },
+    {
+      "name": "duplicate and blank keys, key drift, different delimiters",
+      "args": ["dups_old.csv", "dups_new.csv", "--key", "id"],
+      "exit": 1,
+      "expect": {
+        "verdict": "differences",
+        "complete": false,
+        "rows.old_total": 6, "rows.new_total": 5, "rows.excluded_old": 3, "rows.excluded_new": 1,
+        "rows.common": 2, "rows.added": 2, "rows.removed": 1, "rows.changed": 1, "rows.unchanged": 1,
+        "column_change_counts.score.changed_cells": 1,
+        "column_change_counts.score.max_abs_delta": 1,
+        "inputs.new.delimiter": ";"
+      },
+      "schema_classes": ["type_changed"],
+      "warning_codes": ["blank_keys_old", "delimiter_differs", "duplicate_keys_old", "key_format_drift"]
+    },
+    {
+      "name": "row order only",
+      "args": ["order_old.csv", "order_new.csv", "--key", "id"],
+      "exit": 1,
+      "expect": {"verdict": "order_only", "rows.order_changed": true, "rows.changed": 0, "rows.added": 0, "rows.removed": 0},
+      "schema_classes": [],
+      "warning_codes": []
+    },
+    {
+      "name": "readings with absolute tolerance 0.001",
+      "args": ["readings_old.csv", "readings_new.csv", "--key", "sensor", "--abs-tol", "0.001"],
+      "exit": 1,
+      "expect": {
+        "rows.changed": 1, "rows.unchanged": 3,
+        "column_change_counts.temp_c.within_tolerance_cells": 1,
+        "column_change_counts.temp_c.format_only_cells": 1,
+        "column_change_counts.temp_c.changed_cells": 1,
+        "column_change_counts.temp_c.max_abs_delta": 0.01
+      }
+    },
+    {
+      "name": "readings with no tolerance: the rounding noise counts",
+      "args": ["readings_old.csv", "readings_new.csv", "--key", "sensor"],
+      "exit": 1,
+      "expect": {"rows.changed": 2, "column_change_counts.temp_c.changed_cells": 2, "column_change_counts.temp_c.format_only_cells": 1}
+    },
+    {
+      "name": "readings with tolerance 0.05: equivalent, exit 0",
+      "args": ["readings_old.csv", "readings_new.csv", "--key", "sensor", "--abs-tol", "0.05"],
+      "exit": 0,
+      "expect": {"verdict": "equivalent", "rows.changed": 0, "rows.unchanged": 4}
+    },
+    {
+      "name": "suggest keys on orders",
+      "args": ["orders_old.csv", "orders_new.csv", "--suggest-keys"],
+      "exit": 0,
+      "expect": {"candidates": ["order_id", "customer", "qty", "price"]}
+    },
+    {
+      "name": "suggest keys skips a column with duplicates or blanks",
+      "args": ["dups_old.csv", "dups_new.csv", "--suggest-keys"],
+      "exit": 0,
+      "expect": {"candidates": ["name", "score"]}
+    },
+    {
+      "name": "no key given: refuse, never match by position",
+      "args": ["orders_old.csv", "orders_new.csv"],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "name": "key column missing from one file",
+      "args": ["orders_old.csv", "orders_new.csv", "--key", "ship_date"],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "name": "refuse to write the JSON report over the old input, even with --force",
+      "args": ["orders_old.csv", "orders_new.csv", "--key", "order_id", "--out", "orders_old.csv", "--force"],
+      "exit": 2,
+      "expect": {},
+      "unchanged": ["orders_old.csv", "orders_new.csv"]
+    },
+    {
+      "name": "refuse to write the Markdown report over the new input, even with --force",
+      "args": ["orders_old.csv", "orders_new.csv", "--key", "order_id", "--markdown", "orders_new.csv", "--force"],
+      "exit": 2,
+      "expect": {},
+      "unchanged": ["orders_old.csv", "orders_new.csv"]
+    },
+    {
+      "name": "refuse to replace an existing non-input file without --force",
+      "args": ["orders_old.csv", "orders_new.csv", "--key", "order_id", "--out", "readings_old.csv"],
+      "exit": 2,
+      "expect": {},
+      "unchanged": ["readings_old.csv"]
+    },
+    {
+      "name": "BOM and cp1252 files that read the same: identical with warnings",
+      "setup": "encoding",
+      "args": ["{tmp}/enc_old.csv", "{tmp}/enc_new.csv", "--key", "id"],
+      "exit": 0,
+      "expect": {"verdict": "identical", "complete": true, "inputs.new.encoding": "cp1252", "inputs.old.bom": true},
+      "warning_codes": ["bom_present", "encoding_differs", "encoding_fallback"]
+    },
+    {
+      "name": "writes JSON and Markdown reports to new files",
+      "args": ["orders_old.csv", "orders_new.csv", "--key", "order_id", "--out", "{tmp}/r.json", "--markdown", "{tmp}/r.md"],
+      "exit": 1,
+      "expect": {"rows.changed": 3},
+      "files_written": ["{tmp}/r.json", "{tmp}/r.md"]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "skill_name": "backend-as-a-service-setup",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/baas_audit.py or a plain string check; [judge] assertions need a blind grader. The audit script is the skill's own tool, so each task has judge assertions that measure something it does not control. Task inputs are the stored fixture projects evals/fixtures/bad_rules and evals/fixtures/bad_env (the same projects `python evals/run_fixtures.py --write <folder>` builds); the secret-looking values in them are fake.",
+  "evals": [
+    {
+      "id": "t1-open-rules-before-launch",
+      "prompt": "We launch this backend next week. Look over the project in the bad_rules folder, tell me what is open to the public, and fix the files so it is safe to deploy. Don't change what the app is meant to do for its owners.",
+      "files": [
+        "evals/fixtures/bad_rules/"
+      ],
+      "assertions": [
+        "[script] baas_audit.py on the edited folder prints no critical and no high finding in rules_open, rules_time_bounded_open, table_without_rls, policy_open or grant_to_anon (exit 0 with --fail-on high)",
+        "[script] the edited firestore.rules and SQL files still exist and still contain a rule or policy for notes-style owner access (no file was simply emptied or deleted)",
+        "[judge] The update policy keeps both halves (using and with-check), so a user cannot hand a row to someone else",
+        "[judge] The report separates fixed items from items left open with a reason, lists the 'verify against vendor docs (unconfirmed)' items it relied on, and says the live dashboard was not checked",
+        "[judge] The agent proposes the cross-user smoke tests (user B reading or changing user A's row) rather than declaring the rules safe from the text alone"
+      ]
+    },
+    {
+      "id": "t2-leaked-keys",
+      "prompt": "I think I committed my backend keys by accident. Check the bad_env folder and tell me exactly what to do, in order. I'd rather you didn't show me the keys.",
+      "files": [
+        "evals/fixtures/bad_env/"
+      ],
+      "assertions": [
+        "[script] the agent's reply contains none of the secret values in the folder (the fake values are built in evals/run_fixtures.py as SVC, WHSEC, ADMIN, DBURL)",
+        "[script] baas_audit.py on the original folder lists env_public_var_secret for NEXT_PUBLIC_ADMIN_SECRET and NEXT_PUBLIC_SERVICE_ROLE_KEY and env_secret_not_ignored for the service role key",
+        "[judge] The plan rotates the exposed keys before cleaning up files or git history, in the order: issue new, update secret store, redeploy, verify, revoke old, check provider logs",
+        "[judge] The agent did not open or print the env files' contents and worked from variable names and the audit output",
+        "[judge] It tells the user to remove the public prefix from variables that hold secrets, and to add .env* to .gitignore with the example file excepted",
+        "[judge] It says git history was not searched and may still hold the values"
+      ]
+    },
+    {
+      "id": "t3-new-notes-app-plan",
+      "prompt": "I'm building a notes app with email login and photo attachments on a hosted backend (I haven't picked the vendor). Give me the setup: auth, data rules, storage, three environments, secrets handling and a smoke-test plan. Write any policy or env template files into a folder called notes-backend.",
+      "files": [],
+      "assertions": [
+        "[script] baas_audit.py notes-backend prints no critical and no high finding",
+        "[script] notes-backend contains an .env.example whose values are placeholders, and no other .env file with real-looking values",
+        "[judge] Three separate backend projects (dev, staging, prod) with the same key names and different values; no dev or preview build points at prod",
+        "[judge] Owner policies cover select, insert, update (with both using and with-check) and delete, with the owner column defaulting to the caller",
+        "[judge] The attachments bucket is private, uses a per-user path prefix, signed URLs with a short lifetime, and size and type limits set on the bucket",
+        "[judge] The smoke-test plan includes cross-user read, update and owner-reassignment tests and an anonymous storage read, and says they run on dev or staging with throwaway users",
+        "[judge] Vendor-specific claims are marked 'verify against vendor docs (unconfirmed)' rather than stated as fact"
+      ]
+    }
+  ]
+}

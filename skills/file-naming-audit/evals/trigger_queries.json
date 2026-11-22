@@ -1,0 +1,22 @@
+[
+  {"query": "our shared drive is a mess of final_FINAL2 files, can you audit the names and propose a clean convention", "should_trigger": true},
+  {"query": "check this folder of exports against our naming convention date_project_asset_v01 and list what breaks it", "should_trigger": true},
+  {"query": "find files in this project tree whose names differ only in capitals, they break when we copy to a Mac", "should_trigger": true},
+  {"query": "I pasted a list of file names from the photo archive, give me a rename plan as a dry run, don't rename anything", "should_trigger": true},
+  {"query": "which of these file names have spaces or characters that Windows won't allow?", "should_trigger": true},
+  {"query": "standardise our asset file names: ISO dates first, lower case, zero-padded version numbers", "should_trigger": true},
+  {"query": "audit the video team's folders for names that are too long to sync and for inconsistent version tags", "should_trigger": true},
+  {"query": "propose a file naming convention based on what most of the files in this folder already look like", "should_trigger": true},
+  {"query": "we have logo_v2, logo_v10 and logo_v9, which one is the latest and what should the names look like?", "should_trigger": true},
+  {"query": "make a CSV of old name to new name for the whole client folder but check the new names won't collide", "should_trigger": true},
+  {"query": "rename all the files in my Downloads folder right now to lower case", "should_trigger": false},
+  {"query": "organise my notes vault into topic folders and add tags", "should_trigger": false},
+  {"query": "find duplicate photos in this folder by comparing their contents", "should_trigger": false},
+  {"query": "write a function that renames files in Python using a regex", "should_trigger": false},
+  {"query": "what is the best way to name my Git branches and commits?", "should_trigger": false},
+  {"query": "rename the variables in this code to camelCase", "should_trigger": false},
+  {"query": "clean up the formatting of this document's headings and styles", "should_trigger": false},
+  {"query": "set up retention labels for the documents on our team site", "should_trigger": false},
+  {"query": "convert these file names into URL slugs for my website pages", "should_trigger": false},
+  {"query": "organise these meeting notes by project and summarise each", "should_trigger": false}
+]

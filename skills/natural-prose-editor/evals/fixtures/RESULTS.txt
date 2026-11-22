@@ -1,0 +1,6 @@
+PASS scan ai_heavy.md
+PASS scan human_clean.md
+PASS facts facts_original.md facts_edit_good.md
+PASS facts facts_original.md facts_edit_bad.md
+PASS scan missing_file.md
+5/5 cases passed

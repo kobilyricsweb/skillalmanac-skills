@@ -1,0 +1,11 @@
+PASS good_mark.svg
+PASS thin_strokes.svg
+PASS bad_text_raster.svg
+PASS no_viewbox.svg
+PASS --kind wordmark wordmark_outlined.svg
+PASS wordmark_outlined.svg
+PASS scaled_group_css.svg
+PASS arc_ring.svg
+PASS malformed.svg
+PASS does_not_exist.svg
+10/10 cases passed

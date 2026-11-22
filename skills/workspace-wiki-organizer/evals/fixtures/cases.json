@@ -1,0 +1,100 @@
+{
+  "note": "Expected values were derived by hand from the fixture files (dates, links and titles read one by one), then compared with the script output. Reference date 2026-11-21.",
+  "cases": [
+    {
+      "name": "bad wiki, default thresholds",
+      "args": ["wiki_bad", "--today", "2026-11-21", "--mtime-fallback", "ignore"],
+      "exit": 0,
+      "expect": {
+        "summary": {
+          "pages": 16, "files_total": 17, "ownerless": 3, "stale": 5, "undated": 1, "orphans": 4,
+          "broken_links": 5, "duplicate_title_pairs": 3, "identical_content_groups": 1,
+          "deep_pages": 1, "wide_folders": 0, "entry_points": 1,
+          "plan_actions": {"merge": 1, "archive": 3, "assign_owner": 1, "review_with_owner": 0, "fix_links": 2, "disambiguate": 2}
+        },
+        "ownerless_paths": ["engineering/ownerless-orphan.md", "engineering/runbook-db.md", "legacy.html"],
+        "stale_paths": ["engineering/old-vpn-setup.md", "engineering/ownerless-orphan.md", "engineering/runbook-db.md", "growth/pricing-model.md", "legacy.html"],
+        "undated": ["undated.md"],
+        "orphans": ["engineering/old-vpn-setup.md", "engineering/ownerless-orphan.md", "growth/pricing-model.md", "legacy.html"],
+        "entry_points": ["index.md"],
+        "broken": [
+          ["engineering/onboarding.md", 8, "missing_target"],
+          ["engineering/onboarding.md", 9, "missing_target"],
+          ["index.md", 21, "missing_target"],
+          ["index.md", 24, "missing_target"],
+          ["legacy.html", 10, "case_mismatch"]
+        ],
+        "dup": [
+          ["growth/pricing-model.md", "product/pricing.md", "same_content"],
+          ["growth/pricing-model.md", "support/pricing-faq.md", "title_clash_only"],
+          ["product/pricing.md", "support/pricing-faq.md", "title_clash_only"]
+        ],
+        "identical_content": [["growth/pricing-model.md", "product/pricing.md"]],
+        "deep_pages": ["deep/a/b/c/d/page.md"],
+        "plan": [
+          ["growth/pricing-model.md", "merge", "high"],
+          ["engineering/old-vpn-setup.md", "archive", "medium"],
+          ["engineering/ownerless-orphan.md", "archive", "high"],
+          ["legacy.html", "archive", "high"],
+          ["engineering/runbook-db.md", "assign_owner", "high"],
+          ["engineering/onboarding.md", "fix_links", "high"],
+          ["index.md", "fix_links", "high"],
+          ["product/pricing.md", "disambiguate", "medium"],
+          ["support/pricing-faq.md", "disambiguate", "medium"]
+        ],
+        "merge_into": {"growth/pricing-model.md": "product/pricing.md"}
+      }
+    },
+    {
+      "name": "bad wiki, stale threshold 400 days",
+      "args": ["wiki_bad", "--today", "2026-11-21", "--mtime-fallback", "ignore", "--stale-days", "400"],
+      "exit": 0,
+      "expect": {
+        "stale_paths": ["engineering/old-vpn-setup.md", "legacy.html"],
+        "plan": [
+          ["growth/pricing-model.md", "merge", "high"],
+          ["engineering/old-vpn-setup.md", "archive", "medium"],
+          ["legacy.html", "archive", "high"],
+          ["engineering/ownerless-orphan.md", "assign_owner", "high"],
+          ["engineering/runbook-db.md", "assign_owner", "high"],
+          ["engineering/onboarding.md", "fix_links", "high"],
+          ["index.md", "fix_links", "high"],
+          ["product/pricing.md", "disambiguate", "medium"],
+          ["support/pricing-faq.md", "disambiguate", "medium"]
+        ]
+      }
+    },
+    {
+      "name": "bad wiki with --fail-on-findings exits 1",
+      "args": ["wiki_bad", "--today", "2026-11-21", "--mtime-fallback", "ignore", "--fail-on-findings"],
+      "exit": 1,
+      "expect": {}
+    },
+    {
+      "name": "clean wiki has no findings",
+      "args": ["wiki_good", "--today", "2026-11-21", "--mtime-fallback", "ignore", "--fail-on-findings"],
+      "exit": 0,
+      "expect": {
+        "summary": {
+          "pages": 3, "files_total": 3, "ownerless": 0, "stale": 0, "undated": 0, "orphans": 0,
+          "broken_links": 0, "duplicate_title_pairs": 0, "identical_content_groups": 0,
+          "deep_pages": 0, "wide_folders": 0, "entry_points": 1,
+          "plan_actions": {"merge": 0, "archive": 0, "assign_owner": 0, "review_with_owner": 0, "fix_links": 0, "disambiguate": 0}
+        },
+        "plan": []
+      }
+    },
+    {
+      "name": "missing folder exits 2",
+      "args": ["no_such_wiki_folder"],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "name": "bad date argument exits 2",
+      "args": ["wiki_good", "--today", "21-11-2026"],
+      "exit": 2,
+      "expect": {}
+    }
+  ]
+}

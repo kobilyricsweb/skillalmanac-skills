@@ -1,0 +1,12 @@
+PASS bad.ts
+PASS good.ts
+PASS traps.ts
+PASS bad.tsx
+PASS suppress.ts
+PASS bad.ts --profile app
+PASS bad.ts --min-severity high
+PASS bad.ts --ignore-rule explicit-any --ignore-rule enum
+PASS dir_walk
+PASS missing_file.ts
+PASS empty_dir
+11/11 cases passed

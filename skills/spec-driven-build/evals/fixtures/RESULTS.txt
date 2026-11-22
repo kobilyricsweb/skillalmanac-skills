@@ -1,0 +1,6 @@
+PASS spec_good/SPEC.md spec_good/tests --src spec_good/src
+PASS spec_bad/SPEC.md spec_bad/tests
+PASS spec_bad/SPEC.md
+PASS spec_good/SPEC.md spec_good/tests --src spec_bad/tests --require-code
+PASS spec_missing/SPEC.md
+5/5 cases passed

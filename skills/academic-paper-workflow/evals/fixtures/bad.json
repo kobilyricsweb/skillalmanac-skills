@@ -1,0 +1,9 @@
+[
+  {"id": "doe2017", "type": "article-journal", "author": [{"family": "Doe", "given": "Jane"}],
+   "title": "Sleep and Memory", "issued": {"date-parts": [[2017]]}},
+  {"id": "roe2010", "type": "book", "author": [{"family": "Roe", "given": "Rick"}],
+   "title": "Consolidation", "publisher": "Example Press", "issued": {"date-parts": [[null]]}},
+  {"id": "doe2017", "type": "article-journal", "author": [{"family": "Doe", "given": "J."}],
+   "title": "Sleep and Memory, Duplicate", "container-title": "Journal of Imaginary Psychology",
+   "issued": {"date-parts": [[2017]]}}
+]

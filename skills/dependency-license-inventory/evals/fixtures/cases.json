@@ -1,0 +1,94 @@
+{
+  "note": "Expected values were worked out by hand from the fixture files (see VERIFICATION.md), then compared with the script output.",
+  "cases": [
+    {
+      "label": "scan bad_project with policy",
+      "args": ["scan", "@fx/bad_project", "--policy", "@fx/bad_project/policy.json"],
+      "exit": 1,
+      "expect": {
+        "summary": {
+          "packages": 18, "direct": 7, "transitive": 11, "direct_unknown_for": 0,
+          "by_bucket": {"custom": 1, "dual": 2, "none": 6, "permissive": 5, "strong-copyleft": 2, "unrecognised": 1, "weak-copyleft": 1},
+          "by_ecosystem": {"go": 2, "npm": 11, "pypi": 5},
+          "unknown": 8, "conflicts": 2, "flagged": 9, "review_needed": 10
+        },
+        "unknown": [
+          ["example.test/dep-a", "not-installed-no-metadata"], ["example.test/dep-b", "not-installed-no-metadata"],
+          ["delta-tool", "no-declaration"], ["mu-pkg", "not-installed-no-metadata"], ["theta-wild", "unrecognised-name"],
+          ["zeta-core", "custom-or-unlicensed"], ["pydelta", "no-declaration"], ["pyepsilon", "no-declaration"]
+        ],
+        "conflicts": [["epsilon-util", "licence-file-differs"], ["pygamma", "metadata-fields-disagree"]],
+        "actions": {
+          "@scope/gamma": "flag", "alpha-lib": "accept", "beta-lib": "accept", "iota-soft": "accept",
+          "theta-wild": "review", "zeta-core": "flag", "lambda-pkg": "accept", "pygamma": "flag"
+        },
+        "normalised": {
+          "pygamma": "GPL-3.0-or-later", "pyalpha": "MIT", "eta-old": "BSD-3-Clause OR MIT", "beta-lib": "MIT OR Apache-2.0",
+          "iota-soft": "LGPL-2.1-or-later"
+        }
+      }
+    },
+    {
+      "label": "scan bad_project without policy",
+      "args": ["scan", "@fx/bad_project"],
+      "exit": 1,
+      "expect": {
+        "summary": {
+          "packages": 18, "direct": 7, "transitive": 11, "direct_unknown_for": 0,
+          "by_bucket": {"custom": 1, "dual": 2, "none": 6, "permissive": 5, "strong-copyleft": 2, "unrecognised": 1, "weak-copyleft": 1},
+          "by_ecosystem": {"go": 2, "npm": 11, "pypi": 5},
+          "unknown": 8, "conflicts": 2, "flagged": 0, "review_needed": 11
+        },
+        "actions": {"@scope/gamma": null, "alpha-lib": null, "iota-soft": null}
+      }
+    },
+    {
+      "label": "scan good_project with policy",
+      "args": ["scan", "@fx/good_project", "--policy", "@fx/good_project/policy.json"],
+      "exit": 0,
+      "expect": {
+        "summary": {
+          "packages": 3, "direct": 1, "transitive": 1, "direct_unknown_for": 1,
+          "by_bucket": {"permissive": 3}, "by_ecosystem": {"npm": 2, "pypi": 1},
+          "unknown": 0, "conflicts": 0, "flagged": 0, "review_needed": 0
+        },
+        "unknown": [], "conflicts": [],
+        "normalised": {"ok-two": "Apache-2.0", "okpy": "BSD-3-Clause", "ok-one": "MIT"}
+      }
+    },
+    {
+      "label": "scan good_project without policy",
+      "args": ["scan", "@fx/good_project"],
+      "exit": 0,
+      "expect": {"unknown": [], "conflicts": []}
+    },
+    {
+      "label": "scan mpl_project: MPL text naming GPL is a mention, not a conflict",
+      "args": ["scan", "@fx/mpl_project"],
+      "exit": 0,
+      "expect": {
+        "summary": {
+          "packages": 1, "direct": 0, "transitive": 0, "direct_unknown_for": 1,
+          "by_bucket": {"weak-copyleft": 1}, "by_ecosystem": {"npm": 1},
+          "unknown": 0, "conflicts": 0, "flagged": 0, "review_needed": 1
+        },
+        "unknown": [], "conflicts": [],
+        "mentions": [["mpl-pkg", ["AGPL", "GPL", "LGPL"]]]
+      }
+    },
+    {"label": "policy with an invalid action", "args": ["scan", "@fx/good_project", "--policy", "@fx/bad_policy.json"], "exit": 2, "expect": null},
+    {"label": "missing folder", "args": ["scan", "@fx/does_not_exist"], "exit": 2, "expect": null},
+    {"label": "no arguments", "args": [], "exit": 2, "expect": null},
+    {
+      "label": "normalise common spellings",
+      "args": ["normalise", "MIT License", "Apache License, Version 2.0", "GNU General Public License v3 or later (GPLv3+)", "MIT/Apache-2.0", "UNLICENSED", "(MIT AND (Apache-2.0 OR GPL-2.0))"],
+      "exit": 0,
+      "expect": {
+        "norm": [
+          ["MIT", "permissive"], ["Apache-2.0", "permissive"], ["GPL-3.0-or-later", "strong-copyleft"], ["MIT OR Apache-2.0", "dual"],
+          ["UNLICENSED", "custom"], ["(MIT AND (Apache-2.0 OR GPL-2.0))", "unrecognised"]
+        ]
+      }
+    }
+  ]
+}

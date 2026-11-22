@@ -1,0 +1,12 @@
+{
+  "unit": "days",
+  "start_date": "2026-06-01",
+  "holidays": ["2026-06-03"],
+  "deadline": "2026-06-12",
+  "tasks": [
+    {"id": "W", "name": "Write copy", "duration": 2, "owner": "Ana"},
+    {"id": "X", "name": "Build page", "duration": 3, "predecessors": ["W"], "owner": "Raj"},
+    {"id": "Y", "name": "Design assets", "duration": 2, "predecessors": ["W"], "owner": "Ana"},
+    {"id": "Z", "name": "Launch", "duration": 1, "predecessors": ["X", "Y"], "owner": "Ana"}
+  ]
+}

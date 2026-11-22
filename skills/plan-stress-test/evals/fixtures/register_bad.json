@@ -1,0 +1,33 @@
+{
+  "plan": "Billing database migration",
+  "risks": [
+    {
+      "rank": 1, "id": "R1", "title": "Cutover step has no owner", "category": "ownership",
+      "evidence": {"quote": "Switch the application to the new cluster", "line": 13},
+      "scenario": "Nobody answers when the cutover fails.",
+      "likelihood": 4, "impact": 5, "score": 25,
+      "detection": "Ask who presses the switch.",
+      "mitigation": "Name one owner for the switch step.",
+      "source": "judgement"
+    },
+    {
+      "rank": 3, "id": "R2", "title": "Vendor is late", "category": "external",
+      "evidence": {"quote": "The vendor will deliver on time", "line": 19},
+      "scenario": "The vendor delivers late and the migration slips.",
+      "likelihood": 3, "impact": 3, "score": 9,
+      "detection": "No delivery confirmation a week before.",
+      "mitigation": "Ask the vendor for a date.",
+      "source": "judgement"
+    },
+    {
+      "rank": 3, "id": "R3", "title": "Budget runs out", "category": "budget",
+      "evidence": {"quote": "Order the new cluster", "absent": "Nothing about budget is written."},
+      "scenario": "The money runs out before the migration ends.",
+      "likelihood": 3, "impact": 4, "score": 12,
+      "detection": "Spend passes the plan.",
+      "mitigation": "Add a budget line.",
+      "source": "judgement"
+    }
+  ],
+  "not_checked": ["Everything outside the plan text"]
+}

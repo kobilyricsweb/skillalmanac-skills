@@ -1,0 +1,22 @@
+[
+  {"query": "can you check my gradebook csv, I think the final grades in the last column are off", "should_trigger": true},
+  {"query": "my category weights are homework 30, quizzes 20, midterm 20, final 40, does that work out right?", "should_trigger": true},
+  {"query": "recalculate everyone's final grade with drop lowest homework and compare with what I recorded", "should_trigger": true},
+  {"query": "what does a student need on the final exam to finish with a B in my class?", "should_trigger": true},
+  {"query": "how much would the grades change if I count missing assignments as zero instead of excluding them?", "should_trigger": true},
+  {"query": "verify the weighted average in this spreadsheet export from my grade book, flag anyone near a letter cut-off", "should_trigger": true},
+  {"query": "tutoring centre report: sanity check these course totals against the weighting scheme, scores are in a CSV", "should_trigger": true},
+  {"query": "I round each category before weighting but my colleague rounds at the end, which students get a different letter?", "should_trigger": true},
+  {"query": "audit this gradebook for scores above the maximum, duplicate student ids and weights that don't add to 100", "should_trigger": true},
+  {"query": "why is student 4417's final 88.6 in the portal but 88.9 on my sheet", "should_trigger": true},
+  {"query": "write a 20 question multiple choice quiz on photosynthesis for grade 8", "should_trigger": false},
+  {"query": "create a rubric for grading a persuasive essay with four performance levels", "should_trigger": false},
+  {"query": "write personalised report card comments for my class based on these notes", "should_trigger": false},
+  {"query": "should I give students a late penalty of 10 percent per day? what is fair?", "should_trigger": false},
+  {"query": "recalculate the weighted average conversion rate across our marketing channels", "should_trigger": false},
+  {"query": "build me a study plan for the SAT over 8 weeks", "should_trigger": false},
+  {"query": "check the arithmetic on this vendor invoice, line totals and tax", "should_trigger": false},
+  {"query": "design a spreadsheet template for tracking attendance each week", "should_trigger": false},
+  {"query": "explain how GPA is calculated for college admissions in the US", "should_trigger": false},
+  {"query": "grade these student essays and give each a score out of 100", "should_trigger": false}
+]

@@ -1,0 +1,17 @@
+{
+  "model": "model-a",
+  "sample_file": "sample_prompt.txt",
+  "price_table": {
+    "as_of": "2026-11-10",
+    "currency": "USD",
+    "unit": "per_1M",
+    "source": "EXAMPLE NUMBERS for tests only, not a real vendor price",
+    "models": {
+      "model-a": {"input": 2.0, "output": 10.0}
+    }
+  },
+  "usage": {
+    "requests_per_day": 500,
+    "output_tokens_avg": 300
+  }
+}

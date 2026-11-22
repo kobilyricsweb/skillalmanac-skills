@@ -1,0 +1,17 @@
+{
+  "property": {"address": "9 Quarry Lane, Fairview", "type": "fourplex"},
+  "currency": "usd",
+  "as_of": "2026-06-01",
+  "purchase_price": 520000,
+  "income": {"gross_scheduled_rent_annual": 54000, "vacancy_rate": 0},
+  "expenses": {},
+  "financing": {"down_payment": 80000, "loan_amount": 360000, "interest_rate": 6.5, "term_years": 30},
+  "sources": [
+    {"field": "purchase_price", "source": "Listing", "date": "2026-05-20"}
+  ],
+  "due_diligence": [
+    {"item": "Roof inspection", "due": "2026-10-30", "status": "open"},
+    {"item": "Rent roll audit", "owner": "Agent", "status": "open"},
+    {"item": "Survey", "owner": "Buyer", "due": "2026-12-15", "status": "open"}
+  ]
+}

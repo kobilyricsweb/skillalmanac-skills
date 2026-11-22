@@ -1,0 +1,22 @@
+[
+  {"query": "will a 70B model run on my 24GB GPU with 64GB of RAM?", "should_trigger": true},
+  {"query": "how much VRAM do I need to run a 13B model at Q4 with 16k context", "should_trigger": true},
+  {"query": "which quantization should I pick in Ollama for a 32B model on a 16 GB card", "should_trigger": true},
+  {"query": "my local llm keeps running out of memory when I raise the context to 32k, why", "should_trigger": true},
+  {"query": "can my M2 Mac with 32GB unified memory run a 30B model in LM Studio", "should_trigger": true},
+  {"query": "what's the largest context I can use with Q5_K_M on 12GB VRAM for llama.cpp", "should_trigger": true},
+  {"query": "why is my local LLM so slow? I have DDR4 and a small GPU, estimate the tokens per second", "should_trigger": true},
+  {"query": "Q4_K_M vs Q6_K: which fits in 8GB, and how much KV cache does 8k context add", "should_trigger": true},
+  {"query": "is a mixture-of-experts 30B with 3B active parameters going to fit in 24 GB, and will it be fast", "should_trigger": true},
+  {"query": "I have two 12GB GPUs, can I split a 40B model across them, how much memory is that", "should_trigger": true},
+  {"query": "how much does GPT-4 API cost per million tokens compared to running my own", "should_trigger": false},
+  {"query": "how much VRAM do I need to fine-tune a 7B model with LoRA", "should_trigger": false},
+  {"query": "what is Ollama and how do I install it on Ubuntu", "should_trigger": false},
+  {"query": "which open source model is best at coding right now", "should_trigger": false},
+  {"query": "recommend a graphics card to buy for gaming under 500 dollars", "should_trigger": false},
+  {"query": "write a Python function that reads a GGUF file header", "should_trigger": false},
+  {"query": "my React app uses too much memory, how do I find the leak", "should_trigger": false},
+  {"query": "explain what quantization does to a neural network in plain words", "should_trigger": false},
+  {"query": "how many GB of RAM does Chrome need with 40 tabs open", "should_trigger": false},
+  {"query": "set up a vector database for my documents on a Raspberry Pi", "should_trigger": false}
+]

@@ -1,0 +1,11 @@
+<speak>
+<p><s>Launch day.</s></p>
+<break time="900ms"/>
+<p><s>Doctor Rivera founded the firm in nineteen ninety-eight,<break time="200ms"/> and by twenty twenty-six it had grown to one thousand two hundred people.</s></p>
+<break time="900ms"/>
+<p><s>The <say-as interpret-as="characters">FBI</say-as> report,<break time="200ms"/> filed on March third,<break time="200ms"/> twenty twenty-six,<break time="200ms"/> put the loss at four dollars and fifty cents per unit,<break time="200ms"/> or two point five million dollars overall.</s> <break time="500ms"/> <s>Read more at example dot com slash reports slash two zero two six slash q one slash summary question mark id equals seven seven today.</s></p>
+<break time="900ms"/>
+<p><s>Join us at three thirty <say-as interpret-as="characters">PM</say-as> on the twenty-second,<break time="200ms"/> bring five kilograms of gear,<break time="200ms"/> and expect forty-five percent less rain than in the nineteen nineties.</s> <break time="500ms"/> <s>Call five five five,<break time="200ms"/> one two three,<break time="200ms"/> four five six seven for the frequently asked questions.</s></p>
+<break time="900ms"/>
+<p><s>She sells seashells by the seashore,<break time="200ms"/> said Mister Smith,<break time="200ms"/> "and they never stop."</s></p>
+</speak>

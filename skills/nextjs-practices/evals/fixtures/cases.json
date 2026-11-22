@@ -1,0 +1,168 @@
+{
+ "note": "Expected values were derived by hand from the fixture sources (see VERIFICATION.md), then compared with the script output.",
+ "cases": [
+  {
+   "args": [
+    "scan",
+    "bad_site/app"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "files_scanned": 9,
+    "suppressed": 0,
+    "counts_by_rule": {
+     "client-at-tree-top": 1,
+     "client-imports-server": 3,
+     "img-tag": 1,
+     "missing-error": 2,
+     "missing-loading": 2,
+     "missing-metadata": 1,
+     "possible-waterfall": 1,
+     "route-page-conflict": 1
+    },
+    "findings": [
+     [
+      "conflict/route.ts",
+      1,
+      "route-page-conflict",
+      "error"
+     ],
+     [
+      "dashboard/Chart.tsx",
+      5,
+      "client-imports-server",
+      "error"
+     ],
+     [
+      "dashboard/Chart.tsx",
+      6,
+      "client-imports-server",
+      "error"
+     ],
+     [
+      "dashboard/Chart.tsx",
+      7,
+      "client-imports-server",
+      "error"
+     ],
+     [
+      "dashboard/page.tsx",
+      1,
+      "missing-error",
+      "warn"
+     ],
+     [
+      "dashboard/page.tsx",
+      1,
+      "missing-loading",
+      "warn"
+     ],
+     [
+      "dashboard/page.tsx",
+      1,
+      "missing-metadata",
+      "warn"
+     ],
+     [
+      "dashboard/page.tsx",
+      6,
+      "possible-waterfall",
+      "info"
+     ],
+     [
+      "dashboard/page.tsx",
+      9,
+      "img-tag",
+      "warn"
+     ],
+     [
+      "page.tsx",
+      1,
+      "missing-error",
+      "warn"
+     ],
+     [
+      "page.tsx",
+      1,
+      "missing-loading",
+      "warn"
+     ],
+     [
+      "settings/page.tsx",
+      1,
+      "client-at-tree-top",
+      "warn"
+     ]
+    ]
+   }
+  },
+  {
+   "args": [
+    "scan",
+    "good_site/app"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "files_scanned": 8,
+    "suppressed": 1,
+    "counts_by_rule": {},
+    "findings": []
+   }
+  },
+  {
+   "args": [
+    "scan",
+    "good_site/app",
+    "--strict"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "findings": []
+   }
+  },
+  {
+   "args": [
+    "scan",
+    "warn_site/app"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "files_scanned": 1,
+    "counts_by_rule": {
+     "missing-metadata": 1
+    },
+    "findings": [
+     [
+      "page.tsx",
+      1,
+      "missing-metadata",
+      "warn"
+     ]
+    ]
+   }
+  },
+  {
+   "args": [
+    "scan",
+    "warn_site/app",
+    "--strict"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false
+   }
+  },
+  {
+   "args": [
+    "scan",
+    "no_such_dir"
+   ],
+   "exit": 2,
+   "expect": null
+  }
+ ]
+}

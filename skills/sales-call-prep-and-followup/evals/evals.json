@@ -1,0 +1,45 @@
+{
+  "skill_name": "sales-call-prep-and-followup",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/call_check.py; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has judge assertions the script does not control.",
+  "evals": [
+    {
+      "id": "t1-prep-from-thin-context",
+      "prompt": "I have a first call tomorrow, context is in the file. Prep me and save the plan to prep.md and a notes template to notes.md.",
+      "files": ["evals/files/t1-prep/context.md"],
+      "assertions": [
+        "[script] call_check.py notes.md (the template) runs, exit 0 or 1, and reports coverage_by_stage with planned true for all five stages",
+        "[script] prep.md contains the headings Goal of the call, Known, Unknown, Risks and Proposed next step",
+        "[judge] The Known section contains only what the context file says (hand-built routes every August, parent complaints, Tomas Weber, Transport Manager); no invented facts about the district, its size, budget or software",
+        "[judge] There are 5 to 8 questions, at least one per stage, and the impact question asks for a figure",
+        "[judge] The proposed next step is a demo with an owner and a date window, not just 'follow up'",
+        "[judge] The reply states that no web research was done"
+      ]
+    },
+    {
+      "id": "t2-followup-from-notes",
+      "prompt": "Write the follow-up email to Tomas from these notes. Save it to followup.md.",
+      "files": ["evals/files/t2-followup/notes.md"],
+      "assertions": [
+        "[script] call_check.py notes.md followup.md prints ok true",
+        "[script] followup.md contains '2026-11-24' or 'Nov 24' and 'Ines'",
+        "[script] followup.md contains no 'discount', 'guarantee' or 'free'",
+        "[judge] The email mentions the 60 calls and 15 minutes as Tomas's own figures and does not add a total or a saving",
+        "[judge] The three agreed items (sample report, demo, stop list export) appear with the right owner each",
+        "[judge] 80 to 180 words, one ask, and nothing about pricing, timelines or features that the notes do not hold"
+      ]
+    },
+    {
+      "id": "t3-check-bad-followup",
+      "prompt": "Check this follow-up against my notes and fix it. Save the fixed email to fixed.md and tell me what was wrong.",
+      "files": ["evals/files/t3-check/notes.md", "evals/files/t3-check/followup.md"],
+      "assertions": [
+        "[script] call_check.py notes.md followup.md exits 1 and reports at least the codes figure_not_in_notes and commitment_not_in_notes and next_step_no_date",
+        "[script] fixed.md contains no '20%', '30 day', 'trial' or 'another bakery'",
+        "[judge] The reply tells the user the next step date 'next Tuesday' is not a calendar date and asks for one rather than inventing it",
+        "[judge] The reply reports that impact was not discussed and suggests asking it, without making up a cost",
+        "[judge] fixed.md keeps the promise to send the one-page summary and does not add new promises",
+        "[judge] The reply says what the checker cannot judge (tone, whether Gil agreed)"
+      ]
+    }
+  ]
+}

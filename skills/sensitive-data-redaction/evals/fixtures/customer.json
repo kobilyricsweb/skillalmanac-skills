@@ -1,0 +1,7 @@
+{
+  "customer": {"name": "Dana Reyes", "email": "dana.reyes@example.test", "password": "fake-pass-1234"},
+  "payment": {"card": 4111111111111111, "iban": "DE89 3704 0044 0532 0130 00", "note": "Dana asked for a refund"},
+  "contacts": ["priya@example.test", "+44 20 7946 0958"],
+  "by_email": {"priya@example.test": "escalated"},
+  "orders": [{"id": 1234567890, "total": 19.5, "paid": true}]
+}

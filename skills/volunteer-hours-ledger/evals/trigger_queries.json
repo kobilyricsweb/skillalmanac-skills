@@ -1,0 +1,22 @@
+[
+  {"query": "I run a food pantry and have a spreadsheet of volunteer sign-ins. Can you total the hours per person for March?", "should_trigger": true},
+  {"query": "who on our volunteer list has passed 100 hours this year? here is the log csv", "should_trigger": true},
+  {"query": "clean up my volunteer hour log, I think some people signed in twice", "should_trigger": true},
+  {"query": "make a monthly volunteer report from this sign-in sheet: hours by person and by activity", "should_trigger": true},
+  {"query": "round every volunteer shift to the nearest 15 minutes and give me the totals", "should_trigger": true},
+  {"query": "check my volunteer timesheet for overlapping shifts and missing supervisor sign-offs", "should_trigger": true},
+  {"query": "which volunteers haven't logged any hours in the last 60 days?", "should_trigger": true},
+  {"query": "our school club tracks service hours in a csv, add them up per student and flag anyone over 8 hours in one day", "should_trigger": true},
+  {"query": "Dana Ruiz and Dan Ruiz might be the same person in our hours log, can you check the names and totals?", "should_trigger": true},
+  {"query": "total up hours per project for our community garden volunteers from this log", "should_trigger": true},
+  {"query": "do my volunteer hours count as a tax deduction for the mileage and time?", "should_trigger": false},
+  {"query": "build next month's volunteer rota so every Saturday has four people covered", "should_trigger": false},
+  {"query": "write a thank-you email to our volunteers for the spring fundraiser", "should_trigger": false},
+  {"query": "calculate payroll and overtime for our paid staff timesheets", "should_trigger": false},
+  {"query": "total the invoices in this spreadsheet and check the VAT line", "should_trigger": false},
+  {"query": "does my nonprofit have to file for unemployment insurance for volunteers", "should_trigger": false},
+  {"query": "write a job description for a volunteer coordinator role", "should_trigger": false},
+  {"query": "track my personal habit of running every morning and show a weekly summary", "should_trigger": false},
+  {"query": "convert this CSV of donations into a pivot table by donor and month", "should_trigger": false},
+  {"query": "find time slots that work for a volunteer orientation across three time zones", "should_trigger": false}
+]

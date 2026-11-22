@@ -1,0 +1,82 @@
+[
+  {
+    "query": "repurpose this blog post into a LinkedIn post, an X thread and an Instagram caption",
+    "should_trigger": true
+  },
+  {
+    "query": "can you build me a two week content calendar for our product launch across LinkedIn and X",
+    "should_trigger": true
+  },
+  {
+    "query": "check my posting schedule csv for problems before I upload it to Buffer",
+    "should_trigger": true
+  },
+  {
+    "query": "turn this conference talk transcript into social posts for the next month",
+    "should_trigger": true
+  },
+  {
+    "query": "are any of these posts over the character limit for X and Bluesky",
+    "should_trigger": true
+  },
+  {
+    "query": "I am posting a sponsored review on Instagram, do my captions have the right disclosure",
+    "should_trigger": true
+  },
+  {
+    "query": "make a social media plan from this press release with platform-specific copy",
+    "should_trigger": true
+  },
+  {
+    "query": "validate calendar.json - duplicates, hashtag counts, gaps between posts",
+    "should_trigger": true
+  },
+  {
+    "query": "how should I repurpose one article into a week of posts without repeating myself",
+    "should_trigger": true
+  },
+  {
+    "query": "write Threads and LinkedIn versions of this release note and schedule them",
+    "should_trigger": true
+  },
+  {
+    "query": "write a marketing campaign brief with audience, positioning and budget for our launch",
+    "should_trigger": false
+  },
+  {
+    "query": "write the hero section and CTA copy for our landing page",
+    "should_trigger": false
+  },
+  {
+    "query": "set up Facebook ads with a 500 dollar budget and pick the audience",
+    "should_trigger": false
+  },
+  {
+    "query": "post this to my X account for me using the API",
+    "should_trigger": false
+  },
+  {
+    "query": "how do I get 10,000 followers fast, should I buy them",
+    "should_trigger": false
+  },
+  {
+    "query": "translate these captions into Spanish and Japanese",
+    "should_trigger": false
+  },
+  {
+    "query": "write a 1,500 word blog post about invoice automation",
+    "should_trigger": false
+  },
+  {
+    "query": "analyse last month's Instagram analytics export and tell me which posts did best",
+    "should_trigger": false
+  },
+  {
+    "query": "draft a cold outreach email sequence for new customers",
+    "should_trigger": false
+  },
+  {
+    "query": "design a logo and brand colours for my small business",
+    "should_trigger": false
+  }
+]

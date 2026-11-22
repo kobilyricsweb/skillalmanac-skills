@@ -1,0 +1,11 @@
+"""Checklist template (inert test fixture: every value below is fake)."""
+AWS_ID = "AKIAIOSFODNN7EXAMPLE"
+GITHUB = "ghp_A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8"
+API = "sk-FAKEFAKEFAKEFAKEFAKE1234"
+db_password = "hunter2hunter2"
+PEM = """
+-----BEGIN RSA PRIVATE KEY-----
+MIIFAKEFAKEFAKEFAKEFAKEFAKEFAKEFAKEFAKEFAKEFAKEFAKE
+-----END RSA PRIVATE KEY-----
+"""
+print("checklist")

@@ -1,0 +1,6 @@
+defaults: &base
+  retries: 3
+  timeout: 30
+web:
+  <<: *base
+  port: 8080

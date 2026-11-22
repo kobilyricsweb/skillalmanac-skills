@@ -1,0 +1,670 @@
+{
+ "note": "Each case runs scripts/lp_audit.py with the args (draft names resolve under evals/fixtures/). Expected values were produced by a run and then read by hand against the fixtures; see VERIFICATION.md.",
+ "cases": [
+  {
+   "args": [
+    "good.md"
+   ],
+   "exit": 0,
+   "expect": {
+    "verdict": "pass",
+    "counts": {
+     "error": 0,
+     "warn": 0
+    },
+    "roles": [
+     "hero",
+     "proof",
+     "how",
+     "objections",
+     "cta"
+    ],
+    "rules": [],
+    "stats": {
+     "hero_headline_words": 7,
+     "hero_support_words": 14,
+     "cta_count": 2,
+     "unsupported_claims": 0,
+     "banned_hits": 0,
+     "fk_grade": 2.95
+    }
+   }
+  },
+  {
+   "args": [
+    "good.html"
+   ],
+   "exit": 0,
+   "expect": {
+    "verdict": "pass",
+    "counts": {
+     "error": 0,
+     "warn": 0
+    },
+    "roles": [
+     "hero",
+     "proof",
+     "how",
+     "objections",
+     "cta"
+    ],
+    "rules": [],
+    "stats": {
+     "hero_headline_words": 7,
+     "hero_support_words": 14,
+     "cta_count": 2,
+     "unsupported_claims": 0,
+     "banned_hits": 0,
+     "fk_grade": 1.9
+    }
+   }
+  },
+  {
+   "args": [
+    "bad.md"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "fix",
+    "counts": {
+     "error": 10,
+     "warn": 22
+    },
+    "roles": [
+     "hero",
+     "other",
+     "cta"
+    ],
+    "rules": [
+     [
+      1,
+      "banned-phrase"
+     ],
+     [
+      1,
+      "banned-phrase"
+     ],
+     [
+      1,
+      "banned-phrase"
+     ],
+     [
+      1,
+      "banned-phrase"
+     ],
+     [
+      1,
+      "headline-long"
+     ],
+     [
+      1,
+      "support-long"
+     ],
+     [
+      1,
+      "two-promises"
+     ],
+     [
+      1,
+      "grade-high"
+     ],
+     [
+      1,
+      "missing-how"
+     ],
+     [
+      1,
+      "missing-objections"
+     ],
+     [
+      1,
+      "missing-proof"
+     ],
+     [
+      3,
+      "banned-phrase"
+     ],
+     [
+      3,
+      "banned-phrase"
+     ],
+     [
+      3,
+      "banned-phrase"
+     ],
+     [
+      3,
+      "banned-phrase"
+     ],
+     [
+      3,
+      "banned-phrase"
+     ],
+     [
+      3,
+      "banned-phrase"
+     ],
+     [
+      3,
+      "vague-quantity"
+     ],
+     [
+      3,
+      "sentence-long"
+     ],
+     [
+      5,
+      "banned-phrase"
+     ],
+     [
+      5,
+      "cta-destination-split"
+     ],
+     [
+      5,
+      "cta-grammar"
+     ],
+     [
+      5,
+      "cta-label-variants"
+     ],
+     [
+      7,
+      "banned-phrase"
+     ],
+     [
+      9,
+      "banned-phrase"
+     ],
+     [
+      9,
+      "banned-phrase"
+     ],
+     [
+      9,
+      "banned-phrase"
+     ],
+     [
+      9,
+      "unsupported-number"
+     ],
+     [
+      9,
+      "unsupported-number"
+     ],
+     [
+      11,
+      "cta-grammar"
+     ],
+     [
+      15,
+      "sentence-long"
+     ],
+     [
+      17,
+      "cta-grammar"
+     ]
+    ],
+    "stats": {
+     "hero_headline_words": 14,
+     "hero_support_words": 37,
+     "cta_count": 4,
+     "unsupported_claims": 3,
+     "banned_hits": 15,
+     "fk_grade": 14.72
+    }
+   }
+  },
+  {
+   "args": [
+    "bad.html"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "fix",
+    "counts": {
+     "error": 6,
+     "warn": 3
+    },
+    "roles": [
+     "hero",
+     "how",
+     "cta"
+    ],
+    "rules": [
+     [
+      1,
+      "missing-objections"
+     ],
+     [
+      1,
+      "missing-proof"
+     ],
+     [
+      3,
+      "unsupported-number"
+     ],
+     [
+      4,
+      "banned-phrase"
+     ],
+     [
+      4,
+      "unsupported-number"
+     ],
+     [
+      4,
+      "vague-quantity"
+     ],
+     [
+      4,
+      "cta-destination-split"
+     ],
+     [
+      4,
+      "cta-grammar"
+     ],
+     [
+      8,
+      "cta-grammar"
+     ]
+    ],
+    "stats": {
+     "hero_headline_words": 7,
+     "hero_support_words": 11,
+     "cta_count": 2,
+     "unsupported_claims": 3,
+     "banned_hits": 1,
+     "fk_grade": null
+    }
+   }
+  },
+  {
+   "args": [
+    "missing_sections.md"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "fix",
+    "counts": {
+     "error": 2,
+     "warn": 0
+    },
+    "roles": [
+     "hero",
+     "how",
+     "cta"
+    ],
+    "rules": [
+     [
+      1,
+      "missing-objections"
+     ],
+     [
+      1,
+      "missing-proof"
+     ]
+    ],
+    "stats": {
+     "hero_headline_words": 7,
+     "hero_support_words": 10,
+     "cta_count": 2,
+     "unsupported_claims": 0,
+     "banned_hits": 0,
+     "fk_grade": null
+    }
+   }
+  },
+  {
+   "args": [
+    "cta_split.md"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "fix",
+    "counts": {
+     "error": 1,
+     "warn": 0
+    },
+    "roles": [
+     "hero",
+     "proof",
+     "how",
+     "objections",
+     "cta"
+    ],
+    "rules": [
+     [
+      5,
+      "cta-destination-split"
+     ]
+    ],
+    "stats": {
+     "hero_headline_words": 7,
+     "hero_support_words": 14,
+     "cta_count": 2,
+     "unsupported_claims": 0,
+     "banned_hits": 0,
+     "fk_grade": 2.95
+    }
+   }
+  },
+  {
+   "args": [
+    "unsourced.md"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "fix",
+    "counts": {
+     "error": 2,
+     "warn": 0
+    },
+    "roles": [
+     "hero",
+     "proof",
+     "how",
+     "objections",
+     "cta"
+    ],
+    "rules": [
+     [
+      9,
+      "unsupported-number"
+     ],
+     [
+      26,
+      "unsupported-number"
+     ]
+    ],
+    "stats": {
+     "hero_headline_words": 7,
+     "hero_support_words": 14,
+     "cta_count": 2,
+     "unsupported_claims": 2,
+     "banned_hits": 0,
+     "fk_grade": 2.67
+    }
+   }
+  },
+  {
+   "args": [
+    "optional_ok.md"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "fix",
+    "counts": {
+     "error": 2,
+     "warn": 0
+    },
+    "roles": [
+     "hero",
+     "how",
+     "cta"
+    ],
+    "rules": [
+     [
+      1,
+      "missing-objections"
+     ],
+     [
+      1,
+      "missing-proof"
+     ]
+    ],
+    "stats": {
+     "hero_headline_words": 7,
+     "hero_support_words": 10,
+     "cta_count": 2,
+     "unsupported_claims": 0,
+     "banned_hits": 0,
+     "fk_grade": null
+    }
+   }
+  },
+  {
+   "args": [
+    "optional_ok.md",
+    "--optional",
+    "proof,objections"
+   ],
+   "exit": 0,
+   "expect": {
+    "verdict": "pass",
+    "counts": {
+     "error": 0,
+     "warn": 2
+    },
+    "roles": [
+     "hero",
+     "how",
+     "cta"
+    ],
+    "rules": [
+     [
+      1,
+      "missing-objections"
+     ],
+     [
+      1,
+      "missing-proof"
+     ]
+    ],
+    "stats": {
+     "hero_headline_words": 7,
+     "hero_support_words": 10,
+     "cta_count": 2,
+     "unsupported_claims": 0,
+     "banned_hits": 0,
+     "fk_grade": null
+    }
+   }
+  },
+  {
+   "args": [
+    "optional_ok.md",
+    "--optional",
+    "proof,objections",
+    "--strict"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "pass",
+    "counts": {
+     "error": 0,
+     "warn": 2
+    },
+    "roles": [
+     "hero",
+     "how",
+     "cta"
+    ],
+    "rules": [
+     [
+      1,
+      "missing-objections"
+     ],
+     [
+      1,
+      "missing-proof"
+     ]
+    ],
+    "stats": {
+     "hero_headline_words": 7,
+     "hero_support_words": 10,
+     "cta_count": 2,
+     "unsupported_claims": 0,
+     "banned_hits": 0,
+     "fk_grade": null
+    }
+   }
+  },
+  {
+   "args": [
+    "empty.md"
+   ],
+   "exit": 2,
+   "expect": {}
+  },
+  {
+   "args": [
+    "no_such_file.md"
+   ],
+   "exit": 2,
+   "expect": {}
+  },
+  {
+   "args": [
+    "t2_reference_page.md"
+   ],
+   "exit": 0,
+   "expect": {
+    "verdict": "pass",
+    "counts": {
+     "error": 0,
+     "warn": 0
+    },
+    "roles": [
+     "hero",
+     "proof",
+     "how",
+     "objections",
+     "cta"
+    ],
+    "rules": [],
+    "stats": {
+     "hero_headline_words": 6,
+     "hero_support_words": 13,
+     "cta_count": 2,
+     "unsupported_claims": 0,
+     "banned_hits": 0,
+     "fk_grade": 3.4
+    }
+   }
+  },
+  {
+   "args": [
+    "files/t1-hype-rewrite/draft.md"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "fix",
+    "counts": {
+     "error": 7,
+     "warn": 7
+    },
+    "roles": [
+     "hero",
+     "proof",
+     "other",
+     "objections"
+    ],
+    "rules": [
+     [
+      1,
+      "banned-phrase"
+     ],
+     [
+      1,
+      "banned-phrase"
+     ],
+     [
+      1,
+      "two-promises"
+     ],
+     [
+      1,
+      "missing-cta"
+     ],
+     [
+      1,
+      "missing-how"
+     ],
+     [
+      3,
+      "banned-phrase"
+     ],
+     [
+      3,
+      "banned-phrase"
+     ],
+     [
+      3,
+      "unsupported-number"
+     ],
+     [
+      5,
+      "cta-destination-split"
+     ],
+     [
+      5,
+      "cta-grammar"
+     ],
+     [
+      9,
+      "unsupported-number"
+     ],
+     [
+      9,
+      "vague-quantity"
+     ],
+     [
+      15,
+      "cta-grammar"
+     ],
+     [
+      17,
+      "final-no-cta"
+     ]
+    ],
+    "stats": {
+     "hero_headline_words": 12,
+     "hero_support_words": 22,
+     "cta_count": 2,
+     "unsupported_claims": 3,
+     "banned_hits": 4,
+     "fk_grade": 7.57
+    }
+   }
+  },
+  {
+   "args": [
+    "files/t3-audit-html/page.html"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "fix",
+    "counts": {
+     "error": 2,
+     "warn": 0
+    },
+    "roles": [
+     "hero",
+     "proof",
+     "how",
+     "objections",
+     "cta"
+    ],
+    "rules": [
+     [
+      5,
+      "cta-destination-split"
+     ],
+     [
+      8,
+      "unsupported-number"
+     ]
+    ],
+    "stats": {
+     "hero_headline_words": 4,
+     "hero_support_words": 9,
+     "cta_count": 2,
+     "unsupported_claims": 1,
+     "banned_hits": 0,
+     "fk_grade": 2.4
+    }
+   }
+  }
+ ]
+}

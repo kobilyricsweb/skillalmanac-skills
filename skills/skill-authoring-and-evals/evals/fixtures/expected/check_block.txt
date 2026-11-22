@@ -1,0 +1,10 @@
+ERROR frontmatter          line 3: block scalar for 'description'; many parsers fail on it, use one line
+WARN  description-length   description is 102 characters; under 150 rarely holds both the job and its triggers
+ERROR description-when     description has no 'Use when ...' clause; the agent cannot tell when to load the skill
+WARN  description-boundary description names no near-miss it is not for ('Do not use for ...')
+ERROR description-person   description must be third person ('Writes ...', not 'I can ...' or 'You can ...')
+ERROR description-tag      description contains an XML or HTML tag
+WARN  description-vague    vague wording 'handle various'; name the concrete verbs, objects and user phrases
+
+RESULT: 4 error(s), 3 warning(s). Form only: run the trigger and task evals before trusting the skill.
+[exit 1]

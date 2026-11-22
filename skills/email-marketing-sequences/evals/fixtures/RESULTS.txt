@@ -1,0 +1,9 @@
+PASS validate good_onboarding.json
+PASS validate bad_winback.json
+PASS validate audit_existing.json
+PASS validate nurture_warnings_only.json
+PASS validate nurture_warnings_only.json --strict
+PASS validate nurture_warnings_only.json --min-gap 5
+PASS validate missing_file.json
+PASS validate not_an_object.json
+8/8 cases passed

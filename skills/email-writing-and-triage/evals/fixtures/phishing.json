@@ -1,0 +1,36 @@
+{
+  "messages": [
+    {
+      "id": "paypa1-lookalike",
+      "from": "PayPal Security <security@paypa1-verify.com>",
+      "to": "Dana Cohen <dana@northwind.example>",
+      "subject": "Action needed on your account",
+      "date": "2026-11-17",
+      "body": "Dear customer,\n\nWe noticed a problem. Please verify your password at http://bit.ly/abc123 within 24 hours."
+    },
+    {
+      "id": "domain-typo",
+      "from": "Priya Rao <priya@cl1ent.example>",
+      "to": "Dana Cohen <dana@northwind.example>",
+      "subject": "Updated invoice",
+      "date": "2026-11-17",
+      "body": "Hi Dana,\n\nPlease see the updated invoice and tell me when it is paid."
+    },
+    {
+      "id": "real-client",
+      "from": "Priya Rao <priya@client.example>",
+      "to": "Dana Cohen <dana@northwind.example>",
+      "subject": "Meeting notes",
+      "date": "2026-11-17",
+      "body": "Hi Dana,\n\nCan you send me the notes from yesterday? Thanks, Priya"
+    },
+    {
+      "id": "dana-to-client",
+      "from": "Dana Cohen <dana@northwind.example>",
+      "to": "Priya Rao <priya@client.example>",
+      "subject": "Hello",
+      "date": "2026-11-16",
+      "body": "Hi Priya, good to meet you today."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "skill_name": "cited-deep-research",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/validate_research.py on the files the agent saves, or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task also carries judge assertions it does not control.",
+  "evals": [
+    {
+      "id": "t1-simple-pack",
+      "prompt": "Using only the three pages in the source pack, write a short research report on the Harbor Ferry: ridership, fleet age and the new vessel. I need every claim traceable to a page. Save the report to report.md and the source log to sources.md.",
+      "files": ["evals/files/t1-simple-pack/source_pack.md"],
+      "assertions": [
+        "[script] validate_research.py report.md sources.md exits 0 with ok true",
+        "[script] counts.sources is 3 and counts.claims is at least 5",
+        "[script] sources.md contains the three URLs and the accessed dates 2026-11-19 and 2026-11-20",
+        "[judge] Every number in the prose (1.8 million, 1.5 million, 14 May 2026, 2028, 38 million, 11 days) matches the pack and is attached to the right claim",
+        "[judge] Nothing is stated that the pack does not say (no invented reason for the ridership rise, no invented vessel name)",
+        "[judge] The Gaps section lists what the pack could not answer (for example the vessel's route or funding source) instead of guessing"
+      ]
+    },
+    {
+      "id": "t2-repair",
+      "prompt": "A reviewer bounced draft_report.md and sources.md. Fix them so they pass a citation check, without inventing anything. Save the fixed files as report_fixed.md and sources_fixed.md.",
+      "files": ["evals/files/t2-repair/draft_report.md", "evals/files/t2-repair/sources.md"],
+      "assertions": [
+        "[script] validate_research.py report_fixed.md sources_fixed.md exits 0 with ok true",
+        "[script] counts.claims is at least 3 (the summer claim is kept, supported by S3)",
+        "[script] sources_fixed.md still contains the quote 'Summer months accounted for 70 percent of visits.'",
+        "[judge] The uncited sentence 'Visitors mostly came in summer.' now cites a claim backed by S3, and no claim was added without a quote from the sources",
+        "[judge] The confidence 1.2 was replaced by a value in range and the museum claim is stated as conditional on the roof repair, as the source says",
+        "[judge] The agent did not edit validate_research.py or loosen the checks"
+      ]
+    },
+    {
+      "id": "t3-conflict",
+      "prompt": "Write a cited report from the source pack on how much cycling to work grew in Rivertown and whether cars are being banned from Main Street. Save report.md and sources.md. Use the claim-table format.",
+      "files": ["evals/files/t3-conflict/source_pack.md"],
+      "assertions": [
+        "[script] validate_research.py report.md sources.md exits 0 with ok true",
+        "[script] counts.contradictions is at least 1",
+        "[script] No claim row citing only S3 has confidence above 0.4 (the forum post is hearsay)",
+        "[judge] The 9 percent and 14 percent figures are both reported, attributed to their sources, with a stated reason they may differ (official statistics against an advocacy count) and no silent average",
+        "[judge] The Main Street ban is not presented as fact in Summary or Findings; it appears as an unverified rumour or in Gaps",
+        "[judge] The report ends with what was not checked (for example no independent confirmation of either figure)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "fields": {
+    "situation": "Six-person finance team closes the books in a spreadsheet each month.",
+    "problem": "Month-end close takes nine working days and errors are found late.",
+    "impact": "",
+    "decision_process": "The CFO decides and wants a shortlist by the end of Q1."
+  },
+  "question_plan": [
+    {"stage": "situation", "question": "How is the close run today?", "asked": true},
+    {"stage": "problem", "question": "Where do errors appear?", "asked": true},
+    {"stage": "impact", "question": "What does a late close delay?", "asked": false}
+  ],
+  "commitments": [
+    {"party": "us", "text": "Send a sample close checklist"}
+  ],
+  "next_step": {"action": "Send checklist and agree a review call", "owner": "Sam Ortiz (us)", "date": "2026-12-03"}
+}

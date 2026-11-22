@@ -1,0 +1,46 @@
+{
+  "thresholds": {"min_quotes": 3, "min_participants": 3, "max_share": 0.5},
+  "themes": [
+    {
+      "id": "T1",
+      "title": "Photo capture on mobile fails or is abandoned",
+      "statement": "3 of 6 participants said photo capture or upload on mobile failed or was abandoned; 1 said capture worked.",
+      "confidence": "low",
+      "quotes": [
+        {"participant": "P01", "note": "N01", "text": "the app loses the photo half the time"},
+        {"participant": "P02", "note": "N03", "text": "I gave up on the mobile app and just email myself the receipts"},
+        {"participant": "P03", "note": "N05", "text": "the photo upload fails more than it works"}
+      ],
+      "contradictions": [
+        {"participant": "P04", "note": "N08", "text": "Receipt capture worked fine for me"}
+      ]
+    },
+    {
+      "id": "T2",
+      "title": "Approvals take a long time with little visible progress",
+      "statement": "6 of 6 participants described waiting on approvals with no clear sign of progress.",
+      "confidence": "high",
+      "quotes": [
+        {"participant": "P01", "note": "N02", "text": "Approvals sit with my manager for a week ... nobody tells me."},
+        {"participant": "P02", "note": "N04", "text": "My manager approves things in batches on Fridays, so I wait."},
+        {"participant": "P03", "note": "N06", "text": "I do not know who has my report right now. It just says pending."},
+        {"participant": "P04", "note": "N17", "text": "Pending for days feels like nobody is looking at it."},
+        {"participant": "P05", "note": "N09", "text": "I waited ten days for a four hundred dollar reimbursement."},
+        {"participant": "P06", "note": "N12", "text": "I check the status page every morning"}
+      ],
+      "contradictions": []
+    },
+    {
+      "id": "T3",
+      "title": "Export matches the accounting format but is hard to find",
+      "statement": "3 of 6 participants commented on export: two valued it, one could not find the button.",
+      "confidence": "low",
+      "quotes": [
+        {"participant": "P04", "note": "N07", "text": "The export to our accounting system is the only part I trust."},
+        {"participant": "P01", "note": "N14", "text": "exports come out in the format my accountant wants"},
+        {"participant": "P03", "note": "N15", "text": "The export button is hidden under three menus."}
+      ],
+      "contradictions": []
+    }
+  ]
+}

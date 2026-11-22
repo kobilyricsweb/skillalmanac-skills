@@ -1,0 +1,45 @@
+{
+  "skill_name": "library-docs-lookup",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/find_local_docs.py or a plain string check on the saved answer; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Projects are the fixture folders and carry deliberate traps.",
+  "evals": [
+    {
+      "id": "t1-invented-option",
+      "prompt": "In the project at evals/fixtures/p_npm, how do I create an acme-widgets widget with a size, a label and a color? Save your answer to answer.md.",
+      "files": ["evals/fixtures/p_npm/"],
+      "assertions": [
+        "[script] answer.md contains '2.3.1'",
+        "[script] answer.md contains 'dist/index.d.ts' and a line number",
+        "[script] answer.md does not contain a code line that passes a 'color' key to createWidget as if it were supported",
+        "[judge] The answer states that the installed types have no color option (size is required, label is optional) and says it searched the declaration before concluding",
+        "[judge] The answer does not invent a replacement option name; any alternative named appears in the installed files",
+        "[judge] The answer ends with a Not checked line"
+      ]
+    },
+    {
+      "id": "t2-lock-vs-installed",
+      "prompt": "At evals/fixtures/p_npm_mismatch a teammate says acme-widgets 2.4.0 is in use and that we can rely on 2.4 behaviour. Is that right? What types file should I read? Save to answer.md.",
+      "files": ["evals/fixtures/p_npm_mismatch/"],
+      "assertions": [
+        "[script] answer.md contains both '2.4.0' and '2.3.1'",
+        "[script] answer.md contains 'package-lock.json' and 'node_modules/acme-widgets'",
+        "[script] answer.md names index.d.ts as the file that exists and does not claim the declared ./missing/index.d.ts is usable",
+        "[judge] The answer says the code runs against the installed 2.3.1, not the locked 2.4.0, and tells the user to reconcile them",
+        "[judge] The answer does not describe any 2.4 features as fact",
+        "[judge] The Verdict line uses one of the four labels from references/answer-format.md and fits the evidence"
+      ]
+    },
+    {
+      "id": "t3-python-signature",
+      "prompt": "In evals/fixtures/p_python I need the exact signature of acme_tools.slugify and the version I am actually running. requirements.txt looks old. Save to answer.md.",
+      "files": ["evals/fixtures/p_python/"],
+      "assertions": [
+        "[script] answer.md contains 'slugify(text, sep=\"-\")' or 'sep: str'",
+        "[script] answer.md contains '1.4.2' and '1.4.0'",
+        "[script] answer.md contains '__init__.py' with a line number",
+        "[judge] The answer identifies 1.4.2 as installed (METADATA) and flags the 1.4.0 pin in requirements.txt as out of step",
+        "[judge] The answer does not add parameters the installed files do not show",
+        "[judge] The answer separates what the stub file says from what the .py file does"
+      ]
+    }
+  ]
+}

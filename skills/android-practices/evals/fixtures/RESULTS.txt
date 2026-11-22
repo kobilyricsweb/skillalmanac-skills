@@ -1,0 +1,14 @@
+PASS bad/GlobalScopeUse.kt
+PASS bad/BlockingViewModel.kt
+PASS bad/BlockingHelper.kt
+PASS bad/Bangs.kt
+PASS bad/FewBangs.kt
+PASS bad/Logs.kt
+PASS bad/Strings.kt
+PASS bad/Leaky.kt
+PASS good
+PASS ../files/t1-sync-viewmodel
+PASS ../files/t2-image-cache
+PASS ../files/t3-prerelease-review
+PASS does_not_exist
+13/13 cases passed

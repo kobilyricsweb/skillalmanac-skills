@@ -1,0 +1,45 @@
+{
+  "skill_name": "game-design-docs",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/gdd_check.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-notes-to-gdd",
+      "prompt": "Turn these notes into a design document and an economy table my one-person team can build from. Save the document as design.md and the table as economy.csv.",
+      "files": ["evals/files/t1-notes/notes.md"],
+      "assertions": [
+        "[script] python scripts/gdd_check.py --gdd design.md --economy economy.csv prints ok true",
+        "[script] The JSON field gdd.pillars is 3 or less and gdd.mechanics is 3 or more",
+        "[script] design.md contains 'Moss & Mortar' and 'Cycle time:' with a number of minutes",
+        "[judge] The Capacity line is derived from 16 weeks and one person, and states how (focus factor or measured hours) instead of claiming 16 free weeks",
+        "[judge] Each pillar says what it forbids, and a feature from the notes (for example tools or towers) is shown to be vetoed or served by one",
+        "[judge] The reply lists assumptions it made (for example a guessed cycle time or token income) and does not present them as facts from the notes"
+      ]
+    },
+    {
+      "id": "t2-fix-broken-gdd",
+      "prompt": "This GDD and economy table were reviewed and bounced. Fix them so the team can start building. Do not drop the three existing mechanics. Save design.md and economy.csv.",
+      "files": ["evals/files/t2-draft/design.md", "evals/files/t2-draft/economy.csv"],
+      "assertions": [
+        "[script] python scripts/gdd_check.py --gdd design.md --economy economy.csv prints ok true",
+        "[script] design.md still contains the headings 'Planting', 'Watering' and 'Harvest'",
+        "[script] design.md has 3 or fewer pillars (gdd.pillars)",
+        "[judge] The Watering feedback line describes something the player sees or hears, not 'n/a' or a restatement of the output",
+        "[judge] The reply says which pillars were cut or merged and why, and does not leave the choice implicit",
+        "[judge] Playtest thresholds are invented only where the draft gave none, and the reply flags them as proposals for the author to confirm"
+      ]
+    },
+    {
+      "id": "t3-economy-only",
+      "prompt": "Players say tier 3 takes forever and tier 4 is impossible. Fix this economy table without removing any tier, and explain what was wrong. Save it as economy.csv.",
+      "files": ["evals/files/t3-economy/economy.csv"],
+      "assertions": [
+        "[script] python scripts/gdd_check.py --economy economy.csv prints ok true without --exempt-resource (the gems and salt flows are fixed, not exempted)",
+        "[script] economy.csv still has three rows of type tier (tiers 2, 3 and 4)",
+        "[script] The tier rows in economy.csv still pay in coins",
+        "[judge] The explanation names the cause for each tier: tier 3 cost against early net income, tier 4 sink that starts at tier 3 and exceeds income",
+        "[judge] The reply gives the hours-to-afford for each tier after the fix, and the numbers match the arithmetic cost divided by net income",
+        "[judge] The reply does not hide the gems and salt rows: it either adds the missing flow or says why it left them"
+      ]
+    }
+  ]
+}

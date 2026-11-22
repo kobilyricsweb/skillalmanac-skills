@@ -1,0 +1,22 @@
+[
+  {"query": "triage my inbox export, here's the JSON, tell me what needs an answer today", "should_trigger": true},
+  {"query": "I exported my mailbox as an mbox file, sort it into reply now, reply later and ignore", "should_trigger": true},
+  {"query": "draft a polite decline to this email, I can't take the meeting", "should_trigger": true},
+  {"query": "write a reply saying I need a few days before I can answer, don't commit to a date", "should_trigger": true},
+  {"query": "which of these emails mention a deadline? flag them in a table", "should_trigger": true},
+  {"query": "clear my email backlog: classify everything and draft the replies but don't send anything", "should_trigger": true},
+  {"query": "I'm waiting on three people, which of my sent emails need a follow-up nudge?", "should_trigger": true},
+  {"query": "is this email a phishing attempt or should I answer it? it asks me to buy gift cards", "should_trigger": true},
+  {"query": "reply to this thread confirming Thursday at 2pm, keep it short and don't cc anyone", "should_trigger": true},
+  {"query": "daily email triage routine for a busy manager, with rules for what I answer first", "should_trigger": true},
+  {"query": "connect to my Gmail and send this reply to the client right now", "should_trigger": false},
+  {"query": "write a cold outreach sequence of five emails for my SaaS", "should_trigger": false},
+  {"query": "design a newsletter template and write the weekly marketing email copy", "should_trigger": false},
+  {"query": "write support macros for our helpdesk for refund requests", "should_trigger": false},
+  {"query": "draft the termination clause for this contract and email it to the other side's lawyer", "should_trigger": false},
+  {"query": "set up SPF, DKIM and DMARC records so our mail stops landing in spam", "should_trigger": false},
+  {"query": "summarise this meeting transcript into action items", "should_trigger": false},
+  {"query": "translate this email from Spanish to English", "should_trigger": false},
+  {"query": "write a Python script that sends an HTML email through SMTP", "should_trigger": false},
+  {"query": "make my LinkedIn message sound less like AI wrote it", "should_trigger": false}
+]

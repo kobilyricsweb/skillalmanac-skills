@@ -1,0 +1,6 @@
+order_id,customer,qty,price,state,region
+1001,Acme,10,19.99,shipped,EU
+1002,Beta,6,5.0,pending,EU
+1003,Gamma,7,12.504,shipped,US
+1004,Delta ,3,8.25,pending,US
+1006,Zeta,n/a,9.99,pending,EU

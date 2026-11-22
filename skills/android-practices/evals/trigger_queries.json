@@ -1,0 +1,22 @@
+[
+  {"query": "my Compose LazyColumn stutters when I scroll and the whole screen recomposes, how do I find the cause", "should_trigger": true},
+  {"query": "review this Android ViewModel and screen before I open the PR", "should_trigger": true},
+  {"query": "should this state live in the ViewModel or in remember, and how do I hoist it in Jetpack Compose", "should_trigger": true},
+  {"query": "my Kotlin app crashes after rotation and the Fragment collects a Flow after onDestroyView", "should_trigger": true},
+  {"query": "how should I request the notification permission and handle permanent denial on Android", "should_trigger": true},
+  {"query": "write Compose UI tests and ViewModel tests with runTest for this Android login screen", "should_trigger": true},
+  {"query": "add TalkBack semantics and 48dp touch targets to my Android composables", "should_trigger": true},
+  {"query": "give me a release checklist for shipping my Kotlin Android app to Google Play with R8 on", "should_trigger": true},
+  {"query": "is GlobalScope.launch in my Android ViewModel a problem, what do I use instead", "should_trigger": true},
+  {"query": "scan my Kotlin Android project for Log.d left in release code and Context leaks in companion objects", "should_trigger": true},
+  {"query": "my Flutter ListView janks when I scroll, how do I find out why", "should_trigger": false},
+  {"query": "set up React Native navigation with a bottom tab bar", "should_trigger": false},
+  {"query": "convert this SwiftUI view to use async await with a view model", "should_trigger": false},
+  {"query": "write a Kotlin Ktor backend endpoint with coroutines and Exposed", "should_trigger": false},
+  {"query": "write the Google Play store listing description and keywords for my app", "should_trigger": false},
+  {"query": "explain Kotlin sealed classes and when expressions in general", "should_trigger": false},
+  {"query": "design the shared Kotlin Multiplatform module layout for iOS and Android code sharing", "should_trigger": false},
+  {"query": "my Gradle build is failing with a dependency conflict in a Java Spring project", "should_trigger": false},
+  {"query": "how do I add a dark mode toggle to my React web app with CSS variables", "should_trigger": false},
+  {"query": "draw a Jetpack Compose style app mockup in Figma with auto layout", "should_trigger": false}
+]

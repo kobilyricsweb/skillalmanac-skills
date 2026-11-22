@@ -1,0 +1,7 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 70000
+  },
+  "cache_port": 0
+}

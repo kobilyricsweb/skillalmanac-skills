@@ -1,0 +1,9 @@
+{
+  "start_date": "2026-01-12",
+  "end_date": "2026-01-18",
+  "meeting_minutes": 60,
+  "participants": [
+    {"name": "Mia", "zone": "America/Los_Angeles", "work_start": "09:00", "work_end": "17:00"},
+    {"name": "Ravi", "zone": "Asia/Kolkata", "work_start": "22:00", "work_end": "06:00", "holidays": ["2026-01-14"]}
+  ]
+}

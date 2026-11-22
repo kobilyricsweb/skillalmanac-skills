@@ -1,0 +1,13 @@
+[00:00] Agent: Thanks for calling, how can I help?
+
+[00:06] Customer: My export job failed twice this morning and I need the report for a meeting at noon.
+
+[00:15] Agent: Let me look at the job. I can see the job ran out of memory on the second step because the date range covers three years.
+
+[00:31] Customer: Can I run it for one year instead?
+
+[00:36] Agent: Yes, a one year range stays under the memory limit. I will also raise the limit for your account to four gigabytes until the end of the week.
+
+[00:52] Customer: Great, how long will the one year export take?
+
+[00:58] Agent: About six minutes. You will get an email with a download link that stays valid for forty-eight hours.

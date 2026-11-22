@@ -1,0 +1,45 @@
+{
+  "skill_name": "slide-deck-builder",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/deck_check.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-fix-messy-outline",
+      "prompt": "This deck outline is for a 10 minute review with my director. Slides feel dull and crowded. Rewrite it so it is a deck I would be proud to present, keep my numbers, and save it as deck.md.",
+      "files": ["evals/files/t1-messy-outline/outline.md"],
+      "assertions": [
+        "[script] deck_check.py deck.md exits 0 with ok true",
+        "[script] deck.md contains '91%', '96%', '4,800', '2,300', '3.10' and '2.85'",
+        "[script] deck.md has a slide whose headline starts with 'Appendix' (the introduction and methodology material moved there or was cut)",
+        "[script] every chart in deck.md has a Source line, or the report names the missing source as a placeholder",
+        "[judge] The headlines read in order tell a story and end on the ask; each states a takeaway rather than a topic",
+        "[judge] No number, source or fact was invented; the missing chart source is flagged to the user rather than made up"
+      ]
+    },
+    {
+      "id": "t2-deck-from-notes",
+      "prompt": "Build the board deck from these notes. I will present it live. Give me the outline with speaker notes, checked, and tell me what you could not fill in.",
+      "files": ["evals/files/t2-board-brief/notes.md"],
+      "assertions": [
+        "[script] deck_check.py on the produced outline exits 0 with ok true",
+        "[script] slide_count is between 5 and 11 including title and appendix (15 minute slot with questions)",
+        "[script] the produced outline contains '120,000', '9,400', '1.6' and '1.1'",
+        "[script] the report or the deck marks the saving per avoided call and the region-wide take-up as missing (a placeholder such as [TBC ...] or a stated gap), not as invented numbers",
+        "[judge] The 22% who did not log in appears as a risk on a main slide or is deliberately handled in the appendix with a reason given",
+        "[judge] The last main slide is the ask (approve 120,000 for the pilot), and speaker notes are written to be spoken, not copies of the slide text",
+        "[judge] The reply ends with a short report naming the check result and what was not checked (rendering, fonts, facts)"
+      ]
+    },
+    {
+      "id": "t3-review-existing-deck",
+      "prompt": "Here is a deck outline in JSON that a colleague made. Review it against good presentation practice and tell me exactly what to fix, slide by slide. Do not rewrite the whole deck.",
+      "files": ["evals/fixtures/bad_deck.json"],
+      "assertions": [
+        "[script] the reply cites the missing notes on slide 1, the chart without a source and the image without a description on slide 2, and the duplicate headline on slide 3",
+        "[script] the reply does not contain a full rewritten deck (fewer than 2 new slide headlines are proposed beyond the fixes)",
+        "[judge] Findings are ordered by slide and each names a concrete fix",
+        "[judge] The reply separates what the script checked from what it did not check (facts, visual design, rendering)",
+        "[judge] The reply does not claim the deck is good or bad overall without pointing to specific findings"
+      ]
+    }
+  ]
+}

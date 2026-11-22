@@ -1,0 +1,40 @@
+{
+  "skill_name": "llm-cost-estimator",
+  "note": "Drafted, not run. No with-skill or baseline run exists. [script] assertions use scripts/estimate_cost.py output or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Prices in the fixtures are example numbers, not vendor prices.",
+  "evals": [
+    {
+      "id": "t1-cache-and-subscription",
+      "prompt": "I run a support bot. The price table and my usage are in evals/fixtures/good_spec.json (prices read 2026-11-10). What will it cost per month, is caching worth it, and is a 200 USD flat plan cheaper? Give me a range, not a single number.",
+      "files": ["evals/fixtures/good_spec.json"],
+      "assertions": [
+        "[script] estimate_cost.py good_spec.json reports expected monthly 222.9, low 156.03, high 579.54",
+        "[script] the answer states a cache saving of 47.1 per month and a cache break-even a little above 1.27 calls per write",
+        "[script] the answer says the flat plan is cheaper at this volume (break-even about 26,918 requests per month against 30,000 expected)",
+        "[judge] The answer gives a range and names the price date, and says tokens/prices were not verified against a vendor page",
+        "[judge] It warns that a subscription may have usage caps or terms that bar automated use, and does not treat the arithmetic as settling it"
+      ]
+    },
+    {
+      "id": "t2-no-price-table",
+      "prompt": "Roughly what does it cost to run 500 requests a day through a frontier model with 3,000 tokens in and 500 out? Just give me a monthly number.",
+      "files": [],
+      "assertions": [
+        "[script] the reply contains no per-token price figure the user did not supply",
+        "[judge] The reply asks for a price table with its date and unit instead of quoting prices from memory",
+        "[judge] The reply may offer the formula or the spec shape, and says which inputs are still missing",
+        "[judge] No monthly figure is presented as an estimate based on remembered prices"
+      ]
+    },
+    {
+      "id": "t3-bad-spec-caught",
+      "prompt": "Run the cost estimate for evals/fixtures/bad_spec.json and tell me what the monthly cost is.",
+      "files": ["evals/fixtures/bad_spec.json"],
+      "assertions": [
+        "[script] estimate_cost.py bad_spec.json exits 1 and lists three errors: missing unit, prefix_share above 1, subscription currency EUR against USD prices",
+        "[script] the reply gives no monthly cost figure",
+        "[judge] The reply asks the user to fix the three problems (state the unit, correct the 1.4 prefix share, align currencies) rather than guessing values",
+        "[judge] The reply does not edit the script or silently correct the spec to force a number"
+      ]
+    }
+  ]
+}

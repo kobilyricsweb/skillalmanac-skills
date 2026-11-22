@@ -1,0 +1,262 @@
+{
+ "note": "Each case runs scripts/rn_scan.py on the paths given (relative to evals/fixtures/) and compares the exit code, the summary and the list of [file, line, rule, severity, confidence]. Expected values were checked by hand against the fixture line numbers.",
+ "cases": [
+  {
+   "args": [
+    "bad/Feed.tsx"
+   ],
+   "exit": 1,
+   "summary": {
+    "warn": 4,
+    "info": 2
+   },
+   "findings": [
+    [
+     "Feed.tsx",
+     5,
+     "console-log",
+     "warn",
+     "high"
+    ],
+    [
+     "Feed.tsx",
+     9,
+     "scrollview-map",
+     "info",
+     "low"
+    ],
+    [
+     "Feed.tsx",
+     14,
+     "scrollview-map",
+     "warn",
+     "high"
+    ],
+    [
+     "Feed.tsx",
+     18,
+     "missing-keyextractor",
+     "warn",
+     "medium"
+    ],
+    [
+     "Feed.tsx",
+     20,
+     "inline-renderitem",
+     "info",
+     "medium"
+    ],
+    [
+     "Feed.tsx",
+     24,
+     "index-as-key",
+     "warn",
+     "high"
+    ]
+   ]
+  },
+  {
+   "args": [
+    "bad/Layout.tsx"
+   ],
+   "exit": 1,
+   "summary": {
+    "warn": 1,
+    "info": 2
+   },
+   "findings": [
+    [
+     "Layout.tsx",
+     4,
+     "platform-branch-density",
+     "info",
+     "medium"
+    ],
+    [
+     "Layout.tsx",
+     4,
+     "platform-literal-invalid",
+     "warn",
+     "high"
+    ],
+    [
+     "Layout.tsx",
+     5,
+     "platform-magic-number",
+     "info",
+     "medium"
+    ]
+   ]
+  },
+  {
+   "args": [
+    "bad/Big.jsx"
+   ],
+   "exit": 1,
+   "summary": {
+    "warn": 2,
+    "info": 1
+   },
+   "findings": [
+    [
+     "Big.jsx",
+     6,
+     "scrollview-map",
+     "warn",
+     "high"
+    ],
+    [
+     "Big.jsx",
+     10,
+     "missing-keyextractor",
+     "info",
+     "low"
+    ],
+    [
+     "Big.jsx",
+     14,
+     "inline-renderitem",
+     "warn",
+     "high"
+    ]
+   ]
+  },
+  {
+   "args": [
+    "bad/Strings.tsx"
+   ],
+   "exit": 1,
+   "summary": {
+    "warn": 1,
+    "info": 1
+   },
+   "findings": [
+    [
+     "Strings.tsx",
+     9,
+     "platform-magic-number",
+     "info",
+     "medium"
+    ],
+    [
+     "Strings.tsx",
+     12,
+     "console-log",
+     "warn",
+     "high"
+    ]
+   ]
+  },
+  {
+   "args": [
+    "good"
+   ],
+   "exit": 0,
+   "summary": {
+    "warn": 0,
+    "info": 0
+   },
+   "findings": []
+  },
+  {
+   "args": [
+    "../files/t1-slow-feed"
+   ],
+   "exit": 1,
+   "summary": {
+    "warn": 2,
+    "info": 1
+   },
+   "findings": [
+    [
+     "NotesScreen.tsx",
+     13,
+     "console-log",
+     "warn",
+     "high"
+    ],
+    [
+     "NotesScreen.tsx",
+     16,
+     "scrollview-map",
+     "warn",
+     "medium"
+    ],
+    [
+     "NotesScreen.tsx",
+     17,
+     "index-as-key",
+     "info",
+     "medium"
+    ]
+   ]
+  },
+  {
+   "args": [
+    "../files/t2-camera-permission"
+   ],
+   "exit": 1,
+   "summary": {
+    "warn": 1,
+    "info": 1
+   },
+   "findings": [
+    [
+     "ScanButton.tsx",
+     13,
+     "platform-literal-invalid",
+     "warn",
+     "high"
+    ],
+    [
+     "ScanButton.tsx",
+     13,
+     "platform-magic-number",
+     "info",
+     "medium"
+    ]
+   ]
+  },
+  {
+   "args": [
+    "../files/t3-prerelease-review"
+   ],
+   "exit": 1,
+   "summary": {
+    "warn": 1,
+    "info": 2
+   },
+   "findings": [
+    [
+     "ProfileScreen.tsx",
+     5,
+     "console-log",
+     "warn",
+     "high"
+    ],
+    [
+     "ProfileScreen.tsx",
+     6,
+     "platform-magic-number",
+     "info",
+     "medium"
+    ],
+    [
+     "ProfileScreen.tsx",
+     12,
+     "inline-renderitem",
+     "info",
+     "medium"
+    ]
+   ]
+  },
+  {
+   "args": [
+    "does_not_exist"
+   ],
+   "exit": 2,
+   "summary": null,
+   "findings": null
+  }
+ ]
+}

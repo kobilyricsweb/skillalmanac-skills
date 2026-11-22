@@ -1,0 +1,17 @@
+{
+  "brand": "Grey Mill",
+  "colors": [
+    {"name": "Paper", "hex": "#FFFFFF", "role": "background"},
+    {"name": "Mill Blue", "hex": "#1D4ED8", "role": "primary"},
+    {"name": "Fog", "hex": "#777777", "role": "text"},
+    {"name": "Twin Blue", "hex": "#1d4ed8", "role": "accent"},
+    {"name": "Smudge", "hex": "#12GG45", "role": "surface"}
+  ],
+  "type_scale": [
+    {"name": "caption", "size": 12},
+    {"name": "body", "size": 16},
+    {"name": "h3", "size": 16},
+    {"name": "h2", "size": 14}
+  ],
+  "spacing": [4, 8, 6, 10]
+}

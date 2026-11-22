@@ -1,0 +1,11 @@
+From: Mo Barak <mo@retailer.example>
+To: Dana Cohen <dana@northwind.example>
+Cc: Rita Gold <rita@retailer.example>, Sol Weiss <sol@northwind.example>
+Date: Tue, 17 Nov 2026 09:12:00 +0000
+Subject: Order for the week of the 23rd
+
+Hi Dana,
+
+Can you do 10 cases at 5% off, delivered the week of the 23rd? Rita is copied because she signs off on discounts. I need a yes or no today.
+
+Mo

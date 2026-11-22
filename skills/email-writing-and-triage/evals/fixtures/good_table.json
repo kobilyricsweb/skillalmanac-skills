@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "command": "triage",
+  "source": "mailbox.mbox",
+  "format": "mbox",
+  "me_known": true,
+  "reference_date": "2026-11-18",
+  "message_count": 4,
+  "counts_by_category": {
+    "suspicious": 0,
+    "automated": 1,
+    "urgent_reply": 1,
+    "reply": 0,
+    "fyi": 1,
+    "waiting_on_them": 1,
+    "sent": 0
+  },
+  "messages": [
+    {
+      "id": "v1@client.example",
+      "index": 1,
+      "from": "anna@client.example",
+      "subject": "Re: Site visit",
+      "date": "2026-11-16",
+      "thread": "site visit",
+      "category": "fyi",
+      "reply_action": "none",
+      "flags": [],
+      "reasons": [
+        "no_question_or_request"
+      ],
+      "deadlines": []
+    },
+    {
+      "id": "v2@cafe.example",
+      "index": 2,
+      "from": "ben@cafe.example",
+      "subject": "Café menu review",
+      "date": "2026-11-17",
+      "thread": "café menu review",
+      "category": "urgent_reply",
+      "reply_action": "draft",
+      "flags": [
+        "deadline"
+      ],
+      "reasons": [
+        "question_mark",
+        "deadline_within_2_days"
+      ],
+      "deadlines": [
+        {
+          "text": "2026-11-20",
+          "kind": "absolute",
+          "resolved_date": "2026-11-20",
+          "days_left": 2
+        }
+      ]
+    },
+    {
+      "id": "v3@mail.example",
+      "index": 3,
+      "from": "mailer-daemon@mail.example",
+      "subject": "Undelivered Mail Returned to Sender",
+      "date": "2026-11-17",
+      "thread": "undelivered mail returned to sender",
+      "category": "automated",
+      "reply_action": "none",
+      "flags": [],
+      "reasons": [
+        "automated_sender"
+      ],
+      "deadlines": []
+    },
+    {
+      "id": "v4@example.com",
+      "index": 4,
+      "from": "dana@example.com",
+      "subject": "Re: Site visit",
+      "date": "2026-11-18",
+      "thread": "site visit",
+      "category": "waiting_on_them",
+      "reply_action": "none",
+      "flags": [],
+      "reasons": [
+        "from_me_latest_in_thread",
+        "question_mark"
+      ],
+      "deadlines": []
+    }
+  ],
+  "queue": [
+    "v2@cafe.example"
+  ],
+  "quarantine": [],
+  "warnings": []
+}

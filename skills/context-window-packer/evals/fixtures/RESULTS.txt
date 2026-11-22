@@ -1,0 +1,22 @@
+PASS roomy: must kept, duplicate and lockfile dropped
+PASS tight: should item shrinks to signatures, worst-case warning
+PASS overflow: must items alone exceed the budget
+PASS overflow_allow: a must item allowed to shrink fixes the overflow
+PASS user-supplied ratio replaces the table and sets error to 10 percent
+PASS duplicate: the higher-priority copy is the one kept
+PASS missing manifest is bad input
+PASS skip rules: binary, minified, secret, empty, missing, outside root
+PASS must item that is binary gives an error
+PASS allow_secret_match keeps a flagged file
+PASS --out equal to a candidate is refused even with --force
+PASS --out equal to the manifest is refused even with --force
+PASS --out writes the package
+PASS existing --out is not replaced without --force
+PASS existing --out is replaced with --force
+PASS budget 0 is bad input
+PASS reserve that leaves no usable space is bad input
+PASS duplicate ids are bad input
+PASS unknown priority is bad input
+PASS invalid JSON is bad input
+PASS estimate: 40 ASCII + 20 non-ASCII characters
+21/21 cases passed

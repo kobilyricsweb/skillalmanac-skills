@@ -1,0 +1,10 @@
+[with] 4/7 checks passed
+  PASS  1. SKILL.md written -- 1 file(s)
+  PASS  2. name present -- key present in SKILL.md
+  PASS  3. description present -- key present in SKILL.md
+  FAIL  4. description has a Use when clause -- pattern not found
+  FAIL  5. description has a boundary -- pattern not found
+  FAIL  6. description is a single line -- pattern present
+  PASS  7. body stays short -- 10 lines (max 200)
+RESULT: FAIL
+[exit 1]

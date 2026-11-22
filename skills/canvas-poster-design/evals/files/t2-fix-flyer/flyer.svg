@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350">
+  <rect x="0" y="0" width="1080" height="1350" fill="#FFFFFF"/>
+  <text x="20" y="200" font-size="96" fill="#777777">SALE SALE</text>
+  <text x="540" y="400" font-size="96" fill="#000000" text-anchor="middle">UP TO 50%</text>
+  <text x="100" y="520" font-size="60" fill="#000000">Everything must go</text>
+  <text x="100" y="600" font-size="56" fill="#000000">This weekend only</text>
+  <text x="100" y="680" font-size="40" fill="#000000">Main Street 12</text>
+  <text x="100" y="740" font-size="30" fill="#000000">Open 9 to 5</text>
+  <text x="100" y="800" font-size="20" fill="#777777">Terms apply</text>
+  <rect id="badge" x="900" y="40" width="200" height="120" fill="#FF0000"/>
+</svg>

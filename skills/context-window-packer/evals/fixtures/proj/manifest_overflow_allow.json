@@ -1,0 +1,10 @@
+{
+  "budget": 400,
+  "reserve": 0,
+  "fixed_tokens": 0,
+  "candidates": [
+    {"id": "readme", "path": "README.md", "priority": "must"},
+    {"id": "app", "path": "app.py", "priority": "must", "allow": ["signatures"]},
+    {"id": "util", "path": "util.py", "priority": "should", "relevance": 9}
+  ]
+}

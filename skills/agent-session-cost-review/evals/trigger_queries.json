@@ -1,0 +1,22 @@
+[
+  {"query": "I hit my usage limit again after two hours, can you look at this session log and tell me where the tokens went?", "should_trigger": true},
+  {"query": "why did that session cost so much? here is the jsonl transcript", "should_trigger": true},
+  {"query": "analyze my agent session export for wasted tokens and repeated file reads", "should_trigger": true},
+  {"query": "my coding agent keeps burning through my limit, review the transcript and give me a savings list", "should_trigger": true},
+  {"query": "which tool outputs were the biggest in this conversation log?", "should_trigger": true},
+  {"query": "did the agent get stuck in a loop running the same failing command? check the session file", "should_trigger": true},
+  {"query": "break down token spend by phase for ~/sessions/abc123.jsonl", "should_trigger": true},
+  {"query": "I want a post-mortem on one long session: top costliest turns and what to change", "should_trigger": true},
+  {"query": "how many tokens did that run use and which turns were the expensive ones", "should_trigger": true},
+  {"query": "session review please, I think it read the same file ten times", "should_trigger": true},
+  {"query": "talk shorter from now on, my replies are too long and burning tokens", "should_trigger": false},
+  {"query": "write a handoff note so I can continue this session tomorrow", "should_trigger": false},
+  {"query": "how much will my API bill be next month if I send 5 million tokens a day?", "should_trigger": false},
+  {"query": "why is my invoice higher this month? here is the billing CSV", "should_trigger": false},
+  {"query": "summarize this meeting transcript into action items", "should_trigger": false},
+  {"query": "set up a hook that blocks rm -rf in my agent", "should_trigger": false},
+  {"query": "compress this 40-page PDF so it uses fewer tokens when I paste it", "should_trigger": false},
+  {"query": "review this pull request diff for bugs", "should_trigger": false},
+  {"query": "what is the context window size of the latest model?", "should_trigger": false},
+  {"query": "write an AGENTS.md so the agent stops wandering around the repo", "should_trigger": false}
+]

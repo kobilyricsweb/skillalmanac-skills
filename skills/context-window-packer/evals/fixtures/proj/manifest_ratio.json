@@ -1,0 +1,8 @@
+{
+  "budget": 2000,
+  "reserve": 300,
+  "chars_per_token": 2.0,
+  "candidates": [
+    {"id": "readme", "path": "README.md", "priority": "must"}
+  ]
+}

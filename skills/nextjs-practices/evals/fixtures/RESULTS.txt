@@ -1,0 +1,7 @@
+PASS scan bad_site/app
+PASS scan good_site/app
+PASS scan good_site/app --strict
+PASS scan warn_site/app
+PASS scan warn_site/app --strict
+PASS scan no_such_dir
+6/6 cases passed

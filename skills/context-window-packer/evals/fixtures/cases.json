@@ -1,0 +1,28 @@
+{
+  "note": "Expected values were checked by hand (token arithmetic redone with ceil(chars / ratio) plus header cost) before being saved. Paths ending in .json are resolved inside evals/fixtures/proj.",
+  "cases": [
+    {"name": "roomy: must kept, duplicate and lockfile dropped", "args": ["pack", "manifest_roomy.json"], "exit": 0,
+     "expect": {"status": "ok", "usable": 1500, "used": 1077, "margin": 423, "margin_worst_case": 172,
+                "estimate_error_pct": 23.3, "kept": ["readme", "app", "util", "notes"], "compressed": {},
+                "dropped": {"lock": "lockfile", "readme_copy": "duplicate"}, "warnings": [], "errors": []}},
+    {"name": "tight: should item shrinks to signatures, worst-case warning", "args": ["pack", "manifest_tight.json"], "exit": 0,
+     "expect": {"status": "ok", "usable": 800, "used": 741, "margin": 59, "margin_worst_case": -108,
+                "estimate_error_pct": 22.5, "kept": ["readme", "app", "notes"], "compressed": {"util": "signatures"},
+                "dropped": {"lock": "lockfile"}, "warnings": ["reserve_raised", "worst_case_overflow"], "errors": []}},
+    {"name": "overflow: must items alone exceed the budget", "args": ["pack", "manifest_overflow.json"], "exit": 1,
+     "expect": {"status": "error", "usable": 340, "used": 377, "margin": -37, "estimate_error_pct": 22.7,
+                "kept": ["readme", "app"], "compressed": {}, "dropped": {"util": "no_room"},
+                "warnings": ["reserve_raised"], "errors": ["must_exceeds_budget"]}},
+    {"name": "overflow_allow: a must item allowed to shrink fixes the overflow", "args": ["pack", "manifest_overflow_allow.json"], "exit": 0,
+     "expect": {"status": "ok", "usable": 340, "used": 276, "margin": 64, "estimate_error_pct": 21.9,
+                "kept": ["readme"], "compressed": {"app": "signatures", "util": "summary"}, "dropped": {},
+                "warnings": ["reserve_raised"], "errors": []}},
+    {"name": "user-supplied ratio replaces the table and sets error to 10 percent", "args": ["pack", "manifest_ratio.json"], "exit": 0,
+     "expect": {"status": "ok", "usable": 1700, "used": 333, "margin": 1367, "estimate_error_pct": 10.0,
+                "kept": ["readme"], "compressed": {}, "dropped": {}, "warnings": ["user_ratio_used"], "errors": []}},
+    {"name": "duplicate: the higher-priority copy is the one kept", "args": ["pack", "manifest_dup_order.json"], "exit": 0,
+     "expect": {"status": "ok", "used": 172, "estimate_error_pct": 20.0, "kept": ["readme"], "compressed": {},
+                "dropped": {"readme_copy": "duplicate"}, "warnings": [], "errors": []}},
+    {"name": "missing manifest is bad input", "args": ["pack", "no_such_manifest.json"], "exit": 2, "expect": {}}
+  ]
+}

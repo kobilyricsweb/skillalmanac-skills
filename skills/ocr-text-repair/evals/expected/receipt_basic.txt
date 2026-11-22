@@ -1,0 +1,8 @@
+HARBOUR GROCER LTD
+Receipt 004172  2026-03-14
+milk 1L            2     3.20
+bread              1     2.45
+milk semi         1     1.10
+milk oat           1     2.90
+SKU A1B2 cheese    1     1O.50
+T0TAL                   20.15

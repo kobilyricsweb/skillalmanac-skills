@@ -1,0 +1,27 @@
+{
+  "note": "Expected values were derived by hand from the fixture content (see VERIFICATION.md), then compared with the script output.",
+  "cases": [
+    {"args": ["check", "good_outline.json"], "exit": 0,
+     "expect": {"ok": true, "errors": 0, "warnings": 0, "planned_words": 20000, "counts_by_code": {}}},
+    {"args": ["check", "bad_outline.json"], "exit": 1,
+     "expect": {"ok": false, "errors": 13, "warnings": 7, "planned_words": 18000,
+                "counts_by_code": {"ARC_NO_TURNING_POINT": 1, "ARC_TURN_UNKNOWN": 1, "CHAR_AFTER_DEATH": 1,
+                                   "CHAR_BEFORE_INTRO": 1, "CHAR_VANISHES": 1, "MIDDLE_NO_STAKE_CHANGE": 2,
+                                   "MISSING_BEAT": 2, "MISSING_FIELD": 2, "NO_CHANGE": 1, "PAYOFF_NO_SETUP": 1,
+                                   "POV_DRIFT": 1, "REQUIRES_ORDER": 1, "RUN_OF_SUCCESS": 1, "SETUP_NO_PAYOFF": 1,
+                                   "TENSE_DRIFT": 1, "TIMELINE_BACKWARDS": 1, "TIMELINE_CONTRADICTION": 1},
+                "defect_scenes": {"MISSING_FIELD": ["b01", "b03"], "NO_CHANGE": ["b02"], "POV_DRIFT": ["b03"],
+                                  "TENSE_DRIFT": ["b04"], "TIMELINE_CONTRADICTION": ["b04"], "TIMELINE_BACKWARDS": ["b05"],
+                                  "MIDDLE_NO_STAKE_CHANGE": ["b05", "b06"], "PAYOFF_NO_SETUP": ["b06"],
+                                  "CHAR_BEFORE_INTRO": ["b07"], "CHAR_AFTER_DEATH": ["b08"], "RUN_OF_SUCCESS": ["b09"],
+                                  "CHAR_VANISHES": ["b02"], "SETUP_NO_PAYOFF": ["b05"]}}},
+    {"args": ["check", "unknown_structure.json"], "exit": 1,
+     "expect": {"ok": false, "errors": 2, "counts_by_code": {"SCHEMA": 2}}},
+    {"args": ["check", "not_json.json"], "exit": 2, "expect": {}},
+    {"args": ["check", "missing_file.json"], "exit": 2, "expect": {}},
+    {"args": ["budget", "three-act", "20000"], "exit": 0,
+     "expect": {"budgets": {"hook": 2000, "inciting_incident": 3000, "first_plot_point": 5000, "midpoint": 5000,
+                            "second_plot_point": 3000, "climax": 1600, "resolution": 400}}},
+    {"args": ["budget", "five-act", "20000"], "exit": 2, "expect": {}}
+  ]
+}

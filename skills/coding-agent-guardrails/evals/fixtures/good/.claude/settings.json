@@ -1,0 +1,1 @@
+{"permissions": {"deny": ["Read(./.env)", "Edit(./package-lock.json)"]}, "hooks": {"PreToolUse": []}}

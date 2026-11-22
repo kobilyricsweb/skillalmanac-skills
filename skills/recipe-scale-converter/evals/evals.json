@@ -1,0 +1,45 @@
+{
+  "skill_name": "recipe-scale-converter",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions read the JSON from scripts/scale_recipe.py or check plain text; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has judge assertions that measure something it does not control. Expected script outputs for the three input files were computed by the script and checked by hand (see VERIFICATION.md).",
+  "evals": [
+    {
+      "id": "t1-cookies-servings-to-weight",
+      "prompt": "This cookie recipe makes 24. I need 60 for a school sale and I want everything in grams where you can. Give me the new list and anything I should be careful with.",
+      "files": ["evals/files/t1-cookies/recipe.txt"],
+      "assertions": [
+        "[script] The reply gives 680 g all-purpose flour, 380 g granulated sugar, 400 g brown sugar, 570 g butter and 15 g salt",
+        "[script] The reply gives 5 large eggs and 2 1/2 tsp baking soda",
+        "[script] The reply keeps the chocolate chips in cups (5 cups) and says no density was used for them",
+        "[judge] The reply says baking soda and salt should not be multiplied blindly at 2.5x and says to taste or test",
+        "[judge] The reply gives no calorie, allergen or food-safety statement and no baking time or temperature for the large batch",
+        "[judge] The reply says the gram figures use approximate densities and are rounded"
+      ]
+    },
+    {
+      "id": "t2-cake-pan-change",
+      "prompt": "This cake is written for a 9 inch round pan but I only have a 9x13. How much of each ingredient should I use?",
+      "files": ["evals/files/t2-cake-pan/recipe.txt"],
+      "assertions": [
+        "[script] The reply states a factor of about 1.84 (area 117 over 63.6 square inches)",
+        "[script] The reply gives 2 3/4 cups flour, 1 7/8 cups sugar, 3 1/2 eggs (or says half an egg needs beating and splitting) and 7/8 tsp salt",
+        "[script] The reply does not give a baking time or a temperature as computed values",
+        "[judge] The reply says the pan factor assumes the same batter depth and that cook time must be checked by the recipe's own doneness test",
+        "[judge] The reply flags the fractional egg and offers a way to handle it without inventing a precise weight beyond 'about 50 g, approximate'",
+        "[judge] The reply notes the baking powder amount is a linear figure that may need a test bake"
+      ]
+    },
+    {
+      "id": "t3-metric-bread-to-us-halved",
+      "prompt": "Halve this bread recipe and give me US measures. Also tell me if the numbers are exact or rounded.",
+      "files": ["evals/files/t3-metric-bread/recipe.txt"],
+      "assertions": [
+        "[script] The reply gives 250 g (about 9 oz) flour and 180 ml (3/4 cup) water",
+        "[script] The reply gives 1 1/2 tsp olive oil",
+        "[script] The reply shows 5 g salt and 3.5 g yeast and does not turn them into confident ounce figures without comment",
+        "[judge] The reply says that tiny weights such as 5 g salt and 3.5 g yeast are better kept in grams than converted to fractions of an ounce",
+        "[judge] The reply says the figures are rounded and states the largest rounding difference it saw, or says it was not measured",
+        "[judge] The reply does not add nutrition or food-safety guidance"
+      ]
+    }
+  ]
+}

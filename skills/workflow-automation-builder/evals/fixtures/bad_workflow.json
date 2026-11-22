@@ -1,0 +1,21 @@
+{
+  "name": "bad-example",
+  "trigger": {"type": "webhook", "api_key": "k9x8w7v6u5t4s3r2", "next": "post_lead"},
+  "steps": [
+    {"id": "post_lead", "type": "action", "kind": "write",
+     "config": {"method": "POST", "url": "https://crm.example.com/leads?token=abcd1234efgh5678",
+                "headers": {"Authorization": "Bearer q1w2e3r4t5y6"}},
+     "next": "enrich"},
+    {"id": "enrich", "type": "action", "kind": "read", "timeout_seconds": 10,
+     "config": {"method": "GET", "url": "https://enrich.example.com/x", "aws_key_note": "AKIAABCDEFGHIJKLMNOP"},
+     "on_error": {"retry": {"max_attempts": 50, "backoff": "fixed"}, "then": "skip"},
+     "rate_limit": {"max_per_minute": 10}, "next": "each_row"},
+    {"id": "each_row", "type": "loop", "over": "{{trigger.body.rows}}", "body": "write_row", "next": "ping_a"},
+    {"id": "write_row", "type": "action", "kind": "write", "timeout_seconds": 10,
+     "on_error": {"retry": {"max_attempts": 3, "backoff": "exponential_jitter"}, "then": "alert_stop"},
+     "idempotency_key": "static-key", "rate_limit": {"max_per_minute": 10}, "next": null},
+    {"id": "ping_a", "type": "transform", "on_error": {"then": "alert_stop"}, "next": "ping_b"},
+    {"id": "ping_b", "type": "transform", "on_error": {"then": "alert_stop"}, "next": "ping_a"},
+    {"id": "orphan", "type": "action", "kind": "read", "on_error": {"then": "alert_stop"}, "next": "missing_step"}
+  ]
+}

@@ -1,0 +1,9 @@
+Call notes: vendor outage review, 14 October
+
+Samir opened the call by saying the payment gateway went down at 09:12 and stayed down for 47 minutes. Customers could not check out during that time. Lena said support received 183 tickets, and most of them arrived between 09:20 and 09:40.
+
+Samir said the first alert fired at 09:15, three minutes after the failure, but the on-call engineer did not see it because the alert went to a retired channel. Lena asked whether this had happened before. Samir said he thought it had happened once earlier in the year, but he could not confirm that without checking the incident log.
+
+At 09:30 the team rolled back a configuration change made the previous evening. The rollback did not restore service. Priya suggested the cause might be an expired certificate, and at 09:59 the team renewed it and the gateway recovered. Priya said she was not certain the certificate was the only cause.
+
+Lena estimated that lost sales were about 38,000 dollars, but she stressed that the figure was a rough estimate and the finance team had not reviewed it. Samir proposed moving all alerts to the new channel by Friday. Nobody objected, and Lena agreed to confirm with finance.

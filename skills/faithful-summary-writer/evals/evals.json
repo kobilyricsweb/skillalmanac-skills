@@ -1,0 +1,45 @@
+{
+  "skill_name": "faithful-summary-writer",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/check_summary.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-council-report",
+      "prompt": "Summarize this council report for the mayor in a standard-length summary (10 to 15 percent). The mayor will quote the numbers, so they must match the report. Save to summary.txt.",
+      "files": ["evals/files/t1-council-report/source.txt"],
+      "assertions": [
+        "[script] check_summary.py source.txt summary.txt --target standard prints ok true",
+        "[script] target.status is within, or the reply explains why not (a source under 300 words makes the band unreliable)",
+        "[script] unsupported[] and altered_numbers[] are empty",
+        "[judge] The summary keeps the disagreement: Alvarez argued the phased repair only delays the larger cost, and Nandakumar answered that the growth rate is uncertain",
+        "[judge] The 10-year estimate stays attributed to the engineer and keeps its condition (no further hangers fail inspection)",
+        "[judge] No sentence recommends or evaluates ('a sensible choice'); the staff recommendation is reported as the staff's"
+      ]
+    },
+    {
+      "id": "t2-call-transcript",
+      "prompt": "Write an executive summary of these call notes for a director who was not there. Chronological. She will decide whether to open an incident review. Save to summary.txt.",
+      "files": ["evals/files/t2-call-transcript/source.txt"],
+      "assertions": [
+        "[script] check_summary.py source.txt summary.txt --target executive has no unsupported[] and no altered_numbers[]",
+        "[script] hedge_drops[] is empty, or the reply justifies each entry",
+        "[script] summary.txt contains '47 minutes' or '47-minute', and does not contain the word 'proved' or 'confirmed'",
+        "[judge] The certificate is reported as a suspected cause with Priya's uncertainty, not as the established cause",
+        "[judge] The 38,000 dollar figure is labelled a rough estimate not reviewed by finance, or is left out",
+        "[judge] Events appear in time order and the earlier-incident remark is reported as unconfirmed, not as fact"
+      ]
+    },
+    {
+      "id": "t3-study-article",
+      "prompt": "Summarize this study write-up in about 25 percent of its length so a journalist can use it without reading the original. She must not overstate the findings. Save to summary.txt.",
+      "files": ["evals/files/t3-study-article/source.txt"],
+      "assertions": [
+        "[script] check_summary.py source.txt summary.txt --target detailed prints ok true",
+        "[script] summary.txt contains '84', '21.4' and '19.7'",
+        "[script] negation_flips[] is empty (the authors did not find that napping reduced scores in any subgroup)",
+        "[judge] The subgroup gain of 2.9 points is called tentative and its sample of 19 is stated",
+        "[judge] The limits survive: volunteers from one college, test within 15 minutes of waking, no later-in-day measure, not applicable to older adults or night-shift workers",
+        "[judge] The conclusion keeps the authors' hedge ('suggest', 'may help') and their call for a larger trial; the summary does not say naps improve test scores as a settled fact"
+      ]
+    }
+  ]
+}

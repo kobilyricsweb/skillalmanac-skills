@@ -1,0 +1,9 @@
+PASS en.json fr_good.json --glossary glossary.json --limits limits.json
+PASS en.json fr_bad.json --glossary glossary.json --limits limits.json
+PASS en.json fr_bad.json
+PASS en.json fr_bad.json --no-ratio
+PASS en.properties de_bad.properties
+PASS en.properties de_bad.properties --strict
+PASS en.json missing_file.json
+PASS en.json glossary.txt
+8/8 cases passed

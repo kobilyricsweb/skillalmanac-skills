@@ -1,0 +1,6 @@
+[with] 0/3 checks passed
+  FAIL  1. fixed file written -- no file matches 'out/SKILL.md'
+  FAIL  2. trigger clause added -- no file matches 'out/SKILL.md'
+  FAIL  3. third-person description -- no file matches 'out/SKILL.md'
+RESULT: FAIL
+[exit 1]

@@ -1,0 +1,22 @@
+[
+  {"query": "what changed between last month's customer export and this one? both are CSVs, id is the key", "should_trigger": true},
+  {"query": "diff these two CSV files by the sku column and tell me which rows were added, removed or changed", "should_trigger": true},
+  {"query": "I got a new version of the price list csv, show me every cell that changed compared with the old one", "should_trigger": true},
+  {"query": "compare orders_v1.csv and orders_v2.csv, they should be the same table but something is off", "should_trigger": true},
+  {"query": "did any columns get renamed or change type between the old and new export?", "should_trigger": true},
+  {"query": "the new CSV has tiny rounding differences in the amounts, compare it to the old file ignoring anything under 0.01", "should_trigger": true},
+  {"query": "give me a markdown report of the differences between yesterday's and today's inventory csv, keyed on item_id", "should_trigger": true},
+  {"query": "which rows disappeared from the latest data dump compared with the previous one?", "should_trigger": true},
+  {"query": "can you diff two versions of a spreadsheet export saved as csv and list value changes per column", "should_trigger": true},
+  {"query": "the vendor sent an updated csv, I need a changelog of what is different from the one they sent last quarter", "should_trigger": true},
+  {"query": "profile this CSV: null rates, types and distinct counts for every column", "should_trigger": false},
+  {"query": "find duplicate customers in this contact list", "should_trigger": false},
+  {"query": "check whether my train and test CSVs share any rows", "should_trigger": false},
+  {"query": "merge these three CSV files into one table", "should_trigger": false},
+  {"query": "validate this CSV against our data contract: required columns, allowed values and ranges", "should_trigger": false},
+  {"query": "show me the git diff of my last commit", "should_trigger": false},
+  {"query": "convert this CSV to JSON", "should_trigger": false},
+  {"query": "write an Excel formula that compares two columns", "should_trigger": false},
+  {"query": "compare these two paragraphs of text and show what was edited", "should_trigger": false},
+  {"query": "run an exploratory analysis on sales.csv and plot the monthly trend", "should_trigger": false}
+]

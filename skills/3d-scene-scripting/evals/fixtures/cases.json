@@ -1,0 +1,18 @@
+{
+  "note": "Expected values were checked by hand against the fixture files (see VERIFICATION.md).",
+  "cases": [
+    {"args": ["scene_good.json"], "exit": 0,
+     "expect": {"ok": true, "errors": 0, "warnings": 0, "rules": []}},
+    {"args": ["scene_good_three_yup.json"], "exit": 0,
+     "expect": {"ok": true, "errors": 0, "warnings": 0, "rules": []}},
+    {"args": ["scene_bad_many.json"], "exit": 1,
+     "expect": {"ok": false, "errors": 5, "warnings": 2,
+                "rules": ["below-ground", "camera-aim", "material-undefined", "name-duplicate", "nonuniform-scale-rigid", "light-energy", "material-unreferenced"]}},
+    {"args": ["scene_no_camera_no_light.json"], "exit": 1,
+     "expect": {"ok": false, "errors": 2, "warnings": 0, "rules": ["camera-missing", "light-missing"]}},
+    {"args": ["scene_aimed_away.json"], "exit": 1,
+     "expect": {"ok": false, "errors": 1, "warnings": 0, "rules": ["camera-aim"]}},
+    {"args": ["scene_nan.json"], "exit": 2, "expect": {}},
+    {"args": ["does_not_exist.json"], "exit": 2, "expect": {}}
+  ]
+}

@@ -1,0 +1,4 @@
+patient,visit_date,note,outcome
+p1,2026-03-01,cough and fever for three days,yes
+p2,2026-03-02,routine checkup no complaints,no
+p3,2026-03-03,sprained ankle after football,no

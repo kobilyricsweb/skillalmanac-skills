@@ -1,0 +1,24 @@
+{
+  "study": "Expense reporting tool, 6 interviews",
+  "participants": ["P01", "P02", "P03", "P04", "P05", "P06"],
+  "codebook": ["receipts", "mobile", "approval-delay", "trust", "export", "onboarding"],
+  "notes": [
+    {"id": "N01", "participant": "P01", "text": "I snap the receipt on my phone but then the app loses the photo half the time.", "tags": ["receipts", "mobile"]},
+    {"id": "N02", "participant": "P01", "text": "Approvals sit with my manager for a week, and nobody tells me.", "tags": ["approval-delay"]},
+    {"id": "N03", "participant": "P02", "text": "I gave up on the mobile app and just email myself the receipts.", "tags": ["receipts", "mobile"]},
+    {"id": "N04", "participant": "P02", "text": "My manager approves things in batches on Fridays, so I wait.", "tags": ["approval-delay"]},
+    {"id": "N05", "participant": "P03", "text": "Honestly the photo upload fails more than it works.", "tags": ["receipts", "mobile"]},
+    {"id": "N06", "participant": "P03", "text": "I do not know who has my report right now. It just says pending.", "tags": ["approval-delay", "trust"]},
+    {"id": "N07", "participant": "P04", "text": "The export to our accounting system is the only part I trust.", "tags": ["export", "trust"]},
+    {"id": "N08", "participant": "P04", "text": "Receipt capture worked fine for me, no complaints there.", "tags": ["receipts", "mobile"]},
+    {"id": "N09", "participant": "P05", "text": "I waited ten days for a four hundred dollar reimbursement.", "tags": ["approval-delay"]},
+    {"id": "N10", "participant": "P05", "text": "Finance asked me to re-upload the same receipt twice.", "tags": ["receipts"]},
+    {"id": "N11", "participant": "P06", "text": "Setup took me five minutes, the onboarding checklist was clear.", "tags": ["onboarding"]},
+    {"id": "N12", "participant": "P06", "text": "I check the status page every morning because I do not believe the pending label.", "tags": ["approval-delay", "trust"]},
+    {"id": "N13", "participant": "P02", "text": "Setup was fine but I never found where to add my card.", "tags": ["onboarding"]},
+    {"id": "N14", "participant": "P01", "text": "I like that exports come out in the format my accountant wants.", "tags": ["export"]},
+    {"id": "N15", "participant": "P03", "text": "The export button is hidden under three menus.", "tags": ["export"]},
+    {"id": "N16", "participant": "P01", "kind": "observation", "text": "Participant hesitated, then switched to desktop.", "tags": ["receipts"]},
+    {"id": "N17", "participant": "P04", "text": "Pending for days feels like nobody is looking at it.", "tags": ["approval-delay", "trust"]}
+  ]
+}

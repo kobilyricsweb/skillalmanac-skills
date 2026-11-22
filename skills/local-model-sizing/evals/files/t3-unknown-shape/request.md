@@ -1,0 +1,1 @@
+Will a 70B model fit on my Linux box? It has two 12 GB GPUs (about 500 GB/s each) and 64 GB of RAM (about 60 GB/s). I want 64k context for coding, and I will use a q8_0 KV cache to save memory. I do not know the layer count or the KV head count. The model card says it was trained for 32768 tokens. I have not set up any way to split it across the two cards.

@@ -1,0 +1,21 @@
+# Candidate names for an imaginary budgeting app (fixture)
+Pennywise | compound
+Ledgerly | invented
+Tallybird | compound
+Tallybud | compound
+Brightloom | compound
+Coinfield | compound
+Fynex | invented
+Phyllon | invented
+Kwik | invented
+Ledgerlee | invented
+Budgetr | invented
+Monetra | invented
+Moneyfy | invented
+Xqzt | invented
+Counting Sheep | metaphor
+Lumo | invented
+Nestegg | metaphor
+Spendsmart | descriptive
+Fixturecompanyhq | descriptive
+Cashflow2go | compound

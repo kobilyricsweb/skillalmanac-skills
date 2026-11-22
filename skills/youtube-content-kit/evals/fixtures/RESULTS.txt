@@ -1,0 +1,7 @@
+PASS good.json
+PASS bad.json
+PASS sponsored_missing.json
+PASS sponsored_ok.json
+PASS broken.json
+PASS does_not_exist.json
+6/6 cases passed

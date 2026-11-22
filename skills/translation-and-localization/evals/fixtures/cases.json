@@ -1,0 +1,20 @@
+{
+  "note": "Each case runs scripts/locale_check.py with args (names ending .json or .properties are resolved in evals/fixtures/). Expected values were read by hand against the fixture files before being saved. Without --glossary the brand name 'Acme Cloud' is identical to the source and therefore reported as untranslated; the glossary's do_not_translate list is what silences it.",
+  "cases": [
+    {"args": ["en.json", "fr_good.json", "--glossary", "glossary.json", "--limits", "limits.json"], "exit": 0,
+     "expect": {"ok": true, "errors": 0, "warnings": 0, "counts_by_type": {}}},
+    {"args": ["en.json", "fr_bad.json", "--glossary", "glossary.json", "--limits", "limits.json"], "exit": 1,
+     "expect": {"ok": false, "errors": 11, "warnings": 2,
+       "counts_by_type": {"do_not_translate_altered": 1, "empty_target": 1, "extra_key": 1, "glossary_term_missing": 1, "hard_limit_exceeded": 1, "icu_branch_mismatch": 1, "icu_missing_other": 1, "length_ratio_exceeded": 1, "missing_key": 1, "placeholder_mismatch": 2, "tag_mismatch": 1, "untranslated_identical": 1},
+       "issue_keys": ["extra_src", "legacy", "banner", "banner", "btn.submit", "cart", "gender", "greeting", "msgs", "settings", "signin", "terms", "tip"]}},
+    {"args": ["en.json", "fr_bad.json"], "exit": 1,
+     "expect": {"errors": 8, "warnings": 3, "counts_by_type": {"empty_target": 1, "extra_key": 1, "icu_branch_mismatch": 1, "icu_missing_other": 1, "length_ratio_exceeded": 1, "missing_key": 1, "placeholder_mismatch": 2, "tag_mismatch": 1, "untranslated_identical": 2}}},
+    {"args": ["en.json", "fr_bad.json", "--no-ratio"], "exit": 1,
+     "expect": {"errors": 8, "warnings": 2, "counts_by_type": {"empty_target": 1, "extra_key": 1, "icu_branch_mismatch": 1, "icu_missing_other": 1, "missing_key": 1, "placeholder_mismatch": 2, "tag_mismatch": 1, "untranslated_identical": 2}}},
+    {"args": ["en.properties", "de_bad.properties"], "exit": 1,
+     "expect": {"ok": false, "errors": 1, "warnings": 2, "counts_by_type": {"duplicate_key": 1, "placeholder_mismatch": 1, "untranslated_identical": 1}, "issue_keys": ["dup.key", "label.unicode", "msg.welcome"]}},
+    {"args": ["en.properties", "de_bad.properties", "--strict"], "exit": 1, "expect": {"ok": false}},
+    {"args": ["en.json", "missing_file.json"], "exit": 2, "expect": {}},
+    {"args": ["en.json", "glossary.txt"], "exit": 2, "expect": {}}
+  ]
+}

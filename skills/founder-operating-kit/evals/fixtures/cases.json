@@ -1,0 +1,14 @@
+{
+  "note": "Each case runs scripts/founder_ops.py with args (paths relative to evals/fixtures/) and compares the exit code and the listed JSON fields (dotted paths). Expected values were calculated by hand, see VERIFICATION.md.",
+  "cases": [
+    {"args": ["metrics", "good.csv"], "exit": 0, "expect": {"ok": true, "burn.net_burn_latest": 28895.0, "burn.net_burn_avg_last_3": 29314.67, "burn.gross_burn_latest": 45000.0, "runway_months.last_month": 5.27, "runway_months.avg_last_3": 5.19, "runway_months.worst_of_last_3": 5.12, "cash_zero_month_at_avg_burn": "2027-04", "growth.mom_latest": 0.1, "growth.cmgr_3m": 0.1, "flags": ["runway_under_6_months"]}},
+    {"args": ["metrics", "funding_gap.csv"], "exit": 0, "expect": {"ok": true, "runway_months.avg_last_3": 38.0, "reconciliation_gaps": [{"month": "2026-10", "expected_balance": 80000.0, "reported_balance": 380000.0, "gap": 300000.0}]}},
+    {"args": ["metrics", "positive.csv"], "exit": 0, "expect": {"ok": true, "runway_months.avg_last_3": null, "cash_zero_month_at_avg_burn": null, "flags": ["cash_flow_positive_on_window"]}},
+    {"args": ["metrics", "negative.csv"], "exit": 1, "expect": {"ok": false, "errors.0.code": "negative_value"}},
+    {"args": ["metrics", "month_gap.csv"], "exit": 1, "expect": {"ok": false, "errors.0.code": "month_gap"}},
+    {"args": ["review", "good_review.md"], "exit": 0, "expect": {"ok": true, "decisions_counted": 2, "errors": []}},
+    {"args": ["review", "bad_review.md"], "exit": 1, "expect": {"ok": false, "decisions_counted": 3, "error_codes": ["missing_section", "north_star_missing", "decision_no_owner", "decision_no_due", "decision_due_before_week"], "warning_codes": ["week_not_monday", "too_many_priorities"]}},
+    {"args": ["review", "team_owner_review.md"], "exit": 1, "expect": {"ok": false, "error_codes": ["north_star_missing", "decision_no_owner", "decision_bad_due", "decision_no_due"], "warning_codes": ["too_many_priorities"]}},
+    {"args": ["review", "missing_file.md"], "exit": 2, "expect": {}}
+  ]
+}

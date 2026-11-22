@@ -1,0 +1,18 @@
+{
+  "note": "Each case runs scripts/py_audit.py with args (paths relative to evals/fixtures/) and checks exit code, verdict and the exact list of [line, rule] findings. Expected lists were read by hand against the fixture source.",
+  "cases": [
+    {"args": ["bad_library.py"], "exit": 1, "verdict": "findings", "files_scanned": 1,
+     "findings": [[3, "unused-import"], [5, "os-path"], [5, "unused-import"], [9, "mutable-default"], [10, "os-path"], [11, "print-in-library"], [16, "bare-except"], [20, "mutable-default"], [20, "mutable-default"], [28, "missing-main-guard"], [29, "print-in-library"]]},
+    {"args": ["good_library.py"], "exit": 0, "verdict": "clean", "files_scanned": 1, "findings": []},
+    {"args": ["good_script.py"], "exit": 0, "verdict": "clean", "files_scanned": 1, "findings": []},
+    {"args": ["bad_script_no_guard.py"], "exit": 1, "verdict": "findings", "files_scanned": 1,
+     "findings": [[4, "missing-main-guard"], [4, "print-in-library"]]},
+    {"args": ["suppressed.py"], "exit": 1, "verdict": "findings", "files_scanned": 1, "findings": [[4, "unused-import"]]},
+    {"args": ["__init__.py"], "exit": 0, "verdict": "clean", "files_scanned": 1, "findings": []},
+    {"args": ["broken_syntax.py.txt"], "exit": 1, "verdict": "incomplete", "files_scanned": 0, "findings": []},
+    {"args": ["no_such_file.py"], "exit": 2, "verdict": null, "files_scanned": null, "findings": null},
+    {"args": ["../files/t1-legacy-module/report_tool.py"], "exit": 1, "verdict": "findings", "files_scanned": 1,
+     "findings": [[9, "mutable-default"], [12, "os-path"], [13, "os-path"], [14, "print-in-library"], [18, "bare-except"], [30, "missing-main-guard"], [30, "print-in-library"]]},
+    {"args": ["../files/t2-parallel-job/resize_and_fetch.py"], "exit": 1, "verdict": "findings", "files_scanned": 1, "findings": [[31, "missing-main-guard"]]}
+  ]
+}

@@ -1,0 +1,10 @@
+PASS srt-messy-interview
+PASS plain-timestamped-standup
+PASS plain-verbatim-policy-keeps-fillers
+PASS vtt-already-clean-is-stable
+PASS plain-hard-wrapped-paragraphs
+PASS ambiguous-surname-is-not-merged
+PASS glossary-terms-and-speaker
+PASS dry-run-writes-nothing
+PASS missing-input-exits-2
+9/9 cases passed

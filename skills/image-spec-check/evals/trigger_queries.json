@@ -1,0 +1,22 @@
+[
+  {"query": "can you check that every image in my exports folder is exactly 1200x630 and under 300 KB?", "should_trigger": true},
+  {"query": "I think one of my banners is off by a pixel, can you verify the dimensions against my spec sheet?", "should_trigger": true},
+  {"query": "here is a spec table for our ad placements, tell me which of these PNGs need resizing or cropping", "should_trigger": true},
+  {"query": "my printer wants 300 dpi at A5, do these exported JPEGs have the right density and pixel size?", "should_trigger": true},
+  {"query": "which of these images are the wrong aspect ratio for a 16:9 slot, and should I crop or pad them?", "should_trigger": true},
+  {"query": "the upload keeps rejecting my image, check the file size, format and dimensions against these limits", "should_trigger": true},
+  {"query": "audit this folder of thumbnails: max 640x360, 50 KB, jpg png or webp only", "should_trigger": true},
+  {"query": "is any of my .jpg actually a PNG in disguise? also check sizes against the table", "should_trigger": true},
+  {"query": "give me resize suggestions for these product shots so they all match the 1080x1080 spec", "should_trigger": true},
+  {"query": "check my export batch for truncated or corrupt image files and wrong dimensions", "should_trigger": true},
+  {"query": "design a poster layout for our summer sale at A3 size", "should_trigger": false},
+  {"query": "resize all the images in this folder to 800 pixels wide and save them", "should_trigger": false},
+  {"query": "what size should my cover photo be on the big professional network right now?", "should_trigger": false},
+  {"query": "is this photo blurry or badly lit? give me feedback on the image quality", "should_trigger": false},
+  {"query": "write alt text for these product photos", "should_trigger": false},
+  {"query": "generate an image prompt for a minimalist logo with a fox", "should_trigger": false},
+  {"query": "compress my website images to improve page speed scores", "should_trigger": false},
+  {"query": "convert these HEIC files to JPEG", "should_trigger": false},
+  {"query": "check that the colours in my brand guide meet WCAG contrast ratios", "should_trigger": false},
+  {"query": "extract the text from this scanned screenshot", "should_trigger": false}
+]

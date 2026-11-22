@@ -1,0 +1,22 @@
+[
+  {"query": "is there a skill for filling in PDF forms? and which one should I trust", "should_trigger": true},
+  {"query": "I have a few skills installed in .claude/skills, which of them handles database migrations best", "should_trigger": true},
+  {"query": "compare these three skills for writing release notes and tell me which to install", "should_trigger": true},
+  {"query": "what skills do I already have for data analysis?", "should_trigger": true},
+  {"query": "find me a skill that does SEO audits, I only want one that has been tested", "should_trigger": true},
+  {"query": "my team shared a folder of skills, rank them for code review and tell me what is unverified", "should_trigger": true},
+  {"query": "which skill should I pick for meeting notes, I have two with similar descriptions", "should_trigger": true},
+  {"query": "before I install something for Excel work, is there already a trustworthy skill in my agents folder?", "should_trigger": true},
+  {"query": "list the skills on this machine that match 'translate documents' and score them", "should_trigger": true},
+  {"query": "two skills in my list both claim to write tickets; pick the safer, better maintained one", "should_trigger": true},
+  {"query": "scan this skill folder for malware and credential theft before I install it", "should_trigger": false},
+  {"query": "write me a new skill that formats changelogs", "should_trigger": false},
+  {"query": "search the web for the most popular Claude skills this month", "should_trigger": false},
+  {"query": "why is my skill not triggering? the description seems fine", "should_trigger": false},
+  {"query": "which npm package is best for parsing PDFs", "should_trigger": false},
+  {"query": "recommend a VS Code extension for Python", "should_trigger": false},
+  {"query": "convert my cursor rules into skills", "should_trigger": false},
+  {"query": "write evals for my existing skill and measure it against a baseline", "should_trigger": false},
+  {"query": "list the MCP servers I have connected", "should_trigger": false},
+  {"query": "explain what a skill is and how progressive disclosure works", "should_trigger": false}
+]

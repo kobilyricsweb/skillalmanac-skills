@@ -1,0 +1,9 @@
+PASS good bibtex
+PASS bad bibtex
+PASS good csl-json
+PASS bad csl-json
+PASS unclosed bibtex entry
+PASS wider window clears the 2.5 claim only
+PASS missing manuscript
+PASS not a bib file
+8/8 cases passed

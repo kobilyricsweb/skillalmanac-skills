@@ -1,0 +1,24 @@
+{
+  "trip": {
+    "name": "Area-only plan, no location fields",
+    "style": "balanced",
+    "currency": "EUR",
+    "travelers": 1,
+    "budget_total": 100
+  },
+  "days": [
+    {
+      "date": "2026-06-10",
+      "city": "Lisbon",
+      "items": [
+        {"id": "a", "title": "Viewpoint", "kind": "activity", "start": "09:00", "end": "10:00", "area": "Alfama", "cost": 0, "category": "activities",
+         "facts": [{"claim": "Open all day", "kind": "hours", "status": "verified", "source": "https://example.org/viewpoint", "checked_on": "2026-06-01"}]},
+        {"id": "b", "title": "Square walk", "kind": "activity", "start": "10:10", "end": "11:00", "area": "Baixa", "cost": 0, "category": "activities",
+         "facts": [{"claim": "Open all day", "kind": "hours", "status": "verified", "source": "https://example.org/square", "checked_on": "2026-06-01"}]},
+        {"id": "c", "title": "Arch", "kind": "activity", "start": "11:15", "end": "12:00", "area": "Baixa", "cost": 0, "category": "activities",
+         "facts": [{"claim": "Open all day", "kind": "hours", "status": "verified", "source": "https://example.org/arch", "checked_on": "2026-06-01"}]},
+        {"id": "d", "title": "Lunch", "kind": "meal", "start": "12:30", "end": "13:30", "location": "Cafe", "area": "Baixa", "cost": 0, "category": "food"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+order_id,customer,qty,price,ship_date,status
+1001,Acme,10,19.99,2026-01-05,shipped
+1002,Beta,5,5.00,2026-01-06,pending
+1003,Gamma,7,12.50,2026-01-07,shipped
+1004,Delta,3,8.25,2026-01-08,pending
+1005,Eps,1,100.00,2026-01-09,shipped

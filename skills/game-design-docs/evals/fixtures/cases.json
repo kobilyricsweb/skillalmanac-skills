@@ -1,0 +1,21 @@
+{
+  "note": "Each case runs scripts/gdd_check.py with args (file names are relative to evals/fixtures/) and compares the exit code, ok flag and the sorted list of finding codes. Expected values were derived by hand from the fixture files before the first run.",
+  "cases": [
+    {"name": "good gdd and good economy", "args": ["--gdd", "gdd_good.md", "--economy", "economy_good.csv"], "exit": 0, "ok": true, "codes": []},
+    {"name": "bad gdd", "args": ["--gdd", "gdd_bad.md"], "exit": 1, "ok": false,
+     "codes": ["core-loop-no-cycle-time", "core-loop-steps", "economy-no-table-line", "mechanic-missing-feedback", "mechanic-placeholder-feedback", "pillar-thin", "pillars-too-many", "playtest-no-metric", "playtest-no-sample", "playtest-no-threshold", "playtest-too-few", "progression-tier-gap", "scope-must-over-limit", "scope-total-over-capacity"]},
+    {"name": "gdd missing sections", "args": ["--gdd", "gdd_missing_sections.md"], "exit": 1, "ok": false,
+     "codes": ["economy-no-table-line", "section-empty", "section-missing", "section-missing"]},
+    {"name": "bad economy", "args": ["--economy", "economy_bad.csv"], "exit": 1, "ok": false,
+     "codes": ["source-without-sink", "sink-without-source", "tier-cost-decreases", "tier-too-slow", "tier-unreachable"]},
+    {"name": "bad economy with gems exempt", "args": ["--economy", "economy_bad.csv", "--exempt-resource", "gems"], "exit": 1, "ok": false,
+     "codes": ["sink-without-source", "tier-cost-decreases", "tier-too-slow", "tier-unreachable"]},
+    {"name": "tier count mismatch between gdd and csv", "args": ["--gdd", "gdd_good.md", "--economy", "economy_short.csv"], "exit": 1, "ok": false,
+     "codes": ["inflation-risk", "tier-count-mismatch"]},
+    {"name": "good economy alone with max-hours 2 makes tier 2 too slow", "args": ["--economy", "economy_good.csv", "--max-hours", "2"], "exit": 1, "ok": false,
+     "codes": ["tier-too-slow", "tier-too-slow", "tier-too-slow"]},
+    {"name": "missing file", "args": ["--gdd", "does_not_exist.md"], "exit": 2, "ok": false, "codes": []},
+    {"name": "empty file", "args": ["--gdd", "empty.md"], "exit": 2, "ok": false, "codes": []},
+    {"name": "no arguments", "args": [], "exit": 2, "ok": false, "codes": []}
+  ]
+}

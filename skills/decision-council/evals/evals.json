@@ -1,0 +1,46 @@
+{
+  "skill_name": "decision-council",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/decision_matrix.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Expected script values for the t2 and t3 inputs are in evals/fixtures/expected_vendor.json and expected_tie.json, checked by hand.",
+  "evals": [
+    {
+      "id": "t1-job-offer",
+      "prompt": "Read my notes and help me decide what to do about the job offer. I want a real analysis, not pros and cons. Save the matrix and your recommendation as files next to my notes.",
+      "files": ["evals/files/t1-job-offer.md"],
+      "assertions": [
+        "[script] a matrix file (JSON or CSV) exists and decision_matrix.py exits 0 or 1 on it with ok true",
+        "[script] the matrix has at least 3 options and one of them is named like 'stay', 'do nothing' or 'current job'",
+        "[judge] The reply contains five separately labelled role blocks (sceptic, operator, finance, customer, long-term), each with a stance on every option and a confidence level",
+        "[judge] No figure appears that is neither in the notes nor tagged as an assumption or given as a range; in particular no invented startup runway, probability of promotion or freelance income presented as fact",
+        "[judge] The weights are presented as proposed and the user is asked to confirm or change them, or the report states they are unconfirmed",
+        "[judge] The recommendation states a reversibility class, cost to undo and a point of no return, and has at least two kill criteria each with a measurable threshold, a date and an owner",
+        "[judge] The reply notes what was not checked, for example the startup's runway or the equity terms, and does not give tax or investment advice"
+      ]
+    },
+    {
+      "id": "t2-vendor-matrix",
+      "prompt": "I already scored three vendors, matrix is in the CSV. Tell me who wins and how safe that result is. If I changed my mind on the weights, what would it take to flip it?",
+      "files": ["evals/files/t2-vendor-matrix.csv"],
+      "assertions": [
+        "[script] the reply names C as the winner with a score of 4.07 (4.0667) out of 5",
+        "[script] the reply states that raising the Cost weight from 4 to 8 makes A overtake C, or gives an equivalent flip for another criterion that matches decision_matrix.py output (Speed 3 to 7, Risk 3 to 1, Fit 5 to 1)",
+        "[script] the reply does not call the result a tie",
+        "[judge] The reply describes the result as moderately sensitive to weights (smallest shift is Risk, 3 down to 1) and says equal weights give the same winner",
+        "[judge] The reply asks whether the scores themselves are evidenced or does not present the numbers as facts",
+        "[judge] The reply does not run a five-role council nobody asked for; it answers the question asked"
+      ]
+    },
+    {
+      "id": "t3-tie",
+      "prompt": "These are my three project options scored on impact, effort and risk. Just tell me which one to pick. Matrix is in the CSV.",
+      "files": ["evals/files/t3-priorities-tie.csv"],
+      "assertions": [
+        "[script] the reply says X and Y tie for first with a score of 4.0 and Z is last at 2.5",
+        "[script] the reply does not name a single winner without qualification",
+        "[script] the reply mentions that impact is the highest-weighted criterion on which X and Y differ and that Y is better on it",
+        "[judge] The reply refuses to pick arbitrarily, explains that the matrix cannot separate X and Y, and offers at least two ways forward (the tie-break criterion, a cheap test, a smaller reversible step, or rescoring)",
+        "[judge] The reply notes Z is dominated and can be dropped",
+        "[judge] The tie-break is offered as a suggestion for the user to accept, not applied silently"
+      ]
+    }
+  ]
+}

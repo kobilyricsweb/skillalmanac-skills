@@ -1,0 +1,22 @@
+[
+  {"query": "I have to file my taxes and I just can't get started, can you break it down for me", "should_trigger": true},
+  {"query": "what is my very first step to clean out the garage? I'm overwhelmed by it", "should_trigger": true},
+  {"query": "break this big thesis goal into small steps I can do in 30 minutes each", "should_trigger": true},
+  {"query": "I have ADHD and tasks feel too big to start. Help me turn 'organize my finances' into a plan", "should_trigger": true},
+  {"query": "plan my week around this project, I only have 90 minutes a day and low energy afternoons", "should_trigger": true},
+  {"query": "give me a next action and a daily plan for finishing my portfolio site", "should_trigger": true},
+  {"query": "check my plan.md, are any steps too long or vague?", "should_trigger": true},
+  {"query": "I keep skipping the same task every day. Can you shrink it to something I will actually do?", "should_trigger": true},
+  {"query": "turn 'get healthy' into tiny physical actions with energy tags", "should_trigger": true},
+  {"query": "too big to start: write a 20 page report due in two weeks. what do I do first?", "should_trigger": true},
+  {"query": "write Jira tickets with acceptance criteria for the checkout redesign", "should_trigger": false},
+  {"query": "create a project plan with milestones and owners for our six person team", "should_trigger": false},
+  {"query": "do I have ADHD? my symptoms are trouble focusing and forgetting things", "should_trigger": false},
+  {"query": "which medication helps with focus for adults?", "should_trigger": false},
+  {"query": "build a Gantt chart for the product launch", "should_trigger": false},
+  {"query": "summarise my meeting notes into action items with owners", "should_trigger": false},
+  {"query": "pressure-test my plan for the quarter and tell me what could go wrong", "should_trigger": false},
+  {"query": "set a daily recurring reminder in my calendar at 9am", "should_trigger": false},
+  {"query": "break this Python function into smaller functions", "should_trigger": false},
+  {"query": "what are good morning routines for productivity? just give me ideas", "should_trigger": false}
+]

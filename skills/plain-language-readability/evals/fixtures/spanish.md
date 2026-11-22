@@ -1,0 +1,1 @@
+La oficina cerrara temprano el viernes por la tarde. Por favor, traiga su formulario al mostrador de la entrada antes de las cuatro. Si tiene preguntas sobre su solicitud, puede llamar a nuestro equipo de ayuda durante la semana y le responderemos lo antes posible.

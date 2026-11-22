@@ -1,0 +1,285 @@
+{
+  "note": "Each case runs scripts/manuscript_check.py main() on two files in evals/fixtures/ and compares the exit code and the listed JSON fields. Expected values were derived by reading the fixtures, then compared with the script output.",
+  "cases": [
+    {
+      "name": "good bibtex",
+      "args": [
+        "good.md",
+        "good.bib"
+      ],
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "source_format": "bibtex",
+        "counts": {
+          "entries": 4,
+          "citation_occurrences": 5,
+          "distinct_keys_cited": 4,
+          "numeric_sentences_checked": 1
+        },
+        "skipped_sections": [
+          "Methods",
+          "Results",
+          "References"
+        ]
+      }
+    },
+    {
+      "name": "bad bibtex",
+      "args": [
+        "bad.md",
+        "bad.bib"
+      ],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "problems": {
+          "unresolved_keys": 2,
+          "uncited_sources": 3,
+          "duplicate_keys": 1,
+          "missing_fields": 2,
+          "suspect_fields": 2,
+          "uncited_numeric_claims": 2,
+          "parse_errors": 0
+        },
+        "unresolved_keys": [
+          {
+            "key": "Roe2010",
+            "lines": [
+              8
+            ],
+            "hint": "differs only in letter case from 'roe2010'"
+          },
+          {
+            "key": "doe2018",
+            "lines": [
+              8
+            ]
+          }
+        ],
+        "uncited_sources": [
+          "DOE2017",
+          "roe2010",
+          "unused2015"
+        ],
+        "duplicate_keys": [
+          {
+            "key": "doe2017",
+            "count": 2,
+            "locations": [
+              1,
+              7
+            ]
+          }
+        ],
+        "missing_fields": [
+          {
+            "key": "roe2010",
+            "type": "book",
+            "missing": [
+              "publisher"
+            ]
+          },
+          {
+            "key": "lee2019",
+            "type": "article",
+            "missing": [
+              "journal|journaltitle"
+            ]
+          }
+        ],
+        "suspect_fields": [
+          {
+            "key": "roe2010",
+            "field": "title",
+            "value": "TODO",
+            "reason": "placeholder text"
+          },
+          {
+            "key": "roe2010",
+            "field": "year",
+            "value": "20x1",
+            "reason": "not a four-digit year"
+          }
+        ],
+        "uncited_numeric_claims_lines": [
+          8,
+          10
+        ],
+        "uncited_numeric_claims_numbers": [
+          [
+            "2.5"
+          ],
+          [
+            "12"
+          ]
+        ],
+        "skipped_sections": [
+          "Methods"
+        ]
+      }
+    },
+    {
+      "name": "good csl-json",
+      "args": [
+        "good_csl.md",
+        "good.json"
+      ],
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "source_format": "csl-json",
+        "counts": {
+          "entries": 2,
+          "citation_occurrences": 2,
+          "distinct_keys_cited": 2,
+          "numeric_sentences_checked": 0
+        }
+      }
+    },
+    {
+      "name": "bad csl-json",
+      "args": [
+        "bad.md",
+        "bad.json"
+      ],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "source_format": "csl-json",
+        "problems": {
+          "unresolved_keys": 3,
+          "uncited_sources": 1,
+          "duplicate_keys": 1,
+          "missing_fields": 2,
+          "suspect_fields": 0,
+          "uncited_numeric_claims": 2,
+          "parse_errors": 0
+        },
+        "uncited_sources": [
+          "roe2010"
+        ],
+        "duplicate_keys": [
+          {
+            "key": "doe2017",
+            "count": 2,
+            "locations": [
+              1,
+              3
+            ]
+          }
+        ],
+        "missing_fields": [
+          {
+            "key": "doe2017",
+            "type": "article-journal",
+            "missing": [
+              "container-title"
+            ]
+          },
+          {
+            "key": "roe2010",
+            "type": "book",
+            "missing": [
+              "issued"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "unclosed bibtex entry",
+      "args": [
+        "good.md",
+        "broken.bib"
+      ],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "problems": {
+          "unresolved_keys": 3,
+          "uncited_sources": 0,
+          "duplicate_keys": 0,
+          "missing_fields": 0,
+          "suspect_fields": 0,
+          "uncited_numeric_claims": 0,
+          "parse_errors": 1
+        },
+        "parse_errors": [
+          {
+            "line": 7,
+            "error": "entry is not closed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "wider window clears the 2.5 claim only",
+      "args": [
+        "bad.md",
+        "bad.bib",
+        "--window-before",
+        "1",
+        "--window-after",
+        "2"
+      ],
+      "exit": 1,
+      "expect": {
+        "problems": {
+          "unresolved_keys": 2,
+          "uncited_sources": 3,
+          "duplicate_keys": 1,
+          "missing_fields": 2,
+          "suspect_fields": 2,
+          "uncited_numeric_claims": 1,
+          "parse_errors": 0
+        },
+        "uncited_numeric_claims_numbers": [
+          [
+            "12"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "missing manuscript",
+      "args": [
+        "no_such.md",
+        "good.bib"
+      ],
+      "exit": 2,
+      "expect": {
+        "ok": false,
+        "error": "cannot read manuscript 'no_such.md': No such file or directory"
+      }
+    },
+    {
+      "name": "not a bib file",
+      "args": [
+        "good.md",
+        "bad.md"
+      ],
+      "exit": 2,
+      "expect": {
+        "ok": false,
+        "error": "sources file holds no entries; is it BibTeX (.bib) or CSL-JSON?"
+      }
+    },
+    {
+      "name": "neighbour citation is reported as covered",
+      "args": [
+        "neighbour.md",
+        "neighbour.bib"
+      ],
+      "exit": 1,
+      "expect": {
+        "numeric_claims_covered_by_neighbour_lines": [
+          3
+        ],
+        "uncited_numeric_claims_lines": [
+          5
+        ]
+      }
+    }
+  ]
+}

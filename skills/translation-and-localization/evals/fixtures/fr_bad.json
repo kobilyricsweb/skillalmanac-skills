@@ -1,0 +1,18 @@
+{
+  "app": {"name": "Acme Cloud"},
+  "nav": {"dashboard": "Tableau de bord", "invoices": "Factures"},
+  "greeting": "Bonjour, {nom} !",
+  "cart": "{count, plural, one {# article dans votre panier}}",
+  "save": "Enregistrer",
+  "ok": "OK",
+  "msgs": "Vous avez %s nouveaux messages",
+  "terms": "Lisez les conditions d'utilisation avant de continuer.",
+  "tip": "Ouvrez le panneau pour voir votre activit\u00e9",
+  "gender": "{gender, select, male {Il a aim\u00e9} other {Ils ont aim\u00e9}}",
+  "btn": {"submit": "Submit"},
+  "legacy": "Ancien",
+  "signin": "Se connecter avec ouvert-auth",
+  "help": "Aide",
+  "banner": "Mettez \u00e0 niveau votre abonnement maintenant pour d\u00e9bloquer toutes les fonctionnalit\u00e9s",
+  "settings": ""
+}

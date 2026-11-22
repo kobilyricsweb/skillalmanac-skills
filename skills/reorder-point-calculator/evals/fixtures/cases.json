@@ -1,0 +1,107 @@
+{
+  "note": "Expected values were worked out by hand from sales.csv and items.csv (see VERIFICATION.md section 2), not copied from script output. Arguments ending in .csv or .json are resolved inside evals/fixtures.",
+  "cases": [
+    {
+      "name": "main run, buffer 3 days, cover 14 days",
+      "args": ["sales.csv", "items.csv", "--buffer-days", "3", "--cover-days", "14"],
+      "exit": 0,
+      "expect": {
+        "as_of": "2026-03-28",
+        "summary": {"order within lead time": 1, "order now": 2, "fine": 1, "no sales": 1, "too little data": 1, "check data": 1},
+        "items": {
+          "mug-blue": {"action": "order within lead time", "avg_daily": 4.0, "std_daily": 0.0, "reorder_point": 40, "days_left": 12.5, "days_to_reorder_point": 2.5, "stockout_before_arrival": false, "suggested_order_qty": null},
+          "tote-green": {"action": "order now", "avg_daily": 2.0, "reorder_point": 28, "days_left": 9.0, "stockout_before_arrival": true, "suggested_order_qty": 38},
+          "cap-spike": {"action": "fine", "avg_daily": 3.8214, "reorder_point": 27, "days_left": 26.2, "days_to_reorder_point": 19.1, "spike_days": [{"date": "2026-03-20", "qty": 40.0}], "spikes_excluded": false},
+          "scarf-returns": {"action": "order now", "avg_daily": 1.0, "reorder_point": 5, "days_left": 3.0, "stockout_before_arrival": false, "suggested_order_qty": 16},
+          "dead-vase": {"action": "no sales", "avg_daily": 0.0, "dead_stock": true, "reorder_point": 0},
+          "new-lamp": {"action": "too little data", "days_observed": 9, "reorder_point": null},
+          "unit-box": {"action": "check data", "reorder_point": null}
+        },
+        "warning_contains": {
+          "scarf-returns": ["lead_time_days is 0", "1 negative-quantity rows"],
+          "dead-vase": ["dead stock"],
+          "tote-green": ["stockout is likely"],
+          "unit-box": ["unit mismatch"]
+        }
+      }
+    },
+    {
+      "name": "spikes excluded",
+      "args": ["sales.csv", "items.csv", "--buffer-days", "3", "--cover-days", "14", "--exclude-spikes"],
+      "exit": 0,
+      "expect": {
+        "items": {
+          "cap-spike": {"action": "fine", "avg_daily": 2.4815, "reorder_point": 18, "spikes_excluded": true, "days_observed": 27}
+        }
+      }
+    },
+    {
+      "name": "optional statistical reorder point",
+      "args": ["sales.csv", "items.csv", "--buffer-days", "3", "--z", "1.645"],
+      "exit": 0,
+      "expect": {
+        "items": {
+          "cap-spike": {"reorder_point_statistical": 46, "std_daily": 7.1079},
+          "mug-blue": {"reorder_point_statistical": 28}
+        }
+      }
+    },
+    {
+      "name": "negative stock and bad lead time are flagged, not calculated into advice",
+      "args": ["sales.csv", "items_bad.csv", "--buffer-days", "3"],
+      "exit": 0,
+      "expect": {
+        "summary": {"check data": 2},
+        "items": {
+          "mug-blue": {"action": "check data", "reorder_point": 40, "suggested_order_qty": null},
+          "tote-green": {"action": "check data", "reorder_point": null}
+        },
+        "warning_contains": {
+          "mug-blue": ["stock is negative"],
+          "tote-green": ["lead_time_days is missing"]
+        }
+      }
+    },
+    {
+      "name": "as-of before most of the history leaves too little data",
+      "args": ["sales.csv", "items.csv", "--buffer-days", "3", "--as-of", "2026-03-10"],
+      "exit": 0,
+      "expect": {
+        "items": {
+          "mug-blue": {"action": "too little data", "days_observed": 10},
+          "new-lamp": {"action": "too little data", "days_observed": 0}
+        }
+      }
+    },
+    {
+      "name": "--out equal to the sales input is refused even with --force",
+      "args": ["sales.csv", "items.csv", "--buffer-days", "3", "--out", "sales.csv", "--force"],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "name": "--out equal to the items input, spelled with a detour, is refused",
+      "args": ["sales.csv", "items.csv", "--buffer-days", "3", "--out", "../fixtures/items.csv", "--force"],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "name": "dry run writes nothing",
+      "args": ["sales.csv", "items.csv", "--buffer-days", "3", "--out", "report_should_not_exist.json", "--dry-run"],
+      "exit": 0,
+      "expect": {"no_file": "report_should_not_exist.json"}
+    },
+    {
+      "name": "missing sales file",
+      "args": ["no_such_sales.csv", "items.csv", "--buffer-days", "3"],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "name": "buffer days is required",
+      "args": ["sales.csv", "items.csv"],
+      "exit": 2,
+      "expect": {}
+    }
+  ]
+}

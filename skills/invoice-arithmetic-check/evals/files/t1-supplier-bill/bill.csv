@@ -1,0 +1,4 @@
+invoice_number,supplier,issue_date,due_date,terms,currency,description,quantity,unit_price,tax_rate,line_total,stated_total
+N-5521,Northwind Office,2026-05-04,2026-05-18,net 14,GBP,Paper A4 box,12,4.25,20,51.00,179.50
+N-5521,Northwind Office,,,,,Toner cartridge,2,38.90,20,78.80,
+N-5521,Northwind Office,,,,,Stapler,5,3.99,20,19.95,

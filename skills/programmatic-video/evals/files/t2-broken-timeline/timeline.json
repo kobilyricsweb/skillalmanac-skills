@@ -1,0 +1,20 @@
+{
+  "composition": {"fps": 30, "width": 1920, "height": 1080, "duration": 30},
+  "assets": {
+    "a": {"type": "video", "path": "assets/scene-a.mp4", "fps": 30, "width": 1920, "height": 1080, "duration": 12, "license": "own footage"},
+    "b": {"type": "video", "path": "assets/scene-b.mp4", "fps": 24, "width": 1920, "height": 1080, "duration": 10, "license": "own footage"},
+    "song": {"type": "audio", "path": "assets/Summer Vibes.mp3", "duration": 200}
+  },
+  "tracks": [
+    {"id": "v1", "kind": "video", "clips": [
+      {"id": "s1", "asset": "a", "start": 0, "duration": 14},
+      {"id": "s2", "asset": "b", "start": 13, "duration": 10},
+      {"id": "s3", "asset": "a", "start": 23, "duration": 9}
+    ]},
+    {"id": "a1", "kind": "audio", "clips": [{"id": "m1", "asset": "song", "start": 0, "duration": 30}]},
+    {"id": "cap", "kind": "caption", "clips": [
+      {"id": "k1", "start": 1, "duration": 2, "text": "Our quarterly results are in and they are better than expected"},
+      {"id": "k2", "start": 14, "duration": 3, "text": "Thank you"}
+    ]}
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {"query": "what chunk size and overlap should I use for my RAG chatbot over our help center docs?", "should_trigger": true},
+  {"query": "my retrieval keeps missing answers that are in the docs, I think the chunking is wrong, can you test it", "should_trigger": true},
+  {"query": "compare 300 token and 600 token chunks on this folder of markdown files and tell me which retrieves better", "should_trigger": true},
+  {"query": "split these markdown docs into chunks by heading and give me a jsonl with the heading path for each chunk", "should_trigger": true},
+  {"query": "how should I chunk a long policy handbook for document question answering without a vector database to test on", "should_trigger": true},
+  {"query": "check my chunks for code blocks that got cut in half and duplicate chunks", "should_trigger": true},
+  {"query": "is 200 tokens of overlap on 500 token chunks too much?", "should_trigger": true},
+  {"query": "measure recall at k for different chunking strategies on my knowledge base text files", "should_trigger": true},
+  {"query": "plan chunking for a langchain rag app: docs, a faq, and some call transcripts", "should_trigger": true},
+  {"query": "why are my RAG chunks losing their section titles and how do I keep the heading context", "should_trigger": true},
+  {"query": "which embedding model is best for semantic search, OpenAI or an open source one?", "should_trigger": false},
+  {"query": "set up pinecone and write the code to upsert vectors for my documents", "should_trigger": false},
+  {"query": "explain what RAG is and how it differs from fine-tuning", "should_trigger": false},
+  {"query": "summarize this 40 page pdf into one page", "should_trigger": false},
+  {"query": "write a langchain agent that answers questions using my retriever and cites sources", "should_trigger": false},
+  {"query": "evaluate whether my chatbot answers are faithful to the retrieved context", "should_trigger": false},
+  {"query": "split this CSV into 5 files with 1000 rows each", "should_trigger": false},
+  {"query": "break my essay into paragraphs and fix the heading levels", "should_trigger": false},
+  {"query": "estimate how much the OpenAI embeddings API will cost for 2 million documents", "should_trigger": false},
+  {"query": "how do I split a large git repository into smaller repositories", "should_trigger": false}
+]

@@ -1,0 +1,9 @@
+{
+  "colors": {"text": "#1f2933", "text-muted": "#52606d", "background": "#ffffff", "primary": "#0b5cad", "on-primary": "#ffffff", "danger": "#b42318"},
+  "contrast_pairs": [["text", "background"], ["text-muted", "background"], ["on-primary", "primary"], ["danger", "background"]],
+  "font_sizes": [14, 16, 20, 24, 32, 40],
+  "spacing": [4, 8, 12, 16, 24, 32, 48, 64],
+  "radius": [4, 8, 9999],
+  "line_heights": {"body": 1.5, "heading": 1.2},
+  "breakpoints": [640, 1024, 1280]
+}

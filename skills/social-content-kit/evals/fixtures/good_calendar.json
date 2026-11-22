@@ -1,0 +1,8 @@
+{"posts": [
+ {"id": "p1", "platform": "linkedin", "scheduled_at": "2026-12-01T09:00:00+00:00", "text": "We timed 40 invoice runs before and after the change: median close time fell from 52 to 31 minutes.\n\nThe full method and raw numbers are in the write-up: https://example.com/invoice-study\n\n#finance #automation", "sponsored": false},
+ {"id": "p2", "platform": "x", "scheduled_at": "2026-12-01T14:30:00+00:00", "text": "Median invoice close time: 52 minutes before, 31 after. 40 runs, same team. Method and data: https://example.com/invoice-study", "sponsored": false},
+ {"id": "p3", "platform": "instagram", "scheduled_at": "2026-12-02T12:00:00+00:00", "text": "Paid partnership with Northwind. We tried their ledger sync for a month and kept a log of what broke. Three things failed, one saved us a day a week. Details in the story highlight.\n\n#ad #accounting", "sponsored": true},
+ {"id": "p4", "platform": "bluesky", "scheduled_at": "2026-12-03T10:00:00+00:00", "text": "One slow step cost us 21 minutes per invoice run. Fixing it took an afternoon. Write-up: https://example.com/invoice-study", "sponsored": false},
+ {"id": "p5", "platform": "linkedin", "scheduled_at": "2026-12-08T09:00:00+00:00", "text": "Three mistakes we made while measuring close time, and what we would do differently next quarter. The first one skewed our baseline by about six minutes.", "sponsored": false},
+ {"id": "p6", "platform": "youtube", "scheduled_at": "2026-12-04T16:00:00+00:00", "text": "Sponsored by Northwind. Walkthrough of the invoice timing study: how we measured, what we threw away, and the final numbers.", "sponsored": true, "disclosure": "platform_label"}
+]}

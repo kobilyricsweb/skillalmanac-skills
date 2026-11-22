@@ -1,0 +1,17 @@
+{
+  "title": "",
+  "primary_keyword": "",
+  "hook": "",
+  "script": "",
+  "description": "",
+  "tags": [],
+  "chapters": [
+    {"time": "0:00", "title": ""},
+    {"time": "0:45", "title": ""},
+    {"time": "2:30", "title": ""}
+  ],
+  "duration_s": 0,
+  "pattern_breaks": [],
+  "sponsored": false,
+  "disclosure": {"paid_promotion_toggle": false}
+}

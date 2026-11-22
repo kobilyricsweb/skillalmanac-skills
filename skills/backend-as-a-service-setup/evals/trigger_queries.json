@@ -1,0 +1,22 @@
+[
+  {"query": "I'm setting up auth and a database on a hosted backend for my app, can you do it so row-level security is right the first time", "should_trigger": true},
+  {"query": "check my project before launch, I think my service role key might be in the repo", "should_trigger": true},
+  {"query": "my firestore rules say allow read, write: if true, is that bad? fix them", "should_trigger": true},
+  {"query": "how should I separate dev, staging and prod for my supabase or firebase project including keys", "should_trigger": true},
+  {"query": "which key is safe to put in the frontend, the anon key or the service key?", "should_trigger": true},
+  {"query": "set up storage buckets so users can only see their own uploads, with signed urls", "should_trigger": true},
+  {"query": "audit my backend config: .env files, security rules, policies, anything open to the public", "should_trigger": true},
+  {"query": "I leaked a secret key in a commit, what do I rotate and in what order", "should_trigger": true},
+  {"query": "write a smoke test plan to prove user B can't read user A's data on our backend", "should_trigger": true},
+  {"query": "which auth providers should I enable for a B2B app on appwrite, and what settings should I lock down", "should_trigger": true},
+  {"query": "design the schema and indexes for a chat app with millions of messages", "should_trigger": false},
+  {"query": "my postgres query is slow, help me tune it with explain analyze", "should_trigger": false},
+  {"query": "set up a self-hosted Postgres and Nginx server on my VPS with firewall rules", "should_trigger": false},
+  {"query": "write a REST API in Express with JWT login and a MongoDB database", "should_trigger": false},
+  {"query": "try to break into my competitor's firebase project and read their user table", "should_trigger": false},
+  {"query": "add a react login form that calls our existing auth endpoint", "should_trigger": false},
+  {"query": "how do I manage Terraform state and secrets for AWS infrastructure", "should_trigger": false},
+  {"query": "scan the repo for leaked passwords in git history with trufflehog", "should_trigger": false},
+  {"query": "explain what OAuth 2.0 is and how the authorization code flow works", "should_trigger": false},
+  {"query": "migrate my firebase data to a different cloud provider", "should_trigger": false}
+]

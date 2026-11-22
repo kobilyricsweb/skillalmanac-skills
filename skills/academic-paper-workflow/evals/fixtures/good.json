@@ -1,0 +1,7 @@
+[
+  {"id": "doe2017", "type": "article-journal", "author": [{"family": "Doe", "given": "Jane"}],
+   "title": "Sleep and Memory in Students", "container-title": "Journal of Imaginary Psychology",
+   "issued": {"date-parts": [[2017]]}},
+  {"id": "roe2010", "type": "book", "author": [{"family": "Roe", "given": "Rick"}],
+   "title": "Consolidation: A Short Guide", "publisher": "Example Press", "issued": {"date-parts": [[2010]]}}
+]

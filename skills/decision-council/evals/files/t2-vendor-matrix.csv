@@ -1,0 +1,7 @@
+option,Cost,Speed,Risk,Fit
+weight,4,3,3,5
+direction,cost,benefit,cost,benefit
+scale,1,5
+A,2,4,3,4
+B,4,5,2,3
+C,3,3,1,5

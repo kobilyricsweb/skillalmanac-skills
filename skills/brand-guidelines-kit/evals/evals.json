@@ -1,0 +1,45 @@
+{
+  "skill_name": "brand-guidelines-kit",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/brand_tokens_check.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-roaster-full-guidelines",
+      "prompt": "Write the brand guidelines document and brand-tokens.json for this business, using the brief. Save as brand-guidelines.md and brand-tokens.json.",
+      "files": ["evals/files/t1-roaster-brief/brief.md"],
+      "assertions": [
+        "[script] scripts/brand_tokens_check.py check brand-tokens.json exits 0 with ok true",
+        "[script] brand-tokens.json keeps the supplied green: some colour has hex #1F4D3A",
+        "[script] brand-guidelines.md has the eight section headings in the order positioning, voice, logo, colour, typography, imagery, templates, open items",
+        "[script] brand-guidelines.md contains the text '[needs input' at least once",
+        "[judge] The positioning statement follows the 'For ... who ... is the ... that ... because ... Unlike ...' shape, names a checkable proof (roasted within 7 days of dispatch) and does not invent other proof points, awards or customer numbers",
+        "[judge] The logo section lists at least 8 misuse items, gives clear space as a proportion of the logo, and flags that no reversed version exists instead of inventing one",
+        "[judge] Fonts and the other colours are marked as proposed, not presented as already chosen"
+      ]
+    },
+    {
+      "id": "t2-fix-failing-palette",
+      "prompt": "Our designer sent this palette file and the dev team says the grey text looks washed out. Fix the tokens so they are accessible but keep our teal as the brand colour. Save the fixed file as tokens.fixed.json and tell me what you changed.",
+      "files": ["evals/files/t2-failing-palette/tokens.json"],
+      "assertions": [
+        "[script] scripts/brand_tokens_check.py check tokens.fixed.json exits 0 with ok true",
+        "[script] tokens.fixed.json still contains the hex #2DB5A6 with role primary",
+        "[script] The checker run on the original file reports low_contrast, duplicate_color and type_scale_not_monotonic findings",
+        "[judge] The text-muted colour was darkened to at least 4.5:1 against both white and the surface colour, rather than the requirement being relaxed or the pair removed from the file",
+        "[judge] The report states the new ratios, explains that the teal itself cannot carry small text on white, and does not claim the palette is cleared for print or colour-blind users"
+      ]
+    },
+    {
+      "id": "t3-voice-and-tone-only",
+      "prompt": "Write only the voice and tone section for this company. Include examples. Save as voice.md.",
+      "files": ["evals/files/t3-voice-only/brief.md"],
+      "assertions": [
+        "[script] voice.md contains a Markdown table whose header has the columns Trait, We sound like, We do not sound like, Do, Don't",
+        "[script] voice.md has exactly 3 table rows for traits",
+        "[script] voice.md mentions each of the situations: celebration, routine, bad news, outage or error, and refund or complaint",
+        "[judge] Each trait is an 'X but not Y' pair where both ends are real options, not 'friendly' or 'professional' alone",
+        "[judge] The Don't examples are realistic sentences close to the current website line ('Streamline your financial workflows...'), and each Do rewrites a real Ledgerly situation without invented features or statistics",
+        "[judge] The outage and refund examples contain no humour or exclamation marks and state the fact before the apology"
+      ]
+    }
+  ]
+}

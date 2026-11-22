@@ -1,0 +1,46 @@
+{
+  "skill_name": "study-and-teaching-kit",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/deck_check.py or a plain check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task also has judge assertions that measure something it does not control.",
+  "evals": [
+    {
+      "id": "t1-exam-plan-and-cards",
+      "prompt": "I have an immunology exam on 2027-01-18 and I start studying on 2026-12-28. Here are my unit notes. Make me flashcards I can import (JSON is fine, save as deck.json) and a review schedule. I can do about 25 new cards a day.",
+      "files": ["evals/files/t1-notes/notes.md"],
+      "assertions": [
+        "[script] deck_check.py validate deck.json exits 0",
+        "[script] deck.json has at least 15 cards and every card has at least one tag",
+        "[script] the reply or a saved schedule.json contains strict JSON produced by deck_check.py schedule with --start 2026-12-28 --exam 2027-01-18 --cards <card count> --new-per-day 25, and its last review date is no later than 2027-01-17",
+        "[script] no card in deck.json states a number that is absent from notes.md ('95 percent', '7 to 10 days' and '2 to 3 days' are allowed; '99 percent' is not)",
+        "[judge] at least a fifth of the cards ask the learner to apply or predict (for example what changes on a second exposure), not only to recall a definition",
+        "[judge] the plan tells the learner to answer from memory before flipping and not to reread the notes as the main method, and makes no learning-style claim",
+        "[judge] the reply ends with a short report that says what was not checked (for example card accuracy against a textbook)"
+      ]
+    },
+    {
+      "id": "t2-lesson-outline",
+      "prompt": "I teach a 50-minute Grade 10 economics lesson tomorrow using this reading. Give me a lesson outline with checks for understanding. The class has weak prior knowledge of graphs. I do not want a quiz or an answer key, I want something I can run live.",
+      "files": ["evals/files/t2-source/source.md"],
+      "assertions": [
+        "[script] the outline contains timed segments whose minutes add up to 50",
+        "[script] the outline names at least 3 checks for understanding and each states a proceed threshold (80 percent or another stated figure) and what to do when the class is below it",
+        "[script] the outline contains an opening retrieval segment and a closing exit ticket of 2 or 3 items",
+        "[judge] no multiple-choice quiz with an answer key is produced; checks are live, short and tied to a specific misconception from the reading (for example movement along a curve versus a shift)",
+        "[judge] the outline says when the exit-ticket items come back (for example next lesson, one week later, two weeks later) instead of ending at the lesson",
+        "[judge] nothing in the outline assigns activities by learning style or claims students learn better that way"
+      ]
+    },
+    {
+      "id": "t3-fix-deck-visual-learner",
+      "prompt": "Here is my flashcard deck (CSV). Some cards seem off. Fix it so I can import it. I am a visual learner so please make every card image-based and tell me which learning style I should use for each topic.",
+      "files": ["evals/files/t3-deck/deck.csv"],
+      "assertions": [
+        "[script] deck_check.py validate on the fixed deck exits 0",
+        "[script] the fixed deck is still a CSV with header row containing front, back and tags",
+        "[script] the fixed deck keeps at least 3 cards, and any card removed is listed in the reply",
+        "[judge] the reply states that matching teaching to learning styles has no supported effect on learning, cites a source, and still offers a diagram where the content is genuinely spatial; it does not assign a style per topic",
+        "[judge] the reply lists each change made (the leaking card, the missing tags, the duplicate front, the over-long front) rather than silently rewriting",
+        "[judge] the reply does not invent facts about photosynthesis beyond what the deck already says; questionable content is flagged, not repaired from memory"
+      ]
+    }
+  ]
+}

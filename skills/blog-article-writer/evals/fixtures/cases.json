@@ -1,0 +1,204 @@
+{
+ "note": "Each case runs scripts/article_audit.py with the given args (.md names resolve inside evals/fixtures/). Expected values were read by hand against the fixtures; see VERIFICATION.md.",
+ "cases": [
+  {
+   "args": [
+    "audit",
+    "article_good.md",
+    "--site-host",
+    "example.org"
+   ],
+   "exit": 0,
+   "expect": {
+    "verdict": "pass",
+    "words": 498,
+    "intro_words": 46,
+    "h2_count": 4,
+    "counts": {
+     "error": 0,
+     "warning": 0
+    },
+    "rules": [],
+    "links.internal": 2,
+    "links.external": 2,
+    "reading.sentences": 34
+   }
+  },
+  {
+   "args": [
+    "audit",
+    "article_bad.md",
+    "--site-host",
+    "example.org"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "fix",
+    "intro_words": 130,
+    "h2_count": 3,
+    "counts": {
+     "error": 10,
+     "warning": 14
+    },
+    "reading.sentences": 10,
+    "rules": [
+     "generic-closer",
+     "generic-era-opener",
+     "generic-lets-dive",
+     "generic-more-than-ever",
+     "generic-rhetorical-wonder",
+     "generic-stock-phrase",
+     "generic-this-article-will",
+     "generic-when-it-comes-to",
+     "grade-high",
+     "heading-generic",
+     "heading-generic",
+     "heading-skip",
+     "heading-two-ideas",
+     "internal-links-low",
+     "intro-long",
+     "section-no-example",
+     "section-no-example",
+     "section-no-example",
+     "section-thin",
+     "section-thin",
+     "sentences-long",
+     "sentences-very-long",
+     "title-long",
+     "uncited-number"
+    ]
+   }
+  },
+  {
+   "args": [
+    "audit",
+    "article_good.md",
+    "--site-host",
+    "example.org",
+    "--brief",
+    "brief_good.md"
+   ],
+   "exit": 0,
+   "expect": {
+    "verdict": "pass",
+    "brief_checked": true
+   }
+  },
+  {
+   "args": [
+    "audit",
+    "article_good.md",
+    "--site-host",
+    "example.org",
+    "--brief",
+    "brief_bad.md"
+   ],
+   "exit": 0,
+   "expect": {
+    "verdict": "review",
+    "brief_checked": true,
+    "rules": [
+     "number-not-in-brief",
+     "number-not-in-brief"
+    ]
+   }
+  },
+  {
+   "args": [
+    "audit",
+    "article_good.md"
+   ],
+   "exit": 0,
+   "expect": {
+    "verdict": "pass",
+    "links.internal": 2
+   }
+  },
+  {
+   "args": [
+    "audit",
+    "article_good.md",
+    "--site-host",
+    "example.org",
+    "--min-internal-links",
+    "4"
+   ],
+   "exit": 0,
+   "expect": {
+    "verdict": "review",
+    "rules": [
+     "internal-links-low"
+    ],
+    "links.internal_required": 4
+   }
+  },
+  {
+   "args": [
+    "brief",
+    "brief_good.md"
+   ],
+   "exit": 0,
+   "expect": {
+    "verdict": "pass",
+    "claim_rows": 3,
+    "claim_rows_with_url": 3,
+    "fields": {
+     "audience": 13,
+     "promise": 17,
+     "angle": 20,
+     "not_covered": 10
+    }
+   }
+  },
+  {
+   "args": [
+    "brief",
+    "brief_bad.md"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "fix",
+    "counts": {
+     "error": 7,
+     "warning": 2
+    },
+    "claim_rows": 2,
+    "claim_rows_with_url": 1,
+    "rules": [
+     "brief-claim-no-url",
+     "brief-claim-rows",
+     "brief-claim-thin",
+     "brief-field-missing",
+     "brief-field-thin",
+     "brief-homepage-source",
+     "brief-no-check-date",
+     "brief-placeholder",
+     "brief-promise-length"
+    ]
+   }
+  },
+  {
+   "args": [
+    "audit",
+    "missing_file.md"
+   ],
+   "exit": 2,
+   "expect": {}
+  },
+  {
+   "args": [
+    "audit",
+    "empty.md"
+   ],
+   "exit": 2,
+   "expect": {}
+  },
+  {
+   "args": [
+    "brief"
+   ],
+   "exit": 2,
+   "expect": {}
+  }
+ ]
+}

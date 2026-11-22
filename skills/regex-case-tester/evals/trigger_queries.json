@@ -1,0 +1,22 @@
+[
+  {"query": "I need a regex that validates US ZIP codes, both 5 digit and ZIP+4. Can you write it and prove it works?", "should_trigger": true},
+  {"query": "my regex ^(\\w+\\s?)*$ freezes the server on some inputs, why?", "should_trigger": true},
+  {"query": "write a python regex for an invoice number like INV-2026-00042 and test it against good and bad examples", "should_trigger": true},
+  {"query": "this regex matches way too much, it accepts abc123xyz when I only want digits", "should_trigger": true},
+  {"query": "is this pattern vulnerable to catastrophic backtracking? (a+)+$", "should_trigger": true},
+  {"query": "give me a regex for a username, 3 to 16 chars, letters digits and underscore, and a list of test strings that should and shouldn't match", "should_trigger": true},
+  {"query": "what's the difference between re.match, re.search and re.fullmatch for validating a form field? check my pattern", "should_trigger": true},
+  {"query": "convert this Python regex with (?P<year>..) to JavaScript and tell me what won't work", "should_trigger": true},
+  {"query": "my date regex passes '2026-11-21\\n' with a trailing newline, how do I make it strict?", "should_trigger": true},
+  {"query": "test case table for a phone number regex: which inputs does it wrongly accept?", "should_trigger": true},
+  {"query": "parse this HTML page and extract all the links", "should_trigger": false},
+  {"query": "write unit tests for my login function in pytest", "should_trigger": false},
+  {"query": "find the lines containing ERROR in this log file and group similar ones", "should_trigger": false},
+  {"query": "explain what the grep command does with the -r flag", "should_trigger": false},
+  {"query": "write a SQL query that finds duplicate emails in the users table", "should_trigger": false},
+  {"query": "validate this JSON against a schema and list the errors", "should_trigger": false},
+  {"query": "rename all files in a folder using a sed one-liner", "should_trigger": false},
+  {"query": "build a tokenizer and recursive-descent parser for arithmetic expressions", "should_trigger": false},
+  {"query": "check this email address is real by sending a confirmation message", "should_trigger": false},
+  {"query": "teach me what regular languages and finite automata are for my theory exam", "should_trigger": false}
+]

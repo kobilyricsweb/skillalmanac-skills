@@ -1,0 +1,19 @@
+{
+  "property": {"address": "", "type": "", "units": null, "area_value": null, "area_unit": "sqft", "year_built": null},
+  "currency": "USD",
+  "as_of": "YYYY-MM-DD",
+  "purchase_price": 0,
+  "closing_costs": 0,
+  "renovation_cost": 0,
+  "income": {"gross_scheduled_rent_annual": 0, "vacancy_rate": 0.0, "other_income_annual": 0, "note": "Basis for vacancy; monthly-to-annual multiplication if used."},
+  "expenses": {"operating_expenses_annual": 0, "note": "Lines included: tax, insurance, repairs, management, utilities. Debt service excluded."},
+  "financing": {"down_payment": 0, "loan_amount": 0, "interest_rate": 0.0, "term_years": 30, "note": "Seller credits, second loans, cash purchase."},
+  "sources": [
+    {"field": "purchase_price", "source": "", "date": "YYYY-MM-DD"},
+    {"field": "income.gross_scheduled_rent_annual", "source": "", "date": "YYYY-MM-DD"},
+    {"field": "expenses.operating_expenses_annual", "source": "", "date": "YYYY-MM-DD"}
+  ],
+  "due_diligence": [
+    {"item": "", "owner": "", "due": "YYYY-MM-DD", "status": "open"}
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "skill_name": "critical-path-planner",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/critical_path.py on a plan file the agent writes, or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so the [judge] assertions measure something it does not control. Expected numbers were worked out by hand from the input files and confirmed against the script output (see VERIFICATION.md).",
+  "evals": [
+    {
+      "id": "t1-kitchen",
+      "prompt": "Here is my kitchen renovation plan. What is the critical path, which tasks can slip, and will I make my 27 March deadline? Is anyone double-booked?",
+      "files": ["evals/files/t1-kitchen/tasks.md"],
+      "assertions": [
+        "[script] the plan JSON the agent wrote runs through critical_path.py with exit 1 and project_duration 14",
+        "[script] the reply states the critical path as E, F, H (or the task names: order cabinets, install cabinets, final clean)",
+        "[script] the reply contains the finish date 2026-03-19 or 19 March and states 6 working days spare against the deadline",
+        "[judge] The reply says Cara is booked on two tasks at once on 4 to 5 March (electrical and cabinets) and on 13 March (cabinets and paint), and does not call the plan impossible; it asks whether ordering and receiving cabinets needs Cara's own time",
+        "[judge] The reply says Plaster has 1 day of slack and that slack on one chain is shared, not claiming each task can slip by its slack independently",
+        "[judge] No duration was changed, rounded or estimated by the agent"
+      ]
+    },
+    {
+      "id": "t2-cycle",
+      "prompt": "Can you work out the schedule and critical path for this CSV? Durations are days.",
+      "files": ["evals/files/t2-cycle/tasks.csv"],
+      "assertions": [
+        "[script] critical_path.py on the plan the agent wrote exits 1 with scheduled false and cycles [[1,2,3,4,1]]",
+        "[script] the reply names the cycle 1 -> 2 -> 3 -> 4 -> 1 and the missing predecessor 9 of task 5",
+        "[script] the reply contains no project length, critical path or finish date as a result",
+        "[judge] The reply asks the user which link in the cycle is wrong (for example Write spec depending on Customer sign-off) instead of choosing one to cut silently",
+        "[judge] The reply asks whether 9 is a typo or a missing task and does not invent a task 9 or a duration for it"
+      ]
+    },
+    {
+      "id": "t3-hours-overload",
+      "prompt": "Will I make it in 12 hours? Sam is just me. Tell me what to cut if not.",
+      "files": ["evals/files/t3-hours/plan.md"],
+      "assertions": [
+        "[script] critical_path.py on the plan the agent wrote (unit hours, deadline_days 12, owner Sam on all tasks) exits 1 with project_duration 13, deadline_gap -1, paths [[a,b,d]]",
+        "[script] the reply states 13 hours in parallel and 1 hour late, and that c has 1 hour of slack",
+        "[script] the reply gives no calendar dates (unit is hours with no start date)",
+        "[judge] The reply points out that the parallel schedule needs Sam on b and c at the same time (hours 4 to 8), so working alone the real total is 18 hours, not 13",
+        "[judge] Options follow the compression order: cut scope on a critical task first; it does not suggest shortening c, which has slack, and does not suggest adding people to a one-person plan without saying that is a different plan"
+      ]
+    }
+  ]
+}

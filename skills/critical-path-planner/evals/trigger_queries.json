@@ -1,0 +1,22 @@
+[
+  {"query": "what's the critical path for this project? I have tasks with durations and what depends on what", "should_trigger": true},
+  {"query": "which of my tasks have slack and which ones will delay the whole launch if they slip", "should_trigger": true},
+  {"query": "can you check my dependency list for circular dependencies and tasks that point at something that doesn't exist", "should_trigger": true},
+  {"query": "I have a renovation with 12 jobs and a hard finish date, will I make it? here are the durations and which job needs which", "should_trigger": true},
+  {"query": "work out the earliest and latest start for each task in this plan and flag the zero-float ones", "should_trigger": true},
+  {"query": "what is holding up my plan? the finish date keeps moving and I can't see which chain is the problem", "should_trigger": true},
+  {"query": "is anyone double-booked in this schedule? owners are listed per task with start dependencies", "should_trigger": true},
+  {"query": "calculate the project finish date from these task durations, skipping weekends and the 25th as a holiday", "should_trigger": true},
+  {"query": "run a CPM analysis on this task table and give me the JSON", "should_trigger": true},
+  {"query": "my event plan is 3 days over the deadline, show me which tasks are on the longest path so I know what to compress", "should_trigger": true},
+  {"query": "break my goal of launching a podcast into tasks with sub-steps", "should_trigger": false},
+  {"query": "write Jira tickets with acceptance criteria for each of these features", "should_trigger": false},
+  {"query": "how long will it take me to build a mobile app? give me estimates for each task", "should_trigger": false},
+  {"query": "poke holes in my project plan and tell me what could go wrong", "should_trigger": false},
+  {"query": "run a Monte Carlo simulation of my project finish date with optimistic and pessimistic durations", "should_trigger": false},
+  {"query": "level my team's workload so nobody has more than 40 hours next week", "should_trigger": false},
+  {"query": "turn this meeting transcript into action items with owners and due dates", "should_trigger": false},
+  {"query": "draw a Gantt chart image of my project in a nice style", "should_trigger": false},
+  {"query": "what is a good time management method for a freelancer with too many projects", "should_trigger": false},
+  {"query": "we need to renegotiate scope with the client, draft a change request summary", "should_trigger": false}
+]

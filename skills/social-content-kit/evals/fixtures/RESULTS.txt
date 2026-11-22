@@ -1,0 +1,6 @@
+PASS good_calendar.json
+PASS bad_calendar.csv
+PASS bad_calendar.csv --dup-days 1
+PASS malformed.json
+PASS does_not_exist.json
+5/5 cases passed

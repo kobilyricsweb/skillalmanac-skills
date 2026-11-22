@@ -1,0 +1,13 @@
+PASS tf-bad: scan bad/main.tf
+PASS k8s-bad: scan bad/k8s.yaml
+PASS cfn-bad: scan bad/stack.yaml
+PASS good-dir: scan good
+PASS fail-on-none: scan bad/main.tf --fail-on none
+PASS plan-bad: plan plan_bad.json
+PASS plan-good: plan plan_good.json
+PASS task1-input: scan ../files/t1-tf-review
+PASS task2-input: plan ../files/t2-plan/plan.json
+PASS task3-input: scan ../files/t3-k8s
+PASS missing-path: scan does_not_exist.tf
+PASS plan-not-a-plan: plan good/main.tf
+12/12 cases passed

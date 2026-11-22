@@ -1,0 +1,12 @@
+[[package]]
+name = "acme-tools"
+version = "1.4.2"
+description = "Demo"
+optional = false
+
+[package.dependencies]
+other-thing = ">=2"
+
+[[package]]
+name = "other-thing"
+version = "2.0.0"

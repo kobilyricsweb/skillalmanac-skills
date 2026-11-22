@@ -1,0 +1,12 @@
+id,type,resource,amount,tier
+coin_sell,source,coins,300,1
+coin_stall,source,coins,500,2
+coin_trawl,source,coins,800,3
+coin_repair,sink,coins,100,1
+coin_upkeep,sink,coins,150,2
+coin_fuel,sink,coins,600,3
+shell_gather,source,shells,20,1
+shell_bait,sink,shells,15,1
+tier_2,tier,coins,600,2
+tier_3,tier,coins,2400,3
+tier_4,tier,coins,9000,4

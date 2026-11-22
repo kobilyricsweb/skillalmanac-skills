@@ -1,0 +1,10 @@
+# yarn lockfile v1
+
+
+"@acme/client@^3.0.0", "@acme/client@^3.1.0":
+  version "3.1.4"
+  resolved "https://registry.example/@acme/client/-/client-3.1.4.tgz"
+
+acme-widgets@^2.0.0:
+  version "2.0.7"
+  resolved "https://registry.example/acme-widgets/-/acme-widgets-2.0.7.tgz"

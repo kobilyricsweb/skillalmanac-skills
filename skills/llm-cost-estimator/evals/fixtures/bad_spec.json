@@ -1,0 +1,18 @@
+{
+  "model": "model-a",
+  "price_table": {
+    "as_of": "2026-11-10",
+    "currency": "USD",
+    "source": "EXAMPLE NUMBERS for tests only, not a real vendor price",
+    "models": {
+      "model-a": {"input": 2.0, "output": 10.0}
+    }
+  },
+  "usage": {
+    "requests_per_day": 1000,
+    "input_tokens_avg": 2000,
+    "output_tokens_avg": 500,
+    "prefix_share": 1.4
+  },
+  "subscription": {"price_per_month": 150, "currency": "EUR"}
+}

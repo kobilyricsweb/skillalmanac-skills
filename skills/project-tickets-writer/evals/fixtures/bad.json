@@ -1,0 +1,6 @@
+{"tickets": [
+  {"id": "B1", "title": "Optimize things", "outcome": "Faster.", "size": "L", "depends_on": ["B2"], "acceptance_criteria": ["It is fast"]},
+  {"id": "B2", "title": "Add search filter", "outcome": "Users can filter.", "size": "M", "depends_on": ["B3"], "non_goals": [], "acceptance_criteria": ["Given a list, when the user types, then it filters."], "definition_of_done": ["tests"]},
+  {"id": "B3", "title": "Add search filter.", "outcome": "Users can filter.", "size": "M", "depends_on": ["B1", "B3"], "non_goals": ["x"], "acceptance_criteria": []},
+  {"id": "B4", "title": "Support SSO", "outcome": "Done.", "size": "huge", "depends_on": ["B9"], "acceptance_criteria": ["Given a user, when they sign in, then they are signed in."]}
+]}

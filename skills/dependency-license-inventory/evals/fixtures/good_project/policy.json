@@ -1,0 +1,3 @@
+{
+  "buckets": { "permissive": "accept", "weak-copyleft": "review", "strong-copyleft": "flag", "custom": "flag", "none": "flag", "unrecognised": "review" }
+}

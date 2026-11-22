@@ -1,0 +1,11 @@
+PASS good gdd and good economy
+PASS bad gdd
+PASS gdd missing sections
+PASS bad economy
+PASS bad economy with gems exempt
+PASS tier count mismatch between gdd and csv
+PASS good economy alone with max-hours 2 makes tier 2 too slow
+PASS missing file
+PASS empty file
+PASS no arguments
+10/10 cases passed

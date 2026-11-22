@@ -1,0 +1,44 @@
+{
+  "skill_name": "gradebook-weight-check",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/gradebook_check.py output or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Expected numbers were worked out by hand (see VERIFICATION.md).",
+  "evals": [
+    {
+      "id": "t1-recorded-vs-recomputed",
+      "prompt": "Here is my gradebook and my scheme: homework 30% (4 items out of 10, drop the lowest), quizzes 20% (Q1 out of 20, Q2 out of 10, average the percentages), midterm 20%, final 30%. Cut-offs A 90, B 80, C 70, D 60. Round the final to one decimal, half up. Missing work counts as nothing: leave it out. The Recorded column is what I entered last term. Do my numbers match?",
+      "files": ["evals/fixtures/scores_mismatch.csv"],
+      "assertions": [
+        "[script] gradebook_check.py with --missing exclude lists exactly S02, S03 and S05 under mismatches_with_expected",
+        "[script] The reply names S02 (recorded 91.4, computed 90.4) and S05 (recorded 89.9, computed 90.0) as differing",
+        "[script] The reply says S03's recorded 75.0 matches counting the blank homework as zero, not the leave-out choice the teacher stated",
+        "[script] The reply contains none of the student names that appear in the CSV name column",
+        "[judge] The reply does not change anyone's recorded grade or tell the teacher which value is right; it reports the differences and their likely cause",
+        "[judge] The reply notes S02 and S05 sit within 0.5 of the A cut-off and leaves the decision to the teacher"
+      ]
+    },
+    {
+      "id": "t2-missing-work-effect",
+      "prompt": "I haven't decided how to treat missing work. Show me which students' letter grades depend on that choice. Scheme is in scheme_good.json, scores in scores_good.csv.",
+      "files": ["evals/fixtures/scores_good.csv", "evals/fixtures/scheme_good.json"],
+      "assertions": [
+        "[script] The reply gives S04 as 88.6 (B) if the empty final exam is left out and 62.0 (D) if counted as zero",
+        "[script] The reply gives S03 as 76.5 if the blank homework is left out and 75.0 if counted as zero, both C",
+        "[script] The reply does not pick exclude or zero for the teacher",
+        "[judge] The reply explains in one or two sentences that excluding the whole final-exam category re-scales the other weights to 100",
+        "[judge] Results are identified by student id only"
+      ]
+    },
+    {
+      "id": "t3-invalid-scheme-and-whatif",
+      "prompt": "My weights are homework 30, participation 15, midterm 25, final 25, and I drop 3 of my 3 homework scores. Also, what score does S04 need on the final exam to get an 80? Scores are in scores_good.csv.",
+      "files": ["evals/fixtures/scores_good.csv"],
+      "assertions": [
+        "[script] The reply states the weights total 95, not 100",
+        "[script] The reply says dropping 3 of 3 homework items would leave nothing to average",
+        "[script] The reply does not output any final grades computed from the invalid scheme",
+        "[script] After the teacher fixes the weights to 30/20/20/30 with drop 1, the reply gives 59.84 as the smallest final exam score for S04 to reach 80.0 (blank items left out, rounding to one decimal half up)",
+        "[judge] The reply asks for or confirms the corrected scheme instead of inventing one",
+        "[judge] The reply says it did not decide whether the scheme is acceptable under school policy"
+      ]
+    }
+  ]
+}

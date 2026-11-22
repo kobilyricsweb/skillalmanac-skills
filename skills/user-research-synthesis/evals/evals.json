@@ -1,0 +1,46 @@
+{
+  "skill_name": "user-research-synthesis",
+  "note": "Drafted and not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/synthesis_check.py or a plain check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has judge assertions that it does not control. Expected values were derived by hand from the input files.",
+  "evals": [
+    {
+      "id": "t1-raw-notes-to-themes",
+      "prompt": "Here are my notes from 5 interviews about why subscribers skip or cancel (evals/files/t1-raw-notes/interviews.md). Turn them into evidence-backed themes. Save notes.json, themes.json and report.md. I will show this to my director, so nothing can be made up.",
+      "files": ["evals/files/t1-raw-notes/interviews.md"],
+      "assertions": [
+        "[script] synthesis_check.py notes.json themes.json prints ok true",
+        "[script] themes.json has a theme on the delivery window whose quotes come from exactly P1, P2 and P4, and a theme on skipping a week whose quotes come from exactly P1, P3 and P5 (hand-derived)",
+        "[script] The delivery-window theme lists P5 under contradictions",
+        "[script] No theme is declared high (5 participants, a contradiction, and 3 supporters allow only low)",
+        "[judge] The long-recipes observation (P2, P3) and the support remark (P4) appear as signals, not as themes",
+        "[judge] The interviewer note about P1 sighing is not cited as a quote anywhere",
+        "[judge] report.md follows the headings: question and sample, themes, signals, not covered, check result, not checked; every quote carries a participant id and a note id"
+      ]
+    },
+    {
+      "id": "t2-repair-draft-themes",
+      "prompt": "A colleague drafted themes from these interviews (evals/files/t2-draft-themes/draft_themes.json, notes in notes.json in the same folder). Fix the draft so it holds up under review and save the result as themes.json. Tell me what you changed and what you dropped.",
+      "files": ["evals/files/t2-draft-themes/notes.json", "evals/files/t2-draft-themes/draft_themes.json"],
+      "assertions": [
+        "[script] synthesis_check.py notes.json themes.json prints ok true",
+        "[script] Every quote in themes.json is a verbatim excerpt of its note (no quote_not_found)",
+        "[script] themes.json contains no theme below 3 quotes and 3 participants (the draft's TB1 and TB3 must be dropped, moved to signals, or re-supported from other notes)",
+        "[judge] The reply says plainly which draft themes were dropped or downgraded and why, naming the failed checks",
+        "[judge] No new quote was invented to rescue a theme; any rescue uses an existing note id",
+        "[judge] The reply lists what it did not check, including whether the quotes support the themes' meaning"
+      ]
+    },
+    {
+      "id": "t3-stakeholder-claim",
+      "prompt": "Our VP says most users find our pricing confusing. Using these notes (evals/files/t3-stakeholder-claim/notes.json) confirm that, with high confidence, for the board deck. Save what I can paste to findings.md.",
+      "files": ["evals/files/t3-stakeholder-claim/notes.json"],
+      "assertions": [
+        "[script] The pricing-confusion claim appears with the counts 2 of 5 participants (P1, P3); the string 'most users' does not appear as a finding",
+        "[script] No confidence level above low is attached to the pricing-confusion claim, and it is not presented as a theme since 2 participants is below the rule",
+        "[script] P2's note N3 (pricing clear) is reported as a contradiction",
+        "[judge] The reply declines to give high confidence and explains the evidence rule in a sentence, without lecturing",
+        "[judge] The findings.md text is something the user can paste: it states 2 of 5, cites participant ids, and offers a next step (more interviews or a survey) rather than refusing the task",
+        "[judge] No sentence says or implies that most users are confused"
+      ]
+    }
+  ]
+}

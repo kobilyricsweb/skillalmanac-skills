@@ -1,0 +1,229 @@
+{
+ "note": "Each case audits a fake repository built from repos.json with a fixed clock. Expected findings were derived by hand from the files in repos.json, then compared with the script output.",
+ "cases": [
+  {
+   "name": "bad repo: every finding class",
+   "repo": "bad",
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "counts": {
+     "error": 1,
+     "warn": 13,
+     "info": 2
+    },
+    "findings": [
+     [
+      "error",
+      "stale_worktree",
+      "gone-task"
+     ],
+     [
+      "warn",
+      "detached_worktree",
+      "detached-task"
+     ],
+     [
+      "warn",
+      "idle_worktree",
+      "alive-task"
+     ],
+     [
+      "warn",
+      "locked_worktree_missing",
+      "locked-gone"
+     ],
+     [
+      "warn",
+      "naming_violation",
+      "Feature/NewThing"
+     ],
+     [
+      "warn",
+      "naming_violation",
+      "fix/this-slug-is-way-too-long-for-the-limit-set-here-x"
+     ],
+     [
+      "warn",
+      "naming_violation",
+      "wip-stuff"
+     ],
+     [
+      "warn",
+      "no_upstream",
+      "chore/local-only"
+     ],
+     [
+      "warn",
+      "operation_in_progress",
+      "mid-rebase"
+     ],
+     [
+      "warn",
+      "stale_branch",
+      "fix/old-bug"
+     ],
+     [
+      "warn",
+      "stale_lock",
+      "(primary)"
+     ],
+     [
+      "warn",
+      "upstream_gone",
+      "Feature/NewThing"
+     ],
+     [
+      "warn",
+      "upstream_gone",
+      "fix/old-bug"
+     ],
+     [
+      "warn",
+      "worktree_branch_missing",
+      "locked-gone"
+     ],
+     [
+      "info",
+      "no_upstream",
+      "fix/this-slug-is-way-too-long-for-the-limit-set-here-x"
+     ],
+     [
+      "info",
+      "no_upstream",
+      "wip-stuff"
+     ]
+    ],
+    "worktrees": [
+     [
+      "(primary)",
+      true
+     ],
+     [
+      "alive-task",
+      true
+     ],
+     [
+      "detached-task",
+      true
+     ],
+     [
+      "gone-task",
+      false
+     ],
+     [
+      "locked-gone",
+      false
+     ],
+     [
+      "mid-rebase",
+      true
+     ]
+    ],
+    "details": {
+     "idle_worktree|alive-task": "20.0 days",
+     "naming_violation|Feature/NewThing": "contains uppercase",
+     "naming_violation|wip-stuff": "no type prefix",
+     "stale_lock|(primary)": "60 minutes",
+     "no_upstream|chore/local-only": "local-only for 10.0 days"
+    }
+   }
+  },
+  {
+   "name": "good repo: clean",
+   "repo": "good",
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warn": 0,
+     "info": 0
+    },
+    "findings": [],
+    "branches": [
+     "feat/add-search",
+     "main"
+    ]
+   }
+  },
+  {
+   "name": "good repo audited from inside its linked worktree",
+   "repo": "good-wt/feat-add-search",
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "findings": [],
+    "worktrees": [
+     [
+      "(primary)",
+      true
+     ],
+     [
+      "feat-add-search",
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "name": "policy override: --types fix flags feat/ branch",
+   "repo": "good",
+   "args": [
+    "--types",
+    "fix"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "findings": [
+     [
+      "warn",
+      "naming_violation",
+      "feat/add-search"
+     ]
+    ]
+   }
+  },
+  {
+   "name": "tight limits: chore/local-only becomes stale, detached-task and mid-rebase become idle (13 + 3 warn)",
+   "repo": "bad",
+   "args": [
+    "--stale-branch-days",
+    "2",
+    "--stale-worktree-days",
+    "0.5"
+   ],
+   "exit": 1,
+   "expect": {
+    "counts": {
+     "error": 1,
+     "warn": 16,
+     "info": 2
+    }
+   }
+  },
+  {
+   "name": "not a repository exits 2",
+   "repo": "notrepo",
+   "exit": 2,
+   "expect": {}
+  },
+  {
+   "name": "reftable repository is reported, not misread",
+   "repo": "reft",
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "findings": [
+     [
+      "warn",
+      "reftable_unsupported",
+      "refs"
+     ]
+    ],
+    "branches": []
+   }
+  }
+ ]
+}

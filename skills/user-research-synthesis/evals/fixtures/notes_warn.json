@@ -1,0 +1,8 @@
+{
+  "notes": [
+    {"id": "W1", "participant": "P1", "text": "The invoice screen is clear.", "tags": ["invoice"]},
+    {"id": "W2", "participant": "P2", "text": "I never use the invoice screen.", "tags": ["invoice"]},
+    {"id": "W3", "participant": "P3", "text": "Search is where I start every task."},
+    {"id": "W4", "participant": "P4", "text": "I print everything before signing.", "tags": ["paper"]}
+  ]
+}

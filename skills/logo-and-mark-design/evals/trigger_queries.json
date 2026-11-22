@@ -1,0 +1,22 @@
+[
+  {"query": "design a logo for my startup, I need it as an SVG I can use on the site and as a favicon", "should_trigger": true},
+  {"query": "can you make a simple wordmark for my coffee brand, clean vector, black and white versions too", "should_trigger": true},
+  {"query": "my logo looks like mush at 16px in the browser tab, redo it so it holds up small", "should_trigger": true},
+  {"query": "give me 3 logo concepts for a bookkeeping app for freelancers", "should_trigger": true},
+  {"query": "audit this logo.svg, is it too complex? does it have live text or an embedded png?", "should_trigger": true},
+  {"query": "I need an app icon and a favicon for my notes app, the mark should be a single idea", "should_trigger": true},
+  {"query": "our logo only comes in colour, make a one-colour and a reversed white version as SVG", "should_trigger": true},
+  {"query": "draw a monogram mark for the letter K as svg, geometric, for a law firm", "should_trigger": true},
+  {"query": "what clear space and minimum size should I set for my new logo mark?", "should_trigger": true},
+  {"query": "fix my svg logo, the strokes are all different widths and it has a gradient that breaks in print", "should_trigger": true},
+  {"query": "write a full brand guidelines document with colour palette, voice and typography", "should_trigger": false},
+  {"query": "design an A2 poster for our summer concert", "should_trigger": false},
+  {"query": "create an Instagram carousel announcing our launch", "should_trigger": false},
+  {"query": "remove the background from this product photo", "should_trigger": false},
+  {"query": "is the name Lumora already trademarked? file the trademark application for me", "should_trigger": false},
+  {"query": "write a Midjourney prompt for a cinematic logo reveal image", "should_trigger": false},
+  {"query": "build a React component that shows our logo with a hover animation", "should_trigger": false},
+  {"query": "make a set of 24 UI line icons for a dashboard", "should_trigger": false},
+  {"query": "write a creative brief for a spring advertising campaign", "should_trigger": false},
+  {"query": "resize this PNG to 512 by 512 and compress it", "should_trigger": false}
+]

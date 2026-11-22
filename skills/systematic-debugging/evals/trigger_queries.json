@@ -1,0 +1,22 @@
+[
+  {"query": "my agent keeps guessing at this bug and changing random things, make it debug properly", "should_trigger": true},
+  {"query": "this test fails on CI but not locally, help me find the root cause instead of adding retries", "should_trigger": true},
+  {"query": "I need a systematic way to debug a regression that appeared somewhere in the last 200 commits", "should_trigger": true},
+  {"query": "use git bisect and a hypothesis log to find which commit broke the export", "should_trigger": true},
+  {"query": "the agent said it fixed the flaky test after one green run, how do I know it is really fixed", "should_trigger": true},
+  {"query": "debug this crash: write down hypotheses, test one at a time, do not change anything until you know the cause", "should_trigger": true},
+  {"query": "intermittent 500 in production, cannot reproduce it, walk me through narrowing it down", "should_trigger": true},
+  {"query": "validate my debugging notes, I want to know which hypotheses I never tested", "should_trigger": true},
+  {"query": "find the root cause of why the invoice total is off by one cent and prove it with a failing test first", "should_trigger": true},
+  {"query": "stop shotgun debugging, make the agent reproduce and minimise this bug before touching code", "should_trigger": true},
+  {"query": "write unit tests for my new payment module", "should_trigger": false},
+  {"query": "review this pull request for bugs", "should_trigger": false},
+  {"query": "explain what this stack trace means", "should_trigger": false},
+  {"query": "profile why this endpoint is slow and tell me where the time goes", "should_trigger": false},
+  {"query": "refactor this function to be easier to read, no behaviour change", "should_trigger": false},
+  {"query": "set up a CI pipeline that runs my tests on every push", "should_trigger": false},
+  {"query": "postmortem write-up for yesterday's outage, timeline and action items", "should_trigger": false},
+  {"query": "add logging to every function in this service", "should_trigger": false},
+  {"query": "why does my CSS grid overflow on mobile? just fix the style", "should_trigger": false},
+  {"query": "migrate this codebase from Python 2 to Python 3", "should_trigger": false}
+]

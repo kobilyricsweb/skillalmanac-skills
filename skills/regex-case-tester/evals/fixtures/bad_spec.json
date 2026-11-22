@@ -1,0 +1,6 @@
+{
+  "pattern": "abc",
+  "mode": "contains",
+  "match": ["abc", "abc", "abc"],
+  "no_match": ["x", "y", "z"]
+}

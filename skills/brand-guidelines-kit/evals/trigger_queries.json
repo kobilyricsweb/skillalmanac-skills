@@ -1,0 +1,22 @@
+[
+  {"query": "can you put together brand guidelines for my new bakery, colours fonts and how we should talk", "should_trigger": true},
+  {"query": "I need a brand book I can hand to a freelance designer", "should_trigger": true},
+  {"query": "write a brand voice guide with do and don't examples for our startup", "should_trigger": true},
+  {"query": "here is our palette json, check the text colours have enough contrast and the type scale makes sense", "should_trigger": true},
+  {"query": "make a style guide for my consultancy: logo clear space, minimum size, what not to do with the logo", "should_trigger": true},
+  {"query": "turn our brand colours into a palette with roles like primary, background and text and check accessibility", "should_trigger": true},
+  {"query": "help me write a positioning statement and a tone of voice table for our SaaS", "should_trigger": true},
+  {"query": "we need brand guidelines so the agency stops using three different blues", "should_trigger": true},
+  {"query": "define our typography scale and imagery rules in a one-document brand guideline", "should_trigger": true},
+  {"query": "list the templates we need for our brand: business card, slide deck, email signature, with rules", "should_trigger": true},
+  {"query": "build a React component library with design tokens and a Storybook for our app", "should_trigger": false},
+  {"query": "design a logo for my dog grooming business", "should_trigger": false},
+  {"query": "can I trademark this brand name in the EU", "should_trigger": false},
+  {"query": "write five Facebook ad headlines for our spring sale", "should_trigger": false},
+  {"query": "suggest 20 name ideas for a coffee company", "should_trigger": false},
+  {"query": "audit my website's WCAG compliance including keyboard navigation and screen reader labels", "should_trigger": false},
+  {"query": "write the landing page copy for our pricing page", "should_trigger": false},
+  {"query": "convert this Figma colour palette to CSS variables and Tailwind config", "should_trigger": false},
+  {"query": "make my email newsletter template responsive HTML", "should_trigger": false},
+  {"query": "create a content calendar for LinkedIn posts next month", "should_trigger": false}
+]

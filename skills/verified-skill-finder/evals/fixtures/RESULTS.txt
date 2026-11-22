@@ -1,0 +1,8 @@
+PASS --query fill in a PDF form @fixtures/claude_skills @fixtures/agents_skills
+PASS --query clean a csv --all @fixtures/claude_skills @fixtures/agents_skills
+PASS @fixtures/claude_skills
+PASS --query read a pdf @fixtures/claude_skills/pdf-form-filler
+PASS --query the skill @fixtures/claude_skills
+PASS --query translate documents Spanish @fixtures/claude_skills @fixtures/agents_skills
+PASS --query pdf @fixtures/does_not_exist
+7/7 cases passed

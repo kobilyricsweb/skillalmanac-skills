@@ -1,0 +1,107 @@
+{
+  "study": "feedback-tracking-bad",
+  "interviews": [
+    {
+      "id": "B1",
+      "participant": "P1",
+      "turns": [
+        {
+          "n": 1,
+          "speaker": "interviewer",
+          "text": "Don't you find spreadsheets frustrating for feedback?"
+        },
+        {
+          "n": 2,
+          "speaker": "participant",
+          "text": "Sometimes."
+        },
+        {
+          "n": 3,
+          "speaker": "interviewer",
+          "text": "Would you use a tool that tags complaints automatically?"
+        },
+        {
+          "n": 4,
+          "speaker": "participant",
+          "text": "Maybe, I guess."
+        },
+        {
+          "n": 5,
+          "speaker": "interviewer",
+          "text": "Do you think our product would help, and how much would you pay?"
+        },
+        {
+          "n": 6,
+          "speaker": "participant",
+          "text": "Hard to say. We lost a complaint last month about exports when the roadmap was being set."
+        }
+      ],
+      "codes": [
+        {
+          "force": "push",
+          "turn": 6,
+          "quote": "We lost a complaint last month about exports"
+        },
+        {
+          "force": "pull",
+          "turn": 5,
+          "quote": "our product would help"
+        },
+        {
+          "force": "anxiety",
+          "turn": 6,
+          "quote": "I fear the migration"
+        }
+      ]
+    },
+    {
+      "id": "B2",
+      "participant": "P2",
+      "turns": [
+        {
+          "n": 1,
+          "speaker": "interviewer",
+          "text": "When did you last change how you track feedback?"
+        },
+        {
+          "n": 2,
+          "speaker": "participant",
+          "text": "In spring, after a customer escalated and nobody could find their earlier emails."
+        }
+      ],
+      "codes": []
+    }
+  ],
+  "job_statements": [
+    {
+      "id": "J1",
+      "situation": "a",
+      "motivation": "see all complaints per customer",
+      "outcome": "",
+      "text": "I want a dashboard that tags complaints",
+      "evidence": [
+        {
+          "interview": "B1",
+          "turn": 6
+        },
+        {
+          "interview": "B9",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "id": "J2",
+      "situation": "a customer escalates and nobody can find their earlier emails",
+      "motivation": "pull up a customer's whole history in seconds",
+      "outcome": "reply with full context while they are still waiting",
+      "text": "When a customer escalates and nobody can find their earlier emails, I want to pull up a customer's whole history in seconds, so I can reply with full context while they are still waiting.",
+      "evidence": [
+        {
+          "interview": "B2",
+          "turn": 2
+        }
+      ]
+    }
+  ]
+}

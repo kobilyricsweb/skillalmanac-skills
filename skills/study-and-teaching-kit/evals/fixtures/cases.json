@@ -1,0 +1,376 @@
+{
+ "note": "Each case runs scripts/deck_check.py with the given args (deck_* paths are relative to evals/fixtures/) and checks the exit code, that stdout is strict JSON, and the listed fields. Expected values were worked out by hand, see VERIFICATION.md.",
+ "cases": [
+  {
+   "args": [
+    "validate",
+    "deck_good.json"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "cards": 8,
+    "format": "json",
+    "finding_pairs": []
+   }
+  },
+  {
+   "args": [
+    "validate",
+    "deck_bad.json"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "cards": 10,
+    "counts_by_check": {
+     "answer_leak": 1,
+     "too_long": 3,
+     "missing_tags": 1,
+     "duplicate_front": 1,
+     "missing_field": 1,
+     "bad_card": 1
+    },
+    "finding_pairs": [
+     [
+      2,
+      "answer_leak"
+     ],
+     [
+      3,
+      "too_long"
+     ],
+     [
+      4,
+      "too_long"
+     ],
+     [
+      5,
+      "missing_tags"
+     ],
+     [
+      7,
+      "duplicate_front"
+     ],
+     [
+      8,
+      "too_long"
+     ],
+     [
+      9,
+      "missing_field"
+     ],
+     [
+      10,
+      "bad_card"
+     ]
+    ]
+   }
+  },
+  {
+   "args": [
+    "validate",
+    "deck_good.csv"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "cards": 3,
+    "format": "csv"
+   }
+  },
+  {
+   "args": [
+    "validate",
+    "deck_bad.csv"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "cards": 4,
+    "finding_pairs": [
+     [
+      1,
+      "answer_leak"
+     ],
+     [
+      2,
+      "missing_tags"
+     ],
+     [
+      3,
+      "duplicate_front"
+     ],
+     [
+      4,
+      "too_long"
+     ]
+    ]
+   }
+  },
+  {
+   "args": [
+    "validate",
+    "deck_noheader.csv"
+   ],
+   "exit": 2,
+   "expect": {},
+   "stderr_contains": "missing: tags"
+  },
+  {
+   "args": [
+    "validate",
+    "deck_absent.json"
+   ],
+   "exit": 2,
+   "expect": {},
+   "stderr_contains": "file not found"
+  },
+  {
+   "args": [
+    "schedule",
+    "--start",
+    "2026-12-01"
+   ],
+   "exit": 0,
+   "expect": {
+    "offsets": [
+     1,
+     3,
+     7,
+     14,
+     30,
+     60,
+     120
+    ],
+    "final_review_added": false,
+    "exam": null,
+    "session_dates": [
+     "2026-12-01",
+     "2026-12-02",
+     "2026-12-04",
+     "2026-12-08",
+     "2026-12-15",
+     "2026-12-31",
+     "2027-01-30",
+     "2027-03-31"
+    ],
+    "session_gaps": [
+     null,
+     1,
+     2,
+     4,
+     7,
+     16,
+     30,
+     60
+    ]
+   }
+  },
+  {
+   "args": [
+    "schedule",
+    "--start",
+    "2026-12-01",
+    "--profile",
+    "dense"
+   ],
+   "exit": 0,
+   "expect": {
+    "offsets": [
+     1,
+     2,
+     4,
+     8,
+     16,
+     32,
+     64
+    ]
+   }
+  },
+  {
+   "args": [
+    "schedule",
+    "--start",
+    "2026-12-01",
+    "--exam",
+    "2026-12-11"
+   ],
+   "exit": 0,
+   "expect": {
+    "offsets": [
+     1,
+     3,
+     7,
+     9
+    ],
+    "final_review_added": true,
+    "session_dates": [
+     "2026-12-01",
+     "2026-12-02",
+     "2026-12-04",
+     "2026-12-08",
+     "2026-12-10"
+    ],
+    "session_kinds": [
+     "study",
+     "review",
+     "review",
+     "review",
+     "final_review"
+    ]
+   }
+  },
+  {
+   "args": [
+    "schedule",
+    "--start",
+    "2026-12-01",
+    "--exam",
+    "2026-12-11",
+    "--cards",
+    "50",
+    "--new-per-day",
+    "20"
+   ],
+   "exit": 0,
+   "expect": {
+    "batch_sizes": [
+     20,
+     20,
+     10
+    ],
+    "batch_review_dates": [
+     [
+      "2026-12-02",
+      "2026-12-04",
+      "2026-12-08",
+      "2026-12-10"
+     ],
+     [
+      "2026-12-03",
+      "2026-12-05",
+      "2026-12-09"
+     ],
+     [
+      "2026-12-04",
+      "2026-12-06",
+      "2026-12-10"
+     ]
+    ],
+    "load": [
+     [
+      "2026-12-01",
+      20,
+      0
+     ],
+     [
+      "2026-12-02",
+      20,
+      20
+     ],
+     [
+      "2026-12-03",
+      10,
+      20
+     ],
+     [
+      "2026-12-04",
+      0,
+      30
+     ],
+     [
+      "2026-12-05",
+      0,
+      20
+     ],
+     [
+      "2026-12-06",
+      0,
+      10
+     ],
+     [
+      "2026-12-08",
+      0,
+      20
+     ],
+     [
+      "2026-12-09",
+      0,
+      20
+     ],
+     [
+      "2026-12-10",
+      0,
+      30
+     ]
+    ],
+    "peak_reviews": 30,
+    "peak_date": "2026-12-04",
+    "notes": []
+   }
+  },
+  {
+   "args": [
+    "schedule",
+    "--start",
+    "2026-12-01",
+    "--exam",
+    "2026-12-02"
+   ],
+   "exit": 2,
+   "expect": {},
+   "stderr_contains": "at least 2 days"
+  },
+  {
+   "args": [
+    "schedule",
+    "--start",
+    "2026-12-01",
+    "--exam",
+    "2026-11-20"
+   ],
+   "exit": 2,
+   "expect": {},
+   "stderr_contains": "at least 2 days"
+  },
+  {
+   "args": [
+    "schedule",
+    "--start",
+    "2026-02-30"
+   ],
+   "exit": 2,
+   "expect": {},
+   "stderr_contains": "real date"
+  },
+  {
+   "args": [
+    "schedule",
+    "--start",
+    "2026-12-01",
+    "--cards",
+    "50"
+   ],
+   "exit": 2,
+   "expect": {},
+   "stderr_contains": "together"
+  },
+  {
+   "args": [
+    "schedule",
+    "--start",
+    "2026-12-01",
+    "--exam",
+    "2026-12-04",
+    "--cards",
+    "100",
+    "--new-per-day",
+    "20"
+   ],
+   "exit": 2,
+   "expect": {},
+   "stderr_contains": "introduction days"
+  }
+ ]
+}

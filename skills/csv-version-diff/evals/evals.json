@@ -1,0 +1,43 @@
+{
+  "skill_name": "csv-version-diff",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/csv_version_diff.py output or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Input files are the fixtures under evals/fixtures/.",
+  "evals": [
+    {
+      "id": "t1-orders-changelog",
+      "prompt": "Here is last week's orders export and this week's. order_id identifies an order. Tell me exactly what changed and save a Markdown report to report.md.",
+      "files": ["evals/fixtures/orders_old.csv", "evals/fixtures/orders_new.csv"],
+      "assertions": [
+        "[script] csv_version_diff.py old new --key order_id exits 1 and reports rows added 1, removed 1, changed 3",
+        "[script] report.md exists, was written to a new path, and neither input file was modified",
+        "[judge] The reply asks whether status was renamed to state (a question, not a statement) and does not treat it as confirmed",
+        "[judge] The reply reports that qty changed type from number to text because of the value n/a, naming order 1006",
+        "[judge] The reply says price 5.00 to 5.0 is a formatting difference and not a value change",
+        "[judge] The reply ends with what was not checked"
+      ]
+    },
+    {
+      "id": "t2-no-key-given",
+      "prompt": "I have two exports of our member list, dups_old.csv and dups_new.csv. Compare them and tell me what changed.",
+      "files": ["evals/fixtures/dups_old.csv", "evals/fixtures/dups_new.csv"],
+      "assertions": [
+        "[script] The agent does not run a diff that matches rows by position; any run of csv_version_diff.py without --key exits 2",
+        "[script] csv_version_diff.py dups_old.csv dups_new.csv --suggest-keys lists name and score but not id",
+        "[judge] The agent asks the user which column identifies a member before reporting any added, removed or changed rows, or states its assumed key and asks to confirm",
+        "[judge] After a diff with key id the reply says that id 2 appears twice in the old file and was excluded, that one row has a blank id, and that 004 versus 4 looks like a reformatted key; it does not say the files are otherwise identical",
+        "[judge] The reply notes the files use different delimiters and says each was read with its own"
+      ]
+    },
+    {
+      "id": "t3-rounding-tolerance",
+      "prompt": "Compare readings_old.csv and readings_new.csv, key is sensor. The new export rounds differently, so differences under 0.001 degrees do not matter. Which sensors really changed?",
+      "files": ["evals/fixtures/readings_old.csv", "evals/fixtures/readings_new.csv"],
+      "assertions": [
+        "[script] csv_version_diff.py old new --key sensor --abs-tol 0.001 reports rows changed 1, unchanged 3, temp_c within_tolerance_cells 1 and format_only_cells 1",
+        "[script] The reply names A2 as the only changed sensor, 19.25 to 19.26",
+        "[judge] The reply states that tolerance 0.001 was applied and that A1 (21.50 to 21.5004) was treated as equal because of it",
+        "[judge] The reply does not count A3 (22.00 to 22) as a change and says it is formatting only",
+        "[judge] The reply does not pick a different tolerance than the user stated"
+      ]
+    }
+  ]
+}

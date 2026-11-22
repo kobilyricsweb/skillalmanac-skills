@@ -1,0 +1,17 @@
+Short naps and afternoon test scores: a small trial
+
+Background
+
+Researchers at Lowfield College tested whether a 20-minute nap changes afternoon test performance. The trial enrolled 84 undergraduate students and randomly assigned half to nap and half to rest quietly for 20 minutes. Both groups then took the same 30-question reasoning test.
+
+Results
+
+The nap group scored an average of 21.4 out of 30, and the rest group scored 19.7. The difference of 1.7 points was statistically significant at the 0.05 level. Students who reported sleeping less than six hours the night before showed a larger gain of 2.9 points, but only 19 students were in that subgroup, so the authors call that result tentative.
+
+Limits
+
+The authors note that all participants were volunteers from one college, that the test was taken within 15 minutes of waking, and that the trial did not measure performance later in the day. They did not find that napping reduced test scores in any subgroup. They state that the findings cannot be applied to older adults or to people who work night shifts.
+
+Conclusion
+
+The authors suggest that short naps may help afternoon reasoning in young adults, and they call for a larger trial across several institutions before any recommendation is made.

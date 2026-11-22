@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "when": {"type": "string", "format": "date"},
+    "value": {"oneOf": [{"type": "integer"}, {"type": "string"}]}
+  }
+}

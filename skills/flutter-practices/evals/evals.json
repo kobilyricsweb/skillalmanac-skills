@@ -1,0 +1,53 @@
+{
+ "skill_name": "flutter-practices",
+ "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/flutter_scan.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has judge assertions that measure something it does not control.",
+ "evals": [
+  {
+   "id": "t1-settings-screen",
+   "prompt": "This settings screen rebuilds too much and the console is noisy; one reviewer also said it can throw during build. The app is Flutter. Fix it and tell me what you changed. Save the fixed file as settings_screen.fixed.dart.",
+   "files": [
+    "evals/files/t1-settings-screen/settings_screen.dart"
+   ],
+   "assertions": [
+    "[script] flutter_scan.py on settings_screen.fixed.dart reports summary.warn equal to 0",
+    "[script] settings_screen.fixed.dart does not contain 'print('",
+    "[script] flutter_scan.py on settings_screen.fixed.dart reports no missing-const finding at confidence high",
+    "[judge] The answer explains that setState directly in build can trigger another build during the build, and moves the initial value to initState or a field initialiser",
+    "[judge] The answer states which Flutter and Dart versions it read or assumed and does not present unconfirmed version claims as fact",
+    "[judge] The SwitchListTile callback still calls setState inside the callback (that use is correct) and the answer does not remove it",
+    "[judge] The reply ends with the fixed report (Versions, Changed, Scan, Verified on device, Unconfirmed claims, Not checked) and says performance was not measured in profile mode on a device"
+   ]
+  },
+  {
+   "id": "t2-checkout-flow",
+   "prompt": "Users report that checkout sometimes submits with an empty cart and that the done screen sometimes opens after they left the page. Fix checkout_controller.dart and explain the root causes. Save as checkout_controller.fixed.dart.",
+   "files": [
+    "evals/files/t2-checkout-flow/checkout_controller.dart"
+   ],
+   "assertions": [
+    "[script] flutter_scan.py on checkout_controller.fixed.dart reports no unawaited-future finding",
+    "[script] checkout_controller.fixed.dart contains 'await loadCart()'",
+    "[script] checkout_controller.fixed.dart does not contain \"_cart!['total']\"",
+    "[judge] The answer names the dropped loadCart Future as the cause of the empty cart and fire-and-forget analytics as a deliberate choice wrapped in unawaited with its own error handling, or awaited",
+    "[judge] The fix guards the navigation after the await against a disposed context (a mounted check) or moves navigation out of the controller, and explains why a BuildContext stored in a controller is a risk",
+    "[judge] The answer handles a null or failed cart response with a clear failure path instead of a null assertion",
+    "[judge] Version-dependent claims (such as the minimum Flutter version for context.mounted) are marked verify (unconfirmed)"
+   ]
+  },
+  {
+   "id": "t3-prerelease-review",
+   "prompt": "Review profile_page.dart as a pre-release check, together with the plan 'we tested in debug mode on the simulator, ship Friday'. Report problems; do not rewrite the file.",
+   "files": [
+    "evals/files/t3-prerelease-review/profile_page.dart"
+   ],
+   "assertions": [
+    "[script] The reply mentions line 10 and 'print'",
+    "[script] The reply does not contain a rewritten full ProfilePage class (no line starting 'class ProfilePage' inside a code block)",
+    "[judge] The reply says release-mode (and profile-mode for performance) checks on real iOS and Android devices are needed before shipping, not debug on a simulator",
+    "[judge] The reply flags the null assertions on user as a crash risk and the hard-coded colors and small tap target on the close icon as theming and accessibility gaps",
+    "[judge] The reply names store requirements (target API level, privacy manifest) as things to confirm on release day, tagged as unconfirmed rather than stated as exact numbers",
+    "[judge] The reply uses the fixed report format and its Not checked line is not empty"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+[
+  {"query": "can you clean up this 200 line function, it's a nested mess but don't change what it does", "should_trigger": true},
+  {"query": "refactor utils.py to remove the duplication, keep the behaviour identical", "should_trigger": true},
+  {"query": "split process_order into smaller functions without breaking anything", "should_trigger": true},
+  {"query": "tidy up this module, last time you cleaned it up something broke", "should_trigger": true},
+  {"query": "simplify this code but make sure the existing behaviour stays exactly the same", "should_trigger": true},
+  {"query": "there are no tests for this file but I need it refactored safely, how should we go about it", "should_trigger": true},
+  {"query": "the agent's cleanup changed a function signature and renamed stuff I didn't ask about, redo it properly", "should_trigger": true},
+  {"query": "reduce the nesting in this class with early returns, one small commit at a time", "should_trigger": true},
+  {"query": "extract a helper from this block and make sure nothing else changes", "should_trigger": true},
+  {"query": "compare the before and after versions of this python file and tell me if my refactor changed any public functions", "should_trigger": true},
+  {"query": "there's a bug in this function where it returns None for empty input, fix it", "should_trigger": false},
+  {"query": "add a retry option to the upload function", "should_trigger": false},
+  {"query": "make this endpoint faster, it takes 4 seconds on large inputs", "should_trigger": false},
+  {"query": "migrate this project from Flask to FastAPI", "should_trigger": false},
+  {"query": "upgrade all dependencies to the latest versions and fix what breaks", "should_trigger": false},
+  {"query": "rewrite this Python script in Rust", "should_trigger": false},
+  {"query": "review this pull request for security problems", "should_trigger": false},
+  {"query": "write unit tests for the checkout module to reach 90 percent coverage", "should_trigger": false},
+  {"query": "format all files with black and sort the imports across the repo", "should_trigger": false},
+  {"query": "explain what this function does line by line", "should_trigger": false}
+]

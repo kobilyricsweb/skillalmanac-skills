@@ -1,0 +1,45 @@
+{
+  "skill_name": "regex-case-tester",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/test_regex.py on the spec the agent saved; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-zip-field",
+      "prompt": "Write the regex described in the request and prove it. Save your spec file as spec.json and the final pattern in answer.md.",
+      "files": ["evals/files/t1-zip-field/request.md"],
+      "assertions": [
+        "[script] test_regex.py spec.json prints verdict pass",
+        "[script] spec.json lists at least 3 match and 3 no_match strings, and mode is fullmatch",
+        "[script] spec.json no_match includes a value with a trailing newline or space, a 4-digit string and a 6-digit string",
+        "[judge] The case table was written before the pattern was presented, and cases the agent added are labelled as its own",
+        "[judge] The reply notes that \\d in Python matches non-ASCII digits and either uses [0-9] or the a flag, or states the choice",
+        "[judge] The report names what was not checked (other flavours, real ZIP existence)"
+      ]
+    },
+    {
+      "id": "t2-hanging-pattern",
+      "prompt": "Handle the request in the file. Save the spec you used as spec.json and your explanation in answer.md.",
+      "files": ["evals/files/t2-hanging-pattern/request.md"],
+      "assertions": [
+        "[script] test_regex.py on the agent's spec.json prints verdict pass with no static flag of severity high",
+        "[script] the final pattern in spec.json rejects '-ann', 'ann--bob', 'a b' and '' and accepts 'ann', 'bob_smith', 'j.doe-2'",
+        "[script] test_regex.py on a spec holding the ORIGINAL pattern reports a nested_quantifier flag and an exponential_growth_seen probe",
+        "[judge] The explanation names the nested repeat as the cause and the mandatory separator as the fix, not a timeout alone",
+        "[judge] The agent did not delete or weaken the invalid examples to get a pass",
+        "[judge] The reply states that a clean scan is not a proof of safety"
+      ]
+    },
+    {
+      "id": "t3-js-target",
+      "prompt": "Handle the request in the file. Save the spec you used as spec.json and your answer in answer.md.",
+      "files": ["evals/files/t3-js-target/request.md"],
+      "assertions": [
+        "[script] answer.md contains the JavaScript named-group form '(?<year>'",
+        "[script] test_regex.py on the agent's spec.json prints a verdict of indicative_only or untestable, never pass, when flavour is js",
+        "[script] the JavaScript pattern in answer.md is anchored at the start or the agent uses a full-match style check, and the end anchor is kept",
+        "[judge] The answer says the result was not tested in a JavaScript engine and lists what to re-run there",
+        "[judge] The answer does not claim that Python tests prove the JavaScript pattern",
+        "[judge] The Python-only syntax (?P<name>) is explained as the thing that had to change"
+      ]
+    }
+  ]
+}

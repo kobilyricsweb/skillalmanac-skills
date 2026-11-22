@@ -1,0 +1,10 @@
+PASS scan bad_project with policy
+PASS scan bad_project without policy
+PASS scan good_project with policy
+PASS scan good_project without policy
+PASS policy with an invalid action
+PASS missing folder
+PASS no arguments
+PASS normalise common spellings
+PASS no fixture file changed (script is read-only)
+9/9 cases passed

@@ -1,0 +1,54 @@
+{
+ "skill_name": "android-practices",
+ "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/android_scan.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has judge assertions that measure something it does not control.",
+ "evals": [
+  {
+   "id": "t1-sync-viewmodel",
+   "prompt": "Users say the app freezes for a moment when they tap refresh, and the sync keeps running after they leave the screen. The app is native Android with Kotlin. Fix SyncViewModel.kt and explain the root causes. Save the fixed file as SyncViewModel.fixed.kt.",
+   "files": [
+    "evals/files/t1-sync-viewmodel/SyncViewModel.kt"
+   ],
+   "assertions": [
+    "[script] android_scan.py on SyncViewModel.fixed.kt reports summary.warn equal to 0",
+    "[script] SyncViewModel.fixed.kt does not contain 'GlobalScope.launch' and does not contain 'runBlocking {'",
+    "[script] SyncViewModel.fixed.kt contains 'viewModelScope'",
+    "[judge] The answer names runBlocking on the main thread as the cause of the freeze and explains that a suspend function or launch fixes it without blocking the UI thread",
+    "[judge] The answer explains that GlobalScope work is not cancelled with the screen, and either moves it to viewModelScope or, if it must outlive the screen, to an injected application scope or WorkManager, with the reason",
+    "[judge] The answer states which Kotlin, coroutines and lifecycle versions it read or assumed and does not present unconfirmed version claims as fact",
+    "[judge] The reply ends with the report format from the skill, including a Not checked line"
+   ]
+  },
+  {
+   "id": "t2-image-cache",
+   "prompt": "LeakCanary shows our MainActivity being retained after rotation. I think ImageCache.kt is the cause. Fix the leak without changing how callers read bitmaps, and explain. Save the fixed file as ImageCache.fixed.kt.",
+   "files": [
+    "evals/files/t2-image-cache/ImageCache.kt"
+   ],
+   "assertions": [
+    "[script] android_scan.py on ImageCache.fixed.kt reports no context-leak-static finding",
+    "[script] ImageCache.fixed.kt does not contain 'hostActivity: Activity'",
+    "[script] ImageCache.fixed.kt still contains 'fun put(' and 'fun get(key: String)'",
+    "[judge] The answer identifies the static hostActivity field in the companion object as the retained reference and explains why a static holder outlives the Activity",
+    "[judge] The fix removes the Activity from static state (parameter, injected application context, or weak reference) and keeps only an application context if one is needed, with a reason",
+    "[judge] The answer replaces or justifies the remaining !! uses instead of silently keeping them, and does not claim the leak was verified with a leak detector run it did not make",
+    "[judge] Unconfirmed version-dependent claims are marked verify (unconfirmed)"
+   ]
+  },
+  {
+   "id": "t3-prerelease-review",
+   "prompt": "We ship this Compose screen to the Play Store on Friday. Review ProfileScreen.kt for release readiness and fix what you find. Save the fixed file as ProfileScreen.fixed.kt and list what you could not check from the code alone.",
+   "files": [
+    "evals/files/t3-prerelease-review/ProfileScreen.kt"
+   ],
+   "assertions": [
+    "[script] android_scan.py on ProfileScreen.fixed.kt reports summary.warn equal to 0",
+    "[script] ProfileScreen.fixed.kt contains 'stringResource' and does not contain 'Text(\"My profile\")'",
+    "[script] ProfileScreen.fixed.kt contains 'collectAsStateWithLifecycle'",
+    "[judge] The answer removes or guards the Log.d call and explains that logging state in the composable body runs on every recomposition and ships to release",
+    "[judge] The answer handles the null avatar and user data without !! (safe call or a state type that cannot be null) and says why",
+    "[judge] The answer notes that the icon-only share button has no contentDescription and fixes it with a string resource, or explains why it is decorative",
+    "[judge] The report lists items it could not check from code (for example R8 behaviour, store console values, TalkBack on a device) rather than claiming a full release review"
+   ]
+  }
+ ]
+}

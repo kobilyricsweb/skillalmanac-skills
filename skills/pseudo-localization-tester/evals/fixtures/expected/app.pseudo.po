@@ -1,0 +1,19 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\nLanguage: en-XA\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/cart.py:12
+msgid "Your cart"
+msgstr "[Ýöüŕ çáŕţ]"
+
+#: src/cart.py:20
+msgid "%d file selected"
+msgid_plural "%d files selected"
+msgstr[0] "[%d ƒíļé šéļéçţéð]"
+msgstr[1] "[%d ƒíļéš šéļéçţéð]"
+
+msgctxt "menu"
+msgid "Open"
+msgstr "[Öþéñ]"
+
+msgid "Hello, \"%(user)s\"\nWelcome."
+msgstr "[Ĥéļļö, \"%(user)s\"\nŴéļçöɱé.]"

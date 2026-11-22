@@ -1,0 +1,48 @@
+{
+  "skill_name": "excel-formula-debugger",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. The input workbooks broken.xlsx and clean.xlsx are stored in evals/files; `python evals/run_fixtures.py --write-dir <folder>` rebuilds them from evals/fixtures/workbooks.json. [script] assertions use scripts/audit_workbook.py or a plain string check on the agent's reply or output file; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has at least one judge assertion it does not control.",
+  "evals": [
+    {
+      "id": "t1-error-root-cause",
+      "prompt": "The Orders sheet in broken.xlsx shows #DIV/0! in I2 and I3 and #N/A in I4. Tell me what is actually wrong with each and fix what you can. Save the corrected copy as fixed.xlsx and explain.",
+      "files": [
+        "evals/files/broken.xlsx"
+      ],
+      "assertions": [
+        "[script] The reply names I2 as the root of the #DIV/0! chain and says I3 only inherits it",
+        "[script] The reply identifies B9 as the empty divisor cell in I2",
+        "[script] The reply does not recommend wrapping I3 in IFERROR as the fix",
+        "[judge] The reply explains #N/A in I4 as a lookup for \"zz\" that has no match in A2:A7, not as a formula syntax fault",
+        "[judge] The reply ends with root causes, what changed, what was left alone and what was not checked",
+        "[judge] The reply says nothing was recalculated and that cached results come from the file"
+      ]
+    },
+    {
+      "id": "t2-slow-and-version",
+      "prompt": "broken.xlsx is slow to recalculate, and a colleague on Excel 2016 sees #NAME? in column M. What is going on? Do not change anything, just diagnose.",
+      "files": [
+        "evals/files/broken.xlsx"
+      ],
+      "assertions": [
+        "[script] The reply names TODAY, OFFSET and INDIRECT (cells H2, H3, H4) as volatile",
+        "[script] The reply names XLOOKUP in M2 as the cause of #NAME? in older versions",
+        "[script] The reply mentions that P2 depends on a volatile cell",
+        "[judge] The reply suggests INDEX in place of OFFSET and a non-XLOOKUP option such as INDEX/MATCH for older versions",
+        "[judge] The reply does not claim the workbook is slow because of one specific cell without evidence from the volatile counts"
+      ]
+    },
+    {
+      "id": "t3-clean-sheet-no-invention",
+      "prompt": "Check clean.xlsx for formula problems before I send it. I want a straight answer.",
+      "files": [
+        "evals/files/clean.xlsx"
+      ],
+      "assertions": [
+        "[script] The reply states that the audit found no errors or warnings (ok true, 0 findings)",
+        "[script] The reply does not list an inconsistent_formula or hardcoded_constant finding for D7",
+        "[judge] The reply does not invent problems (for example complaining that the total row differs from the rows above)",
+        "[judge] The reply names what the audit cannot see: values are not recalculated, and whether the formulas answer the user's question is not judged"
+      ]
+    }
+  ]
+}

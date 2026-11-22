@@ -1,0 +1,88 @@
+{
+  "note": "Expected values were worked out by hand (decimal arithmetic on paper) before being saved; see VERIFICATION.md. 'codes' lists severity:code per invoice index, sorted. '@TMP' in args is replaced by a fresh temporary output path.",
+  "cases": [
+    {
+      "name": "good invoice and credit note pass",
+      "args": ["good_basic.json"],
+      "exit": 0,
+      "paths": {"summary.verdict": "pass", "invoices.0.computed_subtotal": "87.87", "invoices.0.computed_discount": "8.79", "invoices.0.computed_tax": "15.82", "invoices.0.computed_total": "94.90", "invoices.0.computed_due_date": "2026-03-31", "invoices.1.computed_total": "-60.00", "summary.info": 0},
+      "codes": {"0": [], "1": []}
+    },
+    {
+      "name": "same file under the total rounding method",
+      "args": ["good_basic.json", "--rounding", "total"],
+      "exit": 0,
+      "paths": {"summary.verdict": "pass", "invoices.0.computed_total": "94.90", "invoices.0.rounding.method": "total"}
+    },
+    {
+      "name": "bad invoices: mismatches, duplicate number, double billing, currency, sequence gap",
+      "args": ["bad_mixed.json", "--check-sequence"],
+      "exit": 1,
+      "paths": {"summary.verdict": "fail", "invoices.0.computed_subtotal": "42.01", "invoices.0.computed_tax": "8.40", "invoices.0.computed_total": "50.41", "invoices.0.delta": "-1.01", "invoices.3.computed_total": "10.00", "summary.errors": 6, "summary.warnings": 3, "sequence_gaps.0.missing": ["B-002"]},
+      "codes": {
+        "0": ["error:due_before_issue", "error:line_total_mismatch", "error:total_mismatch", "info:line_total_mismatch"],
+        "1": ["error:duplicate_invoice_number"],
+        "2": ["warning:possible_double_billing"],
+        "3": ["error:mixed_currency_in_invoice", "error:negative_quantity_not_credit_note"]
+      },
+      "file_codes": ["warning:mixed_currencies_in_file", "warning:sequence_gap"]
+    },
+    {
+      "name": "cent differences are info and name the other rounding method",
+      "args": ["rounding_hint.json", "--rounding", "line"],
+      "exit": 0,
+      "paths": {"summary.verdict": "pass", "invoices.0.computed_total": "0.99", "invoices.0.delta": "0.01", "invoices.1.computed_tax": "0.06", "invoices.1.computed_total": "0.51", "invoices.1.delta": "-0.01"},
+      "codes": {"0": ["info:matches_other_rounding", "info:total_mismatch"], "1": ["info:matches_other_rounding", "info:matches_other_rounding", "info:total_mismatch"]}
+    },
+    {
+      "name": "edge cases: fraction rate, missing rate, bad number, conflicting discount, half_even, JPY",
+      "args": ["edge_cases.json"],
+      "exit": 1,
+      "paths": {"summary.verdict": "fail", "invoices.0.computed_tax": "0.02", "invoices.1.computed_total": "11.50", "invoices.1.total_basis": "stated_tax", "invoices.2.computed_total": null, "invoices.4.computed_total": "0.12", "invoices.5.computed_total": "495", "invoices.5.delta": "1"},
+      "codes": {
+        "0": ["error:tax_mismatch", "error:total_mismatch", "info:stated_tax_implies_rate", "warning:tax_rate_fraction_suspected"],
+        "1": ["warning:tax_rate_missing"],
+        "2": ["error:invoice_not_computable", "error:unparseable_number"],
+        "3": ["error:conflicting_discount_inputs", "error:invoice_not_computable"],
+        "4": [],
+        "5": ["info:total_mismatch"]
+      }
+    },
+    {
+      "name": "CSV: due dates from terms, early-payment discount, overdue days, unparsed terms",
+      "args": ["terms.csv", "--rounding", "line", "--currency", "EUR", "--as-of", "2026-03-10"],
+      "exit": 0,
+      "paths": {"summary.verdict": "review", "summary.invoices": 3, "invoices.0.computed_total": "47.74", "invoices.0.computed_due_date": "2026-03-02", "invoices.0.days_until_due": -8, "invoices.1.computed_due_date": "2026-03-03", "invoices.1.early_payment.pay_by": "2026-02-11", "invoices.1.early_payment.discount_on_total": "2.16", "invoices.1.early_payment.discount_on_pretax_base": "2.00"},
+      "codes": {"0": [], "1": ["warning:due_date_mismatch"], "2": ["warning:terms_unparsed"]}
+    },
+    {
+      "name": "output path equal to the input is refused even with --force",
+      "args": ["good_basic.json", "--output", "good_basic.json", "--force"],
+      "exit": 2,
+      "unchanged": ["good_basic.json"]
+    },
+    {
+      "name": "existing output file is refused without --force",
+      "args": ["good_basic.json", "--output", "terms.csv"],
+      "exit": 2,
+      "unchanged": ["terms.csv"]
+    },
+    {
+      "name": "rounding method is required",
+      "args": ["terms.csv"],
+      "exit": 2
+    },
+    {
+      "name": "missing input file",
+      "args": ["does_not_exist.json", "--rounding", "line"],
+      "exit": 2
+    },
+    {
+      "name": "report written to a new file, input untouched",
+      "args": ["good_basic.json", "--output", "@TMP"],
+      "exit": 0,
+      "unchanged": ["good_basic.json"],
+      "writes_valid_json": true
+    }
+  ]
+}

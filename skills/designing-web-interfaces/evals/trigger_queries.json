@@ -1,0 +1,82 @@
+[
+ {
+  "query": "my landing page looks like every other AI-generated site, purple gradient and all. restyle it so it looks designed",
+  "should_trigger": true
+ },
+ {
+  "query": "redesign this dashboard CSS, spacing is inconsistent and the font sizes are all over the place",
+  "should_trigger": true
+ },
+ {
+  "query": "can you set up design tokens for my app: type scale, spacing, colors, radii",
+  "should_trigger": true
+ },
+ {
+  "query": "make this signup form look professional, it has no hover or error states",
+  "should_trigger": true
+ },
+ {
+  "query": "audit my HTML for design problems: contrast, tiny text, missing focus styles",
+  "should_trigger": true
+ },
+ {
+  "query": "my UI looks cluttered and template-like, fix the visual hierarchy",
+  "should_trigger": true
+ },
+ {
+  "query": "what spacing scale and type scale should I use for a SaaS admin panel? then apply it to my stylesheet",
+  "should_trigger": true
+ },
+ {
+  "query": "design an empty state, loading state and error state for this table component",
+  "should_trigger": true
+ },
+ {
+  "query": "polish this React app's styling so it stops looking like a ChatGPT demo",
+  "should_trigger": true
+ },
+ {
+  "query": "check my css against good design rules and tell me what to fix",
+  "should_trigger": true
+ },
+ {
+  "query": "convert this Figma frame into React components",
+  "should_trigger": false
+ },
+ {
+  "query": "my React list re-renders on every keystroke, how do I fix performance",
+  "should_trigger": false
+ },
+ {
+  "query": "run a full WCAG accessibility audit with screen reader testing on my site",
+  "should_trigger": false
+ },
+ {
+  "query": "design a logo and brand identity for my startup",
+  "should_trigger": false
+ },
+ {
+  "query": "turn this screenshot of a pricing page into HTML",
+  "should_trigger": false
+ },
+ {
+  "query": "write a user research interview script for my onboarding flow",
+  "should_trigger": false
+ },
+ {
+  "query": "add a dark mode toggle that saves to localStorage in my Next.js app",
+  "should_trigger": false
+ },
+ {
+  "query": "optimize my page speed and Core Web Vitals",
+  "should_trigger": false
+ },
+ {
+  "query": "write marketing copy for my homepage hero",
+  "should_trigger": false
+ },
+ {
+  "query": "fix the TypeScript error in my Button component props",
+  "should_trigger": false
+ }
+]

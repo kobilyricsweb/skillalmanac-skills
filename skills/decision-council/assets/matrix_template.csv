@@ -1,0 +1,7 @@
+option,Criterion one,Criterion two
+weight,5,3
+direction,benefit,cost
+scale,1,5
+Option A,4,2
+Option B,3,4
+Do nothing,2,1

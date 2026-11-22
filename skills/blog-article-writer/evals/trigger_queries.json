@@ -1,0 +1,82 @@
+[
+ {
+  "query": "write a blog post about remote work productivity for engineering managers",
+  "should_trigger": true
+ },
+ {
+  "query": "draft an article from this outline, about 1500 words, SEO-friendly",
+  "should_trigger": true
+ },
+ {
+  "query": "I need a post that actually ranks for 'best project management tools for agencies' - write it",
+  "should_trigger": true
+ },
+ {
+  "query": "turn this brief into a full blog article with sources and internal links",
+  "should_trigger": true
+ },
+ {
+  "query": "write a how-to blog post on setting up two-factor authentication for small businesses",
+  "should_trigger": true
+ },
+ {
+  "query": "can you write a comparison article: Notion vs Obsidian for note taking, 1,800 words",
+  "should_trigger": true
+ },
+ {
+  "query": "write me an article that is worth reading, not generic AI filler, about onboarding new developers",
+  "should_trigger": true
+ },
+ {
+  "query": "help me create a blog post from scratch: audience is freelance designers, promise is faster invoicing",
+  "should_trigger": true
+ },
+ {
+  "query": "draft a thought-leadership blog post arguing that standups are overrated, with cited data",
+  "should_trigger": true
+ },
+ {
+  "query": "write a listicle blog post: 7 mistakes new Shopify store owners make",
+  "should_trigger": true
+ },
+ {
+  "query": "humanize this blog draft, it sounds like ChatGPT wrote it",
+  "should_trigger": false
+ },
+ {
+  "query": "proofread and tighten my existing article, keep my voice",
+  "should_trigger": false
+ },
+ {
+  "query": "translate my blog post into German",
+  "should_trigger": false
+ },
+ {
+  "query": "write 5 tweets announcing our new release",
+  "should_trigger": false
+ },
+ {
+  "query": "write the API reference docs for our REST endpoints",
+  "should_trigger": false
+ },
+ {
+  "query": "write a Google Ads headline set for our running shoes",
+  "should_trigger": false
+ },
+ {
+  "query": "summarize this article in three bullet points",
+  "should_trigger": false
+ },
+ {
+  "query": "write a 4,000 word research paper with APA citations on sleep and memory",
+  "should_trigger": false
+ },
+ {
+  "query": "do an SEO technical audit of my site: sitemap, canonicals, redirects",
+  "should_trigger": false
+ },
+ {
+  "query": "find keywords with volume for a bakery website",
+  "should_trigger": false
+ }
+]

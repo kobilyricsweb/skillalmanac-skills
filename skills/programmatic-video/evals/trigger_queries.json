@@ -1,0 +1,22 @@
+[
+  {"query": "write a Remotion composition that turns my spreadsheet rows into 30 second sales videos", "should_trigger": true},
+  {"query": "I need ffmpeg to stitch these clips together with captions burned in and the right export settings for YouTube", "should_trigger": true},
+  {"query": "my moviepy render has captions running off the edge of the screen and the audio drifts", "should_trigger": true},
+  {"query": "build a timeline json for an auto generated slideshow video and check that nothing overlaps", "should_trigger": true},
+  {"query": "what bitrate and codec should I render a vertical 1080x1920 video at for reels", "should_trigger": true},
+  {"query": "generate 200 personalised videos from a CSV, one per customer, with their name in the title card", "should_trigger": true},
+  {"query": "validate my video project before I spend an hour rendering: missing files, clips longer than the video, wrong fps", "should_trigger": true},
+  {"query": "can an agent make a data visualisation video from this JSON, with subtitles and background music I have a licence for", "should_trigger": true},
+  {"query": "the final mp4 is 29.97 fps but my footage is 25 fps and it stutters, how do I set up the composition", "should_trigger": true},
+  {"query": "set up safe areas and caption limits for programmatic subtitles in a rendered video", "should_trigger": true},
+  {"query": "write me a script and hook for a YouTube video about index funds", "should_trigger": false},
+  {"query": "suggest a content calendar and thumbnail ideas for my cooking channel", "should_trigger": false},
+  {"query": "generate a 10 second video of a dragon flying over a city with an AI video model", "should_trigger": false},
+  {"query": "how do I trim a clip in Premiere Pro and add a lower third", "should_trigger": false},
+  {"query": "transcribe this interview recording into text with timestamps", "should_trigger": false},
+  {"query": "design an animated logo sting in Blender", "should_trigger": false},
+  {"query": "turn this blog post into a slide deck", "should_trigger": false},
+  {"query": "download this song from YouTube and put it behind my video", "should_trigger": false},
+  {"query": "write CSS keyframe animations for a loading spinner", "should_trigger": false},
+  {"query": "edit this podcast audio to remove silences and normalise loudness", "should_trigger": false}
+]

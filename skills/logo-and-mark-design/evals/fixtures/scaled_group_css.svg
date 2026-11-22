@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <title>Scaled group with CSS</title>
+  <style>.a { fill: red; }</style>
+  <g transform="scale(0.5)">
+    <rect x="0" y="0" width="40" height="40" fill="#123456"/>
+  </g>
+</svg>

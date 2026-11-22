@@ -1,0 +1,11 @@
+PASS clinic.csv --rules clinic_rules.json
+PASS clinic.csv --rules clinic_rules.json --no-suggest
+PASS roster.csv --rules roster_rules.json
+PASS clean.csv --rules clean_rules.json
+PASS clean.csv
+PASS events.ics
+PASS mixed_tz.ics
+PASS clean.csv --rules bad_rules.json
+PASS no_such_file.csv
+PASS clean.csv --out clean.csv
+10/10 cases passed

@@ -1,0 +1,43 @@
+{
+  "skill_name": "reference-list-formatter",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/format_refs.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task also has judge assertions the script does not control.",
+  "evals": [
+    {
+      "id": "t1-bib-to-apa",
+      "prompt": "Turn sources.bib into an APA 7 reference list and save it as references.txt. Tell me if anything is incomplete.",
+      "files": ["evals/files/t1-bib-to-apa/sources.bib"],
+      "assertions": [
+        "[script] references.txt has 3 lines, ordered Ferrari, Haddad, Osei",
+        "[script] The Osei line contains '(2021)', '*15*(2)', '88–97' and 'https://doi.org/10.3000/ner.2021.088'",
+        "[script] The Ferrari line contains '*Teaching Clinical Reasoning*' and 'Alder Press'",
+        "[script] The Haddad line is flagged as incomplete for the missing year and contains no invented year",
+        "[judge] The reply names the missing year for Haddad (2019 appears only in the key) and asks the user for it instead of guessing from the key",
+        "[judge] The reply states the APA edition implemented and tells the user to confirm with their current manual"
+      ]
+    },
+    {
+      "id": "t2-chatgpt-mla",
+      "prompt": "I used ChatGPT for a paper, details are in notes.md. Give me the MLA Works Cited entry and the in-text citation.",
+      "files": ["evals/files/t2-chatgpt-mla/notes.md"],
+      "assertions": [
+        "[script] The entry contains '\"Describe the main causes of the 1929 stock market crash\" prompt.' and '*ChatGPT*'",
+        "[script] The entry contains 'OpenAI', 'Mar 14 version', '8 Mar. 2023' and 'chat.openai.com/chat'",
+        "[script] The in-text citation is the shortened prompt in quotation marks, e.g. (\"Describe the main causes...\"), per the script; or the reply explains its own choice",
+        "[judge] The reply says that guidance for citing AI tools changes, to confirm with the instructor or current MLA guidance, and that the tool is not a source of facts",
+        "[judge] No author, date or version beyond what notes.md states is added"
+      ]
+    },
+    {
+      "id": "t3-mixed-ieee",
+      "prompt": "Format sources.json as an IEEE reference list. Which entries can't be used as they are?",
+      "files": ["evals/files/t3-mixed-ieee/sources.json"],
+      "assertions": [
+        "[script] The first reference line starts '[1] M. Tran et al.,' (7 authors, first author plus et al.) and contains 'Sep. 2020' and 'doi: 10.4000/jps.2020.1201'",
+        "[script] The web entry is marked incomplete for the missing accessed date and no accessed date is invented",
+        "[script] The thesis entry is reported as unsupported and is not forced into another type",
+        "[judge] The reply asks the user for the access date and offers to format the thesis by hand from the manual rather than guessing a template",
+        "[judge] The report lists what was not checked, including that the sources exist"
+      ]
+    }
+  ]
+}

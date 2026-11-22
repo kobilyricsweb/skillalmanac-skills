@@ -1,0 +1,10 @@
+{"cards": [
+  {"id": "c1", "front": "Which organelle makes most of a cell's ATP?", "back": "The mitochondrion", "tags": ["topic:cells", "type:recall"]},
+  {"id": "c2", "front": "Why do plant cells keep their shape when water is plentiful?", "back": "Water pressure inside the cell pushes the membrane against the rigid wall.", "tags": ["topic:cells", "type:explain"]},
+  {"id": "c3", "front": "What is the gas exchanged through stomata during the day?", "back": "Carbon dioxide enters; oxygen and water vapour leave.", "tags": "topic:plants;type:recall"},
+  {"id": "c4", "front": "A leaf is kept in the dark for two days. Predict what happens to its starch store and say why.", "back": "It falls. Without light the plant cannot make new sugar, so stored starch is used up.", "tags": ["topic:plants", "type:apply"]},
+  {"id": "c5", "front": "Osmosis versus diffusion: what extra condition defines osmosis?", "back": "Only water moves, across a partially permeable membrane.", "tags": ["topic:transport", "type:contrast"]},
+  {"id": "c6", "front": "Which stage of respiration needs oxygen?", "back": "The electron transport chain, at the end.", "tags": ["topic:respiration", "type:recall"]},
+  {"id": "c7", "front": "Red blood cells have no nucleus. What does that allow?", "back": "More room to carry haemoglobin, so more oxygen per cell.", "tags": ["topic:cells", "type:explain"]},
+  {"id": "c8", "front": "Salt is added to a potato slice in water. Predict the slice's mass change.", "back": "It loses mass, because water leaves the cells by osmosis.", "tags": ["topic:transport", "type:apply"]}
+]}

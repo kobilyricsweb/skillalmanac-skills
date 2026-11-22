@@ -1,0 +1,8 @@
+{
+  "budget": 2000,
+  "reserve": 300,
+  "candidates": [
+    {"id": "readme_copy", "path": "copy_of_readme.md", "priority": "nice"},
+    {"id": "readme", "path": "README.md", "priority": "must"}
+  ]
+}

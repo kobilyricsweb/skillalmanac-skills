@@ -1,0 +1,17 @@
+%% Container view: web shop, one level (containers), no code-level detail
+flowchart LR
+    customer(["Customer"])
+    subgraph shop["Web Shop (system boundary)"]
+        web["Web App"]
+        api["Orders API"]
+        worker["Email Worker"]
+        db[("Orders DB")]
+        queue["Job Queue"]
+    end
+    payments["Payment Provider (external)"]
+    customer -->|"HTTPS"| web
+    web -->|"JSON/HTTPS"| api
+    api -->|"SQL"| db
+    api -->|"enqueue job"| queue
+    queue -->|"consume"| worker
+    api -->|"charge card, HTTPS"| payments

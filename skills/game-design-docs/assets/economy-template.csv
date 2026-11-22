@@ -1,0 +1,4 @@
+id,type,resource,amount,tier
+source_1,source,coins,100,1
+sink_1,sink,coins,60,1
+tier_2,tier,coins,300,2

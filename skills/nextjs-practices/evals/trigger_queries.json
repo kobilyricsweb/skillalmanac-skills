@@ -1,0 +1,82 @@
+[
+ {
+  "query": "My Next.js app router build fails with 'You're importing a component that needs next/headers' - can you find which client components pull in server code?",
+  "should_trigger": true
+ },
+ {
+  "query": "Review my app/ directory and tell me where I'm missing loading.tsx and error.tsx",
+  "should_trigger": true
+ },
+ {
+  "query": "Where should I put 'use client' in this Next.js 15 layout? Everything is a client component right now",
+  "should_trigger": true
+ },
+ {
+  "query": "My Next.js page shows stale data after the upgrade to 15, how should I cache and revalidate this fetch?",
+  "should_trigger": true
+ },
+ {
+  "query": "Add generateMetadata and a canonical URL to my dynamic blog/[slug] route in the app router",
+  "should_trigger": true
+ },
+ {
+  "query": "Should this be a route handler or a server action? It's a form that saves a profile in my Next.js app",
+  "should_trigger": true
+ },
+ {
+  "query": "Audit my Next.js project for raw <img> tags that should use next/image",
+  "should_trigger": true
+ },
+ {
+  "query": "My Next 16 page fails to build with cacheComponents, uncached data outside Suspense - what do I do?",
+  "should_trigger": true
+ },
+ {
+  "query": "Two awaited fetches in my page.tsx run one after another, is that a waterfall? Fix it",
+  "should_trigger": true
+ },
+ {
+  "query": "Write a route.ts webhook endpoint that verifies a signature, in the Next.js app directory",
+  "should_trigger": true
+ },
+ {
+  "query": "My useEffect runs twice and my useState resets when the component re-renders, fix the React component",
+  "should_trigger": false
+ },
+ {
+  "query": "Review this React hook for stale closures and missing dependencies",
+  "should_trigger": false
+ },
+ {
+  "query": "Migrate my old pages/ router getServerSideProps pages to Remix",
+  "should_trigger": false
+ },
+ {
+  "query": "Build a Vue 3 composable that fetches data with Nuxt useAsyncData",
+  "should_trigger": false
+ },
+ {
+  "query": "Audit my site's robots.txt, canonical tags and sitemap coverage from a crawl export",
+  "should_trigger": false
+ },
+ {
+  "query": "Make this landing page design look more modern with better spacing and typography",
+  "should_trigger": false
+ },
+ {
+  "query": "Write an Express.js REST API with JWT auth and Postgres",
+  "should_trigger": false
+ },
+ {
+  "query": "Optimise my Next.js pages router app's getStaticProps ISR for a legacy pages/ directory",
+  "should_trigger": false
+ },
+ {
+  "query": "Explain the difference between useMemo and useCallback with examples",
+  "should_trigger": false
+ },
+ {
+  "query": "Set up a GitHub Actions pipeline that deploys a Docker image to ECS",
+  "should_trigger": false
+ }
+]

@@ -1,0 +1,22 @@
+[
+  {"query": "my FlatList stutters when I scroll on Android, how do I fix it in my Expo app", "should_trigger": true},
+  {"query": "review this React Native screen before I open the PR", "should_trigger": true},
+  {"query": "how should I ask for camera permission in Expo and what if the user denied it twice", "should_trigger": true},
+  {"query": "set up navigation for an Expo Router app with a login flow", "should_trigger": true},
+  {"query": "Platform.OS === 'ios' is all over my components, how do I clean that up in React Native", "should_trigger": true},
+  {"query": "checklist for shipping my React Native app to the App Store and Play Store with EAS", "should_trigger": true},
+  {"query": "add accessibility labels to the buttons in my React Native app", "should_trigger": true},
+  {"query": "should I use TanStack Query or Redux for API data in my Expo app", "should_trigger": true},
+  {"query": "scan my mobile app code for console.log and ScrollView with map before release", "should_trigger": true},
+  {"query": "where should I store the auth token in a React Native app", "should_trigger": true},
+  {"query": "my Next.js page re-renders too often, how do I memoize components", "should_trigger": false},
+  {"query": "write a Flutter ListView with pull to refresh", "should_trigger": false},
+  {"query": "convert this Swift UIKit table view to SwiftUI", "should_trigger": false},
+  {"query": "improve the Core Web Vitals of my React web app", "should_trigger": false},
+  {"query": "write App Store description and keywords for my app", "should_trigger": false},
+  {"query": "explain how React useEffect cleanup works", "should_trigger": false},
+  {"query": "set up a Kotlin Android app with Jetpack Compose navigation", "should_trigger": false},
+  {"query": "add a dark mode toggle to my Tailwind website", "should_trigger": false},
+  {"query": "write Jest unit tests for this TypeScript utility function", "should_trigger": false},
+  {"query": "design the REST API and database schema for a notes backend", "should_trigger": false}
+]

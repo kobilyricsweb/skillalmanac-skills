@@ -1,0 +1,43 @@
+{
+  "skill_name": "habit-log-review",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions run scripts/habit_review.py or compare its JSON to values worked out by hand from the CSV (the same values are asserted by evals/fixtures/cases.json). [judge] assertions need a blind grader. The script is the skill's own tool, so each task also carries judge assertions that measure something it does not control.",
+  "evals": [
+    {
+      "id": "t1-three-habits",
+      "prompt": "Here's my November habit log (the CSV). Goals: Reading 20 minutes a day, Run 3 days a week, Journal every day. Today is 21 November 2026. How am I doing? Give me the read-out and what to change.",
+      "files": ["evals/fixtures/log_two_habits.csv"],
+      "assertions": [
+        "[script] the run used --as-of 2026-11-21 and the goals as stated; exit code 0",
+        "[script] JSON: Reading verdict on_pace, streak_current 10, rate_28 90.0; Run verdict on_pace, streak_unit weeks, streak_current 3, weeks closed 2 met 2; Journal verdict slipping, adherence_28 70.0, streak_current 4, streak_longest 5",
+        "[judge] The read-out quotes these figures and does not recount the CSV by hand",
+        "[judge] Reading and Run get no change (steady); Journal gets exactly one change, to anchor it",
+        "[judge] No sentence explains why the user missed days or says anything about their mood, discipline or health",
+        "[judge] The reply states the blank-day assumption it used (unlogged days are not counted as missed) or asked about it"
+      ]
+    },
+    {
+      "id": "t2-messy-no-goal",
+      "prompt": "I've been doing yoga for two weeks, log attached. What's my streak and am I on track?",
+      "files": ["evals/fixtures/log_messy.csv"],
+      "assertions": [
+        "[script] the run used --as-of with a date no later than 2026-11-14 or asked the user for today's date; no --goal option was invented",
+        "[script] JSON: verdict no_goal, streak_current 7, rate_all 92.3, warnings include duplicate_rows, mixed_units and unknown_days; top-level warnings include skipped_rows and future_dates",
+        "[judge] The reply does not say on pace, slipping or stalled; it asks what would count as on track (a goal) before judging",
+        "[judge] Every data warning is reported in plain words: the duplicate Nov 3 row, the '30 min' value among yes/no values, the unreadable 'maybe' row, the row dated after the as-of date, the one unlogged day",
+        "[judge] The streak is given as 7 days with the caveat that the unlogged day Nov 7 ended the earlier run"
+      ]
+    },
+    {
+      "id": "t3-fading-habit",
+      "prompt": "I set a goal to stretch every day. Log attached, today is 21 Nov 2026. I stopped doing it and I don't know why. Review it.",
+      "files": ["evals/fixtures/log_fading.csv"],
+      "assertions": [
+        "[script] JSON for Stretch with goal daily: verdict stalled, pattern fading, trend prior_rate 88.9, recent_rate 28.6, delta_pts -60.3, streak_longest 11, best_weekday Tue, worst_weekday Sat",
+        "[script] the final answer contains 28.6 and 88.9",
+        "[judge] The one change is to lower the bar to about half for two weeks, then review again; not a list of several tips",
+        "[judge] The reply does not guess why the user stopped, offers no psychological explanation, and names it under 'Not checked'",
+        "[judge] The Saturday weakness (1 of 8) is stated as a fact from the log, not as a cause of the decline"
+      ]
+    }
+  ]
+}

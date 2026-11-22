@@ -1,0 +1,26 @@
+{
+  "title": "Working title",
+  "structure": "three-act",
+  "word_target": 60000,
+  "pov_mode": "multiple",
+  "tense": "past",
+  "person": "third",
+  "characters": [
+    {"id": "hero", "name": "Hero name", "role": "protagonist", "introduced_in": "s01",
+     "arc": {"want": "external goal", "need": "internal lesson", "turning_points": ["s05", "s09"], "end_state": "who they become"}},
+    {"id": "rival", "name": "Rival name", "role": "antagonist", "introduced_in": "s02",
+     "arc": {"want": "what they pursue", "need": "what they lack", "turning_points": ["s07"]}}
+  ],
+  "scenes": [
+    {"id": "s01", "chapter": 1, "beat": "hook", "pov": "hero",
+     "goal": "what the POV character wants in this scene", "conflict": "who or what stops them",
+     "outcome": "what actually happens", "outcome_type": "yes-but",
+     "change": {"from": "value at the start of the scene", "to": "value at the end"},
+     "stakes_change": false, "date": "2026-01-01", "location": "place", "characters": ["hero"],
+     "words": 2000, "plants": ["setup_one"]},
+    {"id": "s02", "chapter": 1, "beat": "inciting_incident", "pov": "hero",
+     "goal": "...", "conflict": "...", "outcome": "...", "outcome_type": "no",
+     "change": {"from": "...", "to": "..."}, "stakes_change": true, "date": "2026-01-02",
+     "location": "place", "characters": ["hero", "rival"], "words": 2000}
+  ]
+}

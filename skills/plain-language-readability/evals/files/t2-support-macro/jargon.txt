@@ -1,0 +1,7 @@
+# Support macro terms
+!chargeback
+supporting documentation => documents
+subsequent
+facilitate => help
+dispatched => sent
+enquiries => questions

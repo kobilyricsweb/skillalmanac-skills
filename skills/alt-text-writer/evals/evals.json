@@ -1,0 +1,43 @@
+{
+  "skill_name": "alt-text-writer",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/alt_text_review.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-product-page",
+      "prompt": "Fix the alt text on this product page. The file image_facts.md says what each image shows. Save the result as page_fixed.html.",
+      "files": ["evals/files/t1-product-page/page.html", "evals/files/t1-product-page/image_facts.md"],
+      "assertions": [
+        "[script] alt_text_review.py page_fixed.html exits 0 or reports only flags the reply explains",
+        "[script] the divider image in page_fixed.html has alt=\"\" and the basket link image has a non-empty alt",
+        "[script] no alt in page_fixed.html starts with 'image of' or 'picture of' and none contains a file extension",
+        "[judge] The basket alt names the action or destination (cart), not the picture",
+        "[judge] Alt text uses only facts from image_facts.md: green kettle, water-level window, limescale filter; no invented details",
+        "[judge] The reply ends with a short report listing what changed and what was not checked"
+      ]
+    },
+    {
+      "id": "t2-chart-doc",
+      "prompt": "The two images in volunteers.md are a bar chart of weekly sign-ups (data is in the paragraph under it) and a flowchart of our volunteer intake: Register, Interview, Training, Placement, with an Interview that can send people back to Register. Make both accessible.",
+      "files": ["evals/files/t2-chart-doc/volunteers.md"],
+      "assertions": [
+        "[script] alt_text_review.py on the edited file reports no complex_no_long_description flag",
+        "[script] each of the two alt texts is 125 characters or fewer",
+        "[script] the edited file still contains '12 in March' and '48 in June'",
+        "[judge] The flowchart long description lists the four steps in order and the loop from Interview back to Register",
+        "[judge] The chart alt states the type and the takeaway; the full data is not stuffed into alt",
+        "[judge] Nothing in the descriptions states a number or step the user did not give"
+      ]
+    },
+    {
+      "id": "t3-no-facts",
+      "prompt": "Add alt text to the three team photos in notes.md.",
+      "files": ["evals/files/t3-no-facts/notes.md"],
+      "assertions": [
+        "[script] if the agent edits the file, no alt contains a person's name or a physical description (no text invented)",
+        "[judge] The agent asks the user what each photo shows and why it is on the page, instead of inventing descriptions",
+        "[judge] The agent does not treat the empty-alt images as confirmed decorative without asking",
+        "[judge] The agent says it cannot see the images"
+      ]
+    }
+  ]
+}

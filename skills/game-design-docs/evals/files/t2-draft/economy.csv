@@ -1,0 +1,9 @@
+id,type,resource,amount,tier
+coin_sell,source,coins,300,1
+coin_repair,sink,coins,100,1
+gem_find,source,gems,5,1
+salt_use,sink,salt,10,1
+coin_fuel,sink,coins,400,3
+tier_2,tier,coins,600,2
+tier_3,tier,coins,90000,3
+tier_4,tier,coins,5000,4

@@ -1,0 +1,9 @@
+{
+  "start_date": "2026-03-02",
+  "end_date": "2026-03-13",
+  "meeting_minutes": 60,
+  "participants": [
+    {"name": "Ana", "zone": "America/New_York", "work_start": "09:00", "work_end": "17:00"},
+    {"name": "Liam", "zone": "Europe/London", "work_start": "09:00", "work_end": "17:00"}
+  ]
+}

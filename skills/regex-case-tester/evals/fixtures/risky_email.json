@@ -1,0 +1,8 @@
+{
+  "pattern": "^([a-zA-Z0-9]+[._-]?)+@example\\.com$",
+  "flavour": "python",
+  "mode": "search",
+  "flags": [],
+  "match": ["ann@example.com", "a.b@example.com", "bo@example.com"],
+  "no_match": ["@example.com", "ann@example.org", "ann@@example.com"]
+}

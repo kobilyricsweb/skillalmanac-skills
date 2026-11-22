@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // test mode
+    match /{document=**} {
+      allow read, write: if true;
+    }
+    match /posts/{id} {
+      allow read: if request.auth != null;
+    }
+    match /temp/{id} {
+      allow write: if request.time < timestamp.date(2030, 1, 1);
+    }
+    match /public/{id} {
+      allow read;
+    }
+  }
+}

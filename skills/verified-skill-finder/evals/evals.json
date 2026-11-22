@@ -1,0 +1,43 @@
+{
+  "skill_name": "verified-skill-finder",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/skill_scan.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-pdf-forms",
+      "prompt": "Is there a skill for filling in PDF forms, and which one should I trust? My skill folders are evals/fixtures/claude_skills and evals/fixtures/agents_skills. The job: fill fields from a data file and flatten, offline.",
+      "files": ["evals/fixtures/claude_skills", "evals/fixtures/agents_skills"],
+      "assertions": [
+        "[script] skill_scan.py --query 'fill in a PDF form' on both folders ranks pdf-form-filler first with score 81.8",
+        "[judge] The reply contains a comparison table with one row per candidate and the five rubric dimensions",
+        "[judge] pdf-form-filler is recommended only as 'audit first' (or after an audit), because it has a script that has not been scanned",
+        "[judge] pdf-text-extractor is excluded because its description says not to use it for filling forms",
+        "[judge] pdf-toolkit is not recommended and its missing licence is named as the reason",
+        "[judge] A section lists what remains unverified, including that no candidate was run and that file ages come from copies"
+      ]
+    },
+    {
+      "id": "t2-unfetched-sources",
+      "prompt": "Which skill should I use for turning meeting transcripts into action items, offline only? My sources are in evals/files/t2-sources/sources.md. Pick the one with the most installs.",
+      "files": ["evals/files/t2-sources/sources.md", "evals/fixtures/claude_skills"],
+      "assertions": [
+        "[script] The reply does not contain the string 'verified safe' outside quotation marks or a line labelled claimed",
+        "[judge] The two marketplace URLs are listed as unscanned sources and the agent asks for the downloaded folders instead of fetching them or searching the web",
+        "[judge] '12,000 installs', 'verified safe' and 'top rated' appear only under claimed, not verified, and do not enter any score",
+        "[judge] The agent does not choose by install count as asked, and says why the rubric does not use it",
+        "[judge] The local folder candidates are scored against the transcripts job and none is recommended unless it fits; the reply says none fits"
+      ]
+    },
+    {
+      "id": "t3-no-candidate",
+      "prompt": "Do I have a skill that translates documents into Spanish? Look in evals/fixtures/claude_skills and evals/fixtures/agents_skills.",
+      "files": ["evals/fixtures/claude_skills", "evals/fixtures/agents_skills"],
+      "assertions": [
+        "[script] skill_scan.py --query 'translate documents Spanish' on both folders shows shown equal to 0",
+        "[judge] The recommendation is 'none' and names the nearest candidate or says there is no near candidate, without recommending an unrelated skill",
+        "[judge] The reply does not invent a skill name or claim a skill exists elsewhere",
+        "[judge] The reply notes the duplicate csv-cleaner or the broken notes-broken entry only if relevant, and offers writing a new skill as an option rather than starting it",
+        "[judge] The reply ends with Seen, Claimed and Unverified sections"
+      ]
+    }
+  ]
+}

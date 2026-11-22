@@ -1,0 +1,13 @@
+Excerpt from the project, for the profile screen task.
+
+project.pbxproj (relevant lines)
+    IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+    SWIFT_VERSION = 5.9;
+    SWIFT_STRICT_CONCURRENCY = minimal;
+
+API contract
+    GET https://api.example.com/v1/profile
+    200 body: {"display_name": "Ada", "joined_at": "2025-03-01T10:15:30.123Z", "plan": "free"}
+    401 body: {"error": "token_expired"}
+    The bearer token is read from the Keychain through the existing
+    protocol TokenStore { func token() throws -> String }.

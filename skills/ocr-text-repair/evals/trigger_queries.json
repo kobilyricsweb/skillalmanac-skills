@@ -1,0 +1,22 @@
+[
+  {"query": "I ran OCR on a scanned book chapter and the words are split with hyphens at every line end, can you rejoin them", "should_trigger": true},
+  {"query": "this OCR text has rn where it should say m, like rnodern, fix it but don't touch the numbers", "should_trigger": true},
+  {"query": "my scanned letter came out as hard-wrapped lines with broken paragraphs, clean up the OCR output", "should_trigger": true},
+  {"query": "OCR of a receipt gave me 1O.50 and T0TAL, repair what you safely can and flag the amounts", "should_trigger": true},
+  {"query": "the OCR of this two column article reads straight across the columns, can you reflow it", "should_trigger": true},
+  {"query": "remove the repeated page headers and page numbers from this OCR dump of a 40 page report", "should_trigger": true},
+  {"query": "ligatures like ﬁ and ﬂ came through as odd characters in my scanned text, normalise them and give me a change log", "should_trigger": true},
+  {"query": "give me a JSON list of every change you made to the garbled text from my screenshot OCR", "should_trigger": true},
+  {"query": "fix the OCR errors in this text but only change a word if the correct spelling appears elsewhere in the document", "should_trigger": true},
+  {"query": "tesseract output is full of split words and weird symbols, tidy it without rewriting anything", "should_trigger": true},
+  {"query": "extract the text and the form fields from this text-layer PDF", "should_trigger": false},
+  {"query": "clean up this meeting transcript, remove the ums and add speaker labels", "should_trigger": false},
+  {"query": "run OCR on this photo of a whiteboard and give me the text", "should_trigger": false},
+  {"query": "proofread my essay for spelling and grammar mistakes", "should_trigger": false},
+  {"query": "make this paragraph sound less like a chatbot wrote it", "should_trigger": false},
+  {"query": "translate this scanned French document into English", "should_trigger": false},
+  {"query": "summarise the key points of this PDF report", "should_trigger": false},
+  {"query": "check the arithmetic on this invoice, the totals look wrong", "should_trigger": false},
+  {"query": "fill in the fields of this PDF application form with my details", "should_trigger": false},
+  {"query": "reformat this markdown table so the columns line up", "should_trigger": false}
+]

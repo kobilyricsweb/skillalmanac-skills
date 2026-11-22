@@ -1,0 +1,12 @@
+{"cards": [
+  {"id": "b1", "front": "Which organelle makes most of a cell's ATP?", "back": "The mitochondrion", "tags": ["topic:cells"]},
+  {"id": "b2", "front": "What is the powerhouse of the cell, the mitochondrion?", "back": "The mitochondrion", "tags": ["topic:cells"]},
+  {"id": "b3", "front": "Explain osmosis, diffusion, active transport, facilitated diffusion, endocytosis and exocytosis, including which need energy, which need a concentration gradient, and the role of every membrane protein involved in each of them in a living cell.", "back": "Short answer.", "tags": ["topic:transport"]},
+  {"id": "b4", "front": "List the steps of aerobic respiration.", "back": "Glycolysis happens in the cytoplasm and splits glucose into two pyruvate molecules while making a small amount of ATP and NADH, then pyruvate enters the mitochondrion where the link reaction and the Krebs cycle release carbon dioxide and load more carriers, and finally the electron transport chain uses those carriers to make most of the ATP.", "tags": ["topic:respiration"]},
+  {"id": "b5", "front": "What does a stomata do?", "back": "Gas exchange", "tags": []},
+  {"id": "b6", "front": "What is osmosis?", "back": "Water moving across a membrane.", "tags": ["topic:transport"]},
+  {"id": "b7", "front": "what is OSMOSIS", "back": "Diffusion of water through a partially permeable membrane.", "tags": ["topic:transport"]},
+  {"id": "b8", "front": "Name three parts of a neuron.", "back": "Dendrite\nCell body\nAxon\nMyelin sheath\nTerminal button", "tags": "topic:neurons"},
+  {"id": "b9", "front": "", "back": "Orphan answer", "tags": ["topic:cells"]},
+  "not a card"
+]}

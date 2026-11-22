@@ -1,0 +1,42 @@
+{
+  "sequence": {
+    "name": "Winback",
+    "type": "winback",
+    "trigger": "no_purchase_90_days",
+    "goal": "reactivate lapsed buyers",
+    "consent_basis": "purchased_list",
+    "sender": {
+      "from_name": "Deals Team",
+      "from_email": "noreply@deals.example"
+    }
+  },
+  "emails": [
+    {
+      "id": "w1",
+      "day": 0,
+      "job": "Bring them back and sell the bundle and announce the sale",
+      "subject": "Re: your order - ACT NOW!! 100% free shipping",
+      "preheader": "Re: your order - ACT NOW!! 100% free shipping",
+      "cta": {"label": "Click here", "url": "http://deals.example/sale"},
+      "unsubscribe": false
+    },
+    {
+      "id": "w2",
+      "day": 1,
+      "job": "Remind them about the sale",
+      "subject": "This subject line is far too long for any inbox list because it keeps going and going well past seventy-eight characters",
+      "cta": {"label": "Click here", "url": "https://deals.example/sale?utm=2"},
+      "unsubscribe": true
+    },
+    {
+      "id": "w3",
+      "day": 2,
+      "job": "Final reminder",
+      "subject": "Last chance to save",
+      "preheader": "Ends tonight",
+      "cta": {"label": "Shop the sale", "url": "https://deals.example/sale"},
+      "exit_conditions": [],
+      "unsubscribe": true
+    }
+  ]
+}

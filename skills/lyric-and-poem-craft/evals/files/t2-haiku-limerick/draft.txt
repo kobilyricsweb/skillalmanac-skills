@@ -1,0 +1,11 @@
+[Haiku]
+The old cat sleeps on the warm windowsill
+dust turns slowly in light
+a bus goes by
+
+[Limerick]
+A cook from the town of Dunbar
+Once burned every pan in a jar
+He wept in the sink
+Then he said, with a wink,
+"The smoke makes the stew taste of tar"

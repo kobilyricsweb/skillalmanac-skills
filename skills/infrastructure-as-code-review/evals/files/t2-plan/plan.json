@@ -1,0 +1,16 @@
+{
+  "format_version": "1.2",
+  "resource_changes": [
+    {"address": "aws_db_instance.orders", "mode": "managed", "type": "aws_db_instance", "name": "orders",
+     "change": {"actions": ["delete", "create"], "replace_paths": [["storage_encrypted"]]},
+     "action_reason": "replace_because_cannot_update"},
+    {"address": "aws_subnet.private[0]", "mode": "managed", "type": "aws_subnet", "name": "private",
+     "change": {"actions": ["delete"]}, "action_reason": "delete_because_count_index"},
+    {"address": "aws_subnet.private[1]", "mode": "managed", "type": "aws_subnet", "name": "private",
+     "change": {"actions": ["update"]}},
+    {"address": "aws_cloudwatch_log_group.api", "mode": "managed", "type": "aws_cloudwatch_log_group", "name": "api",
+     "change": {"actions": ["create"]}},
+    {"address": "aws_lb.api", "mode": "managed", "type": "aws_lb", "name": "api",
+     "change": {"actions": ["no-op"]}}
+  ]
+}

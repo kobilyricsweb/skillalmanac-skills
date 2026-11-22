@@ -1,0 +1,80 @@
+{
+  "note": "Expected values were worked out by hand from the fixture files before the script was run. {TMP} is replaced by a fresh temporary directory shared by all cases in one run; cases run in order.",
+  "cases": [
+    {
+      "args": ["good_decision.md"],
+      "exit": 0,
+      "expect": {
+        "verdict": "pass", "total_min": 50, "buffer_min": 10,
+        "item_flags": [[], [], [], [], []], "finding_codes": [], "cuts": [],
+        "item_clock": [["10:00", "10:10"], ["10:10", "10:20"], ["10:20", "10:25"], ["10:25", "10:40"], ["10:40", "10:50"]],
+        "attendee_hours": {"slot": 5.0, "booked": 4.17, "cuts_save": 0.0}
+      }
+    },
+    {
+      "args": ["bad_overbooked.md"],
+      "exit": 1,
+      "expect": {
+        "verdict": "fail", "total_min": 65, "buffer_min": -5,
+        "item_flags": [
+          ["ASYNC_CANDIDATE", "DURATION_ABOVE_MAX", "OUTCOME_WEAK_VERB", "OWNER_DOMINANT"],
+          ["OUTCOME_WEAK_VERB", "OWNER_DOMINANT"],
+          ["DECISION_NOT_EARLY", "NO_DECISION_QUESTION", "OWNER_DOMINANT"],
+          ["NO_OUTCOME"],
+          ["DECISION_LATE", "NO_OWNER", "RUNS_PAST_SLOT"]
+        ],
+        "finding_codes": ["ASYNC_CANDIDATE", "DECISION_LATE", "DECISION_NOT_EARLY", "DURATION_ABOVE_MAX", "NO_DECISION_QUESTION", "NO_OUTCOME", "NO_OWNER", "OUTCOME_WEAK_VERB", "OVERBOOKED", "OWNER_DOMINANT", "RUNS_PAST_SLOT"],
+        "cuts": [[1, "move_to_preread", 20]],
+        "attendee_hours": {"slot": 8.0, "booked": 8.67, "cuts_save": 2.67}
+      }
+    },
+    {
+      "args": ["good_workshop.json"],
+      "exit": 0,
+      "expect": {
+        "verdict": "pass", "total_min": 85, "buffer_min": 35,
+        "item_flags": [[], [], [], [], [], []], "finding_codes": [], "cuts": [],
+        "item_clock": [["13:00", "13:10"], ["13:10", "13:35"], ["13:35", "13:45"], ["13:45", "14:05"], ["14:05", "14:20"], ["14:20", "14:25"]],
+        "attendee_hours": {"slot": 12.0, "booked": 8.5, "cuts_save": 0.0}
+      }
+    },
+    {
+      "args": ["bad_overlap.json"],
+      "exit": 1,
+      "expect": {
+        "verdict": "fail", "total_min": 25, "buffer_min": 65,
+        "item_flags": [["OWNER_DOMINANT"], ["OVERLAP"], ["GAP_BEFORE", "OWNER_DOMINANT"]],
+        "finding_codes": ["COULD_BE_ASYNC", "GAP_BEFORE", "NO_BREAK", "OVERLAP", "OWNER_DOMINANT"],
+        "cuts": [],
+        "attendee_hours": null
+      }
+    },
+    {
+      "args": ["tight_buffer.md"],
+      "exit": 1,
+      "expect": {
+        "verdict": "warn", "total_min": 28, "buffer_min": 2,
+        "item_flags": [[], [], []], "finding_codes": ["BUFFER_TOO_SMALL"],
+        "cuts": [[3, "trim", 3]],
+        "attendee_hours": null
+      }
+    },
+    {
+      "args": ["tight_buffer.md", "--length", "45", "--attendees", "4"],
+      "exit": 0,
+      "expect": {
+        "verdict": "pass", "total_min": 28, "buffer_min": 17,
+        "item_flags": [[], [], []], "finding_codes": [], "cuts": [],
+        "attendee_hours": {"slot": 3.0, "booked": 1.87, "cuts_save": 0.0}
+      }
+    },
+    {"args": ["no_length.md"], "exit": 2, "stderr_contains": "meeting length missing"},
+    {"args": ["bad_item_key.json"], "exit": 2, "stderr_contains": "unknown key"},
+    {"args": ["does_not_exist.md"], "exit": 2, "stderr_contains": "no such file"},
+    {"args": ["good_decision.md", "--out", "good_decision.md", "--force"], "exit": 2, "stderr_contains": "overwrite an input"},
+    {"args": ["good_decision.md", "--out", "../fixtures/good_decision.md"], "exit": 2, "stderr_contains": "overwrite an input"},
+    {"args": ["good_decision.md", "--out", "{TMP}/report.json"], "exit": 0, "expect": {"out_written": "{TMP}/report.json"}},
+    {"args": ["good_decision.md", "--out", "{TMP}/report.json"], "exit": 2, "stderr_contains": "pass --force"},
+    {"args": ["good_decision.md", "--out", "{TMP}/report.json", "--force"], "exit": 0, "expect": {"out_written": "{TMP}/report.json"}}
+  ]
+}

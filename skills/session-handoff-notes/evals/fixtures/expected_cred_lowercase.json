@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "file": "cred_note.md",
+  "ok": false,
+  "counts": {
+    "PROBLEM": 1,
+    "NOTE": 0
+  },
+  "findings": [
+    {
+      "level": "PROBLEM",
+      "code": "credential_like",
+      "line": 49,
+      "message": "credential-like string; remove it and say where the value comes from. Value not repeated here."
+    }
+  ]
+}

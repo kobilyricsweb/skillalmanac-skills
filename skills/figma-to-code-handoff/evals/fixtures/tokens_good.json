@@ -1,0 +1,47 @@
+{
+  "$modes": ["light", "dark"],
+  "color": {
+    "$type": "color",
+    "neutral": {
+      "50": { "$value": "#f5f5f5" },
+      "900": { "$value": "#111111" }
+    },
+    "brand": {
+      "primary": { "$value": "#0B5FFF" }
+    },
+    "surface": {
+      "default": {
+        "$value": "#ffffff",
+        "$extensions": { "modes": { "light": "#ffffff", "dark": "#121212" } }
+      }
+    },
+    "text": {
+      "default": {
+        "$value": "{color.neutral.900}",
+        "$extensions": { "modes": { "light": "{color.neutral.900}", "dark": "{color.neutral.50}" } }
+      }
+    },
+    "action": {
+      "primary": { "$value": "{color.brand.primary}" }
+    }
+  },
+  "space": {
+    "$type": "dimension",
+    "sm": { "$value": "8px" },
+    "md": { "$value": "16px" }
+  },
+  "radius": {
+    "card": { "$type": "dimension", "$value": { "value": 12, "unit": "px" } }
+  },
+  "font": {
+    "family": {
+      "body": { "$type": "fontFamily", "$value": ["Inter", "Segoe UI", "system-ui", "sans-serif"] }
+    },
+    "weight": {
+      "bold": { "$type": "fontWeight", "$value": 700 }
+    }
+  },
+  "motion": {
+    "ease-out": { "$type": "cubicBezier", "$value": [0.2, 0, 0, 1] }
+  }
+}

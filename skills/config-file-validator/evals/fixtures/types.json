@@ -1,0 +1,10 @@
+{
+  "server": {
+    "port": "8080"
+  },
+  "mode": "test",
+  "debug": "true",
+  "timeout_seconds": 900,
+  "timout": 5,
+  "tags": ["web", 7]
+}

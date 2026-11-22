@@ -1,0 +1,73 @@
+{
+  "note": "Expected values were worked out by hand from the fixture files (see VERIFICATION.md) before being saved.",
+  "cases": [
+    {
+      "args": ["clinic.csv", "--rules", "clinic_rules.json"],
+      "exit": 1,
+      "expect": {
+        "summary": {"hard": 8, "soft": 2, "info": 0, "unassigned": 1, "rejected": 1, "verdict": "conflicts"},
+        "conflicts_short": [
+          "buffer_breach:b1+b2", "resource_overlap:b2+b3", "client_double_booked:b3+b5", "room_overlap:b3+b5",
+          "break_overlap:b4", "resource_overlap:b4+b5", "outside_hours:b6", "unknown_resource:b9",
+          "outside_hours:b7", "outside_hours:b11"
+        ],
+        "unassigned": ["b8:resource"],
+        "rejected": ["b10:end_before_start"],
+        "moves_short": [
+          "b2->2026-03-02T11:05", "b5->2026-03-02T11:00", "b4->2026-03-02T10:00",
+          "b6->2026-03-02T13:00", "b11->2026-03-09T09:00"
+        ],
+        "unmovable": ["outside_hours:b7"],
+        "remaining_after_moves": {"hard": 2, "soft": 0}
+      }
+    },
+    {
+      "args": ["clinic.csv", "--rules", "clinic_rules.json", "--no-suggest"],
+      "exit": 1,
+      "expect": {"moves_short": [], "remaining_after_moves": null}
+    },
+    {
+      "args": ["roster.csv", "--rules", "roster_rules.json"],
+      "exit": 1,
+      "expect": {
+        "summary": {"hard": 1, "soft": 2, "info": 0, "unassigned": 1, "rejected": 0, "verdict": "conflicts"},
+        "conflicts_short": ["max_daily_exceeded:s5", "room_over_capacity:s1+s3+s4", "rest_gap:s1+s2"],
+        "unassigned": ["s5:room"],
+        "moves_short": ["s4->2026-03-02T08:00", "s2->2026-03-03T10:00"],
+        "remaining_after_moves": {"hard": 0, "soft": 1}
+      }
+    },
+    {
+      "args": ["clean.csv", "--rules", "clean_rules.json"],
+      "exit": 0,
+      "expect": {
+        "summary": {"hard": 0, "soft": 0, "info": 0, "unassigned": 0, "rejected": 0, "verdict": "clean"},
+        "conflicts_short": [],
+        "free_slots": {"Sam": [
+          {"start": "2026-03-02T10:00", "end": "2026-03-02T10:30", "minutes": 30},
+          {"start": "2026-03-02T11:00", "end": "2026-03-02T12:00", "minutes": 60}
+        ]}
+      }
+    },
+    {
+      "args": ["clean.csv"],
+      "exit": 0,
+      "expect": {"conflicts_short": [], "free_slots": {}}
+    },
+    {
+      "args": ["events.ics"],
+      "exit": 1,
+      "expect": {
+        "summary": {"hard": 2, "soft": 0, "info": 1, "unassigned": 1, "rejected": 0, "verdict": "conflicts"},
+        "conflicts_short": ["recurring_not_expanded:e2", "resource_overlap:e1+e2", "room_overlap:e1+e2"],
+        "unassigned": ["e4:resource"],
+        "skipped": ["e3:cancelled"],
+        "moves_short": ["e2->2026-03-02T10:00"]
+      }
+    },
+    {"args": ["mixed_tz.ics"], "exit": 2, "expect": {}},
+    {"args": ["clean.csv", "--rules", "bad_rules.json"], "exit": 2, "expect": {}},
+    {"args": ["no_such_file.csv"], "exit": 2, "expect": {}},
+    {"args": ["clean.csv", "--out", "clean.csv"], "exit": 2, "expect": {}}
+  ]
+}

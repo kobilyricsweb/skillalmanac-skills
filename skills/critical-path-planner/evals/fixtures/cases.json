@@ -1,0 +1,46 @@
+{
+  "note": "Each case runs scripts/critical_path.py with args (an arg starting with fx: is a path under evals/fixtures/) and compares the exit code and the listed fields. Expected values were worked out by hand from the fixture JSON before being saved (see VERIFICATION.md). table maps task id to [es, ef, ls, lf, slack].",
+  "cases": [
+    {
+      "args": ["fx:kitchen_renovation.json"], "exit": 1,
+      "expect": {
+        "ok": false, "scheduled": true, "project_duration": 14, "start_date": "2026-03-02", "finish_date": "2026-03-19",
+        "deadline_days": 20, "deadline_gap": 6, "critical_count": 3, "paths": [["E", "F", "H"]],
+        "table": {"A": [0, 2, 1, 3, 1], "B": [2, 5, 3, 6, 1], "C": [2, 4, 4, 6, 2], "D": [5, 9, 6, 10, 1], "E": [0, 10, 0, 10, 0], "F": [10, 13, 10, 13, 0], "G": [9, 11, 11, 13, 2], "H": [13, 14, 13, 14, 0]},
+        "overloads": [["Cara", 2, 3, ["C", "E"]], ["Cara", 9, 9, ["E", "G"]]],
+        "warning_rules": ["overload", "overload"]
+      }
+    },
+    {
+      "args": ["fx:clean_launch.json"], "exit": 0,
+      "expect": {
+        "ok": true, "scheduled": true, "project_duration": 6, "start_date": "2026-06-01", "finish_date": "2026-06-09",
+        "deadline_days": 9, "deadline_gap": 3, "critical_count": 3, "paths": [["W", "X", "Z"]],
+        "table": {"W": [0, 2, 0, 2, 0], "X": [2, 5, 2, 5, 0], "Y": [2, 4, 3, 5, 1], "Z": [5, 6, 5, 6, 0]},
+        "task_dates": {"W": ["2026-06-01", "2026-06-02"], "X": ["2026-06-04", "2026-06-08"], "Y": ["2026-06-04", "2026-06-05"], "Z": ["2026-06-09", "2026-06-09"]},
+        "overloads": [], "warning_rules": []
+      }
+    },
+    {
+      "args": ["fx:late_event.json"], "exit": 1,
+      "expect": {
+        "ok": false, "scheduled": true, "project_duration": 10, "start_date": null, "deadline_days": 8, "deadline_gap": -2,
+        "critical_count": 4, "paths": [["P", "R", "S", "T"]],
+        "table": {"P": [0, 3, 0, 3, 0], "Q": [3, 5, 5, 7, 2], "R": [3, 7, 3, 7, 0], "S": [7, 9, 7, 9, 0], "T": [9, 10, 9, 10, 0]},
+        "warning_rules": ["deadline_missed"]
+      }
+    },
+    {
+      "args": ["fx:bad_cycle.json"], "exit": 1,
+      "expect": {
+        "ok": false, "scheduled": false, "project_duration": null, "paths": [],
+        "cycles": [["A", "B", "C", "A"], ["E", "E"]], "dangling": [["D", "X"]],
+        "warning_rules": ["duplicate_predecessor", "dangling_predecessor", "cycle", "cycle"]
+      }
+    },
+    {"args": ["fx:bad_duplicate_id.json"], "exit": 2, "expect": {}},
+    {"args": ["fx:no_such_file.json"], "exit": 2, "expect": {}},
+    {"args": ["fx:kitchen_renovation.json", "--out", "fx:kitchen_renovation.json"], "exit": 2, "expect": {}, "unchanged": ["kitchen_renovation.json"]},
+    {"args": ["fx:kitchen_renovation.json", "--out", "fx:kitchen_renovation.json", "--force"], "exit": 2, "expect": {}, "unchanged": ["kitchen_renovation.json"]}
+  ]
+}

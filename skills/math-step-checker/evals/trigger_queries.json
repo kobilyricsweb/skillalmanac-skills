@@ -1,0 +1,22 @@
+[
+  {"query": "can you check my steps for solving 3(x - 4) = 2x + 5, I think I went wrong somewhere", "should_trigger": true},
+  {"query": "here is my working for this algebra problem, where did I go wrong?", "should_trigger": true},
+  {"query": "find my mistake: 2x + 3 = 11, 2x = 11 + 3, x = 7", "should_trigger": true},
+  {"query": "is my working right? 1/2 + 1/3 = 2/5", "should_trigger": true},
+  {"query": "my son did his homework lines below, can you tell which line is the first wrong one without giving the answer", "should_trigger": true},
+  {"query": "I solved a radical equation and want to know if I have an extra solution, here are my lines", "should_trigger": true},
+  {"query": "check each line of my solution and tell me the first step that doesn't follow from the one before", "should_trigger": true},
+  {"query": "I'm a tutor, verify this student's equation steps and tell me what slip they probably made", "should_trigger": true},
+  {"query": "did I round correctly in my calculation, 100/3 = 33.3, and do my units add up: 5 m + 30 cm", "should_trigger": true},
+  {"query": "verify my arithmetic line by line, the final number looks off", "should_trigger": true},
+  {"query": "solve 3x - 7 = 11 for me", "should_trigger": false},
+  {"query": "I'm in the middle of my online algebra exam, give me the answers to these 5 questions", "should_trigger": false},
+  {"query": "differentiate x^3 sin(x) and show the steps", "should_trigger": false},
+  {"query": "explain how the quadratic formula is derived", "should_trigger": false},
+  {"query": "write a word problem about trains for my 6th grade class", "should_trigger": false},
+  {"query": "make a 10 question quiz on fractions with an answer key", "should_trigger": false},
+  {"query": "check the formulas in my spreadsheet, the SUM column gives the wrong total", "should_trigger": false},
+  {"query": "prove that the square root of 2 is irrational", "should_trigger": false},
+  {"query": "what is 15% of 240", "should_trigger": false},
+  {"query": "proofread my essay about the history of algebra", "should_trigger": false}
+]

@@ -1,0 +1,14 @@
+Ticket 48213 - Billing dispute
+From: dana.reyes@example.test
+Opened: 2026-11-03 09:15 (ticket age 12:30:45)
+
+Hello team,
+My name is Dana Reyes. Please call me on +1 555 010 0199 or (555) 010-0123.
+I was charged twice on card 4111 1111 1111 1111 (the same card, 4111 1111 1111 1111, was used on 2026-11-02).
+Refund to IBAN GB82 WEST 1234 5698 7654 32 please. My account holder ID is 123-45-6789.
+Order 4111 1111 1111 1112 never arrived and tracking ID 1234567890123456 shows nothing.
+Version 2.31.4 of the app crashed on 203.0.113.45 and again on 2001:db8::7334.
+Agent note: Priya Natarajan escalated this to Marcus Lee-Okafor at Northwind Traders.
+Payment portal link: https://pay.example.test/checkout?order=48213&token=FAKE-TOKEN-0000-DO-NOT-USE&lang=en
+Internal key sk-FAKEFAKEFAKEFAKEFAKE0000 was pasted by mistake, rotate it.
+Thanks, dana.reyes@example.test

@@ -1,0 +1,12 @@
+id,platform,scheduled_at,text,sponsored,hashtags
+b1,x,2026-12-01T09:00:00+00:00,"Our new report covers invoice timing across 40 runs, including the method, the raw logs, the three runs we discarded and why, the baseline we used, the team sizes involved, and a few caveats about seasonality in month-end close that readers should keep in mind before comparing it to their own numbers. Read it here: https://example.com/a-very-long-link-that-counts-as-23",false,
+b2,linkedin,2026-12-01T09:00:00+00:00,We worked with Northwind on a ledger test and here is what we found after a month of use. Median close time fell by 21 minutes.,true,
+b3,instagram,2026-12-02T12:00:00+00:00,Loving the new ledger sync from our friends at Northwind! #sp #collab,true,
+b4,linkedin,2026-12-04T09:00:00+00:00,We worked with Northwind on a ledger test and here is what we found after a month of use. Median close time fell by 21 minutes!,false,
+b5,threads,2026-12-03T10:00:00+00:00,Close time fell by 21 minutes #finance #ops #close,false,
+b6,bluesky,2026-12-03T11:00:00,A slow step cost us 21 minutes a run. Fixed in an afternoon.,false,
+b7,x,2026-12-01T09:30:00+00:00,Like and share if you hate month-end close.,false,
+b8,instagram,2026-12-05T12:00:00+00:00,"We spent the whole of November testing a ledger tool and wrote down everything: setup time, the three outages, the support replies, and the one report that finally matched our manual numbers. Thanks to the team for the product. #ad",true,
+b9,tiktok,next tuesday,"Close time, explained in 30 seconds.",false,
+b10,linkedin,2026-12-20T09:00:00+00:00,Median close time fell by 21 minutes after one fix. Short write-up coming.,false,
+b11,x,2026-12-20T09:00:00+00:00,Median close time fell by 21 minutes after one fix. Short write-up coming.,false,

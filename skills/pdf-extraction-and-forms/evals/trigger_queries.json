@@ -1,0 +1,82 @@
+[
+ {
+  "query": "extract the text from this PDF so I can search it",
+  "should_trigger": true
+ },
+ {
+  "query": "this PDF is a scan of a contract, can you read it and pull out the text",
+  "should_trigger": true
+ },
+ {
+  "query": "get the table on page 4 of this report PDF into a CSV",
+  "should_trigger": true
+ },
+ {
+  "query": "fill in this PDF application form with my details",
+  "should_trigger": true
+ },
+ {
+  "query": "what fields does this fillable PDF form have",
+  "should_trigger": true
+ },
+ {
+  "query": "my bank statement PDF copies as blank when I select text, how do I get the data out",
+  "should_trigger": true
+ },
+ {
+  "query": "convert the invoice PDF line items to a spreadsheet and check the totals add up",
+  "should_trigger": true
+ },
+ {
+  "query": "OCR this scanned PDF and tell me if the numbers are reliable",
+  "should_trigger": true
+ },
+ {
+  "query": "I need the data from these PDF tables but the rows keep breaking at page boundaries",
+  "should_trigger": true
+ },
+ {
+  "query": "check whether this PDF has a text layer or is just images",
+  "should_trigger": true
+ },
+ {
+  "query": "merge these three PDFs into one file",
+  "should_trigger": false
+ },
+ {
+  "query": "create a PDF report from this markdown",
+  "should_trigger": false
+ },
+ {
+  "query": "remove the password from this PDF so I can print it",
+  "should_trigger": false
+ },
+ {
+  "query": "sign this PDF document with my signature",
+  "should_trigger": false
+ },
+ {
+  "query": "compress this PDF to under 1 MB",
+  "should_trigger": false
+ },
+ {
+  "query": "summarize this article for me",
+  "should_trigger": false
+ },
+ {
+  "query": "fill in this Excel template with the numbers",
+  "should_trigger": false
+ },
+ {
+  "query": "extract the text from this Word document",
+  "should_trigger": false
+ },
+ {
+  "query": "convert this PDF to a PowerPoint deck",
+  "should_trigger": false
+ },
+ {
+  "query": "redact the names in this PDF before I publish it",
+  "should_trigger": false
+ }
+]

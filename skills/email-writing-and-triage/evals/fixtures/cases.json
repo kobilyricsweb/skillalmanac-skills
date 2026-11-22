@@ -1,0 +1,283 @@
+{
+  "note": "Expected values were derived by hand from the rules in references/triage-rules.md (dates counted on a calendar: 2026-11-16 is a Monday) and then compared with the script output. Paths are relative to evals/fixtures/. days_left counts from --today (or the latest message date).",
+  "cases": [
+    {
+      "name": "json mailbox",
+      "args": [
+        "triage",
+        "mailbox.json",
+        "--me",
+        "dana@northwind.example",
+        "--today",
+        "2026-11-17"
+      ],
+      "exit": 0,
+      "expect": {
+        "counts_by_category": {
+          "suspicious": 2,
+          "automated": 2,
+          "urgent_reply": 3,
+          "reply": 3,
+          "fyi": 3,
+          "waiting_on_them": 1,
+          "sent": 1
+        },
+        "queue": [
+          "invoice-question",
+          "numbers-eod",
+          "contract-signoff",
+          "signed-form",
+          "board-prep",
+          "undated-file",
+          "pricing-ask"
+        ],
+        "quarantine": [
+          "it-phish",
+          "gift-cards"
+        ],
+        "categories": {
+          "contract-signoff": "urgent_reply",
+          "hosting-invoice": "automated",
+          "q4-notes": "fyi",
+          "lunch-order": "fyi",
+          "it-phish": "suspicious",
+          "pricing-ask": "waiting_on_them",
+          "budget-promise": "sent",
+          "budget-reply": "fyi",
+          "media-digest": "automated",
+          "invoice-question": "urgent_reply",
+          "board-prep": "reply",
+          "gift-cards": "suspicious",
+          "signed-form": "reply",
+          "numbers-eod": "urgent_reply",
+          "undated-file": "reply"
+        },
+        "deadlines": {
+          "contract-signoff": [
+            [
+              "Thursday",
+              "2026-11-19",
+              2
+            ]
+          ],
+          "hosting-invoice": [
+            [
+              "2026-11-30",
+              "2026-11-30",
+              13
+            ]
+          ],
+          "budget-promise": [
+            [
+              "Friday",
+              "2026-11-13",
+              -4
+            ]
+          ],
+          "invoice-question": [
+            [
+              "ASAP",
+              null,
+              null
+            ]
+          ],
+          "signed-form": [
+            [
+              "5th of December",
+              "2026-12-05",
+              18
+            ]
+          ],
+          "numbers-eod": [
+            [
+              "tomorrow",
+              "2026-11-18",
+              1
+            ]
+          ],
+          "undated-file": [
+            [
+              "Friday",
+              null,
+              null
+            ]
+          ],
+          "board-prep": [],
+          "q4-notes": []
+        },
+        "flags": {
+          "contract-signoff": [
+            "deadline"
+          ],
+          "hosting-invoice": [
+            "deadline",
+            "money_mentioned"
+          ],
+          "q4-notes": [
+            "reply_all_risk",
+            "attachment"
+          ],
+          "pricing-ask": [
+            "money_mentioned",
+            "stale_followup"
+          ],
+          "budget-promise": [
+            "deadline",
+            "overdue",
+            "money_mentioned",
+            "own_deadline_commitment"
+          ],
+          "invoice-question": [
+            "deadline",
+            "immediate",
+            "money_mentioned"
+          ],
+          "undated-file": [
+            "deadline",
+            "no_date"
+          ],
+          "board-prep": []
+        },
+        "reply_actions": {
+          "pricing-ask": "follow_up",
+          "it-phish": "do_not_reply",
+          "media-digest": "none",
+          "board-prep": "draft"
+        }
+      }
+    },
+    {
+      "name": "mbox mailbox",
+      "args": [
+        "triage",
+        "mailbox.mbox",
+        "--me",
+        "dana@example.com"
+      ],
+      "exit": 0,
+      "expect": {
+        "reference_date": "2026-11-18",
+        "counts_by_category": {
+          "suspicious": 0,
+          "automated": 1,
+          "urgent_reply": 1,
+          "reply": 0,
+          "fyi": 1,
+          "waiting_on_them": 1,
+          "sent": 0
+        },
+        "queue": [
+          "v2@cafe.example"
+        ],
+        "quarantine": [],
+        "categories": {
+          "v1@client.example": "fyi",
+          "v2@cafe.example": "urgent_reply",
+          "v3@mail.example": "automated",
+          "v4@example.com": "waiting_on_them"
+        },
+        "deadlines": {
+          "v1@client.example": [],
+          "v2@cafe.example": [
+            [
+              "2026-11-20",
+              "2026-11-20",
+              2
+            ]
+          ]
+        },
+        "subjects": {
+          "v2@cafe.example": "Café menu review"
+        }
+      }
+    },
+    {
+      "name": "phishing: lookalike domain, shortener, urgency plus credential request",
+      "args": [
+        "triage",
+        "phishing.json",
+        "--me",
+        "dana@northwind.example",
+        "--today",
+        "2026-11-17"
+      ],
+      "exit": 0,
+      "expect": {
+        "counts_by_category": {
+          "suspicious": 2,
+          "automated": 0,
+          "urgent_reply": 0,
+          "reply": 1,
+          "fyi": 0,
+          "waiting_on_them": 0,
+          "sent": 1
+        },
+        "quarantine": [
+          "paypa1-lookalike",
+          "domain-typo"
+        ],
+        "categories": {
+          "paypa1-lookalike": "suspicious",
+          "domain-typo": "suspicious",
+          "real-client": "reply",
+          "dana-to-client": "sent"
+        },
+        "reply_actions": {
+          "paypa1-lookalike": "do_not_reply",
+          "domain-typo": "do_not_reply",
+          "real-client": "draft"
+        }
+      }
+    },
+    {
+      "name": "valid table passes check",
+      "args": [
+        "check",
+        "good_table.json"
+      ],
+      "exit": 0,
+      "expect": {
+        "ok": true
+      }
+    },
+    {
+      "name": "broken table fails check",
+      "args": [
+        "check",
+        "bad_table.json"
+      ],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "error_count": 3
+      }
+    },
+    {
+      "name": "missing file",
+      "args": [
+        "triage",
+        "no_such_file.json"
+      ],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "name": "empty file",
+      "args": [
+        "triage",
+        "empty.txt"
+      ],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "name": "text that is not an mbox",
+      "args": [
+        "triage",
+        "not_mbox.txt"
+      ],
+      "exit": 2,
+      "expect": {}
+    }
+  ]
+}

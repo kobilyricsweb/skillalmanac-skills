@@ -1,0 +1,26 @@
+{
+  "units": "meters",
+  "up_axis": "Z",
+  "ground_level": 0.0,
+  "objects": [
+    {"name": "Ground_Plane", "type": "mesh", "role": "ground", "location": [0, 0, 0], "scale": [1, 1, 1], "dimensions": [20, 20, 0], "material": "Mat_Concrete"},
+    {"name": "Crate_01", "type": "mesh", "location": [0, 0, 0.5], "scale": [1, 1, 1], "dimensions": [1, 1, 1], "rigid_body": true, "material": "Mat_Wood"},
+    {"name": "Ball_01", "type": "mesh", "location": [1.5, 0.5, 0.3], "scale": [1, 1, 1], "dimensions": [0.6, 0.6, 0.6], "rigid_body": true, "material": "Mat_Wood"}
+  ],
+  "materials": [
+    {"name": "Mat_Concrete", "shader": "principled"},
+    {"name": "Mat_Wood", "shader": "principled"}
+  ],
+  "lights": [
+    {"name": "Key_Sun", "type": "sun", "location": [0, 0, 10], "energy": 3.0},
+    {"name": "Fill_Area", "type": "area", "location": [-4, -3, 3], "energy": 200}
+  ],
+  "camera": {
+    "name": "Cam_Main",
+    "location": [7.36, -6.93, 4.96],
+    "rotation_euler_deg": [63.6, 0, 46.7],
+    "euler_order": "XYZ",
+    "euler_convention": "blender",
+    "fov_deg": 40
+  }
+}

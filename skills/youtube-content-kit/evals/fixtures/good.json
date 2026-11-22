@@ -1,0 +1,18 @@
+{
+  "title": "How to Fix a Dripping Tap in 10 Minutes",
+  "primary_keyword": "fix a dripping tap",
+  "hook": "This tap has dripped for a year. In ten minutes and with one spanner, I will fix it, and show the cheap part that actually failed.",
+  "description": "How to fix a dripping tap with one spanner and a 2 euro washer. Step by step, no plumber needed, tested on three common tap types.\n\nChapters:\n0:00 Why it drips\n0:40 Turn off the water\n2:10 Remove the handle\n4:30 Replace the washer\n8:00 Test it\n\nTools used: adjustable spanner, flat screwdriver.\n\n#plumbing #diy",
+  "tags": ["fix a dripping tap", "dripping tap repair", "replace tap washer", "diy plumbing", "leaking faucet"],
+  "chapters": [
+    {"time": "0:00", "title": "Why it drips"},
+    {"time": "0:40", "title": "Turn off the water"},
+    {"time": "2:10", "title": "Remove the handle"},
+    {"time": "4:30", "title": "Replace the washer"},
+    {"time": "8:00", "title": "Test it"}
+  ],
+  "duration_s": 600,
+  "pattern_breaks": [20, 40, 65, 95, 125, 155, 185, 215, 245, 275, 305, 335, 365, 395, 425, 455, 485, 515, 545, 575],
+  "sponsored": false,
+  "disclosure": {"paid_promotion_toggle": false}
+}

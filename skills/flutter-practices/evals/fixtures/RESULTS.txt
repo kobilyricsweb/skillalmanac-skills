@@ -1,0 +1,11 @@
+PASS bad/counter_page.dart
+PASS bad/huge_build.dart
+PASS bad/bangs.dart
+PASS bad/futures.dart
+PASS bad/strings.dart
+PASS good
+PASS ../files/t1-settings-screen
+PASS ../files/t2-checkout-flow
+PASS ../files/t3-prerelease-review
+PASS does_not_exist
+10/10 cases passed

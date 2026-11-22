@@ -1,0 +1,82 @@
+[
+ {
+  "query": "set up git worktrees so three agents can work on the same repo in parallel",
+  "should_trigger": true
+ },
+ {
+  "query": "what's a good branch naming convention for agent tasks",
+  "should_trigger": true
+ },
+ {
+  "query": "should I rebase or merge main into my feature branch",
+  "should_trigger": true
+ },
+ {
+  "query": "my PR is 2000 lines and the reviewer won't touch it, how do I split it",
+  "should_trigger": true
+ },
+ {
+  "query": "clean up all my old git worktrees and stale branches",
+  "should_trigger": true
+ },
+ {
+  "query": "how do I remove a git worktree safely after the PR merged",
+  "should_trigger": true
+ },
+ {
+  "query": "is it ok to force push my feature branch after rebasing",
+  "should_trigger": true
+ },
+ {
+  "query": "what commit message format should my agent use, and how big should a PR be",
+  "should_trigger": true
+ },
+ {
+  "query": "git says branch is already checked out in another worktree, what do I do",
+  "should_trigger": true
+ },
+ {
+  "query": "audit my repo for branches with no upstream and badly named branches",
+  "should_trigger": true
+ },
+ {
+  "query": "review this diff and tell me if it's safe to merge",
+  "should_trigger": false
+ },
+ {
+  "query": "resolve the merge conflict in src/cart.ts",
+  "should_trigger": false
+ },
+ {
+  "query": "set up GitHub Actions to run tests on every pull request",
+  "should_trigger": false
+ },
+ {
+  "query": "tag and publish release 2.3.0 with a changelog",
+  "should_trigger": false
+ },
+ {
+  "query": "explain how git stores objects internally",
+  "should_trigger": false
+ },
+ {
+  "query": "write unit tests for the cart total function",
+  "should_trigger": false
+ },
+ {
+  "query": "undo my last commit but keep the changes (just one local commit, no worktrees involved)",
+  "should_trigger": false
+ },
+ {
+  "query": "create a new React component for the search box",
+  "should_trigger": false
+ },
+ {
+  "query": "set up git hooks with husky for linting",
+  "should_trigger": false
+ },
+ {
+  "query": "summarise what changed between v1 and v2 of this document",
+  "should_trigger": false
+ }
+]

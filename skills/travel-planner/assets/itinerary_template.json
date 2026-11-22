@@ -1,0 +1,28 @@
+{
+  "trip": {
+    "name": "City break, 3 days",
+    "style": "balanced",
+    "currency": "EUR",
+    "travelers": 2,
+    "budget_total": 1500,
+    "facts": [
+      {"claim": "Entry rules for the travellers' passports", "kind": "visa", "status": "unverified"}
+    ],
+    "documents": [
+      {"name": "Passport validity matches the destination's rule", "status": "unverified"}
+    ]
+  },
+  "days": [
+    {
+      "date": "2026-01-01",
+      "travel_day": true,
+      "items": [
+        {"id": "d1-hotel", "title": "Hotel, 3 nights", "kind": "lodging", "cost": 0, "category": "lodging",
+         "facts": [{"claim": "Total price for 3 nights", "kind": "price", "status": "unverified"}]},
+        {"id": "d1-walk", "title": "Evening walk", "kind": "activity", "start": "17:00", "end": "19:00", "location": "Old town", "area": "Centre", "cost": 0, "category": "activities",
+         "facts": [{"claim": "Area is open to walk at this hour", "kind": "hours", "status": "unverified"}]},
+        {"id": "d1-dinner", "title": "Dinner", "kind": "meal", "start": "19:30", "end": "21:00", "location": "Restaurant name", "area": "Centre", "cost": 0, "category": "food"}
+      ]
+    }
+  ]
+}

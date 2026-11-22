@@ -1,0 +1,12 @@
+PASS p_npm acme-widgets
+PASS p_npm_mismatch acme-widgets
+PASS p_pnpm @acme/client
+PASS p_yarn @acme/client
+PASS p_pnp @acme/client
+PASS p_python acme_tools
+PASS p_uv acme-tools
+PASS p_go example.com/acme/kit
+PASS p_python acme-tools --ecosystem npm
+PASS p_empty acme-widgets
+PASS p_does_not_exist acme-widgets
+11/11 cases passed

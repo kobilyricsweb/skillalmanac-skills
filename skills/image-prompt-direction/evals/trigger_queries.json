@@ -1,0 +1,22 @@
+[
+  {"query": "write me an image prompt for a website hero: a small bakery at dawn, warm and inviting", "should_trigger": true},
+  {"query": "why do all my AI generated images look so generic? here is my prompt, can you fix it", "should_trigger": true},
+  {"query": "I need a product photo prompt for a matte black water bottle on a concrete table", "should_trigger": true},
+  {"query": "turn this brief into a prompt for an image generator: autumn campaign, a woman walking a dog in a park", "should_trigger": true},
+  {"query": "can you check my midjourney style prompt for missing things like lighting and aspect ratio", "should_trigger": true},
+  {"query": "what lens and lighting terms should I put in a prompt to get a moody portrait", "should_trigger": true},
+  {"query": "my prompt says golden hour but the picture looks flat, help me iterate without breaking everything", "should_trigger": true},
+  {"query": "write four variations of a text-to-image prompt for a cover illustration, art director style", "should_trigger": true},
+  {"query": "the client wants it in the style of a famous living illustrator, how do I write the prompt without naming them", "should_trigger": true},
+  {"query": "prompt for a 9:16 story background, soft pastel gradient with a single plant", "should_trigger": true},
+  {"query": "edit this photo to remove the person on the left and brighten the sky", "should_trigger": false},
+  {"query": "write a prompt for a ChatGPT system message that answers customer emails politely", "should_trigger": false},
+  {"query": "generate a 5 second video prompt of a drone flying over a canyon", "should_trigger": false},
+  {"query": "design a logo for my coffee brand with a leaf and the letter K", "should_trigger": false},
+  {"query": "make an image of Taylor Swift on stage using her face exactly", "should_trigger": false},
+  {"query": "write alt text for this product image for accessibility", "should_trigger": false},
+  {"query": "explain how diffusion models generate images from noise", "should_trigger": false},
+  {"query": "write the CSS for a responsive hero section with a 16:9 background image", "should_trigger": false},
+  {"query": "improve my prompt for summarising legal contracts", "should_trigger": false},
+  {"query": "create a poster layout in a canvas with grid and typography for a jazz festival", "should_trigger": false}
+]

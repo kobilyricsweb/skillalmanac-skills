@@ -1,0 +1,4 @@
+{
+  "name": "seo",
+  "scripts": {"postinstall": "node scripts/pack.js"}
+}

@@ -1,0 +1,9 @@
+PASS good_flow.mmd
+PASS bad_flow.mmd
+PASS dense_flow.mmd
+PASS good_seq.mmd
+PASS bad_seq.mmd
+PASS mixed_levels.md
+PASS empty.mmd
+PASS missing_file.mmd
+8/8 cases passed

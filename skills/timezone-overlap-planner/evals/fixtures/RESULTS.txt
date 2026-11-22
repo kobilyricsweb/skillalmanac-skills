@@ -1,0 +1,12 @@
+PASS ny_london_dst: one all-inside slot before the US change, a wider window after it, DST drift reported
+PASS ny_london_nodst: clean week, exit 0
+PASS ny_tokyo: no overlap, least-bad slots with cost per person, rotation alternates who pays
+PASS night_shift_holiday: midnight-wrapping shift, a holiday, a weekend
+PASS no tz database but fixed offsets: works, warns that DST is not tracked
+PASS no tz database and no offsets: reports it and exits 2
+PASS ambiguous abbreviation IST is rejected
+PASS unknown zone is rejected
+PASS output path equal to the input is refused even with --force, input unchanged
+PASS --out to a new path writes the same report; a second run without --force is refused
+PASS check-zones separates good, ambiguous and unknown names
+11/11 cases passed

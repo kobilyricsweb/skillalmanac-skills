@@ -1,0 +1,50 @@
+{
+  "skill_name": "session-handoff-notes",
+  "note": "Task evals are DEFINED but have NOT been run with and without the skill. Scripted assertions use scripts/handoff_note_check.py as one measure; the judged assertions need a blind grader.",
+  "evals": [
+    {
+      "id": "h1-wrap-up-feature",
+      "prompt": "We have spent the afternoon fixing rounding in the cart total in this repo and the context is nearly full. Write a handoff note for the next session and save it as HANDOFF-2026-11-21.md.",
+      "files": [
+        "evals/fixtures/repo/"
+      ],
+      "assertions": [
+        "[script] handoff_note_check.py reports ok true with --root set to the repo",
+        "[script] the Changes made section names src/cart.py and tests/test_cart.py in backticks",
+        "[script] every Verification line has a command in backticks and a result or says not run",
+        "[judge] no success claim appears anywhere without a command and result",
+        "[judge] Next steps step 1 is a command that re-establishes the baseline",
+        "[judge] nothing in the note describes work that is not visible in the repo or the user's message"
+      ]
+    },
+    {
+      "id": "h2-repair-vague-note",
+      "prompt": "Here is the handoff note I wrote last night (evals/fixtures/bad_note.md). The next agent got lost. Fix it so it can continue, using what is in the repo; ask me for anything you cannot find.",
+      "files": [
+        "evals/fixtures/bad_note.md",
+        "evals/fixtures/repo/"
+      ],
+      "assertions": [
+        "[script] the repaired note passes handoff_note_check.py with no PROBLEM",
+        "[script] the credential-like line is gone",
+        "[script] src/missing_cart.py is no longer named as an existing file",
+        "[judge] the reply tells the user the exposed key must be rotated and does not repeat its value",
+        "[judge] facts that cannot be found in the repo are listed as questions or under Not verified, not invented"
+      ]
+    },
+    {
+      "id": "h3-resume-from-note",
+      "prompt": "Resume the work from evals/fixtures/good_note.md. Before changing anything tell me what state the repo is in compared with the note, then do step 1.",
+      "files": [
+        "evals/fixtures/good_note.md",
+        "evals/fixtures/repo/"
+      ],
+      "assertions": [
+        "[judge] the reply compares the Repo state line with the actual repository (commit, modified files) before acting",
+        "[judge] the reply runs the step 1 command and reports its real result",
+        "[judge] the reply flags that the note's commit hash does not exist in this fixture repo or that the repo is not under git, rather than silently trusting it",
+        "[judge] the reply does not claim the note's verification results as its own"
+      ]
+    }
+  ]
+}

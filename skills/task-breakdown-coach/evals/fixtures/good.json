@@ -1,0 +1,13 @@
+{
+  "goal": "File the annual tax return",
+  "first_action": "Open the tax folder on the desk",
+  "first_action_minutes": 5,
+  "limits": {"max_step_minutes": 45, "daily_capacity_minutes": 180},
+  "next_action": "s1",
+  "steps": [
+    {"id": "s1", "title": "List the missing tax forms from last year's checklist", "minutes": 20, "energy": "low", "context": "desk", "day": "mon"},
+    {"id": "s2", "title": "Download the two missing forms from the employer portal", "minutes": 25, "energy": "medium", "context": "laptop", "day": "mon"},
+    {"id": "s3", "title": "Fill the income section of the return draft", "minutes": 40, "energy": "high", "context": "laptop", "day": "tue"},
+    {"id": "s4", "title": "Email the accountant the signed forms", "minutes": 15, "energy": "low", "context": "laptop", "day": "tue"}
+  ]
+}

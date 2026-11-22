@@ -1,0 +1,29 @@
+{
+  "study": "people who switched from X to Y in the last 90 days",
+  "interviews": [
+    {
+      "id": "I1",
+      "participant": "P1",
+      "turns": [
+        {"n": 1, "speaker": "interviewer", "text": "Tell me about the last time you changed how you do X."},
+        {"n": 2, "speaker": "participant", "text": "Verbatim answer goes here."}
+      ],
+      "codes": [
+        {"force": "push", "turn": 2, "quote": "exact words copied from turn 2"},
+        {"force": "pull", "turn": 2, "quote": "exact words copied from the turn"},
+        {"force": "anxiety", "none_found": true, "note": "asked what gave them pause; they named nothing"},
+        {"force": "habit", "turn": 2, "quote": "exact words copied from the turn"}
+      ]
+    }
+  ],
+  "job_statements": [
+    {
+      "id": "J1",
+      "situation": "the circumstance in at least three words",
+      "motivation": "what they want to do, no solution named",
+      "outcome": "the result they are after",
+      "text": "When <situation>, I want to <motivation>, so I can <outcome>.",
+      "evidence": [{"interview": "I1", "turn": 2}, {"interview": "I2", "turn": 4}]
+    }
+  ]
+}

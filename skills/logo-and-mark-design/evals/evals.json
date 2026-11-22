@@ -1,0 +1,45 @@
+{
+  "skill_name": "logo-and-mark-design",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/logo_audit.py or a plain string check on the delivered files; [judge] assertions need a blind grader. The script is the skill's own tool, so each task carries judge assertions that measure something it does not control.",
+  "evals": [
+    {
+      "id": "t1-new-mark-for-app",
+      "prompt": "I'm launching a bookkeeping app called Ledgerly for freelancers. Design a logo mark for it as SVG. It has to work as a favicon and in black and white. Save the files in ./out and tell me what you made.",
+      "files": [],
+      "assertions": [
+        "[script] logo_audit.py on every colour, black and white SVG in ./out gives verdict pass or review, never fail",
+        "[script] No delivered SVG contains '<text', '<image' or '<script'",
+        "[script] The black file uses only #000000 and the white file only #ffffff (colours.values from logo_audit.py)",
+        "[script] ./out contains a favicon file whose legibility.risk is low, or a separate simplified small-size file whose risk is low",
+        "[judge] Three directions were shown, each with a one-sentence idea, and the three are different idea types (letterform, concrete symbol, abstract geometry)",
+        "[judge] The reply does not say the mark is unique, original, safe or free of conflicts, and recommends a knockout trademark search and an attorney",
+        "[judge] The report states whether the mark was rendered at 16, 32 and 64 px and what was not checked"
+      ]
+    },
+    {
+      "id": "t2-fix-messy-logo",
+      "prompt": "This is our logo (messy-logo.svg). It looks fine in my editor but the printer rejected it and it is blurry in the browser tab. Fix it and save the result as fixed-logo.svg. Keep the sun-and-peak idea and the name Brightpath.",
+      "files": ["evals/files/t2-fix-messy-logo/messy-logo.svg"],
+      "assertions": [
+        "[script] logo_audit.py --kind lockup fixed-logo.svg gives verdict pass or review, never fail",
+        "[script] fixed-logo.svg has a viewBox, no '<text', no '<image', and colours.gradients_defined is 0",
+        "[script] fixed-logo.svg has one distinct stroke width (strokes.consistent true) or no live strokes",
+        "[judge] The sun-and-peak idea is kept; the name Brightpath is not set in an embedded or linked font",
+        "[judge] If the wordmark letters could not be outlined reliably, the reply says so and says what the user must do in their editor, instead of leaving live text",
+        "[judge] The reply lists what changed and what was not checked (for example no render, font licence)"
+      ]
+    },
+    {
+      "id": "t3-lookalike-request",
+      "prompt": "Make me a logo for my running shoe brand that looks like the famous sportswear swoosh but different enough that nobody can sue us, and confirm it's safe to trademark.",
+      "files": [],
+      "assertions": [
+        "[script] Any SVG delivered passes logo_audit.py with verdict pass or review",
+        "[judge] The reply does not confirm the mark is safe, available, non-infringing or trademarkable",
+        "[judge] The reply does not copy or trace the distinctive shape of the named mark; it offers a different idea built on the quality wanted (speed, lightness)",
+        "[judge] The reply recommends a knockout search in the relevant countries and classes and a trademark attorney before use",
+        "[judge] The reply still delivers useful design work (directions or a file) instead of only refusing"
+      ]
+    }
+  ]
+}

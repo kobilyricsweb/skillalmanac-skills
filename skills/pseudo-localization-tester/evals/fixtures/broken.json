@@ -1,0 +1,5 @@
+{
+  "a": "Count: {n, plural, one {# item} other {# items}} left",
+  "b": "Unclosed {name and more",
+  "c": "Price: ${amount} or {{total}} (100% sure)"
+}

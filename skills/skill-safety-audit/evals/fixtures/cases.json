@@ -1,0 +1,272 @@
+{
+ "note": "Expected values were read by hand against the fixture files (see VERIFICATION.md) before being saved. folder is relative to evals/fixtures/.",
+ "cases": [
+  {
+   "folder": "tidy-csv-summary",
+   "exit": 0,
+   "expect": {
+    "verdict": "low-risk",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0,
+     "info": 0
+    },
+    "hosts": [
+     "docs.python.org"
+    ],
+    "levels": {
+     "network": "none",
+     "subprocess_shell": "none",
+     "dynamic_exec": "none",
+     "env_credentials": "none",
+     "file_writes": "none",
+     "persistence_config": "none",
+     "obfuscation": "none",
+     "prompt_injection": "none",
+     "installs_remote": "none",
+     "destructive_privileged": "none",
+     "package": "none",
+     "frontmatter": "none"
+    },
+    "findings": [],
+    "contexts": []
+   }
+  },
+  {
+   "folder": "malicious/free-seo-booster",
+   "inert": true,
+   "exit": 3,
+   "expect": {
+    "verdict": "high-risk",
+    "counts": {
+     "high": 15,
+     "medium": 12,
+     "low": 0,
+     "info": 0
+    },
+    "hosts": [
+     "collect.example.invalid",
+     "tools.example.invalid"
+    ],
+    "levels": {
+     "network": "medium",
+     "subprocess_shell": "high",
+     "dynamic_exec": "high",
+     "env_credentials": "high",
+     "file_writes": "medium",
+     "persistence_config": "high",
+     "obfuscation": "high",
+     "prompt_injection": "high",
+     "installs_remote": "high",
+     "destructive_privileged": "none",
+     "package": "high",
+     "frontmatter": "high"
+    },
+    "findings": [
+     "hidden-tag-chars@SKILL.md:3",
+     "fetch-exec@SKILL.md:16",
+     "inj-conceal@SKILL.md:18",
+     "html-comment@SKILL.md:20",
+     "inj-override@SKILL.md:20",
+     "install-hook@package.json:0",
+     "declared-network-mismatch@scripts/boot.py:6",
+     "secret-plus-network@scripts/boot.py:6",
+     "env-secret-name@scripts/boot.py:8",
+     "cred-path-code@scripts/boot.py:9",
+     "base64-blob@scripts/boot.py:11",
+     "decode-then-run@scripts/boot.py:11",
+     "dyn-exec@scripts/boot.py:11",
+     "subprocess@scripts/boot.py:12",
+     "persistence@scripts/boot.py:13",
+     "fm-allowed-tools@SKILL.md:5",
+     "standing-order@SKILL.md:14",
+     "net-doc-command@SKILL.md:16",
+     "hidden-zero-width@SKILL.md:18",
+     "cred-path-doc@SKILL.md:20",
+     "subprocess@scripts/boot.py:5",
+     "net-import@scripts/boot.py:6",
+     "env-read@scripts/boot.py:8",
+     "decode-call@scripts/boot.py:11",
+     "file-write@scripts/boot.py:13",
+     "unreferenced-script@scripts/pack.js:0",
+     "minified-line@scripts/pack.js:1"
+    ],
+    "contexts": [
+     "body",
+     "code",
+     "comment",
+     "file",
+     "frontmatter"
+    ]
+   }
+  },
+  {
+   "folder": "api-weather-lookup",
+   "exit": 1,
+   "expect": {
+    "verdict": "needs-review",
+    "counts": {
+     "high": 0,
+     "medium": 4,
+     "low": 1,
+     "info": 0
+    },
+    "hosts": [
+     "api.open-meteo.com"
+    ],
+    "levels": {
+     "network": "medium",
+     "subprocess_shell": "none",
+     "dynamic_exec": "none",
+     "env_credentials": "medium",
+     "file_writes": "low",
+     "persistence_config": "none",
+     "obfuscation": "none",
+     "prompt_injection": "none",
+     "installs_remote": "medium",
+     "destructive_privileged": "none",
+     "package": "none",
+     "frontmatter": "none"
+    },
+    "findings": [
+     "install-cmd@SKILL.md:13",
+     "net-import@scripts/lookup.py:6",
+     "env-read@scripts/lookup.py:10",
+     "net-call@scripts/lookup.py:15",
+     "file-write@scripts/lookup.py:17"
+    ],
+    "contexts": [
+     "body",
+     "code"
+    ]
+   }
+  },
+  {
+   "folder": "malicious/injection-awareness-guide",
+   "inert": true,
+   "exit": 3,
+   "expect": {
+    "verdict": "high-risk",
+    "counts": {
+     "high": 2,
+     "medium": 0,
+     "low": 0,
+     "info": 0
+    },
+    "hosts": [],
+    "levels": {
+     "network": "none",
+     "subprocess_shell": "none",
+     "dynamic_exec": "none",
+     "env_credentials": "none",
+     "file_writes": "none",
+     "persistence_config": "none",
+     "obfuscation": "none",
+     "prompt_injection": "high",
+     "installs_remote": "none",
+     "destructive_privileged": "none",
+     "package": "none",
+     "frontmatter": "none"
+    },
+    "findings": [
+     "inj-override@SKILL.md:16",
+     "inj-conceal@SKILL.md:17"
+    ],
+    "contexts": [
+     "fenced-block"
+    ]
+   }
+  },
+  {
+   "folder": "malicious/leaked-credentials",
+   "inert": true,
+   "exit": 3,
+   "expect": {
+    "verdict": "high-risk",
+    "counts": {
+     "high": 6,
+     "medium": 0,
+     "low": 0,
+     "info": 0
+    },
+    "hosts": [],
+    "levels": {
+     "network": "none",
+     "subprocess_shell": "none",
+     "dynamic_exec": "none",
+     "env_credentials": "high",
+     "file_writes": "none",
+     "persistence_config": "none",
+     "obfuscation": "none",
+     "prompt_injection": "none",
+     "installs_remote": "none",
+     "destructive_privileged": "none",
+     "package": "none",
+     "frontmatter": "none"
+    },
+    "findings": [
+     "literal-credential@SKILL.md:15",
+     "literal-credential@scripts/config.py:2",
+     "literal-credential@scripts/config.py:3",
+     "literal-credential@scripts/config.py:4",
+     "literal-credential@scripts/config.py:5",
+     "literal-credential@scripts/config.py:7"
+    ],
+    "contexts": [
+     "body",
+     "code"
+    ]
+   }
+  },
+  {
+   "folder": "malicious/split-dispatch",
+   "inert": true,
+   "exit": 3,
+   "expect": {
+    "verdict": "high-risk",
+    "counts": {
+     "high": 1,
+     "medium": 2,
+     "low": 0,
+     "info": 0
+    },
+    "hosts": [],
+    "levels": {
+     "network": "none",
+     "subprocess_shell": "none",
+     "dynamic_exec": "high",
+     "env_credentials": "none",
+     "file_writes": "none",
+     "persistence_config": "none",
+     "obfuscation": "none",
+     "prompt_injection": "none",
+     "installs_remote": "none",
+     "destructive_privileged": "none",
+     "package": "none",
+     "frontmatter": "none"
+    },
+    "findings": [
+     "dyn-exec@scripts/run.py:2",
+     "split-string-dispatch@scripts/run.py:2",
+     "split-string-dispatch@scripts/run.py:3"
+    ],
+    "contexts": [
+     "code"
+    ]
+   }
+  },
+  {
+   "folder": "does-not-exist",
+   "exit": 2,
+   "expect": {},
+   "stderr_contains": "not a folder"
+  },
+  {
+   "folder": ".",
+   "exit": 2,
+   "expect": {},
+   "stderr_contains": "no SKILL.md"
+  }
+ ]
+}

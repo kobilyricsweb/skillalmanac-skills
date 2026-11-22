@@ -1,0 +1,14 @@
+{
+  "scale": {"min": 1, "max": 5},
+  "criteria": [
+    {"name": "Cost", "weight": 4, "direction": "cost"},
+    {"name": "Speed", "weight": 3, "direction": "benefit"},
+    {"name": "Risk", "weight": 3, "direction": "cost"},
+    {"name": "Fit", "weight": 5, "direction": "benefit"}
+  ],
+  "options": [
+    {"name": "A", "scores": {"Cost": 2, "Speed": 4, "Risk": 3, "Fit": 4}},
+    {"name": "B", "scores": {"Cost": 4, "Speed": 5, "Risk": 2, "Fit": 3}},
+    {"name": "C", "scores": {"Cost": 3, "Speed": 3, "Risk": 1, "Fit": 5}}
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "checks": [
+    {
+      "detail": "no .gitignore at the repo root",
+      "id": "gitignore-present",
+      "status": "fail"
+    },
+    {
+      "detail": "not ignored: .env, .env.local",
+      "id": "gitignore-env",
+      "status": "fail"
+    },
+    {
+      "detail": "not ignored: server.pem, server.key, id_rsa",
+      "id": "gitignore-keys",
+      "status": "warn"
+    },
+    {
+      "detail": "not ignored: credentials.json",
+      "id": "gitignore-credentials",
+      "status": "warn"
+    },
+    {
+      "detail": "present and not ignored: .env",
+      "id": "secret-files-exposed",
+      "status": "fail"
+    },
+    {
+      "detail": "no credential patterns in non-ignored text files",
+      "id": "secret-values-in-files",
+      "status": "pass"
+    },
+    {
+      "detail": "no AGENTS.md, CLAUDE.md or equivalent instruction file",
+      "id": "instructions-present",
+      "status": "warn"
+    },
+    {
+      "detail": "no deny rules or hooks found; rules rely on instructions alone",
+      "id": "enforcement-configured",
+      "status": "warn"
+    },
+    {
+      "detail": "no protected-path list in instruction files or deny rules",
+      "id": "protected-paths-declared",
+      "status": "warn"
+    },
+    {
+      "detail": "project manifest present but no test command declared",
+      "id": "test-command",
+      "status": "warn"
+    },
+    {
+      "detail": "manifest without lockfile: package.json",
+      "id": "lockfile",
+      "status": "warn"
+    },
+    {
+      "detail": "not marked, ignored or declared: dist, vendor",
+      "id": "generated-dirs",
+      "status": "warn"
+    }
+  ],
+  "files_seen": 5,
+  "repo": "bad",
+  "summary": {
+    "fail": 3,
+    "info": 0,
+    "pass": 1,
+    "warn": 8
+  },
+  "truncated": false
+}

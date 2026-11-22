@@ -1,0 +1,21 @@
+WARN  frontmatter-keys     keys outside the open spec: ['version']; some surfaces reject unknown keys
+ERROR name                 name 'Bad_Skill' must be 1-64 characters of a-z, 0-9 and single hyphens
+ERROR name-folder          name 'Bad_Skill' must equal the folder name 'bad-skill'
+WARN  description-length   description is 52 characters; under 150 rarely holds both the job and its triggers
+ERROR description-when     description has no 'Use when ...' clause; the agent cannot tell when to load the skill
+WARN  description-boundary description names no near-miss it is not for ('Do not use for ...')
+ERROR description-person   description must be third person ('Writes ...', not 'I can ...' or 'You can ...')
+ERROR description-tag      description contains an XML or HTML tag
+WARN  description-vague    vague wording 'help with'; name the concrete verbs, objects and user phrases
+WARN  license              no license field
+WARN  limits               no 'Limits' section stating what the skill does not cover
+WARN  workflow             no numbered workflow; multi-step jobs need an order the agent can follow
+WARN  time-sensitive       time-sensitive wording 'currently' goes stale; state the fact with its date or drop it
+ERROR hidden-comment       HTML comment found; hidden text has no place in a skill
+ERROR paths                backslash path found; use forward slashes
+ERROR link-missing         SKILL.md links to 'references/guide.md' which does not exist
+ERROR link-missing         SKILL.md links to 'references\more.md' which does not exist
+WARN  orphan               references/orphan.md is never mentioned in SKILL.md; the agent will not know it exists
+
+RESULT: 9 error(s), 9 warning(s). Form only: run the trigger and task evals before trusting the skill.
+[exit 1]

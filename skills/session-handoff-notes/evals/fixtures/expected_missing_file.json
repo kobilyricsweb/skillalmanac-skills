@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "file": "does_not_exist.md",
+  "ok": false,
+  "error": "cannot read note: file not found",
+  "counts": {
+    "PROBLEM": 0,
+    "NOTE": 0
+  },
+  "findings": []
+}

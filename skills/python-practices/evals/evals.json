@@ -1,0 +1,45 @@
+{
+  "skill_name": "python-practices",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/py_audit.py, python checks or plain string checks; [judge] assertions need a blind grader. The audit script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-legacy-module",
+      "prompt": "Modernise report_tool.py for Python 3.12 the way a senior reviewer would expect. Keep its behaviour (read every .json file in a folder, summarise amounts). Save the result as report_tool_new.py and tell me what you changed.",
+      "files": ["evals/files/t1-legacy-module/report_tool.py"],
+      "assertions": [
+        "[script] py_audit.py report_tool_new.py prints verdict clean",
+        "[script] report_tool_new.py has no occurrence of 'List[' or 'Optional[' (grep)",
+        "[script] report_tool_new.py passes python -m py_compile",
+        "[script] every open or read_text call in report_tool_new.py passes encoding= (grep count equals call count)",
+        "[judge] The bare except is replaced by named exceptions (OSError and json.JSONDecodeError or narrower), and the failure is logged with traceback or re-raised, not silently dropped",
+        "[judge] The reply ends with the fixed report (Target, Changed, Audit, Project checks, Decisions, Not checked) and says which checks were not run"
+      ]
+    },
+    {
+      "id": "t2-parallel-job",
+      "prompt": "resize_and_fetch.py downloads 40 images and hashes each one; the hashing loop is pure Python and slow. It is not using the cores. Fix it and explain the concurrency choice. Save as resize_and_fetch_new.py.",
+      "files": ["evals/files/t2-parallel-job/resize_and_fetch.py"],
+      "assertions": [
+        "[script] py_audit.py resize_and_fetch_new.py prints verdict clean",
+        "[script] the file contains 'ProcessPoolExecutor' or 'multiprocessing'",
+        "[script] the file contains a main guard (if __name__ == with double or single quotes)",
+        "[script] the file passes a timeout= argument to the network call",
+        "[judge] Downloads and hashing are treated as different workloads: threads or asyncio for the downloads, processes for the hashing, or processes for both with the reason stated",
+        "[judge] The explanation says why threads do not speed up the pure Python hashing, and names the main guard as required for process pools on Windows and macOS"
+      ]
+    },
+    {
+      "id": "t3-new-package",
+      "prompt": "Move this little package to a modern packaging setup and add a first pytest file for slugify. Remove what is no longer needed. Dev tools must not become runtime dependencies.",
+      "files": ["evals/files/t3-new-package/setup.py", "evals/files/t3-new-package/requirements.txt", "evals/files/t3-new-package/slugtools/__init__.py", "evals/files/t3-new-package/slugtools/cli.py"],
+      "assertions": [
+        "[script] pyproject.toml exists, parses with tomllib, and project.requires-python starts with '>=3.11' or later",
+        "[script] pyproject.toml project.scripts maps 'slug' to 'slugtools.cli:main'",
+        "[script] pytest and black do not appear under project.dependencies",
+        "[script] setup.py no longer exists",
+        "[script] a tests/test_*.py file exists and uses pytest.mark.parametrize",
+        "[judge] The unidecode dependency has a lower-bound range rather than an exact pin, or the reply explains why it was kept exact; no new runtime dependency was added"
+      ]
+    }
+  ]
+}

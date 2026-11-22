@@ -1,0 +1,22 @@
+[
+  {"query": "I have a 300MB app.log from last night's outage, can you tell me what the distinct errors are and which to look at first", "should_trigger": true},
+  {"query": "group the errors in this log by type and count them, there are thousands of nearly identical lines", "should_trigger": true},
+  {"query": "what's new in the logs since the deploy? I have the before and after files", "should_trigger": true},
+  {"query": "dedupe these stack traces and give me a ranked list of error signatures", "should_trigger": true},
+  {"query": "my CI log is 80k lines long and I can't see the failures, summarise the unique errors with first and last seen", "should_trigger": true},
+  {"query": "which error is spiking in this nginx/app log between 10:00 and 12:00?", "should_trigger": true},
+  {"query": "cluster the ERROR lines in service.jsonl, they are JSON lines with a level and msg field", "should_trigger": true},
+  {"query": "turn this log into a table of error patterns with counts, ignoring ids and timestamps", "should_trigger": true},
+  {"query": "triage the errors in syslog.txt, I need to know where to start", "should_trigger": true},
+  {"query": "compare yesterday's log with today's and tell me which errors disappeared and which are brand new", "should_trigger": true},
+  {"query": "this one exception keeps crashing the checkout page, help me find the root cause in the code", "should_trigger": false},
+  {"query": "redact all the emails and API keys from this log file before I send it to the vendor", "should_trigger": false},
+  {"query": "write structured logging statements for my Express app with request ids", "should_trigger": false},
+  {"query": "pull the last hour of logs from CloudWatch and show me errors", "should_trigger": false},
+  {"query": "set up an alert rule that pages me when the error rate goes above 5 percent", "should_trigger": false},
+  {"query": "explain what this Java NullPointerException stack trace means", "should_trigger": false},
+  {"query": "parse this access log and tell me the top 10 requested URLs and traffic by country", "should_trigger": false},
+  {"query": "add retries with exponential backoff to my HTTP client", "should_trigger": false},
+  {"query": "review my logging conventions: are my log messages consistent and are levels used properly?", "should_trigger": false},
+  {"query": "profile my Python service, the p99 latency doubled after the last release", "should_trigger": false}
+]

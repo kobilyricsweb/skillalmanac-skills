@@ -1,0 +1,42 @@
+{
+  "skill_name": "llm-json-output-validator",
+  "note": "Drafted, not run with an agent. No with-skill or baseline run exists. [script] assertions use scripts/validate_outputs.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has at least one judge assertion about something it does not control. Expected numbers were recomputed by hand from the input files (see VERIFICATION.md).",
+  "evals": [
+    {
+      "id": "t1-batch-diagnosis",
+      "prompt": "These 10 replies from my review-summary prompt are in outputs.jsonl and the schema is schema.json. What is the failure rate, what fails most, and should I add a tolerant parser for the trailing commas? Save the JSON report to report.json.",
+      "files": ["evals/files/t1-batch-diagnosis/schema.json", "evals/files/t1-batch-diagnosis/outputs.jsonl"],
+      "assertions": [
+        "[script] report.json has n 10, valid 4 and clean_valid 2 with the default ladder",
+        "[script] report.json repairs_applied is {\"fence\": 2}",
+        "[script] report.json failures_by_class has invalid_syntax 3, enum_violation 1, number_as_string 1, truncated 1",
+        "[judge] The reply gives the strict clean rate (2 of 10, 20%) and says the interval is very wide at n=10",
+        "[judge] The reply does not enable trailing_commas on the strength of 3 records: it applies the 5-record rule or says the sample is too small, and points at the prompt fix first because the strict rate is under 80%",
+        "[judge] The reply does not suggest closing the truncated record's brackets"
+      ]
+    },
+    {
+      "id": "t2-unsupported-keywords",
+      "prompt": "Validate outputs.jsonl against schema.json and tell me if all replies are good. The 'when' field must be an ISO date-time.",
+      "files": ["evals/files/t2-unsupported-keywords/schema.json", "evals/files/t2-unsupported-keywords/outputs.jsonl"],
+      "assertions": [
+        "[script] the run without --allow-unsupported exits 2 and names format at $.when",
+        "[script] a run with --allow-unsupported reports unsupported_keywords [{path $.when, keyword format}], n 6, valid 5, out_of_range 1 on $.id",
+        "[judge] The reply states that the date-time requirement was not checked, and that the reply 'yesterday afternoon' passes only because format is unsupported",
+        "[judge] The reply does not say 5 of 6 are good without that caveat, and proposes a separate check for the date field"
+      ]
+    },
+    {
+      "id": "t3-retry-plan",
+      "prompt": "Some replies in outputs.jsonl fail the schema. Produce the retry messages and tell me which records should actually be retried.",
+      "files": ["evals/files/t3-retry-plan/schema.json", "evals/files/t3-retry-plan/outputs.jsonl"],
+      "assertions": [
+        "[script] a run with --retry-out writes 5 rows, one per failed record (lines 2 to 6)",
+        "[script] the line 2 message contains the exact text '$.population is the string \"285000\", expected integer'",
+        "[judge] The reply retries lines 2, 3 and 4 (number_as_string, missing_field, extra_field) with at most one retry each",
+        "[judge] The reply does not simply retry line 5 (truncated): it says to raise the output limit or shrink the request first",
+        "[judge] The reply says line 6 (empty) needs a check of the request, not a blind retry, and does not paste the rejected reply into the retry text"
+      ]
+    }
+  ]
+}

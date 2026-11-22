@@ -1,0 +1,22 @@
+[
+  {"query": "write me a system prompt for a customer support bot that only answers billing questions", "should_trigger": true},
+  {"query": "my prompt gives inconsistent output, sometimes JSON and sometimes prose, can you fix it", "should_trigger": true},
+  {"query": "review this prompt template with {{variables}} and tell me what's ambiguous", "should_trigger": true},
+  {"query": "how do I make my LLM app prompt resistant to prompt injection from user emails", "should_trigger": true},
+  {"query": "help me write an eval plan with pass criteria for my classification prompt", "should_trigger": true},
+  {"query": "improve this agent system prompt, it keeps ignoring the output format", "should_trigger": true},
+  {"query": "should I add few-shot examples to my extraction prompt and how many", "should_trigger": true},
+  {"query": "lint my prompt file for contradictions and missing output format", "should_trigger": true},
+  {"query": "turn this vague instruction into a structured prompt with role, task, constraints and output contract", "should_trigger": true},
+  {"query": "I need a prompt template for summarizing support tickets that a script will parse", "should_trigger": true},
+  {"query": "what's the capital of Australia", "should_trigger": false},
+  {"query": "write a midjourney prompt for a foggy harbour at dawn", "should_trigger": false},
+  {"query": "summarize this meeting transcript for me", "should_trigger": false},
+  {"query": "prepare fine-tuning data in JSONL from my chat logs", "should_trigger": false},
+  {"query": "how does my model score on MMLU compared with other models", "should_trigger": false},
+  {"query": "write a SKILL.md for my repo release process", "should_trigger": false},
+  {"query": "draft an AGENTS.md for my coding agent", "should_trigger": false},
+  {"query": "give me 10 ChatGPT prompts to brainstorm startup names", "should_trigger": false},
+  {"query": "explain what a prompt is in simple words", "should_trigger": false},
+  {"query": "rewrite this email so it sounds friendlier", "should_trigger": false}
+]

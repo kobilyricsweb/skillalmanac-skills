@@ -1,0 +1,7 @@
+PASS good_event.svg
+PASS bad_flyer.svg
+PASS bleed_good.svg --bleed 3 --safe 5
+PASS bleed_bad.svg --bleed 3 --safe 5
+PASS broken.svg
+PASS missing_file.svg
+6/6 cases passed

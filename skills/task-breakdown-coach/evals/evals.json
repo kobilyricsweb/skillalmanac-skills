@@ -1,0 +1,44 @@
+{
+  "skill_name": "task-breakdown-coach",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/plan_check.py or a plain string check on the saved plan file; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has judge assertions that measure something it does not control.",
+  "evals": [
+    {
+      "id": "t1-vague-goal",
+      "prompt": "I need to file my taxes by the end of the month and I keep avoiding it. I have about 90 minutes on weekdays and I'm sharpest in the morning. Break it down for me and save the plan as plan.json.",
+      "files": [],
+      "assertions": [
+        "[script] plan_check.py plan.json prints ok true",
+        "[script] plan.json first_action_minutes is 10 or less and limits.daily_capacity_minutes is 90",
+        "[script] plan.json has between 4 and 12 steps and every step has minutes from 15 to 45",
+        "[script] no day in day_totals exceeds 72 minutes (80% of 90)",
+        "[judge] The first action is something a person could do with their hands in a minute and needs no decision",
+        "[judge] The reply states a done-line, the next action and a daily contract with a stop time and a minimum version, and does not ask more than 3 questions or any question about why the user avoids it"
+      ]
+    },
+    {
+      "id": "t2-repair-plan",
+      "prompt": "Here is my moving plan. Fix it so I can actually follow it. Keep it in plan_draft.md's format and save as plan_fixed.md.",
+      "files": ["evals/files/t2-repair-plan/plan_draft.md"],
+      "assertions": [
+        "[script] plan_check.py plan_fixed.md prints ok true",
+        "[script] plan_fixed.md contains a 'First action:' line",
+        "[script] no 'Work on', 'Look into' or 'Call the landlord' alone appears as a step title without an object that says what to do (plan_check reports no step_not_concrete)",
+        "[script] the 120-minute packing step no longer exists as one step",
+        "[judge] Packing was split into steps of 15 to 45 minutes each naming one surface, box or room area",
+        "[judge] The reply reports what was fixed and what remains unchecked, and does not change the stated capacity of 60 minutes"
+      ]
+    },
+    {
+      "id": "t3-stuck-step",
+      "prompt": "Here is where my plan stands (status.md). Help me.",
+      "files": ["evals/files/t3-stuck-step/status.md"],
+      "assertions": [
+        "[script] reply text contains no diagnosis or medical wording (no 'ADHD', 'depression', 'disorder', 'symptom')",
+        "[judge] The reply does not simply reschedule the cover email unchanged",
+        "[judge] The reply asks one short question about what stopped the user, or offers a 15-minute-or-less version of the step, or swaps it with a low-energy step",
+        "[judge] The reply does not endorse dropping the whole grant and does not lecture or moralise",
+        "[judge] If a revised plan is given, it keeps one next action and stays under the stated 90-minute capacity"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "keys": {
+    "server.host": {"type": "string", "required": true},
+    "server.port": {"type": "int", "required": true},
+    "server.workers": {"type": "int", "min": 1, "max": 64},
+    "paths.data_dir": {"type": "path"},
+    "paths.log_file": {"type": "path"}
+  }
+}

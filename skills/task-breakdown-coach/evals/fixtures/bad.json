@@ -1,0 +1,16 @@
+{
+  "goal": "Finish the quarterly report",
+  "first_action": "Work on taxes",
+  "first_action_minutes": 30,
+  "limits": {"max_step_minutes": 45, "daily_capacity_minutes": 120},
+  "next_action": "s9",
+  "steps": [
+    {"id": "s1", "title": "Sort out the paperwork", "minutes": 20, "energy": "low", "context": "desk", "day": "mon"},
+    {"id": "s2", "title": "Write the full report draft", "minutes": 90, "energy": "high", "context": "laptop", "day": "mon"},
+    {"id": "s3", "title": "Email", "minutes": 20, "energy": "low", "context": "phone", "day": "mon"},
+    {"id": "s4", "title": "Call the bank about the fee", "minutes": 30, "energy": "medium", "day": "mon"},
+    {"id": "s5", "title": "Copy the receipts", "minutes": 20, "context": "desk", "day": "tue"},
+    {"id": "s6", "title": "Photograph the receipts", "minutes": 10, "energy": "low", "context": "desk", "day": "tue"},
+    {"id": "s7", "title": "Zorble the receipts", "minutes": 20, "energy": "low", "context": "desk", "day": "tue"}
+  ]
+}

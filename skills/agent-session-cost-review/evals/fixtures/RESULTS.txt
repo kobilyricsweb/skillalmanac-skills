@@ -1,0 +1,13 @@
+PASS claude_style.jsonl --oversized-chars 400
+PASS claude_style.jsonl
+PASS plain_log.txt
+PASS broken_mixed.jsonl
+PASS clean_short.jsonl
+PASS claude_style.jsonl clean_short.jsonl
+PASS does_not_exist.jsonl
+PASS default thresholds: uncited 21k result
+PASS default thresholds: cited 21k result
+PASS secrets redacted in previews
+PASS json document layout
+PASS preview capped at 80 characters
+12/12 cases passed

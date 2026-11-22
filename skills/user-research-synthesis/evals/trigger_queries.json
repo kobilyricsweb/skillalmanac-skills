@@ -1,0 +1,22 @@
+[
+  {"query": "I have notes from 12 user interviews, can you pull out the main themes with quotes", "should_trigger": true},
+  {"query": "do an affinity map of these interview transcripts and tell me how many participants back each cluster", "should_trigger": true},
+  {"query": "synthesize our research notes into insights but do not make anything up, I need to cite who said what", "should_trigger": true},
+  {"query": "what are the key findings across these 8 customer interviews? every finding needs supporting quotes", "should_trigger": true},
+  {"query": "I tagged my interview notes in JSON, check that my themes are really supported by the quotes", "should_trigger": true},
+  {"query": "group these usability session notes into themes and rate how confident we should be in each", "should_trigger": true},
+  {"query": "write up the research readout from our discovery interviews, with contradictions and which participants said it", "should_trigger": true},
+  {"query": "my PM says the themes in my synthesis are only based on one or two people, can you validate the evidence", "should_trigger": true},
+  {"query": "turn these raw interview notes into coded, tagged notes and then themes for the report", "should_trigger": true},
+  {"query": "cross-interview synthesis: find patterns across P01 to P09 and flag where participants disagree", "should_trigger": true},
+  {"query": "write me an interview guide for talking to freelancers about invoicing", "should_trigger": false},
+  {"query": "summarise this one customer call transcript in five bullets", "should_trigger": false},
+  {"query": "run a jobs-to-be-done interview with me as the participant, ask one question at a time", "should_trigger": false},
+  {"query": "analyse my survey results, 400 responses, is the difference between groups significant", "should_trigger": false},
+  {"query": "cluster these 2,000 support tickets into topics with a script", "should_trigger": false},
+  {"query": "create user personas from our analytics data", "should_trigger": false},
+  {"query": "draft a research plan and screener for a study on onboarding", "should_trigger": false},
+  {"query": "transcribe this interview recording and clean up the filler words", "should_trigger": false},
+  {"query": "what does the literature say about how many interviews are enough, give me citations", "should_trigger": false},
+  {"query": "make a slide deck for the board from our quarterly product metrics", "should_trigger": false}
+]

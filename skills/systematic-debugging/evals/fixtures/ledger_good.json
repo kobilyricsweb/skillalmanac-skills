@@ -1,0 +1,15 @@
+{
+  "bug": "nightly export job hangs on empty shard",
+  "reproduction": {"command": "python export.py --shard 7", "reproduced": "yes", "minimised": "shard with zero rows, one worker", "bisect": "input bisect: first hanging shard is 7 of 0-31; code bisect: commit 41d0e5c"},
+  "hypotheses": [
+    {"id": "H1", "statement": "Worker waits on a queue sentinel that is never sent when the shard has no rows", "prediction": "Sending the sentinel for an empty shard lets the job finish in under 5 s", "status": "confirmed"},
+    {"id": "H2", "statement": "The database connection pool is exhausted", "prediction": "Raising pool size from 4 to 16 does not change the hang", "status": "refuted"}
+  ],
+  "experiments": [
+    {"id": "E1", "hypothesis": "H1", "variables_changed": ["sentinel sent on empty shard"], "result": "job finished in 1.8 s", "outcome": "confirmed"},
+    {"id": "E2", "hypothesis": "H2", "variables_changed": ["pool size 4 to 16"], "result": "still hangs after 60 s", "outcome": "refuted"}
+  ],
+  "root_cause": {"text": "export.py worker() returns before enqueueing the end-of-shard sentinel when rows is empty, so the writer thread blocks on queue.get() forever.", "hypothesis": "H1"},
+  "regression_test": {"id": "T1", "path": "tests/test_export.py::test_empty_shard_finishes", "failed_before_fix": true, "failure_output": "Failed: Timeout >5.0s", "seq": 1},
+  "fix": {"description": "Always enqueue the sentinel in a finally block", "test": "T1", "test_passes_after": true, "seq": 2}
+}

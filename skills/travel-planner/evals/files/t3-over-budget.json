@@ -1,0 +1,16 @@
+{
+  "trip": {"name": "Weekend away", "style": "balanced", "currency": "EUR", "travelers": 2, "budget_total": 500},
+  "days": [
+    {
+      "date": "2026-10-03",
+      "items": [
+        {"id": "hotel", "title": "Hotel, 1 night", "kind": "lodging", "cost": 300, "category": "lodging",
+         "facts": [{"claim": "300 EUR for the night", "kind": "price", "status": "unverified"}]},
+        {"id": "tour", "title": "Guided tour", "kind": "activity", "start": "10:00", "end": "12:00", "location": "Old harbour", "area": "Port", "cost_per_person": 90, "category": "activities",
+         "facts": [{"claim": "Tour departs 10:00", "kind": "hours", "status": "unverified"}, {"claim": "90 EUR per person", "kind": "price", "status": "unverified"}]},
+        {"id": "dinner", "title": "Dinner", "kind": "meal", "start": "19:00", "end": "20:30", "location": "Harbour grill", "area": "Port", "cost": 50, "category": "food",
+         "facts": [{"claim": "Set menu 25 EUR", "kind": "price", "status": "unverified"}]}
+      ]
+    }
+  ]
+}

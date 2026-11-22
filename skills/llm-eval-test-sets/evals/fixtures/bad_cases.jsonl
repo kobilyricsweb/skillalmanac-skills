@@ -1,0 +1,16 @@
+{"id": "b1", "prompt": "What is the capital of France? Answer with the city name only.", "grader": "exact", "expected": "Paris", "tag": "typical"}
+{"id": "b1", "prompt": "How many days are in a leap year?", "grader": "numeric", "expected": 366, "tolerance": 0, "tag": "typical"}
+{"id": "b3", "prompt": "Name the largest mammal.", "expected": "blue whale", "tag": "typical"}
+{"id": "b4", "prompt": "Name the smallest prime number.", "grader": "fuzzy", "expected": "2", "tag": "typical"}
+{"id": "b5", "prompt": "Name the chemical symbol for gold.", "grader": "exact", "tag": "typical"}
+{"id": "b6", "prompt": "Give a US ZIP code with five digits.", "grader": "regex", "expected": "(\\d{5", "tag": "typical"}
+{"id": "b7", "prompt": "What is the square root of 2 to two decimals?", "grader": "numeric", "expected": 1.41, "tag": "typical"}
+{"id": "b8", "prompt": "Explain why the sky is blue in one sentence.", "grader": "judge", "tag": "typical"}
+{"id": "b9", "prompt": "How many continents are there?", "grader": "numeric", "expected": 7, "tolerance": 0, "tag": "typical"}
+{"id": "b10", "prompt": "How many continents are there?", "grader": "numeric", "expected": 6, "tolerance": 0, "tag": "typical"}
+{"id": "b11", "prompt": "Which river flows through Cairo, the Nile river or the Danube?", "grader": "exact", "expected": "Nile", "tag": "typical"}
+{"id": "b12", "prompt": "Which planet is known as the Red Planet?", "grader": "exact", "expected": "Mars", "tag": "typical"}
+{"id": "b13", "prompt": "Which planet is known as the Red Planet today?", "grader": "exact", "expected": "Mars", "tag": "typical"}
+{"id": "b14", "prompt": "Hi", "grader": "contains", "expected": "hello", "tag": "typical"}
+{"id": "b15", "prompt": "Who painted the ceiling of the Sistine Chapel in 1512?", "grader": "abstain", "tag": "typical"}
+this line is not json

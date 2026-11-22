@@ -1,0 +1,17 @@
+PASS hand-computed scores
+PASS hard notice misses grade 8
+PASS good rewrite keeps numbers and links
+PASS bad rewrite changes a number and drops an email
+PASS spelled-out number is not an error, symbol change is a warning
+PASS lists and headings excluded from sentence counts
+PASS non-English text refused
+PASS headings and lists only: no sentences
+PASS missing file
+PASS empty file
+PASS refuses --out over the input, even with --force
+PASS refuses --out over the rewrite, even with --force
+PASS refuses --out over the jargon file, even with --force
+PASS writes a valid report to a new --out file
+PASS refuses to replace an existing --out without --force
+PASS syllable counts on 67 hand-counted words
+16/16 cases passed

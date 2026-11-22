@@ -1,0 +1,45 @@
+{
+  "skill_name": "release-notes-writer",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/release_notes.py output or a plain string check on the delivered notes; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-breaking-release",
+      "prompt": "Here is the git log since v2.3.1 (saved as log_full.txt). Write the release notes for our end users and tell me the next version number. Do not tag anything.",
+      "files": ["evals/fixtures/log_full.txt"],
+      "assertions": [
+        "[script] release_notes.py log_full.txt --current-version 2.3.1 gives proposed_version 3.0.0 and the final answer says 3.0.0",
+        "[script] The delivered notes contain 'v1 orders endpoint' and '/v2/orders' and 'dark mode toggle' exactly once each",
+        "[script] The delivered notes do not contain 'toggle icon', 'token handler', 'refactor', '[FILL]', '[SORT]' or a 40-character commit hash",
+        "[judge] The Breaking section says who is affected and what to do; where the log does not say who is affected, the answer asks the user instead of inventing it",
+        "[judge] 'update stuff' is not given an invented type or effect; it is listed as a question",
+        "[judge] The report names what was left out on purpose (the reverted pair, the duplicate, the internal refactor, the merge)"
+      ]
+    },
+    {
+      "id": "t2-changelog-draft-cleanup",
+      "prompt": "This is our CHANGELOG.md draft (changelog_draft.md). Turn the Unreleased section into release notes for users and propose the version. Current version is 1.2.0.",
+      "files": ["evals/fixtures/changelog_draft.md"],
+      "assertions": [
+        "[script] release_notes.py changelog_draft.md --current-version 1.2.0 gives proposed_version 2.0.0 and the answer says 2.0.0",
+        "[script] The delivered notes contain 'Python 3.9' and 'CSV export' and do not contain 'Refactor the report handler'",
+        "[script] The delivered notes contain no '[REWRITE' marker",
+        "[judge] The 'legacy /status route' removal is raised as a possible breaking change with a question to the user, not silently listed as harmless",
+        "[judge] The internal 'Refactor the report handler' entry is dropped from user notes or reworded only with a confirmed visible effect, and the report says which",
+        "[judge] Nothing is added that is not in the draft (no invented dates, issue numbers or effects)"
+      ]
+    },
+    {
+      "id": "t3-unstructured-log",
+      "prompt": "Make release notes from this log (log_unstructured.txt). We are on 0.4.0, what version next?",
+      "files": ["evals/fixtures/log_unstructured.txt"],
+      "assertions": [
+        "[script] release_notes.py log_unstructured.txt --current-version 0.4.0 gives verdict ask_user",
+        "[script] The answer contains a question to the user about sorting the unprefixed commits before any final notes are issued",
+        "[script] The answer does not state a final version as settled without mentioning that most commits have no type",
+        "[judge] 'Update readme', 'Fix login bug', 'More changes' and 'stuff' are not presented as confirmed Added or Fixed entries",
+        "[judge] The answer mentions that the version is 0.x and that moving to 1.0.0 is the user's decision",
+        "[judge] The answer does not invent what 'More changes' or 'stuff' did"
+      ]
+    }
+  ]
+}

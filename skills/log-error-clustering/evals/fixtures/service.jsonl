@@ -1,0 +1,7 @@
+{"level":30,"time":1795168800000,"msg":"server listening on port 3000"}
+{"level":50,"time":1795168805000,"msg":"Payment failed for order 1001: card_declined","service":"pay"}
+{"level":50,"time":1795168865000,"msg":"Payment failed for order 1002: card_declined"}
+{"level":"error","time":"2026-11-20T10:02:05Z","message":"Payment failed for order 1003: card_declined"}
+{"level":60,"time":1795169000000,"msg":"Unhandled rejection","stack":"TypeError: Cannot read properties of undefined (reading 'id')\n    at charge (/srv/pay/charge.js:41:17)\n    at process (/srv/pay/queue.js:9:3)"}
+{"level":40,"time":1795169010000,"msg":"Retrying webhook"}
+{broken json line

@@ -1,0 +1,9 @@
+{
+  "model": {"name": "unknown-shape-70b", "params_b": 70, "trained_context": 32768},
+  "context": 65536,
+  "kv_dtype": "q8_0",
+  "use": "coding",
+  "hardware": [
+    {"name": "two 12 GB GPUs, no split", "os": "linux", "vram_gb": 12, "gpus": 2, "ram_gb": 64, "gpu_bandwidth_gbps": 500, "ram_bandwidth_gbps": 60}
+  ]
+}

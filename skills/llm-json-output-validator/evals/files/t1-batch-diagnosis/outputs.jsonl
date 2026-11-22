@@ -1,0 +1,10 @@
+{"output": "{\"title\": \"Solid kettle\", \"rating\": 4, \"sentiment\": \"positive\", \"tags\": [\"kitchen\"]}"}
+{"output": "```json\n{\"title\": \"Quiet blender\", \"rating\": 5, \"sentiment\": \"positive\", \"tags\": [\"quiet\"]}\n```"}
+{"output": "```json\n{\"title\": \"Okay toaster\", \"rating\": 3, \"sentiment\": \"neutral\", \"tags\": [\"toaster\"]}\n```"}
+{"output": "{\"title\": \"Loud fan\", \"rating\": 2, \"sentiment\": \"negative\", \"tags\": [\"noise\",]}"}
+{"output": "{\"title\": \"Weak vacuum\", \"rating\": 1, \"sentiment\": \"negative\", \"tags\": [\"suction\", \"dust\",]}"}
+{"output": "{\"title\": \"Hot iron\", \"rating\": 2, \"sentiment\": \"negative\", \"tags\": [\"heat\"],}"}
+{"output": "{\"title\": \"Fine lamp\", \"rating\": \"5\", \"sentiment\": \"positive\", \"tags\": [\"lamp\"]}"}
+{"output": "{\"title\": \"Sturdy pan\", \"rating\": 5, \"sentiment\": \"positive\", \"tags\": [\"pan\"]}"}
+{"output": "{\"title\": \"Cut off\", \"rating\": 3, \"sentiment\": \"neutral\", \"tags\": [\"a\","}
+{"output": "{\"title\": \"Mixed bag\", \"rating\": 3, \"sentiment\": \"mixed\", \"tags\": [\"misc\"]}"}

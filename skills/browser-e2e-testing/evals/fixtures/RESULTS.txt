@@ -1,0 +1,10 @@
+PASS bad.spec.ts
+PASS good.spec.ts
+PASS bad_test.py
+PASS good_test.py
+PASS bad.spec.ts --disable hard-sleep,brittle-selector
+PASS good.spec.ts --fail-on warn
+PASS bad.spec.ts --fail-on never
+PASS bad.spec.ts --disable no-such-rule
+PASS missing_file.spec.ts
+9/9 cases passed

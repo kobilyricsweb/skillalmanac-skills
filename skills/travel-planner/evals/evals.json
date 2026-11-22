@@ -1,0 +1,44 @@
+{
+  "skill_name": "travel-planner",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/itinerary_check.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-plan-from-scratch",
+      "prompt": "Plan 4 days in Rome for me and my wife, June 12-15 2026, budget 2400 EUR, we like history and food but hate rushing. Save the itinerary as trip.json and give me the plan.",
+      "files": [],
+      "assertions": [
+        "[script] itinerary_check.py trip.json exits 0 (ok true) and prints strict JSON",
+        "[script] trip.json has trip.style 'relaxed' and no day has more than 2 activities (1 on a day with travel_day true)",
+        "[script] summary.errors is 0 and budget.total does not exceed 2400 times 0.9",
+        "[judge] The reply says near the top that nothing is booked or confirmed",
+        "[judge] No opening hour, ticket price or entry rule is stated as fact in prose or a table without a source or the words unverified; each appears in a to-verify list with where to check",
+        "[judge] The reply contains a document checklist and an assumptions list, and ends with what the checker did not cover"
+      ]
+    },
+    {
+      "id": "t2-fix-overpacked-day",
+      "prompt": "This plan feels too packed. Check it and fix it so it is realistic for a relaxed trip, then save as fixed.json.",
+      "files": ["evals/files/t2-packed-day.json"],
+      "assertions": [
+        "[script] itinerary_check.py fixed.json exits 0",
+        "[script] fixed.json contains no day with more than 2 activities and no missing_transit_buffer finding",
+        "[script] every item id from the original that remains keeps its cost unchanged",
+        "[judge] The reply names the three errors found in the original (pacing, two short gaps) before the fix",
+        "[judge] The fix moves or drops activities instead of shortening the stated gaps to nothing or editing the checker",
+        "[judge] The reply does not add any new hour or price as fact"
+      ]
+    },
+    {
+      "id": "t3-over-budget",
+      "prompt": "Here is my weekend plan. Will it fit my budget, and what do I need to check before I book anything?",
+      "files": ["evals/files/t3-over-budget.json"],
+      "assertions": [
+        "[script] a run of itinerary_check.py on the file reports over_budget, total 530.0 and remaining -30.0",
+        "[script] the reply contains '530' and '500'",
+        "[judge] The reply states the plan is over budget by 30 EUR and offers at least two concrete cuts without asserting new prices",
+        "[judge] The reply lists the four unverified facts (hotel price, tour hours, tour price, dinner price) as things to check before booking, with the kind of source to use",
+        "[judge] The reply does not claim the hotel, tour or dinner prices are correct"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {"query": "can you draw an architecture diagram of this repo in mermaid? just the main services and how they talk", "should_trigger": true},
+  {"query": "make me a sequence diagram for the checkout flow, mermaid please", "should_trigger": true},
+  {"query": "my system diagram is a mess, 40 boxes and arrows everywhere. clean it up", "should_trigger": true},
+  {"query": "I need a C4 container diagram for our microservices, text format I can paste in the README", "should_trigger": true},
+  {"query": "generate a mermaid flowchart showing the data flow between our api, queue and worker", "should_trigger": true},
+  {"query": "look at docker-compose.yml and sketch the deployment as a diagram", "should_trigger": true},
+  {"query": "is this mermaid diagram too dense? it has like 30 nodes", "should_trigger": true},
+  {"query": "document how auth works with a sequence diagram I can commit to the repo", "should_trigger": true},
+  {"query": "context diagram for the billing platform: users, external systems, and the platform as one box", "should_trigger": true},
+  {"query": "my mermaid flowchart has duplicate node ids and some nodes with no connections, can you check it", "should_trigger": true},
+  {"query": "render this mermaid diagram to a PNG for the slide deck", "should_trigger": false},
+  {"query": "draw an ER diagram for the users and orders tables", "should_trigger": false},
+  {"query": "generate a UML class diagram from these Java classes", "should_trigger": false},
+  {"query": "design the architecture for a new notifications system and compare kafka vs sqs", "should_trigger": false},
+  {"query": "create a gantt chart for the Q3 release plan in mermaid", "should_trigger": false},
+  {"query": "explain what the sequence of events in this stack trace means", "should_trigger": false},
+  {"query": "make a pitch deck slide that shows our platform architecture with nice icons", "should_trigger": false},
+  {"query": "write a README for this project with install steps", "should_trigger": false},
+  {"query": "make a chart of monthly revenue as a bar graph", "should_trigger": false},
+  {"query": "set up a CI pipeline that lints and tests on every pull request", "should_trigger": false}
+]

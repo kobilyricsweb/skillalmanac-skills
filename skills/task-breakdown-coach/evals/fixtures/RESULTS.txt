@@ -1,0 +1,7 @@
+PASS good.json
+PASS bad.json
+PASS good.md
+PASS no_first.md
+PASS empty.md
+PASS does_not_exist.md
+6/6 cases passed

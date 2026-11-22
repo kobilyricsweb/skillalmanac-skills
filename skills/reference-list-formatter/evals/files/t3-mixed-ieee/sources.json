@@ -1,0 +1,34 @@
+[
+  {
+    "id": "tran2020",
+    "type": "article-journal",
+    "title": "Battery state estimation with sparse sensors",
+    "author": [
+      {"family": "Tran", "given": "Minh"}, {"family": "Novak", "given": "Petra"}, {"family": "Ibarra", "given": "Luis"},
+      {"family": "Sato", "given": "Yuki"}, {"family": "Moreau", "given": "Claire"}, {"family": "Adeyemi", "given": "Tunde"},
+      {"family": "Berg", "given": "Olav"}
+    ],
+    "issued": {"date-parts": [[2020, 9]]},
+    "container-title": "Journal of Power Systems",
+    "volume": "31",
+    "issue": "4",
+    "page": "1201-1215",
+    "DOI": "10.4000/jps.2020.1201"
+  },
+  {
+    "id": "iea2022",
+    "type": "webpage",
+    "title": "Electricity market report",
+    "author": [{"literal": "International Energy Agency"}],
+    "container-title": "IEA Reports",
+    "issued": {"date-parts": [[2022]]},
+    "URL": "https://example.org/iea/electricity-2022"
+  },
+  {
+    "id": "thesis1",
+    "type": "thesis",
+    "title": "Grid storage economics",
+    "author": [{"family": "Lund", "given": "Ida"}],
+    "issued": {"date-parts": [[2018]]}
+  }
+]

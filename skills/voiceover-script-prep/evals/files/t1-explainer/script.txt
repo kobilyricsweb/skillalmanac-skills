@@ -1,0 +1,7 @@
+# How solar panels pay for themselves
+
+In 2019, the average US home paid $1,450 a year for electricity. By 2025 that had climbed 18% to about $1,710.
+
+A 6.5 kW system costs roughly $14,000 before incentives. The federal credit covers 30% of it, so the net price is closer to $9,800, and most owners break even in 7-9 years.
+
+Visit https://www.example.org/guides/solar/payback?region=us&size=6.5 for the calculator, or email help@example.org. Offers end on 15 January 2027 at 5pm.

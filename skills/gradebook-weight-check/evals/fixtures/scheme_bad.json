@@ -1,0 +1,10 @@
+{
+  "categories": {
+    "Homework": {"weight": 30, "drop_lowest": 3, "items": {"HW1": 10, "HW2": 10, "HW3": 10}},
+    "Participation": {"weight": 15, "items": {}},
+    "Midterm": {"weight": 25, "items": {"Mid": 100}},
+    "Final": {"weight": 25, "items": {"Final": 100, "HW3": 100}}
+  },
+  "late_penalty": 10,
+  "letters": [{"letter": "A", "min": 90}, {"letter": "F", "min": 0}]
+}

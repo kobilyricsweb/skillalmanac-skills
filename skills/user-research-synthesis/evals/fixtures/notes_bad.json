@@ -1,0 +1,15 @@
+{
+  "participants": ["P01", "P02", "P03", "P04", "P05"],
+  "codebook": ["trust", "approval-delay", "mobile", "export"],
+  "notes": [
+    {"id": "B1", "participant": "P01", "text": "I never trust the pending label on my reports.", "tags": ["trust"]},
+    {"id": "B2", "participant": "P01", "text": "Approvals take far too long for small amounts.", "tags": ["approval-delay"]},
+    {"id": "B3", "participant": "P01", "text": "I keep a spreadsheet as backup.", "tags": []},
+    {"id": "B4", "participant": "P01", "text": "The mobile app is slow on my old phone.", "tags": ["mobile", "speed"]},
+    {"id": "B5", "participant": "P02", "text": "I submit reports on Fridays.", "tags": ["approval-delay"]},
+    {"id": "B6", "participant": "P03", "text": "My manager rarely checks the queue.", "tags": ["approval-delay"]},
+    {"id": "B2", "participant": "P02", "text": "A second note that reuses an id.", "tags": ["export"]},
+    {"id": "B7", "participant": "P04", "text": "I like the export."},
+    {"id": "B8", "participant": "P05", "kind": "observation", "text": "Participant sighed at the approval screen.", "tags": ["approval-delay"]}
+  ]
+}

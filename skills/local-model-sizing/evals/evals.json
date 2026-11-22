@@ -1,0 +1,44 @@
+{
+  "skill_name": "local-model-sizing",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/size_model.py output or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Expected numbers in the [script] lines were computed by hand (see VERIFICATION.md) and match evals/fixtures/cases.json.",
+  "evals": [
+    {
+      "id": "t1-dense-two-machines",
+      "prompt": "Read request.md, work out the answer and write it to answer.md. Save the spec you used as spec.json.",
+      "files": ["evals/files/t1-dense-two-machines/request.md"],
+      "assertions": [
+        "[script] spec.json runs through scripts/size_model.py with exit 0",
+        "[script] answer.md names Q4_K_M as the answer for the 8 GB laptop and says the Q5_K_M, Q6_K and Q8_0 rows need partial offload",
+        "[script] answer.md states 7.07 GB (Q4_K_M with headroom) and 56.2 or 185.6 tokens per second as a ceiling",
+        "[judge] Speed is called a ceiling or upper bound, not a measured or promised speed",
+        "[judge] The answer states the assumptions (10 percent headroom, activation overhead, reserves) rather than presenting numbers as exact",
+        "[judge] For the 24 GB desktop the answer does not simply recommend FP16 without comment on cost and benefit"
+      ]
+    },
+    {
+      "id": "t2-moe-mac",
+      "prompt": "Read request.md and answer the questions in it. Save the answer to answer.md.",
+      "files": ["evals/files/t2-moe-mac/request.md"],
+      "assertions": [
+        "[script] answer.md states that FP16 does not fit (about 70.09 GB needed against a 60 GB pool)",
+        "[script] answer.md gives about 24.1 GB needed for Q4_K_M and a ceiling near 219.9 tokens per second",
+        "[judge] The answer separates total parameters (memory) from active parameters (speed) and uses 3B active for the speed ceiling",
+        "[judge] The answer does not claim the ceiling is the real speed",
+        "[judge] The answer flags that the share of unified memory the GPU may use can be below 60 GB and marks that as unverified"
+      ]
+    },
+    {
+      "id": "t3-unknown-shape",
+      "prompt": "Read request.md and answer it. Save the answer to answer.md.",
+      "files": ["evals/files/t3-unknown-shape/request.md"],
+      "assertions": [
+        "[script] answer.md says only one GPU is counted because no layer split was confirmed",
+        "[script] answer.md says the 64k context is above the 32768 trained limit",
+        "[script] answer.md calls the KV estimate approximate because layers and KV heads are unknown",
+        "[judge] The answer does not invent a layer count or KV head count and does not state the KV figure as exact",
+        "[judge] The answer shows that Q4_K_M does not fit and that only Q2_K is possible with heavy offload at about 3 tokens per second ceiling, and says Q2_K quality loss is unconfirmed",
+        "[judge] The answer suggests a practical way out (smaller model, lower context) instead of only saying it does not fit"
+      ]
+    }
+  ]
+}

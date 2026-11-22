@@ -1,0 +1,22 @@
+[
+  {"query": "refactor this Python module to be more pythonic, it still uses os.path and print everywhere", "should_trigger": true},
+  {"query": "add type hints to this Python file the way a senior reviewer would want them", "should_trigger": true},
+  {"query": "should I use a dataclass or pydantic for this config object in my Python service?", "should_trigger": true},
+  {"query": "convert my setup.py and requirements.txt to a proper pyproject.toml", "should_trigger": true},
+  {"query": "review my Python PR for anti-patterns like bare except and mutable default arguments", "should_trigger": true},
+  {"query": "I need to download 500 URLs and hash the files in Python, threads or asyncio or multiprocessing?", "should_trigger": true},
+  {"query": "replace the print statements in my library with proper logging", "should_trigger": true},
+  {"query": "set up pytest for my package with fixtures and parametrized tests following best practices", "should_trigger": true},
+  {"query": "modernize this old Python 3.7 code to Python 3.12 style", "should_trigger": true},
+  {"query": "write a Python CLI that renames files; follow Python best practices and add tests", "should_trigger": true},
+  {"query": "write a TypeScript function that debounces an input handler", "should_trigger": false},
+  {"query": "which Python web framework should I pick, Flask or FastAPI?", "should_trigger": false},
+  {"query": "plot monthly revenue from this CSV in a Jupyter notebook with pandas", "should_trigger": false},
+  {"query": "explain what a Python decorator is to a beginner", "should_trigger": false},
+  {"query": "fix this Django migration that fails with 'relation already exists'", "should_trigger": false},
+  {"query": "refactor this Java service to use records and streams", "should_trigger": false},
+  {"query": "what is the time complexity of Python's sorted()?", "should_trigger": false},
+  {"query": "write a regex to extract email addresses from text", "should_trigger": false},
+  {"query": "deploy this Python app to AWS Lambda with a Dockerfile", "should_trigger": false},
+  {"query": "simplify and clean up this function in my Go codebase", "should_trigger": false}
+]

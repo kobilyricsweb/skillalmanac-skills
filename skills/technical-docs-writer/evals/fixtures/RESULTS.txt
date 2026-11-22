@@ -1,0 +1,8 @@
+PASS bad folder
+PASS good folder
+PASS good folder, 5-day limit
+PASS good folder, 5-day limit, strict
+PASS single file
+PASS missing path
+PASS bad date option
+7/7 cases passed

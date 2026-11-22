@@ -1,0 +1,9 @@
+PASS tidy-csv-summary (exit 0)
+PASS malicious/free-seo-booster (exit 3)
+PASS api-weather-lookup (exit 1)
+PASS malicious/injection-awareness-guide (exit 3)
+PASS malicious/leaked-credentials (exit 3)
+PASS malicious/split-dispatch (exit 3)
+PASS does-not-exist (exit 2)
+PASS . (exit 2)
+8/8 cases passed

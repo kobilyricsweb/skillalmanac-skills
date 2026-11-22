@@ -1,0 +1,93 @@
+{
+  "note": "Expected values were checked by hand against the chunk text printed with --out (token counts of the 26-token intro, the 28/32/22/32-token FAQ paragraphs, split points, duplicate pair, boundary question). Arguments starting with @ are paths inside evals/fixtures.",
+  "cases": [
+    {
+      "name": "fixed 40/5: splits the code fence and the table, loses one answer on a boundary",
+      "args": ["plan", "@corpus", "--strategy", "fixed", "--size", "40", "--overlap", "5", "--questions", "@questions.json"],
+      "exit": 1,
+      "expect": {
+        "stats.chunks": 9,
+        "stats.tokens": {"min": 9, "median": 40, "p95": 40, "max": 40, "mean": 34.7},
+        "defect_counts": {"split_code_fence": 2, "split_table": 3, "orphan_chunk": 2, "heading_context_lost": 4, "answer_spans_boundary": 1},
+        "recall_at_k.k": {"1": 0.8, "3": 0.8, "5": 0.8},
+        "recall_at_k.answer_spans_boundary": ["q-lockout"],
+        "recall_at_k.passage_not_in_corpus": ["q-missing"],
+        "recall_at_k.questions_evaluated": 5
+      }
+    },
+    {
+      "name": "paragraph 50/10: no split blocks, one duplicate pair, many orphans",
+      "args": ["plan", "@corpus", "--strategy", "paragraph", "--size", "50", "--overlap", "10", "--questions", "@questions.json"],
+      "exit": 0,
+      "expect": {
+        "stats.chunks": 9,
+        "stats.tokens": {"min": 10, "median": 32, "p95": 51, "max": 51, "mean": 30.8},
+        "defect_counts": {"orphan_chunk": 7, "duplicate_chunk": 1, "heading_context_lost": 2},
+        "heading_context.lost_in_indexed_text": 2,
+        "recall_at_k.k": {"1": 1.0, "3": 1.0, "5": 1.0},
+        "recall_at_k.answer_spans_boundary": []
+      }
+    },
+    {
+      "name": "paragraph 70/35 on prose: overlap carries one whole paragraph, no defects",
+      "args": ["plan", "@corpus/faq.txt", "--strategy", "paragraph", "--size", "70", "--overlap", "35"],
+      "exit": 0,
+      "expect": {
+        "stats.chunks": 3,
+        "stats.tokens": {"min": 54, "median": 54, "p95": 60, "max": 60, "mean": 56.0},
+        "defect_counts": {}
+      }
+    },
+    {
+      "name": "paragraph 50/30: overlap above half the chunk is an error",
+      "args": ["plan", "@corpus", "--strategy", "paragraph", "--size", "50", "--overlap", "30"],
+      "exit": 1,
+      "expect": {
+        "defect_counts": {"overlap_too_large": 1, "orphan_chunk": 7, "duplicate_chunk": 1, "heading_context_lost": 2}
+      }
+    },
+    {
+      "name": "heading 80/0 with heading prefix: clean, heading context kept in the indexed text",
+      "args": ["plan", "@corpus/guide.md", "--strategy", "heading", "--size", "80", "--overlap", "0", "--min-tokens", "10", "--prefix-heading"],
+      "exit": 0,
+      "expect": {
+        "stats.chunks": 3,
+        "stats.tokens": {"min": 26, "median": 61, "p95": 76, "max": 76, "mean": 54.3},
+        "defect_counts": {},
+        "heading_context.coverage": 1.0,
+        "heading_context.lost_in_indexed_text": 0
+      }
+    },
+    {
+      "name": "heading 60/0: sections above the size are repacked by paragraph",
+      "args": ["plan", "@corpus", "--strategy", "heading", "--size", "60", "--overlap", "0"],
+      "exit": 0,
+      "expect": {
+        "stats.chunks": 7,
+        "defect_counts": {"orphan_chunk": 3, "heading_context_lost": 2}
+      }
+    },
+    {
+      "name": "compare ranks the three settings by recall",
+      "args": ["compare", "@corpus", "--questions", "@questions.json", "--setting", "fixed:40:5", "--setting", "paragraph:50:10", "--setting", "heading:60:0", "--k", "1,3"],
+      "exit": 1,
+      "expect": {
+        "ranking": ["heading:60:0", "paragraph:50:10", "fixed:40:5"],
+        "runs.0.recall_at_k": {"1": 0.8, "3": 0.8},
+        "runs.1.recall_at_k": {"1": 1.0, "3": 1.0}
+      }
+    },
+    {
+      "name": "missing path exits 2",
+      "args": ["plan", "@corpus/does-not-exist"],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "name": "overlap equal to size exits 2",
+      "args": ["plan", "@corpus", "--size", "10", "--overlap", "10"],
+      "exit": 2,
+      "expect": {}
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "note": "Each case runs scripts/docx_inspect.py. Args starting with @fx/ are generated .docx fixtures (evals/make_docx.py), @skill/ is the skill root, @fixtures/ is evals/fixtures. Expect keys: a dotted path into the JSON output (a trailing # means list length; $rules and $codes list contract violation rules and finding codes). Expected values were derived by hand from the XML built in make_docx.py.",
+  "cases": [
+    {"name": "good doc passes the example contract", "args": ["@fx/good.docx", "--contract", "@skill/assets/contract.example.json"], "exit": 0,
+     "expect": {"ok": true, "$rules": [], "$codes": [], "headings#": 4, "tables.0.header_row": true, "tables.0.caption": true, "tables.0.style": "Table Grid", "images.0.has_alt": true, "images.0.caption": true, "sections.0.paper": "A4", "toc": true, "footer_page_numbers": true, "properties.author": "Dana Cohen"}},
+    {"name": "bad doc fails 14 contract rules", "args": ["@fx/bad.docx", "--contract", "@skill/assets/contract.example.json"], "exit": 1,
+     "expect": {"ok": false, "$rules": ["title_required", "author_required", "numbered_headings", "allow_empty_sections", "table_header_row", "table_styles_allowed", "table_captions", "figure_captions", "alt_text", "paper", "margin_min_cm", "footer_page_numbers", "toc", "no_placeholders"],
+                "$codes": ["heading_level_skip", "empty_section", "table_no_header_row", "table_no_caption", "image_no_alt", "image_no_caption", "placeholder_text", "no_title_property", "no_author_property"],
+                "empty_sections.0.heading": "Results", "tables.0.style": "Normal Table", "sections.0.paper": "Letter", "sections.0.margins_cm.left": 1.27}},
+    {"name": "bad doc without a contract reports findings but exits 0", "args": ["@fx/bad.docx"], "exit": 0,
+     "expect": {"ok": true, "contract": null, "findings#": 9, "headings#": 4, "images.0.has_alt": false}},
+    {"name": "custom style chain and direct outline level", "args": ["@fx/custom_styles.docx"], "exit": 0,
+     "expect": {"headings.0.level": 1, "headings.0.text": "Alpha", "headings.1.level": 2, "headings.1.style": "Section Head", "findings#": 0}},
+    {"name": "decorative image needs no alt text or caption", "args": ["@fx/decorative.docx"], "exit": 0,
+     "expect": {"images.0.decorative": true, "images.0.has_alt": false, "$codes": []}},
+    {"name": "landscape Letter contract rejects portrait A4", "args": ["@fx/good.docx", "--contract", "@fixtures/contract_landscape_letter.json"], "exit": 1,
+     "expect": {"$rules": ["paper", "orientation"]}},
+    {"name": "text file is not a docx", "args": ["@fx/not_a_docx.docx"], "exit": 2, "expect": {}},
+    {"name": "missing file", "args": ["@fx/nothing_here.docx"], "exit": 2, "expect": {}},
+    {"name": "unknown contract key", "args": ["@fx/good.docx", "--contract", "@fixtures/contract_unknown_key.json"], "exit": 2, "expect": {}}
+  ]
+}

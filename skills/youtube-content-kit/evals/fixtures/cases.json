@@ -1,0 +1,15 @@
+{
+  "note": "Expected values were derived by hand from each fixture (word counts, character counts, chapter times, disclosure wording) before being saved, then compared with the script output.",
+  "cases": [
+    {"args": ["good.json"], "exit": 0, "expect": {"ok": true, "counts": {"fail": 0, "warn": 0}, "hook_words": 26, "title_chars": 39, "chapter_count": 5}},
+    {"args": ["bad.json"], "exit": 1, "expect": {"ok": false, "counts": {"fail": 7, "warn": 9}, "hook_words": 59, "title_chars": 114, "chapter_count": 2,
+      "fail_checks": ["chapter-first", "chapter-gap", "chapter-title", "chapters-count", "description-keyword", "hook-length", "title-length"],
+      "warn_checks": ["description-opener", "description-short", "description-url-first", "pattern-break-gap", "tags-duplicate", "tags-hash", "title-caps", "title-clickbait", "title-keyword"]}},
+    {"args": ["sponsored_missing.json"], "exit": 1, "expect": {"ok": false, "counts": {"fail": 3, "warn": 1},
+      "fail_checks": ["disclosure-description", "disclosure-spoken", "disclosure-toggle"], "warn_checks": ["description-short"]}},
+    {"args": ["sponsored_ok.json"], "exit": 0, "expect": {"ok": true, "counts": {"fail": 0, "warn": 0}}},
+    {"args": ["broken.json"], "exit": 2, "expect": {"ok": false}},
+    {"args": ["does_not_exist.json"], "exit": 2, "expect": {"ok": false}},
+    {"args": ["bigint.json"], "exit": 2, "expect": {"ok": false}}
+  ]
+}

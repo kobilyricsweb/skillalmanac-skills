@@ -1,0 +1,22 @@
+[
+  {"query": "stress test this migration plan before we start, I want to know what could go wrong", "should_trigger": true},
+  {"query": "poke holes in my launch plan, here's the doc", "should_trigger": true},
+  {"query": "can you red team my project plan? find the weak spots and rank them", "should_trigger": true},
+  {"query": "run a pre-mortem on this rollout plan", "should_trigger": true},
+  {"query": "is this plan solid? check for missing owners, dates and dependencies", "should_trigger": true},
+  {"query": "I wrote a plan for moving our office. what assumptions am I making that I haven't written down?", "should_trigger": true},
+  {"query": "build me a risk register for this plan.md, ranked by likelihood and impact", "should_trigger": true},
+  {"query": "which steps in my checklist have no owner or no definition of done?", "should_trigger": true},
+  {"query": "look for single points of failure and missing rollback in this cutover plan", "should_trigger": true},
+  {"query": "attack this plan before the kickoff meeting tomorrow, be harsh", "should_trigger": true},
+  {"query": "write a project plan for migrating our database to a new host", "should_trigger": false},
+  {"query": "how many person-days will this project take? estimate effort for each task", "should_trigger": false},
+  {"query": "review this pull request for bugs", "should_trigger": false},
+  {"query": "threat model our payment API and list the attack vectors", "should_trigger": false},
+  {"query": "what are the risks in this vendor contract?", "should_trigger": false},
+  {"query": "turn these meeting notes into a list of action items with owners", "should_trigger": false},
+  {"query": "make a Gantt chart from my task list", "should_trigger": false},
+  {"query": "write a PRD for the new onboarding flow", "should_trigger": false},
+  {"query": "proofread my project proposal for grammar and tone", "should_trigger": false},
+  {"query": "summarize the scope change request and its impact on the schedule", "should_trigger": false}
+]

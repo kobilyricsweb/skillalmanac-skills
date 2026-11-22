@@ -1,0 +1,22 @@
+[
+  {"query": "can you double this banana bread recipe? 2 cups flour, 3 ripe bananas, 1/2 cup butter, 3/4 cup sugar", "should_trigger": true},
+  {"query": "I need to scale this chili recipe from 4 servings to 14, here are the ingredients", "should_trigger": true},
+  {"query": "convert 1 1/2 cups flour and 1 cup butter to grams for me", "should_trigger": true},
+  {"query": "my recipe is for a 9x13 pan but I only have an 8 inch round, how much of everything do I use?", "should_trigger": true},
+  {"query": "halve this cookie recipe, it makes way too many for me", "should_trigger": true},
+  {"query": "this is a UK recipe in grams and ml, give me the US cups and tablespoons version", "should_trigger": true},
+  {"query": "triple my pancake recipe and tell me which ingredients I should not just multiply by three", "should_trigger": true},
+  {"query": "rewrite these ingredient quantities for 30 people instead of 8, round to measures I can actually use", "should_trigger": true},
+  {"query": "what is 3/4 cup of honey in grams? and then the whole recipe times 1.5", "should_trigger": true},
+  {"query": "I sell brownies at a market, scale my recipe up to 5x and convert everything to weight", "should_trigger": true},
+  {"query": "how many calories are in this lasagna recipe per serving?", "should_trigger": false},
+  {"query": "plan my meals for the week and make a shopping list", "should_trigger": false},
+  {"query": "write me a new recipe for vegan chocolate cake", "should_trigger": false},
+  {"query": "is it safe to leave cooked chicken out for three hours?", "should_trigger": false},
+  {"query": "I have celiac disease, which of these ingredients contain gluten?", "should_trigger": false},
+  {"query": "convert 50 miles to kilometres and 70 Fahrenheit to Celsius", "should_trigger": false},
+  {"query": "how do I scale a canning recipe for tomato sauce so it stays safe to store?", "should_trigger": false},
+  {"query": "normalise the unit column in my product spreadsheet so all weights are in kilograms", "should_trigger": false},
+  {"query": "what temperature and how long should I roast a 6 kg turkey?", "should_trigger": false},
+  {"query": "summarise this cookbook chapter and pull out the three main techniques", "should_trigger": false}
+]

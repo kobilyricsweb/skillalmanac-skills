@@ -1,0 +1,66 @@
+{
+  "note": "Expected values were derived by hand from the planted defects in each fixture (line numbers counted in the file), then compared with the script output.",
+  "cases": [
+    {
+      "args": ["bad.spec.ts"],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "tests_found": 5,
+        "suppressed_by_comment": 1,
+        "counts_by_rule": {"brittle-selector": 5, "debug-leftover": 1, "force-action": 1, "hard-sleep": 2, "missing-isolation-hooks": 1, "networkidle-wait": 1, "only-left-in": 1, "serial-order-dependence": 1, "shared-mutable-state": 1, "test-without-assertion": 1},
+        "finding_keys": ["3 serial-order-dependence", "5 shared-mutable-state", "7 missing-isolation-hooks", "9 hard-sleep", "10 brittle-selector", "18 brittle-selector", "22 test-without-assertion", "24 networkidle-wait", "25 brittle-selector", "25 force-action", "26 brittle-selector", "27 brittle-selector", "30 only-left-in", "32 debug-leftover", "33 hard-sleep"]
+      }
+    },
+    {
+      "args": ["good.spec.ts"],
+      "exit": 0,
+      "expect": {"ok": true, "tests_found": 4, "suppressed_by_comment": 0, "counts_by_rule": {}, "finding_keys": []}
+    },
+    {
+      "args": ["bad_test.py"],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "tests_found": 3,
+        "counts_by_rule": {"brittle-selector": 2, "debug-leftover": 1, "force-action": 1, "hard-sleep": 1, "networkidle-wait": 1, "shared-browser-state": 1, "shared-mutable-state": 1, "test-without-assertion": 1},
+        "finding_keys": ["7 shared-mutable-state", "10 shared-browser-state", "19 hard-sleep", "20 brittle-selector", "28 networkidle-wait", "29 force-action", "30 debug-leftover", "34 test-without-assertion", "36 brittle-selector"]
+      }
+    },
+    {
+      "args": ["good_test.py"],
+      "exit": 0,
+      "expect": {"ok": true, "tests_found": 3, "counts_by_rule": {}, "finding_keys": []}
+    },
+    {
+      "args": ["bad.spec.ts", "--disable", "hard-sleep,brittle-selector"],
+      "exit": 1,
+      "expect": {"counts_by_rule": {"debug-leftover": 1, "force-action": 1, "missing-isolation-hooks": 1, "networkidle-wait": 1, "only-left-in": 1, "serial-order-dependence": 1, "shared-mutable-state": 1, "test-without-assertion": 1}}
+    },
+    {
+      "args": ["good.spec.ts", "--fail-on", "warn"],
+      "exit": 0,
+      "expect": {"ok": true}
+    },
+    {
+      "args": ["bad.spec.ts", "--fail-on", "never"],
+      "exit": 0,
+      "expect": {"ok": false}
+    },
+    {
+      "args": ["bad.spec.ts", "--disable", "no-such-rule"],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "args": ["missing_file.spec.ts"],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "args": ["bad.spec.ts", "--max-bytes", "100"],
+      "exit": 2,
+      "expect": {}
+    }
+  ]
+}

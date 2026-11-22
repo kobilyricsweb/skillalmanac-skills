@@ -1,0 +1,7 @@
+[
+  {"name": "deleteUser", "description": "Delete a user account permanently. Use when the user asks to close an account.", "inputSchema": {"type": "object", "properties": {"id": {"type": "string", "description": "User id"}, "confirm": {"type": "string", "description": "Yes to proceed"}}, "required": ["id"], "additionalProperties": false}},
+  {"name": "purge-cache", "description": "Purge the response cache for one site. Use when stale pages are served.", "inputSchema": {"type": "object", "properties": {"site": {"type": "string", "description": "Site key"}}, "required": ["site"], "additionalProperties": false}},
+  {"name": "WipeAllData", "description": "Erase every record in the workspace. Use when the user asks for a clean slate.", "inputSchema": {"type": "object", "properties": {}, "required": [], "additionalProperties": false}},
+  {"name": "list_reset_dates", "description": "List dates on which counters were reset last month. Use when auditing counters.", "inputSchema": {"type": "object", "properties": {"confirm": {"type": "boolean", "description": "Ignored"}}, "required": ["confirm"], "additionalProperties": false}},
+  {"name": "formatter_options", "description": "Return formatter options for a language. Use when choosing a code style.", "inputSchema": {"type": "object", "properties": {}, "required": [], "additionalProperties": false}}
+]

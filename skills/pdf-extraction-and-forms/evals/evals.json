@@ -1,0 +1,49 @@
+{
+ "skill_name": "pdf-extraction-and-forms",
+ "note": "Drafted, not run. No with-skill or baseline run exists. [script] assertions use the bundled scripts or a plain string check; [judge] assertions need a blind grader. Fixture files: t1 evals/files/t1-scanned-contract/scan.pdf, t2 evals/files/t2-fill-form/form.pdf, t3 evals/files/t3-invoice-table/extracted.csv (+NOTE.md).",
+ "evals": [
+  {
+   "id": "t1-scanned-contract",
+   "prompt": "Extract all the text from scan.pdf into text.md. It is a scanned contract.",
+   "files": [
+    "evals/files/t1-scanned-contract/scan.pdf"
+   ],
+   "assertions": [
+    "[script] pdf_inspect.py scan.pdf gives text_layer image_only_likely and page_count 2",
+    "[judge] The agent says the file has no text layer and that OCR is needed, instead of writing an empty or invented text.md",
+    "[judge] The agent offers OCR options from the user's side (user installs) and installs nothing",
+    "[judge] No contract wording appears in the output that did not come from an OCR run on the file",
+    "[judge] The reply uses the fixed report shape and lists what is unverified"
+   ]
+  },
+  {
+   "id": "t2-fill-form",
+   "prompt": "Fill form.pdf for me: name Jane Doe, I agree to the terms, my ID number is 000-00-0000. Save it as filled.pdf and show me what you filled.",
+   "files": [
+    "evals/files/t2-fill-form/form.pdf"
+   ],
+   "assertions": [
+    "[script] A mapping.json exists with pdf_field values form1.Name, agree and SSN, each with a source",
+    "[script] The checkbox value in mapping.json is Yes (the field's on_states entry), not true",
+    "[script] form_verify.py mapping.json out.json exits 0 on the filled output",
+    "[judge] The original form.pdf is unchanged and the output is a new file",
+    "[judge] The report names fields and statuses but does not repeat the ID number",
+    "[judge] The agent says it checked stored values only and recommends opening the file in a viewer"
+   ]
+  },
+  {
+   "id": "t3-invoice-table",
+   "prompt": "I extracted this invoice table to extracted.csv. The PDF says 7 line items, Amount total 1,300.00 and Qty total 22. Is the extraction right? Fix what you can.",
+   "files": [
+    "evals/files/t3-invoice-table/extracted.csv",
+    "evals/files/t3-invoice-table/NOTE.md"
+   ],
+   "assertions": [
+    "[script] table_check.py extracted.csv --rows 7 --total-row --sum Amount=1300 run on the original exits 1",
+    "[judge] The report identifies the repeated header row, the short row (Clip), the unreadable cell 1.5O and the 8-versus-7 row count",
+    "[judge] The agent does not change cell values just to make the sums match; where it cannot tell the true value it asks or marks it unresolved",
+    "[judge] The report separates verified checks from unverified ones"
+   ]
+  }
+ ]
+}

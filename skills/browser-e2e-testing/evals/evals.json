@@ -1,0 +1,48 @@
+{
+  "skill_name": "browser-e2e-testing",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/audit_e2e.py or a plain string check; [judge] assertions need a blind grader. The audit script is the skill's own tool, so each task has at least one judge assertion that the script does not control.",
+  "evals": [
+    {
+      "id": "t1-flaky-checkout",
+      "prompt": "This Playwright spec is flaky in CI and one test is the only one that runs. Fix it so it is reliable and save the result next to the original as checkout.fixed.spec.ts. Keep what each test is checking.",
+      "files": ["evals/files/t1-flaky-checkout/checkout.spec.ts"],
+      "assertions": [
+        "[script] audit_e2e.py checkout.fixed.spec.ts prints ok true and counts_by_rule has no hard-sleep, only-left-in or brittle-selector",
+        "[script] audit_e2e.py reports no shared-mutable-state for checkout.fixed.spec.ts",
+        "[script] checkout.fixed.spec.ts does not contain 'force: true' or 'waitForTimeout'",
+        "[script] checkout.fixed.spec.ts still contains the strings 'Thank you' and '4242424242424242'",
+        "[judge] The count shared between the first two tests is gone: the cart test builds its own cart (or the two tests are merged) instead of relying on test order",
+        "[judge] Replacement locators use role, label, text or test id; no locator invented a test id the markup was never shown to have without saying so in the reply",
+        "[judge] The reply ends with the fixed report format and says what was not run (the markup was not available, so the new locators are unverified against the real page)"
+      ]
+    },
+    {
+      "id": "t2-what-to-test",
+      "prompt": "Write the Playwright tests for the profile feature described in the file. Save the tests under tests/profile.spec.ts and tell me what you chose not to cover in the browser and why.",
+      "files": ["evals/files/t2-what-to-test/feature.md"],
+      "assertions": [
+        "[script] audit_e2e.py tests/profile.spec.ts prints ok true",
+        "[script] audit_e2e.py reports no missing-isolation-hooks and no hard-sleep for tests/profile.spec.ts",
+        "[script] tests/profile.spec.ts contains between 3 and 8 test definitions (test( calls)",
+        "[judge] Validation edge cases (2 to 40 characters, spaces, 2 MB limit, file type) are mostly left to lower-level tests with the reason stated, with at most one error-path test in the browser",
+        "[judge] Each test creates its own user through the test API with a unique email and removes it afterwards; no test depends on another",
+        "[judge] The email-change journey reads the confirmation link from the test inbox instead of sleeping or skipping the confirmation",
+        "[judge] The reply states what was not run (nothing was executed against the app) and lists the not-covered behaviours with their suggested level"
+      ]
+    },
+    {
+      "id": "t3-ci-flake-triage",
+      "prompt": "Our 'place an order' test passes locally and fails now and then in CI. Report is attached. Tell me the cause, what to change, and how we confirm it is fixed.",
+      "files": ["evals/files/t3-ci-flake-triage/ci_failure_report.md"],
+      "assertions": [
+        "[script] The reply contains the words 'shared' and 'account' (or 'user') in the diagnosis",
+        "[script] The reply does not recommend increasing the global timeout or the retry count as the fix",
+        "[judge] The diagnosis names the shared seeded account and the parallel workers as the cause, citing the doubled total ($84.00 against $42.00) and the fact that failures only occur when both tests run at once",
+        "[judge] The proposed fix gives each test its own user or cart (created through an API, unique per worker or test) and cleans up, rather than adding more waiting",
+        "[judge] The 3000 ms sleep is identified as masking, not fixing, and its replacement is a retrying assertion or response wait",
+        "[judge] Confirmation steps include repeated runs (about 20) with the CI worker count and a statement of what result counts as fixed",
+        "[judge] The reply says it could not open the trace itself and treats the cause as the best-supported hypothesis, not a certainty"
+      ]
+    }
+  ]
+}

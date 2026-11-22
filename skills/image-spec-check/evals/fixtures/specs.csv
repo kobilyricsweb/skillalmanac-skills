@@ -1,0 +1,6 @@
+name,width,height,aspect,size_rule,formats,max_kb,min_dpi
+hero,1600,900,,exact,jpg|webp,300,
+square,1080,1080,,exact,jpg|png,,
+banner-ratio,,,1.91:1,,jpg|png|webp,,
+print-a5,1748,2480,,exact,png|jpg,,300
+thumb-max,640,360,,max,jpg|png|webp,50,

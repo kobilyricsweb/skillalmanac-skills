@@ -1,0 +1,82 @@
+[
+  {
+    "query": "here's the spec for the export feature, implement it exactly and don't add anything extra",
+    "should_trigger": true
+  },
+  {
+    "query": "build this from the spec and tell me which requirements have no tests",
+    "should_trigger": true
+  },
+  {
+    "query": "I have REQ-001 to REQ-012 in a markdown file; make sure every one has a test before you call it done",
+    "should_trigger": true
+  },
+  {
+    "query": "go spec-driven on this ticket: tests first, trace every requirement to a test",
+    "should_trigger": true
+  },
+  {
+    "query": "the agent keeps adding features I didn't ask for, make it stick to the written spec",
+    "should_trigger": true
+  },
+  {
+    "query": "check that all requirements in SPEC.md are covered by tests and no test points at a removed requirement",
+    "should_trigger": true
+  },
+  {
+    "query": "implement the attached spec and stop and ask me if anything in it is ambiguous",
+    "should_trigger": true
+  },
+  {
+    "query": "write acceptance criteria for each numbered requirement in my spec so it can be built without guessing",
+    "should_trigger": true
+  },
+  {
+    "query": "this spec has TBDs in it, build the parts that are clear and ask me about the rest",
+    "should_trigger": true
+  },
+  {
+    "query": "traceability from requirement to test to code for the feature we agreed last week",
+    "should_trigger": true
+  },
+  {
+    "query": "write a PRD for a new onboarding flow with goals, personas and success metrics",
+    "should_trigger": false
+  },
+  {
+    "query": "estimate how long it would take to build this feature and break it into sprints",
+    "should_trigger": false
+  },
+  {
+    "query": "review this pull request for bugs and security problems",
+    "should_trigger": false
+  },
+  {
+    "query": "write unit tests for my existing utils module to raise coverage",
+    "should_trigger": false
+  },
+  {
+    "query": "refactor this class to be cleaner, no behaviour changes",
+    "should_trigger": false
+  },
+  {
+    "query": "I have an idea for an app but nothing written down, help me brainstorm what it should do",
+    "should_trigger": false
+  },
+  {
+    "query": "explain test driven development to a junior developer",
+    "should_trigger": false
+  },
+  {
+    "query": "fix the failing test in checkout.spec.ts",
+    "should_trigger": false
+  },
+  {
+    "query": "turn these meeting notes into a list of action items",
+    "should_trigger": false
+  },
+  {
+    "query": "draft an API design document with endpoints and data models",
+    "should_trigger": false
+  }
+]

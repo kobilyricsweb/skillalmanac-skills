@@ -1,0 +1,8 @@
+[
+  {"id": "h1", "question": "How long after leaving must equipment be returned?", "expected_passage": "all equipment must be returned within ten working days", "source": "handbook.txt"},
+  {"id": "h2", "question": "What is the hotel reimbursement limit?", "expected_passage": "Hotel stays are reimbursed up to the city rate published by the finance team each January", "source": "handbook.txt"},
+  {"id": "h3", "question": "When does carried-over leave expire?", "expected_passage": "the carry-over expires on the thirty-first of March", "source": "handbook.txt"},
+  {"id": "h4", "question": "How fast must a lost device be reported?", "expected_passage": "must be reported to the security desk within one hour of discovery", "source": "handbook.txt"},
+  {"id": "h5", "question": "After how many days of sick leave is a medical certificate needed?", "expected_passage": "a medical certificate is required after three consecutive days of absence", "source": "handbook.txt"},
+  {"id": "h6", "question": "Who pays courier shipping for equipment returned by remote staff?", "expected_passage": "the company covers the cost of courier shipping for remote staff", "source": "handbook.txt"}
+]

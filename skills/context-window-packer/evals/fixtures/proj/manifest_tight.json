@@ -1,0 +1,12 @@
+{
+  "budget": 1000,
+  "reserve": 0,
+  "fixed_tokens": 50,
+  "candidates": [
+    {"id": "readme", "path": "README.md", "priority": "must", "relevance": 6},
+    {"id": "app", "path": "app.py", "priority": "must", "relevance": 8},
+    {"id": "util", "path": "util.py", "priority": "should", "relevance": 9, "note": "holds the date bug"},
+    {"id": "notes", "path": "notes.md", "priority": "nice", "relevance": 3},
+    {"id": "lock", "path": "package-lock.json", "priority": "should", "relevance": 2}
+  ]
+}

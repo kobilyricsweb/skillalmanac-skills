@@ -1,0 +1,16 @@
+{
+  "property": {"address": "3 Mill Street, Riverton", "type": "single-family", "area_value": 140, "area_unit": "sqm"},
+  "currency": "EUR",
+  "as_of": "2026-11-10",
+  "purchase_price": 250000,
+  "closing_costs": 10000,
+  "renovation_cost": 0,
+  "income": {"gross_scheduled_rent_annual": 14400, "vacancy_rate": 0.08, "other_income_annual": 0},
+  "expenses": {"operating_expenses_annual": 16000},
+  "financing": {"down_payment": 250000, "loan_amount": 0, "interest_rate": 0, "term_years": 1, "annual_debt_service": 0},
+  "sources": [
+    {"field": "purchase_price", "source": "Agent price sheet", "date": "2026-11-08"},
+    {"field": "income.gross_scheduled_rent_annual", "source": "Tenant lease", "date": "2026-11-08"},
+    {"field": "expenses.operating_expenses_annual", "source": "Owner estimate", "date": "2026-11-09"}
+  ]
+}

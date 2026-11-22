@@ -1,0 +1,150 @@
+{
+  "ok": true,
+  "command": "score",
+  "scale": {
+    "min": 1.0,
+    "max": 5.0
+  },
+  "criteria": [
+    {
+      "name": "Cost",
+      "weight_raw": 4.0,
+      "weight": 0.266667,
+      "direction": "cost"
+    },
+    {
+      "name": "Speed",
+      "weight_raw": 3.0,
+      "weight": 0.2,
+      "direction": "benefit"
+    },
+    {
+      "name": "Risk",
+      "weight_raw": 3.0,
+      "weight": 0.2,
+      "direction": "cost"
+    },
+    {
+      "name": "Fit",
+      "weight_raw": 5.0,
+      "weight": 0.333333,
+      "direction": "benefit"
+    }
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "option": "C",
+      "score": 4.066667,
+      "score_pct": 76.666667,
+      "contributions": {
+        "Cost": 0.8,
+        "Speed": 0.6,
+        "Risk": 1.0,
+        "Fit": 1.666667
+      }
+    },
+    {
+      "rank": 2,
+      "option": "A",
+      "score": 3.8,
+      "score_pct": 70.0,
+      "contributions": {
+        "Cost": 1.066667,
+        "Speed": 0.8,
+        "Risk": 0.6,
+        "Fit": 1.333333
+      }
+    },
+    {
+      "rank": 3,
+      "option": "B",
+      "score": 3.333333,
+      "score_pct": 58.333333,
+      "contributions": {
+        "Cost": 0.533333,
+        "Speed": 1.0,
+        "Risk": 0.8,
+        "Fit": 1.0
+      }
+    }
+  ],
+  "winner": {
+    "option": "C",
+    "unique": true,
+    "tied_for_first": []
+  },
+  "margin": {
+    "leader_minus_runner_up": 0.266667,
+    "pct_of_scale": 6.666667
+  },
+  "tie_report": {
+    "exact_ties": [],
+    "near_ties": [],
+    "near_tie_threshold_pct": 2.0
+  },
+  "sensitivity": {
+    "label": "moderate",
+    "top_tied": false,
+    "per_criterion": [
+      {
+        "criterion": "Cost",
+        "weight": 0.266667,
+        "weight_raw": 4.0,
+        "flips": true,
+        "flip_weight": 0.421053,
+        "flip_weight_raw": 8.0,
+        "shift": 0.154386,
+        "direction": "increase",
+        "overtaken_by": "A"
+      },
+      {
+        "criterion": "Speed",
+        "weight": 0.2,
+        "weight_raw": 3.0,
+        "flips": true,
+        "flip_weight": 0.368421,
+        "flip_weight_raw": 7.0,
+        "shift": 0.168421,
+        "direction": "increase",
+        "overtaken_by": "A"
+      },
+      {
+        "criterion": "Risk",
+        "weight": 0.2,
+        "weight_raw": 3.0,
+        "flips": true,
+        "flip_weight": 0.076923,
+        "flip_weight_raw": 1.0,
+        "shift": 0.123077,
+        "direction": "decrease",
+        "overtaken_by": "A"
+      },
+      {
+        "criterion": "Fit",
+        "weight": 0.333333,
+        "weight_raw": 5.0,
+        "flips": true,
+        "flip_weight": 0.090909,
+        "flip_weight_raw": 1.0,
+        "shift": 0.242424,
+        "direction": "decrease",
+        "overtaken_by": "A"
+      }
+    ],
+    "smallest_flip": {
+      "criterion": "Risk",
+      "shift": 0.123077,
+      "flip_weight": 0.076923,
+      "flip_weight_raw": 1.0,
+      "direction": "decrease",
+      "overtaken_by": "A"
+    },
+    "equal_weights_leaders": [
+      "C"
+    ],
+    "equal_weights_same_winner": true
+  },
+  "dominated": [],
+  "warnings": []
+}

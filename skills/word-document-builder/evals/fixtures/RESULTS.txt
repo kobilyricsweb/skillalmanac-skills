@@ -1,0 +1,10 @@
+PASS good doc passes the example contract
+PASS bad doc fails 14 contract rules
+PASS bad doc without a contract reports findings but exits 0
+PASS custom style chain and direct outline level
+PASS decorative image needs no alt text or caption
+PASS landscape Letter contract rejects portrait A4
+PASS text file is not a docx
+PASS missing file
+PASS unknown contract key
+9/9 cases passed

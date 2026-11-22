@@ -1,0 +1,8 @@
+PASS check good_outline.json
+PASS check bad_outline.json
+PASS check unknown_structure.json
+PASS check not_json.json
+PASS check missing_file.json
+PASS budget three-act 20000
+PASS budget five-act 20000
+7/7 cases passed

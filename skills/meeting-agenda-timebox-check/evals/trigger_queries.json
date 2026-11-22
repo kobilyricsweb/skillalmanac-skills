@@ -1,0 +1,22 @@
+[
+  {"query": "here's my agenda for Thursday's 30 minute staff meeting, will all of it fit?", "should_trigger": true},
+  {"query": "can you check my meeting agenda, I think I've overbooked it", "should_trigger": true},
+  {"query": "timebox this agenda for a 45 minute call: budget review 15, hiring 10, roadmap 20, vendor update 10", "should_trigger": true},
+  {"query": "which of my agenda items should be a pre-read instead of discussed live?", "should_trigger": true},
+  {"query": "I'm running a 2 hour planning session, does my agenda have enough breaks and buffer?", "should_trigger": true},
+  {"query": "make sure every item on this agenda has an owner and a clear outcome before I send it", "should_trigger": true},
+  {"query": "my meeting is supposed to decide the Q3 hiring plan, is the agenda structured so the decision happens early enough?", "should_trigger": true},
+  {"query": "one person owns most of this agenda, flag it and tell me what to cut to fit 60 minutes", "should_trigger": true},
+  {"query": "how many attendee hours does this 90 minute meeting with 8 people cost, and can I trim any items?", "should_trigger": true},
+  {"query": "review my brainstorm session agenda, is there a converge step after the ideas part?", "should_trigger": true},
+  {"query": "summarize the notes from yesterday's meeting and list the action items", "should_trigger": false},
+  {"query": "find a free 30 minute slot next week when five of us are all available", "should_trigger": false},
+  {"query": "write an invite email for the all-hands and send it to the team", "should_trigger": false},
+  {"query": "transcribe this recording of the meeting", "should_trigger": false},
+  {"query": "add a recurring Monday standup to my calendar", "should_trigger": false},
+  {"query": "give me ten icebreaker ideas for a team offsite", "should_trigger": false},
+  {"query": "what time is the standup in Tokyo if it is 9am in New York?", "should_trigger": false},
+  {"query": "split this project into tasks and estimate how long each takes", "should_trigger": false},
+  {"query": "how do I run an effective one on one with a direct report?", "should_trigger": false},
+  {"query": "draft the minutes for the board meeting from my bullet points", "should_trigger": false}
+]

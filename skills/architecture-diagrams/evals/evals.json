@@ -1,0 +1,46 @@
+{
+  "skill_name": "architecture-diagrams",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/mermaid_check.py or a plain string check; [judge] assertions need a blind grader. The checker is the skill's own tool, so each task has judge assertions that measure something it does not control.",
+  "evals": [
+    {
+      "id": "t1-container-view-from-compose",
+      "prompt": "Draw an architecture diagram of this stack as Mermaid so a new hire can see how the parts talk to each other. Save it to architecture.mmd and tell me what you could not confirm.",
+      "files": ["evals/files/t1-compose/docker-compose.yml"],
+      "assertions": [
+        "[script] mermaid_check.py architecture.mmd has verdict pass or warn and no finding of level error",
+        "[script] the first non-comment line of architecture.mmd is a flowchart or graph header that names a direction (TB, TD, BT, LR or RL)",
+        "[script] architecture.mmd does not contain the string CHANGEME or the text postgres://",
+        "[script] metrics.edges is at least 6 and unlabeled_edge_ratio is 0.0 in the checker output",
+        "[judge] The six services (web, orders API, worker, database, cache, broker) and the two external hosts (payments, mail) all appear, and the externals sit outside the system boundary subgraph",
+        "[judge] Edges point from caller to callee (web to API, API to database) and each label names a protocol or verb; nothing is invented that the compose file does not support, or it is dashed and marked unverified",
+        "[judge] The reply ends with a short report naming the level, the files read, the unverified items and what was not checked"
+      ]
+    },
+    {
+      "id": "t2-sequence-too-many-actors",
+      "prompt": "Make a sequence diagram of the login flow described in this file. Put it in login.mmd.",
+      "files": ["evals/files/t2-login-flow/description.md"],
+      "assertions": [
+        "[script] mermaid_check.py login.mmd has verdict pass or warn with no error finding, and the first diagram has type sequence",
+        "[script] the checker reports at most 7 participants (metrics.nodes) in every diagram in the output files",
+        "[script] no finding with code undeclared_participant, orphan_node or unbalanced_block",
+        "[judge] The main path (password login, then two-factor if enabled, then token, then profile) is complete and in the order the description gives; the lockout and email path is either a separate diagram or left out with a stated reason, not mixed into the main path",
+        "[judge] Services that serve no part of the question, if dropped (for example Analytics or Audit Log), are named in a left-out list instead of silently missing",
+        "[judge] Message texts are short call-like phrases and replies use dashed arrows"
+      ]
+    },
+    {
+      "id": "t3-split-messy-diagram",
+      "prompt": "This diagram got out of hand and nobody can read it. Fix it. Keep the information, but make it readable. Save the result into out/ as .mmd files.",
+      "files": ["evals/files/t3-messy-diagram/system.mmd"],
+      "assertions": [
+        "[script] mermaid_check.py on every file in out/ has verdict pass or warn with no error finding, and no file triggers dense, mixed_levels, no_direction, unlabeled_edges, opaque_ids or hub_node",
+        "[script] there are at least 2 files in out/, and the union of node labels across them still contains Browser, Auth Service, Orders Service, Catalog Service, Kafka, Email Worker and Inventory Worker",
+        "[script] no output file contains both a label with parentheses ending in () and a label containing the word Kafka or Redis",
+        "[judge] The code-level material (validateOrder, order_rules.py, PricingEngine) is separated from the infrastructure view or dropped with a stated reason, and the metrics fan-in (Metrics node with 8 edges) is replaced by a grouped or stated pattern",
+        "[judge] Every original relationship between systems still appears in some diagram, or the reply lists what was folded away and where it went",
+        "[judge] The reply gives a short list of the diagrams produced, each with its question and level"
+      ]
+    }
+  ]
+}

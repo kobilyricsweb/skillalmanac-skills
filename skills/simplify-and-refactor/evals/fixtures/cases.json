@@ -1,0 +1,11 @@
+{
+  "note": "Expected values were checked by hand against before.py and each after file (see VERIFICATION.md). Paths are relative to evals/fixtures/. Keys under expect are fields of the JSON report; changed_signature_names and breaking_names are derived from changed_signatures.",
+  "cases": [
+    {"args": ["before.py", "good_after.py"], "exit": 0, "expect": {"verdict": "surface_preserved", "surface_preserved": true, "ast_identical": false, "removed_public_names": [], "added_public_names": [], "changed_signature_names": [], "breaking_names": [], "imports.removed": ["import sys"], "imports.added": [], "bodies_changed": ["Order.total", "summarize"], "top_level_definitions.preserved": true}},
+    {"args": ["before.py", "bad_after.py"], "exit": 1, "expect": {"verdict": "surface_changed", "surface_preserved": false, "removed_public_names": ["legacy_total", "summarize"], "added_public_names": ["summarise"], "possible_renames": [{"from": "summarize", "to": "summarise"}], "changed_signature_names": ["Order", "Order.total", "load_path"], "breaking_names": ["Order", "Order.total"], "imports.removed": ["import sys"], "imports.added": ["import json"], "bodies_changed": ["load_path"], "top_level_definitions.preserved": false}},
+    {"args": ["before.py", "reformatted_after.py"], "exit": 0, "expect": {"verdict": "ast_identical", "ast_identical": true, "surface_preserved": true, "bodies_changed": [], "imports.added": [], "imports.removed": []}},
+    {"args": ["before.py", "syntax_error.py"], "exit": 2, "expect": {}},
+    {"args": ["before.py", "does_not_exist.py"], "exit": 2, "expect": {}},
+    {"args": ["before.py"], "exit": 2, "expect": {}}
+  ]
+}

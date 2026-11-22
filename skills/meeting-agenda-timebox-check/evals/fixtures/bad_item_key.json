@@ -1,0 +1,6 @@
+{
+  "meeting": {"length_min": 30},
+  "items": [
+    {"title": "Pricing", "owner": "Ana", "type": "decide", "minuts": 10, "outcome": "Do we raise the price?"}
+  ]
+}

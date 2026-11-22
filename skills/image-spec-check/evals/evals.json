@@ -1,0 +1,45 @@
+{
+  "skill_name": "image-spec-check",
+  "note": "Drafted, not run with an agent. No with-skill or baseline run exists for these tasks. Sample folders are built with the setup command (images are generated, so the package stays text-only). [script] assertions use scripts/image_spec_check.py or a plain check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task also has judge assertions about things it does not control.",
+  "evals": [
+    {
+      "id": "t1-hero-exports",
+      "setup": "python evals/make_samples.py <work>/exports hero",
+      "prompt": "I exported our homepage hero images into the exports folder. The hero spec is in specs.csv (row 'hero'). Which files fail, and what exactly do I do to each? Save the machine-readable result to report.json.",
+      "files": ["evals/fixtures/specs.csv"],
+      "assertions": [
+        "[script] report.json parses as JSON and has summary.by_status with pass 1, resize 1, crop_or_pad 1, reexport 3, unreadable 1 for spec hero",
+        "[script] report.json lists hero_wide.jpg with suggest.crop_box x 400, y 0, w 1600, h 900",
+        "[script] none of the files in exports/ changed (hashes equal to the generated originals)",
+        "[judge] The reply names hero_1px.jpg as a one-pixel resize, hero_big.jpg as over the size limit, hero_wrongext.jpg as a PNG saved with a .jpg extension, and hero_trunc.jpg as damaged",
+        "[judge] The reply groups fixes by action (resize, crop or pad, re-export, replace) and ends with what was not checked",
+        "[judge] The reply does not claim any image looks good or bad visually"
+      ]
+    },
+    {
+      "id": "t2-print-flyer",
+      "setup": "python evals/make_samples.py <work>/flyers print",
+      "prompt": "The printer wants A5 at 300 dpi, 1748 x 2480 pixels, PNG or JPEG. My exports are in the flyers folder. Build the spec yourself from those numbers and check them. Which are safe to send?",
+      "files": [],
+      "assertions": [
+        "[script] a specs CSV exists whose row has width 1748, height 2480, size_rule exact or blank, formats png and jpg, min_dpi 300",
+        "[script] the checker run on flyers/ reports pass for a5_300.png, a5_jfif.jpg, a5_exif.jpg and a5_dpcm.jpg and reexport for a5_nodpi.png, a5_72.png and a5_jfif_aspect.jpg",
+        "[judge] The reply says a5_nodpi.png and a5_jfif_aspect.jpg have no density metadata, not that they are low resolution",
+        "[judge] The reply says setting the density does not add pixels, or gives the largest print size the pixels support",
+        "[judge] empty.png is reported as an empty file to replace, not as a failing spec"
+      ]
+    },
+    {
+      "id": "t3-no-spec-given",
+      "setup": "python evals/make_samples.py <work>/covers banner",
+      "prompt": "Check the images in the covers folder against the right size for a social network link preview. You know what size that is.",
+      "files": [],
+      "assertions": [
+        "[judge] The reply does not state a width, height or ratio as the current requirement of any named platform; it asks for the spec or for the platform's own upload instructions",
+        "[judge] If it proceeds with a number, that number is in a row named guess-... and the report says it is unverified",
+        "[script] no file in covers/ was changed",
+        "[judge] The reply explains briefly why it needs the user's numbers (rules change) and offers to run the check as soon as it has them"
+      ]
+    }
+  ]
+}

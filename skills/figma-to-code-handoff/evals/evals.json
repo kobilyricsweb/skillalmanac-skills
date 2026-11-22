@@ -1,0 +1,45 @@
+{
+  "skill_name": "figma-to-code-handoff",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/tokens_check.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-tokens",
+      "prompt": "Our designer sent evals/files/t1-tokens/tokens.json exported from Figma. Make it safe to turn into CSS variables with a dark mode, save the fixed file as tokens.fixed.json, and give me the CSS.",
+      "files": ["evals/files/t1-tokens/tokens.json"],
+      "assertions": [
+        "[script] tokens_check.py check tokens.fixed.json exits 0 and prints ok true",
+        "[script] tokens.fixed.json has no key containing a space and every spacing value has a unit",
+        "[script] The CSS contains '--color-bg-card' defined with var(--color-bg-panel) or another existing token, and both [data-theme=\"light\"] and [data-theme=\"dark\"] blocks define --color-bg-page",
+        "[judge] The reply states that the original had an alias to a token that does not exist (bg.panel), and did not invent a colour for it without saying the value is a guess or asking the designer",
+        "[judge] The dark value for bg.page was not made up silently: the reply says it is missing from the export and either asks or marks it as a proposal",
+        "[judge] The reply ends with a short report that lists renames as old -> new and what was not checked"
+      ]
+    },
+    {
+      "id": "t2-autolayout",
+      "prompt": "Write the CSS for the Pricing Card described in evals/files/t2-autolayout/pricing_card.md. Plain CSS, class names of your choice, a short table of what each Figma setting became.",
+      "files": ["evals/files/t2-autolayout/pricing_card.md"],
+      "assertions": [
+        "[script] The card rule has 'flex-direction: column', 'gap: 16px', 'padding: 24px', 'width: 320px', 'border-radius: 12px', 'overflow: hidden' and 'position: relative'",
+        "[script] The card has 'box-sizing: border-box' and a 1px solid #E5E7EB border (inside stroke)",
+        "[script] The header rule has 'justify-content: space-between' and the price has 'letter-spacing: -0.02em' and 'line-height: 40px'",
+        "[script] The ribbon rule has 'position: absolute', 'top: 12px' and 'right: 12px'",
+        "[judge] Fill-width children inside a vertical card are handled with align-self: stretch (or by default stretch), not with width: 100% plus a padding overflow bug",
+        "[judge] The reply says nothing about the stroke or Hug behaviour that the export does not state, or flags it as an assumption"
+      ]
+    },
+    {
+      "id": "t3-component",
+      "prompt": "Turn evals/files/t3-component/button_component.md into a React Button props definition and tell me what to call the exported assets.",
+      "files": ["evals/files/t3-component/button_component.md"],
+      "assertions": [
+        "[script] The reply has props for variant (primary, secondary, ghost) and size (sm, md, lg) as string unions",
+        "[script] The reply does not define a prop named state; hover, pressed, focused and disabled are handled by :hover, :active, :focus-visible and the disabled attribute",
+        "[script] The names icon-plus.svg and icon-arrow-right.svg appear, and no file name contains a space or a slash",
+        "[judge] 'Show leading icon' and 'Leading icon' are merged into one optional leadingIcon slot, not two props",
+        "[judge] The asset 'hero image final (2)' is not silently renamed as if final: the reply asks which version is current or flags it",
+        "[judge] The reply lists what it could not decide (for example the sm/md/lg names are a proposal) under a heading such as 'left for the designer'"
+      ]
+    }
+  ]
+}

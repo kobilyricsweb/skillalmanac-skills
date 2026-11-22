@@ -1,0 +1,15 @@
+{
+  "note": "Each case runs scripts/test_audit.py with the args (file names relative to evals/fixtures/) and compares exit code, ok, summary counts and the sorted (rule, line) pairs of the findings. Expected values were read by hand from the fixture files.",
+  "cases": [
+    {"args": ["check", "bad_tests.py"], "exit": 1, "expect": {"ok": false, "tests": 10, "errors": 7, "warnings": 0, "skipped": 2,
+      "findings": [["NAME_CONTRACT", 7], ["NO_ASSERTION", 11], ["TRIVIAL_ASSERT", 15], ["DUPLICATE_BODY", 24], ["SKIP_NO_REASON", 29], ["SKIP_NO_REASON", 40], ["TRIVIAL_ASSERT", 46]]}},
+    {"args": ["check", "good_tests.py"], "exit": 0, "expect": {"ok": true, "tests": 5, "errors": 0, "warnings": 0, "skipped": 1, "findings": []}},
+    {"args": ["check", "bad_tests.test.js"], "exit": 1, "expect": {"ok": false, "tests": 9, "errors": 8, "warnings": 0, "skipped": 2,
+      "findings": [["NAME_CONTRACT", 4], ["NO_ASSERTION", 8], ["TRIVIAL_ASSERT", 12], ["DUPLICATE_BODY", 16], ["DUPLICATE_BODY", 20], ["SKIP_NO_REASON", 24], ["ONLY_LEFT", 33], ["TRIVIAL_ASSERT", 37]]}},
+    {"args": ["check", "good_tests.test.js"], "exit": 0, "expect": {"ok": true, "tests": 4, "errors": 0, "warnings": 0, "skipped": 1, "findings": []}},
+    {"args": ["check", "heavy_tests.py"], "exit": 0, "expect": {"ok": true, "tests": 1, "errors": 0, "warnings": 1, "skipped": 0, "findings": [["ASSERT_HEAVY", 4]]}},
+    {"args": ["check", "empty.py"], "exit": 2, "expect": {"ok": false, "has_error": true}},
+    {"args": ["check", "syntax_error.py"], "exit": 2, "expect": {"ok": false, "has_error": true}},
+    {"args": ["check", "does_not_exist.py"], "exit": 2, "expect": {"ok": false, "has_error": true}}
+  ]
+}

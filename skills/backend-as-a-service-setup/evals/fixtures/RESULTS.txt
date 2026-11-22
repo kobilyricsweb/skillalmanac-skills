@@ -1,0 +1,27 @@
+python evals/run_fixtures.py   (Windows 11, Python 3.11.9, 2026-11-21)
+PASS good: findings
+PASS good: verdict and exit
+PASS good: no secret value in output
+PASS bad_env: findings
+PASS bad_env: verdict and exit
+PASS bad_env: no secret value in output
+PASS drift: findings
+PASS drift: verdict and exit
+PASS drift: no secret value in output
+PASS bad_rules: findings
+PASS bad_rules: verdict and exit
+PASS bad_rules: no secret value in output
+PASS bad_source: findings
+PASS bad_source: verdict and exit
+PASS bad_source: no secret value in output
+PASS tracked: findings
+PASS tracked: verdict and exit
+PASS tracked: no secret value in output
+PASS fail-on never exits 0
+PASS fail-on critical on drift exits 0
+PASS fail-on medium on drift exits 1
+PASS tracked index parsed
+PASS missing folder exits 2
+PASS no argument exits 2
+24/24 checks passed
+exit code 0

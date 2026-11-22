@@ -1,0 +1,10 @@
+PASS Bad.swift
+PASS Good.swift
+PASS Edge.swift
+PASS FeedTests.swift
+PASS FeedTests.swift --include-tests
+PASS LongBody.swift
+PASS LongBody.swift --max-body-lines 10
+PASS LongBody.swift --max-body-lines 5
+PASS no_such_dir
+9/9 cases passed

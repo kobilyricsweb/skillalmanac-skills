@@ -1,0 +1,15 @@
+{
+  "note": "Expected values were produced by hand from the fixture design (each defect planted on purpose) and compared with the script output; see VERIFICATION.md.",
+  "cases": [
+    {"file": "good_workflow.json", "exit": 0, "ok": true, "errors": 0, "warnings": 0, "findings": []},
+    {"file": "bad_workflow.json", "exit": 1, "ok": false, "errors": 11, "warnings": 11,
+     "findings": ["W001:error", "W001:warning", "W002:error", "W002:error", "W003:error", "W003:error", "W003:error", "W003:error",
+                  "W004:error", "W004:warning", "W005:error", "W006:error", "W008:error", "W009:warning", "W010:warning",
+                  "W011:warning", "W011:warning", "W012:warning", "W012:warning", "W015:warning", "W016:warning", "W016:warning"]},
+    {"file": "loop_key_shared.json", "exit": 1, "ok": false, "errors": 1, "warnings": 2,
+     "findings": ["W010:error", "W014:warning", "W017:warning"]},
+    {"file": "broken.json", "exit": 2, "ok": false, "fatal": "not valid JSON: Expecting value: line 2 column 1 (char 12)"},
+    {"file": "empty.json", "exit": 2, "ok": false, "fatal": "file is empty"},
+    {"file": "does_not_exist.json", "exit": 2, "ok": false, "fatal": "cannot read file: No such file or directory"}
+  ]
+}

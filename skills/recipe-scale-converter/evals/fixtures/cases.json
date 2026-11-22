@@ -1,0 +1,85 @@
+{
+  "note": "Expected values were worked out by hand from the rounding tables and unit constants in SKILL.md and references/tables.md before being saved. File names in args are resolved inside evals/fixtures.",
+  "cases": [
+    {
+      "id": "cake-x1.5-keep-units",
+      "args": ["cake.txt", "--factor", "1.5"],
+      "exit": 0,
+      "expect": {
+        "factor": 1.5,
+        "scaled_list": ["Dry:", "3 3/8 cups all-purpose flour", "2 1/4 tsp baking powder", "3/4 tsp salt", "1 1/2 cups (340 g) butter, softened", "2 1/4 cups granulated sugar", "4 1/2 large eggs", "1 1/2 tbsp vanilla extract", "1 1/2 cups milk", "salt to taste"],
+        "warning_codes": ["COOK_TIME"],
+        "flags": [["header"], [], [], [], [], [], ["fractional_egg"], [], [], ["no_quantity"]],
+        "unparsed_count": 0
+      }
+    },
+    {
+      "id": "cake-x1-metric-mass-bundled-density",
+      "args": ["cake.txt", "--factor", "1", "--units", "metric", "--basis", "mass"],
+      "exit": 0,
+      "expect": {
+        "scaled_list": ["Dry:", "270 g all-purpose flour", "1 1/2 tsp baking powder", "3 g salt", "230 g butter, softened", "300 g granulated sugar", "3 large eggs", "1 tbsp vanilla extract", "250 g milk", "salt to taste"],
+        "warning_codes": [],
+        "flags": [["header"], [], ["no_density"], [], [], [], [], ["no_density"], [], ["no_quantity"]],
+        "confidence": ["n/a", "high", "low", "medium", "high", "high", "high", "low", "high", "n/a"]
+      }
+    },
+    {
+      "id": "cake-x1-user-density-overrides",
+      "args": ["cake.txt", "--factor", "1", "--units", "metric", "--basis", "mass", "--density", "density_user.csv"],
+      "exit": 0,
+      "expect": {
+        "scaled_list": ["Dry:", "290 g all-purpose flour", "1 1/2 tsp baking powder", "3 g salt", "230 g butter, softened", "300 g granulated sugar", "3 large eggs", "1 tbsp vanilla extract", "250 g milk", "salt to taste"],
+        "confidence": ["n/a", "high", "low", "medium", "high", "high", "high", "low", "high", "n/a"]
+      }
+    },
+    {
+      "id": "chili-4-to-20-servings",
+      "args": ["chili.txt", "--from-servings", "4", "--to-servings", "20"],
+      "exit": 1,
+      "expect": {
+        "factor": 5.0,
+        "scaled_list": ["5/8-1 1/4 cups olive oil", "2 1/2 tsp cayenne pepper", "2 1/2 tbsp salt", "5 (14 oz) cans tomatoes", "10 cups beef stock", "5 sticks butter", "5 sticks cinnamon", "10 sacks of potatoes", "5 cups flour", "1 kg flour"],
+        "warning_codes": ["FACTOR_HIGH", "COOK_TIME"],
+        "flags": [[], ["nonlinear_spice"], ["nonlinear_salt"], [], ["nonlinear_simmer"], [], ["ambiguous_unit", "nonlinear_spice"], ["unknown_unit"], ["unit_mismatch"], ["unit_mismatch"]],
+        "confidence": ["high", "medium", "medium", "high", "medium", "high", "low", "low", "medium", "medium"],
+        "unparsed_reasons": ["zero denominator in the quantity", "number written as a word; rewrite it with digits"]
+      }
+    },
+    {
+      "id": "brownies-pan-9x13-to-8x8",
+      "args": ["brownies.txt", "--from-pan", "9x13", "--to-pan", "8x8"],
+      "exit": 0,
+      "expect": {
+        "factor": 0.547,
+        "scaled_list": ["9 tbsp sugar", "6 1/2 tbsp butter", "1 large eggs", "4 1/2 tbsp cocoa powder", "3 1/4 tsp honey"],
+        "warning_codes": ["PAN_DEPTH", "COOK_TIME"]
+      }
+    },
+    {
+      "id": "brownies-factor-0.2-too-small",
+      "args": ["brownies.txt", "--factor", "0.2"],
+      "exit": 0,
+      "expect": {
+        "scaled_list": ["3 1/4 tbsp sugar", "7 1/4 tsp butter", "1/2 large eggs", "4 3/4 tsp cocoa powder", "1 1/4 tsp honey"],
+        "warning_codes": ["FACTOR_LOW", "COOK_TIME"],
+        "flags": [[], [], ["fractional_egg", "rounding_large"], [], []]
+      }
+    },
+    {
+      "id": "compound-quantities-x2",
+      "args": ["compound.txt", "--factor", "2"],
+      "exit": 0,
+      "expect": {
+        "scaled_list": ["2 1/4 cups flour", "2 1/2 lb butter", "3 cups milk", "1 cup + 3 oz sugar"],
+        "flags": [[], [], [], ["unparsed_compound"]],
+        "confidence": ["high", "high", "high", "low"],
+        "unparsed_count": 0
+      }
+    },
+    {"id": "factor-zero-is-usage-error", "args": ["cake.txt", "--factor", "0"], "exit": 2, "expect": {}},
+    {"id": "no-mode-is-usage-error", "args": ["cake.txt"], "exit": 2, "expect": {}},
+    {"id": "missing-recipe-file", "args": ["not_there.txt", "--factor", "2"], "exit": 2, "expect": {}},
+    {"id": "empty-recipe-file", "args": ["empty.txt", "--factor", "2"], "exit": 2, "expect": {}}
+  ]
+}

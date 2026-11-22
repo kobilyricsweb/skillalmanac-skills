@@ -1,0 +1,4 @@
+{"id": "te1", "prompt": "What is the capital of Australia? Answer with the city name only.", "grader": "exact", "expected": "Canberra", "tag": "typical"}
+{"id": "te2", "prompt": "Which ocean lies between Africa and Australia, exactly?", "grader": "contains", "expected": "Indian", "tag": "typical"}
+{"id": "te3", "prompt": "Which planet is the largest in the solar system?", "grader": "contains", "expected": "Jupiter", "tag": "typical"}
+{"id": "te4", "prompt": "How many legs does a spider have?", "grader": "numeric", "expected": 8, "tolerance": 0, "tag": "typical"}

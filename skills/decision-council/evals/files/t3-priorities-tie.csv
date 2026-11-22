@@ -1,0 +1,6 @@
+option,Impact,Effort,Risk
+weight,5,3,2
+direction,benefit,cost,cost
+X,4,2,2
+Y,5,3,3
+Z,2,3,3

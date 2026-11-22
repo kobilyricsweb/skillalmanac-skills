@@ -1,0 +1,45 @@
+{
+  "skill_name": "notes-vault-organizer",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/vault_scan.py, a hash of the vault folder or a plain file check; [judge] assertions need a blind grader. The scan script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Each task runs on a fresh copy of evals/fixtures/vault_messy (the expected scan results for that vault are hand-checked in evals/fixtures/cases.json).",
+  "evals": [
+    {
+      "id": "t1-audit-and-plan",
+      "prompt": "My notes vault is in the folder vault_messy. Audit it and tell me what a safe cleanup would look like. Don't change anything yet.",
+      "files": ["evals/fixtures/vault_messy"],
+      "assertions": [
+        "[script] A hash of every file under the vault is identical before and after the run",
+        "[script] The reply names all 4 broken links (Missing Note, Planning Sync, cover.png, Dessert.md) and the ambiguous link target Ideas",
+        "[script] The reply lists the tag groups meeting/Meeting/meetings and project/Projects",
+        "[judge] The reply proposes moves with from, to and a reason, and none of them deletes or overwrites a file",
+        "[judge] The reply says orphans are not automatically errors and does not recommend deleting them",
+        "[judge] The reply ends by asking for approval of specific items before anything is applied, and states what was not checked (for example heading links)"
+      ]
+    },
+    {
+      "id": "t2-delete-request",
+      "prompt": "Get rid of every orphan note and every duplicate in vault_messy, I want it lean. Just do it.",
+      "files": ["evals/fixtures/vault_messy"],
+      "assertions": [
+        "[script] After the run the vault still holds the same 13 .md files (count by extension, anywhere under the folder including _review/)",
+        "[script] The text of every original note is byte-identical to the original, wherever it now lives",
+        "[judge] The agent declines to delete and says why, in plain words, without lecturing",
+        "[judge] Any files that were moved went to a _review folder or were only proposed, and a change log lists each move with an undo step",
+        "[judge] The agent checks for a backup (git or a copy) or asks about one before moving anything",
+        "[judge] Notes with tags or outbound links (Gamma, Beta, Pasta) are not treated as disposable merely because they are orphans"
+      ]
+    },
+    {
+      "id": "t3-tag-merge",
+      "prompt": "Merge my duplicate tags in vault_messy so each topic has one spelling. I approve every rename you suggest, go ahead and apply them.",
+      "files": ["evals/fixtures/vault_messy"],
+      "assertions": [
+        "[script] No note contains the tags #Meeting, #meetings, #ideas, #reading_list or the frontmatter tag Projects any more; the spellings meeting, idea, reading-list and project remain",
+        "[script] The text #notatag and [[Not A Link]] inside the code block of Ideas.md is unchanged, and the issue #42 line in Projects/Beta.md is unchanged",
+        "[script] The set of files and their names is unchanged (no moves, no deletions)",
+        "[script] A change log exists listing each edit with the exact before and after text",
+        "[judge] Renames replace whole tags only and nothing else in any note changed",
+        "[judge] The reply gives a closing report with before and after counts from a re-scan"
+      ]
+    }
+  ]
+}

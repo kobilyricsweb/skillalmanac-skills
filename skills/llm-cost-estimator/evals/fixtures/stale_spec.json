@@ -1,0 +1,19 @@
+{
+  "model": "model-a",
+  "price_table": {
+    "as_of": "2026-01-01",
+    "currency": "USD",
+    "unit": "per_1K",
+    "source": "EXAMPLE NUMBERS for tests only, not a real vendor price",
+    "models": {
+      "model-a": {"input": 0.002, "output": 0.001}
+    }
+  },
+  "usage": {
+    "requests_per_day": 100,
+    "input_tokens_avg": 1000,
+    "output_tokens_avg": 200,
+    "prefix_share": 0.5
+  },
+  "options": {"use_cache": true, "calls_per_prefix": 5}
+}

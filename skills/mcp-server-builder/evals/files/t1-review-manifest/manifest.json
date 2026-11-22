@@ -1,0 +1,33 @@
+[
+  {
+    "name": "getOrders",
+    "description": "Gets orders.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "customer": {"type": "string"},
+        "ids": {"type": "array", "items": {"type": "string"}, "description": "Order ids to fetch."}
+      }
+    }
+  },
+  {
+    "name": "remove_order",
+    "description": "Deletes an order permanently. Use when the customer asks to cancel and remove an order.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {"order_id": {"type": "string", "description": "Order id."}},
+      "required": ["order_id"],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "refund_order",
+    "description": "Refunds an order to the original payment method. Use when a refund has been approved by the user.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {"order_id": {"type": "string", "description": "Order id."}, "amount": {"type": "number", "description": "Refund amount."}},
+      "required": ["order_id", "amount"],
+      "additionalProperties": false
+    }
+  }
+]

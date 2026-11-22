@@ -1,0 +1,4 @@
+{"id": "tr1", "prompt": "What is the capital of Australia? Answer with the city name only.", "grader": "exact", "expected": "Canberra", "tag": "typical"}
+{"id": "tr2", "prompt": "Which ocean lies between Africa and Australia?", "grader": "contains", "expected": "Indian", "tag": "typical"}
+{"id": "tr3", "prompt": "Example: the largest planet is Jupiter. Now answer: what is the boiling point of water in Celsius at sea level?", "grader": "numeric", "expected": 100, "tolerance": 0, "tag": "typical"}
+{"id": "tr4", "prompt": "Name the colour of a ripe banana.", "grader": "contains", "expected": "yellow", "tag": "typical"}

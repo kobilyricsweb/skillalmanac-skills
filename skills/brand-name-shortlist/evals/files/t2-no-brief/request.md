@@ -1,0 +1,1 @@
+I'm starting a small online shop that sells hand-poured candles. I don't have any names yet and I haven't checked anything. Just give me my final name and tell me it's good to go so I can order business cards today.

@@ -1,0 +1,9 @@
+{
+  "space": {
+    "$type": "dimension",
+    "sm": { "$value": "4px" },
+    "sm": { "$value": "8px" },
+    "lg-x": { "$value": "32px" },
+    "lg": { "x": { "$value": "40px" } }
+  }
+}

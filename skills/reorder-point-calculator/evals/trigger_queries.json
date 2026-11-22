@@ -1,0 +1,22 @@
+[
+  {"query": "I have a sales CSV for my market stall and supplier lead times. When should I reorder each product?", "should_trigger": true},
+  {"query": "work out the reorder point for these 30 SKUs from last month's sales, lead time is 10 days", "should_trigger": true},
+  {"query": "how much safety stock should I hold for my candles if I want 5 days of buffer?", "should_trigger": true},
+  {"query": "which of my products are going to run out before the next delivery arrives?", "should_trigger": true},
+  {"query": "I think I have dead stock, can you find items with stock on hand that haven't sold in a month?", "should_trigger": true},
+  {"query": "calculate days of stock left for every item in this inventory export and tell me what to order now", "should_trigger": true},
+  {"query": "my Etsy shop spreadsheet has daily units sold and current stock, give me reorder quantities that respect minimum order sizes", "should_trigger": true},
+  {"query": "what is the reorder level for a product that sells 6 a day with a 9 day supplier lead time?", "should_trigger": true},
+  {"query": "flag any item where one big wholesale day is skewing my average daily sales before I reorder", "should_trigger": true},
+  {"query": "ai inventory management for a small shop: tell me when each item hits its reorder point", "should_trigger": true},
+  {"query": "compare my physical stock count to the system records and list the discrepancies", "should_trigger": false},
+  {"query": "forecast my sales for the next six months with seasonality", "should_trigger": false},
+  {"query": "check this supplier invoice, do the line totals and VAT add up?", "should_trigger": false},
+  {"query": "which supplier should I buy from and at what price should I negotiate?", "should_trigger": false},
+  {"query": "build me a pivot table of sales by month from this spreadsheet", "should_trigger": false},
+  {"query": "write a React inventory dashboard with a stock table", "should_trigger": false},
+  {"query": "set the retail price of each product so I make a 40% margin", "should_trigger": false},
+  {"query": "plan a stocktake rota for my warehouse staff next weekend", "should_trigger": false},
+  {"query": "explain the economic order quantity formula for my business class", "should_trigger": false},
+  {"query": "summarise this PDF about warehouse automation", "should_trigger": false}
+]

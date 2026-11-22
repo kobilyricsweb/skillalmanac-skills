@@ -1,0 +1,44 @@
+{
+  "skill_name": "voiceover-script-prep",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/prep_voiceover.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Script results for the three inputs were produced and read by hand while building the fixtures (see VERIFICATION.md).",
+  "evals": [
+    {
+      "id": "t1-explainer",
+      "prompt": "Prepare this explainer script for a text-to-speech tool that accepts 300 characters per request. I read at about 150 words per minute. Give me the spoken script, the chunks and a time estimate. Save them to out/.",
+      "files": ["evals/files/t1-explainer/script.txt"],
+      "assertions": [
+        "[script] out/spoken.txt exists and contains 'twenty nineteen', 'eighteen percent' and 'fifteenth of January, twenty twenty-seven'",
+        "[script] prep_voiceover.py on the same input with --max-chars 300 --wpm 150 prints verdict ready and no chunk in out/chunks.jsonl has chars above 300",
+        "[script] out/spoken.txt contains no digit and none of the characters $ % @ &",
+        "[judge] The long address with a query string is not read aloud in full; the reply flags it and suggests 'link in the description' or similar",
+        "[judge] The reply states the duration and says it is an estimate; it notes that '6.5 kW system' reads 'kilowatts system' and offers 'kilowatt system'",
+        "[judge] The reply ends with a short summary that names what was not checked (how a real voice reads the result)"
+      ]
+    },
+    {
+      "id": "t2-unknowns",
+      "prompt": "Prep this onboarding script for TTS. Chunk limit is 2000 characters. Tell me everything the tool could trip over, and do not guess at anything ambiguous.",
+      "files": ["evals/files/t2-long-urls/script.txt"],
+      "assertions": [
+        "[script] The reply names '03/04/2026' as unexpanded because day and month order is unknown, and does not convert it",
+        "[script] The reply lists SDK and SOW as acronyms needing a decision, and does not list API or CEO",
+        "[script] The reply reports the unmatched double quote in paragraph 1",
+        "[judge] The reply asks the user for the missing decisions (date order, how to say SDK and SOW, how to handle the long URL) instead of choosing silently",
+        "[judge] The reply does not claim the script is ready while blockers remain",
+        "[judge] The summary follows the fixed Duration / Chunks / Changed / Left for you / Not checked layout"
+      ]
+    },
+    {
+      "id": "t3-multilingual",
+      "prompt": "Get this tour script ready for TTS. Limit 500 characters, 160 wpm. The Hebrew words are part of the script.",
+      "files": ["evals/files/t3-multilingual/script.txt"],
+      "assertions": [
+        "[script] The reply reports mixed_script (Hebrew) as a blocker and says the rules cover English only",
+        "[script] spoken text, if produced, contains 'nine A M' and 'twenty-five dollars'",
+        "[script] The reply does not transliterate or translate the Hebrew words itself",
+        "[judge] The reply recommends a separate voice or language setting for the Hebrew passage, or asks the user for a transliteration",
+        "[judge] The duration is given as an estimate that excludes how the Hebrew will be spoken"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,296 @@
+{
+  "note": "Expected values were worked out by hand from the fixture files before the script was run; the working is in VERIFICATION.md.",
+  "cases": [
+    {
+      "name": "app.log default: stack traces attached, exception class splits clusters, secrets masked",
+      "args": ["app.log"],
+      "exit": 0,
+      "stdout_absent": ["hunter2", "AKIAABCDEFGHIJKLMNOP", "alice@example.com"],
+      "expect": {
+        "stats.lines": 24,
+        "stats.continuation_lines": 12,
+        "stats.unparseable_lines": 1,
+        "stats.records": 11,
+        "stats.in_scope": 9,
+        "stats.records_by_level.error": 8,
+        "stats.secrets_masked.aws_key": 1,
+        "stats.secrets_masked.email": 1,
+        "stats.secrets_masked.keyed_value": 2,
+        "total_clusters": 5,
+        "window.start": "2026-11-20T10:00:05Z",
+        "window.end": "2026-11-20T10:05:30Z",
+        "clusters.0.signature": "app.db Connection refused to <IP> after <N> retries",
+        "clusters.0.count": 4,
+        "clusters.0.first_seen": "2026-11-20T10:00:05Z",
+        "clusters.0.last_seen": "2026-11-20T10:05:30Z",
+        "clusters.0.rate_per_min": 0.738,
+        "clusters.0.trend": "too_few",
+        "clusters.0.new_vs_baseline": null,
+        "clusters.1.signature": "app.api Unhandled exception for user <N> request <HEX> || KeyError",
+        "clusters.1.count": 2,
+        "clusters.1.stack_head.0": "Traceback (most recent call last):",
+        "clusters.2.signature": "app.auth Login failed for <EMAIL> password=<SECRET> token=<SECRET>",
+        "clusters.2.sample": "2026-11-20 10:04:00,000 ERROR app.auth Login failed for <EMAIL> password=<SECRET> token=<SECRET>",
+        "clusters.3.signature": "app.api Unhandled exception for user <N> request <HEX> || ValueError",
+        "clusters.4.signature": "app.main Out of memory killing worker <N>",
+        "clusters.4.level": "critical",
+        "warnings.0~": "no time zone"
+      }
+    },
+    {
+      "name": "app.log --since: only errors not seen before the window are new",
+      "args": ["app.log", "--since", "2026-11-20T10:03:00Z"],
+      "exit": 0,
+      "expect": {
+        "stats.in_scope": 6,
+        "stats.excluded_by_window": 3,
+        "window.start": "2026-11-20T10:03:00Z",
+        "clusters.0.signature": "app.api Unhandled exception for user <N> request <HEX> || KeyError",
+        "clusters.0.new_vs_baseline": true,
+        "clusters.4.signature": "app.db Connection refused to <IP> after <N> retries",
+        "clusters.4.new_vs_baseline": false,
+        "clusters.4.baseline_count": 3,
+        "clusters.4.triage_rank": 5
+      }
+    },
+    {
+      "name": "app.log --until: records at or after the bound are excluded",
+      "args": ["app.log", "--until", "2026-11-20T10:03:00Z"],
+      "exit": 0,
+      "expect": {
+        "stats.in_scope": 3,
+        "stats.excluded_by_window": 6,
+        "total_clusters": 1,
+        "clusters.0.count": 3
+      }
+    },
+    {
+      "name": "app.log --min-level warning keeps the warning cluster",
+      "args": ["app.log", "--min-level", "warning"],
+      "exit": 0,
+      "expect": {
+        "stats.in_scope": 10,
+        "total_clusters": 6,
+        "clusters.2.signature": "app.cache Slow response <N> ms for key <STR>",
+        "clusters.2.level": "warning"
+      }
+    },
+    {
+      "name": "service.jsonl: pino numeric levels, epoch ms, stack field, broken JSON line counted",
+      "args": ["service.jsonl"],
+      "exit": 0,
+      "expect": {
+        "stats.lines": 7,
+        "stats.records": 6,
+        "stats.unparseable_lines": 1,
+        "stats.in_scope": 4,
+        "warnings": [],
+        "total_clusters": 2,
+        "clusters.0.signature": "Payment failed for order <N>: card_declined",
+        "clusters.0.count": 3,
+        "clusters.0.rate_per_min": 0.923,
+        "clusters.1.signature": "Unhandled rejection || TypeError",
+        "clusters.1.level": "critical",
+        "clusters.1.first_seen": "2026-11-20T10:03:20Z",
+        "clusters.1.stack_head.1": "at charge (/srv/pay/charge.js:41:17)"
+      }
+    },
+    {
+      "name": "secrets.log: no secret survives in the output",
+      "args": ["secrets.log"],
+      "exit": 0,
+      "stdout_absent": ["sk-abcdefghij", "sk-zyxwvutsr", "abcdEFGH1234", "ijklMNOP5678", "s3cr3tpass", "MIIEowIBAAKCAQEA7", "eyJhbGciOiJIUzI1NiJ9", "eyJzdWIiOiIxMjM0In0"],
+      "expect": {
+        "stats.secrets_masked.api_token": 2,
+        "stats.secrets_masked.bearer": 1,
+        "stats.secrets_masked.jwt": 1,
+        "stats.secrets_masked.keyed_value": 1,
+        "stats.secrets_masked.private_key": 1,
+        "stats.secrets_masked.url_credentials": 1,
+        "clusters.0.signature": "vault Rotation failed with key <API_TOKEN> for client <N>",
+        "clusters.0.count": 2,
+        "clusters.2.signature": "http Fetch failed https://<CREDS>@git.example.com<PATH>",
+        "clusters.3.signature": "tls <PRIVATE_KEY>",
+        "clusters.4.signature": "auth jwt invalid <JWT>"
+      }
+    },
+    {
+      "name": "shapes.log: paths, UUIDs, URLs, hex, quoted strings and numbers collapse into one signature",
+      "args": ["shapes.log"],
+      "exit": 0,
+      "expect": {
+        "total_clusters": 4,
+        "clusters.0.signature": "io Cannot open <PATH>: permission denied",
+        "clusters.0.count": 3,
+        "clusters.1.signature": "net Request <UUID> to https://api.example.com<PATH> failed with status <N>",
+        "clusters.1.count": 2,
+        "clusters.2.signature": "job Job <STR> crashed at <HEX> on node <N>",
+        "clusters.2.count": 2,
+        "clusters.3.signature": "job can't parse <STR> near column <N>"
+      }
+    },
+    {
+      "name": "near.log: one-word variants of a long message merge",
+      "args": ["near.log"],
+      "exit": 0,
+      "expect": {
+        "total_clusters": 3,
+        "clusters.0.count": 4,
+        "clusters.0.first_seen": "2026-11-20T12:00:00Z",
+        "clusters.0.last_seen": "2026-11-20T12:00:30Z",
+        "clusters.0.merged_variants.0": "proxy Upstream request to host beta timed out while waiting for response headers from backend pool",
+        "clusters.1.signature": "disk Disk full on alpha",
+        "clusters.1.count": 1,
+        "clusters.2.signature": "disk Disk full on beta"
+      }
+    },
+    {
+      "name": "near.log with threshold 1.0: nothing merges",
+      "args": ["near.log", "--merge-threshold", "1.0"],
+      "exit": 0,
+      "expect": {
+        "total_clusters": 5,
+        "clusters.0.count": 2,
+        "clusters.1.count": 1
+      }
+    },
+    {
+      "name": "after.log against before.log: new, burst, rising, steady, vanished",
+      "args": ["after.log", "--baseline", "before.log"],
+      "exit": 0,
+      "expect": {
+        "stats.in_scope": 27,
+        "window.start": "2026-11-20T10:00:00Z",
+        "window.end": "2026-11-20T10:24:00Z",
+        "total_clusters": 4,
+        "clusters.0.signature": "payments Payment gateway returned <N> for order <N>",
+        "clusters.0.new_vs_baseline": true,
+        "clusters.0.baseline_count": 0,
+        "clusters.0.count": 2,
+        "clusters.0.triage_reason": "new compared with the baseline",
+        "clusters.1.signature": "sched Worker heartbeat lost for node <N>",
+        "clusters.1.trend": "burst",
+        "clusters.1.count": 12,
+        "clusters.1.rate_per_min": 0.5,
+        "clusters.1.peak.count": 12,
+        "clusters.1.baseline_count": 1,
+        "clusters.2.signature": "inventory Timeout calling inventory service after <N> s",
+        "clusters.2.trend": "rising",
+        "clusters.2.count": 9,
+        "clusters.2.baseline_count": 2,
+        "clusters.2.histogram": [1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+        "clusters.3.signature": "cache Cache eviction failed for key <STR>",
+        "clusters.3.trend": "too_few",
+        "clusters.3.new_vs_baseline": false,
+        "clusters.3.baseline_count": 4,
+        "vanished.0.signature": "disk Disk almost full on volume <STR>",
+        "vanished.0.count": 3,
+        "vanished.0.last_seen": "2026-11-20T09:22:00Z"
+      }
+    },
+    {
+      "name": "skew.log: a timestamp one hour behind is reported",
+      "args": ["skew.log"],
+      "exit": 0,
+      "expect": {
+        "stats.backward_jumps": 1,
+        "stats.max_backward_seconds": 3630,
+        "clusters.0.count": 3,
+        "clusters.0.first_seen": "2026-11-20T09:00:30Z",
+        "warnings.0~": "clock skew"
+      }
+    },
+    {
+      "name": "garbage.log: mostly unparseable input exits 1 with a warning",
+      "args": ["garbage.log"],
+      "exit": 1,
+      "expect": {
+        "stats.unparseable_lines": 6,
+        "stats.unparseable_share": 0.8571,
+        "stats.records": 1,
+        "warnings.0~": "could not be parsed"
+      }
+    },
+    {
+      "name": "syslog.log with --include-unknown: no-level lines, year supplied",
+      "args": ["syslog.log", "--include-unknown", "--year", "2026"],
+      "exit": 0,
+      "expect": {
+        "stats.records_by_level.unknown": 3,
+        "stats.syslog_timestamps": 3,
+        "total_clusters": 2,
+        "clusters.0.signature": "web<N> sshd[<N>]: error: connect to <IP> port <N> failed",
+        "clusters.0.count": 2,
+        "clusters.0.first_seen": "2026-11-20T10:15:30Z",
+        "clusters.0.level": "unknown",
+        "warnings.1~": "syslog timestamps have no year"
+      }
+    },
+    {
+      "name": "syslog.log without --include-unknown: no level words, nothing in scope",
+      "args": ["syslog.log", "--year", "2026"],
+      "exit": 0,
+      "expect": {
+        "stats.records": 3,
+        "stats.in_scope": 0,
+        "total_clusters": 0
+      }
+    },
+    {
+      "name": "empty.log: no records exits 1",
+      "args": ["empty.log"],
+      "exit": 1,
+      "expect": {
+        "stats.records": 0,
+        "total_clusters": 0
+      }
+    },
+    {
+      "name": "report written to a new file inside the temporary directory",
+      "args": ["near.log", "--out", "@TMP/report.json"],
+      "exit": 0,
+      "expect": {
+        "total_clusters": 3
+      },
+      "expect_out": {
+        "schema_version": 1,
+        "total_clusters": 3,
+        "clusters.0.count": 4
+      }
+    },
+    {
+      "name": "refuses --out equal to the input log",
+      "args": ["app.log", "--out", "app.log"],
+      "exit": 2,
+      "unchanged": ["app.log"]
+    },
+    {
+      "name": "refuses --out equal to the input log even with --force",
+      "args": ["app.log", "--out", "app.log", "--force"],
+      "exit": 2,
+      "unchanged": ["app.log"]
+    },
+    {
+      "name": "refuses --out equal to the baseline even with --force",
+      "args": ["after.log", "--baseline", "before.log", "--out", "before.log", "--force"],
+      "exit": 2,
+      "unchanged": ["before.log", "after.log"]
+    },
+    {
+      "name": "refuses to replace an existing non-input file without --force",
+      "args": ["near.log", "--out", "empty.log"],
+      "exit": 2,
+      "unchanged": ["empty.log", "near.log"]
+    },
+    {
+      "name": "missing input file exits 2",
+      "args": ["no_such_file.log"],
+      "exit": 2
+    },
+    {
+      "name": "bad --since exits 2",
+      "args": ["app.log", "--since", "yesterday"],
+      "exit": 2
+    }
+  ]
+}

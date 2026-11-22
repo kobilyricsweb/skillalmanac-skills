@@ -1,0 +1,55 @@
+{
+  "note": "Each case runs scripts/eda_profile.py with args (a name ending in .csv is resolved inside evals/fixtures/) and checks the exit code and the listed JSON paths. A path is split on '/'; 'col:NAME' selects an entry of columns_detail by column name; a number indexes a list. Expected values were recomputed by hand or with an independent statistics-module check before being saved (see VERIFICATION.md).",
+  "cases": [
+    {"args": ["messy.csv", "--target", "churned"], "exit": 0, "expect": {
+      "rows_profiled": 36, "columns": 9, "bad_rows/count": 0, "duplicate_rows": 0,
+      "likely_id_columns": ["customer_id"], "sentinel_suspect_columns": ["age"], "case_variant_columns": ["region"],
+      "constant_columns": [], "missing_over_20_pct/0/name": "cancel_reason", "missing_over_20_pct/0/missing_pct": 66.67,
+      "col:age/type": "integer", "col:age/missing": 2, "col:age/missing_tokens": {"na": 2},
+      "col:age/numeric/n": 34, "col:age/numeric/median": 41.5, "col:age/numeric/mean": 126.059, "col:age/numeric/max": 999,
+      "col:age/sentinel_suspects": [{"value": 999, "count": 3}],
+      "col:monthly_spend/type": "float", "col:monthly_spend/numeric/median": 42.75, "col:monthly_spend/numeric/max": 4999.5,
+      "col:monthly_spend/numeric/outliers_iqr_3/above": 1,
+      "col:zip/type": "string", "col:zip/flags": ["zero_padded_codes"],
+      "col:region/distinct": 4, "col:region/case_variant_groups/count": 1, "col:region/whitespace_padded_values": 1,
+      "col:signup_date/type": "date", "col:signup_date/date/min": "2024-01-03", "col:signup_date/date/max": "2024-05-17",
+      "col:signup_date/date/row_order": "ascending",
+      "near_duplicate_numeric_pairs/0/r": 1.0,
+      "target/majority_share": 0.6667, "target/top_numeric_correlations/0/r": 0.2492,
+      "target/leakage_candidates/0/column": "cancel_reason", "target/leakage_candidates/0/check": "category_purity"
+    }},
+    {"args": ["messy.csv", "--no-corr"], "exit": 0, "expect": {
+      "target": null, "near_duplicate_numeric_pairs": [], "rows_profiled": 36
+    }},
+    {"args": ["quoting.csv"], "exit": 0, "expect": {
+      "rows_profiled": 4, "blank_lines_skipped": 1, "bad_rows/count": 2, "bad_rows/pct_of_rows_read": 33.33,
+      "bad_rows/first_examples/0/line": 5, "bad_rows/first_examples/0/fields": 2,
+      "bad_rows/first_examples/1/line": 6, "bad_rows/first_examples/1/fields": 4,
+      "col:name/top_values/0/value": "Smith, Jane", "col:comment/top_values/1/value": "line one\nline two"
+    }},
+    {"args": ["quoting.csv", "--strict"], "exit": 1, "expect": {"bad_rows/count": 2}},
+    {"args": ["dates_dayfirst.csv"], "exit": 0, "expect": {
+      "delimiter": ";", "col:when/date/format": "dmy/", "col:when/date/min": "2023-12-25", "col:when/date/max": "2024-03-01",
+      "col:when/date/span_days": 67, "col:when/date/row_order": "ascending", "col:when/flags": []
+    }},
+    {"args": ["dates_ambiguous.csv"], "exit": 0, "expect": {
+      "col:when/flags": ["date_order_ambiguous"], "col:when/date/min": "2024-01-02", "col:when/date/max": "2024-05-06",
+      "col:when/date/alt_range_if_day_first": ["2024-02-01", "2024-06-05"], "col:when/date/row_order": "unsorted"
+    }},
+    {"args": ["shape.csv"], "exit": 0, "expect": {
+      "constant_columns": ["country"], "all_missing_columns": ["notes"], "likely_id_columns": ["row_id"],
+      "col:notes/type": "empty", "col:notes/missing_tokens": {"na": 11, "(empty)": 11},
+      "col:score/distinct": 9, "col:score/numeric/median": 4.5, "col:score/possible_id": null
+    }},
+    {"args": ["../files/t2-orders-export/orders.csv"], "exit": 0, "expect": {
+      "rows_profiled": 18, "bad_rows/count": 2, "bad_rows/first_examples/0/line": 12, "bad_rows/first_examples/1/line": 15,
+      "col:order_date/date/min": "2024-01-02", "col:order_date/date/max": "2024-04-01",
+      "col:order_date/date/alt_range_if_day_first": ["2024-01-02", "2024-12-03"], "col:order_date/flags": ["date_order_ambiguous"],
+      "col:amount/type": "float", "col:amount/numeric/negatives": 1, "col:amount/numeric/max": 1250,
+      "col:status/missing": 1, "col:status/case_variant_groups/count": 1, "likely_id_columns": ["order_id"]
+    }},
+    {"args": ["header_only.csv"], "exit": 2, "expect": {}},
+    {"args": ["no_such_file.csv"], "exit": 2, "expect": {}},
+    {"args": ["messy.csv", "--target", "not_a_column"], "exit": 2, "expect": {}}
+  ]
+}

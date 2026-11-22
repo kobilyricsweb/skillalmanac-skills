@@ -1,0 +1,22 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/cart.py:12
+msgid "Your cart"
+msgstr ""
+
+#: src/cart.py:20
+msgid "%d file selected"
+msgid_plural "%d files selected"
+msgstr[0] ""
+msgstr[1] ""
+
+msgctxt "menu"
+msgid "Open"
+msgstr ""
+
+msgid "Hello, \"%(user)s\"\nWelcome."
+msgstr ""

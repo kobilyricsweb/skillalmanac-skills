@@ -1,0 +1,46 @@
+{
+  "skill_name": "llm-eval-test-sets",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/validate_evalset.py or a plain check on the saved file; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-repair-broken-set",
+      "prompt": "This eval set for our trivia bot has problems and I do not trust it. Check it, fix everything that is actually wrong, and save the repaired set to fixed.jsonl. Tell me what you changed and what you could not fix.",
+      "files": ["evals/fixtures/bad_cases.jsonl"],
+      "assertions": [
+        "[script] validate_evalset.py fixed.jsonl prints ok true and exits 0",
+        "[script] fixed.jsonl has no id used twice and no prompt that is identical to another",
+        "[script] fixed.jsonl still contains the cases b9 or b10 exactly once between them (conflicting duplicates resolved, not both deleted)",
+        "[judge] The two conflicting answers for the continents question were resolved by stating a reason (the common convention is 7), not by silently picking one",
+        "[judge] The report lists the invalid line and the missing graders and says which fixes needed the user's decision rather than guessing an expected answer",
+        "[judge] The report ends with a not-checked line that says expected answers were not verified against a source"
+      ]
+    },
+    {
+      "id": "t2-build-refund-bot-set",
+      "prompt": "We are about to change the prompt of our refund-policy support bot and want to know if the change helps and how often it makes things up. Using the attached policy, build an eval set and save it to cases.jsonl. Validate it and give me the report.",
+      "files": ["evals/files/t2-refund-bot/policy.md"],
+      "assertions": [
+        "[script] validate_evalset.py cases.jsonl prints ok true",
+        "[script] cases.jsonl has at least 30 cases and at least 3 cases tagged unanswerable for every 30 (10 percent or more)",
+        "[script] at least 4 different grader values appear and every unanswerable case uses abstain or judge",
+        "[script] at least three distinct tag values appear and no tag holds more than 70 percent of the cases",
+        "[judge] Every expected answer for an answerable case is supported by the policy text (45 days, 6 dollar fee over 60 dollars free shipping, 5 business days and so on), with no invented policy",
+        "[judge] The unanswerable probes include some policy-adjacent questions that the policy explicitly leaves to other teams or does not cover, not only absurd questions",
+        "[judge] The report names the decision the set supports and states that no model was run"
+      ]
+    },
+    {
+      "id": "t3-fix-train-test-leakage",
+      "prompt": "We use train_pool.jsonl for few-shot examples and test_leaky.jsonl as the test set. The test score looks too good. Find out why and give me a clean test set in clean_test.jsonl.",
+      "files": ["evals/fixtures/train_pool.jsonl", "evals/fixtures/test_leaky.jsonl"],
+      "assertions": [
+        "[script] validate_evalset.py clean_test.jsonl --against train_pool.jsonl prints ok true",
+        "[script] clean_test.jsonl contains no prompt identical to a prompt in train_pool.jsonl",
+        "[script] clean_test.jsonl keeps the Jupiter question or a rewritten version of it, with expected answer Jupiter, only if the train example that states Jupiter was changed or the report says the example must be edited",
+        "[judge] The report names all three leaks (identical prompt, reworded near-duplicate, answer stated in a few-shot example) and says each inflates the test score",
+        "[judge] It does not replace the removed cases with cases written from the model's own answers",
+        "[judge] It recommends freezing the test split and warns that the 4-case set is too small for a go or no-go decision"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {"query": "let's do TDD: write the failing test first for a slugify function", "should_trigger": true},
+  {"query": "use red green refactor to build this parser", "should_trigger": true},
+  {"query": "write the test before the code for this discount calculator", "should_trigger": true},
+  {"query": "my agent's tests all pass but I don't think they test anything, make it work test-first", "should_trigger": true},
+  {"query": "fix this bug test-first: reproduce it with a failing test, then fix", "should_trigger": true},
+  {"query": "audit my pytest file for tests with no assertions or assert True", "should_trigger": true},
+  {"query": "check this jest test file for skipped tests without a reason and duplicate tests", "should_trigger": true},
+  {"query": "what should I mock and what should I never mock when doing TDD?", "should_trigger": true},
+  {"query": "give me an edge-case checklist and tests for this date helper, tests first", "should_trigger": true},
+  {"query": "enforce a test naming convention and strict red-green cycles for this feature", "should_trigger": true},
+  {"query": "add tests to this legacy module that already works", "should_trigger": false},
+  {"query": "refactor this function to remove duplication", "should_trigger": false},
+  {"query": "build this feature from the attached spec and trace requirements", "should_trigger": false},
+  {"query": "why is this test failing in CI? debug it", "should_trigger": false},
+  {"query": "write a README for my test suite", "should_trigger": false},
+  {"query": "set up GitHub Actions to run pytest", "should_trigger": false},
+  {"query": "explain what dependency injection is", "should_trigger": false},
+  {"query": "write end-to-end Playwright tests for the checkout page", "should_trigger": false},
+  {"query": "generate fake data for my database", "should_trigger": false},
+  {"query": "update snapshots for my React component", "should_trigger": false}
+]

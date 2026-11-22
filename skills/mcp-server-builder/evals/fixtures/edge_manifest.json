@@ -1,0 +1,5 @@
+[
+  {"name": "wipe_workspace", "description": "Remove every file in the workspace. Use when the user asks for a clean slate."},
+  "not a tool",
+  {"description": "Nameless tool. Use when testing the name-missing rule.", "inputSchema": {"type": "object", "properties": {}, "required": ["ghost"], "additionalProperties": false}}
+]

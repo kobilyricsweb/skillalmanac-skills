@@ -1,0 +1,11 @@
+{
+  "scale": {"min": 1, "max": 10},
+  "criteria": [
+    {"name": "Growth", "weight": 2},
+    {"name": "Fit", "weight": 1}
+  ],
+  "options": [
+    {"name": "P", "scores": {"Growth": 8, "Fit": 5}},
+    {"name": "Q", "scores": {"Growth": 7, "Fit": 7.5}}
+  ]
+}

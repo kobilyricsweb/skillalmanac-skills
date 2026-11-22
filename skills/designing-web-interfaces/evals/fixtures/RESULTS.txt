@@ -1,0 +1,10 @@
+PASS bad_landing.html 
+PASS good_landing.html 
+PASS tokens_bad.json 
+PASS tokens_good.json 
+PASS outline_bad.css 
+PASS warn_only.css 
+PASS warn_only.css --strict
+PASS missing_file.css 
+PASS unsupported.txt 
+9/9 cases passed

@@ -1,0 +1,10 @@
+{
+  "model": {"name": "moe-30b-example", "params_b": 30, "active_params_b": 3, "moe": true, "layers": 48, "kv_heads": 4, "head_dim": 128, "trained_context": 131072},
+  "context": 32768,
+  "kv_dtype": "f16",
+  "use": "long_documents",
+  "hardware": [
+    {"name": "64 GB unified-memory laptop", "os": "macos", "unified": true, "ram_gb": 64, "ram_bandwidth_gbps": 400},
+    {"name": "32 GB CPU-only box", "os": "linux", "ram_gb": 32, "ram_bandwidth_gbps": 60}
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {"query": "my TypeScript project is full of `any`, help me get rid of it properly", "should_trigger": true},
+  {"query": "turn on strict mode in our tsconfig and tell me what order to fix things in", "should_trigger": true},
+  {"query": "review this .ts file for unsafe type assertions and non-null `!` usage", "should_trigger": true},
+  {"query": "should I use type or interface for these props and API shapes?", "should_trigger": true},
+  {"query": "how do I make this switch over a union exhaustive so adding a case breaks the build", "should_trigger": true},
+  {"query": "replace our enums with something better in this TypeScript code", "should_trigger": true},
+  {"query": "write a result type for my parser instead of throwing errors in TS", "should_trigger": true},
+  {"query": "what does noUncheckedIndexedAccess do and should I enable it", "should_trigger": true},
+  {"query": "someone added @ts-ignore all over the repo, clean it up", "should_trigger": true},
+  {"query": "when should I use satisfies instead of a type annotation or as?", "should_trigger": true},
+  {"query": "convert this JavaScript file to JavaScript with JSDoc comments only", "should_trigger": false},
+  {"query": "build me a React dashboard component with a chart", "should_trigger": false},
+  {"query": "configure webpack code splitting for my app", "should_trigger": false},
+  {"query": "compare zod, valibot and arktype for schema validation", "should_trigger": false},
+  {"query": "why is my Python function returning None here", "should_trigger": false},
+  {"query": "set up an Angular module with lazy-loaded routes", "should_trigger": false},
+  {"query": "write a Dockerfile for a Node 22 service", "should_trigger": false},
+  {"query": "what is the difference between let and const in JavaScript", "should_trigger": false},
+  {"query": "add unit tests with vitest for this function", "should_trigger": false},
+  {"query": "optimise the SQL query behind this endpoint", "should_trigger": false}
+]

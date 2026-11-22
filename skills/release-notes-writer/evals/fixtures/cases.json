@@ -1,0 +1,73 @@
+{
+  "note": "Expected values were worked out by hand from the fixture text before being saved; see VERIFICATION.md. Tokens ending in .txt or .md are resolved inside evals/fixtures/.",
+  "cases": [
+    {
+      "args": ["log_good.txt", "--current-version", "1.4.2"],
+      "exit": 0,
+      "expect": {"verdict": "ok", "proposed_version": "1.5.0", "bump": "minor", "bump_standard": "minor", "warning_codes": [], "omitted": {"Documentation": 1, "Internal": 1}}
+    },
+    {
+      "args": ["log_full.txt", "--current-version", "2.3.1"],
+      "exit": 1,
+      "expect": {
+        "verdict": "needs_review", "proposed_version": "3.0.0", "bump": "major",
+        "warning_codes": ["merge_skipped", "revert_pair_dropped", "duplicate_subject"],
+        "breaking_refs": ["9f2b7c1"], "unsorted_refs": ["4a7c2d6"],
+        "dropped_reasons": ["reverted_in_release", "reverted_in_release", "duplicate_subject"],
+        "skeleton": "## 3.0.0 - <release date>\n\n### Breaking changes\n\n- **api:** Remove the v1 orders endpoint (#210)\n  - Details: GET /v1/orders is gone. Clients must call /v2/orders.\n  - Who is affected: [FILL]\n  - What to do: [FILL]\n\n### Added\n\n- **ui:** Add dark mode toggle (#215)\n\n### Fixed\n\n- **db:** Handle null values in the migration step\n\n### Needs a decision\n\n- [SORT] update stuff\n"
+      }
+    },
+    {
+      "args": ["log_unstructured.txt", "--current-version", "0.4.0"],
+      "exit": 1,
+      "expect": {"verdict": "ask_user", "warning_codes": ["no_leading_verb", "no_leading_verb", "log_not_structured", "zero_major"], "unsorted_refs": ["a1a1a1a", "b2b2b2b", "d4d4d4d", "e5e5e5e"]}
+    },
+    {
+      "args": ["changelog_draft.md", "--current-version", "1.2.0"],
+      "exit": 1,
+      "expect": {
+        "verdict": "needs_review", "proposed_version": "2.0.0", "bump": "major", "source_section": "Unreleased",
+        "warning_codes": ["changed_is_ambiguous", "internal_wording", "no_leading_verb", "removed_not_marked_breaking"],
+        "skeleton": "## 2.0.0 - <release date>\n\n### Breaking changes\n\n- Drop support for Python 3.8\n  - Details: Python 3.9 or newer is now required.\n  - Who is affected: [FILL]\n  - What to do: [FILL]\n\n### Added\n\n- Add CSV export to the reports page (#41)\n\n### Changed\n\n- Refactor the report handler [REWRITE: internal wording \"Refactor\"]\n\n### Removed\n\n- The legacy /status route\n\n### Fixed\n\n- Fix crash when the report is empty (#44)\n"
+      }
+    },
+    {
+      "args": ["changelog_draft.md", "--current-version", "1.2.0", "--section", "1.2.0"],
+      "exit": 0,
+      "expect": {"verdict": "ok", "proposed_version": "1.3.0", "bump": "minor", "source_section": "1.2.0 - 2026-10-01", "warning_codes": []}
+    },
+    {
+      "args": ["log_zero_major.txt", "--current-version", "0.8.1"],
+      "exit": 1,
+      "expect": {"verdict": "needs_review", "proposed_version": "0.9.0", "bump": "minor", "bump_standard": "major", "warning_codes": ["zero_major"]}
+    },
+    {
+      "args": ["log_marker_gaps.txt", "--current-version", "3.1.0"],
+      "exit": 1,
+      "expect": {
+        "verdict": "needs_review", "proposed_version": "4.0.0", "bump": "major",
+        "warning_codes": ["possible_unmarked_breaking", "no_leading_verb", "missing_scope", "subject_too_long", "internal_wording", "breaking_without_migration_text", "security_disclosure"]
+      }
+    },
+    {
+      "args": ["log_docs_only.txt", "--current-version", "2.0.0"],
+      "exit": 0,
+      "expect": {"verdict": "ok", "proposed_version": null, "bump": "none", "warning_codes": [], "skeleton": "## <version> - <release date>\n"}
+    },
+    {
+      "args": ["log_good.txt", "--current-version", "v1.4.2", "--audience", "developers"],
+      "exit": 0,
+      "expect": {
+        "verdict": "ok", "proposed_version": "v1.5.0", "omitted": {},
+        "skeleton": "## v1.5.0 - <release date>\n\n### Added\n\n- **search:** Add fuzzy matching to the search bar (#101)\n\n### Fixed\n\n- **export:** Stop CSV export losing the last row (#102)\n\n### Performance\n\n- **api:** Cache the user list lookup (#103)\n\n### Documentation\n\n- **readme:** Explain the new install steps\n\n### Internal\n\n- **ci:** Pin the node version\n"
+      }
+    },
+    {"args": ["no_such_file.txt", "--current-version", "1.0.0"], "exit": 2, "expect": {"error_contains": "not found"}},
+    {"args": ["log_good.txt", "--current-version", "1.4"], "exit": 2, "expect": {"error_contains": "current-version"}},
+    {"args": ["empty.txt", "--current-version", "1.0.0"], "exit": 2, "expect": {"error_contains": "empty"}},
+    {"args": ["changelog_draft.md", "--current-version", "1.2.0", "--section", "9.9.9"], "exit": 2, "expect": {"error_contains": "not found"}},
+    {"args": ["log_good.txt", "--current-version", "1.4.2", "--markdown-out", "log_good.txt", "--force"], "exit": 2, "expect": {"error_contains": "input"}},
+    {"args": ["changelog_draft.md", "--current-version", "1.2.0", "--markdown-out", "./changelog_draft.md", "--force"], "exit": 2, "expect": {"error_contains": "input"}},
+    {"args": ["log_good.txt", "--current-version", "1.4.2", "--markdown-out", "no_such_dir/out.md"], "exit": 2, "expect": {"error_contains": "does not exist"}}
+  ]
+}

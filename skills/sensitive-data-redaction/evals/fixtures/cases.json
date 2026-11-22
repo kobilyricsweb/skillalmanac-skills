@@ -1,0 +1,361 @@
+{
+  "note": "Paths: @fix/ is evals/fixtures, @tmp/ is a scratch folder created by run_fixtures.py. Cases run in order and share the scratch folder. Expected files in expected/ were read line by line against the inputs before being saved.",
+  "forbidden_everywhere": [
+    "dana.reyes",
+    "4111 1111 1111 1111",
+    "GB82",
+    "123-45-6789",
+    "203.0.113.45",
+    "2001:db8::7334",
+    "FAKE-TOKEN",
+    "sk-FAKEFAKE",
+    "555 010",
+    "Priya",
+    "Northwind",
+    "hunter2",
+    "FAKEKEY0123",
+    "FAKEBEARER",
+    "AKIAFAKE",
+    "BEGIN RSA",
+    "DE89",
+    "7946 0958"
+  ],
+  "cases": [
+    {
+      "id": "ticket-text",
+      "args": [
+        "redact",
+        "@fix/support_ticket.txt",
+        "--out-dir",
+        "@tmp",
+        "--names",
+        "@fix/names.txt",
+        "--terms",
+        "@fix/terms.txt",
+        "--mapping",
+        "@tmp/ticket.mapping.private.json",
+        "--force"
+      ],
+      "exit": 0,
+      "total": 16,
+      "counts": {
+        "API_KEY": [
+          1,
+          1
+        ],
+        "URL_TOKEN": [
+          1,
+          1
+        ],
+        "EMAIL": [
+          2,
+          1
+        ],
+        "IBAN": [
+          1,
+          1
+        ],
+        "CARD": [
+          2,
+          1
+        ],
+        "SSN": [
+          1,
+          1
+        ],
+        "IPV6": [
+          1,
+          1
+        ],
+        "IPV4": [
+          1,
+          1
+        ],
+        "PHONE": [
+          2,
+          2
+        ],
+        "NAME": [
+          3,
+          3
+        ],
+        "TERM": [
+          1,
+          1
+        ]
+      },
+      "files": {
+        "support_ticket.redacted.txt": "expected/support_ticket.redacted.txt"
+      },
+      "warnings_contain": [
+        "same folder"
+      ]
+    },
+    {
+      "id": "ticket-restore-round-trip",
+      "args": [
+        "restore",
+        "@tmp/support_ticket.redacted.txt",
+        "--mapping",
+        "@tmp/ticket.mapping.private.json",
+        "--out",
+        "@tmp/ticket.restored.txt",
+        "--force"
+      ],
+      "exit": 0,
+      "same_as_input": {
+        "ticket.restored.txt": "support_ticket.txt"
+      },
+      "skip_forbidden": true
+    },
+    {
+      "id": "server-log",
+      "args": [
+        "redact",
+        "@fix/server.log",
+        "--out-dir",
+        "@tmp",
+        "--force"
+      ],
+      "exit": 0,
+      "total": 12,
+      "counts": {
+        "PRIVATE_KEY": [
+          1,
+          1
+        ],
+        "API_KEY": [
+          1,
+          1
+        ],
+        "CREDENTIAL": [
+          3,
+          3
+        ],
+        "EMAIL": [
+          2,
+          1
+        ],
+        "IPV6": [
+          1,
+          1
+        ],
+        "IPV4": [
+          4,
+          3
+        ]
+      },
+      "files": {
+        "server.redacted.log": "expected/server.redacted.log"
+      }
+    },
+    {
+      "id": "customer-json",
+      "args": [
+        "redact",
+        "@fix/customer.json",
+        "--out-dir",
+        "@tmp",
+        "--names",
+        "@fix/names.txt",
+        "--force"
+      ],
+      "exit": 0,
+      "total": 9,
+      "counts": {
+        "CREDENTIAL": [
+          1,
+          1
+        ],
+        "EMAIL": [
+          3,
+          2
+        ],
+        "IBAN": [
+          1,
+          1
+        ],
+        "CARD": [
+          1,
+          1
+        ],
+        "PHONE": [
+          1,
+          1
+        ],
+        "NAME": [
+          2,
+          1
+        ]
+      },
+      "files": {
+        "customer.redacted.json": "expected/customer.redacted.json"
+      },
+      "json_valid": [
+        "customer.redacted.json"
+      ]
+    },
+    {
+      "id": "clean-zero",
+      "args": [
+        "redact",
+        "@fix/clean.txt",
+        "--out-dir",
+        "@tmp",
+        "--force"
+      ],
+      "exit": 0,
+      "total": 0,
+      "counts": {},
+      "warnings_contain": [
+        "no sensitive values were detected"
+      ],
+      "same_as_input": {
+        "clean.redacted.txt": "clean.txt"
+      }
+    },
+    {
+      "id": "keep-last4",
+      "mkdirs": [
+        "last4"
+      ],
+      "args": [
+        "redact",
+        "@fix/support_ticket.txt",
+        "--out-dir",
+        "@tmp/last4",
+        "--keep-last4",
+        "--skip",
+        "NAME,TERM"
+      ],
+      "exit": 0,
+      "total": 12,
+      "contains": {
+        "last4/support_ticket.redacted.txt": [
+          "[CARD_1 ****1111]",
+          "[IBAN_1 ****5432]",
+          "[PHONE_1 ****0199]",
+          "[SSN_1 ****6789]",
+          "Dana Reyes"
+        ]
+      },
+      "skip_forbidden": true
+    },
+    {
+      "id": "keep-private-ips",
+      "mkdirs": [
+        "private"
+      ],
+      "args": [
+        "redact",
+        "@fix/server.log",
+        "--out-dir",
+        "@tmp/private",
+        "--keep-private-ips"
+      ],
+      "exit": 0,
+      "total": 11,
+      "contains": {
+        "private/server.redacted.log": [
+          "from 10.0.0.12 status"
+        ]
+      },
+      "not_contains": {
+        "private/server.redacted.log": [
+          "198.51.100"
+        ]
+      }
+    },
+    {
+      "id": "dry-run-writes-nothing",
+      "mkdirs": [
+        "dry"
+      ],
+      "args": [
+        "redact",
+        "@fix/support_ticket.txt",
+        "--out-dir",
+        "@tmp/dry",
+        "--dry-run"
+      ],
+      "exit": 0,
+      "total": 12,
+      "empty_dir": "dry",
+      "skip_forbidden": true
+    },
+    {
+      "id": "refuses-overwrite",
+      "args": [
+        "redact",
+        "@fix/support_ticket.txt",
+        "--out-dir",
+        "@tmp/last4",
+        "--keep-last4",
+        "--skip",
+        "NAME,TERM"
+      ],
+      "exit": 2
+    },
+    {
+      "id": "missing-input",
+      "args": [
+        "redact",
+        "@fix/does_not_exist.txt"
+      ],
+      "exit": 2
+    },
+    {
+      "id": "bad-skip-category",
+      "args": [
+        "redact",
+        "@fix/clean.txt",
+        "--skip",
+        "PASSPORT",
+        "--dry-run"
+      ],
+      "exit": 2
+    },
+    {
+      "id": "refuse-mapping-equals-input",
+      "args": [
+        "redact",
+        "@fix/support_ticket.txt",
+        "--out-dir",
+        "@tmp",
+        "--mapping",
+        "@fix/support_ticket.txt",
+        "--force"
+      ],
+      "exit": 2,
+      "skip_forbidden": true
+    },
+    {
+      "id": "refuse-restore-out-equals-input",
+      "args": [
+        "restore",
+        "@tmp/support_ticket.redacted.txt",
+        "--mapping",
+        "@tmp/ticket.mapping.private.json",
+        "--out",
+        "@tmp/support_ticket.redacted.txt",
+        "--force"
+      ],
+      "exit": 2,
+      "skip_forbidden": true
+    },
+    {
+      "id": "refuse-restore-out-equals-mapping",
+      "args": [
+        "restore",
+        "@tmp/support_ticket.redacted.txt",
+        "--mapping",
+        "@tmp/ticket.mapping.private.json",
+        "--out",
+        "@tmp/ticket.mapping.private.json",
+        "--force"
+      ],
+      "exit": 2,
+      "skip_forbidden": true
+    }
+  ]
+}

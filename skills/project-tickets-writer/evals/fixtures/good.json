@@ -1,0 +1,12 @@
+{"tickets": [
+  {"id": "A1", "title": "Export the invoice list as CSV", "outcome": "An accountant can download all invoices for a chosen month as a CSV file.",
+   "size": "S", "depends_on": [], "non_goals": ["PDF export", "Scheduled exports"],
+   "acceptance_criteria": ["Given 40 invoices in March, when the user clicks Export CSV for March, then a file with 40 data rows and one header row downloads.",
+                           "Given a month with no invoices, when the user clicks Export CSV, then a file with only the header row downloads."],
+   "definition_of_done": ["Tests cover both criteria", "Column order documented in the help page"]},
+  {"id": "A2", "title": "Add an Export CSV button to the invoice page", "outcome": "The invoice list page exposes the export so users can find it.",
+   "size": 1, "depends_on": ["A1"], "non_goals": ["Redesign of the page"],
+   "acceptance_criteria": ["Given a user with the Accountant role, when they open the invoice list, then an Export CSV button is visible above the table.",
+                           "Given a user without the Accountant role, when they open the invoice list, then no Export CSV button is shown."],
+   "definition_of_done": ["Visual check on desktop and mobile widths"]}
+]}

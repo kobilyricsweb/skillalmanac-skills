@@ -1,0 +1,15 @@
+{
+  "unit": "days",
+  "start_date": "2026-03-02",
+  "deadline": "2026-03-27",
+  "tasks": [
+    {"id": "A", "name": "Demolition", "duration": 2, "owner": "Ben"},
+    {"id": "B", "name": "Plumbing rough-in", "duration": 3, "predecessors": ["A"], "owner": "Ben"},
+    {"id": "C", "name": "Electrical rough-in", "duration": 2, "predecessors": ["A"], "owner": "Cara"},
+    {"id": "D", "name": "Plaster", "duration": 4, "predecessors": ["B", "C"], "owner": "Dan"},
+    {"id": "E", "name": "Order and receive cabinets", "duration": 10, "owner": "Cara"},
+    {"id": "F", "name": "Install cabinets", "duration": 3, "predecessors": ["D", "E"], "owner": "Dan"},
+    {"id": "G", "name": "Paint", "duration": 2, "predecessors": ["D"], "owner": "Cara"},
+    {"id": "H", "name": "Final clean", "duration": 1, "predecessors": ["F", "G"], "owner": "Eli"}
+  ]
+}

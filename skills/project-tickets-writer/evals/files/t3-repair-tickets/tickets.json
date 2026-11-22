@@ -1,0 +1,8 @@
+{"tickets": [
+  {"id": "R1", "title": "Handle refunds", "outcome": "Refunds work.", "size": "M", "depends_on": ["R2"],
+   "acceptance_criteria": ["Refunds are processed properly"], "non_goals": [], "definition_of_done": []},
+  {"id": "R2", "title": "Add refund button to order page", "outcome": "Support staff can start a refund from the order page.", "size": "S", "depends_on": ["R3"],
+   "acceptance_criteria": ["Given an order paid within 30 days, when a support agent opens it, then a Refund button is visible."], "non_goals": ["Partial refunds"], "definition_of_done": ["Tests pass"]},
+  {"id": "R3", "title": "Show refund status on the order page", "outcome": "Agents see whether a refund is pending, paid or failed.", "size": "S", "depends_on": ["R1"],
+   "acceptance_criteria": ["Given a refund in state pending, when an agent opens the order, then the badge reads Pending."], "non_goals": ["Customer-facing status"], "definition_of_done": ["Tests pass"]}
+]}

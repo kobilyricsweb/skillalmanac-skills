@@ -1,0 +1,7 @@
+PASS check tokens_good.json
+PASS check tokens_bad.json
+PASS check tokens_dupkey.json
+PASS css tokens_good.json
+PASS check tokens_notjson.json
+PASS check does_not_exist.json
+6/6 cases passed

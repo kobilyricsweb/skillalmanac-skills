@@ -1,0 +1,22 @@
+[
+  {"query": "convert this BibTeX file into an APA 7 reference list", "should_trigger": true},
+  {"query": "format these 12 sources as MLA works cited, I have the authors, titles and years in a spreadsheet", "should_trigger": true},
+  {"query": "how do I cite ChatGPT in APA? I used it for a class paper", "should_trigger": true},
+  {"query": "make a bibliography in Chicago author-date from this CSL JSON export", "should_trigger": true},
+  {"query": "which fields am I missing for these references to be complete in IEEE?", "should_trigger": true},
+  {"query": "fix the format of my citations, they are a mess, I need APA with the DOIs as links", "should_trigger": true},
+  {"query": "turn my zotero export into a references list and tell me what is incomplete", "should_trigger": true},
+  {"query": "cite this web page and this government report in MLA 9", "should_trigger": true},
+  {"query": "reference list generator for a book, a chapter and a journal article, APA", "should_trigger": true},
+  {"query": "give me the in-text citation strings for each of these entries in Chicago style", "should_trigger": true},
+  {"query": "find me five peer reviewed papers about sleep and exam performance", "should_trigger": false},
+  {"query": "check that every in-text citation in my thesis has a matching reference entry", "should_trigger": false},
+  {"query": "write the literature review section of my paper", "should_trigger": false},
+  {"query": "is this DOI real and does the article actually exist?", "should_trigger": false},
+  {"query": "summarize this PDF research paper in five bullets", "should_trigger": false},
+  {"query": "paraphrase this paragraph so it does not match the source", "should_trigger": false},
+  {"query": "add footnotes in Chicago notes-bibliography style to my history essay", "should_trigger": false},
+  {"query": "format the bibliography of my LaTeX document with biblatex, my compile fails", "should_trigger": false},
+  {"query": "which claims in my report are supported by which sources? build a claim to evidence table", "should_trigger": false},
+  {"query": "proofread my essay for grammar and spelling", "should_trigger": false}
+]

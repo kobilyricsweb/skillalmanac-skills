@@ -1,0 +1,2 @@
+[{"id": "W1", "title": "Show unread count on the inbox tab", "outcome": "Users see how many unread messages they have.", "size": "S",
+  "depends_on": [], "acceptance_criteria": ["Given 3 unread messages, when the inbox loads, then the tab shows the number 3."]}]

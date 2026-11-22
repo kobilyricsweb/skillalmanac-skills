@@ -1,0 +1,4 @@
+defaults: &base
+  retries: 3
+service:
+  <<: *base

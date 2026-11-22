@@ -1,0 +1,47 @@
+{
+  "sequence": {
+    "name": "Newsletter nurture",
+    "type": "nurture",
+    "trigger": "downloaded_checklist",
+    "goal": "book a 20 minute call",
+    "consent_basis": "express_consent",
+    "sender": {
+      "from_name": "Dana Ortiz",
+      "from_email": "dana@ortizbooks.example",
+      "postal_address": "40 Mill Road, Leeds LS2 7DR, United Kingdom"
+    }
+  },
+  "emails": [
+    {
+      "id": "n1",
+      "day": 0,
+      "job": "Deliver the checklist and set expectations",
+      "subject": "Seven small habits that make a weekly newsletter easier to write",
+      "preheader": "Your checklist is attached, and here is how to use it",
+      "cta": {"label": "Open the checklist", "url": "https://ortizbooks.example/checklist"},
+      "unsubscribe": true,
+      "list_unsubscribe_header": true,
+      "exit_conditions": ["booked a call", "unsubscribed"]
+    },
+    {
+      "id": "n2",
+      "day": 3,
+      "job": "Share one worked example of the checklist applied",
+      "subject": "A bookkeeper's checklist, filled in",
+      "cta": {"label": "See the worked example", "url": "https://ortizbooks.example/example"},
+      "unsubscribe": true,
+      "exit_conditions": ["booked a call", "unsubscribed"]
+    },
+    {
+      "id": "n3",
+      "day": 40,
+      "job": "Invite them to a short call",
+      "subject": "Want a second pair of eyes on your numbers?",
+      "preheader": "Twenty minutes, no slides",
+      "cta": {"label": "Pick a time", "url": "https://ortizbooks.example/book"},
+      "unsubscribe": true,
+      "list_unsubscribe_header": true,
+      "exit_conditions": ["booked a call", "unsubscribed"]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "note": "Every expected value was computed by hand from the fixture text before the script was run. '@' means the fixtures folder, '{out}' a fresh temporary folder.",
+  "cases": [
+    {
+      "name": "srt-messy-interview",
+      "args": ["@interview.srt", "--out-dir", "{out}"],
+      "exit": 1,
+      "expect": {
+        "status": "needs_review",
+        "format": "srt",
+        "counts": {"segments_in": 7, "segments_out": 5, "segments_changed": 3, "fillers_removed": 6, "stutters_removed": 2, "segments_merged": 1, "segments_removed_empty": 1, "speaker_labels_changed": 2},
+        "words": {"in": 50, "out": 41, "added": []},
+        "mapping": [{"from": "DR. LEE", "to": "Dr. Lee", "reason": "case"}, {"from": "Lee", "to": "Dr. Lee", "reason": "title"}],
+        "after_counts": {"overlap": 1, "reading_speed": 3, "too_many_lines": 1, "too_short": 1, "line_length": 0, "too_long": 0, "short_gap": 0, "empty": 0, "bad_timing": 0},
+        "before_counts": {"overlap": 1, "reading_speed": 4, "line_length": 2, "too_short": 1}
+      },
+      "output": {"name": "interview.cleaned.srt", "expected": "expected/interview.cleaned.srt"}
+    },
+    {
+      "name": "plain-timestamped-standup",
+      "args": ["@standup.txt", "--out-dir", "{out}"],
+      "exit": 0,
+      "expect": {
+        "status": "clean",
+        "format": "plain",
+        "counts": {"segments_in": 4, "segments_out": 3, "fillers_removed": 2, "stutters_removed": 1, "segments_merged": 1, "speaker_labels_changed": 2},
+        "words": {"in": 24, "out": 21, "added": []},
+        "mapping": [{"from": "Sarah", "to": "Sarah Lee", "reason": "partial-name"}, {"from": "TOM", "to": "Tom", "reason": "case"}]
+      },
+      "output": {"name": "standup.cleaned.txt", "expected": "expected/standup.cleaned.txt"}
+    },
+    {
+      "name": "plain-verbatim-policy-keeps-fillers",
+      "args": ["@standup.txt", "--policy", "verbatim", "--out-dir", "{out}"],
+      "exit": 0,
+      "expect": {
+        "status": "clean",
+        "counts": {"fillers_removed": 0, "stutters_removed": 0, "segments_merged": 1, "speaker_labels_changed": 2},
+        "words": {"in": 24, "out": 24, "added": []}
+      },
+      "output": {"name": "standup.cleaned.txt", "expected": "expected/standup.verbatim.txt"}
+    },
+    {
+      "name": "vtt-already-clean-is-stable",
+      "args": ["@lecture.vtt", "--out-dir", "{out}"],
+      "exit": 0,
+      "expect": {
+        "status": "clean",
+        "format": "vtt",
+        "counts": {"segments_in": 2, "segments_out": 2, "segments_changed": 0, "fillers_removed": 0, "segments_merged": 0},
+        "words": {"in": 12, "out": 12, "added": []},
+        "after_counts": {"overlap": 0, "reading_speed": 0, "line_length": 0, "too_many_lines": 0, "too_short": 0, "too_long": 0, "short_gap": 0, "empty": 0, "bad_timing": 0}
+      },
+      "output": {"name": "lecture.cleaned.vtt", "expected": "expected/lecture.cleaned.vtt"}
+    },
+    {
+      "name": "plain-hard-wrapped-paragraphs",
+      "args": ["@bare.txt", "--out-dir", "{out}"],
+      "exit": 0,
+      "expect": {
+        "status": "clean",
+        "format": "plain",
+        "counts": {"segments_in": 5, "segments_out": 3, "fillers_removed": 1, "segments_merged": 2},
+        "words": {"in": 37, "out": 36, "added": []}
+      },
+      "output": {"name": "bare.cleaned.txt", "expected": "expected/bare.cleaned.txt"}
+    },
+    {
+      "name": "ambiguous-surname-is-not-merged",
+      "args": ["@ambiguous.txt", "--out-dir", "{out}"],
+      "exit": 1,
+      "expect": {
+        "status": "needs_review",
+        "counts": {"speaker_labels_changed": 0, "segments_changed": 0},
+        "mapping": [],
+        "ambiguous": [{"label": "Lee", "could_be": ["Sarah Lee", "Tom Lee"]}]
+      },
+      "output": {"name": "ambiguous.cleaned.txt", "expected": "ambiguous.txt"}
+    },
+    {
+      "name": "glossary-terms-and-speaker",
+      "args": ["@terms.txt", "--glossary", "@glossary.json", "--out-dir", "{out}"],
+      "exit": 0,
+      "expect": {
+        "status": "clean",
+        "counts": {"glossary_replacements": 2, "speaker_labels_changed": 2, "fillers_removed": 0},
+        "words": {"in": 12, "out": 11, "added": []},
+        "mapping": [{"from": "Dr. Park", "to": "Dr. Kim Park", "reason": "partial-name"}, {"from": "Kim", "to": "Dr. Kim Park", "reason": "glossary"}]
+      },
+      "output": {"name": "terms.cleaned.txt", "expected": "expected/terms.cleaned.txt"}
+    },
+    {
+      "name": "dry-run-writes-nothing",
+      "args": ["@interview.srt", "--dry-run"],
+      "exit": 1,
+      "expect": {"dry_run": true, "output": null, "counts": {"segments_out": 5}},
+      "no_files": true
+    },
+    {
+      "name": "missing-input-exits-2",
+      "args": ["@does_not_exist.srt", "--out-dir", "{out}"],
+      "exit": 2,
+      "expect": {}
+    }
+  ]
+}

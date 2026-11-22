@@ -1,0 +1,22 @@
+[
+  {"query": "here's my habit tracker export for November, how am I doing against 20 minutes of reading a day?", "should_trigger": true},
+  {"query": "what's my current streak and my longest streak in this CSV of workouts?", "should_trigger": true},
+  {"query": "I log my study hours every day in a spreadsheet. Am I slipping lately compared to last month?", "should_trigger": true},
+  {"query": "can you check my meditation log for which weekday I skip the most? I aim for 5 days a week", "should_trigger": true},
+  {"query": "review my practice log: guitar, date and minutes, goal is 30 minutes daily", "should_trigger": true},
+  {"query": "calculate my completion rate for the last 7 and 28 days from this habit log", "should_trigger": true},
+  {"query": "attached is my Loop Habit Tracker export, is my running habit on pace or stalled?", "should_trigger": true},
+  {"query": "I wrote 'date, habit, done' for two months. Is my trend going up or down?", "should_trigger": true},
+  {"query": "look at my focus-session log and tell me my adherence to a 3 sessions a week target", "should_trigger": true},
+  {"query": "streak check: does a missed day break my streak in this journaling log, and what is it now?", "should_trigger": true},
+  {"query": "break 'write my thesis' into smaller tasks I can do this week", "should_trigger": false},
+  {"query": "help me pick a habit to build and set a realistic goal for it", "should_trigger": false},
+  {"query": "build me a habit tracker app in React with a streak counter", "should_trigger": false},
+  {"query": "my sleep tracker shows I wake at 3am, what does that mean for my health?", "should_trigger": false},
+  {"query": "here is my food diary, tell me whether I'm eating enough protein", "should_trigger": false},
+  {"query": "plan my week around three workouts and two deep-work blocks", "should_trigger": false},
+  {"query": "summarise my meeting notes and list the action items", "should_trigger": false},
+  {"query": "write a motivational speech about never breaking the chain", "should_trigger": false},
+  {"query": "organise my notes vault into folders by project", "should_trigger": false},
+  {"query": "my recurring tasks keep overlapping on the calendar, what should the boundaries be?", "should_trigger": false}
+]

@@ -1,0 +1,7 @@
+PASS good_plan.json
+PASS bad_plan.json
+PASS housing_plan.json
+PASS negative_conflict_plan.json
+PASS not_json.txt
+PASS missing_file.json
+6/6 cases passed

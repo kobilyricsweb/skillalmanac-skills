@@ -1,0 +1,4 @@
+example.test/dep-a v1.2.0 h1:AAAAAAAA=
+example.test/dep-a v1.2.0/go.mod h1:BBBBBBBB=
+example.test/dep-b v0.4.1 h1:CCCCCCCC=
+example.test/dep-b v0.4.1/go.mod h1:DDDDDDDD=

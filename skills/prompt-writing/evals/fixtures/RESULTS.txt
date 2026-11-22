@@ -1,0 +1,9 @@
+PASS lint bad_support_prompt.md
+PASS lint good_support_prompt.md
+PASS lint edge_fenced_ok.md
+PASS lint edge_no_placeholders.md
+PASS lint ../files/t1-weak-summarizer/prompt.md
+PASS lint missing_file.md
+PASS lint empty.md
+PASS lint
+8/8 cases passed

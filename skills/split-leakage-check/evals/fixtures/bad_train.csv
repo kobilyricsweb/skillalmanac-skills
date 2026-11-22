@@ -1,0 +1,5 @@
+id,user,ts,text,label
+t1,u1,2026-01-05,The quick brown fox jumps over the lazy dog today,spam
+t2,u2,2026-01-10,Please reset my password for the account,ham
+t3,u3,2026-01-15,Win a free prize now click this link,spam
+t4,u4,2026-01-20,Meeting moved to Thursday afternoon at three,ham

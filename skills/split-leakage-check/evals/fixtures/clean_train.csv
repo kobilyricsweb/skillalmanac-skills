@@ -1,0 +1,4 @@
+id,user,ts,text,label
+c1,u1,2026-02-01,Order arrived two days late,neg
+c2,u2,2026-02-02,Great battery life and bright screen,pos
+c3,u3,2026-02-03,Refund still not processed after a week,neg

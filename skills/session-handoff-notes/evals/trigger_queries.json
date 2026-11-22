@@ -1,0 +1,82 @@
+[
+  {
+    "query": "write a handoff note, my context is almost full and I want to continue tomorrow in a fresh session",
+    "should_trigger": true
+  },
+  {
+    "query": "summarize where we are so another agent can pick this up without asking me anything",
+    "should_trigger": true
+  },
+  {
+    "query": "save our progress to a file: what changed, what we tested, what is still undecided",
+    "should_trigger": true
+  },
+  {
+    "query": "I'm ending the session now. leave notes for the next one",
+    "should_trigger": true
+  },
+  {
+    "query": "resume from HANDOFF-2026-11-20.md and keep going",
+    "should_trigger": true
+  },
+  {
+    "query": "hand this refactor off to a different agent, give it the exact commands and file paths",
+    "should_trigger": true
+  },
+  {
+    "query": "check my handoff note, does it have enough for the next session?",
+    "should_trigger": true
+  },
+  {
+    "query": "context window is 90% used, write a session summary file I can paste into a new chat",
+    "should_trigger": true
+  },
+  {
+    "query": "make a continuation note with open decisions and next steps",
+    "should_trigger": true
+  },
+  {
+    "query": "the last session lost everything we figured out. write down the state so it doesn't happen again",
+    "should_trigger": true
+  },
+  {
+    "query": "write a commit message for these changes",
+    "should_trigger": false
+  },
+  {
+    "query": "write the pull request description for this branch",
+    "should_trigger": false
+  },
+  {
+    "query": "update CHANGELOG.md for the 2.3 release",
+    "should_trigger": false
+  },
+  {
+    "query": "summarize this meeting transcript into action items",
+    "should_trigger": false
+  },
+  {
+    "query": "write a README for this project",
+    "should_trigger": false
+  },
+  {
+    "query": "compress your replies to save tokens",
+    "should_trigger": false
+  },
+  {
+    "query": "create an AGENTS.md for this repo",
+    "should_trigger": false
+  },
+  {
+    "query": "explain what this function does",
+    "should_trigger": false
+  },
+  {
+    "query": "write release notes for customers",
+    "should_trigger": false
+  },
+  {
+    "query": "review this diff for bugs",
+    "should_trigger": false
+  }
+]

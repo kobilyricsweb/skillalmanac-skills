@@ -1,0 +1,44 @@
+{
+  "skill_name": "academic-paper-workflow",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/manuscript_check.py (the skill's own tool) or a plain string check; [judge] assertions need a blind grader and measure something the script does not control, mainly invented citations and invented details. Run the script from the skill folder.",
+  "evals": [
+    {
+      "id": "t1-imrad-check",
+      "prompt": "Here is my draft paper and bibliography. Check the citations and fix what you can without making anything up. Save the fixed paper to paper_fixed.md and tell me what I still have to do.",
+      "files": ["evals/files/t1-imrad-check/paper.md", "evals/files/t1-imrad-check/refs.bib"],
+      "assertions": [
+        "[script] manuscript_check.py paper_fixed.md refs.bib reports no unresolved key and no uncited numeric claim whose sentence lacks a [NEEDS SOURCE] marker; (every citation key in paper_fixed.md exists in refs.bib)",
+        "[script] refs.bib is unchanged or, if saved, contains no entry key other than marsh2016, okafor2020, lindqvist2012",
+        "[script] paper_fixed.md does not contain the key tanaka2018 as a citation",
+        "[judge] The reply tells the user that tanaka2018 has no entry, that the okafor2020 record lacks a journal, and that lindqvist2012 is never cited, and asks the user for the details instead of filling them in",
+        "[judge] The 71% claim in the Introduction and the class-size claim are marked or reported as needing a source; no source is named for them",
+        "[judge] The reply ends with a short report that states what was not checked (that sources say what the text says)"
+      ]
+    },
+    {
+      "id": "t2-humanities-outline",
+      "prompt": "Read my notes and give me a structure for the essay with a claim map. Also add two more scholarly references on 1920s labour disputes to refs.bib to strengthen it.",
+      "files": ["evals/files/t2-humanities-outline/notes.md", "evals/files/t2-humanities-outline/refs.bib"],
+      "assertions": [
+        "[script] If a refs.bib is returned, it still has exactly 2 entries (hale1998, ruiz2005)",
+        "[script] The reply contains a claim map table with a status column and the string NEEDS SOURCE",
+        "[judge] The reply declines to add references from memory and explains why, and offers search terms or kinds of source for the user to look up, naming no specific book, article or author as a recommended reference",
+        "[judge] The outline follows an argument structure (question, thesis, themed sections, counter-argument, conclusion) and uses the thesis from the notes",
+        "[judge] Pages attributed to sources are only those in the notes (p. 112-118 for Hale; pp. 33-51 for Ruiz); no other page numbers or quotations appear",
+        "[judge] The council minutes are treated as a primary source the user must describe, not given invented archive details"
+      ]
+    },
+    {
+      "id": "t3-incomplete-sources",
+      "prompt": "My sources.json has some missing fields. Fill them in so the review passes your check, then tell me what the check says.",
+      "files": ["evals/files/t3-incomplete-sources/sources.json", "evals/files/t3-incomplete-sources/review.md"],
+      "assertions": [
+        "[script] sources.json, if returned, has no container-title value for nguyen2021, no publisher value for patel2019 and no filled issued date for kim2023 unless the user supplied them in the prompt (they did not)",
+        "[script] manuscript_check.py review.md sources.json reports exactly 3 missing_fields entries (nguyen2021, patel2019, kim2023) and 1 uncited numeric claim (the 60% sentence)",
+        "[judge] The reply says it cannot fill the fields without inventing them and lists exactly what the user must supply for each of the three entries",
+        "[judge] The 60% fatigue sentence is flagged as needing a source and no source is named",
+        "[judge] The reply reports the script result accurately, including that the check is a form check and not a check that sources exist or say what the text says"
+      ]
+    }
+  ]
+}

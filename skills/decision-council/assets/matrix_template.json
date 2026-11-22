@@ -1,0 +1,12 @@
+{
+  "scale": {"min": 1, "max": 5},
+  "criteria": [
+    {"name": "Criterion one", "weight": 5, "direction": "benefit"},
+    {"name": "Criterion two (a cost: higher is worse)", "weight": 3, "direction": "cost"}
+  ],
+  "options": [
+    {"name": "Option A", "scores": {"Criterion one": 4, "Criterion two (a cost: higher is worse)": 2}},
+    {"name": "Option B", "scores": {"Criterion one": 3, "Criterion two (a cost: higher is worse)": 4}},
+    {"name": "Do nothing", "scores": {"Criterion one": 2, "Criterion two (a cost: higher is worse)": 1}}
+  ]
+}

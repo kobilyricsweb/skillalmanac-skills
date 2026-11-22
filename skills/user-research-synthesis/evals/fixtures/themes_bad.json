@@ -1,0 +1,54 @@
+{
+  "themes": [
+    {
+      "id": "TB1",
+      "title": "Most users cannot upload receipts",
+      "statement": "5 of 6 participants could not upload receipts.",
+      "confidence": "high",
+      "quotes": [
+        {"participant": "P01", "note": "N01", "text": "the app loses the photo half the time"},
+        {"participant": "P02", "note": "N03", "text": "I gave up on the mobile app and just email myself the receipts"}
+      ],
+      "contradictions": []
+    },
+    {
+      "id": "TB2",
+      "title": "Approvals are slow",
+      "statement": "Approval wait is the top pain.",
+      "confidence": "high",
+      "quotes": [
+        {"participant": "P01", "note": "N02", "text": "Approvals sit with my manager for a week"},
+        {"participant": "P01", "note": "N14", "text": "I like that exports come out in the format my accountant wants"},
+        {"participant": "P01", "note": "N01", "text": "I snap the receipt on my phone but then the app loses the photo"},
+        {"participant": "P02", "note": "N04", "text": "My manager approves things in batches on Fridays"},
+        {"participant": "P03", "note": "N06", "text": "I do not know who has my report right now"}
+      ]
+    },
+    {
+      "id": "TB3",
+      "title": "Setup is easy",
+      "statement": "Setup is quick for the participants who tried it.",
+      "confidence": "low",
+      "quotes": [
+        {"participant": "P06", "note": "N11", "text": "Setup took me five minutes"},
+        {"participant": "P02", "note": "N13", "text": "Setup was great and took two minutes"},
+        {"participant": "P04", "note": "N11", "text": "the onboarding checklist was clear"},
+        {"participant": "P05", "note": "N99", "text": "Setup was painless for me"},
+        {"participant": "P01", "note": "N16", "text": "Participant hesitated, then switched to desktop."},
+        {"participant": "P06", "note": "N11", "text": "the onboarding checklist was clear"}
+      ],
+      "contradictions": []
+    },
+    {
+      "id": "TB4",
+      "title": "Export",
+      "confidence": "certain",
+      "quotes": [
+        {"participant": "P04", "note": "N07", "text": "The export to our accounting system is the only part I trust."},
+        {"participant": "P01", "note": "N14", "text": "exports come out in the format my accountant wants"},
+        {"participant": "P03", "note": "N15", "text": "The export button is hidden under three menus."}
+      ],
+      "contradictions": []
+    }
+  ]
+}

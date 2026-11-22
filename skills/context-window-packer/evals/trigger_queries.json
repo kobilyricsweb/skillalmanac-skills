@@ -1,0 +1,22 @@
+[
+  {"query": "I want to paste my repo into a 32k context window, which files should go in and which should I trim?", "should_trigger": true},
+  {"query": "my prompt is too long for the model, help me cut these 12 files down to 20,000 tokens", "should_trigger": true},
+  {"query": "what fits in the context window if I reserve room for the answer? here are my candidate files with priorities", "should_trigger": true},
+  {"query": "pack these notes and source files into 8k tokens, must-have first, and tell me what you left out and why", "should_trigger": true},
+  {"query": "the context is overflowing, decide which files to send as full text and which as just function signatures", "should_trigger": true},
+  {"query": "I have a 16k budget and a README, three modules and a changelog. Build me the context package for this bug question", "should_trigger": true},
+  {"query": "give me a manifest of what you included and excluded from the prompt and the token estimate error", "should_trigger": true},
+  {"query": "does this folder fit into a 100k window? drop duplicates and lockfiles and show the margin", "should_trigger": true},
+  {"query": "trim my context to N tokens but never drop the schema file, nice-to-have docs can go", "should_trigger": true},
+  {"query": "which of these files do I attach to the prompt so that it stays under the token limit with 15 percent left for the reply?", "should_trigger": true},
+  {"query": "split this 80-page manual into chunks for my vector database", "should_trigger": false},
+  {"query": "how much will 2 million tokens a day cost me on this model?", "should_trigger": false},
+  {"query": "make your answers shorter, I keep hitting my usage limit", "should_trigger": false},
+  {"query": "summarize our chat so far so we can continue in a fresh session", "should_trigger": false},
+  {"query": "review where my agent sessions burned the most tokens last week", "should_trigger": false},
+  {"query": "what is a context window and why do models have one?", "should_trigger": false},
+  {"query": "compress this paragraph to 50 words", "should_trigger": false},
+  {"query": "write a CLAUDE.md for my project", "should_trigger": false},
+  {"query": "which model has the biggest context window right now?", "should_trigger": false},
+  {"query": "design a retrieval pipeline that picks the top-k passages for each user question", "should_trigger": false}
+]

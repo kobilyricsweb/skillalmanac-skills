@@ -1,0 +1,51 @@
+{
+  "plan": "Billing database migration",
+  "risks": [
+    {
+      "rank": 1, "id": "R1", "title": "Cutover step has no owner", "category": "ownership",
+      "evidence": {"quote": "A5: Switch the application to the new cluster", "line": 13},
+      "scenario": "The application switch happens on the night with nobody accountable, so a failed switch waits for someone to volunteer while billing writes are down.",
+      "likelihood": 4, "impact": 5, "score": 20,
+      "detection": "Ask on the rehearsal day who presses the switch; no name means the risk is live.",
+      "mitigation": "Name one person for A5 and one named backup before the rehearsal.",
+      "source": "script"
+    },
+    {
+      "rank": 2, "id": "R2", "title": "Data copy scheduled before the cluster exists", "category": "schedule",
+      "evidence": {"quote": "depends on A2", "line": 11},
+      "scenario": "A3 is dated 2026-03-03 but A2, the cluster it needs, is dated 2026-03-04, so the copy cannot start on time and the freeze window is spent waiting.",
+      "likelihood": 4, "impact": 4, "score": 16,
+      "detection": "Check on 2026-03-03 whether the new cluster accepts connections.",
+      "mitigation": "Move A3 after A2 or move A2 earlier, and add one spare day between them.",
+      "source": "script"
+    },
+    {
+      "rank": 3, "id": "R3", "title": "Firewall ports depend on another team", "category": "dependency",
+      "evidence": {"quote": "after the network team opens the firewall ports", "line": 10},
+      "scenario": "The network team is not named, has no date and is not a step, so the cluster build stalls silently while the schedule keeps its dates.",
+      "likelihood": 3, "impact": 5, "score": 15,
+      "detection": "Ticket for the firewall change still open one week before A2.",
+      "mitigation": "Add a step for the firewall request with a named requester and a due date.",
+      "source": "judgement"
+    },
+    {
+      "rank": 4, "id": "R4", "title": "No way back after the switch", "category": "rollback",
+      "evidence": {"absent": "No rollback or fallback step exists for the cutover."},
+      "scenario": "If error rates stay high after A5 there is no written path back to the old host, so the team improvises under pressure.",
+      "likelihood": 3, "impact": 5, "score": 15,
+      "detection": "Error rate above the goal threshold in the first 30 minutes after the switch.",
+      "mitigation": "Write a rollback step with a trigger threshold and a time limit, and rehearse it in A4.",
+      "source": "script"
+    },
+    {
+      "rank": 5, "id": "R5", "title": "Runbooks have no owner or date", "category": "ownership",
+      "evidence": {"quote": "Update the runbooks (TBD)", "line": 15},
+      "scenario": "Runbooks are not updated before cutover, so the on-call person follows stale instructions during the first incident on the new cluster.",
+      "likelihood": 4, "impact": 2, "score": 8,
+      "detection": "Runbook page last-edited date is older than the cutover date.",
+      "mitigation": "Assign an owner and a date before the rehearsal.",
+      "source": "script"
+    }
+  ],
+  "not_checked": ["Whether the 5 minute downtime goal is achievable for this database size", "Vendor delivery dates for the new cluster"]
+}

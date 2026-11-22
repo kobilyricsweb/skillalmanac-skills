@@ -1,0 +1,20 @@
+{
+  "property": {"address": "8 Harbor Street, Westport", "type": "duplex", "units": 2, "area_value": 2000, "area_unit": "sqft"},
+  "currency": "USD",
+  "as_of": "2026-11-05",
+  "purchase_price": 450000,
+  "closing_costs": 9000,
+  "renovation_cost": 0,
+  "income": {"gross_scheduled_rent_annual": 42000, "vacancy_rate": 0.05, "other_income_annual": 0},
+  "expenses": {"operating_expenses_annual": 15000, "note": "Tax, insurance, repairs, water; owner self-manages."},
+  "financing": {"down_payment": 112500, "loan_amount": 337500, "interest_rate": 0.065, "term_years": 30},
+  "sources": [
+    {"field": "purchase_price", "source": "Listing", "date": "2026-11-01"},
+    {"field": "income.gross_scheduled_rent_annual", "source": "Rent roll", "date": "2026-11-01"},
+    {"field": "expenses.operating_expenses_annual", "source": "Seller statement", "date": "2026-11-02"}
+  ],
+  "due_diligence": [
+    {"item": "Inspection", "owner": "Buyer", "due": "2026-11-30", "status": "open"},
+    {"item": "Title search", "status": "open"}
+  ]
+}

@@ -1,0 +1,235 @@
+{
+ "note": "Each case runs one script with the given args (paths relative to evals/fixtures/; @name = pdf_inspect report of fixtures/name.pdf) and checks the exit code and the JSON values at dotted paths. Expected values were verified by hand against the fixture content.",
+ "cases": [
+  {
+   "tool": "pdf_inspect",
+   "args": [
+    "text_flate.pdf"
+   ],
+   "exit": 0,
+   "expect": {
+    "page_count": 1,
+    "text_layer": "text_layer_likely",
+    "pages_with_text_operators": 1,
+    "image_objects": 0
+   }
+  },
+  {
+   "tool": "pdf_inspect",
+   "args": [
+    "text_plain_2pages.pdf"
+   ],
+   "exit": 0,
+   "expect": {
+    "page_count": 2,
+    "text_layer": "text_layer_likely",
+    "pages_with_text_operators": 2
+   }
+  },
+  {
+   "tool": "pdf_inspect",
+   "args": [
+    "scanned.pdf"
+   ],
+   "exit": 0,
+   "expect": {
+    "page_count": 2,
+    "text_layer": "image_only_likely",
+    "pages_with_text_operators": 0,
+    "image_objects": 1
+   }
+  },
+  {
+   "tool": "pdf_inspect",
+   "args": [
+    "scanned_ocr.pdf"
+   ],
+   "exit": 0,
+   "expect": {
+    "page_count": 1,
+    "text_layer": "ocr_layer_likely",
+    "pages_with_invisible_text": 1
+   }
+  },
+  {
+   "tool": "pdf_inspect",
+   "args": [
+    "mixed.pdf"
+   ],
+   "exit": 0,
+   "expect": {
+    "page_count": 2,
+    "text_layer": "mixed",
+    "pages_with_text_operators": 1
+   }
+  },
+  {
+   "tool": "pdf_inspect",
+   "args": [
+    "form_filled.pdf"
+   ],
+   "exit": 0,
+   "expect": {
+    "form.field_count": 3,
+    "form.fields.0.name": "form1.Name",
+    "form.fields.0.value": "Jane Doe",
+    "form.fields.1.type": "checkbox",
+    "form.fields.1.on_states.0": "Yes",
+    "form.fields.2.required": true,
+    "form.xfa": false
+   }
+  },
+  {
+   "tool": "pdf_inspect",
+   "args": [
+    "form_xfa.pdf"
+   ],
+   "exit": 0,
+   "expect": {
+    "form.xfa": true,
+    "form.field_count": 3
+   }
+  },
+  {
+   "tool": "pdf_inspect",
+   "args": [
+    "encrypted.pdf"
+   ],
+   "exit": 0,
+   "expect": {
+    "encryption.encrypted": true,
+    "encryption.v": 2,
+    "encryption.r": 3,
+    "text_layer": "unknown",
+    "page_count": 1
+   }
+  },
+  {
+   "tool": "pdf_inspect",
+   "args": [
+    "objstm.pdf"
+   ],
+   "exit": 0,
+   "expect": {
+    "object_streams": 1,
+    "text_layer": "unknown",
+    "page_count": null,
+    "page_count_confident": false
+   }
+  },
+  {
+   "tool": "pdf_inspect",
+   "args": [
+    "not_a_pdf.pdf"
+   ],
+   "exit": 2,
+   "expect": {
+    "ok": false
+   }
+  },
+  {
+   "tool": "pdf_inspect",
+   "args": [
+    "missing.pdf"
+   ],
+   "exit": 2,
+   "expect": {
+    "ok": false
+   }
+  },
+  {
+   "tool": "table_check",
+   "args": [
+    "invoice_good.csv",
+    "--rows",
+    "3",
+    "--total-row",
+    "--sum",
+    "Amount=1234.50"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "body_rows": 3
+   }
+  },
+  {
+   "tool": "table_check",
+   "args": [
+    "invoice_bad.csv",
+    "--rows",
+    "7",
+    "--total-row",
+    "--sum",
+    "Amount=1300"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "body_rows": 8,
+    "checks.1.detail.rows.0.csv_line": 10,
+    "checks.2.detail.csv_lines.0": 4,
+    "checks.4.detail.found": 8,
+    "checks.5.detail.cells.0.value": "1.5O",
+    "checks.6.detail.sum_of_rows": 1274.5,
+    "checks.7.detail.sum_of_rows": 23.0,
+    "checks.7.detail.printed_total": 22.0
+   }
+  },
+  {
+   "tool": "table_check",
+   "args": [
+    "missing.csv"
+   ],
+   "exit": 2,
+   "expect": {
+    "ok": false
+   }
+  },
+  {
+   "tool": "form_verify",
+   "args": [
+    "mapping.json",
+    "@form_filled",
+    "--original",
+    "@form_blank"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "counts.ok": 3
+   }
+  },
+  {
+   "tool": "form_verify",
+   "args": [
+    "mapping.json",
+    "@form_filled_bad",
+    "--original",
+    "@form_blank"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "counts.value_mismatch": 1,
+    "counts.empty_in_output": 1,
+    "counts.ok": 1
+   }
+  },
+  {
+   "tool": "form_verify",
+   "args": [
+    "mapping.json",
+    "@form_blank",
+    "--original",
+    "@form_blank"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "counts.empty_in_output": 2,
+    "counts.value_mismatch": 1
+   }
+  }
+ ]
+}

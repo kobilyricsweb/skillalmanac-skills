@@ -1,0 +1,22 @@
+[
+  {"query": "I need to paste this customer support export into ChatGPT, can you strip the emails and phone numbers first", "should_trigger": true},
+  {"query": "redact the PII from this log file before I send it to the vendor", "should_trigger": true},
+  {"query": "anonymize this meeting transcript, replace the names I list with placeholders but keep it readable", "should_trigger": true},
+  {"query": "mask the credit card numbers and IBANs in this CSV export, keep the last 4 digits", "should_trigger": true},
+  {"query": "scrub API keys and IP addresses out of this server log so I can share it on a forum", "should_trigger": true},
+  {"query": "remove personal data from this JSON dump before an AI reads it, then put the real values back in the answer", "should_trigger": true},
+  {"query": "replace every customer email in this ticket with a token like EMAIL_1, same email same token", "should_trigger": true},
+  {"query": "sanitize this document so I can safely give it to an LLM, no names, phones or account numbers", "should_trigger": true},
+  {"query": "which sensitive values did you remove from my file? give me counts per type without showing them", "should_trigger": true},
+  {"query": "blank out SSNs and bearer tokens in this pasted incident report", "should_trigger": true},
+  {"query": "scan my git repository for committed secrets and API keys", "should_trigger": false},
+  {"query": "set up hooks so the coding agent cannot read my .env file or run rm -rf", "should_trigger": false},
+  {"query": "is this third-party skill safe to install? audit it", "should_trigger": false},
+  {"query": "are we GDPR compliant if we send this data to an AI vendor? write me a legal opinion", "should_trigger": false},
+  {"query": "generate 50 realistic fake customer records with names, emails and phone numbers for testing", "should_trigger": false},
+  {"query": "encrypt this file with a password so only I can open it", "should_trigger": false},
+  {"query": "summarize this support ticket in three bullet points", "should_trigger": false},
+  {"query": "rotate the leaked AWS key and update the secrets manager config", "should_trigger": false},
+  {"query": "blur the faces and license plates in this video", "should_trigger": false},
+  {"query": "write a privacy policy page for my website", "should_trigger": false}
+]

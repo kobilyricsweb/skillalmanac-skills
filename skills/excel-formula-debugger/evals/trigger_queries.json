@@ -1,0 +1,22 @@
+[
+  {"query": "my excel sheet shows #REF! in the totals column after I deleted a tab, can you find what broke", "should_trigger": true},
+  {"query": "excel says there's a circular reference somewhere in this workbook and I can't find it, here's the file", "should_trigger": true},
+  {"query": "why does my vlookup return #N/A when the value is clearly in the list", "should_trigger": true},
+  {"query": "check my spreadsheet formulas for mistakes before I send it to the client", "should_trigger": true},
+  {"query": "this workbook got really slow, is it the formulas? it has lots of INDIRECT and OFFSET", "should_trigger": true},
+  {"query": "one row in my sheet gives a different total than the rows above, same formula I thought", "should_trigger": true},
+  {"query": "my coworker opens my file in Excel 2016 and sees #NAME? where I used XLOOKUP", "should_trigger": true},
+  {"query": "audit this xlsx: find hardcoded numbers inside formulas and any nested IFs that are too deep", "should_trigger": true},
+  {"query": "sum shows 0 even though the column has numbers, I think they're stored as text", "should_trigger": true},
+  {"query": "debug this formula for me: =IF(A2>5,IF(B2>3,IF(C2>1,IF(D2>0,1,2),3),4),5) it feels fragile", "should_trigger": true},
+  {"query": "analyse this sales spreadsheet and tell me which region grew fastest", "should_trigger": false},
+  {"query": "build a pivot table and a bar chart from this data", "should_trigger": false},
+  {"query": "write a VBA macro that emails each row of this sheet", "should_trigger": false},
+  {"query": "clean this messy csv, remove duplicates and fix the date columns", "should_trigger": false},
+  {"query": "write a SQL query that joins orders and customers", "should_trigger": false},
+  {"query": "convert this xlsx into a formatted PDF report", "should_trigger": false},
+  {"query": "make me a monthly budget template with categories", "should_trigger": false},
+  {"query": "explain the difference between a mean and a median in plain words", "should_trigger": false},
+  {"query": "build a financial model of my startup's revenue for the next three years", "should_trigger": false},
+  {"query": "my Python pandas script raises a KeyError on the dataframe, help me debug", "should_trigger": false}
+]

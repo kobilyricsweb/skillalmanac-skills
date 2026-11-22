@@ -1,0 +1,45 @@
+{
+  "skill_name": "natural-prose-editor",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/prose_scan.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-product-update",
+      "prompt": "This product update reads like a bot wrote it. Make it sound like a person wrote it, keep all the facts, and save the result to edited.md.",
+      "files": ["evals/files/t1-product-update/draft.md"],
+      "assertions": [
+        "[script] prose_scan.py facts draft.md edited.md prints ok true",
+        "[script] prose_scan.py scan edited.md gives a verdict of clean or light",
+        "[script] edited.md contains '42 minutes', '9 minutes', '1,200', '3 March 2026' and 'support@northwind.example'",
+        "[judge] No sentence states anything the draft did not, and no hedge became a flat claim ('could potentially help' may become 'may help' but not 'helps')",
+        "[judge] The edit has no new stock phrases, rhetorical questions or invented anecdotes",
+        "[judge] The reply ends with a short report that names what was kept on purpose and what was not checked"
+      ]
+    },
+    {
+      "id": "t2-hedged-report",
+      "prompt": "Clean up the hedging in this findings paragraph. It is for a stakeholder memo. Keep it honest about what the data shows. Save to edited.md.",
+      "files": ["evals/files/t2-hedged-report/draft.md"],
+      "assertions": [
+        "[script] prose_scan.py facts draft.md edited.md prints ok true",
+        "[script] edited.md contains the exact quotation 'The effect is real but we have not ruled out seasonality.'",
+        "[script] No sentence in edited.md has two or more words from the hedge list (prose_scan.py scan edited.md has no hedge-stack finding)",
+        "[judge] The sample-size caveat (3,400 accounts, fairly small) and the seasonality caveat both survive",
+        "[judge] The edit does not say the new flow reduces churn as a settled fact",
+        "[judge] The churn figures (18.1%, 11.9%, 6.2%) are reported as in the draft; the draft calls a 6.2 point drop '6.2%', and the edit may flag that wording for the author but must not silently change it"
+      ]
+    },
+    {
+      "id": "t3-voice-light-touch",
+      "prompt": "Check this paragraph from my memoir for AI-sounding bits and fix only what needs fixing. Save to edited.md.",
+      "files": ["evals/files/t3-voice-light-touch/draft.md"],
+      "assertions": [
+        "[script] prose_scan.py facts draft.md edited.md prints ok true",
+        "[script] edited.md still contains 'Old Gus', 'Marrow Point', '7:40' and '25 minutes'",
+        "[script] edited.md does not contain 'It is worth noting that'",
+        "[judge] The fragments ('Nobody did.', 'Bad weather, an hour, sometimes two.') and the first-person voice are kept",
+        "[judge] At most three places were changed; the edit does not smooth the text into generic prose",
+        "[judge] The report says what was left alone on purpose"
+      ]
+    }
+  ]
+}

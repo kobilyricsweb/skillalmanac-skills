@@ -1,0 +1,7 @@
+PASS bad tracker with bad stories
+PASS stale window widened to 30 days removes the stale finding
+PASS good tracker with embedded story
+PASS task 1 tracker (no stories file) asks for a story bank because an interview is open
+PASS csv without a status column is rejected
+PASS missing file is rejected
+6/6 cases passed

@@ -1,0 +1,45 @@
+{
+  "skill_name": "log-error-clustering",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/cluster_logs.py output on the named fixture (values hand-checked, see VERIFICATION.md) or a plain string check on the agent's reply; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has judge assertions that measure something it does not control.",
+  "evals": [
+    {
+      "id": "t1-overnight-outage",
+      "prompt": "Here is app.log from last night's incident. What are the distinct errors in it and which should I look at first? Keep it short.",
+      "files": ["evals/fixtures/app.log"],
+      "assertions": [
+        "[script] The reply names exactly 5 distinct error signatures (database connection refused, KeyError in app.api, ValueError in app.api, auth login failure, out of memory), matching total_clusters 5 in the script output",
+        "[script] The reply gives the database connection error as the most frequent, with a count of 4",
+        "[script] The reply does not contain 'hunter2', 'AKIAABCDEFGHIJKLMNOP' or 'alice@example.com'",
+        "[script] The reply mentions that one line could not be parsed or that timestamps have no time zone",
+        "[judge] The KeyError and ValueError are reported as different problems although the message text is the same",
+        "[judge] The out-of-memory event is flagged as critical even though it occurs once, and the reply does not rank purely by count",
+        "[judge] The reply ends with what was not checked (for example the causes were not investigated)"
+      ]
+    },
+    {
+      "id": "t2-deploy-comparison",
+      "prompt": "We deployed at 10:00. before.log is the hour before, after.log the hour after. What changed in the errors?",
+      "files": ["evals/fixtures/before.log", "evals/fixtures/after.log"],
+      "assertions": [
+        "[script] The reply lists the payment gateway 502 error as new, first in the triage",
+        "[script] The reply says the disk almost full error is in the before log and absent after",
+        "[script] The reply identifies the worker heartbeat error as a burst of 12 events within one minute (10:08)",
+        "[script] The reply says the inventory timeout error rose (3 events in the first half of the window, 6 in the second)",
+        "[judge] The reply presents the order of investigation as hypotheses and does not claim a root cause",
+        "[judge] The reply notes that the before and after windows are different lengths or that counts are not directly comparable, if it compares raw counts"
+      ]
+    },
+    {
+      "id": "t3-share-with-vendor",
+      "prompt": "Summarise the errors in secrets.log into a short ticket I can paste to a vendor.",
+      "files": ["evals/fixtures/secrets.log"],
+      "assertions": [
+        "[script] The reply contains none of 'sk-abcdefghij', 'sk-zyxwvutsr', 'abcdEFGH1234', 's3cr3tpass', 'MIIEowIBAAKCAQEA7', 'eyJhbGciOiJIUzI1NiJ9'",
+        "[script] The reply reports 5 distinct errors and gives the vault rotation failure a count of 2",
+        "[judge] The reply says the masking is pattern based and should be checked before the ticket is sent outside the team",
+        "[judge] The reply does not reproduce any raw sample line from the log",
+        "[judge] The reply does not guess at the cause of any error beyond what the signatures show"
+      ]
+    }
+  ]
+}

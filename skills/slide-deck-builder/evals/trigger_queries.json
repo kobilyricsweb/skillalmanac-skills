@@ -1,0 +1,22 @@
+[
+  {"query": "make me a 10 minute slide deck for our board about the Q3 churn numbers", "should_trigger": true},
+  {"query": "I need a pitch deck for my seed round, here are my notes", "should_trigger": true},
+  {"query": "turn this report into a presentation I can give on Thursday, with speaker notes", "should_trigger": true},
+  {"query": "my slides are too wordy and every title is just a topic, can you fix them?", "should_trigger": true},
+  {"query": "review this pptx before I present it, check for slides that are too crowded", "should_trigger": true},
+  {"query": "outline a 20 minute talk on our migration to Kubernetes with one idea per slide", "should_trigger": true},
+  {"query": "write the speaker notes for each slide of this deck", "should_trigger": true},
+  {"query": "build a python-pptx script that generates my quarterly update deck", "should_trigger": true},
+  {"query": "convert this Markdown outline to Marp slides and make sure the headlines say something", "should_trigger": true},
+  {"query": "does this deck follow good practice? charts need sources and notes are missing on half the slides", "should_trigger": true},
+  {"query": "write a Word document report on our Q3 churn numbers", "should_trigger": false},
+  {"query": "design a brand template and theme with our logo and colours for PowerPoint", "should_trigger": false},
+  {"query": "make a single bar chart of monthly revenue as a PNG", "should_trigger": false},
+  {"query": "extract the text from this PDF and give me a summary", "should_trigger": false},
+  {"query": "create an A2 poster for the science fair", "should_trigger": false},
+  {"query": "write a one-page memo to the board about the pricing change", "should_trigger": false},
+  {"query": "build me a landing page for my product", "should_trigger": false},
+  {"query": "give me tips for overcoming stage fright before a presentation", "should_trigger": false},
+  {"query": "summarise this 40 page PDF into five bullet points", "should_trigger": false},
+  {"query": "fix the formulas in my Excel budget spreadsheet", "should_trigger": false}
+]

@@ -1,0 +1,139 @@
+{
+ "cases": [
+  {
+   "args": [
+    "good.md"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "errors": 0,
+    "warnings": 0,
+    "ticket_count": 3,
+    "build_order": [
+     "T1",
+     "T2",
+     "T3"
+    ],
+    "rules": []
+   }
+  },
+  {
+   "args": [
+    "bad.md"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "errors": 12,
+    "warnings": 12,
+    "ticket_count": 4,
+    "build_order": null,
+    "rules": [
+     "error:criterion-not-gwt=1",
+     "error:dependency-cycle=1",
+     "error:duplicate-title=1",
+     "error:missing-acceptance-criteria=1",
+     "error:self-dependency=1",
+     "error:too-large=1",
+     "error:too-many-criteria=1",
+     "error:unknown-dependency=1",
+     "error:vague-title=4",
+     "warning:duplicate-criterion=1",
+     "warning:missing-definition-of-done=4",
+     "warning:missing-non-goals=3",
+     "warning:multiple-outcomes=1",
+     "warning:outcome-not-one-sentence=1",
+     "warning:vague-criterion=2"
+    ]
+   }
+  },
+  {
+   "args": [
+    "good.json"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "errors": 0,
+    "warnings": 0,
+    "ticket_count": 2,
+    "build_order": [
+     "A1",
+     "A2"
+    ],
+    "rules": []
+   }
+  },
+  {
+   "args": [
+    "bad.json"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "errors": 10,
+    "warnings": 6,
+    "ticket_count": 4,
+    "build_order": null
+   }
+  },
+  {
+   "args": [
+    "good.md",
+    "--max-criteria",
+    "3"
+   ],
+   "exit": 1,
+   "expect": {
+    "errors": 1,
+    "rules": [
+     "error:too-many-criteria=1"
+    ]
+   }
+  },
+  {
+   "args": [
+    "warn_only.json"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "errors": 0,
+    "warnings": 2
+   }
+  },
+  {
+   "args": [
+    "warn_only.json",
+    "--strict"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": true,
+    "errors": 0,
+    "warnings": 2
+   }
+  },
+  {
+   "args": [
+    "missing.md"
+   ],
+   "exit": 2,
+   "expect": {
+    "ok": false,
+    "has_input_error": true
+   }
+  },
+  {
+   "args": [
+    "broken.json"
+   ],
+   "exit": 2,
+   "expect": {
+    "ok": false,
+    "has_input_error": true
+   }
+  }
+ ]
+}

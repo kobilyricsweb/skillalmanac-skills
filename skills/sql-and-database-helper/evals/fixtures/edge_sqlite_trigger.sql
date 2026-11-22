@@ -1,0 +1,8 @@
+BEGIN;
+CREATE TABLE log (id INTEGER PRIMARY KEY, note TEXT);
+CREATE TRIGGER log_ins AFTER INSERT ON users
+BEGIN
+  INSERT INTO log (note) VALUES ('new user');
+  DELETE FROM log WHERE id < 0;
+END;
+COMMIT;

@@ -1,0 +1,425 @@
+{
+ "note": "Expected values were generated from the script, then read line by line against the rule table in references/style_rules.md and corrected where wrong; see VERIFICATION.md.",
+ "cases": [
+  {
+   "args": [
+    "format",
+    "good.bib",
+    "--style",
+    "apa"
+   ],
+   "exit": 0,
+   "expect": {
+    "summary": {
+     "total": 5,
+     "ok": 5,
+     "incomplete": 0,
+     "error": 0,
+     "duplicates": 0,
+     "warnings": 1
+    },
+    "references": [
+     "Lee, H., Okafor, C. M., & van der Berg, A. (2020). Sleep timing and exam performance in first-year students. *Journal of Student Health*, *12*(3), 45\u201367. https://doi.org/10.1000/jsh.2020.045",
+     "Moreno, L. (2018). *Field Methods for Small Teams* (2nd ed.). Harbor Press.",
+     "Park, M.-J. (2019). Writing the methods section. In A. Silva & T. Brown (Eds.), *Handbook of Applied Research Writing* (pp. 101\u2013118). Meridian Books.",
+     "*Tips for better sleep*. (2022, May 12). Health Library. https://example.org/sleep-tips",
+     "World Health Organization. (2021). *Global sleep health report* (Report No. 7). https://example.org/reports/sleep-2021"
+    ],
+    "statuses": {
+     "lee2020": "ok",
+     "moreno2018": "ok",
+     "park2019": "ok",
+     "who2021": "ok",
+     "nhs2022": "ok"
+    },
+    "missing": {},
+    "duplicates": [],
+    "in_text": {
+     "lee2020": "(Lee et al., 2020)",
+     "moreno2018": "(Moreno, 2018)",
+     "park2019": "(Park, 2019)",
+     "who2021": "(World Health Organization, 2021)",
+     "nhs2022": "(Tips for better sleep, 2022)"
+    }
+   }
+  },
+  {
+   "args": [
+    "format",
+    "good.bib",
+    "--style",
+    "mla"
+   ],
+   "exit": 0,
+   "expect": {
+    "summary": {
+     "total": 5,
+     "ok": 5,
+     "incomplete": 0,
+     "error": 0,
+     "duplicates": 0,
+     "warnings": 1
+    },
+    "references": [
+     "Lee, Hana, et al. \"Sleep timing and exam performance in first-year students.\" *Journal of Student Health*, vol. 12, no. 3, 2020, pp. 45\u201367, https://doi.org/10.1000/jsh.2020.045.",
+     "Moreno, Lucia. *Field Methods for Small Teams*. 2nd ed., Harbor Press, 2018.",
+     "Park, Min-jun. \"Writing the methods section.\" *Handbook of Applied Research Writing*, edited by Ana Silva and Tom Brown, Meridian Books, 2019, pp. 101\u2013118.",
+     "\"Tips for better sleep.\" *Health Library*, 12 May 2022, example.org/sleep-tips.",
+     "World Health Organization. *Global sleep health report*. Report no. 7, 2021, example.org/reports/sleep-2021."
+    ],
+    "statuses": {
+     "lee2020": "ok",
+     "moreno2018": "ok",
+     "park2019": "ok",
+     "who2021": "ok",
+     "nhs2022": "ok"
+    },
+    "missing": {},
+    "duplicates": [],
+    "in_text": {
+     "lee2020": "(Lee et al.)",
+     "moreno2018": "(Moreno)",
+     "park2019": "(Park)",
+     "who2021": "(World Health Organization)",
+     "nhs2022": "(\"Tips for better sleep\")"
+    }
+   }
+  },
+  {
+   "args": [
+    "format",
+    "good.bib",
+    "--style",
+    "chicago"
+   ],
+   "exit": 0,
+   "expect": {
+    "summary": {
+     "total": 5,
+     "ok": 5,
+     "incomplete": 0,
+     "error": 0,
+     "duplicates": 0,
+     "warnings": 1
+    },
+    "references": [
+     "Lee, Hana, Chidi M. Okafor, and Anna van der Berg. 2020. \"Sleep timing and exam performance in first-year students.\" *Journal of Student Health* 12 (3): 45\u201367. https://doi.org/10.1000/jsh.2020.045.",
+     "Moreno, Lucia. 2018. *Field Methods for Small Teams*. 2nd ed. Boston: Harbor Press.",
+     "Park, Min-jun. 2019. \"Writing the methods section.\" In *Handbook of Applied Research Writing*, edited by Ana Silva and Tom Brown, 101\u2013118. Meridian Books.",
+     "\"Tips for better sleep.\" 2022. Health Library. https://example.org/sleep-tips.",
+     "World Health Organization. 2021. *Global sleep health report*. Report No. 7. https://example.org/reports/sleep-2021."
+    ],
+    "statuses": {
+     "lee2020": "ok",
+     "moreno2018": "ok",
+     "park2019": "ok",
+     "who2021": "ok",
+     "nhs2022": "ok"
+    },
+    "missing": {},
+    "duplicates": [],
+    "in_text": {
+     "lee2020": "(Lee, Okafor, and van der Berg 2020)",
+     "moreno2018": "(Moreno 2018)",
+     "park2019": "(Park 2019)",
+     "who2021": "(World Health Organization 2021)",
+     "nhs2022": "(\"Tips for better sleep\" 2022)"
+    }
+   }
+  },
+  {
+   "args": [
+    "format",
+    "good.bib",
+    "--style",
+    "ieee"
+   ],
+   "exit": 1,
+   "expect": {
+    "summary": {
+     "total": 5,
+     "ok": 4,
+     "incomplete": 1,
+     "error": 0,
+     "duplicates": 0,
+     "warnings": 1
+    },
+    "references": [
+     "[1] H. Lee, C. M. Okafor, and A. van der Berg, \"Sleep timing and exam performance in first-year students,\" *Journal of Student Health*, vol. 12, no. 3, pp. 45\u201367, 2020, doi: 10.1000/jsh.2020.045.",
+     "[2] L. Moreno, *Field Methods for Small Teams*, 2nd ed. Boston: Harbor Press, 2018.",
+     "[3] M.-J. Park, \"Writing the methods section,\" in *Handbook of Applied Research Writing*, A. Silva and T. Brown, Eds. Meridian Books, 2019, pp. 101\u2013118.",
+     "[4] World Health Organization, \"Global sleep health report,\" Rep. 7, 2021. [Online]. Available: https://example.org/reports/sleep-2021",
+     "[5] [INCOMPLETE: missing accessed] \"Tips for better sleep,\" Health Library. [Online]. Available: https://example.org/sleep-tips"
+    ],
+    "statuses": {
+     "lee2020": "ok",
+     "moreno2018": "ok",
+     "park2019": "ok",
+     "who2021": "ok",
+     "nhs2022": "incomplete"
+    },
+    "missing": {
+     "nhs2022": [
+      "accessed"
+     ]
+    },
+    "duplicates": [],
+    "in_text": {
+     "lee2020": "[1]",
+     "moreno2018": "[2]",
+     "park2019": "[3]",
+     "who2021": "[4]",
+     "nhs2022": "[5]"
+    }
+   }
+  },
+  {
+   "args": [
+    "format",
+    "bad.bib",
+    "--style",
+    "apa"
+   ],
+   "exit": 1,
+   "expect": {
+    "summary": {
+     "total": 5,
+     "ok": 1,
+     "incomplete": 3,
+     "error": 1,
+     "duplicates": 1,
+     "warnings": 5
+    },
+    "references": [
+     "[INCOMPLETE: missing volume] Diaz, R. (2017). Quiet hours in shared housing. *Housing Studies Quarterly*, 10\u201319.",
+     "[INCOMPLETE: missing url] *A page with only a title*. (n.d.).",
+     "[INCOMPLETE: missing author, year] A study with no author and no year. *Unknown Journal*, *4*."
+    ],
+    "statuses": {
+     "nodoi": "incomplete",
+     "noauthor": "incomplete",
+     "dup1": "ok",
+     "phd1": "error",
+     "page1": "incomplete"
+    },
+    "missing": {
+     "nodoi": [
+      "volume"
+     ],
+     "noauthor": [
+      "author",
+      "year"
+     ],
+     "page1": [
+      "url"
+     ]
+    },
+    "duplicates": [
+     {
+      "id": "dup1",
+      "duplicate_of": "nodoi"
+     }
+    ],
+    "in_text": {
+     "nodoi": "(Diaz, 2017)",
+     "noauthor": "(\"A study with no...\", [year missing])",
+     "dup1": "",
+     "phd1": "",
+     "page1": "(A page with only..., n.d.)"
+    }
+   }
+  },
+  {
+   "args": [
+    "format",
+    "bad.bib",
+    "--style",
+    "mla"
+   ],
+   "exit": 1,
+   "expect": {
+    "summary": {
+     "total": 5,
+     "ok": 2,
+     "incomplete": 2,
+     "error": 1,
+     "duplicates": 1,
+     "warnings": 3
+    },
+    "references": [
+     "Diaz, Rosa. \"Quiet hours in shared housing.\" *Housing Studies Quarterly*, 2017, pp. 10\u201319.",
+     "[INCOMPLETE: missing url] \"A page with only a title.\"",
+     "[INCOMPLETE: missing author, year] \"A study with no author and no year.\" *Unknown Journal*, vol. 4."
+    ],
+    "statuses": {
+     "nodoi": "ok",
+     "noauthor": "incomplete",
+     "dup1": "ok",
+     "phd1": "error",
+     "page1": "incomplete"
+    },
+    "missing": {
+     "noauthor": [
+      "author",
+      "year"
+     ],
+     "page1": [
+      "url"
+     ]
+    },
+    "duplicates": [
+     {
+      "id": "dup1",
+      "duplicate_of": "nodoi"
+     }
+    ],
+    "in_text": {
+     "nodoi": "(Diaz)",
+     "noauthor": "(\"A study with no...\")",
+     "dup1": "",
+     "phd1": "",
+     "page1": "(\"A page with only...\")"
+    }
+   }
+  },
+  {
+   "args": [
+    "format",
+    "ai.json",
+    "--style",
+    "apa"
+   ],
+   "exit": 0,
+   "expect": {
+    "summary": {
+     "total": 3,
+     "ok": 3,
+     "incomplete": 0,
+     "error": 0,
+     "duplicates": 0,
+     "warnings": 0
+    },
+    "references": [
+     "Kim, J.-W., & Alvarez, M. E. (2022a). Napping in adolescents. *Adolescent Research Review*, *8*(1), 3\u20139.",
+     "Kim, J.-W., & Alvarez, M. E. (2022b). Sleep and learning in adolescents. *Adolescent Research Review*, *7*, e0234. https://doi.org/10.2000/arr.7.e0234",
+     "OpenAI. (2023). *ChatGPT* (Mar 14 version) [Large language model]. https://chat.openai.com/chat"
+    ],
+    "statuses": {
+     "chat2023": "ok",
+     "kim2022a": "ok",
+     "kim2022b": "ok"
+    },
+    "missing": {},
+    "duplicates": [],
+    "in_text": {
+     "chat2023": "(OpenAI, 2023)",
+     "kim2022a": "(Kim & Alvarez, 2022b)",
+     "kim2022b": "(Kim & Alvarez, 2022a)"
+    }
+   }
+  },
+  {
+   "args": [
+    "format",
+    "ai.json",
+    "--style",
+    "mla"
+   ],
+   "exit": 0,
+   "expect": {
+    "summary": {
+     "total": 3,
+     "ok": 3,
+     "incomplete": 0,
+     "error": 0,
+     "duplicates": 0,
+     "warnings": 1
+    },
+    "references": [
+     "Kim, Jae-won, and Maria Elena Alvarez. \"Napping in adolescents.\" *Adolescent Research Review*, vol. 8, no. 1, 2022, pp. 3\u20139.",
+     "Kim, Jae-won, and Maria Elena Alvarez. \"Sleep and learning in adolescents.\" *Adolescent Research Review*, vol. 7, 2022, e0234, https://doi.org/10.2000/arr.7.e0234.",
+     "\"Explain how sleep affects memory consolidation\" prompt. *ChatGPT*, Mar 14 version, OpenAI, 14 Mar. 2023, chat.openai.com/chat."
+    ],
+    "statuses": {
+     "chat2023": "ok",
+     "kim2022a": "ok",
+     "kim2022b": "ok"
+    },
+    "missing": {},
+    "duplicates": [],
+    "in_text": {
+     "chat2023": "(\"Explain how sleep affects...\")",
+     "kim2022a": "(Kim and Alvarez)",
+     "kim2022b": "(Kim and Alvarez)"
+    }
+   }
+  },
+  {
+   "args": [
+    "format",
+    "t2_chatgpt.json",
+    "--style",
+    "mla"
+   ],
+   "exit": 0,
+   "expect": {
+    "summary": {
+     "total": 1,
+     "ok": 1,
+     "incomplete": 0,
+     "error": 0,
+     "duplicates": 0,
+     "warnings": 0
+    },
+    "references": [
+     "\"Describe the main causes of the 1929 stock market crash\" prompt. *ChatGPT*, Mar 14 version, OpenAI, 8 Mar. 2023, chat.openai.com/chat."
+    ],
+    "statuses": {
+     "chat2023": "ok"
+    },
+    "missing": {},
+    "duplicates": [],
+    "in_text": {
+     "chat2023": "(\"Describe the main causes...\")"
+    }
+   }
+  },
+  {
+   "args": [
+    "format",
+    "missing_file.bib",
+    "--style",
+    "apa"
+   ],
+   "exit": 2,
+   "expect": {},
+   "stderr_has": "No such file"
+  },
+  {
+   "args": [
+    "format",
+    "good.bib",
+    "--style",
+    "apa",
+    "--out",
+    "good.bib"
+   ],
+   "exit": 2,
+   "expect": {},
+   "stderr_has": "refusing to write over the input"
+  },
+  {
+   "args": [
+    "format",
+    "ai.json",
+    "--style",
+    "apa",
+    "--out",
+    "ai.json"
+   ],
+   "exit": 2,
+   "expect": {},
+   "stderr_has": "refusing to write over the input"
+  }
+ ]
+}

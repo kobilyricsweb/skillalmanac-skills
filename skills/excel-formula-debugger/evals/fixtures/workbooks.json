@@ -1,0 +1,94 @@
+{
+  "_note": "Specs for the test workbooks. run_fixtures.py turns each one into a real .xlsx (a zip of XML) in a temporary folder, because the package is text only. Cell values: a string is text, a number is a number; an object has f (formula without '='), v (saved result), e (saved error value), si (shared-formula index), ref (marks the shared master and its range) and shared (true on followers).",
+  "clean": {
+    "sheets": [
+      {
+        "name": "Sales",
+        "cells": {
+          "A1": "Item", "B1": "Qty", "C1": "Price", "D1": "Total",
+          "A2": "Pen", "B2": 2, "C2": 1.5, "D2": {"f": "B2*C2", "v": 3},
+          "A3": "Ink", "B3": 3, "C3": 2, "D3": {"f": "B3*C3", "v": 6},
+          "A4": "Pad", "B4": 4, "C4": 2.5, "D4": {"f": "B4*C4", "v": 10},
+          "A5": "Cap", "B5": 5, "C5": 3, "D5": {"f": "B5*C5", "v": 15},
+          "A6": "Clip", "B6": 6, "C6": 3.5, "D6": {"f": "B6*C6", "v": 21},
+          "D7": {"f": "SUM(D2:D6)", "v": 55}
+        }
+      }
+    ]
+  },
+  "broken": {
+    "defined_names": {"VatRate": "Rates!$B$1"},
+    "sheets": [
+      {
+        "name": "Orders",
+        "cells": {
+          "A1": "Item", "B1": "Qty", "C1": "Unit", "D1": "Net", "E1": "Gross", "F1": "Band", "G1": "Check",
+          "H1": "When", "I1": "Ratio", "J1": "Loop", "K1": "Self", "L1": "Misc", "M1": "Lookup", "N1": "Vat", "P1": "Dep",
+          "A2": "Pen", "A3": "Ink", "A4": "Pad", "A5": "Cap", "A6": "Clip", "A7": "Tape",
+          "B2": 2, "B3": 3, "B4": 4, "B5": 5, "B6": 6, "B7": 7,
+          "C2": 10, "C3": 20, "C4": 30, "C5": "40", "C6": 50, "C7": 60,
+          "D2": {"f": "B2*C2", "v": 20},
+          "D3": {"f": "B3*C3", "v": 60},
+          "D4": {"f": "B4*C4*1.2", "v": 144},
+          "D5": {"f": "B5*C5", "v": 200},
+          "D6": 250,
+          "D7": {"f": "B7*C7", "v": 420},
+          "E2": {"f": "D2*(1+Rates!$B$1)", "v": 23.4},
+          "E3": {"f": "D3*(1+Rates!$B$1)", "v": 70.2},
+          "E4": {"f": "D4*(1+Rates!$B$1)", "v": 168.48},
+          "E5": {"f": "D5*(1+Rates!$B$1)", "v": 234},
+          "E6": {"f": "D6*(1+Rates!$B$1)", "v": 292.5},
+          "E7": {"f": "D7*(1+Rates!$B$1)", "v": 491.4},
+          "F2": {"f": "IF(D2>500,\"high\",IF(D2>300,\"mid\",IF(D2>100,\"low\",IF(D2>50,\"tiny\",\"none\"))))", "v": "none"},
+          "G2": {"f": "D2*Rates!B9", "v": 0},
+          "H2": {"f": "TODAY()+B2", "v": 46000},
+          "H3": {"f": "OFFSET(B2,1,0)", "v": 3},
+          "H4": {"f": "INDIRECT(\"B\"&2)", "v": 2},
+          "I2": {"f": "B2/B9", "e": "#DIV/0!"},
+          "I3": {"f": "I2+1", "e": "#DIV/0!"},
+          "I4": {"f": "VLOOKUP(\"zz\",A2:B7,2,0)", "e": "#N/A"},
+          "J2": {"f": "J3+1", "v": 0},
+          "J3": {"f": "J2*2", "v": 0},
+          "K2": {"f": "SUM(K1:K3)", "v": 0},
+          "L2": {"f": "Nowhere!A1", "e": "#REF!"},
+          "L3": {"f": "#REF!+1", "e": "#REF!"},
+          "L4": {"f": "Margin*B2", "e": "#NAME?"},
+          "L5": {"f": "[1]Prices!A1*2", "v": 5},
+          "M2": {"f": "_xlfn.XLOOKUP(A2,A2:A7,B2:B7)", "v": 2},
+          "N2": {"f": "B2*VatRate", "v": 0.34},
+          "P2": {"f": "H2*2", "v": 92000}
+        }
+      },
+      {
+        "name": "Rates",
+        "cells": {"A1": "VAT", "B1": 0.17}
+      }
+    ]
+  },
+  "iterative": {
+    "iterate": true,
+    "sheets": [
+      {
+        "name": "S",
+        "cells": {
+          "A2": 1, "A3": 2, "A4": 3, "A5": 4,
+          "B2": {"f": "A2*2", "si": 0, "ref": "B2:B5", "v": 2},
+          "B3": {"si": 0, "shared": true, "v": 4},
+          "B4": {"si": 0, "shared": true, "v": 6},
+          "B5": {"si": 0, "shared": true, "v": 8},
+          "C7": {"f": "D7", "v": 0},
+          "D7": {"f": "E7", "v": 0},
+          "E7": {"f": "C7", "v": 0}
+        }
+      }
+    ]
+  },
+  "nocache": {
+    "sheets": [
+      {
+        "name": "T",
+        "cells": {"A1": 5, "B1": {"f": "A1+1"}}
+      }
+    ]
+  }
+}

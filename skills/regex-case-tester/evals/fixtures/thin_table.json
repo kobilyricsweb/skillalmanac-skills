@@ -1,0 +1,6 @@
+{
+  "pattern": "[a-z]+",
+  "mode": "fullmatch",
+  "match": ["abc"],
+  "no_match": ["ABC"]
+}

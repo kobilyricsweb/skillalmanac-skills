@@ -1,0 +1,17 @@
+{
+  "categories": {
+    "Homework": {"weight": 30, "drop_lowest": 1, "items": {"HW1": 10, "HW2": 10, "HW3": 10, "HW4": 10}},
+    "Quizzes": {"weight": 20, "method": "mean_of_percents", "items": {"Q1": 20, "Q2": 10}},
+    "Midterm": {"weight": 20, "items": {"Mid": 100}},
+    "Final": {"weight": 30, "items": {"Final": 100}}
+  },
+  "letters": [
+    {"letter": "A", "min": 90},
+    {"letter": "B", "min": 80},
+    {"letter": "C", "min": 70},
+    {"letter": "D", "min": 60},
+    {"letter": "F", "min": 0}
+  ],
+  "rounding": {"decimals": 1, "mode": "half_up", "per_category": false},
+  "expected_column": "Recorded"
+}

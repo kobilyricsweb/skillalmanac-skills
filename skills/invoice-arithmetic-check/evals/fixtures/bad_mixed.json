@@ -1,0 +1,33 @@
+{
+  "currency": "EUR",
+  "rounding": {"method": "line", "mode": "half_up"},
+  "invoices": [
+    {
+      "number": "B-001", "supplier": "Acme Ltd", "issue_date": "2026-03-10", "due_date": "2026-03-05",
+      "tax_rate": "20",
+      "lines": [
+        {"description": "Screws", "quantity": "3", "unit_price": "0.335", "line_total": "1.00"},
+        {"description": "Bolts", "quantity": "10", "unit_price": "4.10", "line_total": "40.00"}
+      ],
+      "stated_tax": "8.40", "stated_total": "49.40"
+    },
+    {
+      "number": "B-001", "supplier": "Acme Ltd", "issue_date": "2026-03-12", "tax_rate": "20",
+      "lines": [{"description": "Service", "quantity": "1", "unit_price": "100.00", "line_total": "100.00"}],
+      "stated_total": "120.00"
+    },
+    {
+      "number": "B-003", "supplier": "ACME LTD.", "issue_date": "2026-03-12", "tax_rate": "20",
+      "lines": [{"description": "Service", "quantity": "1", "unit_price": "100.00", "line_total": "100.00"}],
+      "stated_total": "120.00"
+    },
+    {
+      "number": "B-004", "supplier": "Beta GmbH", "currency": "USD", "tax_rate": "0",
+      "lines": [
+        {"description": "Return", "quantity": "-2", "unit_price": "5.00", "currency": "USD"},
+        {"description": "Freight", "quantity": "1", "unit_price": "20.00", "currency": "EUR"}
+      ],
+      "stated_total": "10.00"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {"query": "my validation accuracy is 99% and I don't trust it, can you check whether train and test overlap", "should_trigger": true},
+  {"query": "here are train.csv and test.csv, is there data leakage between them?", "should_trigger": true},
+  {"query": "check my splits for duplicate rows across train/val/test before I start the fine-tune", "should_trigger": true},
+  {"query": "the same user_id shows up in both my train and test files, how bad is it and how do I re-split by group", "should_trigger": true},
+  {"query": "is my test set contaminated? I scraped the data and then split it randomly", "should_trigger": true},
+  {"query": "look for near-duplicate texts between my training and evaluation jsonl files", "should_trigger": true},
+  {"query": "do any rows in my test split have dates earlier than the training data? I'm forecasting churn", "should_trigger": true},
+  {"query": "one of my columns might be giving away the label, can you test the splits for target leakage", "should_trigger": true},
+  {"query": "compare class balance across train, validation and test and tell me if the split is stratified properly", "should_trigger": true},
+  {"query": "split hygiene check on my three dataset files please, output as json", "should_trigger": true},
+  {"query": "remove duplicate rows from this single customer export", "should_trigger": false},
+  {"query": "build me an eval set of 50 prompts to test my chatbot", "should_trigger": false},
+  {"query": "split this CSV into 80/10/10 train, validation and test files", "should_trigger": false},
+  {"query": "profile the columns of this dataset: types, null rates, distinct counts", "should_trigger": false},
+  {"query": "why is my model overfitting? here is the training loop code", "should_trigger": false},
+  {"query": "run an exploratory analysis on this sales CSV and plot the trends", "should_trigger": false},
+  {"query": "check that my SQL join doesn't multiply rows between orders and customers", "should_trigger": false},
+  {"query": "label these 200 reviews as positive or negative", "should_trigger": false},
+  {"query": "which sample size do I need for my survey so the estimate is within 3 points", "should_trigger": false},
+  {"query": "check this prompt for data contamination from the model's pretraining corpus", "should_trigger": false}
+]

@@ -1,0 +1,22 @@
+[
+  {"query": "I'm launching a budgeting app and need a name. Can you come up with a bunch of ideas and narrow them down?", "should_trigger": true},
+  {"query": "business name ideas for a dog-walking company in Leeds, I want something short and easy to spell", "should_trigger": true},
+  {"query": "here are 15 names I like for my YouTube channel, help me pick the best 5", "should_trigger": true},
+  {"query": "ai brand name generator for my skincare line, but I want them checked, not just a list", "should_trigger": true},
+  {"query": "name my side project, it's a CLI tool that tracks reading time", "should_trigger": true},
+  {"query": "which of these startup names is hardest to misspell: Phyllon, Fynex, Kwik, Ledgerly?", "should_trigger": true},
+  {"query": "I need a podcast name people can type after hearing it once", "should_trigger": true},
+  {"query": "score these candidate names against my three competitors and tell me which look too similar", "should_trigger": true},
+  {"query": "can't decide between Tallybird and Tallybud for my invoicing tool, how do I choose", "should_trigger": true},
+  {"query": "give me 40 possible names for a meal-prep subscription and cut them down to a shortlist with reasons", "should_trigger": true},
+  {"query": "design a logo for my new bakery called Rye & Co", "should_trigger": false},
+  {"query": "write brand guidelines with colours, fonts and voice for our existing brand", "should_trigger": false},
+  {"query": "is the name Brightloom trademarked in the US? register it for me", "should_trigger": false},
+  {"query": "write a tagline and slogan for my coffee brand", "should_trigger": false},
+  {"query": "check if the domain lumo.io is available", "should_trigger": false},
+  {"query": "name the variables and functions in this Python module better", "should_trigger": false},
+  {"query": "what should I name my cat, she is grey and grumpy", "should_trigger": false},
+  {"query": "plan the marketing campaign for the launch of our app next month", "should_trigger": false},
+  {"query": "rename these files in my downloads folder so they sort by date", "should_trigger": false},
+  {"query": "translate my company name and slogan into Japanese and French", "should_trigger": false}
+]

@@ -1,0 +1,13 @@
+{
+  "cases": [
+    {"args": ["report_good.md", "sources_good.md", "--today", "2026-11-21"], "exit": 0,
+     "expect": {"ok": true, "counts": {"sources": 4, "claims": 5, "contradictions": 1, "errors": 0, "warnings": 0}, "error_codes": [], "warning_codes": []}},
+    {"args": ["report_bad.md", "sources_bad.md", "--today", "2026-11-21"], "exit": 1,
+     "expect": {"ok": false, "counts": {"sources": 5, "claims": 7, "contradictions": 1, "errors": 16, "warnings": 7},
+       "error_codes": ["citation_unknown_claim", "claim_no_source", "claim_quote_missing", "claim_quote_not_in_source", "claim_unknown_source", "confidence_out_of_range", "contradiction_needs_two_claims", "contradiction_no_resolution", "paragraph_uncited", "section_missing", "source_date_future", "source_quote_missing", "source_unused", "source_unused", "source_unused", "source_url_invalid"],
+       "warning_codes": ["claim_not_cited_in_text", "claim_not_cited_in_text", "claim_not_cited_in_text", "claim_not_cited_in_text", "claim_not_cited_in_text", "claim_not_cited_in_text", "single_source_high_confidence"]}},
+    {"args": ["report_good.md", "sources_bad.md", "--today", "2026-11-21"], "exit": 1,
+     "expect": {"ok": false}},
+    {"args": ["missing_file.md", "sources_good.md"], "exit": 2, "expect": {}}
+  ]
+}

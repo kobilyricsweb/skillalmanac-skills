@@ -1,0 +1,13 @@
+{
+  "budget": 2000,
+  "reserve": 400,
+  "fixed_tokens": 100,
+  "candidates": [
+    {"id": "readme", "path": "README.md", "priority": "must", "relevance": 6, "note": "describes the service"},
+    {"id": "app", "path": "app.py", "priority": "must", "relevance": 8, "note": "entry point"},
+    {"id": "util", "path": "util.py", "priority": "should", "relevance": 9, "note": "holds the date bug"},
+    {"id": "readme_copy", "path": "copy_of_readme.md", "priority": "should", "relevance": 6},
+    {"id": "notes", "path": "notes.md", "priority": "nice", "relevance": 3},
+    {"id": "lock", "path": "package-lock.json", "priority": "nice", "relevance": 1}
+  ]
+}

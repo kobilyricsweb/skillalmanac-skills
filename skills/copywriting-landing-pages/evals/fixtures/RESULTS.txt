@@ -1,0 +1,16 @@
+PASS good.md
+PASS good.html
+PASS bad.md
+PASS bad.html
+PASS missing_sections.md
+PASS cta_split.md
+PASS unsourced.md
+PASS optional_ok.md
+PASS optional_ok.md --optional proof,objections
+PASS optional_ok.md --optional proof,objections --strict
+PASS empty.md
+PASS no_such_file.md
+PASS t2_reference_page.md
+PASS files/t1-hype-rewrite/draft.md
+PASS files/t3-audit-html/page.html
+15/15 cases passed

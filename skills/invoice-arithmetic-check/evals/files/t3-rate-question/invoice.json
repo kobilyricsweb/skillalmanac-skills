@@ -1,0 +1,13 @@
+{
+  "currency": "EUR",
+  "invoices": [
+    {
+      "number": "R-310", "supplier": "Studio Verde", "issue_date": "2026-07-02", "terms": "net 30", "tax_rate": "15",
+      "lines": [
+        {"description": "Print run", "quantity": "3", "unit_price": "33.33", "line_total": "99.99"},
+        {"description": "Design fee", "quantity": "1", "unit_price": "120.00", "line_total": "120.00"}
+      ],
+      "stated_subtotal": "219.99", "stated_tax": "33.00", "stated_total": "252.99"
+    }
+  ]
+}

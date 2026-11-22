@@ -1,0 +1,11 @@
+PASS main run, buffer 3 days, cover 14 days
+PASS spikes excluded
+PASS optional statistical reorder point
+PASS negative stock and bad lead time are flagged, not calculated into advice
+PASS as-of before most of the history leaves too little data
+PASS --out equal to the sales input is refused even with --force
+PASS --out equal to the items input, spelled with a detour, is refused
+PASS dry run writes nothing
+PASS missing sales file
+PASS buffer days is required
+10/10 cases passed

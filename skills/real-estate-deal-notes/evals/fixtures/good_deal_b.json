@@ -1,0 +1,19 @@
+{
+  "property": {"address": "27 Birch Row, Oakdale", "type": "townhouse", "units": 1, "area_value": 1650, "area_unit": "sqft"},
+  "currency": "USD",
+  "as_of": "2026-10-25",
+  "purchase_price": 310000,
+  "closing_costs": 6000,
+  "renovation_cost": 0,
+  "income": {"gross_scheduled_rent_annual": 27000, "vacancy_rate": 0.06, "other_income_annual": 0},
+  "expenses": {"operating_expenses_annual": 9500, "note": "Taxes, insurance, HOA dues and maintenance reserve per tax bill and HOA letter."},
+  "financing": {"down_payment": 62000, "loan_amount": 248000, "interest_rate": 0.0675, "term_years": 30},
+  "sources": [
+    {"field": "purchase_price", "source": "Listing", "date": "2026-10-15"},
+    {"field": "income.gross_scheduled_rent_annual", "source": "Current lease", "date": "2026-10-15"},
+    {"field": "expenses.operating_expenses_annual", "source": "Tax bill and HOA letter", "date": "2026-10-18"}
+  ],
+  "due_diligence": [
+    {"item": "HOA documents review", "owner": "Buyer", "due": "2026-11-28", "status": "open"}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "app": {
+    "title": "Photo Studio",
+    "greeting": "Hello, {name}!",
+    "save": "Save",
+    "items": "{count, plural, one {# item} other {# items}}",
+    "welcome_prefix": "Welcome back, ",
+    "files_deleted": "Deleted %d files from %s",
+    "terms": "I agree to the <a href=\"/terms\">terms</a> &amp; conditions",
+    "version": "2024",
+    "last_seen": "Last seen on 03/04/2025 at 14:30",
+    "unread": "You have 3 new message(s)"
+  },
+  "n": 5
+}

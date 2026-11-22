@@ -1,0 +1,76 @@
+{
+  "note": "Expected values were checked by hand against the fixture files (line numbers counted from the files; token counts recomputed as ceil(chars/4), or output_tokens shared by character weight when a usage block is present). Low thresholds are passed as flags so that the small fixtures trigger each rule.",
+  "cases": [
+    {
+      "args": ["claude_style.jsonl", "--oversized-chars", "400", "--whole-file-chars", "200", "--unused-context-chars", "200", "--unused-context-min-following", "5", "--verbose-tokens", "60"],
+      "exit": 0,
+      "expect": {
+        "events": 24,
+        "formats": ["jsonl"],
+        "kinds": ["repeated_read", "oversized_output", "verbose_reply", "failing_loop", "whole_file_read", "unused_context"],
+        "evidence_lines": [[6, 10, 14], [5], [18], [8, 12, 16, 20], [7], [3]],
+        "finding_tokens": [202, 140, 119, 107, 76, 68],
+        "unparseable_total": 0,
+        "missing_timestamps": 23,
+        "mixed_sessions": false,
+        "top_turn_line": 5,
+        "usage_input_tokens": 31000
+      }
+    },
+    {
+      "args": ["claude_style.jsonl"],
+      "exit": 0,
+      "expect": {
+        "kinds": ["repeated_read", "failing_loop"],
+        "evidence_lines": [[6, 10, 14], [8, 12, 16, 20]],
+        "finding_tokens": [202, 107]
+      }
+    },
+    {
+      "args": ["plain_log.txt"],
+      "exit": 0,
+      "expect": {
+        "events": 19,
+        "formats": ["marker_log"],
+        "kinds": ["repeated_command"],
+        "evidence_lines": [[32, 35, 38]],
+        "finding_tokens": [24],
+        "unparseable_total": 0
+      }
+    },
+    {
+      "args": ["broken_mixed.jsonl"],
+      "exit": 1,
+      "expect": {
+        "events": 6,
+        "kinds": [],
+        "unparseable_total": 4,
+        "mixed_sessions": true
+      }
+    },
+    {
+      "args": ["clean_short.jsonl"],
+      "exit": 0,
+      "expect": {
+        "events": 4,
+        "kinds": [],
+        "unparseable_total": 0,
+        "missing_timestamps": 0,
+        "mixed_sessions": false
+      }
+    },
+    {
+      "args": ["claude_style.jsonl", "clean_short.jsonl"],
+      "exit": 0,
+      "expect": {
+        "events": 28,
+        "mixed_sessions": true
+      }
+    },
+    {
+      "args": ["does_not_exist.jsonl"],
+      "exit": 2,
+      "expect": {}
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {"query": "can you rewrite this council letter in plain English? it needs to be readable at about a grade 8 level", "should_trigger": true},
+  {"query": "what's the reading level of this paragraph? I need to get it down to grade 6 for our patient leaflet", "should_trigger": true},
+  {"query": "simplify this benefits notice, people keep phoning because they can't understand it, but don't change any dates or amounts", "should_trigger": true},
+  {"query": "give me a Flesch-Kincaid score for this text and tell me which sentences are too long", "should_trigger": true},
+  {"query": "make this support macro easier to read, too many passive sentences and corporate words", "should_trigger": true},
+  {"query": "rewrite this science passage so my fifth graders can read it on their own, keep the word photosynthesis", "should_trigger": true},
+  {"query": "I have a plain language requirement for our terms page. check the readability before and after my edit", "should_trigger": true},
+  {"query": "lower the reading level of this FAQ but make sure the phone numbers and deadlines stay the same", "should_trigger": true},
+  {"query": "this government form instruction is full of jargon, here is our list of banned words, rewrite it for ordinary people", "should_trigger": true},
+  {"query": "is my newsletter easy to read? what's the readability score and which words are too hard", "should_trigger": true},
+  {"query": "humanize this blog post, it sounds like ChatGPT wrote it", "should_trigger": false},
+  {"query": "rewrite my essay so GPTZero doesn't flag it as AI", "should_trigger": false},
+  {"query": "translate this notice into Spanish at a simple reading level", "should_trigger": false},
+  {"query": "summarize this 20 page report in five bullet points", "should_trigger": false},
+  {"query": "write API documentation for these three endpoints", "should_trigger": false},
+  {"query": "proofread my cover letter for grammar and typos", "should_trigger": false},
+  {"query": "paraphrase this paragraph so it passes Turnitin", "should_trigger": false},
+  {"query": "check whether this contract clause is legally enforceable in California", "should_trigger": false},
+  {"query": "write a 1000 word SEO article about composting with a friendly tone", "should_trigger": false},
+  {"query": "make this README shorter and tighten the wording", "should_trigger": false}
+]

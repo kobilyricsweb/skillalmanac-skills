@@ -1,0 +1,22 @@
+[
+  {"query": "write me a research report on how solar adoption changed in Europe and cite every claim", "should_trigger": true},
+  {"query": "deep research on whether intermittent fasting helps, with sources and quotes for each statement", "should_trigger": true},
+  {"query": "I need a sourced report on the history of the shipping container, every fact traceable to a link", "should_trigger": true},
+  {"query": "research this topic thoroughly and give me a claim table with a source and confidence for each claim", "should_trigger": true},
+  {"query": "compile a literature-style brief on remote work productivity, log every source with the access date", "should_trigger": true},
+  {"query": "when sources disagree on the number, I want the report to show both and say how you resolved it", "should_trigger": true},
+  {"query": "do a cited deep dive on lithium recycling, no unsourced claims please", "should_trigger": true},
+  {"query": "check my research report: does every claim have a source and is every source actually used", "should_trigger": true},
+  {"query": "make an evidence-backed report where each paragraph cites its sources and I can verify the quotes", "should_trigger": true},
+  {"query": "I do not trust AI research summaries; produce one where each claim links to the exact quote it came from", "should_trigger": true},
+  {"query": "size the market for pet insurance in Canada with competitor pricing", "should_trigger": false},
+  {"query": "summarize this PDF in five bullets", "should_trigger": false},
+  {"query": "add APA citations and a bibliography to my essay's footnotes", "should_trigger": false},
+  {"query": "fact-check this single statement: the Great Wall is visible from space", "should_trigger": false},
+  {"query": "what is the capital of Australia?", "should_trigger": false},
+  {"query": "find me 10 academic papers on graph neural networks and list their abstracts", "should_trigger": false},
+  {"query": "write a blog post about coffee, no sources needed", "should_trigger": false},
+  {"query": "explain how this Python function works", "should_trigger": false},
+  {"query": "translate the following report into French", "should_trigger": false},
+  {"query": "build a competitor SWOT table for my startup", "should_trigger": false}
+]

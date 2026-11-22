@@ -1,0 +1,1 @@
+{"city": "Bergen", "population": 285000, "coastal": true}

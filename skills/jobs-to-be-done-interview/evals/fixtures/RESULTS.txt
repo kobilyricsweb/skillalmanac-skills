@@ -1,0 +1,7 @@
+PASS study_good.json
+PASS study_bad.json
+PASS study_good.json --min-evidence 3
+PASS wrong_shape.json
+PASS not_json.json
+PASS missing_file.json
+6/6 cases passed

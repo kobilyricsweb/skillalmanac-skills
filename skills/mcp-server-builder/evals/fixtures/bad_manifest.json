@@ -1,0 +1,43 @@
+[
+  {
+    "name": "SearchTickets",
+    "description": "Searches tickets.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "ids": {"type": "array", "items": {"type": "string"}, "description": "Ticket ids."},
+        "q": {"type": "string"}
+      }
+    }
+  },
+  {
+    "name": "delete_ticket",
+    "description": "Permanently delete one ticket by id. Use when the user explicitly asks to remove a ticket.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {"ticket_id": {"type": "string", "description": "Ticket id."}},
+      "required": ["ticket_id"],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "delete_ticket",
+    "description": "Second tool that reuses a name. Use when you need to test duplicate detection in the validator output.",
+    "inputSchema": {"type": "object", "properties": {}, "required": [], "additionalProperties": false}
+  },
+  {
+    "name": "run_report",
+    "description": "Runs the monthly report and returns the rows for the chosen month, every account included, formatted as the finance team expects it for the board pack.",
+    "inputSchema": {"type": "string"}
+  },
+  {
+    "name": "reset_cache",
+    "description": "Clear cached data. Use when results look stale and a refresh is needed.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {"confirm": {"type": "string", "description": "Type yes."}},
+      "required": [],
+      "additionalProperties": false
+    }
+  }
+]

@@ -1,0 +1,5 @@
+PASS report_good.md sources_good.md --today 2026-11-21
+PASS report_bad.md sources_bad.md --today 2026-11-21
+PASS report_good.md sources_bad.md --today 2026-11-21
+PASS missing_file.md sources_good.md
+4/4 cases passed

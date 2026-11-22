@@ -1,0 +1,8 @@
+PASS ledger_good.md
+PASS ledger_bad.md
+PASS draft_t2.md
+PASS ledger_good.json
+PASS ledger_bad.json
+PASS empty.md
+PASS missing.md
+7/7 cases passed

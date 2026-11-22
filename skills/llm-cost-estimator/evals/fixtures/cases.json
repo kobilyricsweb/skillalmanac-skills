@@ -1,0 +1,40 @@
+{
+  "note": "Each case runs scripts/estimate_cost.py with the args (files ending in .json are looked up in evals/fixtures/) and checks the exit code and the listed fields (dotted paths, numbers are list indexes). Expected values were derived by hand from the example prices in each spec; see VERIFICATION.md.",
+  "cases": [
+    {"args": ["good_spec.json", "--today", "2026-11-21"], "exit": 0, "expect": {
+      "ok": true, "warnings": [], "calls_per_request": 1.0,
+      "scenarios.0.monthly": 156.03, "scenarios.1.cost_per_request": 0.00743, "scenarios.1.daily": 7.43,
+      "scenarios.1.monthly": 222.9, "scenarios.1.annual": 2674.8, "scenarios.1.cache_savings_monthly": 47.1,
+      "scenarios.2.monthly": 579.54,
+      "break_even_cache.calls_per_prefix_must_exceed": 1.2778, "break_even_cache.min_whole_calls": 2,
+      "subscription.break_even_requests_per_month": 26917.9, "subscription.cheaper": "subscription",
+      "sensitivity.0.monthly": 295.8, "sensitivity.1.monthly": 372.9, "sensitivity.2.monthly": 445.8,
+      "sensitivity.3.monthly": 245.19, "sensitivity.4.monthly": 270.0,
+      "comparison.0.model": "model-b", "comparison.0.expected_monthly": 60.0}},
+    {"args": ["agent_spec.json", "--today", "2026-11-21"], "exit": 0, "expect": {
+      "ok": true, "calls_per_request": 3.3, "scenarios.1.cost_per_request": 0.024519, "scenarios.1.monthly": 735.57,
+      "scenarios.1.cache_savings_monthly": 155.43, "subscription": null}},
+    {"args": ["batch_spec.json", "--today", "2026-11-21"], "exit": 0, "expect": {
+      "ok": true, "scenarios.1.cost_per_request": 0.00675, "scenarios.1.monthly": 202.5, "scenarios.2.monthly": 526.5,
+      "scenarios.1.cache_savings_monthly": 0.0}},
+    {"args": ["stale_spec.json", "--today", "2026-11-21"], "exit": 0, "expect": {
+      "ok": true,
+      "warnings": ["prices are 324 days old (limit 60); re-read the vendor page",
+                   "output price is below input price; most vendors charge more for output, check the unit and the column",
+                   "use_cache is on but the price table has no cached_input price; caching ignored"],
+      "scenarios.1.cost_per_request": 0.0022, "scenarios.1.monthly": 6.6}},
+    {"args": ["stale_spec.json", "--today", "2026-02-15"], "exit": 0, "expect": {
+      "ok": true, "price_age_days": 45,
+      "warnings": ["output price is below input price; most vendors charge more for output, check the unit and the column",
+                   "use_cache is on but the price table has no cached_input price; caching ignored"]}},
+    {"args": ["bad_spec.json", "--today", "2026-11-21"], "exit": 1, "expect": {
+      "ok": false, "scenarios": [],
+      "errors": ["price_table.unit must be 'per_1M' or 'per_1K' (a missing or mixed unit is the commonest 1000x error)",
+                 "usage.prefix_share must be a fraction from 0 to 1; above 1 means more than 100 percent of the prompt is reusable",
+                 "currency mixing: subscription is EUR, prices are USD"]}},
+    {"args": ["sample_spec.json", "--today", "2026-11-21"], "exit": 0, "expect": {
+      "ok": true, "token_estimate.chars": 350, "token_estimate.estimated_tokens": 88, "token_estimate.kind": "prose",
+      "scenarios.1.input_tokens": 88.0, "scenarios.1.cost_per_request": 0.003176}},
+    {"args": ["missing_spec.json"], "exit": 2, "expect": {}}
+  ]
+}

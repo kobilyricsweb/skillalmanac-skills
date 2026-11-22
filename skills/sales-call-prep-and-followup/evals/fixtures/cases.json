@@ -1,0 +1,54 @@
+{
+  "note": "Expected values were worked out by hand from the fixture text (see VERIFICATION.md), then compared with the script output.",
+  "cases": [
+    {
+      "args": ["notes_good.md", "followup_good.md"],
+      "exit": 0,
+      "expect": {"ok": true, "coverage_score": 100.0, "unanswered_fields": [], "error_codes": [], "warn_codes": []}
+    },
+    {
+      "args": ["notes_gaps.md", "followup_bad.md"],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "coverage_score": 60.0,
+        "unanswered_fields": ["impact", "decision_process"],
+        "error_codes": ["commitment_not_in_notes", "figure_not_in_notes", "followup_missing_next_step_owner", "next_step_no_date", "next_step_no_owner"],
+        "warn_codes": ["no_plan_for_stage", "risky_term_not_in_notes", "unanswered_field"],
+        "figures": ["15%", "30 day", "Dec 1", "Nov 30"],
+        "commitment_lines": [7, 7]
+      }
+    },
+    {
+      "args": ["notes_gaps.md"],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "followup_checked": false,
+        "coverage_score": 60.0,
+        "error_codes": ["next_step_no_date", "next_step_no_owner"]
+      }
+    },
+    {
+      "args": ["notes_json.json", "followup_json.json"],
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "coverage_score": 65.0,
+        "unanswered_fields": ["impact"],
+        "error_codes": [],
+        "warn_codes": ["decision_process_gap", "no_plan_for_stage", "unanswered_field"]
+      }
+    },
+    {
+      "args": ["notes_good.md", "followup_good.md", "--min-coverage", "101"],
+      "exit": 1,
+      "expect": {"ok": false, "error_codes": ["coverage_below_min"]}
+    },
+    {
+      "args": ["missing_file.md"],
+      "exit": 2,
+      "expect": {"error": "notes file not found: "}
+    }
+  ]
+}

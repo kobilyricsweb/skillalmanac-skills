@@ -1,0 +1,43 @@
+{
+  "skill_name": "3d-scene-scripting",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/scene_check.py or a plain string check; [judge] assertions need a blind grader. The validator is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-diagnose-bad-scene",
+      "prompt": "My generated scene never renders properly. The description is in evals/fixtures/scene_bad_many.json. Tell me everything wrong with it and give me a corrected scene.json that passes. Save it as fixed.json.",
+      "files": ["evals/fixtures/scene_bad_many.json"],
+      "assertions": [
+        "[script] scene_check.py fixed.json exits 0 and prints ok true",
+        "[script] fixed.json still holds 3 or more objects and the camera and light entries",
+        "[judge] The reply names all five error causes: object below ground, camera aimed at nothing (Euler convention mismatch), undefined material, duplicate name, non-uniform scale on a rigid body",
+        "[judge] The fix for the camera uses a look-at target or the correct Euler convention, not an arbitrary angle change",
+        "[judge] The reply ends with the fixed report shape and says what was not checked (no render was run)"
+      ]
+    },
+    {
+      "id": "t2-blender-product-shot",
+      "prompt": "Write a Blender Python script for a product shot: a 0.3 m tall bottle on a white ground, soft light, camera framing the bottle with some margin. Render a small thumbnail to a file. I am on an unknown Blender version.",
+      "files": [],
+      "assertions": [
+        "[script] the script text contains 'BSDF_PRINCIPLED' and does not look up a shader node by the string 'Principled BSDF'",
+        "[script] the script text does not set only material.diffuse_color to color the object",
+        "[script] the script text contains 'write_still' and an absolute output path built from a variable",
+        "[judge] The reply states the scene contract (units, up axis, ground, origin) before the code",
+        "[judge] Render engine and any version-dependent attribute are read, probed or marked 'verify (unconfirmed)' instead of assumed",
+        "[judge] The camera distance is computed from the bounding size and field of view, or a Track To constraint is used, rather than hand-typed Euler angles"
+      ]
+    },
+    {
+      "id": "t3-blender-to-threejs",
+      "prompt": "Port the scene in evals/fixtures/scene_good.json (Blender, Z-up) to a three.js scene description with the same look. Save the converted description as three_scene.json and list what you changed and why.",
+      "files": ["evals/fixtures/scene_good.json"],
+      "assertions": [
+        "[script] scene_check.py three_scene.json exits 0",
+        "[script] three_scene.json has up_axis Y and every object's up-axis position matches the source's Z value",
+        "[judge] The reply states that the up axis, camera Euler convention and field-of-view axis differ, and that the camera is re-aimed with a look-at target",
+        "[judge] The reply does not copy the light energy numbers across unchanged without saying they must be re-judged",
+        "[judge] The reply marks unvouched API details as 'verify (unconfirmed)' and lists what was not checked"
+      ]
+    }
+  ]
+}

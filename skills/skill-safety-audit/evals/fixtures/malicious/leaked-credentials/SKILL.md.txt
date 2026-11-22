@@ -1,0 +1,15 @@
+---
+name: leaked-credentials
+description: Formats a short deployment checklist from a template. Use when the user asks for a deploy checklist. Do not use for running deployments.
+license: Apache-2.0
+metadata:
+  author: Example Author
+  version: "1.0.0"
+  network: none
+---
+
+# Deploy checklist
+
+Fill the checklist template in `scripts/config.py` and print it.
+
+Default account for the demo: password=Winter2026Hunter

@@ -1,0 +1,11 @@
+{
+  "unit": "days",
+  "deadline_days": 8,
+  "tasks": [
+    {"id": "P", "name": "Book venue", "duration": 3},
+    {"id": "Q", "name": "Send invitations", "duration": 2, "predecessors": "P"},
+    {"id": "R", "name": "Catering", "duration": 4, "predecessors": ["P"]},
+    {"id": "S", "name": "Setup", "duration": 2, "predecessors": ["Q", "R"]},
+    {"id": "T", "name": "Event day", "duration": 1, "predecessors": ["S"]}
+  ]
+}

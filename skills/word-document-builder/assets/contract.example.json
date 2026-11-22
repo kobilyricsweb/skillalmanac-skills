@@ -1,0 +1,22 @@
+{
+  "title_required": true,
+  "author_required": true,
+  "max_heading_depth": 3,
+  "h1_min": 1,
+  "h1_max": 8,
+  "numbered_headings": true,
+  "heading_max_words": 12,
+  "allow_empty_sections": false,
+  "table_header_row": true,
+  "table_styles_allowed": ["Table Grid"],
+  "table_captions": true,
+  "figure_captions": true,
+  "alt_text": true,
+  "paper": "A4",
+  "orientation": "portrait",
+  "margin_min_cm": 2.0,
+  "footer_page_numbers": true,
+  "toc": true,
+  "no_placeholders": true,
+  "no_tracked_changes": true
+}

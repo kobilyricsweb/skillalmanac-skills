@@ -1,0 +1,9 @@
+{
+  "nav": {"dashboard": "Dashboard", "reports": "Reports"},
+  "action": {"save": "Save", "cancel": "Cancel", "upgrade": "Upgrade plan"},
+  "welcome": "Welcome back, {name}!",
+  "files": "{count, plural, =0 {No files} one {# file selected} other {# files selected}}",
+  "quota": "You have used %d of %d GB.",
+  "docs": "See the <a>Acme Cloud guide</a> for details.",
+  "export": "Export to CSV"
+}

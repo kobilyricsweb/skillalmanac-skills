@@ -1,0 +1,17 @@
+{
+  "title": "I Tested the Nimbus Desk Lamp For 30 Days (Honest Review)",
+  "primary_keyword": "Nimbus desk lamp review",
+  "hook": "I used the Nimbus desk lamp every night for thirty days. Here is what broke, what did not, and whether I would pay for it.",
+  "script": "I used the Nimbus desk lamp every night for thirty days. Nimbus sent me this lamp for free. Here is what broke, what did not, and whether I would pay for it.",
+  "description": "Nimbus desk lamp review after 30 days of nightly use, with brightness measurements and a teardown.\n\n0:00 Setup\n0:50 Week one\n4:10 Teardown\n\nNimbus sponsored this video.",
+  "tags": ["nimbus desk lamp review", "desk lamp", "lamp teardown"],
+  "chapters": [
+    {"time": "0:00", "title": "Setup"},
+    {"time": "0:50", "title": "Week one"},
+    {"time": "4:10", "title": "Teardown"}
+  ],
+  "duration_s": 540,
+  "pattern_breaks": [25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500, 525],
+  "sponsored": true,
+  "disclosure": {"paid_promotion_toggle": false}
+}

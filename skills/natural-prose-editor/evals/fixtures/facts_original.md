@@ -1,0 +1,1 @@
+Acme Corp raised $4.5 million on 12 March 2026, according to the filing at https://example.com/filing/881. The CEO, Dana Whitfield, said "we will hire 30 engineers by June." The `max_workers` setting stays at 8.

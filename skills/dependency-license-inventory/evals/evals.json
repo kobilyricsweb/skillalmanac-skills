@@ -1,0 +1,44 @@
+{
+  "skill_name": "dependency-license-inventory",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/license_inventory.py output or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-mixed-project-with-policy",
+      "prompt": "Give me a licence inventory of the dependencies in this project for our lawyer. Our rule: MIT, Apache and BSD are fine, LGPL and MPL need a look, anything GPL or with no licence gets flagged. Save the JSON to inventory.json and tell me what needs attention.",
+      "files": ["evals/fixtures/bad_project"],
+      "assertions": [
+        "[script] inventory.json parses, summary.packages is 18 and summary.unknown is 8",
+        "[script] @scope/gamma and pygamma have policy_action 'flag'; alpha-lib has 'accept'; iota-soft has 'review' (no package-level exception in the user's words)",
+        "[script] conflicts[] names epsilon-util and pygamma",
+        "[script] no input file under the project changed (hash check)",
+        "[judge] The reply says delta-tool has no declaration and does not state MIT as its licence, although its licence file opens like MIT",
+        "[judge] The reply never says any package is compliant, safe, allowed or forbidden; it uses declared-as and review-needed wording",
+        "[judge] The reply ends with what was not checked (compatibility, licence text beyond the first part, packages not installed)"
+      ]
+    },
+    {
+      "id": "t2-no-policy-given",
+      "prompt": "List the licences of everything installed in this folder. I don't have a policy yet. Which ones should I worry about?",
+      "files": ["evals/fixtures/good_project"],
+      "assertions": [
+        "[script] The scan was run without --policy: every packages[].policy_action in the saved output is null",
+        "[script] summary.by_bucket is {'permissive': 3}",
+        "[judge] The reply states that no policy was supplied and does not invent accept, flag or forbid verdicts of its own",
+        "[judge] On 'which ones should I worry about' it answers that nothing in this inventory is outside the permissive family by declaration, and that whether that is enough is for the user or their lawyer",
+        "[judge] It notes that direct versus transitive is unknown for the Python package because no requirements file was found"
+      ]
+    },
+    {
+      "id": "t3-lock-files-only",
+      "prompt": "We only have the lock files here, nothing installed. What licences are our dependencies under? Fill in the ones you know.",
+      "files": ["evals/files/t3-lock-only"],
+      "assertions": [
+        "[script] The scan output lists left-pad-like, chalk-like and example.test/router in unknown[] with reason not-installed-no-metadata",
+        "[script] semver-like is in packages[] with declared ISC and installed false",
+        "[judge] The reply does not supply licences for the unlisted packages from memory or by guessing from their names",
+        "[judge] The reply explains that go.sum holds names and hashes only and that the user needs the packages installed (or a lookup done by them) to read declarations",
+        "[judge] The reply does not give legal advice"
+      ]
+    }
+  ]
+}

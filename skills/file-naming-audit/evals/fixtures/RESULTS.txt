@@ -1,0 +1,30 @@
+PASS messy listing, dates read month-first
+PASS messy listing, dates read day-first
+PASS messy listing, no date order given
+PASS case collisions held back from the plan
+PASS version series, duplicates and mtime disagreement
+PASS inferred convention from the dominant pattern
+PASS highest version number shared by two files: latest is ambiguous
+PASS clean listing exits 0
+PASS path length with a sync prefix
+PASS date taken from modified time only when asked
+PASS forbidden characters, reserved name, trailing dot
+PASS ascii option folds accents, cannot fold other scripts
+PASS non-ascii names are fine without the option
+PASS folder walk skips hidden folders
+PASS folder walk with hidden folders included
+PASS walk leaves the audited tree unchanged
+PASS plan CSV content
+PASS plan equal to the listing is refused even with --force
+PASS plan equal to a scanned file is refused even with --force
+PASS scanned file still unchanged
+PASS report inside the audited folder is refused
+PASS nothing was created in the audited folder
+PASS existing plan file needs --force
+PASS --force replaces an existing non-input plan file
+PASS plan and report must differ
+PASS convention with {nn} but no v literal is a usage error
+PASS missing folder exits 2
+PASS no root and no listing exits 2
+PASS missing listing exits 2
+29/29 checks passed

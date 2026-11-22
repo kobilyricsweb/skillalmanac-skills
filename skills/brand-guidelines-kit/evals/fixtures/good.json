@@ -1,0 +1,21 @@
+{
+  "brand": "Harbor Loaf",
+  "colors": [
+    {"name": "Paper", "hex": "#FAFAF7", "role": "background"},
+    {"name": "Crumb", "hex": "#F3F4F6", "role": "surface"},
+    {"name": "Ink", "hex": "#111827", "role": "text"},
+    {"name": "Slate", "hex": "#4B5563", "role": "text-muted"},
+    {"name": "Harbor Blue", "hex": "#1D4ED8", "role": "primary"},
+    {"name": "Snow", "hex": "#FFFFFF", "role": "on-primary"},
+    {"name": "Crust", "hex": "#B45309", "role": "accent"}
+  ],
+  "type_scale": [
+    {"name": "caption", "size": 12},
+    {"name": "small", "size": 14},
+    {"name": "body", "size": 16},
+    {"name": "h3", "size": 20},
+    {"name": "h2", "size": 25},
+    {"name": "h1", "size": 31}
+  ],
+  "spacing": [4, 8, 16, 24, 32]
+}

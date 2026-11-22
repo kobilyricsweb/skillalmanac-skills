@@ -1,0 +1,203 @@
+{
+  "note": "Expected values were read off the fixture text by hand (syllables counted aloud, rhyme sets checked against the spelling rules in audit_lyrics.py) before being saved; see VERIFICATION.md for the known disagreements between the heuristic and a human count.",
+  "cases": [
+    {
+      "name": "song_clean.txt verse-chorus with title",
+      "args": ["song_clean.txt", "--form", "verse-chorus", "--title", "carry the lantern"],
+      "exit": 0,
+      "expect": {
+        "form_check.status": "pass",
+        "totals.lines": 20,
+        "sections.0.syllables_per_line": [10, 10, 10, 11],
+        "sections.0.rhyme_scheme": "ABAB",
+        "sections.1.rhyme_scheme": "AABB",
+        "sections.2.rhyme_scheme": "ABAB",
+        "sections.5.repeat_of": 4,
+        "repeats.hook.source": "title",
+        "repeats.hook.per_chorus_counts": [2, 2, 2],
+        "repeats.hook.status": "in_range",
+        "chorus_consistency.status": "identical",
+        "section_balance.lines_before_first_chorus": 4,
+        "flag_codes": []
+      }
+    },
+    {
+      "name": "song_clean.txt without title (hook auto-detected as a whole line)",
+      "args": ["song_clean.txt", "--form", "verse-chorus"],
+      "exit": 0,
+      "expect": {
+        "repeats.hook.source": "most_repeated_chorus_line",
+        "repeats.hook.phrase": "carry the lantern carry it home",
+        "repeats.hook.status": "light",
+        "flag_codes": ["hook_repetition_low"]
+      }
+    },
+    {
+      "name": "song_flawed.txt verse-chorus",
+      "args": ["song_flawed.txt", "--form", "verse-chorus"],
+      "exit": 0,
+      "expect": {
+        "sections.0.syllables_per_line": [8, 8, 8, 20],
+        "sections.0.syllable_stdev": 5.2,
+        "sections.2.syllables_per_line": [8, 4, 6, 4, 6, 3, 4],
+        "repeats.hook.phrase": "set me free",
+        "repeats.hook.per_chorus_counts": [2, 2, 6],
+        "chorus_consistency.similarity_to_first": [0.75, 0.22],
+        "section_balance.verse_line_counts": [4, 7],
+        "flag_codes": ["chorus_dissimilar", "chorus_drift", "cliche", "cliche_density", "hook_repetition_high", "identical_rhyme", "line_length_uneven", "no_end_rhyme", "predictable_rhyme", "verse_length_mismatch", "verse_schemes_differ"]
+      }
+    },
+    {
+      "name": "haiku_good.txt",
+      "args": ["haiku_good.txt", "--form", "haiku"],
+      "exit": 0,
+      "expect": {
+        "form_check.status": "pass",
+        "sections.0.syllables_per_line": [5, 7, 5]
+      }
+    },
+    {
+      "name": "haiku_bad.txt (four lines, wrong counts)",
+      "args": ["haiku_bad.txt", "--form", "haiku"],
+      "exit": 0,
+      "expect": {
+        "form_check.status": "fail",
+        "sections.0.syllables_per_line": [10, 11, 4, 4],
+        "flag_codes": ["form_fail", "short_text"]
+      }
+    },
+    {
+      "name": "limerick_good.txt",
+      "args": ["limerick_good.txt", "--form", "limerick"],
+      "exit": 0,
+      "expect": {
+        "form_check.status": "pass",
+        "rhyme_scheme.by_section.0.scheme": "AABBA",
+        "sections.0.syllables_per_line": [8, 8, 5, 6, 9]
+      }
+    },
+    {
+      "name": "sonnet_good.txt",
+      "args": ["sonnet_good.txt", "--form", "sonnet"],
+      "exit": 0,
+      "expect": {
+        "form_check.status": "pass",
+        "totals.lines": 14,
+        "form_check.checks.1.actual.shakespearean ABABCDCDEFEFGG": 1.0
+      }
+    },
+    {
+      "name": "ballad_good.txt",
+      "args": ["ballad_good.txt", "--form", "ballad"],
+      "exit": 0,
+      "expect": {
+        "form_check.status": "pass",
+        "sections.0.syllables_per_line": [8, 6, 8, 6],
+        "sections.1.syllables_per_line": [8, 6, 8, 6]
+      }
+    },
+    {
+      "name": "aaba_good.txt with refrain title",
+      "args": ["aaba_good.txt", "--form", "aaba", "--title", "the light that leads me home"],
+      "exit": 0,
+      "expect": {
+        "form_check.status": "pass",
+        "form_check.checks.4.actual": [true, true, true],
+        "rhyme_scheme.by_section.2.scheme": "ABAB",
+        "flag_codes": ["predictable_rhyme"]
+      }
+    },
+    {
+      "name": "rap_sample.txt",
+      "args": ["rap_sample.txt", "--form", "rap"],
+      "exit": 0,
+      "expect": {
+        "form_check.status": "pass",
+        "sections.0.rhyme_scheme": "AABBCCDD",
+        "sections.0.rhyme_coverage": 1.0,
+        "sections.0.syllables_per_line": [12, 12, 12, 13, 12, 13, 14, 15]
+      }
+    },
+    {
+      "name": "quirk.txt default: wind and find are only a near rhyme",
+      "args": ["quirk.txt"],
+      "exit": 0,
+      "expect": {
+        "sections.0.syllables_per_line": [6, 6, 6, 6],
+        "sections.0.rhyme_scheme": "AXAX",
+        "sections.0.rhyme_scheme_with_slant": "ABAB"
+      }
+    },
+    {
+      "name": "quirk.txt with overrides (fire=2, wind rhymes like find)",
+      "args": ["quirk.txt", "--overrides", "overrides.json"],
+      "exit": 0,
+      "expect": {
+        "sections.0.syllables_per_line": [7, 6, 6, 6],
+        "sections.0.rhyme_scheme": "ABAB"
+      }
+    },
+    {
+      "name": "quirk.txt with --keep-parentheses",
+      "args": ["quirk.txt", "--keep-parentheses"],
+      "exit": 0,
+      "expect": {
+        "sections.0.syllables_per_line": [7, 6, 6, 6],
+        "sections.0.end_words": ["ooh", "wind", "know", "find"]
+      }
+    },
+    {
+      "name": "song_clean.txt compared with a supplied text (6-word shared run)",
+      "args": ["song_clean.txt", "--compare", "reference_text.txt"],
+      "exit": 0,
+      "expect": {
+        "originality.compare.status": "shared_runs_found",
+        "originality.compare.longest_shared_run": 6,
+        "originality.compare.shared_runs.0.text": "we said wed leave before the",
+        "originality.compare.shared_runs.0.draft_line": 4
+      }
+    },
+    {
+      "name": "mixed_script.txt (Hebrew line skipped, flagged)",
+      "args": ["mixed_script.txt"],
+      "exit": 0,
+      "expect": {
+        "sections.0.syllables_per_line": [4, 0, 4],
+        "flag_codes": ["non_latin_text", "section_length_unusual", "short_text"]
+      }
+    },
+    {
+      "name": "empty.txt exits 2",
+      "args": ["empty.txt"],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "name": "unknown form exits 2",
+      "args": ["song_clean.txt", "--form", "villanelle"],
+      "exit": 2,
+      "expect": {}
+    }
+  ],
+  "word_tables": {
+    "syllables": {
+      "table": 2, "loved": 1, "wanted": 2, "beautiful": 3, "people": 2, "being": 2,
+      "quiet": 2, "strangers": 2, "harbour": 2, "nation": 2, "radio": 3, "violin": 3,
+      "believe": 2, "heart": 1, "through": 1, "lonely": 2, "fingers": 2, "pebbles": 2,
+      "yesterday": 3, "chocolate": 3, "every": 2, "dancing": 2, "makes": 1, "babies": 2,
+      "careful": 2, "merely": 2, "element": 3
+    },
+    "known_misses": {
+      "somebody": {"human": 3, "heuristic": 4},
+      "gratefully": {"human": 3, "heuristic": 4}
+    },
+    "rhyme_pairs": [
+      ["night", "right", "perfect"], ["love", "above", "perfect"], ["time", "rhyme", "perfect"],
+      ["heart", "apart", "perfect"], ["sky", "high", "perfect"], ["day", "they", "perfect"],
+      ["down", "town", "perfect"], ["tears", "years", "perfect"], ["walked", "talked", "perfect"],
+      ["fire", "higher", "perfect"], ["flower", "power", "perfect"], ["free", "sea", "perfect"],
+      ["bear", "care", "perfect"], ["know", "now", "none"], ["cat", "cut", "slant"],
+      ["stone", "phone", "perfect"], ["fear", "near", "perfect"], ["cat", "cat", "identical"]
+    ]
+  }
+}

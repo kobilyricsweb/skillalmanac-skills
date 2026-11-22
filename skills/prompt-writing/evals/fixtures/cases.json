@@ -1,0 +1,177 @@
+{
+  "note": "Each case runs scripts/prompt_lint.py with the given args (paths relative to evals/fixtures/) and compares the exit code and the listed fields. Expected values were derived by reading each fixture by hand (see VERIFICATION.md), not copied from a first run.",
+  "cases": [
+    {
+      "args": [
+        "lint",
+        "bad_support_prompt.md"
+      ],
+      "exit": 1,
+      "expect": {
+        "verdict": "fail",
+        "score": 0,
+        "passed": 0,
+        "applicable": 6,
+        "failed_checks": [
+          "output_contract",
+          "contradictions",
+          "unbounded_length",
+          "undefined_placeholders",
+          "vague_phrasing",
+          "untrusted_input_boundary"
+        ],
+        "na_checks": [],
+        "rules": [
+          "always-vs-never",
+          "as-needed",
+          "concise-vs-detailed",
+          "if-possible",
+          "json-only-vs-explanation",
+          "min-above-max",
+          "no-output-contract",
+          "no-questions-vs-ask",
+          "no-untrusted-input-rule",
+          "try-to",
+          "undefined-placeholder"
+        ],
+        "finding_lines": [
+          5,
+          7,
+          8,
+          9,
+          10,
+          6,
+          12,
+          13,
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "args": [
+        "lint",
+        "good_support_prompt.md"
+      ],
+      "exit": 0,
+      "expect": {
+        "verdict": "pass",
+        "score": 100,
+        "passed": 6,
+        "applicable": 6,
+        "failed_checks": [],
+        "na_checks": [],
+        "rules": [],
+        "placeholders": [
+          "customer_name",
+          "ticket_body"
+        ]
+      }
+    },
+    {
+      "args": [
+        "lint",
+        "edge_fenced_ok.md"
+      ],
+      "exit": 0,
+      "expect": {
+        "verdict": "pass",
+        "score": 100,
+        "failed_checks": [],
+        "rules": [],
+        "placeholders": [
+          "customer_note",
+          "order_id"
+        ]
+      }
+    },
+    {
+      "args": [
+        "lint",
+        "edge_no_placeholders.md"
+      ],
+      "exit": 1,
+      "expect": {
+        "verdict": "fail",
+        "score": 75,
+        "passed": 3,
+        "applicable": 4,
+        "failed_checks": [
+          "vague_phrasing"
+        ],
+        "na_checks": [
+          "undefined_placeholders",
+          "untrusted_input_boundary"
+        ],
+        "rules": [
+          "might-want"
+        ],
+        "finding_lines": [
+          3
+        ]
+      }
+    },
+    {
+      "args": [
+        "lint",
+        "../files/t1-weak-summarizer/prompt.md"
+      ],
+      "exit": 1,
+      "expect": {
+        "verdict": "fail",
+        "score": 0,
+        "failed_checks": [
+          "output_contract",
+          "contradictions",
+          "unbounded_length",
+          "undefined_placeholders",
+          "vague_phrasing",
+          "untrusted_input_boundary"
+        ],
+        "rules": [
+          "as-needed",
+          "concise-vs-detailed",
+          "ideally",
+          "if-possible",
+          "no-output-contract",
+          "no-questions-vs-ask",
+          "no-untrusted-input-rule",
+          "try-to",
+          "undefined-placeholder"
+        ],
+        "finding_lines": [
+          3,
+          10,
+          3,
+          8,
+          3,
+          5,
+          5
+        ]
+      }
+    },
+    {
+      "args": [
+        "lint",
+        "missing_file.md"
+      ],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "args": [
+        "lint",
+        "empty.md"
+      ],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "args": [
+        "lint"
+      ],
+      "exit": 2,
+      "expect": {}
+    }
+  ]
+}

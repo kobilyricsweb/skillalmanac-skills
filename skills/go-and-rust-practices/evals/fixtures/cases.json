@@ -1,0 +1,20 @@
+{
+  "note": "Each case runs scripts/gorust_scan.py with the given args from the fixtures folder. Expected values were derived by reading the fixture files line by line, not copied from the script output.",
+  "cases": [
+    {"args": ["scan", "bad_lib.go"], "exit": 1, "expect": {"verdict": "findings", "files_scanned": 1, "suppressed": 0,
+      "counts_by_rule": {"go-blank-result": 1, "go-errorf-no-wrap": 1, "go-goroutine-no-context": 2, "go-ignored-error": 2, "go-panic-in-library": 1},
+      "finding_lines": [["bad_lib.go", 12, "go-errorf-no-wrap"], ["bad_lib.go", 14, "go-ignored-error"], ["bad_lib.go", 15, "go-blank-result"], ["bad_lib.go", 17, "go-panic-in-library"], ["bad_lib.go", 19, "go-goroutine-no-context"], ["bad_lib.go", 22, "go-goroutine-no-context"], ["bad_lib.go", 42, "go-ignored-error"]]}},
+    {"args": ["scan", "good_lib.go"], "exit": 0, "expect": {"verdict": "clean", "files_scanned": 1, "suppressed": 1, "counts_by_rule": {}, "finding_lines": []}},
+    {"args": ["scan", "main_ok.go"], "exit": 0, "expect": {"verdict": "clean", "counts_by_rule": {}, "finding_lines": []}},
+    {"args": ["scan", "bad_lib.rs"], "exit": 1, "expect": {"verdict": "findings", "files_scanned": 1,
+      "counts_by_rule": {"rust-clone-in-loop": 2, "rust-expect": 1, "rust-unsafe-no-safety": 1, "rust-unwrap": 1},
+      "finding_lines": [["bad_lib.rs", 4, "rust-unwrap"], ["bad_lib.rs", 5, "rust-expect"], ["bad_lib.rs", 12, "rust-clone-in-loop"], ["bad_lib.rs", 20, "rust-unsafe-no-safety"], ["bad_lib.rs", 53, "rust-clone-in-loop"]]}},
+    {"args": ["scan", "good_lib.rs"], "exit": 0, "expect": {"verdict": "clean", "suppressed": 1, "counts_by_rule": {}, "finding_lines": []}},
+    {"args": ["scan", "tree"], "exit": 1, "expect": {"files_scanned": 3, "skipped": ["tree/a_test.go"],
+      "finding_lines": [["tree/a.go", 4, "go-ignored-error"], ["tree/lib.rs", 1, "rust-unwrap"], ["tree/tests/it.rs", 1, "rust-unsafe-no-safety"]]}},
+    {"args": ["scan", "tree", "--only", "rust"], "exit": 1, "expect": {"files_scanned": 2,
+      "finding_lines": [["tree/lib.rs", 1, "rust-unwrap"], ["tree/tests/it.rs", 1, "rust-unsafe-no-safety"]]}},
+    {"args": ["scan", "does_not_exist.go"], "exit": 2, "expect": {}, "stderr_contains": "path not found"},
+    {"args": ["rules"], "exit": 0, "expect": {"rule_count": 9}}
+  ]
+}

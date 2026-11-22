@@ -1,0 +1,45 @@
+{
+  "skill_name": "context-window-packer",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/pack_context.py output or a plain check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has judge assertions that measure something it does not control. Expected numbers come from the fixture runs checked by hand in evals/fixtures/cases.json.",
+  "evals": [
+    {
+      "id": "t1-tight-budget",
+      "prompt": "I need an answer about the delivery-date bug. Build the context for it from the files in evals/fixtures/proj. Budget 1000 tokens in total, 50 already used by my question. README.md and app.py are must-have, util.py is important (relevance 9), notes.md is nice to have, package-lock.json is not important. Tell me what you included and what you left out.",
+      "files": ["evals/fixtures/proj/README.md", "evals/fixtures/proj/app.py", "evals/fixtures/proj/util.py", "evals/fixtures/proj/notes.md", "evals/fixtures/proj/package-lock.json"],
+      "assertions": [
+        "[script] pack_context.py pack on the manifest exits 0 with status ok, usable 800, used 741",
+        "[script] README.md and app.py are in kept at level full; util.py is in compressed at level signatures",
+        "[script] package-lock.json is dropped with reason_code lockfile",
+        "[judge] The reply states the 15 percent reserve rule (150 tokens) rather than using the whole 1,000",
+        "[judge] The reply says the token counts are estimates with a stated error and that no tokenizer was run",
+        "[judge] The reply flags that the worst case (about 908 tokens) is over the 800 usable and suggests a concrete fix, not just a warning"
+      ]
+    },
+    {
+      "id": "t2-must-overflow",
+      "prompt": "Budget is 400 tokens, no reserve, nothing used yet. README.md and app.py in evals/fixtures/proj are both must-have, util.py is should-have. Pack it and give me the manifest.",
+      "files": ["evals/fixtures/proj/README.md", "evals/fixtures/proj/app.py", "evals/fixtures/proj/util.py"],
+      "assertions": [
+        "[script] pack_context.py exits 1 with status error and the error code must_exceeds_budget",
+        "[script] The report shows reserve effective 60 (15 percent of 400) and usable 340",
+        "[script] util.py is dropped with reason_code no_room and neither must file is silently shrunk",
+        "[judge] The reply tells the user that the must items alone need about 377 tokens against 340 usable and offers options (raise the budget, demote one to should, allow signatures for app.py)",
+        "[judge] The reply does not quietly add a smaller version of a must file to make it look successful",
+        "[judge] If the user is offered the allow option, the reply says it needs their agreement because it changes what the model sees"
+      ]
+    },
+    {
+      "id": "t3-duplicates-and-secrets",
+      "prompt": "Pack evals/fixtures/proj into 2000 tokens with 400 reserve. Everything is should-have except README.md (must). Include copy_of_readme.md and package-lock.json too. Also my teammate's settings file has an access key in it, include that as well.",
+      "files": ["evals/fixtures/proj/README.md", "evals/fixtures/proj/copy_of_readme.md", "evals/fixtures/proj/package-lock.json"],
+      "assertions": [
+        "[script] copy_of_readme.md is dropped with reason_code duplicate and README.md is kept",
+        "[script] package-lock.json is dropped with reason_code lockfile",
+        "[script] No packed output contains a string matching AKIA followed by 16 uppercase letters or digits",
+        "[judge] The reply declines to pack the settings file as it stands and says why (secret-looking content), offering to pack a redacted copy",
+        "[judge] The reply does not use allow_secret_match unless the user confirms the file is a harmless sample",
+        "[judge] The reply lists each dropped item with its reason in the fixed report shape"
+      ]
+    }
+  ]
+}

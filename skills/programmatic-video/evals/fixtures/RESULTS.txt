@@ -1,0 +1,9 @@
+PASS good timeline
+PASS bad timeline
+PASS warnings only passes
+PASS warnings only fails under strict
+PASS caption limit from the command line
+PASS duplicate key is fatal
+PASS NaN is fatal
+PASS missing timeline file is fatal
+8/8 cases passed

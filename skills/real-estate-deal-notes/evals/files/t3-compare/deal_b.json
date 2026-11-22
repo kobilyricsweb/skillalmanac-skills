@@ -1,0 +1,19 @@
+{
+  "property": {"address": "61 Orchard Way, Linden", "type": "single-family", "units": 1, "area_value": 175, "area_unit": "sqm"},
+  "currency": "CAD",
+  "as_of": "2026-08-20",
+  "purchase_price": 520000,
+  "closing_costs": 12000,
+  "renovation_cost": 8000,
+  "income": {"gross_scheduled_rent_annual": 33600, "vacancy_rate": 0.04, "other_income_annual": 0},
+  "expenses": {"operating_expenses_annual": 12800, "note": "Tax, insurance, maintenance reserve."},
+  "financing": {"down_payment": 130000, "loan_amount": 390000, "interest_rate": 0.0575, "term_years": 25},
+  "sources": [
+    {"field": "purchase_price", "source": "Listing", "date": "2026-08-15"},
+    {"field": "income.gross_scheduled_rent_annual", "source": "Lease", "date": "2026-08-15"},
+    {"field": "expenses.operating_expenses_annual", "source": "Tax bill and insurance quote", "date": "2026-08-18"}
+  ],
+  "due_diligence": [
+    {"item": "Appraisal", "owner": "Lender", "due": "2026-09-10", "status": "open"}
+  ]
+}

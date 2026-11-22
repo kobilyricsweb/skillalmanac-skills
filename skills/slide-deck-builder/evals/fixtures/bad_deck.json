@@ -1,0 +1,19 @@
+[
+  {
+    "headline": "Customer support",
+    "body": ["Help panel pilot"],
+    "notes": ""
+  },
+  {
+    "headline": "Results",
+    "body": [],
+    "charts": [{"description": "Bar chart of tickets", "source": ""}],
+    "images": [{"alt": ""}],
+    "notes": "Tickets fell."
+  },
+  {
+    "headline": "Results",
+    "body": "Tickets fell 40%\nSatisfaction rose 6 points",
+    "notes": "Both numbers come from the pilot. Tickets fell forty percent and satisfaction rose six points, measured on the same two thousand accounts over the same three months of the pilot."
+  }
+]

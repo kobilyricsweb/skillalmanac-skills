@@ -1,0 +1,25 @@
+{
+  "note": "Expected values were read from the fixture files and checked by hand against the rules in scripts/deck_check.py before being saved. rules lists slide:rule in report order.",
+  "cases": [
+    {"name": "good_deck.md (Marp front matter, appendix)", "file": "good_deck.md", "exit": 0,
+     "expect": {"format": "markdown", "slide_count": 5, "appendix_starts_at": 5, "counts": {"error": 0, "warning": 0}, "ok": true, "rules": []}},
+    {"name": "bad_deck.md (every Markdown defect)", "file": "bad_deck.md", "exit": 1,
+     "expect": {"format": "markdown", "slide_count": 6, "appendix_starts_at": 6, "counts": {"error": 7, "warning": 4}, "ok": false,
+       "rules": ["2:headline-topic", "2:too-many-lines", "2:too-many-words", "2:notes-thin", "3:chart-no-source", "4:duplicate-headline", "4:notes-thin", "4:multiple-charts", "4:image-no-alt", "5:headline-topic", "5:missing-notes"]}},
+    {"name": "good_deck.json", "file": "good_deck.json", "exit": 0,
+     "expect": {"format": "json", "slide_count": 4, "appendix_starts_at": 4, "counts": {"error": 0, "warning": 0}, "ok": true, "rules": []}},
+    {"name": "bad_deck.json", "file": "bad_deck.json", "exit": 1,
+     "expect": {"format": "json", "slide_count": 3, "appendix_starts_at": null, "counts": {"error": 4, "warning": 3}, "ok": false,
+       "rules": ["1:missing-notes", "2:headline-topic", "2:notes-thin", "2:chart-no-source", "2:image-no-alt", "3:duplicate-headline", "3:headline-topic"]}},
+    {"name": "good_deck.md with --max-lines 2", "file": "good_deck.md", "extra_args": ["--max-lines", "2"], "exit": 1,
+     "expect": {"counts": {"error": 2, "warning": 0}, "rules": ["3:too-many-lines", "4:too-many-lines"]}},
+    {"name": "good.pptx (built on the fly)", "build": "good.pptx", "exit": 0,
+     "expect": {"format": "pptx", "slide_count": 2, "appendix_starts_at": null, "counts": {"error": 0, "warning": 0}, "ok": true, "rules": []}},
+    {"name": "bad.pptx (built on the fly)", "build": "bad.pptx", "exit": 1,
+     "expect": {"format": "pptx", "slide_count": 3, "counts": {"error": 8, "warning": 3}, "ok": false,
+       "rules": ["1:headline-topic", "1:too-many-lines", "1:too-many-words", "1:missing-notes", "2:duplicate-headline", "2:headline-topic", "2:chart-no-source", "2:image-no-alt", "2:font-too-small", "3:no-headline", "3:font-below-body-size"]}},
+    {"name": "notazip.pptx is rejected", "file": "notazip.pptx", "exit": 2, "expect": {"stderr_contains": "not a valid .pptx"}},
+    {"name": "malformed.json is rejected", "file": "malformed.json", "exit": 2, "expect": {"stderr_contains": "list of slides"}},
+    {"name": "missing file is rejected", "file": "does_not_exist.md", "exit": 2, "expect": {"stderr_contains": "cannot read"}}
+  ]
+}

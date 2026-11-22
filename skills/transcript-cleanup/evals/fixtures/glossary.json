@@ -1,0 +1,4 @@
+{
+  "speakers": {"Kim": "Dr. Kim Park"},
+  "terms": {"kubernetes": "Kubernetes", "post gress": "PostgreSQL"}
+}

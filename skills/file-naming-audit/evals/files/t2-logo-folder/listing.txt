@@ -1,0 +1,8 @@
+Logos/Logo.png
+Logos/logo.png
+Logos/Brand Mark.svg
+Logos/brand-mark.svg
+Logos/brand_mark_v1.svg
+Exports/Final?.pdf
+Exports/AUX.txt
+Exports/this-name-is-far-too-long-for-a-shared-drive-because-it-describes-the-whole-project-history-in-the-file-name-itself.pdf

@@ -1,0 +1,22 @@
+[
+  {"query": "I'm looking at a duplex, can you set up a deal file with the numbers, sources and dates so I stop losing track?", "should_trigger": true},
+  {"query": "calculate cap rate, cash on cash and DSCR for this rental from the listing email and flag anything that doesn't add up", "should_trigger": true},
+  {"query": "make me a due diligence checklist for this fourplex with an owner and a date for each item", "should_trigger": true},
+  {"query": "compare these three rental properties in one table, same metrics, don't tell me which to pick", "should_trigger": true},
+  {"query": "organise my deal notes for 22 Cedar Lane: what the agent told me versus what's in documents", "should_trigger": true},
+  {"query": "here's the rent roll and seller expenses, run the gross yield and NOI and tell me which inputs are missing", "should_trigger": true},
+  {"query": "I'm an agent and want a standard deal notes template for my investor clients with sources for every figure", "should_trigger": true},
+  {"query": "check my deal JSON for stale figures and expenses that exceed income", "should_trigger": true},
+  {"query": "help me keep track of the due diligence items on the townhouse purchase, who owns each and when they're due", "should_trigger": true},
+  {"query": "what's the DSCR on this property if NOI is 23,400 and the loan is 300k at 6 percent over 30 years", "should_trigger": true},
+  {"query": "is this rental property a good deal and should I make an offer at asking price?", "should_trigger": false},
+  {"query": "what is my house worth, estimate the market value of 14 Alder Court", "should_trigger": false},
+  {"query": "which mortgage should I take, 15 year fixed or 30 year adjustable?", "should_trigger": false},
+  {"query": "how do I minimise capital gains tax when I sell my rental?", "should_trigger": false},
+  {"query": "write a listing description for my 3-bedroom house", "should_trigger": false},
+  {"query": "draft a residential lease agreement for my tenant", "should_trigger": false},
+  {"query": "predict where home prices in Austin will be in two years", "should_trigger": false},
+  {"query": "build a monthly personal budget spreadsheet for me", "should_trigger": false},
+  {"query": "summarise this home inspection PDF into plain English", "should_trigger": false},
+  {"query": "explain the difference between a REIT and a mutual fund and tell me which I should invest in", "should_trigger": false}
+]

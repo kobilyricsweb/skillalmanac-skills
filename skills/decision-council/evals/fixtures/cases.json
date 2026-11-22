@@ -1,0 +1,13 @@
+{
+  "note": "Each case runs scripts/decision_matrix.py on a fixture (paths relative to evals/fixtures/). 'expected' is a file holding the full JSON output, checked by hand (see VERIFICATION.md); 'error_contains' is a substring of the error message for input errors.",
+  "cases": [
+    {"args": ["vendor.json"], "exit": 0, "expected": "expected_vendor.json"},
+    {"args": ["vendor.csv"], "exit": 0, "expected": "expected_vendor.json"},
+    {"args": ["tie.csv"], "exit": 1, "expected": "expected_tie.json"},
+    {"args": ["near.json"], "exit": 0, "expected": "expected_near.json"},
+    {"args": ["vendor.csv", "--scale", "0,10"], "exit": 0, "expected": null, "winner": "C", "scores": {"C": 5.933333, "A": 5.666667, "B": 5.2}},
+    {"args": ["bad_missing_score.csv"], "exit": 2, "error_contains": "is empty"},
+    {"args": ["bad_out_of_range.json"], "exit": 2, "error_contains": "outside the scale"},
+    {"args": ["does_not_exist.json"], "exit": 2, "error_contains": "file not found"}
+  ]
+}

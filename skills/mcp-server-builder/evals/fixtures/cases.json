@@ -1,0 +1,18 @@
+{
+  "note": "Expected values were derived by hand from the fixture contents and then compared with the script output. Paths are relative to evals/fixtures/.",
+  "cases": [
+    {"args": ["good_manifest.json"], "exit": 0, "expect": {"ok": true, "tools": 3, "errors": 0, "warnings": 0, "rules": []}},
+    {"args": ["bad_manifest.json"], "exit": 1, "expect": {"ok": false, "tools": 5, "errors": 8, "warnings": 9, "rules": [
+      "name-not-snake-case", "description-too-short", "description-no-when-to-use", "schema-no-required", "schema-additional-properties-unset", "array-unbounded", "property-no-description",
+      "destructive-no-confirm",
+      "name-duplicate", "destructive-no-confirm",
+      "description-no-when-to-use", "schema-type-not-object", "schema-no-properties", "schema-no-required", "schema-additional-properties-unset",
+      "confirm-not-boolean", "confirm-not-required"]}},
+    {"args": ["edge_manifest.json"], "exit": 1, "expect": {"ok": false, "tools": 3, "errors": 5, "warnings": 0, "rules": ["schema-missing", "destructive-no-confirm", "tool-not-object", "name-missing", "schema-required-unknown"]}},
+    {"args": ["destructive_names.json"], "exit": 1, "expect": {"ok": false, "tools": 5, "errors": 5, "warnings": 2, "rules": ["name-not-snake-case", "confirm-not-boolean", "confirm-not-required", "name-not-snake-case", "destructive-no-confirm", "name-not-snake-case", "destructive-no-confirm"]}},
+    {"args": ["good_manifest.json", "--max-desc", "150"], "exit": 1, "expect": {"ok": false, "errors": 2, "rules": ["description-too-long", "description-too-long"]}},
+    {"args": ["bad_manifest.json", "--strict", "--max-desc", "600"], "exit": 1, "expect": {"ok": false, "strict": true}},
+    {"args": ["broken.json"], "exit": 2, "expect": {"ok": false}},
+    {"args": ["no_such_file.json"], "exit": 2, "expect": {"ok": false}}
+  ]
+}

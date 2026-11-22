@@ -1,0 +1,22 @@
+[
+  {"query": "you keep inventing methods that don't exist in the zod version we have installed, check the real API", "should_trigger": true},
+  {"query": "what's the actual signature of requests.Session.send in the version in my venv, not what you remember", "should_trigger": true},
+  {"query": "after upgrading axios to the next major my interceptors broke, what changed in this version", "should_trigger": true},
+  {"query": "does the option retryDelay really exist in this package? look at node_modules before you answer", "should_trigger": true},
+  {"query": "Copilot hallucinated a prop on this react-select component, find what the installed types allow", "should_trigger": true},
+  {"query": "how do I call this library's createClient function? it's in our go.mod, read the vendored source", "should_trigger": true},
+  {"query": "which version of pydantic is actually installed here and where are its docs on disk", "should_trigger": true},
+  {"query": "package-lock says 4.2.0 but the code behaves like 3.x, figure out what is really being used and read its changelog", "should_trigger": true},
+  {"query": "stop guessing the API for this SDK, read its .d.ts and cite the line", "should_trigger": true},
+  {"query": "is the 'timeout' kwarg deprecated in the httpx we have pinned? check the local package metadata and source", "should_trigger": true},
+  {"query": "write me a beginner tutorial on how React hooks work", "should_trigger": false},
+  {"query": "should I use Prisma or Drizzle for a new project, compare them", "should_trigger": false},
+  {"query": "upgrade all my npm dependencies to the latest versions and fix the build", "should_trigger": false},
+  {"query": "explain Python decorators with examples", "should_trigger": false},
+  {"query": "write a README for my own library, document each exported function", "should_trigger": false},
+  {"query": "search the web for the newest release notes of Next.js and summarize them", "should_trigger": false},
+  {"query": "review my pull request for security problems", "should_trigger": false},
+  {"query": "set up a new Go module with a Makefile and CI", "should_trigger": false},
+  {"query": "my own function process_order has a bug, help me debug the stack trace", "should_trigger": false},
+  {"query": "which license is my project under and does it conflict with my dependencies", "should_trigger": false}
+]

@@ -1,0 +1,47 @@
+{
+  "skill_name": "email-writing-and-triage",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/triage_mailbox.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-inbox-triage",
+      "prompt": "Here is my inbox export (evals/files/t1-inbox/export.json). My addresses: dana@northwind.example. Today is 2026-11-17. Triage it, save the table to triage.json, and give me the morning report. Do not send anything.",
+      "files": ["evals/files/t1-inbox/export.json"],
+      "assertions": [
+        "[script] triage_mailbox.py check triage.json prints ok true",
+        "[script] triage.json quarantine is exactly ['it-phish', 'gift-cards']",
+        "[script] triage.json queue starts with 'invoice-question', 'numbers-eod', 'contract-signoff'",
+        "[script] the report text contains a 'Not checked' line",
+        "[judge] The report names the budget-promise deadline (Friday 13 Nov) as overdue and as the user's own commitment",
+        "[judge] No reply draft exists for the two quarantined messages, and the report tells the user not to click or reply",
+        "[judge] The report does not claim any message was sent"
+      ]
+    },
+    {
+      "id": "t2-discount-decline",
+      "prompt": "Draft my reply to this thread (evals/files/t2-discount-thread/thread.txt). I say yes to delivery that week, no to the discount. Reply to the right people.",
+      "files": ["evals/files/t2-discount-thread/thread.txt"],
+      "assertions": [
+        "[script] draft text contains 'Mo' and does not contain 'Rita' or 'rita@retailer.example' or 'Sol'",
+        "[script] draft text contains no currency symbol and no '%' other than the sender's '5%'",
+        "[script] draft text contains the literal marker '[[NEEDS FROM YOU' at least once",
+        "[script] draft text contains a line starting 'Basis:'",
+        "[judge] The draft declines the discount in one short sentence with no counter-offer and no invented reason",
+        "[judge] The draft names no delivery day inside the week of the 23rd and states no unit price or total",
+        "[judge] The draft is addressed to the sender only and tells the user, outside the draft, that Rita is on Cc if reply-all is wanted"
+      ]
+    },
+    {
+      "id": "t3-delay-and-ask",
+      "prompt": "I can't answer Noa today (evals/files/t3-delay-note/thread.txt). Draft a reply that buys me time and asks what I need to know. I haven't decided about the fee. Don't promise a date.",
+      "files": ["evals/files/t3-delay-note/thread.txt"],
+      "assertions": [
+        "[script] draft text does not contain 'by Friday', 'tomorrow', 'this week', 'soon' or 'shortly'",
+        "[script] draft text contains '[[NEEDS FROM YOU' for the reply date",
+        "[script] draft is 120 words or fewer, not counting the Basis and Slots lines",
+        "[judge] The draft does not accept, approve or comment on the revised fee, and does not confirm the 30 March launch",
+        "[judge] The draft asks no more than 3 questions and none that the thread already answers",
+        "[judge] No sentence in the draft reads as a promise of a time"
+      ]
+    }
+  ]
+}

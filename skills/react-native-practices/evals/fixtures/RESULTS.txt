@@ -1,0 +1,9 @@
+PASS bad/Feed.tsx
+PASS bad/Layout.tsx
+PASS bad/Big.jsx
+PASS good
+PASS ../files/t1-slow-feed
+PASS ../files/t2-camera-permission
+PASS ../files/t3-prerelease-review
+PASS does_not_exist
+8/8 cases passed

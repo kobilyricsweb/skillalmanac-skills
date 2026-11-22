@@ -1,0 +1,22 @@
+[
+  {"query": "build me an issue tree for why our SaaS churn doubled last quarter, and make sure the branches are MECE", "should_trigger": true},
+  {"query": "I need a hypothesis-driven analysis of whether we should enter the German market, answer first like a consultant would write it", "should_trigger": true},
+  {"query": "write this up using the pyramid principle, with the answer at the top and supporting arguments underneath", "should_trigger": true},
+  {"query": "can you do a McKinsey-style breakdown of why our gross margin fell, with an evidence table and confidence scores", "should_trigger": true},
+  {"query": "check my issue tree for overlapping or missing branches and make sure every hypothesis has evidence", "should_trigger": true},
+  {"query": "give me an executive summary under 150 words plus a so-what for each section of this analysis", "should_trigger": true},
+  {"query": "structure this strategy question into a tree of hypotheses, then tell me what evidence would prove each one wrong", "should_trigger": true},
+  {"query": "turn my research notes into a consulting-grade memo: governing thought, three supporting arguments, sourced evidence", "should_trigger": true},
+  {"query": "as a founder I want a structured analysis of why our CAC went up, not a rambling summary", "should_trigger": true},
+  {"query": "validate this analysis JSON for MECE problems, unsourced evidence and a summary that is too long", "should_trigger": true},
+  {"query": "stress-test my launch plan and list what could go wrong", "should_trigger": false},
+  {"query": "we have three vendor options, help me pick one and have different perspectives argue it out", "should_trigger": false},
+  {"query": "research the electric scooter market and give me a cited report with market size numbers", "should_trigger": false},
+  {"query": "map every claim in this PDF to the evidence that supports it", "should_trigger": false},
+  {"query": "clean this sales CSV and plot revenue by month", "should_trigger": false},
+  {"query": "summarize this article in three bullets", "should_trigger": false},
+  {"query": "write a one-page project brief for my team with scope and deadlines", "should_trigger": false},
+  {"query": "make a slide deck for my board meeting from these numbers", "should_trigger": false},
+  {"query": "what is the MECE principle? explain it to my kid", "should_trigger": false},
+  {"query": "write an architecture decision record for choosing Postgres over Mongo", "should_trigger": false}
+]

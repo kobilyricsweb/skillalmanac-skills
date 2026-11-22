@@ -1,0 +1,11 @@
+{
+  "units": "meters",
+  "up_axis": "Y",
+  "objects": [
+    {"name": "Floor", "type": "mesh", "role": "ground", "location": [0, 0, 0], "dimensions": [10, 0, 10]},
+    {"name": "Vase", "type": "mesh", "location": [0, 0.25, 0], "dimensions": [0.2, 0.5, 0.2]}
+  ],
+  "materials": [],
+  "lights": [{"name": "Key", "type": "point", "location": [2, 3, 2], "energy": 100}],
+  "camera": {"name": "Cam", "location": [0, 1, 3], "rotation_euler_deg": [0, 180, 0], "euler_order": "XYZ", "euler_convention": "three", "fov_deg": 45}
+}

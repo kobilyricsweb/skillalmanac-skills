@@ -1,0 +1,89 @@
+{
+  "_note": "Expected results were worked out by hand from workbooks.json before the script was run, then compared with the script output (see VERIFICATION.md). Finding strings are severity:category:Sheet!Cell.",
+  "cases": [
+    {
+      "workbook": "clean",
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "formula_cells": 6,
+        "counts_by_category": {},
+        "findings": [],
+        "volatile_cells": 0
+      }
+    },
+    {
+      "workbook": "broken",
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "formula_cells": 29,
+        "volatile_cells": 3,
+        "volatile_downstream_cells": 1,
+        "counts_by_severity": {"error": 9, "warning": 9, "info": 6},
+        "counts_by_category": {
+          "broken_reference": 1, "circular_reference": 2, "empty_reference": 2, "error_value": 6,
+          "external_link": 1, "hardcoded_constant": 2, "hardcoded_value_in_formula_column": 1,
+          "inconsistent_formula": 1, "missing_sheet": 1, "nested_if": 1, "newer_function": 1,
+          "number_stored_as_text": 1, "undefined_name": 1, "volatile_function": 3
+        },
+        "findings": [
+          "error:broken_reference:Orders!L3",
+          "error:circular_reference:Orders!J2",
+          "error:circular_reference:Orders!K2",
+          "error:error_value:Orders!I2",
+          "error:error_value:Orders!I4",
+          "error:error_value:Orders!L2",
+          "error:error_value:Orders!L3",
+          "error:error_value:Orders!L4",
+          "error:missing_sheet:Orders!L2",
+          "info:error_value:Orders!I3",
+          "info:hardcoded_constant:Orders!F2",
+          "info:newer_function:Orders!M2",
+          "info:volatile_function:Orders!H2",
+          "info:volatile_function:Orders!H3",
+          "info:volatile_function:Orders!H4",
+          "warning:empty_reference:Orders!G2",
+          "warning:empty_reference:Orders!I2",
+          "warning:external_link:Orders!L5",
+          "warning:hardcoded_constant:Orders!D4",
+          "warning:hardcoded_value_in_formula_column:Orders!D6",
+          "warning:inconsistent_formula:Orders!D4",
+          "warning:nested_if:Orders!F2",
+          "warning:number_stored_as_text:Orders!C5",
+          "warning:undefined_name:Orders!L4"
+        ],
+        "root_causes": ["Orders!I2", "Orders!I4", "Orders!L2", "Orders!L3", "Orders!L4"],
+        "circular_paths": ["J2 > J3 > J2", "K2 > K2"],
+        "cross_sheet_targets": {"Orders": {"Rates": 7}, "Rates": {}},
+        "used_ranges": {"Orders": "A1:P7", "Rates": "A1:B1"}
+      }
+    },
+    {
+      "workbook": "iterative",
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "formula_cells": 7,
+        "iterative_calculation": true,
+        "counts_by_category": {"circular_reference": 1},
+        "findings": ["info:circular_reference:S!C7"],
+        "circular_paths": ["C7 > D7 > E7 > C7"]
+      }
+    },
+    {
+      "workbook": "nocache",
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "formula_cells": 1,
+        "cached_values_present": false,
+        "no_saved_results_note": true,
+        "findings": []
+      }
+    },
+    {"workbook": "notzip", "exit": 2, "expect": {"stderr_contains": "not a zip archive"}},
+    {"workbook": "emptyzip", "exit": 2, "expect": {"stderr_contains": "not a spreadsheet workbook"}},
+    {"workbook": "missing", "exit": 2, "expect": {"stderr_contains": "file not found"}}
+  ]
+}

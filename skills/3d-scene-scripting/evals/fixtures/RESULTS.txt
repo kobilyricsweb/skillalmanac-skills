@@ -1,0 +1,8 @@
+PASS scene_good.json
+PASS scene_good_three_yup.json
+PASS scene_bad_many.json
+PASS scene_no_camera_no_light.json
+PASS scene_aimed_away.json
+PASS scene_nan.json
+PASS does_not_exist.json
+7/7 cases passed

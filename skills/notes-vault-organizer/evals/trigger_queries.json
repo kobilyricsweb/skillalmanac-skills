@@ -1,0 +1,22 @@
+[
+  {"query": "my obsidian vault is a mess, can you clean it up without losing anything", "should_trigger": true},
+  {"query": "find all the broken wikilinks in my notes folder", "should_trigger": true},
+  {"query": "which of my markdown notes are orphans that nothing links to?", "should_trigger": true},
+  {"query": "I have #meeting, #Meeting and #meetings tags all over my vault, help me merge them", "should_trigger": true},
+  {"query": "organize my notes folder: propose where each stray note should go but don't move anything yet", "should_trigger": true},
+  {"query": "audit my vault for duplicate notes and notes missing frontmatter", "should_trigger": true},
+  {"query": "tidy my Obsidian folder and keep a change log of what you did", "should_trigger": true},
+  {"query": "I imported 800 markdown files from my old setup, how do I get them sorted safely?", "should_trigger": true},
+  {"query": "check my notes for duplicate titles so my [[links]] stop pointing at the wrong note", "should_trigger": true},
+  {"query": "give me a move plan as JSON for reorganizing my second-brain folders", "should_trigger": true},
+  {"query": "summarize my meeting notes from last week into action items", "should_trigger": false},
+  {"query": "write me a note template for daily journaling in Obsidian", "should_trigger": false},
+  {"query": "delete all the old notes in my vault that I haven't opened in a year", "should_trigger": false},
+  {"query": "clean up the unused files and dead code in my git repository", "should_trigger": false},
+  {"query": "export my Notion workspace to a PDF", "should_trigger": false},
+  {"query": "set up Obsidian sync between my phone and laptop", "should_trigger": false},
+  {"query": "fix the broken links on my website's sitemap", "should_trigger": false},
+  {"query": "turn this meeting transcript into well-structured notes", "should_trigger": false},
+  {"query": "organize my Downloads folder by file type", "should_trigger": false},
+  {"query": "which Obsidian plugins should I install for task management?", "should_trigger": false}
+]

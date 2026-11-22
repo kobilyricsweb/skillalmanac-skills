@@ -1,0 +1,9 @@
+sequenceDiagram
+    participant U as User
+    participant W as Web App
+    participant Audit as Audit Log
+    U->>W: Place order
+    W->>+A: POST /orders
+    loop retry
+        A-->>W: 503
+    Note over W: gives up

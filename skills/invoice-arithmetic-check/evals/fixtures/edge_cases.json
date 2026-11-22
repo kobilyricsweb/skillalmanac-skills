@@ -1,0 +1,37 @@
+{
+  "currency": "EUR",
+  "rounding": {"method": "line", "mode": "half_up"},
+  "invoices": [
+    {
+      "number": "E-1", "supplier": "Edge Co", "tax_rate": "0.2",
+      "lines": [{"description": "Item", "quantity": "1", "unit_price": "10.00"}],
+      "stated_tax": "2.00", "stated_total": "12.00"
+    },
+    {
+      "number": "E-2", "supplier": "Edge Co",
+      "lines": [{"description": "Item", "quantity": "1", "unit_price": "10.00"}],
+      "stated_tax": "1.50", "stated_total": "11.50"
+    },
+    {
+      "number": "E-3", "supplier": "Edge Co", "tax_rate": "20",
+      "lines": [{"description": "Bulk", "quantity": "1,200", "unit_price": "1.00"}],
+      "stated_total": "1440.00"
+    },
+    {
+      "number": "E-4", "supplier": "Edge Co", "tax_rate": "20",
+      "discount_percent": "10", "discount_amount": "5",
+      "lines": [{"description": "Item", "quantity": "1", "unit_price": "10.00"}]
+    },
+    {
+      "number": "E-5", "supplier": "Edge Co", "tax_rate": "0",
+      "rounding": {"mode": "half_even"},
+      "lines": [{"description": "Tiny", "quantity": "1", "unit_price": "0.125"}],
+      "stated_total": "0.12"
+    },
+    {
+      "number": "E-6", "supplier": "Tokyo KK", "currency": "JPY", "tax_rate": "10",
+      "lines": [{"description": "Part", "quantity": "3", "unit_price": "150"}],
+      "stated_total": "496"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {"query": "my SwiftUI view doesn't update when I change a property on my view model class", "should_trigger": true},
+  {"query": "should I use @State, @Binding or @Observable here? iOS 17 app", "should_trigger": true},
+  {"query": "write a SwiftUI screen that fetches a user profile with async/await and shows an error state", "should_trigger": true},
+  {"query": "review this Swift file for force unwraps and DispatchQueue.main.async inside async functions", "should_trigger": true},
+  {"query": "what do I need in PrivacyInfo.xcprivacy before I submit to the App Store?", "should_trigger": true},
+  {"query": "convert my ObservableObject view models to the Observable macro without breaking iOS 16 support", "should_trigger": true},
+  {"query": "getting Sendable warnings and actor-isolated errors after turning on strict concurrency in my iOS app", "should_trigger": true},
+  {"query": "add VoiceOver labels and Dynamic Type support to this SwiftUI form", "should_trigger": true},
+  {"query": "write unit tests for my iOS networking layer, XCTest or Swift Testing?", "should_trigger": true},
+  {"query": "App Store rejected my build for a missing camera usage description, what else should I check before resubmitting?", "should_trigger": true},
+  {"query": "build an Android screen in Jetpack Compose that loads a profile", "should_trigger": false},
+  {"query": "set up a Flutter app with Riverpod state management", "should_trigger": false},
+  {"query": "React Native app crashes on startup after upgrading Expo", "should_trigger": false},
+  {"query": "explain how Swift's ARC and retain cycles work in general", "should_trigger": false},
+  {"query": "write a Vapor server-side Swift API with Fluent and PostgreSQL", "should_trigger": false},
+  {"query": "port my AppKit macOS document app to use NSDocument and sandboxing", "should_trigger": false},
+  {"query": "design a marketing landing page for my iOS app", "should_trigger": false},
+  {"query": "write App Store listing copy and keywords for my meditation app", "should_trigger": false},
+  {"query": "create a Python script that parses Xcode build logs into a CSV", "should_trigger": false},
+  {"query": "explain the difference between Kotlin coroutines and Swift async/await for a blog post", "should_trigger": false}
+]

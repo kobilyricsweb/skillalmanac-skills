@@ -1,0 +1,164 @@
+{
+ "note": "Each case runs scripts/ui_audit.py on a fixture and compares exit code, verdict, counts and the exact set of rule:severity pairs. Expected values were checked by hand against the fixture source.",
+ "cases": [
+  {
+   "file": "bad_landing.html",
+   "exit": 1,
+   "expect": {
+    "verdict": "fail",
+    "counts": {
+     "fail": 3,
+     "warn": 28,
+     "info": 1
+    },
+    "kind": "html",
+    "findings": [
+     "contrast-text:fail",
+     "contrast-text:warn",
+     "focus-outline-removed:fail",
+     "heading-skip:warn",
+     "motion-reduced:warn",
+     "responsive-fixed-width:warn",
+     "responsive-none:warn",
+     "space-grid:warn",
+     "state-disabled:info",
+     "state-focus:warn",
+     "state-hover:warn",
+     "states-empty:warn",
+     "states-error:warn",
+     "states-loading:warn",
+     "tell-center-everything:warn",
+     "tell-emoji-icons:warn",
+     "tell-filler-copy:warn",
+     "tell-glass:warn",
+     "tell-gradient-text:warn",
+     "tell-purple-gradient:warn",
+     "tell-radius-sprawl:warn",
+     "tell-shadow-sprawl:warn",
+     "touch-target:warn",
+     "transition-all:warn",
+     "type-body-size:warn",
+     "type-line-height:warn",
+     "type-min-size:warn",
+     "type-near-duplicates:warn",
+     "viewport-meta:fail"
+    ]
+   }
+  },
+  {
+   "file": "good_landing.html",
+   "exit": 0,
+   "expect": {
+    "verdict": "pass",
+    "counts": {
+     "fail": 0,
+     "warn": 0,
+     "info": 0
+    },
+    "kind": "html",
+    "findings": []
+   }
+  },
+  {
+   "file": "tokens_bad.json",
+   "exit": 1,
+   "expect": {
+    "verdict": "fail",
+    "counts": {
+     "fail": 2,
+     "warn": 10,
+     "info": 0
+    },
+    "kind": "tokens",
+    "findings": [
+     "contrast-text:fail",
+     "palette-hues:warn",
+     "responsive-breakpoints:warn",
+     "space-grid:warn",
+     "tell-radius-sprawl:warn",
+     "type-line-height:warn",
+     "type-min-size:warn",
+     "type-near-duplicates:warn",
+     "type-scale-count:warn"
+    ]
+   }
+  },
+  {
+   "file": "tokens_good.json",
+   "exit": 0,
+   "expect": {
+    "verdict": "pass",
+    "counts": {
+     "fail": 0,
+     "warn": 0,
+     "info": 0
+    },
+    "kind": "tokens",
+    "findings": []
+   }
+  },
+  {
+   "file": "outline_bad.css",
+   "exit": 1,
+   "expect": {
+    "verdict": "fail",
+    "counts": {
+     "fail": 1,
+     "warn": 1,
+     "info": 1
+    },
+    "kind": "css",
+    "findings": [
+     "focus-outline-removed:fail",
+     "state-disabled:info",
+     "state-focus:warn"
+    ]
+   }
+  },
+  {
+   "file": "warn_only.css",
+   "exit": 0,
+   "expect": {
+    "verdict": "review",
+    "counts": {
+     "fail": 0,
+     "warn": 1,
+     "info": 0
+    },
+    "kind": "css",
+    "findings": [
+     "state-hover:warn"
+    ]
+   }
+  },
+  {
+   "file": "warn_only.css",
+   "flags": [
+    "--strict"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "review",
+    "counts": {
+     "fail": 0,
+     "warn": 1,
+     "info": 0
+    },
+    "kind": "css",
+    "findings": [
+     "state-hover:warn"
+    ]
+   }
+  },
+  {
+   "file": "missing_file.css",
+   "exit": 2,
+   "expect": {}
+  },
+  {
+   "file": "unsupported.txt",
+   "exit": 2,
+   "expect": {}
+  }
+ ]
+}

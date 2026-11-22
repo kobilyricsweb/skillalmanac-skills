@@ -1,0 +1,8 @@
+{
+  "structure": "five-act",
+  "word_target": 5000,
+  "tense": "past",
+  "characters": [],
+  "scenes": [{"id": "x1", "beat": "hook"}],
+  "mood": "bleak"
+}

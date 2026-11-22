@@ -1,0 +1,51 @@
+{
+ "skill_name": "designing-web-interfaces",
+ "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/ui_audit.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has at least one judge assertion it does not control.",
+ "evals": [
+  {
+   "id": "t1-restyle-landing",
+   "prompt": "This landing page looks generic and AI-made. Restyle it so it looks designed, keep the content meaning, and save it as index.html in the output folder.",
+   "files": [
+    "evals/files/t1-restyle-landing/index.html"
+   ],
+   "assertions": [
+    "[script] ui_audit.py on the new index.html has verdict pass or review and zero FAIL findings",
+    "[script] ui_audit.py on the new index.html reports no tell-purple-gradient, tell-gradient-text, tell-emoji-icons or tell-filler-copy findings",
+    "[script] index.html contains a viewport meta with width=device-width and a :focus-visible rule",
+    "[script] the new file defines its sizes, spacing and colours as CSS custom properties (at least 8 var(-- uses)",
+    "[judge] The headline and button copy say what a workflow product does instead of stock phrases, without inventing features or numbers",
+    "[judge] The reply ends with Tokens, Audit, Left on purpose and Not checked lines, and says rendering was not checked unless a browser was used"
+   ]
+  },
+  {
+   "id": "t2-fix-tokens",
+   "prompt": "Here is my design tokens file. It feels off. Fix it so it is a sound system, explain each change in one line, and save the result as tokens.fixed.json.",
+   "files": [
+    "evals/files/t2-tokens/tokens.json"
+   ],
+   "assertions": [
+    "[script] ui_audit.py on tokens.fixed.json has zero FAIL findings and no more than 2 WARN findings",
+    "[script] tokens.fixed.json has between 4 and 8 font_sizes, none below 12, and contains 16",
+    "[script] every spacing value in tokens.fixed.json is a multiple of 4 (2 and 6 tolerated)",
+    "[judge] The text colour and the on-primary colour keep recognisably the same hue as the original (they were adjusted for contrast, not replaced by unrelated colours)",
+    "[judge] Each change is explained in one line with the reason (contrast ratio, scale ratio, grid), and nothing is changed without mention",
+    "[judge] The reply states that tokens were audited with the script and what was not checked"
+   ]
+  },
+  {
+   "id": "t3-form-states",
+   "prompt": "This signup form has no states. Add hover, focus, disabled, loading and inline error states and an empty-safe layout, keep it a single HTML file, save as signup.html.",
+   "files": [
+    "evals/files/t3-signup-form/signup.html"
+   ],
+   "assertions": [
+    "[script] ui_audit.py on the new signup.html has zero FAIL findings and no focus-outline-removed finding",
+    "[script] ui_audit.py reports no states-error, states-loading, state-hover or state-focus finding",
+    "[script] signup.html contains aria-invalid and role=\"alert\" (or aria-live)",
+    "[judge] Error copy says how to fix the problem (for example what format is expected), not only that something is wrong, and is placed beside the field",
+    "[judge] The submit button is disabled or shows a loading label while submitting, and the layout does not shift when it does",
+    "[judge] No new fonts, scripts or external resources were added"
+   ]
+  }
+ ]
+}

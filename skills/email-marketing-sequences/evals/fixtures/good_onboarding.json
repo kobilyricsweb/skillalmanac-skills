@@ -1,0 +1,74 @@
+{
+  "sequence": {
+    "name": "Trail Pack onboarding",
+    "type": "onboarding",
+    "trigger": "account_created",
+    "goal": "first order placed within 14 days",
+    "consent_basis": "double_opt_in",
+    "consent_evidence": "Signup form consent checkbox plus confirmation click, stored with timestamp and IP in the CRM",
+    "regions": ["US", "UK"],
+    "sender": {
+      "from_name": "Maya at Trail Pack",
+      "from_email": "maya@trailpack.example",
+      "postal_address": "12 Quarry Lane, Bristol BS1 4AA, United Kingdom"
+    },
+    "exit_conditions": [
+      "first order placed (goal reached)",
+      "unsubscribed",
+      "hard bounce or spam complaint",
+      "opened a support ticket in the last 3 days"
+    ]
+  },
+  "emails": [
+    {
+      "id": "welcome",
+      "day": 0,
+      "job": "Confirm the account and show where to start",
+      "subject": "Welcome to Trail Pack, your account is ready",
+      "preheader": "Three things worth doing in your first five minutes",
+      "cta": {"label": "Set up my profile", "url": "https://trailpack.example/profile"},
+      "unsubscribe": true,
+      "list_unsubscribe_header": true
+    },
+    {
+      "id": "first-win",
+      "day": 2,
+      "job": "Get the reader to build their first gear list",
+      "subject": "Build your first gear list in two minutes",
+      "preheader": "Start from a template instead of a blank page",
+      "cta": {"label": "Open the list builder", "url": "https://trailpack.example/lists/new"},
+      "unsubscribe": true,
+      "list_unsubscribe_header": true
+    },
+    {
+      "id": "proof",
+      "day": 5,
+      "job": "Show how another hiker used a list to prepare a trip",
+      "subject": "How Priya packed for a 4-day coastal walk",
+      "preheader": "Her list, her mistakes, and what she would change",
+      "cta": {"label": "Read Priya's story", "url": "https://trailpack.example/stories/priya"},
+      "unsubscribe": true,
+      "list_unsubscribe_header": true
+    },
+    {
+      "id": "offer",
+      "day": 9,
+      "job": "Offer free delivery on a first order",
+      "subject": "Free delivery on your first order, through Friday",
+      "preheader": "Applies automatically at checkout",
+      "cta": {"label": "Shop with free delivery", "url": "https://trailpack.example/shop"},
+      "unsubscribe": true,
+      "list_unsubscribe_header": true
+    },
+    {
+      "id": "last-note",
+      "day": 14,
+      "job": "Ask what is stopping the first order and close the sequence",
+      "subject": "Is something missing from Trail Pack?",
+      "preheader": "Reply to this email, a person reads every answer",
+      "cta": {"label": "Tell us what you need", "url": "https://trailpack.example/feedback"},
+      "unsubscribe": true,
+      "list_unsubscribe_header": true
+    }
+  ]
+}

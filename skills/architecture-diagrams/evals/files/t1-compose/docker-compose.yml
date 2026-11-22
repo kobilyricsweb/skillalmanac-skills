@@ -1,0 +1,26 @@
+services:
+  web:
+    build: ./web
+    ports: ["443:8443"]
+    environment:
+      API_URL: http://orders-api:8080
+  orders-api:
+    build: ./orders
+    environment:
+      DATABASE_URL: postgres://orders:CHANGEME@orders-db:5432/orders
+      REDIS_URL: redis://cache:6379
+      AMQP_URL: amqp://broker:5672
+      PAYMENTS_BASE_URL: https://api.paymentsco.example
+    depends_on: [orders-db, cache, broker]
+  worker:
+    build: ./worker
+    environment:
+      AMQP_URL: amqp://broker:5672
+      SMTP_HOST: smtp.mailco.example
+    depends_on: [broker]
+  orders-db:
+    image: postgres:16
+  cache:
+    image: redis:7
+  broker:
+    image: rabbitmq:3

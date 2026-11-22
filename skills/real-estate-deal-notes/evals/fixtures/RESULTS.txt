@@ -1,0 +1,10 @@
+PASS check good_deal.json --today 2026-11-21
+PASS check bad_deal.json --today 2026-11-21
+PASS check expenses_exceed.json --today 2026-11-21
+PASS check good_deal.json --today 2027-05-01
+PASS compare good_deal.json good_deal_b.json --today 2026-11-21
+PASS compare good_deal.json expenses_exceed.json --today 2026-11-21
+PASS check missing_file.json
+PASS check not_json.json
+PASS check good_deal.json --today 21-11-2026
+9/9 cases passed

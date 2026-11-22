@@ -1,0 +1,43 @@
+{
+  "sequence": {
+    "name": "Spring lapsed customers",
+    "type": "winback",
+    "trigger": "no_order_180_days",
+    "goal": "repeat order",
+    "consent_basis": "existing_customer",
+    "sender": {
+      "from_name": "Bright Blinds",
+      "from_email": "hello@brightblinds.example",
+      "postal_address": "9 Station Parade, Reading RG1 1AA, United Kingdom"
+    },
+    "exit_conditions": ["unsubscribed"]
+  },
+  "emails": [
+    {
+      "id": "b1",
+      "day": 0,
+      "job": "Remind them we exist",
+      "subject": "We miss you! Come back for 20% OFF!!",
+      "preheader": "We miss you! Come back for 20% OFF!!",
+      "cta": {"label": "Click here", "url": "https://brightblinds.example/offer"},
+      "unsubscribe": true
+    },
+    {
+      "id": "b2",
+      "day": 1,
+      "job": "Repeat the offer",
+      "subject": "Your 20% discount is waiting",
+      "preheader": "Do not miss out",
+      "cta": {"label": "Click here", "url": "https://brightblinds.example/offer"},
+      "unsubscribe": true
+    },
+    {
+      "id": "b3",
+      "day": 2,
+      "job": "Offer ends tomorrow",
+      "subject": "URGENT: last chance, guaranteed savings",
+      "preheader": "Final reminder",
+      "cta": {"label": "Shop now", "url": "https://brightblinds.example/shop"}
+    }
+  ]
+}

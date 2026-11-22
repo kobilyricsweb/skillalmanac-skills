@@ -1,0 +1,11 @@
+{
+  "meeting": {"title": "Onboarding ideas workshop", "length_min": 120, "start": "13:00", "attendees": 6, "purpose": "brainstorm"},
+  "items": [
+    {"title": "Context", "owner": "Mia", "type": "inform", "minutes": 10, "outcome": "Share the customer interview themes", "needs_discussion": true},
+    {"title": "Ideas", "owner": "Joe", "type": "brainstorm", "minutes": 25, "outcome": "Generate at least 15 onboarding ideas"},
+    {"title": "Break", "type": "break", "minutes": 10},
+    {"title": "Clustering", "owner": "Ana", "type": "discuss", "minutes": 20, "outcome": "Which ideas go forward?"},
+    {"title": "Pick two", "owner": "Mia", "type": "decide", "minutes": 15, "outcome": "Which two ideas do we prototype?"},
+    {"title": "Next steps", "owner": "Joe", "type": "inform", "minutes": 5, "outcome": "Confirm owners and dates"}
+  ]
+}

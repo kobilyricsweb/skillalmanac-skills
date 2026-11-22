@@ -1,0 +1,26 @@
+{
+  "customer": {
+    "name": "[PERSON_1]",
+    "email": "[EMAIL_1]",
+    "password": "[CREDENTIAL_1]"
+  },
+  "payment": {
+    "card": "[CARD_1]",
+    "iban": "[IBAN_1]",
+    "note": "[PERSON_1] asked for a refund"
+  },
+  "contacts": [
+    "[EMAIL_2]",
+    "[PHONE_1]"
+  ],
+  "by_email": {
+    "[EMAIL_2]": "escalated"
+  },
+  "orders": [
+    {
+      "id": 1234567890,
+      "total": 19.5,
+      "paid": true
+    }
+  ]
+}

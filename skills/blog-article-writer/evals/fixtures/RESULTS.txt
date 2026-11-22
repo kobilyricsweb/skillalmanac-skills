@@ -1,0 +1,12 @@
+PASS audit article_good.md --site-host example.org
+PASS audit article_bad.md --site-host example.org
+PASS audit article_good.md --site-host example.org --brief brief_good.md
+PASS audit article_good.md --site-host example.org --brief brief_bad.md
+PASS audit article_good.md
+PASS audit article_good.md --site-host example.org --min-internal-links 4
+PASS brief brief_good.md
+PASS brief brief_bad.md
+PASS audit missing_file.md
+PASS audit empty.md
+PASS brief
+11/11 cases passed

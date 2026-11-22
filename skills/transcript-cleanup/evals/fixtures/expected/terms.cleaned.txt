@@ -1,0 +1,2 @@
+[00:01] Dr. Kim Park: we moved to Kubernetes last week.
+[00:05] Dr. Kim Park: The PostgreSQL upgrade is next.

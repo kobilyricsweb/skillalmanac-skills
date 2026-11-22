@@ -1,0 +1,7 @@
+PASS check good.json
+PASS check bad_tree.json
+PASS check bad_evidence.json
+PASS check invalid.json
+PASS check missing_file.json
+PASS template
+6/6 cases passed

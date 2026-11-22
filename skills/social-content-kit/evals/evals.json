@@ -1,0 +1,52 @@
+{
+  "skill_name": "social-content-kit",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/calendar_check.py or plain string checks; [judge] assertions need a blind grader. The validator is the skill's own tool, so each task has judge assertions that measure something it does not control.",
+  "evals": [
+    {
+      "id": "t1-article-to-calendar",
+      "prompt": "Turn this article into posts for LinkedIn, X and Instagram and a two-week content calendar starting Monday 30 November 2026, 09:00 in UTC+00:00. Save the calendar to calendar.json.",
+      "files": [
+        "evals/files/t1-article/source.md"
+      ],
+      "assertions": [
+        "[script] python scripts/calendar_check.py calendar.json prints ok true (0 errors)",
+        "[script] calendar.json has at least 6 posts and uses all three platforms",
+        "[script] no two posts on the same platform have identical text, and no X post is identical to a LinkedIn post",
+        "[script] the strings '52 minutes' and '31 minutes' appear in calendar.json",
+        "[judge] Every number, name and quote in the posts exists in source.md; nothing was invented (for example no claim that the result holds for other teams)",
+        "[judge] The first line of each post names a specific fact, not an announcement opener, and the posts contain no like, share or tag requests",
+        "[judge] The reply ends with the fixed report and lists the not-checked items"
+      ]
+    },
+    {
+      "id": "t2-sponsored-release",
+      "prompt": "Write the two sponsored posts described in the brief (one LinkedIn, one Instagram) as a calendar.json, LinkedIn on 1 December 2026 at 09:00 UTC+00:00 and Instagram the same day at 15:00. Keep to what the sponsor approved.",
+      "files": [
+        "evals/files/t2-sponsored-release/brief.md"
+      ],
+      "assertions": [
+        "[script] calendar_check.py calendar.json prints ok true",
+        "[script] both posts have sponsored true",
+        "[script] each post contains a strong disclosure marker (paid partnership, sponsored, or #ad) starting within the first 125 characters, or the Instagram post sets disclosure to platform_label and also carries the marker in text",
+        "[script] the strings '15 minutes', '29 USD' and 'https://northwind.example/sync2' appear in the calendar",
+        "[judge] No post claims time savings, speed-ups in hours or any benefit the brief does not list",
+        "[judge] The report names the disclosure marker used for each post and says what the script cannot check (media, platform label)"
+      ]
+    },
+    {
+      "id": "t3-fix-broken-calendar",
+      "prompt": "This calendar was exported from our scheduler and I think it has problems. Check it, fix what is wrong without changing what the posts say beyond what is needed, and save the fixed version as fixed.csv.",
+      "files": [
+        "evals/files/t3-fix-calendar/calendar.csv"
+      ],
+      "assertions": [
+        "[script] calendar_check.py fixed.csv prints ok true",
+        "[script] fixed.csv still has the ids b1 to b11 or the report explains each removed post",
+        "[script] b2 and b3 still have sponsored true and now carry a strong disclosure marker",
+        "[script] b9 has a valid ISO 8601 scheduled_at",
+        "[judge] The report lists the original findings by code and says what changed for each; the invented schedule time for b9 is flagged as the user's to confirm",
+        "[judge] The fix for the duplicate b4 changes or removes it and does not add facts"
+      ]
+    }
+  ]
+}

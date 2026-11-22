@@ -1,0 +1,82 @@
+[
+ {
+  "query": "write me a query that lists customers with their last order date, postgres",
+  "should_trigger": true
+ },
+ {
+  "query": "is this migration safe to run on a 50M row table? it adds a NOT NULL column and an index",
+  "should_trigger": true
+ },
+ {
+  "query": "my SQL query is slow, how do I decide which index to add",
+  "should_trigger": true
+ },
+ {
+  "query": "review this .sql file before I run it in production",
+  "should_trigger": true
+ },
+ {
+  "query": "how do I stop SQL injection in my query, I'm building the WHERE clause from user input",
+  "should_trigger": true
+ },
+ {
+  "query": "convert this MySQL query to work in SQLite",
+  "should_trigger": true
+ },
+ {
+  "query": "give me the ALTER TABLE statements to rename a column with no downtime",
+  "should_trigger": true
+ },
+ {
+  "query": "DELETE FROM users WHERE ... I want to clean up old accounts, how do I do it without wiping the table",
+  "should_trigger": true
+ },
+ {
+  "query": "why does my NOT IN subquery return no rows",
+  "should_trigger": true
+ },
+ {
+  "query": "write a safe backfill script for a new column in postgres",
+  "should_trigger": true
+ },
+ {
+  "query": "design the Django models for a blog with comments",
+  "should_trigger": false
+ },
+ {
+  "query": "write a MongoDB aggregation pipeline to group orders by month",
+  "should_trigger": false
+ },
+ {
+  "query": "build a star schema and dimensional model for our data warehouse",
+  "should_trigger": false
+ },
+ {
+  "query": "how do I use pandas read_sql to load a csv into a dataframe and plot it",
+  "should_trigger": false
+ },
+ {
+  "query": "explain what a relational database is to a high-school class",
+  "should_trigger": false
+ },
+ {
+  "query": "set up a Redis cache in front of my API",
+  "should_trigger": false
+ },
+ {
+  "query": "write a Prisma schema and migration for a todo app",
+  "should_trigger": false
+ },
+ {
+  "query": "my laptop database app crashes on startup, the log says segfault in libsqlite",
+  "should_trigger": false
+ },
+ {
+  "query": "summarise this spreadsheet's columns for me",
+  "should_trigger": false
+ },
+ {
+  "query": "write a Terraform module that provisions an RDS instance",
+  "should_trigger": false
+ }
+]

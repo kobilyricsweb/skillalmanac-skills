@@ -1,0 +1,82 @@
+[
+ {
+  "query": "is this skill safe to install? I downloaded it from a random repo",
+  "should_trigger": true
+ },
+ {
+  "query": "can you vet this SKILL.md folder before I put it in my .claude/skills",
+  "should_trigger": true
+ },
+ {
+  "query": "scan this agent skill for malicious stuff, it has a scripts folder",
+  "should_trigger": true
+ },
+ {
+  "query": "what can this third-party skill do to my machine? check the folder and tell me",
+  "should_trigger": true
+ },
+ {
+  "query": "review the skill I found on a marketplace for prompt injection and hidden characters",
+  "should_trigger": true
+ },
+ {
+  "query": "audit this skill for network calls, env var reads and anything that writes outside its folder",
+  "should_trigger": true
+ },
+ {
+  "query": "someone sent me a skill zip, does it have anything sketchy before I trust it",
+  "should_trigger": true
+ },
+ {
+  "query": "check whether this skill's frontmatter is oversized or has hidden instructions in HTML comments",
+  "should_trigger": true
+ },
+ {
+  "query": "I want a risk table for this skill package with evidence lines, JSON output please",
+  "should_trigger": true
+ },
+ {
+  "query": "before I enable this community skill, is there base64 or exec in its scripts?",
+  "should_trigger": true
+ },
+ {
+  "query": "write a CLAUDE.md with rules that stop the agent from force pushing and editing .env",
+  "should_trigger": false
+ },
+ {
+  "query": "review my pull request for security bugs in the login code",
+  "should_trigger": false
+ },
+ {
+  "query": "create a new skill that summarises meeting notes",
+  "should_trigger": false
+ },
+ {
+  "query": "is this npm package malware? analyse the binary and tell me what it does",
+  "should_trigger": false
+ },
+ {
+  "query": "audit my MCP server config for exposed tokens",
+  "should_trigger": false
+ },
+ {
+  "query": "scan my repo for hardcoded API keys before I push",
+  "should_trigger": false
+ },
+ {
+  "query": "check my SKILL.md frontmatter fields against the spec and fix the description length",
+  "should_trigger": false
+ },
+ {
+  "query": "explain what prompt injection is and how companies defend against it",
+  "should_trigger": false
+ },
+ {
+  "query": "set up permission rules so the agent can't run rm -rf in my project",
+  "should_trigger": false
+ },
+ {
+  "query": "write unit tests for my python script that parses CSV files",
+  "should_trigger": false
+ }
+]

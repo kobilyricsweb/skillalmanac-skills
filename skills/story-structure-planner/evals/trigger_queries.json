@@ -1,0 +1,22 @@
+[
+  {"query": "help me outline my fantasy novel, about 80k words, three acts", "should_trigger": true},
+  {"query": "I have a premise for a thriller, can you build a beat sheet and scene list for it", "should_trigger": true},
+  {"query": "my middle is saggy, check which scenes in the second act don't change anything", "should_trigger": true},
+  {"query": "check my story outline for plot holes and continuity errors, here is the json", "should_trigger": true},
+  {"query": "plan the chapters of my novella using the hero's journey and give each scene a goal, conflict and outcome", "should_trigger": true},
+  {"query": "I keep switching POV mid chapter in my draft plan, can you check the outline for POV and tense drift", "should_trigger": true},
+  {"query": "make me a scene card template and fill it for my short story about a lighthouse keeper", "should_trigger": true},
+  {"query": "does my outline plant and pay off everything? I think I have a gun on the wall that never fires", "should_trigger": true},
+  {"query": "scale a save the cat beat sheet to a 50,000 word target and tell me the word budget per beat", "should_trigger": true},
+  {"query": "verify my character arcs have turning points and that nobody appears before they are introduced", "should_trigger": true},
+  {"query": "write chapter one of my novel in full, about 3000 words", "should_trigger": false},
+  {"query": "proofread this scene for grammar and make the dialogue tighter", "should_trigger": false},
+  {"query": "structure a blog article about remote work with headings and a call to action", "should_trigger": false},
+  {"query": "write a game design document with core loop and progression", "should_trigger": false},
+  {"query": "continue this chapter of a famous published novel in the exact style and wording of the original author", "should_trigger": false},
+  {"query": "write me song lyrics with a verse and chorus about leaving home", "should_trigger": false},
+  {"query": "give me a free ai story generator prompt that writes a full short story for me", "should_trigger": false},
+  {"query": "outline a nonfiction book proposal with chapter summaries for a publisher", "should_trigger": false},
+  {"query": "break this project into tasks with estimates", "should_trigger": false},
+  {"query": "check my slide deck narrative for a pitch to investors", "should_trigger": false}
+]

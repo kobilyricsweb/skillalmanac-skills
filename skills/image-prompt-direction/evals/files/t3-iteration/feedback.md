@@ -1,0 +1,1 @@
+We generated 4 images from v1.txt. All four are fine technically, but the client says the picture feels cold and clinical, "like a catalogue". They want it to feel like a cosy corner of a home. The framing, colours and product are approved.

@@ -1,0 +1,22 @@
+[
+  {"query": "my app won't start, can you check config.json for syntax errors", "should_trigger": true},
+  {"query": "validate this .env file, I think I have a typo and maybe a key in plain text", "should_trigger": true},
+  {"query": "is my settings.toml valid? the port should be an int between 1 and 65535", "should_trigger": true},
+  {"query": "here is my schema and my config.json, tell me which keys are missing or have the wrong type", "should_trigger": true},
+  {"query": "why does my JSON config fail to parse, it says Expecting property name at line 14", "should_trigger": true},
+  {"query": "check my php.ini style settings file for duplicate keys and a bad port number", "should_trigger": true},
+  {"query": "look through this config for secrets or passwords I shouldn't have committed", "should_trigger": true},
+  {"query": "my docker .env still has ${DB_HOST} placeholders, which ones are unresolved?", "should_trigger": true},
+  {"query": "lint this simple config.yaml with just key: value pairs and a list of tags", "should_trigger": true},
+  {"query": "I wrote debug = \"true\" with quotes in my TOML, does that break anything? check the whole file", "should_trigger": true},
+  {"query": "compare my staging and production .env files and show which keys differ", "should_trigger": false},
+  {"query": "explain why the config drifted between our two servers last week", "should_trigger": false},
+  {"query": "validate this Kubernetes deployment manifest with anchors and multiple documents", "should_trigger": false},
+  {"query": "write me a new nginx config for a reverse proxy", "should_trigger": false},
+  {"query": "what does the max_connections setting in postgresql.conf mean", "should_trigger": false},
+  {"query": "validate the JSON that my LLM returned against this output schema", "should_trigger": false},
+  {"query": "set up codex cli by editing config.toml for me so it uses a different model", "should_trigger": false},
+  {"query": "scan my whole repo for leaked AWS keys and rewrite git history", "should_trigger": false},
+  {"query": "convert this JSON file to YAML", "should_trigger": false},
+  {"query": "check that my CSV has the right columns and no blank rows", "should_trigger": false}
+]

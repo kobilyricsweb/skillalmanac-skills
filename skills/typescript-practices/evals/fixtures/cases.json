@@ -1,0 +1,244 @@
+{
+ "note": "Each case runs scripts/ts_scan.py with the given args (paths relative to evals/fixtures/) and checks exit code, total_findings, files_scanned and the sorted (line, rule) pairs. Expected values were read by hand against each fixture before being saved.",
+ "cases": [
+  {
+   "args": [
+    "bad.ts"
+   ],
+   "exit": 1,
+   "expect": {
+    "total_findings": 18,
+    "pairs": [
+     [
+      3,
+      "enum"
+     ],
+     [
+      8,
+      "enum"
+     ],
+     [
+      10,
+      "default-export"
+     ],
+     [
+      10,
+      "explicit-any"
+     ],
+     [
+      11,
+      "explicit-any"
+     ],
+     [
+      12,
+      "non-null-assertion"
+     ],
+     [
+      13,
+      "double-assertion"
+     ],
+     [
+      17,
+      "ts-suppression-no-reason"
+     ],
+     [
+      20,
+      "ts-ignore-prefer-expect-error"
+     ],
+     [
+      23,
+      "ts-suppression-no-reason"
+     ],
+     [
+      29,
+      "ts-nocheck"
+     ],
+     [
+      32,
+      "definite-assignment"
+     ],
+     [
+      33,
+      "explicit-any"
+     ],
+     [
+      34,
+      "explicit-any"
+     ],
+     [
+      35,
+      "non-null-assertion"
+     ],
+     [
+      39,
+      "explicit-any"
+     ],
+     [
+      40,
+      "explicit-any"
+     ],
+     [
+      43,
+      "default-export"
+     ]
+    ],
+    "files_scanned": 1
+   }
+  },
+  {
+   "args": [
+    "good.ts"
+   ],
+   "exit": 0,
+   "expect": {
+    "total_findings": 0,
+    "pairs": []
+   }
+  },
+  {
+   "args": [
+    "traps.ts"
+   ],
+   "exit": 0,
+   "expect": {
+    "total_findings": 0,
+    "pairs": []
+   }
+  },
+  {
+   "args": [
+    "bad.tsx"
+   ],
+   "exit": 1,
+   "expect": {
+    "total_findings": 3,
+    "pairs": [
+     [
+      3,
+      "explicit-any"
+     ],
+     [
+      5,
+      "non-null-assertion"
+     ],
+     [
+      10,
+      "non-null-assertion"
+     ]
+    ]
+   }
+  },
+  {
+   "args": [
+    "suppress.ts"
+   ],
+   "exit": 1,
+   "expect": {
+    "total_findings": 1,
+    "pairs": [
+     [
+      4,
+      "non-null-assertion"
+     ]
+    ],
+    "suppressed_pairs": [
+     [
+      2,
+      "non-null-assertion"
+     ],
+     [
+      3,
+      "non-null-assertion"
+     ],
+     [
+      5,
+      "explicit-any"
+     ]
+    ]
+   }
+  },
+  {
+   "args": [
+    "bad.ts",
+    "--profile",
+    "app"
+   ],
+   "exit": 1,
+   "expect": {
+    "total_findings": 16
+   }
+  },
+  {
+   "args": [
+    "bad.ts",
+    "--min-severity",
+    "high"
+   ],
+   "exit": 1,
+   "expect": {
+    "total_findings": 4,
+    "pairs": [
+     [
+      13,
+      "double-assertion"
+     ],
+     [
+      17,
+      "ts-suppression-no-reason"
+     ],
+     [
+      23,
+      "ts-suppression-no-reason"
+     ],
+     [
+      29,
+      "ts-nocheck"
+     ]
+    ]
+   }
+  },
+  {
+   "args": [
+    "bad.ts",
+    "--ignore-rule",
+    "explicit-any",
+    "--ignore-rule",
+    "enum"
+   ],
+   "exit": 1,
+   "expect": {
+    "total_findings": 10
+   }
+  },
+  {
+   "args": [
+    "dir_walk"
+   ],
+   "exit": 1,
+   "expect": {
+    "total_findings": 1,
+    "files_scanned": 2,
+    "pairs": [
+     [
+      1,
+      "explicit-any"
+     ]
+    ]
+   }
+  },
+  {
+   "args": [
+    "missing_file.ts"
+   ],
+   "exit": 2,
+   "expect": {}
+  },
+  {
+   "args": [
+    "empty_dir"
+   ],
+   "exit": 2,
+   "expect": {}
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+[
+  {"query": "write me a Blender python script that builds a product shot of a perfume bottle on a white floor with a camera and lights", "should_trigger": true},
+  {"query": "my bpy render comes out completely black, what's wrong with my scene script", "should_trigger": true},
+  {"query": "set up a three.js scene with a ground plane, a box, a directional light and a camera that looks at the box", "should_trigger": true},
+  {"query": "the object in my generated 3D scene is floating above the floor and way too small, fix the script", "should_trigger": true},
+  {"query": "what camera focal length and lighting setup should I use for a clean three-point product render in Blender?", "should_trigger": true},
+  {"query": "I need to move a scene from Blender to three.js and the camera points the wrong way and everything is rotated", "should_trigger": true},
+  {"query": "have the agent script a 3D scene from this JSON description and render a preview thumbnail to check it", "should_trigger": true},
+  {"query": "which Blender render settings should I use for a quick layout check versus a final Cycles still?", "should_trigger": true},
+  {"query": "generate a bpy script for a living-room scene, I want the materials set up without breaking when Blender is in another language", "should_trigger": true},
+  {"query": "validate my scene file: duplicate object names, nothing under the ground, camera actually sees the model", "should_trigger": true},
+  {"query": "sculpt a realistic human face in Blender with dyntopo and give me brush settings", "should_trigger": false},
+  {"query": "set up a Unity scene with a NavMesh and a first person controller", "should_trigger": false},
+  {"query": "how do I slice this STL for my printer and choose infill", "should_trigger": false},
+  {"query": "write a React component that animates a button on hover with CSS", "should_trigger": false},
+  {"query": "rig and animate a walking character with IK in Blender", "should_trigger": false},
+  {"query": "design a CAD part with fillets and tolerances for machining", "should_trigger": false},
+  {"query": "write an After Effects expression for a bouncing text layer", "should_trigger": false},
+  {"query": "explain the difference between PBR and phong shading in general terms", "should_trigger": false},
+  {"query": "make a generative image prompt for a fantasy castle at sunset", "should_trigger": false},
+  {"query": "build a programmatic 2D video from a script with captions and voiceover", "should_trigger": false}
+]

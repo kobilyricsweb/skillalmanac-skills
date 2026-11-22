@@ -1,0 +1,8 @@
+PASS json mailbox
+PASS mbox mailbox
+PASS valid table passes check
+PASS broken table fails check
+PASS missing file
+PASS empty file
+PASS text that is not an mbox
+7/7 cases passed

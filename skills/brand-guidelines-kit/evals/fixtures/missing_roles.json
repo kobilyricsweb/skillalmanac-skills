@@ -1,0 +1,7 @@
+{
+  "brand": "Half Done",
+  "colors": [
+    {"name": "Mill Blue", "hex": "#1D4ED8", "role": "primary"},
+    {"name": "Cloud", "hex": "#EEE", "role": "backgrnd"}
+  ]
+}

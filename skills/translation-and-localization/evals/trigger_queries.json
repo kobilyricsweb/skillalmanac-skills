@@ -1,0 +1,22 @@
+[
+  {"query": "translate my en.json locale file into German, keep the {name} placeholders intact", "should_trigger": true},
+  {"query": "QA this Spanish .properties translation against the English source, check for missing keys", "should_trigger": true},
+  {"query": "localize our app strings to Japanese and make sure the ICU plurals still work", "should_trigger": true},
+  {"query": "I have a glossary of approved terms, enforce it when you translate the UI copy into French", "should_trigger": true},
+  {"query": "my translated strings broke the app, some %s and {count} variables are missing in the Portuguese file", "should_trigger": true},
+  {"query": "translate this help page into Arabic and tell me what to watch for with RTL", "should_trigger": true},
+  {"query": "German buttons are overflowing after translation, check which strings are too long compared to English", "should_trigger": true},
+  {"query": "compare messages_en.properties and messages_pl.properties and list untranslated entries", "should_trigger": true},
+  {"query": "keep the product name and API terms untranslated while localizing the docs to Italian", "should_trigger": true},
+  {"query": "review the Korean i18n JSON a vendor sent us for terminology consistency", "should_trigger": true},
+  {"query": "add subtitles in Spanish to this video transcript with timecodes", "should_trigger": false},
+  {"query": "I need a certified translation of my birth certificate for immigration", "should_trigger": false},
+  {"query": "which countries should we expand our app into next year", "should_trigger": false},
+  {"query": "how do I set up react-i18next in my Next.js project", "should_trigger": false},
+  {"query": "proofread this English paragraph for grammar", "should_trigger": false},
+  {"query": "interpret live between me and a Mandarin speaker on this call", "should_trigger": false},
+  {"query": "summarize this French article in English in three sentences", "should_trigger": false},
+  {"query": "rename the Python function names in this file to camelCase", "should_trigger": false},
+  {"query": "write marketing copy for our launch in the German market from scratch", "should_trigger": false},
+  {"query": "convert this JSON file to YAML", "should_trigger": false}
+]

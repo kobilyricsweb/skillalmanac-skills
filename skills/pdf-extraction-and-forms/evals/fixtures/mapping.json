@@ -1,0 +1,10 @@
+{
+  "form": "form_blank.pdf",
+  "output": "form_filled.pdf",
+  "fields": [
+    {"pdf_field": "form1.Name", "value": "Jane Doe", "source": "user message", "type": "text"},
+    {"pdf_field": "agree", "value": "Yes", "source": "user message: confirmed consent", "type": "checkbox"},
+    {"pdf_field": "SSN", "value": "000-00-0000", "source": "user message", "type": "text", "required": true}
+  ],
+  "unfilled_on_purpose": []
+}

@@ -1,0 +1,1 @@
+Hidden folder content that the walk must skip by default.

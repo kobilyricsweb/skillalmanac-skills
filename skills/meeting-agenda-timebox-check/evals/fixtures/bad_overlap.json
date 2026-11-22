@@ -1,0 +1,8 @@
+{
+  "meeting": {"title": "Quarterly update", "length_min": 100, "start": "09:00", "purpose": "inform"},
+  "items": [
+    {"title": "Q3 numbers", "owner": "Alex", "type": "inform", "minutes": 10, "outcome": "Share the Q3 numbers", "start": "09:00"},
+    {"title": "Hiring", "owner": "Bo", "type": "inform", "minutes": 10, "outcome": "Update the team on hiring", "start": "09:05"},
+    {"title": "Risks", "owner": "Alex", "type": "inform", "minutes": 5, "outcome": "List the open risks", "start": "09:30"}
+  ]
+}

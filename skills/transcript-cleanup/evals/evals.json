@@ -1,0 +1,45 @@
+{
+  "skill_name": "transcript-cleanup",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/clean_transcript.py or a plain string check on the saved output; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. The script-checkable expectations below were confirmed by running the script on the input files, not by an agent run.",
+  "evals": [
+    {
+      "id": "t1-podcast-srt",
+      "prompt": "This SRT came out of an auto-captioner for our podcast. Clean it up for publication: remove fillers and stutters, fix the speaker labels, join the broken sentences, keep the timing. Tell me which cues will be hard to read.",
+      "files": ["evals/files/t1-podcast-srt/episode.srt"],
+      "assertions": [
+        "[script] The cleaned SRT contains no standalone 'Um', 'uh', 'Er' or 'you know,' and no repeated 'I I'",
+        "[script] The cleaned SRT has exactly 4 cues, the first running 00:00:00,000 --> 00:00:05,200, and every label is one of 'Host', 'Guest 1', 'Speaker 2'",
+        "[script] The reply names the cleaned cue that is both under 1 second and above 21 characters per second (the 'We release on Thursdays' cue, 0.9 s, about 36.7 cps)",
+        "[script] The reply does not claim to have fixed reading speed or changed any timestamp other than the merged cue's end",
+        "[judge] No word was added or reworded: every remaining word appears in the original in the same order",
+        "[judge] The reply ends with a short report naming policy, counts of changes and what was not checked (audio accuracy)"
+      ]
+    },
+    {
+      "id": "t2-deposition-verbatim",
+      "prompt": "This is a deposition transcript for a legal file. Normalise the speaker names but do not remove anything the witness said, including the ums.",
+      "files": ["evals/files/t2-deposition-verbatim/deposition.txt"],
+      "assertions": [
+        "[script] The output keeps 'Um,', 'uh,', 'you know,', 'um,' and the repeat 'I I' exactly as in the input",
+        "[script] The output labels are only 'Mr. Davis' and 'Witness'",
+        "[script] All four timestamps ([00:02:10], [00:02:14], [00:02:19], [00:02:23]) are still present as written",
+        "[script] The policy used is verbatim (the reply says so)",
+        "[judge] The reply does not offer to remove fillers as a quality improvement for this document type",
+        "[judge] The reply says that accuracy against the recording was not checked"
+      ]
+    },
+    {
+      "id": "t3-glossary-vtt",
+      "prompt": "Clean this conference talk VTT. The speaker is Priya Nair. The product names are mangled: fix them from my glossary file only. Check the captions against normal subtitle limits.",
+      "files": ["evals/files/t3-glossary-vtt/talk.vtt", "evals/files/t3-glossary-vtt/glossary.json"],
+      "assertions": [
+        "[script] The cleaned VTT contains 'Kubernetes', 'PostgreSQL' and 'OpenTelemetry' and none of 'cooper netties', 'post gress', 'open tel'",
+        "[script] Every cue keeps the voice tag '<v Priya Nair>'",
+        "[script] The filler 'Uh,' at the start of the third cue is gone and the next word is capitalised ('Then')",
+        "[script] The three cue timings are unchanged",
+        "[judge] The reply reports the subtitle-limit result truthfully (no cue is over 21 characters per second or 2 lines) rather than claiming a fix",
+        "[judge] No term outside the glossary was corrected silently"
+      ]
+    }
+  ]
+}

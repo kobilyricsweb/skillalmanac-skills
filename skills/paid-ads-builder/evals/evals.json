@@ -1,0 +1,45 @@
+{
+  "skill_name": "paid-ads-builder",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/validate_ad_plan.py or a plain JSON check; [judge] assertions need a blind grader. The validator is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-local-service",
+      "prompt": "Build me a Google search campaign plan for this roofing company. Save it as ad_plan.json and tell me whether the numbers work.",
+      "files": ["evals/files/t1-local-service/brief.md"],
+      "assertions": [
+        "[script] validate_ad_plan.py ad_plan.json exits 0 with valid true",
+        "[script] ad_plan.json total_budget equals 2400 and campaign budgets add up to it",
+        "[script] every ad group landing_url contains utm_source, utm_medium and utm_campaign in lowercase",
+        "[judge] The reply derives target CPA from the brief: profit per job 6500 x 0.35 = 2275, per lead 0.25 x 2275 = 568.75, target about 398; and shows implied CPA 6.00 / 0.07 = 85.71",
+        "[judge] The plan does not invent a margin, close rate or CPC that the brief did not give",
+        "[judge] The reply ends with the fixed report including a 'Not checked' line that mentions unverified character limits"
+      ]
+    },
+    {
+      "id": "t2-fix-existing-plan",
+      "prompt": "Our agency's junior wrote this loan campaign plan. Check it before launch and fix everything you can, saving the fixed version as ad_plan_fixed.json.",
+      "files": ["evals/fixtures/bad_plan.json"],
+      "assertions": [
+        "[script] validate_ad_plan.py ad_plan_fixed.json exits 0 or reports only warnings",
+        "[script] ad_plan_fixed.json contains no 'guaranteed', 'no credit check', 'instant approval' or 'pre-approved' in any copy string",
+        "[script] ad_plan_fixed.json has at least 5 negative keywords and a landing_url on every ad group",
+        "[judge] The reply lists what was changed per finding and does not silently delete copy without replacement",
+        "[judge] The reply says that wording fixes do not make a finance ad compliant and that terms, rates and the landing page still need review",
+        "[judge] Budget figures are corrected by arithmetic that is shown, not by changing the total to whatever matches"
+      ]
+    },
+    {
+      "id": "t3-special-category",
+      "prompt": "Make the Meta plan for this apartment building. Marketing's targeting and wording ideas are in the brief.",
+      "files": ["evals/files/t3-rental-listing/brief.md"],
+      "assertions": [
+        "[script] validate_ad_plan.py ad_plan.json exits 0 with valid true",
+        "[script] ad_plan.json has special_category true and no age_min, age_max or gender key with a value in any audience",
+        "[script] no copy string contains 'young professionals' or 'families'",
+        "[judge] The reply tells the user why the requested age, gender and occupant wording was not used, in plain language",
+        "[judge] The plan optimises for the booked-tour conversion and shows 900 / 1.50 = 600 clicks, 30 tours, CPA 30",
+        "[judge] The reply does not present the wording check as a legal or compliance sign-off"
+      ]
+    }
+  ]
+}

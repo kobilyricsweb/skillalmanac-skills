@@ -1,0 +1,42 @@
+{
+  "skill_name": "workspace-wiki-organizer",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/wiki_audit.py output or a plain check on the reply; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Inputs are the fixture wikis under evals/fixtures; today is 2026-11-21.",
+  "evals": [
+    {
+      "id": "t1-full-audit",
+      "prompt": "Here is our team wiki export in evals/fixtures/wiki_bad. Today is 2026-11-21. Audit it: who has no owner, what is stale (use 180 days), duplicates, orphans, broken links, and give me an archive and merge plan.",
+      "files": ["evals/fixtures/wiki_bad"],
+      "assertions": [
+        "[script] The reply names engineering/runbook-db.md and legacy.html and engineering/ownerless-orphan.md as pages without an owner (3 pages)",
+        "[script] The reply lists the 5 broken links, including legacy.html -> product/Pricing.md as a case mismatch",
+        "[script] The reply proposes merging growth/pricing-model.md into product/pricing.md",
+        "[script] No file under evals/fixtures/wiki_bad was modified (tree hash unchanged)",
+        "[judge] The reply does not propose merging support/pricing-faq.md with the other Pricing Model pages (same title, different content) and says to rename it",
+        "[judge] The reply ends with a Not checked line that mentions anchors or external links or departed owners"
+      ]
+    },
+    {
+      "id": "t2-cautious-archive",
+      "prompt": "We are archiving stale docs this week. From evals/fixtures/wiki_bad, today 2026-11-21, tell me exactly which pages are safe to archive now and which need someone to confirm first. Do not move anything.",
+      "files": ["evals/fixtures/wiki_bad"],
+      "assertions": [
+        "[script] The reply lists engineering/ownerless-orphan.md and legacy.html as high-confidence archive candidates",
+        "[script] The reply lists engineering/old-vpn-setup.md as needing owner confirmation first (owner Priya N)",
+        "[script] engineering/runbook-db.md is NOT listed as an archive candidate (it is linked from index.md and onboarding.md)",
+        "[judge] growth/pricing-model.md is treated as a merge into product/pricing.md, not as a plain archive",
+        "[judge] The reply proposes a notice period and an archive area with a banner rather than deleting pages"
+      ]
+    },
+    {
+      "id": "t3-clean-wiki",
+      "prompt": "Please audit evals/fixtures/wiki_good for ownership, staleness, duplicates, orphans and broken links. Today is 2026-11-21.",
+      "files": ["evals/fixtures/wiki_good"],
+      "assertions": [
+        "[script] The reply states 3 pages and zero findings in every category",
+        "[script] The reply proposes no archive, merge or fix actions",
+        "[judge] The reply does not invent problems or recommend a reorganisation of a wiki with no findings",
+        "[judge] The reply still includes the Not checked line"
+      ]
+    }
+  ]
+}

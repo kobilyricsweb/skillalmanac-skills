@@ -1,0 +1,46 @@
+{
+  "note": "Expected values were derived by hand from the fixture files before the first run (see VERIFICATION.md).",
+  "cases": [
+    {
+      "args": ["check", "good.json"],
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "error_codes": [],
+        "warning_codes": [],
+        "counts": {"summary_words": 85, "tree_nodes": 7, "tree_leaves": 4, "hypotheses": 4, "evidence": 5, "sections": 2}
+      }
+    },
+    {
+      "args": ["check", "bad_tree.json"],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "error_codes": ["tree-gap", "tree-overlap", "tree-tag-unknown"],
+        "warning_codes": ["leaf-no-hypothesis", "leaf-no-hypothesis"]
+      }
+    },
+    {
+      "args": ["check", "bad_evidence.json"],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "error_codes": [
+          "evidence-confidence-range",
+          "evidence-no-source",
+          "hypothesis-no-evidence",
+          "hypothesis-no-falsifier",
+          "section-no-so-what",
+          "section-so-what-restates-title",
+          "section-so-what-thin",
+          "summary-too-long"
+        ],
+        "warning_codes": [],
+        "counts": {"summary_words": 162, "tree_nodes": 3, "tree_leaves": 2, "hypotheses": 2, "evidence": 2, "sections": 2}
+      }
+    },
+    {"args": ["check", "invalid.json"], "exit": 2},
+    {"args": ["check", "missing_file.json"], "exit": 2},
+    {"args": ["template"], "exit": 0}
+  ]
+}

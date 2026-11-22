@@ -1,0 +1,105 @@
+{
+ "note": "Each case runs scripts/flutter_scan.py from the evals/fixtures folder on the paths given and compares the exit code, the summary and the list of [file, line, rule, severity, confidence]. Expected values were checked by hand against the numbered fixture lines (see VERIFICATION.md).",
+ "cases": [
+  {
+   "args": ["bad/counter_page.dart"],
+   "exit": 1,
+   "summary": {"warn": 2, "info": 5},
+   "files_scanned": 1,
+   "findings": [
+    ["bad/counter_page.dart", 16, "print-in-lib", "warn", "high"],
+    ["bad/counter_page.dart", 23, "setstate-in-build", "warn", "high"],
+    ["bad/counter_page.dart", 30, "print-in-lib", "info", "medium"],
+    ["bad/counter_page.dart", 32, "missing-const", "info", "high"],
+    ["bad/counter_page.dart", 35, "missing-const", "info", "high"],
+    ["bad/counter_page.dart", 36, "missing-const", "info", "high"],
+    ["bad/counter_page.dart", 45, "missing-const", "info", "high"]
+   ]
+  },
+  {
+   "args": ["bad/huge_build.dart"],
+   "exit": 1,
+   "summary": {"warn": 1, "info": 1},
+   "findings": [
+    ["bad/huge_build.dart", 9, "long-build-method", "info", "high"],
+    ["bad/huge_build.dart", 102, "long-build-method", "warn", "high"]
+   ]
+  },
+  {
+   "args": ["bad/bangs.dart"],
+   "exit": 1,
+   "summary": {"warn": 1, "info": 0},
+   "findings": [
+    ["bad/bangs.dart", 12, "null-assertion-density", "warn", "medium"]
+   ]
+  },
+  {
+   "args": ["bad/futures.dart"],
+   "exit": 1,
+   "summary": {"warn": 4, "info": 0},
+   "findings": [
+    ["bad/futures.dart", 25, "unawaited-future", "warn", "medium"],
+    ["bad/futures.dart", 26, "unawaited-future", "warn", "medium"],
+    ["bad/futures.dart", 27, "unawaited-future", "warn", "high"],
+    ["bad/futures.dart", 28, "unawaited-future", "warn", "high"]
+   ]
+  },
+  {
+   "args": ["bad/strings.dart"],
+   "exit": 1,
+   "summary": {"warn": 1, "info": 1},
+   "findings": [
+    ["bad/strings.dart", 22, "missing-const", "info", "high"],
+    ["bad/strings.dart", 29, "print-in-lib", "warn", "high"]
+   ]
+  },
+  {
+   "args": ["good"],
+   "exit": 0,
+   "summary": {"warn": 0, "info": 0},
+   "files_scanned": 3,
+   "findings": []
+  },
+  {
+   "args": ["../files/t1-settings-screen"],
+   "exit": 1,
+   "summary": {"warn": 2, "info": 6},
+   "findings": [
+    ["settings_screen.dart", 19, "setstate-in-build", "warn", "high"],
+    ["settings_screen.dart", 23, "print-in-lib", "warn", "high"],
+    ["settings_screen.dart", 25, "missing-const", "info", "high"],
+    ["settings_screen.dart", 28, "missing-const", "info", "high"],
+    ["settings_screen.dart", 33, "missing-const", "info", "high"],
+    ["settings_screen.dart", 42, "missing-const", "info", "high"],
+    ["settings_screen.dart", 44, "missing-const", "info", "high"],
+    ["settings_screen.dart", 45, "missing-const", "info", "high"]
+   ]
+  },
+  {
+   "args": ["../files/t2-checkout-flow"],
+   "exit": 1,
+   "summary": {"warn": 2, "info": 0},
+   "findings": [
+    ["checkout_controller.dart", 23, "unawaited-future", "warn", "medium"],
+    ["checkout_controller.dart", 24, "unawaited-future", "warn", "medium"]
+   ]
+  },
+  {
+   "args": ["../files/t3-prerelease-review"],
+   "exit": 1,
+   "summary": {"warn": 1, "info": 3},
+   "findings": [
+    ["profile_page.dart", 10, "print-in-lib", "warn", "high"],
+    ["profile_page.dart", 11, "null-assertion-density", "info", "medium"],
+    ["profile_page.dart", 17, "missing-const", "info", "high"],
+    ["profile_page.dart", 22, "missing-const", "info", "high"]
+   ]
+  },
+  {
+   "args": ["does_not_exist"],
+   "exit": 2,
+   "summary": null,
+   "findings": null
+  }
+ ]
+}

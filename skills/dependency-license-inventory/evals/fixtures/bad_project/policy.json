@@ -1,0 +1,17 @@
+{
+  "note": "Example policy written by the fixture author, not legal advice.",
+  "buckets": {
+    "permissive": "accept",
+    "weak-copyleft": "review",
+    "strong-copyleft": "flag",
+    "custom": "flag",
+    "none": "flag",
+    "unrecognised": "review"
+  },
+  "licenses": {
+    "ISC": "accept"
+  },
+  "packages": {
+    "iota-soft": { "action": "accept", "reason": "dynamic linking only, signed off by the user" }
+  }
+}

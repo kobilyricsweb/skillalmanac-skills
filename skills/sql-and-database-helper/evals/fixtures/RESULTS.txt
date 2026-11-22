@@ -1,0 +1,14 @@
+PASS check bad_queries.sql
+PASS check bad_queries.sql --ignore select-star,SQL006,non-transactional-migration
+PASS check good_queries.sql
+PASS check edge_clean.sql --dialect postgresql
+PASS check edge_sqlite_trigger.sql --dialect sqlite
+PASS check migration_pg_bad.sql --dialect postgresql
+PASS check migration_pg_good.sql --dialect postgresql
+PASS check migration_mysql.sql --dialect mysql
+PASS check migration_mysql.sql --dialect mysql --strict
+PASS check dynamic_sql.sql --dialect mysql
+PASS check suppress.sql
+PASS check missing_file.sql
+PASS rules
+13/13 cases passed

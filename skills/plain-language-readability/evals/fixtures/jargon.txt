@@ -1,0 +1,5 @@
+# Terms for the notice fixtures
+commence => start
+subsequent
+supplementary documentation => more documents
+!hearing

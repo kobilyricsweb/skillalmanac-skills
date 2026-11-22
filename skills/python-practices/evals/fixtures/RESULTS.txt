@@ -1,0 +1,11 @@
+PASS bad_library.py
+PASS good_library.py
+PASS good_script.py
+PASS bad_script_no_guard.py
+PASS suppressed.py
+PASS __init__.py
+PASS broken_syntax.py.txt
+PASS no_such_file.py
+PASS ../files/t1-legacy-module/report_tool.py
+PASS ../files/t2-parallel-job/resize_and_fetch.py
+10/10 cases passed

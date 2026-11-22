@@ -1,0 +1,7 @@
+{
+  "pattern": "^(ab[0-9]+$",
+  "flavour": "python",
+  "mode": "fullmatch",
+  "match": ["ab1", "ab22", "ab333"],
+  "no_match": ["ab", "x", ""]
+}

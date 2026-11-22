@@ -1,0 +1,22 @@
+[
+  {"query": "I have a job offer from a startup and a promotion possibly coming where I am. Help me decide, I keep going back and forth", "should_trigger": true},
+  {"query": "should we build this in-house or buy a vendor tool? I want a proper structured analysis, not just your gut", "should_trigger": true},
+  {"query": "play devil's advocate on my plan to quit and go freelance, then tell me what I should do", "should_trigger": true},
+  {"query": "do a pre-mortem on moving the company to a four-day week and give me a recommendation with exit criteria", "should_trigger": true},
+  {"query": "I'm stuck between three office leases. Weigh them up with a decision matrix and tell me how sensitive the ranking is to my weights", "should_trigger": true},
+  {"query": "here is a CSV of options, criteria and weights. compute the weighted scores and tell me if it is a tie", "should_trigger": true},
+  {"query": "walk through this from the finance, operations and customer point of view before I commit to the acquisition", "should_trigger": true},
+  {"query": "is this decision reversible? write me a recommendation with kill criteria for the new market launch", "should_trigger": true},
+  {"query": "pros and cons are not helping, I need something more rigorous to choose between moving cities and staying", "should_trigger": true},
+  {"query": "our leadership team can't agree on pricing model A or B. Run it through multiple perspectives and a scoring matrix", "should_trigger": true},
+  {"query": "which laptop should I buy, the blue one or the grey one", "should_trigger": false},
+  {"query": "brainstorm 20 business ideas for a woodworking hobbyist", "should_trigger": false},
+  {"query": "forecast next quarter's revenue from this sales spreadsheet", "should_trigger": false},
+  {"query": "give me tax advice on whether to sell my shares this year or next", "should_trigger": false},
+  {"query": "summarise the pros and cons mentioned in this meeting transcript", "should_trigger": false},
+  {"query": "write a pull request description for my decision to switch the logging library", "should_trigger": false},
+  {"query": "decide for me: pizza or sushi tonight", "should_trigger": false},
+  {"query": "what medication should I take for my back pain, should I take the stronger one?", "should_trigger": false},
+  {"query": "record the decision and its evidence from this thread in a ledger so we can find it later", "should_trigger": false},
+  {"query": "make a weekly project plan with milestones for the website launch", "should_trigger": false}
+]

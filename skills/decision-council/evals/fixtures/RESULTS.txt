@@ -1,0 +1,9 @@
+PASS vendor.json
+PASS vendor.csv
+PASS tie.csv
+PASS near.json
+PASS vendor.csv --scale 0,10
+PASS bad_missing_score.csv
+PASS bad_out_of_range.json
+PASS does_not_exist.json
+8/8 cases passed

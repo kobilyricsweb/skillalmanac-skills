@@ -1,0 +1,162 @@
+{
+ "note": "Each case runs scripts/ledger_check.py on a file in evals/fixtures/ and compares the exit code and the listed fields. 'codes' and 'warning_codes' are the sorted distinct finding codes. Expected values were derived by reading each fixture by hand.",
+ "cases": [
+  {
+   "args": [
+    "ledger_good.md"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "untested_hypotheses": [],
+    "multi_variable_experiments": [],
+    "fix_without_failing_test": false,
+    "codes": [],
+    "warning_codes": [],
+    "counts": {
+     "hypotheses": 3,
+     "experiments": 3,
+     "tests": 1,
+     "errors": 0,
+     "warnings": 0
+    }
+   }
+  },
+  {
+   "args": [
+    "ledger_bad.md"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "untested_hypotheses": [
+     "H1",
+     "H2",
+     "H3"
+    ],
+    "multi_variable_experiments": [
+     "E1"
+    ],
+    "fix_without_failing_test": true,
+    "codes": [
+     "fix_before_test",
+     "fix_without_failing_test",
+     "multi_variable_experiment",
+     "no_prediction",
+     "root_cause_not_confirmed",
+     "status_unsupported",
+     "untested_hypothesis"
+    ],
+    "warning_codes": [
+     "no_bisect",
+     "no_minimisation",
+     "root_cause_hedged"
+    ],
+    "counts": {
+     "hypotheses": 3,
+     "experiments": 1,
+     "tests": 1,
+     "errors": 9,
+     "warnings": 3
+    }
+   }
+  },
+  {
+   "args": [
+    "draft_t2.md"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "untested_hypotheses": [
+     "H1",
+     "H2",
+     "H3"
+    ],
+    "multi_variable_experiments": [
+     "E1"
+    ],
+    "fix_without_failing_test": true,
+    "codes": [
+     "fix_without_failing_test",
+     "multi_variable_experiment",
+     "no_prediction",
+     "root_cause_not_confirmed",
+     "status_unsupported",
+     "untested_hypothesis"
+    ],
+    "warning_codes": [
+     "no_bisect",
+     "no_minimisation",
+     "root_cause_hedged"
+    ],
+    "counts": {
+     "hypotheses": 3,
+     "experiments": 1,
+     "tests": 0,
+     "errors": 8,
+     "warnings": 3
+    }
+   }
+  },
+  {
+   "args": [
+    "ledger_good.json"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "untested_hypotheses": [],
+    "multi_variable_experiments": [],
+    "fix_without_failing_test": false,
+    "codes": [],
+    "warning_codes": []
+   }
+  },
+  {
+   "args": [
+    "ledger_bad.json"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "untested_hypotheses": [
+     "H1",
+     "H2"
+    ],
+    "multi_variable_experiments": [
+     "E1"
+    ],
+    "fix_without_failing_test": true,
+    "codes": [
+     "fix_before_test",
+     "multi_variable_experiment",
+     "root_cause_not_confirmed",
+     "untested_hypothesis"
+    ],
+    "warning_codes": [
+     "no_bisect",
+     "no_minimisation"
+    ]
+   }
+  },
+  {
+   "args": [
+    "empty.md"
+   ],
+   "exit": 2,
+   "expect": {
+    "ok": false
+   }
+  },
+  {
+   "args": [
+    "missing.md"
+   ],
+   "exit": 2,
+   "expect": {
+    "ok": false
+   }
+  }
+ ]
+}

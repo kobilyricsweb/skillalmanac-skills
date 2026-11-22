@@ -1,0 +1,6 @@
+id,platform,scheduled_at,text,sponsored,disclosure,hashtags
+p1,linkedin,2026-12-01T09:00:00+00:00,"Hook with the most specific number from the source.
+
+One paragraph of context. Source: https://example.com/source",false,,
+p2,x,2026-12-01T14:30:00+00:00,"One-line version of a different atom. https://example.com/source",false,,
+p3,instagram,2026-12-02T12:00:00+00:00,"Paid partnership with Brand. Caption text here.",true,platform_label,"#topic"

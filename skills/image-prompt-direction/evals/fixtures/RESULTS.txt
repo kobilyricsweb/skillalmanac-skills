@@ -1,0 +1,13 @@
+PASS lint good_labelled.txt
+PASS lint good_free.txt
+PASS lint negation_ok.txt
+PASS lint bad_rights.txt
+PASS lint bad_rights.txt --allow Coca-Cola
+PASS lint bad_contradiction.txt
+PASS lint bad_aspect.txt
+PASS lint incomplete.txt
+PASS lint does_not_exist.txt
+PASS diff iter_v1.txt iter_v2_one_change.txt
+PASS diff iter_v1.txt iter_v2_two_changes.txt
+PASS diff good_free.txt iter_v1.txt
+12/12 cases passed

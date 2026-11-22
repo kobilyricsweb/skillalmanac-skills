@@ -1,0 +1,11 @@
+Item,Qty,Amount
+Widget,2,"1,000.00"
+Gadget,3,150.25
+Item,Qty,Amount
+Bolt,1,84.25
+Nut,4,10.00
+Screw,5,25.00
+Washer,6,5.00
+Pin,1,1.5O
+Clip,1
+Total,22,"1,300.00"

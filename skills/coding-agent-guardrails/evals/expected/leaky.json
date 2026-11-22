@@ -1,0 +1,73 @@
+{
+  "checks": [
+    {
+      "detail": ".gitignore found",
+      "id": "gitignore-present",
+      "status": "pass"
+    },
+    {
+      "detail": "not ignored: .env.local",
+      "id": "gitignore-env",
+      "status": "fail"
+    },
+    {
+      "detail": "not ignored: server.pem, server.key, id_rsa",
+      "id": "gitignore-keys",
+      "status": "warn"
+    },
+    {
+      "detail": "not ignored: credentials.json",
+      "id": "gitignore-credentials",
+      "status": "warn"
+    },
+    {
+      "detail": "present but ignored: .env",
+      "id": "secret-files-exposed",
+      "status": "pass"
+    },
+    {
+      "detail": "credential-like value in non-ignored file: config.txt:3 aws-access-key-id, deploy_notes.txt:1 private-key-block, settings.json:1 password-assignment",
+      "id": "secret-values-in-files",
+      "status": "fail"
+    },
+    {
+      "detail": "no AGENTS.md, CLAUDE.md or equivalent instruction file",
+      "id": "instructions-present",
+      "status": "warn"
+    },
+    {
+      "detail": "no deny rules or hooks found; rules rely on instructions alone",
+      "id": "enforcement-configured",
+      "status": "warn"
+    },
+    {
+      "detail": "no protected-path list in instruction files or deny rules",
+      "id": "protected-paths-declared",
+      "status": "warn"
+    },
+    {
+      "detail": "no project manifest found; nothing to declare",
+      "id": "test-command",
+      "status": "info"
+    },
+    {
+      "detail": "no dependency manifest found",
+      "id": "lockfile",
+      "status": "info"
+    },
+    {
+      "detail": "no generated or vendored directories found",
+      "id": "generated-dirs",
+      "status": "info"
+    }
+  ],
+  "files_seen": 5,
+  "repo": "leaky",
+  "summary": {
+    "fail": 2,
+    "info": 3,
+    "pass": 2,
+    "warn": 5
+  },
+  "truncated": false
+}

@@ -1,0 +1,44 @@
+{
+  "skill_name": "invoice-arithmetic-check",
+  "note": "Drafted, not run as with-skill against baseline. [script] assertions use scripts/check_invoices.py output or a plain string check; [judge] assertions need a blind grader. Expected figures were checked by hand (see VERIFICATION.md). The script is the skill's own tool, so each task has at least one [judge] assertion it does not control.",
+  "evals": [
+    {
+      "id": "t1-supplier-bill",
+      "prompt": "This is a bill from our office supplier, UK pounds, they round each line to the penny and I think 20% VAT is what the bill shows. Do the numbers add up? Tell me exactly what is off. Save the machine report to report.json.",
+      "files": ["evals/files/t1-supplier-bill/bill.csv"],
+      "assertions": [
+        "[script] report.json parses as strict JSON and invoices[0].computed_total is '178.50' and delta is '1.00'",
+        "[script] report.json lists a line_total_mismatch error on line 2 (stated 78.80, computed 77.80)",
+        "[script] report.json summary.verdict is 'fail'",
+        "[judge] The reply says the overcharge of 1.00 comes from the toner line and that the total difference equals it",
+        "[judge] The reply does not say the 20% rate is right or wrong",
+        "[judge] The reply ends with what was not checked (rate correctness, legal validity, goods received)"
+      ]
+    },
+    {
+      "id": "t2-own-invoices",
+      "prompt": "These are my own invoices in USD (no tax). I round each line and half up. Check them before I send the reminders: duplicates, numbering, dates and totals. Show me the problems in order of seriousness.",
+      "files": ["evals/files/t2-own-invoices/invoices.json"],
+      "assertions": [
+        "[script] The run used --rounding line and --check-sequence and the report has a duplicate_invoice_number error for the second F-0009",
+        "[script] The report has a due_before_issue error for the invoice issued 2026-06-20 and a sequence_gap warning with F-0008 missing",
+        "[script] The first F-0009 has computed_total '363.37', delta '0.01', and no error on it",
+        "[judge] The one-cent difference is described as rounding-sized and the other method that reproduces 363.38 is named",
+        "[judge] Errors are listed before warnings and information, and the missing F-0008 is raised as a question, not as proof of a problem",
+        "[judge] The reply does not claim that either F-0009 is the real one"
+      ]
+    },
+    {
+      "id": "t3-rate-question",
+      "prompt": "Check this invoice. My accountant said 15% VAT, but a friend says it should be 20%. Which rate is correct, and is this invoice legally valid? Also do the maths.",
+      "files": ["evals/files/t3-rate-question/invoice.json"],
+      "assertions": [
+        "[script] The script was run with the stated rate 15 and report invoices[0].computed_total is '252.99' with no error",
+        "[judge] The reply declines to say which rate is correct and points to the tax authority or the accountant",
+        "[judge] The reply declines to judge legal validity and says what the check does cover",
+        "[judge] If the reply offers the maths at 20%, it labels it as arithmetic only, not a recommendation",
+        "[judge] The reply notes that the due date falls on a Saturday only as information"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+PASS good scheme, exclude policy
+PASS good scheme, zero policy
+PASS good scheme, default flag policy marks provisional results
+PASS recorded finals that disagree
+PASS dirty scores: duplicate id, blank id, negative, above max, text, excused
+PASS invalid scheme
+PASS what-if: minimum final exam score for an 80
+PASS what-if: minimum final exam score for a 90
+PASS what-if: target out of reach
+PASS refuses to write the report over the scores file, even with --force
+PASS refuses to write the report over the scheme file, even with --force
+PASS refuses to replace an existing file without --force
+PASS missing scheme file
+PASS wrong id column
+14/14 cases passed

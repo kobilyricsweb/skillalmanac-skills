@@ -1,0 +1,31 @@
+{
+  "stories": [
+    {
+      "id": "s1",
+      "title": "Rebuilt the weekly report",
+      "situation": "The weekly sales report took two analysts a full day to assemble by hand.",
+      "task": "I was asked to cut the effort without losing any of the figures finance relied on.",
+      "action": "I scripted the extraction, wrote a reconciliation check and ran both reports side by side for a month.",
+      "result": "Assembly time fell from 8 hours to 1 hour and finance signed off on the new version.",
+      "source": "Analyst role at the retail job, 2024"
+    },
+    {
+      "id": "s2",
+      "title": "Disagreement with a manager",
+      "situation": "My manager wanted to launch a dashboard before the data was validated.",
+      "task": "I needed to raise the risk without blocking the team.",
+      "action": "I showed three mismatched totals and proposed a two-day validation sprint.",
+      "result": "",
+      "source": "Analyst role at the retail job, 2024"
+    },
+    {
+      "id": "s1",
+      "title": "Late data fix",
+      "situation": "TBD",
+      "task": "Fix bug",
+      "action": "I traced the failing job to a changed column name and patched the loader.",
+      "result": "Nightly load ran again on time.",
+      "source": ""
+    }
+  ]
+}

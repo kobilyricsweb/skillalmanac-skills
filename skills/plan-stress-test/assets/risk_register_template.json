@@ -1,0 +1,20 @@
+{
+  "plan": "REPLACE: short name of the plan",
+  "risks": [
+    {
+      "rank": 1,
+      "id": "R1",
+      "title": "REPLACE: five to ten words naming the risk",
+      "category": "assumption",
+      "evidence": {"quote": "REPLACE: verbatim text from the plan", "line": 1},
+      "scenario": "REPLACE: how it fails and what that costs, in one or two sentences",
+      "likelihood": 3,
+      "impact": 3,
+      "score": 9,
+      "detection": "REPLACE: the earliest observable sign that it is happening",
+      "mitigation": "REPLACE: the smallest change to the plan that removes or contains it",
+      "source": "judgement"
+    }
+  ],
+  "not_checked": ["REPLACE: what could not be verified from the plan text"]
+}

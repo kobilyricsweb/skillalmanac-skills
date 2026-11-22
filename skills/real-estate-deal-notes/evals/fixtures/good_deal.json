@@ -1,0 +1,21 @@
+{
+  "property": {"address": "14 Alder Court, Springfield", "type": "duplex", "units": 2, "area_value": 2100, "area_unit": "sqft", "year_built": 1978},
+  "currency": "USD",
+  "as_of": "2026-11-01",
+  "purchase_price": 400000,
+  "closing_costs": 8000,
+  "renovation_cost": 12000,
+  "income": {"gross_scheduled_rent_annual": 36000, "vacancy_rate": 0.05, "other_income_annual": 1200},
+  "expenses": {"operating_expenses_annual": 12000, "note": "Insurance, taxes, repairs reserve and owner-paid water per seller statement."},
+  "financing": {"down_payment": 100000, "loan_amount": 300000, "interest_rate": 0.06, "term_years": 30},
+  "sources": [
+    {"field": "purchase_price", "source": "Listing agreement", "date": "2026-10-20"},
+    {"field": "income.gross_scheduled_rent_annual", "source": "Rent roll supplied by seller", "date": "2026-10-20"},
+    {"field": "expenses.operating_expenses_annual", "source": "Seller 12-month statement", "date": "2026-10-22"}
+  ],
+  "due_diligence": [
+    {"item": "Title search", "owner": "Title company", "due": "2026-12-05", "status": "open"},
+    {"item": "Inspection report", "owner": "Buyer", "due": "2026-11-15", "status": "done"},
+    {"item": "Insurance quote", "owner": "Agent", "due": "2026-12-01", "status": "open"}
+  ]
+}

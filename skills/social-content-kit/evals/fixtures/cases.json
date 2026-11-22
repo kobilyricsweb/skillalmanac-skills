@@ -1,0 +1,12 @@
+{
+  "note": "Each case runs scripts/calendar_check.py with args (paths relative to evals/fixtures/). Expected values were read by hand against the fixture files; see VERIFICATION.md.",
+  "cases": [
+    {"args": ["good_calendar.json"], "exit": 0, "expect": {"ok": true, "posts": 6, "errors": 0, "warnings": 0, "codes": []}},
+    {"args": ["bad_calendar.csv"], "exit": 1, "expect": {"ok": false, "posts": 11, "errors": 6, "warnings": 7, "codes": [
+      "error:bad_datetime:b9", "error:duplicate_post:b4", "error:hashtag_count:b5", "error:missing_disclosure:b2", "error:missing_disclosure:b3", "error:over_limit:b1",
+      "warning:disclosure_not_upfront:b8", "warning:engagement_bait:b7", "warning:gap_too_long:b10", "warning:gap_too_long:b11", "warning:gap_too_short:b7", "warning:no_timezone:b6", "warning:unadapted_cross_post:b11"]}},
+    {"args": ["bad_calendar.csv", "--dup-days", "1"], "exit": 1, "expect": {"errors": 5, "warnings": 7}},
+    {"args": ["malformed.json"], "exit": 2, "expect": {}},
+    {"args": ["does_not_exist.json"], "exit": 2, "expect": {}}
+  ]
+}

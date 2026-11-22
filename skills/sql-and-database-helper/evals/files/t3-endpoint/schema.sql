@@ -1,0 +1,3 @@
+-- SQLite 3.40
+CREATE TABLE products (id INTEGER PRIMARY KEY, name TEXT NOT NULL, price_cents INTEGER NOT NULL, category TEXT NOT NULL, created_at TEXT NOT NULL);
+CREATE TABLE accounts (id INTEGER PRIMARY KEY, email TEXT NOT NULL, last_login TEXT, active INTEGER NOT NULL DEFAULT 1);

@@ -1,0 +1,14 @@
+{
+  "note": "Each case runs scripts/deal_check.py with args (paths ending .json are relative to evals/fixtures/) and checks the exit code and the listed fields. flag_codes is the sorted list of flag codes found in flags or table_flags. Every number below was recomputed by hand (independent amortisation formula) before it was saved.",
+  "cases": [
+    {"args": ["check", "good_deal.json", "--today", "2026-11-21"], "exit": 0, "expect": {"status": "ok", "flag_codes": [], "results": {"gross_yield": 0.09, "effective_gross_income": 35400.0, "net_operating_income": 23400.0, "cap_rate": 0.0585, "total_cash_invested": 120000, "annual_debt_service": 21583.82, "cash_flow_before_tax": 1816.18, "cash_on_cash": 0.0151, "dscr": 1.0841}}},
+    {"args": ["check", "bad_deal.json", "--today", "2026-11-21"], "exit": 1, "expect": {"status": "input_errors", "counts": {"error": 3, "warn": 12, "info": 1}, "flag_codes": ["BAD_CURRENCY", "DD_NO_DATE", "DD_NO_OWNER", "DD_OVERDUE", "DEFAULTED_TO_ZERO", "DEFAULTED_TO_ZERO", "DEFAULTED_TO_ZERO", "FINANCING_INCOMPLETE", "FINANCING_MISMATCH", "MISSING_FIELD", "NO_SOURCE", "NO_SOURCE", "RATE_NOT_FRACTION", "STALE_AS_OF", "STALE_SOURCE", "VACANCY_ZERO"]}},
+    {"args": ["check", "expenses_exceed.json", "--today", "2026-11-21"], "exit": 0, "expect": {"status": "flags", "flag_codes": ["EXPENSES_EXCEED_INCOME", "RESULT_OUTSIDE_USUAL_RANGE"], "results": {"gross_yield": 0.0576, "effective_gross_income": 13248.0, "net_operating_income": -2752.0, "cap_rate": -0.011, "total_cash_invested": 260000, "annual_debt_service": 0, "cash_flow_before_tax": -2752.0, "cash_on_cash": -0.0106, "dscr": null}}},
+    {"args": ["check", "good_deal.json", "--today", "2027-05-01"], "exit": 0, "expect": {"status": "flags", "flag_codes": ["STALE_AS_OF", "STALE_SOURCE", "STALE_SOURCE", "STALE_SOURCE", "DD_OVERDUE", "DD_OVERDUE"]}},
+    {"args": ["compare", "good_deal.json", "good_deal_b.json", "--today", "2026-11-21"], "exit": 0, "expect": {"status": "ok", "flag_codes": [], "row_cap_rates": [0.0585, 0.0512], "row_cash_on_cash": [0.0151, -0.0503], "row_dscr": [1.0841, 0.8227]}},
+    {"args": ["compare", "good_deal.json", "expenses_exceed.json", "--today", "2026-11-21"], "exit": 1, "expect": {"status": "input_errors", "flag_codes": ["AREA_UNIT_MIXED", "CELL_NOT_COMPUTED", "CURRENCY_MIXED"]}},
+    {"args": ["check", "missing_file.json"], "exit": 2, "expect": {"status": "usage_error"}},
+    {"args": ["check", "not_json.json"], "exit": 2, "expect": {"status": "usage_error"}},
+    {"args": ["check", "good_deal.json", "--today", "21-11-2026"], "exit": 2, "expect": {"status": "usage_error"}}
+  ]
+}

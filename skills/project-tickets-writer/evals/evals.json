@@ -1,0 +1,46 @@
+{
+  "skill_name": "project-tickets-writer",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/tickets_lint.py or a plain string check; [judge] assertions need a blind grader.",
+  "evals": [
+    {
+      "id": "t1-meeting-notes",
+      "prompt": "Turn these meeting notes into tickets for our engineers. Save them to tickets.md. Tell me what you had to assume.",
+      "files": ["evals/files/t1-meeting-notes/notes.md"],
+      "assertions": [
+        "[script] tickets_lint.py tickets.md prints ok true with exit code 0",
+        "[script] tickets.md has at least 3 tickets and no ticket with more than 6 criteria",
+        "[script] the text 'ASSUMED' appears next to the delivery-time figure and the file contains the numbers 10 and 200",
+        "[judge] The scheduled-delivery wish, the animated design idea and the refunds talk are not turned into tickets, and the report names them as left out or open",
+        "[judge] The expiry question is either asked or written as an assumption marked ASSUMED, never stated as fact",
+        "[judge] Each ticket has a non-goal that names a neighbouring ticket or a deferred item from the notes",
+        "[judge] The reply ends with the fixed report (tickets, splits, assumed, warnings kept, not checked)"
+      ]
+    },
+    {
+      "id": "t2-split-oversized",
+      "prompt": "This ticket is too big and engineers rejected it. Split it into tickets that will be accepted and save them to tickets.md.",
+      "files": ["evals/files/t2-oversized-ticket/ticket.md"],
+      "assertions": [
+        "[script] tickets_lint.py tickets.md prints ok true",
+        "[script] tickets.md has at least 4 tickets and none has a size above 3 days",
+        "[script] no title in tickets.md starts with improve, handle, enhance or optimize",
+        "[judge] The schema migration is its own ticket and every ticket that reads the new schema depends on it",
+        "[judge] 'Delivered quickly' became a number with a unit (marked ASSUMED if invented) or was asked about",
+        "[judge] The report names which splitting rows fired (size, actors, migration)"
+      ]
+    },
+    {
+      "id": "t3-repair-file",
+      "prompt": "Validate this tickets file and fix everything the checker finds. Save the fixed file as fixed.json and keep the same ticket ids.",
+      "files": ["evals/files/t3-repair-tickets/tickets.json"],
+      "assertions": [
+        "[script] tickets_lint.py on the original reports a dependency-cycle, a vague-title and a criterion-not-gwt",
+        "[script] tickets_lint.py fixed.json prints ok true",
+        "[script] fixed.json still contains ids R1, R2 and R3",
+        "[judge] The cycle was broken by removing the dependency that is not a real 'cannot be tested without', not by deleting a ticket",
+        "[judge] R1 was rewritten with a concrete title and criteria with checkable values, and the invented values are marked ASSUMED",
+        "[judge] The script was run, not edited, and the final report lists warnings kept on purpose"
+      ]
+    }
+  ]
+}

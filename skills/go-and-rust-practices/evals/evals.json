@@ -1,0 +1,45 @@
+{
+  "skill_name": "go-and-rust-practices",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/gorust_scan.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has judge assertions that measure something it does not control. Input scan results (read by hand): t1 has 5 findings, t2 has 4 high/medium unwrap or expect findings, t3 has 2 unsafe and 1 clone-in-loop finding.",
+  "evals": [
+    {
+      "id": "t1-go-uploader",
+      "prompt": "Review and fix error handling and goroutine use in uploader.go (a library package). Keep the public API. Save the fixed file as uploader_fixed.go and tell me what you changed.",
+      "files": ["evals/files/t1-go-uploader/uploader.go"],
+      "assertions": [
+        "[script] gorust_scan.py scan uploader_fixed.go exits 0 (no high or medium finding)",
+        "[script] uploader_fixed.go contains '%w' and does not contain 'panic('",
+        "[script] uploader_fixed.go still declares 'func (c *Client) Upload(' and the type 'Client' with field 'BaseURL'",
+        "[judge] The notify goroutine either takes a context and stops with it, or is removed in favour of a synchronous call; a bare 'go c.notify(path)' is not accepted",
+        "[judge] The unchecked http.Get result in notify is handled or deliberately discarded with a stated reason, even though the scanner does not flag it (errcheck would)",
+        "[judge] The reply separates what the scanner flagged from what a linter such as errcheck or go vet would flag, and says which tools were not run"
+      ]
+    },
+    {
+      "id": "t2-rust-config-errors",
+      "prompt": "lib.rs is a library and main.rs is its binary. Make the error handling production-grade: no panics on bad input. Save lib.rs and main.rs next to the originals as lib_fixed.rs and main_fixed.rs.",
+      "files": ["evals/files/t2-rust-config/lib.rs", "evals/files/t2-rust-config/main.rs"],
+      "assertions": [
+        "[script] gorust_scan.py scan lib_fixed.rs main_fixed.rs exits 0",
+        "[script] lib_fixed.rs contains 'Result<' and does not contain 'anyhow'",
+        "[script] main_fixed.rs contains 'anyhow' or 'Box<dyn' (application boundary)",
+        "[judge] lib_fixed.rs defines its own error type (an enum or struct, with thiserror derive or a hand-written Display and Error impl) with a variant for a missing key and for a parse failure; the cause is kept as a source",
+        "[judge] Error messages are lowercase with no trailing period and name the offending key or line",
+        "[judge] The reply states why the library uses a typed error and the binary uses a catch-all, in the terms of the decision table"
+      ]
+    },
+    {
+      "id": "t3-rust-unsafe-review",
+      "prompt": "Review ffi.rs for unsafe documentation and obvious performance traps. Do not rewrite what clippy already reports by default; tell me what you left to clippy. Save notes to review.md and a corrected ffi_fixed.rs.",
+      "files": ["evals/files/t3-rust-ffi/ffi.rs"],
+      "assertions": [
+        "[script] gorust_scan.py scan ffi_fixed.rs exits 0",
+        "[script] ffi_fixed.rs contains 'SAFETY:' at least twice (the block and the unsafe impl)",
+        "[judge] Each SAFETY comment states a concrete invariant (pointer validity, length, no aliasing, thread-safety reason), not a restatement such as 'this is safe'",
+        "[judge] review.md names at least one check that is off by default in clippy (undocumented_unsafe_blocks, unwrap_used or similar) as the reason the scanner or the review covers it, and names the default-on lints it left alone",
+        "[judge] The clone in the names loop is either removed (iterator, with_capacity, or borrowing) or kept with a reason; review.md labels the clone finding as a heuristic",
+        "[judge] review.md has a 'Not checked' line saying cargo clippy, cargo test and the build were not run unless they were actually run"
+      ]
+    }
+  ]
+}

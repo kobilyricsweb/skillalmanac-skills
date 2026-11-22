@@ -1,0 +1,6 @@
+So the main thing we found was that the
+cache was never warmed, and um the first request
+after every deploy took nearly nine seconds.
+
+Second, the retry logic.
+Retries were stacked on top of each other.

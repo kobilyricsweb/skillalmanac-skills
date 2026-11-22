@@ -1,0 +1,1 @@
+I need a regex for a US ZIP code field: five digits, optionally followed by a hyphen and four more digits. The field value is checked as a whole, not searched inside text. Python re. Examples that are valid: 12345, 12345-6789, 00501. Please prove it with test cases, including edge cases I may not have thought of.

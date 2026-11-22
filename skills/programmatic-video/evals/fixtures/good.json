@@ -1,0 +1,23 @@
+{
+  "composition": {"fps": 30, "width": 1920, "height": 1080, "duration": 20, "captions": {"max_line_chars": 42}},
+  "assets": {
+    "intro": {"type": "video", "path": "assets/intro.mp4", "fps": 30, "width": 1920, "height": 1080, "duration": 12, "license": "own footage"},
+    "outro": {"type": "video", "path": "assets/outro.mp4", "fps": 30, "width": 1920, "height": 1080, "duration": 10, "license": "own footage"},
+    "bed": {"type": "audio", "path": "assets/bed-track.mp3", "duration": 180, "license": "CC0 library, track 114"},
+    "headline": {"type": "font", "path": "assets/headline-sans.ttf", "license": "SIL OFL 1.1"}
+  },
+  "tracks": [
+    {"id": "v1", "kind": "video", "clips": [
+      {"id": "c1", "asset": "intro", "start": 0, "duration": 12},
+      {"id": "c2", "asset": "outro", "start": 12, "duration": 8, "source_in": 1}
+    ]},
+    {"id": "a1", "kind": "audio", "clips": [
+      {"id": "m1", "asset": "bed", "start": 0, "duration": 20, "source_in": 30}
+    ]},
+    {"id": "cap", "kind": "caption", "clips": [
+      {"id": "k1", "start": 1, "duration": 3, "text": "Welcome to the weekly data recap", "font": "headline", "box": {"x": 200, "y": 880, "w": 1520, "h": 120}},
+      {"id": "k2", "start": 4, "duration": 3.5, "text": "Revenue is up 12 percent\nand churn is flat", "box": {"x": 200, "y": 860, "w": 1520, "h": 140}},
+      {"id": "k3", "start": 13, "duration": 2, "text": "See you next week"}
+    ]}
+  ]
+}

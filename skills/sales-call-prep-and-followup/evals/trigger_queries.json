@@ -1,0 +1,22 @@
+[
+  {"query": "I have a discovery call with a logistics company tomorrow, help me prep a question plan from my notes", "should_trigger": true},
+  {"query": "write the follow-up email after my sales call, here are my notes", "should_trigger": true},
+  {"query": "give me discovery questions for situation, problem, impact and decision process", "should_trigger": true},
+  {"query": "draft a recap email to the prospect but only promise what we actually agreed on the call", "should_trigger": true},
+  {"query": "check my follow-up email against my call notes, did I promise anything we never discussed?", "should_trigger": true},
+  {"query": "prep sheet for my first call with a prospect, I'm a founder and I hate cold calls going nowhere", "should_trigger": true},
+  {"query": "my call notes have no next step with a date, help me fix them and write the follow-up", "should_trigger": true},
+  {"query": "turn these call notes into a recap email with owners and dates for the next step", "should_trigger": true},
+  {"query": "which discovery fields did I leave unanswered on this call? here are the notes", "should_trigger": true},
+  {"query": "build me a call plan so I ask about decision process and budget before the call ends", "should_trigger": true},
+  {"query": "what questions should I ask a vendor during their product demo before we buy?", "should_trigger": false},
+  {"query": "write a cold email sequence to 500 prospects in fintech", "should_trigger": false},
+  {"query": "research this company on the web and tell me their revenue and tech stack", "should_trigger": false},
+  {"query": "update the deal stage in Salesforce and log my call", "should_trigger": false},
+  {"query": "help me prepare for a job interview at a software company", "should_trigger": false},
+  {"query": "negotiate a discount with my supplier, give me a script", "should_trigger": false},
+  {"query": "summarize this meeting transcript into bullet points for my team", "should_trigger": false},
+  {"query": "write a LinkedIn post announcing our new feature", "should_trigger": false},
+  {"query": "draft a contract renewal email to an existing customer about pricing changes", "should_trigger": false},
+  {"query": "create a sales pitch deck for investors", "should_trigger": false}
+]

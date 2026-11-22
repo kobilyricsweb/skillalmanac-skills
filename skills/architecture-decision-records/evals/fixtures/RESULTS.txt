@@ -1,0 +1,10 @@
+PASS scan good/adr
+PASS scan variants/adr
+PASS scan bad/adr
+PASS scan edge/adr
+PASS scan gap/adr
+PASS scan gap/adr --strict
+PASS scan noadr
+PASS scan does-not-exist
+PASS frobnicate good/adr
+9/9 cases passed

@@ -1,0 +1,7 @@
+PASS good_lisbon.json
+PASS bad_mixed.json
+PASS ../files/t2-packed-day.json
+PASS ../files/t3-over-budget.json
+PASS does_not_exist.json
+PASS not_json.json
+6/6 cases passed

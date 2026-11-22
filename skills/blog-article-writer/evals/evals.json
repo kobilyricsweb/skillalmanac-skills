@@ -1,0 +1,53 @@
+{
+ "skill_name": "blog-article-writer",
+ "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/article_audit.py; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+ "evals": [
+  {
+   "id": "t1-brief-to-article",
+   "prompt": "Write the article from this brief and save it as article.md. Site host is example.org; link the internal pages in pages.md where they fit. Do not use any fact that is not in the brief.",
+   "files": [
+    "evals/files/t1-brief-to-article/brief.md",
+    "evals/files/t1-brief-to-article/pages.md"
+   ],
+   "assertions": [
+    "[script] article_audit.py audit article.md --site-host example.org --brief brief.md exits 0 (verdict pass or review) and counts.error is 0",
+    "[script] intro_words is 120 or fewer and h2_count is between 3 and 10",
+    "[script] links.internal is at least 2, and every internal link target is one of the three pages listed in pages.md",
+    "[script] no finding has rule number-not-in-brief",
+    "[judge] Every figure in the article (62%, 30 words, and any other) matches the brief's claim table wording and units, and no other statistic appears",
+    "[judge] Each H2 contains a specific example that a competing article could not reuse unchanged",
+    "[judge] The reply ends with the fixed report (Shape, Audit, Sources, Information gain, Not checked)"
+   ]
+  },
+  {
+   "id": "t2-topic-only-no-sources",
+   "prompt": "Follow request.md.",
+   "files": [
+    "evals/files/t2-topic-only/request.md"
+   ],
+   "assertions": [
+    "[script] article_audit.py brief brief.md exits 0, or the reply states that no search tool was available and article.md contains no numeric claim",
+    "[script] article_audit.py audit article.md --site-host example.org exits 0 or 1, and when it exits 1 the reply lists each remaining error",
+    "[script] every finding with rule uncited-number is absent from the final article.md",
+    "[judge] No statistic, study name, quote or company story is invented; any figure in the article has a source URL the agent actually opened or was given",
+    "[judge] If sources could not be found, the reply says so plainly instead of inventing statistics to satisfy 'include statistics'",
+    "[judge] The article takes a position (an angle) and does not open with a stock phrase"
+   ]
+  },
+  {
+   "id": "t3-user-experience-and-links",
+   "prompt": "Write the article from outline.md as a how-to. Save article.md and brief.md.",
+   "files": [
+    "evals/files/t3-internal-links/outline.md"
+   ],
+   "assertions": [
+    "[script] article_audit.py brief brief.md has no error with rule brief-placeholder or brief-field-missing",
+    "[script] article_audit.py audit article.md --site-host example.org --min-internal-links 2 shows links.internal at least 2 and every internal target is one of the four pages in outline.md",
+    "[script] h2_count is between 4 and 8 and no section has fewer than 80 words",
+    "[judge] The user's own experience (12 laptops, 3 silent failures) appears as the user's, stated exactly, and no other anecdote or statistic is invented",
+    "[judge] Every H2 names a verb-led action from the outline and ends with a way to tell it worked",
+    "[judge] The reply says what was not checked and that no external sources were used"
+   ]
+  }
+ ]
+}

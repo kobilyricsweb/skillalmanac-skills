@@ -1,0 +1,45 @@
+{
+  "skill_name": "canvas-poster-design",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/svg_poster_audit.py; [judge] assertions need a blind grader.",
+  "evals": [
+    {
+      "id": "t1-event-post",
+      "prompt": "Make an Instagram poster as an SVG from the brief and save it as poster.svg. Then tell me how it did on your checks.",
+      "files": ["evals/files/t1-event-post/brief.txt"],
+      "assertions": [
+        "[script] svg_poster_audit.py poster.svg exits 0 with verdict pass",
+        "[script] canvas viewBox is 1080 x 1350 and the title field is not null",
+        "[script] text.sizes_distinct has at most 3 values and the largest is at least 2.5 times the smallest",
+        "[script] exactly one text element has the largest size",
+        "[judge] There is one call to action, visually distinct (accent colour rect), containing the booking address from the brief, and no date, time or address is invented",
+        "[judge] The reply reports the audit verdict, any warnings kept, and what was not checked (estimated widths, no rendering)"
+      ]
+    },
+    {
+      "id": "t2-fix-flyer",
+      "prompt": "This flyer.svg looks amateur: too many sizes, text running off the edge, grey text hard to read. Fix it and save as flyer_fixed.svg. Keep the words.",
+      "files": ["evals/files/t2-fix-flyer/flyer.svg"],
+      "assertions": [
+        "[script] svg_poster_audit.py flyer_fixed.svg exits 0 with verdict pass",
+        "[script] findings contain no too-many-sizes and no headline-not-unique",
+        "[script] flyer_fixed.svg contains the strings 'UP TO 50%', 'Everything must go', 'Main Street 12' and 'Open 9 to 5'",
+        "[script] title field is not null",
+        "[judge] The two '96' headline lines were reduced to one headline, with the other text clearly smaller; no new claims were added",
+        "[judge] The reply lists which checks failed before and what was changed for each"
+      ]
+    },
+    {
+      "id": "t3-print-flyer",
+      "prompt": "Make the A5 print flyer from this brief as SVG, print-ready with bleed, and save as flyer_print.svg. Say what I need to tell the printer.",
+      "files": ["evals/files/t3-print-flyer/brief.txt"],
+      "assertions": [
+        "[script] viewBox is 0 0 154 216",
+        "[script] svg_poster_audit.py flyer_print.svg --bleed 3 --safe 5 exits 0 with verdict pass",
+        "[script] a background rect covers 0 0 154 216 (no bleed-background finding)",
+        "[judge] The reply tells the user about 3 mm bleed, 5 mm safe margin, RGB to CMYK shift, and converting text to outlines",
+        "[judge] The CTA is the map pick-up line from the brief and is not invented",
+        "[judge] Nothing is claimed as tested in a print proof or rendering"
+      ]
+    }
+  ]
+}

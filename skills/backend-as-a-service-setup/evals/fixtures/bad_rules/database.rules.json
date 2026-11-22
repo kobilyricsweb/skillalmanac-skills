@@ -1,0 +1,9 @@
+{
+  "rules": {
+    ".read": true,
+    "users": {
+      "$uid": { ".read": "auth != null", ".write": "auth.uid === $uid" }
+    },
+    "queue": { ".write": "now < 1900000000000" }
+  }
+}

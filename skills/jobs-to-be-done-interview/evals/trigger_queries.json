@@ -1,0 +1,82 @@
+[
+ {
+  "query": "I need a JTBD interview guide for people who just switched from spreadsheets to a project tool",
+  "should_trigger": true
+ },
+ {
+  "query": "can you check my interview transcripts for leading questions before I code them",
+  "should_trigger": true
+ },
+ {
+  "query": "help me build a forces diagram of push pull anxiety and habit from these customer interviews",
+  "should_trigger": true
+ },
+ {
+  "query": "turn these switch interviews into job statements in the when / I want to / so I can format",
+  "should_trigger": true
+ },
+ {
+  "query": "why did customers switch from our competitor - plan the interviews and the questions to ask",
+  "should_trigger": true
+ },
+ {
+  "query": "I'm a PM running my first jobs to be done interviews, how do I structure the 45 minutes",
+  "should_trigger": true
+ },
+ {
+  "query": "code this transcript for the four forces of progress and quote the evidence",
+  "should_trigger": true
+ },
+ {
+  "query": "rewrite my interview questions so they're not leading, like 'don't you find it slow?'",
+  "should_trigger": true
+ },
+ {
+  "query": "synthesize eight customer interviews into job statements and tell me which are weak",
+  "should_trigger": true
+ },
+ {
+  "query": "be my co-pilot during a switch interview and flag any question I draft that is a hypothetical",
+  "should_trigger": true
+ },
+ {
+  "query": "write a 10 question NPS survey for our customers",
+  "should_trigger": false
+ },
+ {
+  "query": "run a usability test script for our checkout page",
+  "should_trigger": false
+ },
+ {
+  "query": "write three buyer personas for a B2B accounting tool",
+  "should_trigger": false
+ },
+ {
+  "query": "estimate the total addressable market for meal kits in Germany",
+  "should_trigger": false
+ },
+ {
+  "query": "draft a cold sales call script for enterprise software",
+  "should_trigger": false
+ },
+ {
+  "query": "summarise this sales call recording into CRM notes",
+  "should_trigger": false
+ },
+ {
+  "query": "write a job description for a product manager",
+  "should_trigger": false
+ },
+ {
+  "query": "analyse our survey results and build a chart of satisfaction by segment",
+  "should_trigger": false
+ },
+ {
+  "query": "create a user story map for the onboarding flow",
+  "should_trigger": false
+ },
+ {
+  "query": "prepare an A/B test plan for the pricing page",
+  "should_trigger": false
+ }
+]

@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "required": ["city", "population"],
+  "additionalProperties": false,
+  "properties": {
+    "city": {"type": "string", "minLength": 1},
+    "population": {"type": "integer", "minimum": 0}
+  }
+}

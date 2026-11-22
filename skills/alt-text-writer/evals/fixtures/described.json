@@ -1,0 +1,10 @@
+{
+  "images": [
+    {"src": "/img/team.jpg", "function": "informative", "shows": "five support staff at their desks", "purpose": "puts faces to the support page", "alt": "The five-person support team at their desks"},
+    {"src": "/img/office.jpg", "function": "informative", "shows": "office lobby", "purpose": "location page", "alt": "image of the office lobby"},
+    {"src": "/img/arrow.svg", "function": "functional", "shows": "right arrow", "purpose": "link to pricing page", "alt": "See pricing"},
+    {"src": "/img/divider.png", "function": "decorative", "shows": "thin line", "purpose": "visual break", "alt": ""},
+    {"src": "/img/revenue-chart.png", "function": "complex", "shows": "revenue per quarter", "purpose": "headline result", "alt": "Bar chart: revenue rises each quarter"},
+    {"src": "/img/nowhere.png", "function": "informative", "shows": "not on the page", "purpose": "unmatched example", "alt": "A photo that is not on this page"}
+  ]
+}

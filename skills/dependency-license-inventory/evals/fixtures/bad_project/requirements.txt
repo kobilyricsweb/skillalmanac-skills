@@ -1,0 +1,4 @@
+# direct Python dependencies of the fixture app
+pyalpha==1.0.0
+pygamma>=0.3  # pinned loosely
+-r other-requirements.txt

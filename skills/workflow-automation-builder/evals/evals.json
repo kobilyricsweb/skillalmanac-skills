@@ -1,0 +1,47 @@
+{
+  "skill_name": "workflow-automation-builder",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/validate_workflow.py or a plain string check; [judge] assertions need a blind grader. The validator is the skill's own tool, so each task has at least one [judge] assertion that measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-form-to-crm",
+      "prompt": "Design this automation for us from the request. Save the spec as workflow.json, and give me the test plan and the runbook.",
+      "files": ["evals/files/t1-form-to-crm/request.md"],
+      "assertions": [
+        "[script] validate_workflow.py workflow.json prints ok true (zero errors)",
+        "[script] workflow.json has an idempotency_key on every write action (CRM contact, deal, chat message, email)",
+        "[script] workflow.json contains no literal credential: every sensitive-named field is a {{secrets.NAME}} reference",
+        "[script] the trigger has a dedupe_key and a verify setting, because the form tool retries up to 3 times",
+        "[judge] The contact step handles 'skip if the email already exists' as a lookup-then-create or an upsert, not as a duplicate-prone blind create",
+        "[judge] The test plan includes a duplicate delivery of the same submission, a submission with an empty budget, and a burst larger than 15 in a minute, each with an expected result",
+        "[judge] The runbook names Dana Cohen as the alert recipient and says how a dead-lettered submission is replayed without creating a second contact"
+      ]
+    },
+    {
+      "id": "t2-fix-broken-spec",
+      "prompt": "A colleague drafted this automation spec and it is going live Monday. Fix it so it is safe, save the result as fixed.json, and tell me what was wrong.",
+      "files": ["evals/files/t2-fix-broken-spec/spec.json"],
+      "assertions": [
+        "[script] validate_workflow.py fixed.json prints ok true",
+        "[script] fixed.json does not contain the strings k9x8w7v6u5t4s3r2, q1w2e3r4t5y6, AKIAABCDEFGHIJKLMNOP or abcd1234efgh5678",
+        "[script] no step in fixed.json has a flow field pointing at a step id that is not defined",
+        "[judge] The reply tells the user that the literal credentials in the draft are exposed and must be rotated, not only moved to the secret store",
+        "[judge] The orphan step is either connected deliberately or removed, with a reason given, rather than silently left in",
+        "[judge] The reply says which warnings were kept, if any, and why; it does not claim the automation is guaranteed never to fail"
+      ]
+    },
+    {
+      "id": "t3-nightly-sync",
+      "prompt": "Design this nightly sync. Save the spec as sync.json and list the numbers you used for retries, rate and timing, with the reason for each.",
+      "files": ["evals/files/t3-nightly-sync/request.md"],
+      "assertions": [
+        "[script] validate_workflow.py sync.json prints ok true",
+        "[script] sync.json trigger type is schedule or poll and has a cursor or updated_since style progress marker",
+        "[script] the invoice-creating write has an idempotency_key that includes the order id",
+        "[script] the sync.json rate limit on the accounting write step is at most 30 per minute (half of 60)",
+        "[judge] The design handles orders edited within 24 hours of payment without creating a second invoice (an overlap window with dedupe, or a version in the key)",
+        "[judge] The reply states the drain time for a 6,000-order night at the chosen rate (about 200 minutes at 30 per minute) and says whether 02:00 start leaves enough time",
+        "[judge] There is a heartbeat or missed-run alert so a skipped night is noticed, and a 429 handler that honours Retry-After"
+      ]
+    }
+  ]
+}

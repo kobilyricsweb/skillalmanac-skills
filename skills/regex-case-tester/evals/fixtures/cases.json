@@ -1,0 +1,30 @@
+{
+  "note": "Expected values were worked out by hand from the patterns and inputs, then compared with the script output.",
+  "cases": [
+    {"args": ["good_zip.json"], "exit": 0,
+     "expect": {"verdict": "pass", "summary": {"pass": 8, "fail": 0, "skipped": 0, "review": 0, "observed": 5},
+                "static_flag_ids": [], "probe_verdicts": []}},
+    {"args": ["risky_email.json"], "exit": 1,
+     "expect": {"verdict": "risky", "summary": {"pass": 6, "fail": 0, "skipped": 2, "review": 1, "observed": 5},
+                "static_flag_ids": ["nested_quantifier", "dollar_allows_trailing_newline"],
+                "probe_verdicts": ["exponential_growth_seen"],
+                "review_kinds": ["adversarial:trailing_newline"],
+                "skipped_kinds": ["adversarial:junk_suffix", "adversarial:junk_prefix"]}},
+    {"args": ["search_vs_full.json"], "exit": 0,
+     "expect": {"verdict": "pass", "summary": {"pass": 6, "fail": 0, "skipped": 0, "review": 6, "observed": 2},
+                "static_flag_ids": ["unanchored_in_search_mode"],
+                "search_only_inputs": ["call 555-1234", "555-12345"],
+                "review_kinds": ["adversarial:trailing_newline", "adversarial:leading_space", "adversarial:trailing_space",
+                                 "adversarial:arabic_indic_digits", "adversarial:junk_suffix", "adversarial:junk_prefix"]}},
+    {"args": ["invalid_pattern.json"], "exit": 1,
+     "expect": {"verdict": "invalid_pattern", "compile_ok": false, "compile_error": "missing ), unterminated subpattern", "compile_position": 1}},
+    {"args": ["js_named_group.json"], "exit": 1,
+     "expect": {"verdict": "untestable", "compile_ok": false, "untestable_ids": ["named_group_angle"]}},
+    {"args": ["failing_name.json"], "exit": 1,
+     "expect": {"verdict": "fail", "summary": {"pass": 5, "fail": 1, "skipped": 0, "review": 0, "observed": 6}, "failed_inputs": ["carol"]}},
+    {"args": ["thin_table.json"], "exit": 1,
+     "expect": {"verdict": "incomplete", "summary": {"pass": 2, "fail": 0, "skipped": 0, "review": 0, "observed": 5}}},
+    {"args": ["bad_spec.json"], "exit": 2, "expect": {}},
+    {"args": ["no_such_spec.json"], "exit": 2, "expect": {}}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "participants": ["P1", "P2", "P3", "P4", "P5"],
+  "codebook": ["pricing", "plans", "billing", "onboarding", "support"],
+  "notes": [
+    {"id": "N1", "participant": "P1", "text": "I could not work out which plan included the reports feature.", "tags": ["pricing", "plans"]},
+    {"id": "N2", "participant": "P1", "text": "Setup took ten minutes and was painless.", "tags": ["onboarding"]},
+    {"id": "N3", "participant": "P2", "text": "The pricing page was clear to me, I picked the team plan in a minute.", "tags": ["pricing", "plans"]},
+    {"id": "N4", "participant": "P2", "text": "Support replied the same day.", "tags": ["support"]},
+    {"id": "N5", "participant": "P3", "text": "I had to email sales to understand what the per-seat price included.", "tags": ["pricing", "plans"]},
+    {"id": "N6", "participant": "P3", "text": "The invoice was correct.", "tags": ["billing"]},
+    {"id": "N7", "participant": "P4", "text": "I never looked at pricing, my manager bought it.", "tags": ["pricing"]},
+    {"id": "N8", "participant": "P4", "text": "The onboarding emails were too frequent.", "tags": ["onboarding"]},
+    {"id": "N9", "participant": "P5", "text": "Billing is monthly and that is what I expected.", "tags": ["billing"]},
+    {"id": "N10", "participant": "P5", "text": "I use the free plan and have no reason to upgrade.", "tags": ["plans"]}
+  ]
+}

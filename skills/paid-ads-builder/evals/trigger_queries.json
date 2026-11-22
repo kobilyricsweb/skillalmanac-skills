@@ -1,0 +1,23 @@
+[
+  {"query": "set up a Google Ads search campaign for my dental clinic with a 1,500 a month budget", "should_trigger": true},
+  {"query": "write responsive search ad headlines and descriptions that fit the character limits", "should_trigger": true},
+  {"query": "how should I split my ad budget between search and Facebook so I don't waste money", "should_trigger": true},
+  {"query": "check my ad plan before launch: negatives, UTMs, budget math", "should_trigger": true},
+  {"query": "build a Meta ads plan for my online shop, what audiences and ad sets should I make", "should_trigger": true},
+  {"query": "what negative keywords should I add to a plumber's Google campaign", "should_trigger": true},
+  {"query": "is my ad copy going to get disapproved? it's a weight loss supplement", "should_trigger": true},
+  {"query": "calculate my target CPA and expected leads from a 3,000 budget and 4 dollar clicks", "should_trigger": true},
+  {"query": "LinkedIn ads plan for our B2B software, 5k per month, need copy and a launch checklist", "should_trigger": true},
+  {"query": "my PPC campaign is burning money, make a proper structure with ad groups and tracking", "should_trigger": true},
+  {"query": "write a marketing campaign brief for our product launch", "should_trigger": false},
+  {"query": "do keyword research for a coffee subscription and rank by search volume", "should_trigger": false},
+  {"query": "rewrite my landing page headline and hero section to convert better", "should_trigger": false},
+  {"query": "write five Instagram captions for this week's organic posts", "should_trigger": false},
+  {"query": "audit my website's technical SEO and fix the crawl errors", "should_trigger": false},
+  {"query": "my live Google Ads account has a high CPA, log in and lower my bids", "should_trigger": false},
+  {"query": "design a logo and brand colours for my new business", "should_trigger": false},
+  {"query": "write a cold email sequence for B2B outreach", "should_trigger": false},
+  {"query": "analyse last month's Google Analytics export and tell me which channel performs best", "should_trigger": false},
+  {"query": "what is a good brand strategy for a new coffee company", "should_trigger": false},
+  {"query": "explain how Google's quality score works, just curious", "should_trigger": false}
+]

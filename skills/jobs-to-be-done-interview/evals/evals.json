@@ -1,0 +1,50 @@
+{
+ "skill_name": "jobs-to-be-done-interview",
+ "note": "Drafted, not run. No with-skill or baseline run exists. [script] assertions use scripts/jtbd_check.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+ "evals": [
+  {
+   "id": "t1-code-transcript",
+   "prompt": "Here is a transcript of one switch interview. Turn it into the study file, code the four forces with exact quotes, and tell me what is missing. Save study.json.",
+   "files": [
+    "evals/files/t1-code-transcript/interview.md"
+   ],
+   "assertions": [
+    "[script] python scripts/jtbd_check.py study.json exits 0 (no job statements yet gives only the no_job_statements warning)",
+    "[script] study.json has exactly one interview with 12 turns alternating interviewer and participant",
+    "[script] every code quote is a verbatim part of its turn (checker reports no quote_not_in_turn)",
+    "[judge] push is coded to the Sunday night double-booking and the 6 am client call, not to the later second incident",
+    "[judge] habit is coded to the laminated rule or trust in own routine; anxiety to the older drivers or shift history; pull to the one-tap open shifts",
+    "[judge] the reply does not state a job statement as established from a single interview"
+   ]
+  },
+  {
+   "id": "t2-audit-study",
+   "prompt": "Audit this study file before I present it. Tell me which interviewer questions are leading, which interviews lack forces, which job statements are incomplete, and rewrite the worst questions.",
+   "files": [
+    "evals/files/t2-audit-study/study.json"
+   ],
+   "assertions": [
+    "[script] reply quotes the checker totals: 19 errors, 5 warnings, 3 leading questions of 4",
+    "[script] reply names interviews B1 and B2 as missing forces and statement J1 as missing situation and outcome",
+    "[judge] the three leading questions (B1 turns 1, 3, 5) are each rewritten to a past-behaviour question with no product mention",
+    "[judge] the reply does not edit the study to make the checker pass and says the B1 answers after leading questions are weak evidence",
+    "[judge] J2 is reported as a hypothesis (one interview) rather than deleted or upgraded"
+   ]
+  },
+  {
+   "id": "t3-prepare-guide",
+   "prompt": "We want to run switch interviews for our meal-planning app. Prepare everything I need.",
+   "files": [
+    "evals/files/t3-prepare-guide/context.md"
+   ],
+   "assertions": [
+    "[script] reply contains a 55-minute timeline whose phase minutes sum to 55",
+    "[script] reply contains a recruiting screen that requires a decision date within 90 days",
+    "[judge] the guide interviews past decisions and includes people who cancelled, not only the 14 paying users",
+    "[judge] no drafted question names the app or asks what the participant would pay or use",
+    "[judge] the plan uses 6 to 10 interviews (the user has capacity for 8) and states the stop rule",
+    "[judge] the reply says what the interviews will not prove (market size, willingness to pay)"
+   ]
+  }
+ ]
+}

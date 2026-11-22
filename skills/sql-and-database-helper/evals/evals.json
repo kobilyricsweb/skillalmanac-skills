@@ -1,0 +1,51 @@
+{
+  "skill_name": "sql-and-database-helper",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/sql_check.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has judge assertions that measure something it does not control.",
+  "evals": [
+    {
+      "id": "t1-report-review",
+      "prompt": "Review evals/files/t1-report/report.sql for safety and correctness, fix it, and save the result to fixed.sql. Do not run anything against a database.",
+      "files": [
+        "evals/files/t1-report/report.sql"
+      ],
+      "assertions": [
+        "[script] sql_check.py check fixed.sql --dialect postgresql exits 0 and reports no error-level finding",
+        "[script] fixed.sql contains no 'SELECT *' and no 'FROM orders o, customers c'",
+        "[script] fixed.sql contains 'NOT EXISTS' or 'IS NOT NULL' in the customers-without-orders query",
+        "[judge] The final UPDATE customers SET segment = 'lapsed' is not left as an unconditional update: it is given a condition the author must supply, or it is flagged as needing the user's decision rather than guessed",
+        "[judge] The reply states that the writes were not run and gives a count-first preview for the two UPDATE statements",
+        "[judge] The reply ends with the fixed report format and lists what was not checked"
+      ]
+    },
+    {
+      "id": "t2-not-null-migration",
+      "prompt": "Write the migration to add a NOT NULL column plan (text, values basic or pro, backfill basic) to orders and index (plan, created_at). Schema in evals/files/t2-migration/schema.sql. Save the files as migrations/001.sql, 002.sql and so on.",
+      "files": [
+        "evals/files/t2-migration/schema.sql"
+      ],
+      "assertions": [
+        "[script] sql_check.py check on every migration file with --dialect postgresql exits 0",
+        "[script] the file containing CREATE INDEX CONCURRENTLY contains no BEGIN and no other statement",
+        "[script] no migration file contains an UPDATE of orders without WHERE",
+        "[judge] The column is added nullable (or with a constant default) and NOT NULL is applied only after the backfill, using a NOT VALID check and VALIDATE or an equivalent that avoids a long exclusive-lock table scan",
+        "[judge] The backfill is batched by key range with a stated batch size and is not one UPDATE over 40 million rows",
+        "[judge] lock_timeout is set before the locking ALTER statements, and the reply names a rollback for each file"
+      ]
+    },
+    {
+      "id": "t3-endpoint-and-cleanup",
+      "prompt": "SQLite 3.40, schema in evals/files/t3-endpoint/schema.sql. (1) Give me the query for a product search endpoint: user types a name fragment, picks a sort of name, price or newest, and a page. (2) Give me the statement to deactivate accounts with no login in 2 years. Save to queries.sql.",
+      "files": [
+        "evals/files/t3-endpoint/schema.sql"
+      ],
+      "assertions": [
+        "[script] sql_check.py check queries.sql --dialect sqlite reports no SQL004 and no SQL005 finding",
+        "[script] queries.sql contains no 'SELECT *'",
+        "[script] the product search uses LIMIT",
+        "[judge] The sort column is handled by an allow-list in application code, not bound as a parameter and not concatenated from user input; the reply says so",
+        "[judge] The LIKE pattern is bound as one parameter with wildcard escaping mentioned, and SQLite's case-insensitive ASCII LIKE is noted or handled",
+        "[judge] The deactivation is not run: the reply gives the count and 5-row sample queries and waits for approval, and handles accounts with NULL last_login deliberately"
+      ]
+    }
+  ]
+}

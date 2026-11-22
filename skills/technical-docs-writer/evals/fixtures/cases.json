@@ -1,0 +1,26 @@
+{
+  "note": "Each case runs scripts/docs_audit.py with args (paths relative to evals/fixtures/ when they exist there) and compares exit code and fields. Expected values were read by hand against the fixture files, see VERIFICATION.md.",
+  "cases": [
+    {"name": "bad folder", "args": ["docs_bad", "--today", "2026-11-21"], "exit": 1,
+     "expect": {"files_scanned": 5, "ok": false,
+       "summary": {"findings": 17, "errors": 12, "warnings": 5, "by_rule": {"bad-verified-date": 1, "broken-anchor": 2, "broken-link": 2, "code-no-language": 1, "future-verified-date": 1, "missing-section": 6, "no-h1": 1, "secret-in-doc": 1, "stale-verified": 1, "unclosed-fence": 1}},
+       "types": {"README.md": ["readme", "path"], "how-to/rotate-keys.md": ["how-to", "path"], "notes.md": ["unknown", "none"], "reference/api.md": ["reference", "path"], "runbook/db-failover.md": ["runbook", "path"]},
+       "findings": {
+         "README.md": [[1, "missing-section"], [1, "missing-section"], [7, "code-no-language"], [11, "broken-link"]],
+         "how-to/rotate-keys.md": [[1, "missing-section"], [3, "stale-verified"], [16, "secret-in-doc"], [18, "broken-link"]],
+         "notes.md": [[1, "no-h1"], [3, "unclosed-fence"]],
+         "reference/api.md": [[1, "missing-section"], [3, "bad-verified-date"], [17, "broken-anchor"]],
+         "runbook/db-failover.md": [[1, "missing-section"], [1, "missing-section"], [3, "future-verified-date"], [17, "broken-anchor"]]}}},
+    {"name": "good folder", "args": ["docs_good", "--today", "2026-11-21"], "exit": 0,
+     "expect": {"files_scanned": 7, "ok": true, "summary": {"findings": 0, "errors": 0, "warnings": 0, "by_rule": {}},
+       "types": {"README.md": ["readme", "path"], "enable-sso.md": ["how-to", "headings"], "explanation/why-queues.md": ["explanation", "path"], "how-to/rotate-keys.md": ["how-to", "path"], "reference/api.md": ["reference", "path"], "runbook/db-failover.md": ["runbook", "path"], "tutorial/first-service.md": ["tutorial", "path"]}}},
+    {"name": "good folder, 5-day limit", "args": ["docs_good", "--today", "2026-11-21", "--max-age-days", "5"], "exit": 0,
+     "expect": {"ok": true, "summary": {"findings": 4, "errors": 0, "warnings": 4, "by_rule": {"stale-verified": 4}}}},
+    {"name": "good folder, 5-day limit, strict", "args": ["docs_good", "--today", "2026-11-21", "--max-age-days", "5", "--strict"], "exit": 1,
+     "expect": {"ok": false, "summary": {"findings": 4, "errors": 0, "warnings": 4, "by_rule": {"stale-verified": 4}}}},
+    {"name": "single file", "args": ["docs_bad/README.md", "--today", "2026-11-21"], "exit": 1,
+     "expect": {"files_scanned": 1, "summary": {"findings": 4, "errors": 3, "warnings": 1, "by_rule": {"broken-link": 1, "code-no-language": 1, "missing-section": 2}}}},
+    {"name": "missing path", "args": ["no_such_folder"], "exit": 2, "expect": {}},
+    {"name": "bad date option", "args": ["docs_good", "--today", "yesterday"], "exit": 2, "expect": {}}
+  ]
+}

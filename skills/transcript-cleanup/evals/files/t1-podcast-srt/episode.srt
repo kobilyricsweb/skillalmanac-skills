@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:02,800
+HOST: Welcome back. Um, today we're talking about
+
+2
+00:00:02,900 --> 00:00:05,200
+uh, how small teams ship, you know, every week.
+
+3
+00:00:05,500 --> 00:00:09,000
+Guest 1: Thanks for having me. I I run a team of nine.
+
+4
+00:00:09,200 --> 00:00:10,100
+guest 1: We release on Thursdays.
+
+5
+00:00:10,300 --> 00:00:13,000
+Speaker 2: Er, and the rollback plan is, uh, a single command.

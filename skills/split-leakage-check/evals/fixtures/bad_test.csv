@@ -1,0 +1,4 @@
+id,user,ts,text,label
+s1,u1,2026-01-12,the quick brown fox jumps over the lazy dog today!,spam
+s2,u9,2026-01-11,Win a free prize now click this link here,spam
+s3,u8,2026-01-25,Completely different sentence about weather,ham

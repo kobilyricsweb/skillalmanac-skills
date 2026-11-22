@@ -1,0 +1,44 @@
+{
+  "skill_name": "test-first-development",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/test_audit.py or a plain check; [judge] assertions need a blind grader.",
+  "evals": [
+    {
+      "id": "t1-audit-pytest",
+      "prompt": "These tests were written by an agent and they all pass, but I do not trust them. Fix the test file so every test is meaningful, and save it as fixed_tests.py. Keep the behaviours covered.",
+      "files": ["evals/files/t1-audit-pytest/test_cart.py"],
+      "assertions": [
+        "[script] test_audit.py check fixed_tests.py prints ok true and exit code 0",
+        "[script] fixed_tests.py contains no test whose only assertion is a constant",
+        "[judge] The empty-cart test now asserts a concrete value (zero), not just calls total",
+        "[judge] The duplicated test was removed or given a genuinely different case, not just renamed",
+        "[judge] Skipped tests carry a written reason or were re-enabled; none was deleted silently",
+        "[judge] The reply lists each defect found with its rule name"
+      ]
+    },
+    {
+      "id": "t2-audit-js",
+      "prompt": "Audit this JavaScript test file and tell me what is wrong with it. Then fix it and save it as cart.fixed.test.js.",
+      "files": ["evals/files/t2-audit-js/cart.test.js"],
+      "assertions": [
+        "[script] test_audit.py check cart.fixed.test.js prints ok true",
+        "[script] cart.fixed.test.js does not contain '.only('",
+        "[judge] The reply reports the .only as the most dangerous finding because it silently disables the other tests",
+        "[judge] The 'works' test was renamed to follow '<unit> <outcome> when <condition>'",
+        "[judge] The reply states that the audit checks syntax, not whether the assertions are right"
+      ]
+    },
+    {
+      "id": "t3-build-slugify",
+      "prompt": "Build a Python function slugify(text) in slug.py with tests in test_slug.py, test first. It lowercases, trims, replaces runs of non-alphanumeric characters with one hyphen, and strips leading and trailing hyphens. Show me your cycle log.",
+      "files": [],
+      "assertions": [
+        "[script] test_audit.py check test_slug.py prints ok true",
+        "[script] python -m pytest test_slug.py passes",
+        "[judge] The cycle log shows at least 3 cycles, each with a recorded failure reason before code was written",
+        "[judge] The first implementation was minimal and later tests forced it to generalise",
+        "[judge] The reply reports at least one mutation check and walks the edge-case checklist (empty string, only symbols, non-ASCII, repeated separators)",
+        "[judge] No mock of slugify or of any part of it appears in the tests"
+      ]
+    }
+  ]
+}

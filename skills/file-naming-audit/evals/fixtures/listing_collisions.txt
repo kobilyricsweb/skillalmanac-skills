@@ -1,0 +1,7 @@
+Docs/Report.txt
+Docs/report.txt
+Docs/Plan.txt
+docs/budget.txt
+Notes/Report Draft.txt
+Notes/report-draft.txt
+Notes/summary.txt

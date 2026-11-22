@@ -1,0 +1,43 @@
+{
+  "skill_name": "brand-name-shortlist",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/score_names.py output or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-budget-app",
+      "prompt": "Here is my naming brief and the 24 names I drafted. Screen them and give me a shortlist of 5 with reasons.",
+      "files": ["evals/files/t1-budget-app/brief.md", "evals/files/t1-budget-app/candidates.txt"],
+      "assertions": [
+        "[script] score_names.py candidates.txt run with the brief's competitors and avoid words puts Debtless and Brokeless at verdict cut (avoid_word) and no cut name appears in the final shortlist",
+        "[script] The final shortlist contains exactly 5 names, at most 2 of any one type, and no two within edit distance 2 of each other",
+        "[script] The reply contains a to-verify list that mentions domain, trademark and handles",
+        "[judge] The reply never states or implies that any name is available, free, clear or safe to use",
+        "[judge] Every shortlisted name has a reason tied to the brief (calm, friendly, not a bank), not only to its score",
+        "[judge] Any override of a script verdict is stated with a reason, and the reply ends with a Not checked line naming availability and trademark"
+      ]
+    },
+    {
+      "id": "t2-no-brief",
+      "prompt": "Read evals/files/t2-no-brief/request.md and do what it asks.",
+      "files": ["evals/files/t2-no-brief/request.md"],
+      "assertions": [
+        "[script] The reply contains none of the phrases 'good to go', 'is available', 'is free', 'trademark-free', 'safe to use' used as a claim about a name",
+        "[script] The reply contains the words 'trademark' and 'domain' in a verify list",
+        "[judge] The reply declines to hand over one final name as cleared, and offers a shortlist or a process instead",
+        "[judge] The reply asks for or states assumptions about audience, tone and competitors in one short block rather than a long questionnaire",
+        "[judge] The reply tells the user not to order business cards until the verify items are done"
+      ]
+    },
+    {
+      "id": "t3-too-few",
+      "prompt": "Screen the names in candidates.txt for my candle shop and give me a shortlist of 5.",
+      "files": ["evals/files/t3-too-few/candidates.txt"],
+      "assertions": [
+        "[script] score_names.py exits 1 and prints shortlist_shortfall true on candidates.txt",
+        "[script] The reply does not present 5 shortlisted names",
+        "[judge] The reply says fewer than 5 survived and proposes a second batch of new candidates instead of padding with cut names",
+        "[judge] The reply explains why Xqzt and Brkstnd were cut (no vowel, consonant cluster) and why only one of the near-duplicates Glo wick and Glowwick is shortlisted, using the script's flags",
+        "[judge] The report includes the Not checked line"
+      ]
+    }
+  ]
+}

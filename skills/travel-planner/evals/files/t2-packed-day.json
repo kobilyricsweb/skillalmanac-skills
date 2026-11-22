@@ -1,0 +1,16 @@
+{
+  "trip": {"name": "Slow weekend in London", "style": "relaxed", "currency": "GBP", "travelers": 1, "budget_total": 400},
+  "days": [
+    {
+      "date": "2026-09-05",
+      "items": [
+        {"id": "m1", "title": "Tower visit", "kind": "activity", "start": "09:00", "end": "11:00", "location": "Tower", "area": "East", "cost": 30, "category": "activities",
+         "facts": [{"claim": "Opens 09:00", "kind": "hours", "status": "unverified"}, {"claim": "30 GBP entry", "kind": "price", "status": "unverified"}]},
+        {"id": "m2", "title": "Gallery", "kind": "activity", "start": "11:05", "end": "13:00", "location": "Gallery", "area": "West", "cost": 25, "category": "activities",
+         "facts": [{"claim": "Open 10:00-17:00", "kind": "hours", "status": "unverified"}, {"claim": "25 GBP entry", "kind": "price", "status": "unverified"}]},
+        {"id": "m3", "title": "Theatre tour", "kind": "activity", "start": "13:05", "end": "15:00", "location": "Theatre", "area": "North", "cost": 20, "category": "activities",
+         "facts": [{"claim": "Tours at 13:05", "kind": "hours", "status": "unverified"}, {"claim": "20 GBP tour", "kind": "price", "status": "unverified"}]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "skill_name": "ocr-text-repair",
+  "note": "Drafted, not run with and without the skill. Input files are fixtures under evals/fixtures/; expected outputs under evals/expected/ were read by hand. [script] assertions use scripts/repair_ocr.py output or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has judge assertions on things it does not control.",
+  "evals": [
+    {
+      "id": "t1-scanned-chapter",
+      "prompt": "This is OCR output from a scanned report page (prose, English). Fix the line breaks and the OCR misreads, keep the original file, save the result as repaired.txt and tell me what you changed.",
+      "files": ["evals/fixtures/prose_basic.txt"],
+      "assertions": [
+        "[script] repaired.txt equals evals/expected/prose_basic.txt",
+        "[script] the original file is byte-identical after the run",
+        "[script] report shows stats.numbers_unchanged true and contains '1,250' and '42' in repaired.txt",
+        "[script] 'tirne' and 'l987' are still present in repaired.txt (too little evidence; must be flagged, not guessed)",
+        "[judge] The reply lists 'tirne' and 'l987' as items for the user to check against the scan and does not claim to have fixed them",
+        "[judge] The reply names the one join that had no evidence ('excep-' to 'exception') for review"
+      ]
+    },
+    {
+      "id": "t2-receipt-amounts",
+      "prompt": "OCR of a grocery receipt. Fix only what is clearly an OCR slip in the item names. Do not change any amount or code, and tell me which numbers look damaged.",
+      "files": ["evals/fixtures/receipt_basic.txt"],
+      "assertions": [
+        "[script] repaired file equals evals/expected/receipt_basic.txt when run with --doctype receipt",
+        "[script] '1O.50', 'A1B2' and 'T0TAL' are unchanged in the repaired file",
+        "[script] no line of the receipt was joined to another (same number of lines)",
+        "[judge] The reply says 1O.50 probably means 10.50 but leaves it for the user, and gives the 20.15 total only as printed",
+        "[judge] The reply does not use arithmetic on the amounts to change any figure"
+      ]
+    },
+    {
+      "id": "t3-paged-report",
+      "prompt": "I have a 4 page OCR dump of an annual report, pages separated by form feed characters (a copy is in the files). Remove the running headers and page numbers, join the wrapped lines, and give me a change log as JSON.",
+      "files": ["evals/fixtures/paged_report.txt"],
+      "assertions": [
+        "[script] repaired file equals evals/expected/paged_report.txt after the page-break marker is converted",
+        "[script] report changes_by_class is {dehyphenate: 1, header-footer: 8, unwrap: 4}",
+        "[script] repaired file still has 4 pages (3 form feed characters) and contains '2,400,000', '310', '1.5 million'",
+        "[judge] The reply states that removed lines were listed in the change log and could be a legitimate repeated line",
+        "[judge] The reply does not claim the text was compared with the original page images"
+      ]
+    }
+  ]
+}

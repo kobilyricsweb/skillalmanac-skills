@@ -1,0 +1,43 @@
+{
+  "skill_name": "split-leakage-check",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/check_leakage.py output or a plain check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-spam-splits",
+      "prompt": "I have a spam classifier with train and test files. The test score looks too good. Check for leakage using id, user, ts, text and label, and tell me what to fix. Do not change my files.",
+      "files": ["evals/fixtures/bad_train.csv", "evals/fixtures/bad_test.csv"],
+      "assertions": [
+        "[script] check_leakage.py output has verdict.status fail",
+        "[script] exact_overlaps.count is 1 and names train row t1 with test row s1",
+        "[script] near_duplicates lists train t3 with test s2 at similarity 0.8571",
+        "[script] time_violations reports 2 test rows dated before the newest train row; group_overlaps reports group u1 shared",
+        "[judge] The reply gives a plan (group-aware or time-ordered re-split, removal of the repeated row) and does not edit or overwrite either CSV",
+        "[judge] The reply ends with the fixed report shape including a Not checked line that mentions paraphrases or preprocessing leakage"
+      ]
+    },
+    {
+      "id": "t2-clean-splits-honesty",
+      "prompt": "Here are my product review splits (train and test). Check them for leakage with id, user, ts, text and label. I need to know if I can trust the test set.",
+      "files": ["evals/fixtures/clean_train.csv", "evals/fixtures/clean_test.csv"],
+      "assertions": [
+        "[script] check_leakage.py output has verdict.status pass and exit code 0",
+        "[script] exact_overlaps.count, near_duplicates.count and group_overlaps.groups_shared are all 0",
+        "[judge] The reply says no leakage was detected but does not claim the test set is proven clean; it names what the script cannot see (paraphrases, preprocessing fitted on all data)",
+        "[judge] The reply makes no class-balance drift claim, because both splits have far fewer than 100 labelled rows",
+        "[judge] The reply does not invent a problem to look useful"
+      ]
+    },
+    {
+      "id": "t3-patient-group-split",
+      "prompt": "Patient visit notes split into train, valid and test (files in that time order). Columns: patient, visit_date, note, outcome. Is the split safe and what should I do?",
+      "files": ["evals/files/t3-patient-visits/train.csv", "evals/files/t3-patient-visits/valid.csv", "evals/files/t3-patient-visits/test.csv"],
+      "assertions": [
+        "[script] check_leakage.py output has group_overlaps.groups_shared equal to 2 (p1 and p2) and verdict.status fail",
+        "[script] exact_overlaps.count is 0 and time_violations.violations is empty",
+        "[judge] The reply recommends a group-aware split by patient and warns that group sizes will make the split ratios uneven",
+        "[judge] The reply does not report time leakage, since dates are in order",
+        "[judge] The reply asks or states the assumption that the files are listed oldest first"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {"query": "how much will it cost me per month to run a support bot that handles 2,000 conversations a day through an LLM API? I have the price list here", "should_trigger": true},
+  {"query": "is prompt caching worth it for us? our system prompt is 60% of every request", "should_trigger": true},
+  {"query": "estimate my monthly token spend, here are the per-million prices I copied today", "should_trigger": true},
+  {"query": "would the flat monthly plan be cheaper than paying per token for our coding agent?", "should_trigger": true},
+  {"query": "what does a 2x longer prompt do to our API bill? build me a sensitivity table", "should_trigger": true},
+  {"query": "can we save money by running the nightly summarisation through the batch endpoint? 50% discount, results can wait a day", "should_trigger": true},
+  {"query": "budget the LLM cost of an agent that makes 4 tool calls per task with 5% retries", "should_trigger": true},
+  {"query": "give me low, expected and high monthly cost for 800 requests a day, 3k tokens in and 600 out", "should_trigger": true},
+  {"query": "how many tokens is this prompt and what would 10k of them a day cost?", "should_trigger": true},
+  {"query": "cost per request and annual cost projection for our document-extraction pipeline, I will paste the price table", "should_trigger": true},
+  {"query": "what is the current price per million tokens for the newest model?", "should_trigger": false},
+  {"query": "count the exact tokens in this file with the official tokenizer", "should_trigger": false},
+  {"query": "which model is better at coding, A or B?", "should_trigger": false},
+  {"query": "why was my invoice 40 percent higher this month? here is the billing export", "should_trigger": false},
+  {"query": "build a monthly budget spreadsheet for my household", "should_trigger": false},
+  {"query": "reduce the length of this prompt without losing meaning", "should_trigger": false},
+  {"query": "how do I enable prompt caching in the SDK? show me the code", "should_trigger": false},
+  {"query": "summarise the pricing page of this SaaS tool for me", "should_trigger": false},
+  {"query": "pick the cheapest cloud GPU instance for fine-tuning a 7B model", "should_trigger": false},
+  {"query": "forecast next quarter's revenue from these sales figures", "should_trigger": false},
+  {"query": "how many requests per minute does the API allow before I get rate limited?", "should_trigger": false}
+]

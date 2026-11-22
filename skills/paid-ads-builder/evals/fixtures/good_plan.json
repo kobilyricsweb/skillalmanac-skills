@@ -1,0 +1,85 @@
+{
+  "business": "Harbor Plumbing (fictional)",
+  "vertical": "general",
+  "special_category": false,
+  "currency": "USD",
+  "total_budget": 2100,
+  "target_cpa": 55,
+  "conversion": {
+    "name": "quote_form_submit",
+    "definition": "Thank-you page /quote/thanks loaded after the quote form is submitted; one per session; 30-day window; call clicks excluded",
+    "window_days": 30
+  },
+  "campaigns": [
+    {
+      "name": "search-emergency-and-repair",
+      "platform": "google_search",
+      "objective": "leads",
+      "bid_strategy": "manual_cpc",
+      "audience": {"locations": ["Austin, TX, 25 mile radius"], "languages": ["en"]},
+      "daily_budget": 50,
+      "days": 30,
+      "budget": 1500,
+      "utm_campaign": "search-plumbing-2026-12",
+      "forecast": {"cpc": 2.5, "cvr": 0.05, "clicks": 600, "conversions": 30},
+      "negative_keywords": ["jobs", "free", "diy", "salary", "course", "reviews"],
+      "ad_groups": [
+        {
+          "name": "emergency-plumber",
+          "landing_url": "https://harbor.example/emergency?utm_source=google&utm_medium=cpc&utm_campaign=search-plumbing-2026-12&utm_content=emergency",
+          "keywords": ["[emergency plumber austin]", "\"24 hour plumber austin\""],
+          "ads": [
+            {
+              "headlines": ["Emergency Plumber Austin", "Upfront Price Before Work", "Same-Day Service Available"],
+              "descriptions": [
+                "Licensed local plumbers. Upfront quote before any work starts. Book online in 2 minutes.",
+                "Burst pipe or blocked drain? Call or request a quote and we reply within the hour."
+              ],
+              "path1": "emergency",
+              "path2": "austin"
+            }
+          ]
+        },
+        {
+          "name": "water-heater-repair",
+          "landing_url": "https://harbor.example/water-heater?utm_source=google&utm_medium=cpc&utm_campaign=search-plumbing-2026-12&utm_content=water-heater",
+          "keywords": ["[water heater repair austin]", "\"water heater not working\""],
+          "ads": [
+            {
+              "headlines": ["Water Heater Repair Austin", "No Hot Water? We Can Help", "Licensed and Insured Team"],
+              "descriptions": [
+                "Repair or replace: we tell you the cost of both before you decide. Quote in minutes.",
+                "Local licensed plumbers, clear pricing, and a written quote before work begins."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "social-seasonal-checkup",
+      "platform": "meta",
+      "objective": "leads",
+      "bid_strategy": "lowest_cost",
+      "audience": {"locations": ["Austin, TX, 25 mile radius"], "interests": ["home ownership"]},
+      "daily_budget": 20,
+      "days": 30,
+      "budget": 600,
+      "utm_campaign": "social-checkup-2026-12",
+      "forecast": {"cpc": 1.0, "cvr": 0.03, "clicks": 600, "conversions": 18},
+      "ad_groups": [
+        {
+          "name": "homeowners-checkup",
+          "landing_url": "https://harbor.example/checkup?utm_source=meta&utm_medium=paid-social&utm_campaign=social-checkup-2026-12&utm_content=homeowners",
+          "ads": [
+            {
+              "primary_text": "Winter is when old pipes fail. Book a 30-minute plumbing check before the cold snap.",
+              "headline": "Pre-winter plumbing check",
+              "description": "Quote in minutes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

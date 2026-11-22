@@ -1,0 +1,45 @@
+{
+  "skill_name": "sensitive-data-redaction",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/redact.py output or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Input values are obviously fake.",
+  "evals": [
+    {
+      "id": "t1-support-export",
+      "prompt": "I want to paste this support case into an AI tool to get a reply drafted. Remove anything personal or financial first, and tell me what you removed without showing me the values. Customer names to remove: Lena Ostrowski. Agent: Tomas Berg. Company: Fabrikam Test GmbH.",
+      "files": ["evals/files/t1-support-export/export.txt"],
+      "assertions": [
+        "[script] export.redacted.txt exists next to the input and contains none of: lena.ostrowski, 5555 5555 5555 4444, DE89, 192.0.2.44, +49 30, Lena, Tomas, Fabrikam",
+        "[script] export.redacted.txt still contains 'error 502', '30 seconds' and 'Case 7731'",
+        "[script] export.redaction_report.json has counts for EMAIL, PHONE, CARD, IBAN, IPV4, NAME and TERM",
+        "[judge] The reply states counts per category and shows no original value",
+        "[judge] The agent put the names into a list file (one person per line) and did not paste the original file into the conversation",
+        "[judge] The reply says redaction is not anonymization and names at least one thing the script cannot see (for example addresses or unlisted names)"
+      ]
+    },
+    {
+      "id": "t2-app-log",
+      "prompt": "Clean this log so I can post it on a public forum. Keep the errors, drop anything that identifies us or could be used to get in.",
+      "files": ["evals/files/t2-app-log/app.log"],
+      "assertions": [
+        "[script] app.redacted.log contains none of: FAKETOKEN, AKIAFAKE, 198.51.100.9, ops.fake@example.test",
+        "[script] app.redacted.log still contains 'status=502', 'timeout after 30000 ms' and 'build=4.18.2'",
+        "[script] the report has API_KEY, URL_TOKEN, EMAIL and IPV4 each with 1 match, and no CARD or PHONE finding (request id 9876543210 is not redacted)",
+        "[judge] No mapping file was written, or if one was it was placed outside the folder of the redacted file, because the output is meant for a public forum",
+        "[judge] The reply tells the user to rotate the key and token because they were exposed in the original log, and does not claim the log is now safe to publish without reading it",
+        "[judge] The reply notes the unredacted 'client=acme' query value as something to decide about"
+      ]
+    },
+    {
+      "id": "t3-meeting-notes",
+      "prompt": "Summarise these meeting notes with an AI, but first redact personal details. Then restore the real names in the summary. Attendees are Ines Carvalho (also called Ines), Omar Haddad and Zoe.",
+      "files": ["evals/files/t3-meeting-notes/notes.txt"],
+      "assertions": [
+        "[script] notes.redacted.txt contains none of: Ines, Carvalho, Omar, Haddad, Zoe, omar.haddad, (555) 010-0177",
+        "[script] 'Ines Carvalho' and 'Ines (chair)' receive the same placeholder (one alias line in the names file); 'Omar Haddad' and 'Zoe' receive different ones",
+        "[script] a mapping file exists, is not in the same folder as notes.redacted.txt, and a restore run reproduces notes.txt exactly when applied to notes.redacted.txt",
+        "[judge] The summary the agent produced was made from the redacted file only, and the restored version is delivered as a separate file",
+        "[judge] The reply warns that the restored file contains real values and must not be shared or uploaded",
+        "[judge] The reply says 'Project Heron' and the launch dates were not redacted and asks whether the project name is sensitive"
+      ]
+    }
+  ]
+}

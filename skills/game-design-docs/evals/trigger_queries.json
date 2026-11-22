@@ -1,0 +1,82 @@
+[
+ {
+  "query": "write a game design document for my cozy farming game, I'm a solo dev with 12 weeks",
+  "should_trigger": true
+ },
+ {
+  "query": "can you help me make a GDD with a core loop, pillars and a scope budget for my roguelite?",
+  "should_trigger": true
+ },
+ {
+  "query": "my game's economy feels off, coins pile up and the third upgrade is unreachable, check my economy table",
+  "should_trigger": true
+ },
+ {
+  "query": "I need a playtest plan with measurable questions for my puzzle platformer prototype",
+  "should_trigger": true
+ },
+ {
+  "query": "review my game design doc, my teammate says the mechanics don't say what feedback the player gets",
+  "should_trigger": true
+ },
+ {
+  "query": "turn these notes into a design doc my 3-person indie team can build from",
+  "should_trigger": true
+ },
+ {
+  "query": "how many pillars should my game have? I've got six and a half-written GDD",
+  "should_trigger": true
+ },
+ {
+  "query": "make a progression and economy table for a mobile idle game with sources and sinks",
+  "should_trigger": true
+ },
+ {
+  "query": "validate my GDD markdown and my economy csv and tell me what's missing",
+  "should_trigger": true
+ },
+ {
+  "query": "write a scope budget so we know what to cut from our 6-month jam-to-release game",
+  "should_trigger": true
+ },
+ {
+  "query": "write the backstory and lore for my fantasy game world",
+  "should_trigger": false
+ },
+ {
+  "query": "write C# code for a player controller in Unity",
+  "should_trigger": false
+ },
+ {
+  "query": "make me a pitch deck for publishers for my game",
+  "should_trigger": false
+ },
+ {
+  "query": "design a level layout for the first dungeon in my platformer",
+  "should_trigger": false
+ },
+ {
+  "query": "what art style should my game use? give me a mood board",
+  "should_trigger": false
+ },
+ {
+  "query": "write the terms and conditions for my game's in-app purchases",
+  "should_trigger": false
+ },
+ {
+  "query": "write a product requirements document for my SaaS dashboard",
+  "should_trigger": false
+ },
+ {
+  "query": "create a spreadsheet to track my monthly budget",
+  "should_trigger": false
+ },
+ {
+  "query": "explain how loot box probabilities are regulated in the EU",
+  "should_trigger": false
+ },
+ {
+  "query": "write dialogue for the blacksmith NPC in my RPG",
+  "should_trigger": false
+ }
+]

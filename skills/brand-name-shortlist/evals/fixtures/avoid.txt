@@ -1,0 +1,3 @@
+# Words the audience reads negatively (fixture, English only)
+spend
+broke

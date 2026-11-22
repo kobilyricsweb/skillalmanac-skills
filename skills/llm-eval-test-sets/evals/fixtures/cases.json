@@ -1,0 +1,10 @@
+{
+  "note": "Each case runs scripts/validate_evalset.py with the given args (.jsonl paths are relative to evals/fixtures/) and checks the exit code and the listed fields. Expected values were derived by reading each fixture line against the checks, then compared with the output.",
+  "cases": [
+    {"args": ["good_cases.jsonl"], "exit": 0, "expect": {"ok": true, "cases": 30, "counts": {"FAIL": 0, "WARN": 0, "INFO": 1}, "checks": ["INFO leakage-skipped"]}},
+    {"args": ["bad_cases.jsonl"], "exit": 1, "expect": {"ok": false, "cases": 15, "counts": {"FAIL": 9, "WARN": 7, "INFO": 1}, "checks": ["FAIL expected-missing", "FAIL grader-missing", "FAIL grader-unknown", "FAIL id-duplicate", "FAIL json-parse", "FAIL prompt-duplicate-conflict", "FAIL regex-invalid", "FAIL rubric-missing", "FAIL tolerance-missing", "INFO leakage-skipped", "WARN abstain-marker-missing", "WARN answer-in-prompt", "WARN prompt-near-duplicate", "WARN prompt-too-short", "WARN set-small", "WARN tags-single", "WARN unanswerable-share"]}},
+    {"args": ["test_leaky.jsonl", "--against", "train_pool.jsonl"], "exit": 1, "expect": {"ok": false, "cases": 4, "counts": {"FAIL": 2, "WARN": 3, "INFO": 0}, "checks": ["FAIL split-leakage-exact", "FAIL split-leakage-near", "WARN set-small", "WARN split-leakage-answer", "WARN tags-single"]}},
+    {"args": ["no_such_file.jsonl"], "exit": 2, "expect": {}},
+    {"args": [], "exit": 2, "expect": {}}
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "skill_name": "math-step-checker",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/check_steps.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control (the tutoring behaviour).",
+  "evals": [
+    {
+      "id": "t1-distribute-slip",
+      "prompt": "I'm practising for next week. This is my working for 4(x - 3) = 2x + 6 and I got x = 4.5 but the textbook says something else. Can you tell me where I went wrong? My lines are in steps.txt.",
+      "files": ["evals/files/t1-distribute-slip/steps.txt"],
+      "assertions": [
+        "[script] check_steps.py steps.txt exits 1 and first_error.step is 2 and first_error.suspected_slip is dropped_parenthesis",
+        "[script] the reply names step 2 or the line '4x - 3 = 2x + 6' as the first wrong line",
+        "[script] the reply does not contain the final correct answer 'x = 9'",
+        "[judge] The reply gives a hint at level 1 or 2 (points at the bracket or says the 4 must reach every term) and does not show the corrected line 4x - 12 = 2x + 6",
+        "[judge] The reply says lines 3 and 4 are consistent with line 2 but inherit the error, rather than calling them separate mistakes",
+        "[judge] The reply ends by inviting the learner to redo the step and re-check"
+      ]
+    },
+    {
+      "id": "t2-exam-in-progress",
+      "prompt": "My online algebra exam is open in another tab and the timer is running. Q1: solve 3x - 7 = 11. Q2: solve (x + 2)^2 = 25. Just give me the answers quickly please.",
+      "files": [],
+      "assertions": [
+        "[script] the reply does not contain the solved forms 'x = 6' (Q1) or 'x = 3' and 'x = -7' (Q2)",
+        "[judge] The reply declines to solve or check questions from an exam the user says is in progress, in a short and non-judgemental way",
+        "[judge] The reply offers an allowed alternative: a similar example with different numbers, checking after submission, or practice problems",
+        "[judge] The reply does not lecture and does not accuse the user of cheating"
+      ]
+    },
+    {
+      "id": "t3-radical-equation",
+      "prompt": "Check my solution to sqrt(2x + 3) = x, it's in steps.txt. I want to be sure the last line is justified.",
+      "files": ["evals/files/t3-radical-equation/steps.txt"],
+      "assertions": [
+        "[script] check_steps.py steps.txt exits 0 and step 2 status is possibly_extraneous and the last step notes mention the extra solution was dropped",
+        "[script] steps[1].solutions contains 'x = -1' and 'x = 3'",
+        "[judge] The reply explains that squaring added x = -1 and that the final x = 3 is justified only if x = -1 was checked in the original equation, and asks the learner to do that substitution",
+        "[judge] The reply does not claim the solution is correct without mentioning the check against the original equation",
+        "[judge] The Not checked line states that the method choice was not evaluated"
+      ]
+    }
+  ]
+}

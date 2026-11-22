@@ -1,0 +1,41 @@
+{
+  "tools": [
+    {
+      "name": "search_tickets",
+      "description": "Search support tickets by text and status. Use when the user asks to find, list or look up tickets. Read-only; returns at most 20 tickets per call and a next_cursor for more.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {"type": "string", "description": "Text to match in title or body.", "maxLength": 200},
+          "status": {"type": "string", "description": "Ticket status filter.", "enum": ["open", "pending", "closed"]},
+          "cursor": {"type": "string", "description": "Opaque cursor from a previous call."}
+        },
+        "required": ["query"],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "delete_ticket",
+      "description": "Permanently delete one ticket by id. Use when the user explicitly asks to remove a ticket. Destructive and not reversible; requires confirm set to true.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "ticket_id": {"type": "string", "description": "Id of the ticket to delete."},
+          "confirm": {"type": "boolean", "description": "Must be true to proceed."}
+        },
+        "required": ["ticket_id", "confirm"],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "get_server_status",
+      "description": "Report server version and uptime. Use when the user asks whether the server is healthy. Read-only, no arguments.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    }
+  ]
+}

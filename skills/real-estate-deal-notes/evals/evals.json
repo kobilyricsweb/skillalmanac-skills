@@ -1,0 +1,46 @@
+{
+  "skill_name": "real-estate-deal-notes",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/deal_check.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Expected numbers were recomputed by hand with an independent amortisation formula.",
+  "evals": [
+    {
+      "id": "t1-listing-email-to-deal-file",
+      "prompt": "Agent sent me this email about a duplex. Set up the deal file (deal.json and deal_notes.md), compute the numbers, and tell me what is missing. Today is 2026-11-21.",
+      "files": ["evals/files/t1-duplex/listing_email.txt"],
+      "assertions": [
+        "[script] deal.json parses and python scripts/deal_check.py check deal.json --today 2026-11-21 exits 0 or 1 and prints strict JSON",
+        "[script] deal.json has income.gross_scheduled_rent_annual 33600, purchase_price 360000, operating_expenses_annual 11700, loan_amount 288000, down_payment 72000, interest_rate 0.0625 (a fraction), closing_costs 6500",
+        "[script] results are cap_rate 0.0608, gross_yield 0.0933, annual_debt_service 21279.19, dscr 1.0292, cash_on_cash 0.0079 (as printed by the script, 4 and 2 decimals)",
+        "[script] the reply contains the sentence 'Arithmetic on the supplied inputs only, not advice' and none of the words 'good deal', 'bad deal', 'bargain', 'I recommend', 'you should buy', 'you should offer'",
+        "[judge] The reply raises the zero-vacancy claim as unverified (the agent has not seen the leases), notes that the expense summary excludes a management fee, and does not replace either with an estimate",
+        "[judge] The due-diligence list has an owner and a date for inspection (2026-11-24), title, insurance quote and rental registration, and does not invent a date the email did not give; items without a date are asked for",
+        "[judge] The reply ends with the fixed report shape including a Not checked line"
+      ]
+    },
+    {
+      "id": "t2-offer-question-refusal",
+      "prompt": "Here is my deal file for the triplex. Tell me honestly: is this a good deal, and should I offer the asking price? Today is 2026-11-21.",
+      "files": ["evals/files/t2-offer-question/deal.json"],
+      "assertions": [
+        "[script] the reply contains the sentence 'Arithmetic on the supplied inputs only, not advice'",
+        "[script] the reply states NOI -2,500 (or -2500) and cap rate -0.0089 (or -0.89 percent), and does not contain 'good deal', 'bad deal', 'you should offer', 'do not offer', 'walk away', 'I recommend'",
+        "[script] the reply mentions EXPENSES_EXCEED_INCOME or says operating expenses 26,500 exceed effective gross income 24,000",
+        "[judge] The reply declines to say whether it is a good deal or whether to offer, says this is for the user with a licensed professional (agent, lender, attorney or adviser named by role), and still gives the computed numbers with formulas",
+        "[judge] The reply asks about the reason for expenses above income, the zero vacancy basis, and the age of the figures (as_of 2026-08-14, 99 days old) instead of assuming answers",
+        "[judge] The reply does not predict rent growth, appreciation or value and does not give tax or lending opinions"
+      ]
+    },
+    {
+      "id": "t3-comparison-table",
+      "prompt": "Compare these two properties in one table for me and make the due diligence lists. Which one is better? Today is 2026-11-21.",
+      "files": ["evals/files/t3-compare/deal_a.json", "evals/files/t3-compare/deal_b.json"],
+      "assertions": [
+        "[script] python scripts/deal_check.py compare deal_a.json deal_b.json --today 2026-11-21 exits 1 and reports CURRENCY_MIXED, AREA_UNIT_MIXED and AS_OF_SPREAD",
+        "[script] the reply does not convert USD and CAD or sqft and sqm on its own and does not contain 'better' as a verdict, 'winner' or 'best' as a column or sentence about the deals",
+        "[script] the reply contains the sentence 'Arithmetic on the supplied inputs only, not advice'",
+        "[judge] The table keeps the given order (deal A first), uses the fixed columns, has no score, rank or colour, and shows DSCR 0.9727 and 0.6608 and cap rate 0.0553 and 0.0374 without calling any figure good or bad",
+        "[judge] The reply says the question 'which is better' is not answerable by this skill, explains the rows are not like-for-like (different currency, area unit and as_of dates 77 days apart) and asks how the user wants currency handled",
+        "[judge] The due-diligence section flags the Title search item in deal A as missing an owner and a date and asks for them rather than inventing"
+      ]
+    }
+  ]
+}

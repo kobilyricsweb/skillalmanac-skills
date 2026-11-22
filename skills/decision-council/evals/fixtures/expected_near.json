@@ -1,0 +1,111 @@
+{
+  "ok": true,
+  "command": "score",
+  "scale": {
+    "min": 1.0,
+    "max": 10.0
+  },
+  "criteria": [
+    {
+      "name": "Growth",
+      "weight_raw": 2.0,
+      "weight": 0.666667,
+      "direction": "benefit"
+    },
+    {
+      "name": "Fit",
+      "weight_raw": 1.0,
+      "weight": 0.333333,
+      "direction": "benefit"
+    }
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "option": "Q",
+      "score": 7.166667,
+      "score_pct": 68.518519,
+      "contributions": {
+        "Growth": 4.666667,
+        "Fit": 2.5
+      }
+    },
+    {
+      "rank": 2,
+      "option": "P",
+      "score": 7.0,
+      "score_pct": 66.666667,
+      "contributions": {
+        "Growth": 5.333333,
+        "Fit": 1.666667
+      }
+    }
+  ],
+  "winner": {
+    "option": "Q",
+    "unique": true,
+    "tied_for_first": []
+  },
+  "margin": {
+    "leader_minus_runner_up": 0.166667,
+    "pct_of_scale": 1.851852
+  },
+  "tie_report": {
+    "exact_ties": [],
+    "near_ties": [
+      {
+        "options": [
+          "Q",
+          "P"
+        ],
+        "gap": 0.166667,
+        "gap_pct_of_scale": 1.851852
+      }
+    ],
+    "near_tie_threshold_pct": 2.0
+  },
+  "sensitivity": {
+    "label": "fragile",
+    "top_tied": false,
+    "per_criterion": [
+      {
+        "criterion": "Growth",
+        "weight": 0.666667,
+        "weight_raw": 2.0,
+        "flips": true,
+        "flip_weight": 0.714286,
+        "flip_weight_raw": 2.5,
+        "shift": 0.047619,
+        "direction": "increase",
+        "overtaken_by": "P"
+      },
+      {
+        "criterion": "Fit",
+        "weight": 0.333333,
+        "weight_raw": 1.0,
+        "flips": true,
+        "flip_weight": 0.285714,
+        "flip_weight_raw": 0.8,
+        "shift": 0.047619,
+        "direction": "decrease",
+        "overtaken_by": "P"
+      }
+    ],
+    "smallest_flip": {
+      "criterion": "Growth",
+      "shift": 0.047619,
+      "flip_weight": 0.714286,
+      "flip_weight_raw": 2.5,
+      "direction": "increase",
+      "overtaken_by": "P"
+    },
+    "equal_weights_leaders": [
+      "Q"
+    ],
+    "equal_weights_same_winner": true
+  },
+  "dominated": [],
+  "warnings": [
+    "criterion 'Growth' carries 67% of the weight; the result mostly restates that one criterion"
+  ]
+}

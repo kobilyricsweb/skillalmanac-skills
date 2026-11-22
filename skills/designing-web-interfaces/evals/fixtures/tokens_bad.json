@@ -1,0 +1,9 @@
+{
+  "colors": {"text": "#999999", "background": "#ffffff", "primary": "#6a11cb", "on-primary": "#a78bfa", "pink": "#ff3399", "teal": "#14b8a6", "orange": "#f97316", "lime": "#84cc16"},
+  "contrast_pairs": [["text", "background"], ["on-primary", "primary"]],
+  "font_sizes": [10, 13, 14, 15, 16, 18, 20, 22, 24, 28, 32, 36, 48, 72],
+  "spacing": [3, 5, 10, 15, 20, 25],
+  "radius": [2, 4, 6, 8, 12, 16],
+  "line_heights": {"body": 1.2, "heading": 1.6},
+  "breakpoints": [1024, 640, 480, 768, 1280, 1536]
+}

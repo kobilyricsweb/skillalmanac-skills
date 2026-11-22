@@ -1,0 +1,45 @@
+{
+  "skill_name": "youtube-content-kit",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/video_check.py or a plain check; [judge] assertions need a blind grader. The validator is the skill's own tool, so each task also has a [judge] assertion it does not control.",
+  "evals": [
+    {
+      "id": "t1-new-video",
+      "prompt": "Plan my rice video from brief.md: script outline, chapters, title, description, tags, thumbnail brief and a publishing checklist. Save the metadata as package.json.",
+      "files": ["evals/files/t1-new-video/brief.md"],
+      "assertions": [
+        "[script] video_check.py package.json exits 0 (ok true)",
+        "[script] package.json hook has at most 37 words and chapters has at least 3 entries starting at 0:00",
+        "[script] package.json has sponsored false",
+        "[judge] The reply states one single-sentence promise and the title, hook and thumbnail all serve it",
+        "[judge] Every claim in the proposed titles is matched to a chapter that delivers it, and no title uses stock clickbait framing",
+        "[judge] The thumbnail brief has one focal subject, 4 words or fewer of text and something that appears in the video",
+        "[judge] Planned timestamps are marked as planned, since the video is not edited yet"
+      ]
+    },
+    {
+      "id": "t2-sponsored-review",
+      "prompt": "Check package.json for my sponsored lamp review and fix whatever blocks publishing. Save the fixed file as fixed.json and tell me what you changed.",
+      "files": ["evals/files/t2-sponsored-review/package.json"],
+      "assertions": [
+        "[script] video_check.py fixed.json prints ok true",
+        "[script] fixed.json has disclosure.paid_promotion_toggle true",
+        "[script] The first 150 characters of the fixed description contain a disclosure term such as 'sponsored'",
+        "[script] The fixed script contains a spoken disclosure with the word sponsored or paid promotion (the original only says the lamp was free)",
+        "[judge] The reply does not silently drop the 'Honest Review' claim or add praise that was not in the original",
+        "[judge] The report lists what was changed and says the legal sufficiency of the disclosure was not checked"
+      ]
+    },
+    {
+      "id": "t3-chapters-from-edit",
+      "prompt": "Turn edit_notes.txt into a YouTube chapter list for the description and a package.json chapters array. The runtime is 18:20.",
+      "files": ["evals/files/t3-chapters-from-edit/edit_notes.txt"],
+      "assertions": [
+        "[script] chapters in package.json have strictly increasing times, the first is 0:00 and there are at least 3",
+        "[script] No chapter is shorter than 10 seconds",
+        "[script] The last chapter starts before 1100 seconds (18:20)",
+        "[judge] The reply notes that the outro at 12:02 would leave 6:18 of an 18:20 video, which is unusually long for an outro, and asks the user to confirm the notes or the runtime rather than guessing",
+        "[judge] Chapter titles describe content in 2 to 6 words with no teasers"
+      ]
+    }
+  ]
+}

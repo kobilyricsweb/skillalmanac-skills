@@ -1,0 +1,22 @@
+[
+  {"query": "write a README for this repo, it has a CLI and nobody knows how to install it", "should_trigger": true},
+  {"query": "can you document our REST endpoints as an API reference page", "should_trigger": true},
+  {"query": "turn this incident channel dump into a runbook the on-call can follow at 3am", "should_trigger": true},
+  {"query": "audit the docs folder: broken links, code blocks without a language, stale pages", "should_trigger": true},
+  {"query": "write a how-to guide for rotating the signing key, with steps I can actually run", "should_trigger": true},
+  {"query": "our docs are a mess, mixing tutorials with reference, help me split them up Diataxis style", "should_trigger": true},
+  {"query": "add last verified dates to every page in docs/ and flag the ones that are out of date", "should_trigger": true},
+  {"query": "the README examples don't work any more, rewrite them and make sure they run", "should_trigger": true},
+  {"query": "write a getting-started tutorial for the SDK and check the code samples before pasting", "should_trigger": true},
+  {"query": "which sections must a runbook have? review ours against that", "should_trigger": true},
+  {"query": "write docstrings for every function in utils.py", "should_trigger": false},
+  {"query": "write the product requirements doc for the new onboarding flow", "should_trigger": false},
+  {"query": "generate an OpenAPI spec from my Express routes", "should_trigger": false},
+  {"query": "make my blog post sound less like AI wrote it", "should_trigger": false},
+  {"query": "write an architecture decision record for choosing Postgres over Mongo", "should_trigger": false},
+  {"query": "write release notes for v3.0 from the git log", "should_trigger": false},
+  {"query": "check my website for broken links and missing meta descriptions", "should_trigger": false},
+  {"query": "write the AGENTS.md file for this repo", "should_trigger": false},
+  {"query": "summarise this 40 page PDF specification for me", "should_trigger": false},
+  {"query": "write a marketing landing page for our developer platform", "should_trigger": false}
+]

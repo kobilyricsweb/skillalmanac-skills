@@ -1,0 +1,22 @@
+[
+  {"query": "I have a draft of my thesis chapter and a refs.bib, can you check that every citation key resolves and nothing in the bib is unused", "should_trigger": true},
+  {"query": "help me structure my paper in IMRaD format, it's an experiment on sleep and memory", "should_trigger": true},
+  {"query": "which claims in my manuscript don't have a citation? there are a lot of percentages", "should_trigger": true},
+  {"query": "my bibliography has duplicate keys and some entries are missing journal names, find them", "should_trigger": true},
+  {"query": "outline my history essay on the 1920s strike, I have three sources and want each claim tied to one", "should_trigger": true},
+  {"query": "run a pre-submission check on my markdown paper against my CSL JSON library", "should_trigger": true},
+  {"query": "make a claims-to-citations table for my literature review, and don't make up any references", "should_trigger": true},
+  {"query": "pandoc says citation key not found for @smith2019, what's wrong with my paper and bib?", "should_trigger": true},
+  {"query": "I'm writing my first research paper, how should the methods and results sections be organised and what needs a citation?", "should_trigger": true},
+  {"query": "audit my reference list before I send the manuscript to my supervisor", "should_trigger": true},
+  {"query": "find me five peer-reviewed papers on remote work productivity and give me the BibTeX", "should_trigger": false},
+  {"query": "reformat my references from APA 7 to Chicago style", "should_trigger": false},
+  {"query": "rewrite my essay so Turnitin and GPTZero can't tell an AI wrote it", "should_trigger": false},
+  {"query": "write my whole 2000-word essay on the French Revolution for my class submission tonight", "should_trigger": false},
+  {"query": "fix my LaTeX preamble, the bibliography package throws an error and the margins are wrong", "should_trigger": false},
+  {"query": "summarise this PDF article in five bullet points", "should_trigger": false},
+  {"query": "proofread my abstract for grammar and tighten the wording", "should_trigger": false},
+  {"query": "is this statistic about teen screen time actually true? check it against real sources", "should_trigger": false},
+  {"query": "translate my abstract into German", "should_trigger": false},
+  {"query": "write a blog post with a few links to sources about climate policy", "should_trigger": false}
+]

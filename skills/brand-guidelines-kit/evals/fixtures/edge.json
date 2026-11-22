@@ -1,0 +1,18 @@
+{
+  "brand": "Edge Case",
+  "colors": [
+    {"name": "White", "hex": "#fff", "role": "background"},
+    {"name": "Graphite", "hex": "#767676", "role": "text"},
+    {"name": "Sky", "hex": "#949494", "role": "primary"}
+  ],
+  "pairs": [
+    {"foreground": "Graphite", "background": "White", "size": "normal", "use": "body copy"},
+    {"foreground": "Sky", "background": "White", "size": "large", "use": "hero headline"},
+    {"foreground": "Sky", "background": "White", "size": "normal", "use": "link text"}
+  ],
+  "type_scale": [
+    {"name": "small", "size": 14},
+    {"name": "body", "size": 16},
+    {"name": "h1", "size": 40}
+  ]
+}

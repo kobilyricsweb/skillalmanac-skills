@@ -1,0 +1,10 @@
+PASS good.md
+PASS bad.md
+PASS good.json
+PASS bad.json
+PASS good.md --max-criteria 3
+PASS warn_only.json
+PASS warn_only.json --strict
+PASS missing.md
+PASS broken.json
+9/9 cases passed

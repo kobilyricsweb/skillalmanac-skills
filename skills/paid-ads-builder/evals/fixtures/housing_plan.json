@@ -1,0 +1,38 @@
+{
+  "business": "Elm Court Apartments (fictional)",
+  "vertical": "housing",
+  "special_category": true,
+  "currency": "USD",
+  "total_budget": 900,
+  "target_cpa": 30,
+  "conversion": {
+    "name": "tour_booked",
+    "definition": "Tour booking confirmation page viewed; one per session; 30-day window"
+  },
+  "campaigns": [
+    {
+      "name": "social-rentals",
+      "platform": "meta",
+      "objective": "leads",
+      "bid_strategy": "lowest_cost",
+      "audience": {"locations": ["Denver, CO, 10 mile radius"], "age_min": 25, "gender": "female"},
+      "daily_budget": 30,
+      "days": 30,
+      "budget": 900,
+      "forecast": {"cpc": 1.5, "cvr": 0.05, "clicks": 600, "conversions": 30},
+      "ad_groups": [
+        {
+          "name": "tours",
+          "landing_url": "https://elmcourt.example/tour?utm_source=meta&utm_medium=paid-social&utm_campaign=rentals-2026-12",
+          "ads": [
+            {
+              "primary_text": "Perfect for young professionals and small families. Tour a bright two-bedroom this week.",
+              "headline": "Two-bedrooms from $1,850",
+              "description": "Book a tour"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

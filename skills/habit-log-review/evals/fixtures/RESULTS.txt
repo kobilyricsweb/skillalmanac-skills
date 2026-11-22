@@ -1,0 +1,11 @@
+$ python evals/run_fixtures.py   (2026-11-21, Windows 11, Python 3.11)
+PASS two habits and a weekly goal, as of Saturday 2026-11-21
+PASS fading habit: 88.9 percent a month ago, 28.6 percent now
+PASS messy log without a goal: duplicate, mixed units, unreadable value, future date
+PASS same messy log with blank meaning no
+PASS five days of data gives too early
+PASS ambiguous day/month dates are refused, not guessed
+PASS ambiguous dates are read once the order is given
+PASS missing file
+PASS malformed goal
+9/9 cases passed

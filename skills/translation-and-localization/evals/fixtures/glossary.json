@@ -1,0 +1,6 @@
+{
+  "terms": {"Dashboard": "Tableau de bord", "Invoices": "Factures"},
+  "do_not_translate": ["Acme Cloud", "OAuth"],
+  "allow_identical": ["OK"],
+  "allow_identical_keys": []
+}

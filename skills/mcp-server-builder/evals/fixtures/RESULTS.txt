@@ -1,0 +1,8 @@
+PASS good_manifest.json
+PASS bad_manifest.json
+PASS edge_manifest.json
+PASS good_manifest.json --max-desc 150
+PASS bad_manifest.json --strict --max-desc 600
+PASS broken.json
+PASS no_such_file.json
+7/7 cases passed

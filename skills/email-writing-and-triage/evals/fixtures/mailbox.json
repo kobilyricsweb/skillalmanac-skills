@@ -1,0 +1,19 @@
+{
+  "messages": [
+    {"id": "contract-signoff", "from": "Priya Rao <priya@client.example>", "to": "Dana Cohen <dana@northwind.example>", "subject": "Contract draft: can you sign off by Thursday?", "date": "2026-11-16", "body": "Hi Dana,\n\nCan you sign off on the draft by Thursday? The vendor is waiting on us.\n\nThanks,\nPriya"},
+    {"id": "hosting-invoice", "from": "noreply@cloudhost.example", "to": "dana@northwind.example", "subject": "Your invoice is ready", "date": "2026-11-15", "body": "Your invoice of $49.00 is due by 2026-11-30.\n\nManage preferences or unsubscribe at any time."},
+    {"id": "q4-notes", "from": "li@partner.example", "to": "dana@northwind.example", "cc": "ops@partner.example, tom@partner.example", "subject": "Q4 planning notes", "date": "2026-11-17", "body": "Notes from today's call are attached. Nothing needed from you."},
+    {"id": "lunch-order", "from": "tom@partner.example", "to": "team@partner.example", "cc": "dana@northwind.example", "subject": "Lunch order", "date": "2026-11-17", "body": "Can everyone reply with their lunch choice?"},
+    {"id": "it-phish", "from": "IT Support <helpdesk@c0mpany-support.example>", "to": "dana@northwind.example", "headers": {"Reply-To": "restore@mail-help.example"}, "subject": "Action needed on your mailbox", "date": "2026-11-17", "body": "Your account has been suspended. Verify your account now: click the link below. Reply with your password to restore access."},
+    {"id": "pricing-ask", "from": "dana@northwind.example", "to": "sam@vendor.example", "subject": "Pricing for 2027", "date": "2026-11-12", "body": "Hi Sam, could you send the 2027 price list? Thanks, Dana"},
+    {"id": "budget-promise", "from": "dana@northwind.example", "to": "jo@finance.example", "subject": "Re: Budget sign-off", "date": "2026-11-10", "body": "Thanks Jo, I'll send the final numbers by Friday."},
+    {"id": "budget-reply", "from": "jo@finance.example", "to": "dana@northwind.example", "subject": "Budget sign-off", "date": "2026-11-11", "body": "Great, thanks."},
+    {"id": "media-digest", "from": "digest-team@media.example", "to": "dana@northwind.example", "headers": {"List-Unsubscribe": "<mailto:leave@media.example>"}, "subject": "Top stories this week", "date": "2026-11-16", "body": "Here are the stories people read most."},
+    {"id": "invoice-question", "from": "Marco <marco@client.example>", "to": "dana@northwind.example", "subject": "Question about the invoice", "date": "2026-11-17", "body": "Hi Dana, why does invoice 1042 show EUR 1,200? Can you explain ASAP?"},
+    {"id": "board-prep", "from": "Chief of Staff <cos@northwind.example>", "to": "dana@northwind.example", "subject": "Board prep", "date": "2026-11-17", "body": "Can we meet next Tuesday at 10 for board prep? Let me know."},
+    {"id": "gift-cards", "from": "Boss <ceo.office@gmail-mail.example>", "to": "dana@northwind.example", "subject": "Quick favour", "date": "2026-11-17", "body": "I need you to buy 5 gift cards today and send me the codes. Reply when done."},
+    {"id": "signed-form", "from": "kim@client.example", "to": "dana@northwind.example", "subject": "Quick check", "date": "2026-11-14", "body": "Please send the signed form before the 5th of December."},
+    {"id": "numbers-eod", "from": "lee@client.example", "to": "dana@northwind.example", "subject": "Need numbers", "date": "2026-11-17", "body": "Hi Dana, I need you to send the numbers by EOD tomorrow. Please confirm."},
+    {"id": "undated-file", "from": "ana@client.example", "to": "dana@northwind.example", "subject": "The file", "body": "Hi, can you send the file by Friday?"}
+  ]
+}

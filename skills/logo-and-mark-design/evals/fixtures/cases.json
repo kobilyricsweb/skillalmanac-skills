@@ -1,0 +1,37 @@
+{
+  "note": "Expected values were worked out by hand from the SVG geometry before the script was run (see VERIFICATION.md). Keys with dots address nested JSON; finding_codes is the list of finding codes in order.",
+  "cases": [
+    {"args": ["good_mark.svg"], "exit": 0, "expect": {
+      "verdict": "pass", "complexity.nodes": 12, "complexity.class": "simple", "colours.distinct": 2,
+      "strokes.consistent": true, "legibility.risk": "low", "legibility.smallest_feature_units": 12.0,
+      "legibility.feature_px.16": 3.0, "legibility.feature_px.32": 6.0, "legibility.feature_px.64": 12.0, "finding_codes": []}},
+    {"args": ["thin_strokes.svg"], "exit": 0, "expect": {
+      "verdict": "review", "complexity.nodes": 8, "complexity.paths": 2, "strokes.distinct_widths": [1.0, 3.0, 6.0],
+      "strokes.consistent": false, "colours.values": ["#000000"], "legibility.risk": "high",
+      "legibility.feature_px.32": 0.32, "legibility.feature_px.64": 0.64,
+      "finding_codes": ["stroke_widths_inconsistent", "strokes_not_outlined", "legibility_high"]}},
+    {"args": ["bad_text_raster.svg"], "exit": 1, "expect": {
+      "verdict": "fail", "text.text_elements": 1, "text.font_families": ["Arial", "Helvetica"],
+      "raster.images": 1, "raster.data_uri": 1, "colours.distinct": 2, "colours.gradients_defined": 1,
+      "colours.opacity_used": true,
+      "finding_codes": ["aspect_not_square", "gradient_used", "opacity_used", "text_not_outlined", "raster_embedded"]}},
+    {"args": ["no_viewbox.svg"], "exit": 1, "expect": {
+      "verdict": "fail", "viewbox.present": false, "legibility.smallest_feature_units": 20.0,
+      "finding_codes": ["no_viewbox"]}},
+    {"args": ["--kind", "wordmark", "wordmark_outlined.svg"], "exit": 0, "expect": {
+      "verdict": "pass", "viewbox.aspect_ratio": 4.0, "complexity.nodes": 18, "complexity.paths": 3,
+      "colours.implicit_default_black": true, "legibility.smallest_feature_fraction": 0.1667,
+      "legibility.feature_px.16": 2.6667, "legibility.risk": "low", "finding_codes": []}},
+    {"args": ["wordmark_outlined.svg"], "exit": 0, "expect": {
+      "verdict": "review", "legibility.risk": "medium", "legibility.feature_px.16": 0.6667,
+      "legibility.feature_px.32": 1.3333, "finding_codes": ["aspect_not_square", "legibility_medium"]}},
+    {"args": ["scaled_group_css.svg"], "exit": 0, "expect": {
+      "verdict": "review", "transforms.elements_with_transform": 1, "legibility.smallest_feature_units": 20.0,
+      "finding_codes": ["style_element_not_evaluated"]}},
+    {"args": ["arc_ring.svg"], "exit": 0, "expect": {
+      "verdict": "pass", "complexity.nodes": 3, "legibility.smallest_feature_units": 80.0,
+      "legibility.feature_px.16": 12.8, "finding_codes": []}},
+    {"args": ["malformed.svg"], "exit": 2, "expect": {"error_present": true}},
+    {"args": ["does_not_exist.svg"], "exit": 2, "expect": {"error_present": true}}
+  ]
+}

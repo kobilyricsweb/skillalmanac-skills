@@ -1,0 +1,11 @@
+PASS scan plan_bad.md
+PASS scan plan_good.md
+PASS scan plan_cycle.md --today 2026-06-11
+PASS scan plan_cycle.md
+PASS scan ../files/t1-crm-migration/plan.md
+PASS scan ../files/t2-product-launch/plan.md
+PASS scan ../files/t3-prose-plan/plan.md
+PASS register plan_bad.md register_good.json
+PASS register plan_bad.md register_bad.json
+PASS scan missing_file.md
+10/10 cases passed

@@ -1,0 +1,7 @@
+PASS dense_8b.json
+PASS moe_30b.json
+PASS warnings_case.json
+PASS too_big.json
+PASS bad_zero_params.json
+PASS no_such_file.json
+6/6 cases passed

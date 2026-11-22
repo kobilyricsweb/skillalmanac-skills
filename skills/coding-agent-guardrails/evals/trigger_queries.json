@@ -1,0 +1,82 @@
+[
+  {
+    "query": "stop my coding agent from force pushing and running git reset --hard without asking",
+    "should_trigger": true
+  },
+  {
+    "query": "the agent deleted my uncommitted work last night, how do I make sure that never happens again",
+    "should_trigger": true
+  },
+  {
+    "query": "add guardrails to this repo so claude code doesn't edit generated files or the lockfile",
+    "should_trigger": true
+  },
+  {
+    "query": "it commented out the failing tests to make the build green, I need rules so it stops doing that",
+    "should_trigger": true
+  },
+  {
+    "query": "audit my repo: is it safe to let an AI agent loose in it? check gitignore, tests, protected paths",
+    "should_trigger": true
+  },
+  {
+    "query": "make the agent stay in scope, it keeps refactoring files I never mentioned",
+    "should_trigger": true
+  },
+  {
+    "query": "my agent almost committed my .env file, set up checks so secrets never get committed",
+    "should_trigger": true
+  },
+  {
+    "query": "what should a coding agent check before it runs rm -rf or pushes to main",
+    "should_trigger": true
+  },
+  {
+    "query": "write me a safety checklist for the agent before it touches vendored or dist code",
+    "should_trigger": true
+  },
+  {
+    "query": "does this repo have a declared test command and protected paths for agents? scan it",
+    "should_trigger": true
+  },
+  {
+    "query": "write a PreToolUse hook that blocks rm -rf and install it in settings.json",
+    "should_trigger": false
+  },
+  {
+    "query": "review this pull request diff for bugs",
+    "should_trigger": false
+  },
+  {
+    "query": "how do I undo git reset --hard that I ran myself yesterday",
+    "should_trigger": false
+  },
+  {
+    "query": "run a penetration test on my web app login form",
+    "should_trigger": false
+  },
+  {
+    "query": "write a pre-commit config with husky that runs eslint",
+    "should_trigger": false
+  },
+  {
+    "query": "explain the difference between git merge and git rebase",
+    "should_trigger": false
+  },
+  {
+    "query": "write unit tests for my parser module",
+    "should_trigger": false
+  },
+  {
+    "query": "rotate the AWS keys that leaked and clean the git history with filter-repo",
+    "should_trigger": false
+  },
+  {
+    "query": "write an AGENTS.md describing our build commands",
+    "should_trigger": false
+  },
+  {
+    "query": "set up branch protection rules on GitHub for main",
+    "should_trigger": false
+  }
+]

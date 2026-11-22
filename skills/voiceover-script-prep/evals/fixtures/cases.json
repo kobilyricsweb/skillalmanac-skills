@@ -1,0 +1,19 @@
+{
+  "note": "Each case runs scripts/prep_voiceover.py with the args (input files are relative to evals/fixtures/) and compares the exit code, listed fields of the JSON report and, when expected_dir is given, the three output files against evals/fixtures/expected/<dir>/. Expected values were read and checked by hand.",
+  "cases": [
+    {"name": "messy script with lexicon and explicit breaks", "args": ["messy_script.txt", "--max-chars", "400", "--lexicon", "lexicon.json", "--explicit-breaks"], "exit": 0, "expected_dir": "messy_lexicon",
+     "expect": {"verdict": "ready", "blockers": [], "advisories": ["tongue_twisters", "long_urls"], "words": 137, "est_seconds": 60.73, "est_seconds_at_140_wpm": 66.41, "est_seconds_at_170_wpm": 56.05, "chunks": 3, "unexpanded": [], "tongue_twister_lines": [9], "long_url_lines": [5]}},
+    {"name": "messy script without lexicon: FAQ left unexpanded", "args": ["messy_script.txt", "--max-chars", "400"], "exit": 1,
+     "expect": {"verdict": "review", "blockers": ["unexpanded"], "unexpanded_tokens": ["FAQ"]}},
+    {"name": "clean script", "args": ["clean_script.txt", "--max-chars", "500", "--lexicon", "lexicon.json"], "exit": 0, "expected_dir": "clean",
+     "expect": {"verdict": "ready", "blockers": [], "advisories": [], "words": 59, "est_seconds": 27.64, "chunks": 1}},
+    {"name": "long sentence forced to split", "args": ["long_sentence.txt", "--max-chars", "120"], "exit": 1, "expected_dir": "long_sentence",
+     "expect": {"verdict": "review", "blockers": ["mid_sentence_breaks"], "advisories": ["long_sentences"], "words": 46, "est_seconds": 20.6, "chunks": 3, "mid_sentence_breaks": [1, 2], "long_sentence_words": [39]}},
+    {"name": "mixed script and unmatched parenthesis", "args": ["mixed_language.txt", "--max-chars", "300"], "exit": 1,
+     "expect": {"verdict": "review", "blockers": ["mixed_script", "unmatched_delimiters"], "words": 23}},
+    {"name": "phone numbers and version strings spoken", "args": ["phone_version.txt", "--max-chars", "300"], "exit": 0, "expected_dir": "phone_version",
+     "expect": {"verdict": "ready", "blockers": [], "unexpanded": [], "chunks": 1}},
+    {"name": "missing input file", "args": ["missing_file.txt", "--max-chars", "300"], "exit": 2, "expect": {}},
+    {"name": "wpm out of range", "args": ["clean_script.txt", "--max-chars", "300", "--wpm", "20"], "exit": 2, "expect": {}}
+  ]
+}

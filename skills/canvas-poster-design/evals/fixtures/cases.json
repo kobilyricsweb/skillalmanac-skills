@@ -1,0 +1,13 @@
+{
+  "note": "Each case runs scripts/svg_poster_audit.py with the given args (.svg paths relative to evals/fixtures/). Expected values were checked by hand: contrast ratios from the WCAG formula, text boxes from 0.55 x size x characters, safe margin 5% of 1080 = 54.",
+  "cases": [
+    {"args": ["good_event.svg"], "exit": 0, "expect": {"verdict": "pass", "summary": {"fail": 0, "warn": 0}, "sizes": [120.0, 48.0, 28.0], "ratios": [18.88, 18.88, 12.24, 13.19]}},
+    {"args": ["bad_flyer.svg"], "exit": 1, "expect": {"verdict": "fail", "summary": {"fail": 3, "warn": 4}, "fail_checks": ["contrast", "outside-safe-area", "title-missing"], "warn_checks": ["headline-not-unique", "shape-outside-safe-area", "sizes-too-close", "too-many-sizes"], "ratios": [4.48, 21.0, 21.0, 21.0, 21.0, 21.0, 4.48]}},
+    {"args": ["bleed_good.svg", "--bleed", "3", "--safe", "5"], "exit": 0, "expect": {"verdict": "pass", "summary": {"fail": 0, "warn": 0}}},
+    {"args": ["bleed_bad.svg", "--bleed", "3", "--safe", "5"], "exit": 1, "expect": {"verdict": "fail", "fail_checks": ["bleed-background"]}},
+    {"args": ["css_class.svg"], "exit": 0, "expect": {"verdict": "pass", "summary": {"fail": 0, "warn": 1}, "warn_checks": ["css-class-unresolved"], "statuses": ["unknown", "pass"], "ratios": [null, 13.19]}},
+    {"args": ["transform_scale.svg"], "exit": 0, "expect": {"verdict": "pass", "summary": {"fail": 0, "warn": 0}, "limits_contain": ["transform other than translate"]}},
+    {"args": ["broken.svg"], "exit": 2, "expect": {}},
+    {"args": ["missing_file.svg"], "exit": 2, "expect": {}}
+  ]
+}

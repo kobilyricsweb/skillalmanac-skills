@@ -1,0 +1,43 @@
+{
+  "skill_name": "agent-session-cost-review",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/review_session.py output or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has at least one judge assertion that measures something it does not control. Expected figures were derived by hand from the fixtures (see VERIFICATION.md).",
+  "evals": [
+    {
+      "id": "t1-loop-and-rereads",
+      "prompt": "My agent burned a lot of tokens fixing one failing test. The transcript is evals/fixtures/claude_style.jsonl. Tell me where the tokens went and what to change. Use the low thresholds from evals/fixtures/cases.json so the small file triggers every rule.",
+      "files": ["evals/fixtures/claude_style.jsonl"],
+      "assertions": [
+        "[script] The reply names a failing command loop and gives evidence lines 8, 12, 16 and 20",
+        "[script] The reply names repeated reads of src/cart.py at lines 6, 10 and 14",
+        "[script] The reply gives the oversized Grep output at line 5 (558 characters)",
+        "[judge] Each finding has exactly one concrete fix and the fixes are not generic advice such as 'be more efficient'",
+        "[judge] The reply states that figures are estimates and says what the transcript cannot show (cached context re-sent each turn)",
+        "[judge] The reply follows the fixed report shape: session line, where it went, ranked findings, possible saving, data quality, not measured"
+      ]
+    },
+    {
+      "id": "t2-plain-log-justified-rereads",
+      "prompt": "Review the cost of this pasted session log, evals/fixtures/plain_log.txt. It uses ### markers. Is anything wasteful?",
+      "files": ["evals/fixtures/plain_log.txt"],
+      "assertions": [
+        "[script] The reply reports exactly one finding: the same 'git status --short' command run 3 times (lines 32, 35, 38)",
+        "[script] The reply does not flag the three reads of client.py as repeated reads",
+        "[judge] The reply explains that the re-reads followed edits to the same file, so they were legitimate",
+        "[judge] The proposed fix for the repeated command is to run it once and keep the answer, not to avoid git status altogether",
+        "[judge] The reply says the transcript had no timestamps and no usage counts, so token figures are character estimates"
+      ]
+    },
+    {
+      "id": "t3-damaged-export",
+      "prompt": "Here are the sessions I exported, evals/fixtures/broken_mixed.jsonl. Tell me where the tokens went.",
+      "files": ["evals/fixtures/broken_mixed.jsonl"],
+      "assertions": [
+        "[script] The reply says 4 of 10 non-blank lines could not be parsed (2 invalid JSON, 2 unrecognised records)",
+        "[script] The reply says the file mixes two sessions (ids a and b)",
+        "[judge] The reply refuses to present the totals as reliable and says the script exited 1 because more than 20% of lines failed",
+        "[judge] The reply does not invent findings or token causes that the 6 recognised events cannot support",
+        "[judge] The reply tells the user how to fix the export (separate the sessions, re-export) rather than only reporting the failure"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+"""Inert fixture: joins strings so a plain text match misses the call."""
+mod = __import__("o" + "s")
+fn = getattr(mod, "sys" + "tem")
+print("banner")

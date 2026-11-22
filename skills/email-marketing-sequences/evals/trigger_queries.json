@@ -1,0 +1,22 @@
+[
+  {"query": "set up a welcome email series for new signups to my online shop, 5 emails max", "should_trigger": true},
+  {"query": "I need a drip campaign for people who download my free checklist", "should_trigger": true},
+  {"query": "can you design a win-back sequence for customers who haven't ordered in 6 months", "should_trigger": true},
+  {"query": "audit my email automation, I think the gaps between emails are too short and I forgot the unsubscribe link in one", "should_trigger": true},
+  {"query": "plan an onboarding email flow for my SaaS trial users with exit conditions", "should_trigger": true},
+  {"query": "what cadence should a nurture sequence for new leads have, and how do I measure it", "should_trigger": true},
+  {"query": "check my sequence JSON for spam-trigger subject lines and duplicate CTAs", "should_trigger": true},
+  {"query": "write the lifecycle emails for my bakery's loyalty signups so they stop emailing once someone buys", "should_trigger": true},
+  {"query": "is my re-engagement email series CAN-SPAM compliant? it has sender info but I'm not sure about consent", "should_trigger": true},
+  {"query": "build me an abandoned-cart style follow-up sequence with a timeline", "should_trigger": true},
+  {"query": "reply to this customer email politely saying the order will ship Tuesday", "should_trigger": false},
+  {"query": "triage my inbox and draft answers to the three urgent emails", "should_trigger": false},
+  {"query": "design an HTML email template with a responsive header and dark mode", "should_trigger": false},
+  {"query": "write this week's one-off newsletter about our spring sale", "should_trigger": false},
+  {"query": "here is a list of 10,000 emails I bought, write a cold blast to all of them", "should_trigger": false},
+  {"query": "write a subject line for my cold outreach to one specific prospect", "should_trigger": false},
+  {"query": "set up SPF, DKIM and DMARC DNS records for my domain", "should_trigger": false},
+  {"query": "create a Facebook ad campaign brief for my restaurant", "should_trigger": false},
+  {"query": "write a cron job that sends a daily report email from my server", "should_trigger": false},
+  {"query": "improve the headline and body copy on my landing page", "should_trigger": false}
+]

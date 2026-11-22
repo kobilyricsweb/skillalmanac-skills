@@ -1,0 +1,73 @@
+{
+  "checks": [
+    {
+      "detail": "no .gitignore at the repo root",
+      "id": "gitignore-present",
+      "status": "fail"
+    },
+    {
+      "detail": "not ignored: .env, .env.local",
+      "id": "gitignore-env",
+      "status": "fail"
+    },
+    {
+      "detail": "not ignored: server.pem, server.key, id_rsa",
+      "id": "gitignore-keys",
+      "status": "warn"
+    },
+    {
+      "detail": "not ignored: credentials.json",
+      "id": "gitignore-credentials",
+      "status": "warn"
+    },
+    {
+      "detail": "no secret-looking files found",
+      "id": "secret-files-exposed",
+      "status": "pass"
+    },
+    {
+      "detail": "no credential patterns in non-ignored text files",
+      "id": "secret-values-in-files",
+      "status": "pass"
+    },
+    {
+      "detail": "no AGENTS.md, CLAUDE.md or equivalent instruction file",
+      "id": "instructions-present",
+      "status": "warn"
+    },
+    {
+      "detail": "no deny rules or hooks found; rules rely on instructions alone",
+      "id": "enforcement-configured",
+      "status": "warn"
+    },
+    {
+      "detail": "no protected-path list in instruction files or deny rules",
+      "id": "protected-paths-declared",
+      "status": "warn"
+    },
+    {
+      "detail": "no project manifest found; nothing to declare",
+      "id": "test-command",
+      "status": "info"
+    },
+    {
+      "detail": "no dependency manifest found",
+      "id": "lockfile",
+      "status": "info"
+    },
+    {
+      "detail": "no generated or vendored directories found",
+      "id": "generated-dirs",
+      "status": "info"
+    }
+  ],
+  "files_seen": 1,
+  "repo": "minimal",
+  "summary": {
+    "fail": 2,
+    "info": 3,
+    "pass": 2,
+    "warn": 5
+  },
+  "truncated": false
+}

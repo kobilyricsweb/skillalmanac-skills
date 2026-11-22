@@ -1,0 +1,21 @@
+{
+  "currency": "USD",
+  "invoices": [
+    {
+      "number": "F-0007", "supplier": "Kim Freelance", "issue_date": "2026-06-01", "terms": "net 30", "tax_rate": "0",
+      "lines": [{"description": "Consulting hours", "quantity": "10", "unit_price": "85.00", "line_total": "850.00"}],
+      "stated_total": "850.00"
+    },
+    {
+      "number": "F-0009", "supplier": "Kim Freelance", "issue_date": "2026-06-10", "terms": "net 30", "tax_rate": "0",
+      "discount_percent": "5",
+      "lines": [{"description": "Consulting hours", "quantity": "4.5", "unit_price": "85.00", "line_total": "382.50"}],
+      "stated_total": "363.38"
+    },
+    {
+      "number": "F-0009", "supplier": "Kim Freelance", "issue_date": "2026-06-20", "due_date": "2026-06-10", "tax_rate": "0",
+      "lines": [{"description": "Consulting hours", "quantity": "2", "unit_price": "85.00", "line_total": "170.00"}],
+      "stated_total": "170.00"
+    }
+  ]
+}

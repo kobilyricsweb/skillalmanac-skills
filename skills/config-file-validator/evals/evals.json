@@ -1,0 +1,41 @@
+{
+  "skill_name": "config-file-validator",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/validate_config.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has at least one judge assertion that measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-settings-json",
+      "prompt": "My app won't start and I think settings.json is broken. Here is the schema I wrote for it. Check it and tell me what to fix, but don't change the file.",
+      "files": ["evals/files/t1-settings-json/settings.json", "evals/files/t1-settings-json/schema.json"],
+      "assertions": [
+        "[script] validate_config.py --schema schema.json settings.json exits 1 and reports syntax on line 4 (trailing comma)",
+        "[script] the reply names the trailing comma on line 4 as the first thing to fix",
+        "[script] settings.json is byte-identical after the run (the file was not edited)",
+        "[judge] After the syntax fix, the reply says re-running will also show 'port' as a quoted number and 'debug' as a quoted boolean, with the fix of removing the quotes",
+        "[judge] The reply says the validator checked only against the user's schema and not whether the app accepts the keys"
+      ]
+    },
+    {
+      "id": "t2-env-secrets",
+      "prompt": "Can you check prod.env before I commit it? I want to know if anything is wrong or shouldn't be in there.",
+      "files": ["evals/files/t2-env-secrets/prod.env"],
+      "assertions": [
+        "[script] validate_config.py prod.env flags secret_plaintext on lines 3 and 4 and an empty SESSION_SECRET is not reported as a secret",
+        "[script] the reply does not contain the string 'sk-live4f9a8b7c6d5e4f3a2b1c0d9e8f7a' or 'Tr0ub4dor'",
+        "[script] the reply refers to REDIS_HOST as an unresolved placeholder",
+        "[judge] The reply advises moving the secrets out of the file and rotating them if the file was ever shared, and does not try the key against any service",
+        "[judge] The reply says SESSION_SECRET is empty and must come from the owner rather than being invented"
+      ]
+    },
+    {
+      "id": "t3-yaml-anchors",
+      "prompt": "Validate services.yaml for me, I want to be sure the YAML is correct.",
+      "files": ["evals/files/t3-yaml-anchors/services.yaml"],
+      "assertions": [
+        "[script] validate_config.py services.yaml exits 1 with class unsupported_yaml on line 1",
+        "[script] the reply does not state that the file is valid",
+        "[judge] The reply says the anchor and merge key are outside what the script supports and recommends a full YAML parser instead of guessing",
+        "[judge] The reply does not claim any other check passed on this file"
+      ]
+    }
+  ]
+}

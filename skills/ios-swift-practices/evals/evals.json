@@ -1,0 +1,47 @@
+{
+  "skill_name": "ios-swift-practices",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/swift_scan.py or a plain string check; [judge] assertions need a blind grader. The scanner is the skill's own tool, so each task also has judge assertions about things it does not measure.",
+  "evals": [
+    {
+      "id": "t1-profile-screen-ios16",
+      "prompt": "Add a profile screen: a SwiftUI view, a view model and a service that loads the profile described in project_info.txt. Show a loading state, an error state with retry, and the name and join date. Save the Swift files under Sources/Profile/.",
+      "files": ["evals/files/t1-profile-screen/project_info.txt"],
+      "assertions": [
+        "[script] swift_scan.py Sources/Profile exits 0 (no findings)",
+        "[script] no file under Sources/Profile contains '@Observable' or 'import Observation' (deployment target is iOS 16)",
+        "[script] some file contains 'StateObject' and some file contains 'ObservableObject'",
+        "[script] some file contains a status-code check against 200..<300 or an equivalent range test on HTTPURLResponse",
+        "[judge] The date decoding handles the fractional seconds in '2025-03-01T10:15:30.123Z' (a plain .iso8601 strategy would fail) or the answer says why it does not matter",
+        "[judge] The view does not call URLSession; the view model is @MainActor; a 401 is mapped to a distinct error, not shown as a raw decoding message",
+        "[judge] The report names the iOS 16 target and says nothing was compiled"
+      ]
+    },
+    {
+      "id": "t2-fix-legacy-feed",
+      "prompt": "Review and fix evals/fixtures/Bad.swift. It crashes sometimes and the feed view does not refresh. Keep behaviour the same otherwise. The target is iOS 17. Save the fixed file as FeedView.swift.",
+      "files": ["evals/fixtures/Bad.swift"],
+      "assertions": [
+        "[script] swift_scan.py FeedView.swift has no finding with severity high",
+        "[script] FeedView.swift does not contain 'try!'",
+        "[script] FeedView.swift does not contain 'DispatchQueue.main.async' inside the async load function",
+        "[judge] @State on the plain Counter class and on FeedModel was resolved correctly: either the classes became @Observable (kept under @State) or the owner wrapper was changed to @StateObject for FeedModel",
+        "[judge] The reply does not claim the code compiles or that tests passed",
+        "[judge] Any remaining scanner warn (for example the SyncService guess) is explained in the report rather than ignored"
+      ]
+    },
+    {
+      "id": "t3-release-readiness",
+      "prompt": "We want to submit version 2.1.0 to the App Store today. Based on the notes in Info.plist.txt, what blocks us and what do we do, in order?",
+      "files": ["evals/files/t3-release-check/Info.plist.txt"],
+      "assertions": [
+        "[script] the answer contains 'NSCameraUsageDescription'",
+        "[script] the answer contains 'PrivacyInfo.xcprivacy'",
+        "[script] the answer contains 'NSPrivacyAccessedAPICategoryUserDefaults' and 'NSPrivacyAccessedAPICategoryFileTimestamp'",
+        "[script] the answer contains 'CFBundleVersion'",
+        "[judge] It finds all of: missing camera purpose string, missing privacy manifest, Sign in with Apple obligation because of the Google login, missing in-app account deletion, build number 41 already uploaded",
+        "[judge] Items depending on Apple's current rules (reason codes, guideline wording) are flagged as needing verification rather than stated as certain",
+        "[judge] The ATS arbitrary-loads exception is called out as needing removal or a written justification"
+      ]
+    }
+  ]
+}

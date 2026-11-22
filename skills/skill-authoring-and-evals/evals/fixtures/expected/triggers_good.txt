@@ -1,0 +1,4 @@
+all queries   should-trigger 10 (loaded 100%, bar >= 90%) | near-miss 10 (false-loaded 0%, bar <= 10%)
+held-out 40%  should-trigger 4 (loaded 100%, bar >= 90%) | near-miss 4 (false-loaded 0%, bar <= 10%)
+RESULT: PASS
+[exit 0]

@@ -1,0 +1,23 @@
+{
+  "currency": "EUR",
+  "rounding": {"method": "line", "mode": "half_up"},
+  "invoices": [
+    {
+      "number": "A-001", "supplier": "Acme Ltd", "issue_date": "2026-03-01",
+      "due_date": "2026-03-31", "terms": "net 30", "tax_rate": "20", "discount_percent": "10",
+      "lines": [
+        {"description": "Widget", "quantity": "3", "unit_price": "19.99", "line_total": "59.97"},
+        {"description": "Gadget", "quantity": "2.5", "unit_price": "12.40", "discount_percent": "10", "line_total": "27.90"}
+      ],
+      "stated_subtotal": "87.87", "stated_discount": "8.79", "stated_tax": "15.82", "stated_total": "94.90"
+    },
+    {
+      "number": "A-002", "supplier": "Acme Ltd", "type": "credit_note", "issue_date": "2026-03-05",
+      "terms": "due on receipt", "tax_rate": "20",
+      "lines": [
+        {"description": "Returned widget", "quantity": "-1", "unit_price": "50.00", "line_total": "-50.00"}
+      ],
+      "stated_tax": "-10.00", "stated_total": "-60.00"
+    }
+  ]
+}

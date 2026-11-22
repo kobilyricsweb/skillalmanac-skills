@@ -1,0 +1,22 @@
+[
+  {"query": "make me an SVG poster for our June night market, Instagram size", "should_trigger": true},
+  {"query": "I need a flyer for the school bake sale as an svg I can print on A4", "should_trigger": true},
+  {"query": "design a LinkedIn post graphic announcing our webinar, SVG please", "should_trigger": true},
+  {"query": "this event poster looks amateur and cluttered, can you fix the layout and type sizes in the svg", "should_trigger": true},
+  {"query": "check my poster.svg: is the text readable and inside the safe area?", "should_trigger": true},
+  {"query": "what bleed and margins should an A5 flyer have, and write the svg with them", "should_trigger": true},
+  {"query": "create an Instagram story graphic for our sale, 1080x1920, as svg", "should_trigger": true},
+  {"query": "I want a concert banner in svg with one big headline and a ticket button", "should_trigger": true},
+  {"query": "audit the contrast of the text colours in this social graphic svg", "should_trigger": true},
+  {"query": "make a cover image 1200x630 for my article, svg, clean typographic style", "should_trigger": true},
+  {"query": "build a responsive pricing page layout with a navbar and cards", "should_trigger": false},
+  {"query": "design a logo for my bakery as an svg", "should_trigger": false},
+  {"query": "audit my website for WCAG colour contrast and keyboard focus", "should_trigger": false},
+  {"query": "retouch this photo and remove the background", "should_trigger": false},
+  {"query": "draw an architecture diagram of our microservices in svg", "should_trigger": false},
+  {"query": "turn this 20-page report into a designed PDF with a table of contents", "should_trigger": false},
+  {"query": "write the marketing copy and hashtags for our Instagram campaign", "should_trigger": false},
+  {"query": "make an animated svg icon set for a mobile app", "should_trigger": false},
+  {"query": "build a React component library with a design tokens file", "should_trigger": false},
+  {"query": "create a slide deck for the quarterly review", "should_trigger": false}
+]

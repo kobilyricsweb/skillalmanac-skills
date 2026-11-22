@@ -1,0 +1,8 @@
+{
+  "pattern": "\\d{3}-\\d{4}",
+  "flavour": "python",
+  "mode": "search",
+  "flags": [],
+  "match": ["555-1234", "call 555-1234", "555-12345"],
+  "no_match": ["55-1234", "abc", "5551234"]
+}

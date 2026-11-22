@@ -1,0 +1,22 @@
+[
+  {"query": "write me a youtube script about how to learn guitar chords fast", "should_trigger": true},
+  {"query": "I have a video idea about budgeting for students, can you outline it with chapters and a hook", "should_trigger": true},
+  {"query": "give me 3 title options, a description and tags for my woodworking video", "should_trigger": true},
+  {"query": "make chapter timestamps for my 14 minute video, here are the sections", "should_trigger": true},
+  {"query": "what should my thumbnail look like for a video comparing two budget phones", "should_trigger": true},
+  {"query": "is my video ready to upload? check the title, description and tags", "should_trigger": true},
+  {"query": "my intro is 40 seconds long, rewrite the hook so people don't click away", "should_trigger": true},
+  {"query": "this video is sponsored by a VPN company, what do I need to put in the description", "should_trigger": true},
+  {"query": "build a publishing checklist for my next youtube upload", "should_trigger": true},
+  {"query": "turn my blog post into a video script with a short hook and sections", "should_trigger": true},
+  {"query": "write a week of Instagram and LinkedIn posts for my product launch", "should_trigger": false},
+  {"query": "edit my video to remove the silences and add captions", "should_trigger": false},
+  {"query": "why did my channel views drop 30% last month? analyze my analytics", "should_trigger": false},
+  {"query": "write a clickbait title that says I got scammed even though I didn't", "should_trigger": false},
+  {"query": "write a 1,500 word blog article about home workouts", "should_trigger": false},
+  {"query": "summarize this youtube video transcript in five bullets", "should_trigger": false},
+  {"query": "suggest the best camera and microphone for a beginner creator", "should_trigger": false},
+  {"query": "write a script for a 30 second TV ad for a coffee brand", "should_trigger": false},
+  {"query": "translate my video subtitles into French", "should_trigger": false},
+  {"query": "how do I get my first 1000 subscribers", "should_trigger": false}
+]

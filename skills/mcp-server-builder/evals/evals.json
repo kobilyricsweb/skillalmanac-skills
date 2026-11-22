@@ -1,0 +1,45 @@
+{
+  "skill_name": "mcp-server-builder",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/validate_manifest.py or a plain string check; [judge] assertions need a blind grader. The validator is the skill's own tool, so at least one judge assertion per task measures something it does not control. Expected validator output for the t1 manifest (3 errors, 5 warnings) was derived by hand and checked against a run.",
+  "evals": [
+    {
+      "id": "t1-review-manifest",
+      "prompt": "Review the tool manifest in manifest.json for my order-management MCP server and save a corrected version as fixed_manifest.json. Tell me what you changed.",
+      "files": ["evals/files/t1-review-manifest/manifest.json"],
+      "assertions": [
+        "[script] python scripts/validate_manifest.py fixed_manifest.json prints ok true with 0 errors",
+        "[script] every tool name in fixed_manifest.json matches ^[a-z][a-z0-9]*(_[a-z0-9]+)*$ and the remove_order tool (or its renamed successor) has a boolean property named confirm listed in required",
+        "[script] fixed_manifest.json still contains three tools and the refund tool is still present",
+        "[judge] The reply notes that refund_order sends money and should also be labelled as touching the outside world and gated by confirmation, even though its name has no listed destructive verb",
+        "[judge] The reply says the ids array needs a maxItems bound and that getOrders had no way to page or limit results, and proposes a limit and cursor",
+        "[judge] The reply reports what the validator cannot judge (whether descriptions help a model choose) and proposes a harness check"
+      ]
+    },
+    {
+      "id": "t2-design-from-api",
+      "prompt": "Design the MCP server for the Shelf inventory API described in api_summary.md. Give me the tool list as a manifest.json I can validate, the decision on tools versus resources, transport and auth, and how I should test it.",
+      "files": ["evals/files/t2-design-from-api/api_summary.md"],
+      "assertions": [
+        "[script] python scripts/validate_manifest.py manifest.json prints ok true with 0 errors",
+        "[script] manifest.json has a tool for deleting an item whose inputSchema includes a required boolean confirm, and no tool exposes a raw per-page size above 100",
+        "[script] manifest.json contains a stocktake start tool and a separate stocktake status tool (names contain stocktake)",
+        "[judge] The design chooses stdio for the laptop deployment and says why, and says the token comes from an environment variable and never from a tool argument",
+        "[judge] The create-item tool is labelled not idempotent (or has an idempotency key) and the quantity adjustment is labelled as a writer",
+        "[judge] The reply proposes a test plan with at least bad-input, side-effect and secret-leak checks, and lists any protocol detail it could not vouch for as needing verification against modelcontextprotocol.io"
+      ]
+    },
+    {
+      "id": "t3-transport-auth",
+      "prompt": "Read scenario.md and tell us what to change in our MCP server before we roll it out to the company.",
+      "files": ["evals/files/t3-transport-auth/scenario.md"],
+      "assertions": [
+        "[script] reply text does not contain the token string or any 'sk-' style value (plain string check on the saved reply)",
+        "[judge] The reply recommends moving from stdio plus one admin token to a hosted HTTP server with per-user OAuth-style authorization, and explains why a shared admin token breaks per-user permissions",
+        "[judge] The reply says to remove the admin token from the README, rotate it, and add a secret scan before publishing",
+        "[judge] The reply says to replace run_query with specific tools having strict schemas, or to constrain it to read-only parameterised queries",
+        "[judge] The reply mentions Origin validation or other HTTP-specific hardening and marks the authorization details as needing verification against the current specification",
+        "[judge] Phones are addressed: stdio cannot run on them, which supports the HTTP choice"
+      ]
+    }
+  ]
+}

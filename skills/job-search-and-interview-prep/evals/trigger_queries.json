@@ -1,0 +1,22 @@
+[
+  {"query": "I'm applying to about 20 jobs, set up a tracker and tell me what to follow up on this week", "should_trigger": true},
+  {"query": "which of my applications have gone cold? here's my spreadsheet", "should_trigger": true},
+  {"query": "help me prepare STAR stories for a behavioral interview, I have notes on three projects", "should_trigger": true},
+  {"query": "I have a hiring manager interview on Thursday, prep me with likely questions", "should_trigger": true},
+  {"query": "write a follow-up email, I applied to Contoso nine days ago and heard nothing", "should_trigger": true},
+  {"query": "score these three job posts against what I'm looking for and tell me which to apply to", "should_trigger": true},
+  {"query": "debrief my interview with me, I just got out of the second round", "should_trigger": true},
+  {"query": "draft a cold LinkedIn note to a recruiter at a company I want to work at", "should_trigger": true},
+  {"query": "build me a weekly job search plan from my tracker CSV", "should_trigger": true},
+  {"query": "what questions should I ask at the end of a panel interview?", "should_trigger": true},
+  {"query": "rewrite my resume to match this job description", "should_trigger": false},
+  {"query": "negotiate a higher salary for me and tell me what to say legally", "should_trigger": false},
+  {"query": "write a cover letter for this marketing role", "should_trigger": false},
+  {"query": "help me interview a user for my startup's customer research", "should_trigger": false},
+  {"query": "I'm the hiring manager, write interview questions to screen candidates", "should_trigger": false},
+  {"query": "scrape LinkedIn and give me the emails of every recruiter in Berlin", "should_trigger": false},
+  {"query": "summarize the meeting notes from my team standup", "should_trigger": false},
+  {"query": "make up a believable story about leading a team so I can use it in interviews", "should_trigger": false},
+  {"query": "apply to these 50 jobs automatically for me", "should_trigger": false},
+  {"query": "build a dashboard of my monthly budget in a spreadsheet", "should_trigger": false}
+]

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+  <title>Class styled flyer</title>
+  <style>.c{fill:#fff}</style>
+  <rect id="bg" x="0" y="0" width="1080" height="1350" fill="#FFD400"/>
+  <text class="c" x="90" y="420" font-family="Arial, sans-serif" font-size="120" font-weight="700">NIGHT MARKET</text>
+  <g fill="#111111">
+    <text x="90" y="520" font-family="Arial, sans-serif" font-size="48">Food, music and stalls</text>
+  </g>
+</svg>

@@ -1,0 +1,50 @@
+{
+  "skill_name": "word-document-builder",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/docx_inspect.py. The script is the skill's own tool, so at least one [judge] assertion per task measures something it does not control (a blind grader, or the user opening the file in Word).",
+  "evals": [
+    {
+      "id": "t1-report-from-markdown",
+      "prompt": "Turn evals/files/t1-report/notes.md into a Word report (A4) called pick_rate_review.docx. Numbered sections, captions on the table and the figure, alt text on the picture, page numbers. The picture file is not available, use a placeholder image and say so.",
+      "files": [
+        "evals/files/t1-report/notes.md"
+      ],
+      "assertions": [
+        "[script] docx_inspect.py pick_rate_review.docx --contract contract.json exits 0 for a contract with numbered_headings, table_header_row, table_captions, figure_captions, alt_text, paper A4, footer_page_numbers, title_required, author_required",
+        "[script] findings has no heading_level_skip and no heading has level above 3 (the source has four Markdown levels and repeats the title as a # heading, so the generator must normalise)",
+        "[script] properties.title is 'Warehouse Pick-Rate Review, H1 2026' and properties.author is 'Maya Levin'",
+        "[script] the table has 4 rows and 3 columns and the document text still contains '92', '108' and '1,140'",
+        "[judge] The report does not state a budget, date or any figure absent from the notes; the open item for budget and dates is kept as an open item or as [NEEDED: ...]",
+        "[judge] The reply ends with the fixed report shape and names what was not checked (rendering, fonts, alt-text accuracy)"
+      ]
+    },
+    {
+      "id": "t2-memo-with-gaps",
+      "prompt": "Make a one-page Word memo from evals/files/t2-memo/notes.txt. Save as parking_memo.docx, Letter size.",
+      "files": [
+        "evals/files/t2-memo/notes.txt"
+      ],
+      "assertions": [
+        "[script] docx_inspect.py parking_memo.docx --contract <memo contract: title_required, author_required, max_heading_depth 2, numbered_headings false, footer_page_numbers, paper Letter, no_placeholders false> exits 0",
+        "[script] document text contains '1 December', '15 min' and 'South'/'south' and does not contain a calendar date for the memo itself",
+        "[script] findings has no heading_level_skip and the file has no contents field (toc false)",
+        "[judge] The memo date and the accessible-parking contact appear as [NEEDED: ...] markers (or the agent asked the user), and no invented date, name or phone number appears",
+        "[judge] The reply lists both gaps under 'Gaps left' in the fixed report"
+      ]
+    },
+    {
+      "id": "t3-fix-existing-docx",
+      "prompt": "Here is bad.docx in this folder. Check it against assets/contract.example.json and fix every violation you can without inventing content; list what you could not fix. Save the result as fixed.docx.",
+      "files": [
+        "assets"
+      ],
+      "assertions": [
+        "[script] docx_inspect.py bad.docx --contract assets/contract.example.json is run first and exits 1 with 14 violations",
+        "[script] docx_inspect.py fixed.docx --contract assets/contract.example.json shows none of: paper, margin_min_cm, table_header_row, footer_page_numbers, toc",
+        "[script] fixed.docx still contains the words 'Introduction', 'Summary' and 'Short summary.'",
+        "[judge] Title, Author and alt text are not invented silently: they are taken from the user or listed under Gaps left or marked as drafts",
+        "[judge] The empty 'Results' section is reported as a gap or filled with a [NEEDED: ...] marker, not with made-up results"
+      ],
+      "setup": "python evals/make_docx.py <work> bad"
+    }
+  ]
+}

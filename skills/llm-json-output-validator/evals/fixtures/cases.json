@@ -1,0 +1,127 @@
+{
+  "note": "Expected values were checked by hand against fixtures/reviews.jsonl line by line (see VERIFICATION.md). {FIX} is the fixtures folder, {TMP} a fresh temp folder per case.",
+  "cases": [
+    {
+      "id": "default-reviews",
+      "args": ["--schema", "{FIX}/review_schema.json", "--input", "{FIX}/reviews.jsonl", "--max-examples", "20"],
+      "exit": 1,
+      "expect": {
+        "n": 16, "valid": 3, "rate": 0.1875, "rate_ci95": [0.0659, 0.4301],
+        "clean_valid": 1, "valid_after_repair": 2,
+        "repairs_applied": {"fence": 1, "prose": 1},
+        "failures_by_class": {"invalid_syntax": 2, "duplicate_key": 1, "empty_array": 1, "empty_output": 1, "enum_violation": 1, "extra_field": 1, "missing_field": 1, "no_json_found": 1, "number_as_string": 1, "out_of_range": 1, "pattern_mismatch": 1, "truncated": 1},
+        "failures_by_field": {"$": 5, "$.rating": 2, "$.sentiment": 2, "$..title": 1, "$.notes": 1, "$.tags": 1, "$.tags[]": 1},
+        "blank_lines_skipped": 1,
+        "unsupported_keywords": []
+      }
+    },
+    {
+      "id": "allow-all-rungs",
+      "args": ["--schema", "{FIX}/review_schema.json", "--input", "{FIX}/reviews.jsonl", "--allow", "all", "--max-examples", "0"],
+      "exit": 1,
+      "expect": {
+        "valid": 5, "clean_valid": 1, "valid_after_repair": 4,
+        "repairs_applied": {"fence": 1, "prose": 1, "single_quotes": 1, "trailing_commas": 1},
+        "failures_by_class": {"duplicate_key": 1, "empty_array": 1, "empty_output": 1, "enum_violation": 1, "extra_field": 1, "missing_field": 1, "no_json_found": 1, "number_as_string": 1, "out_of_range": 1, "pattern_mismatch": 1, "truncated": 1}
+      }
+    },
+    {
+      "id": "allow-none-strict",
+      "args": ["--schema", "{FIX}/review_schema.json", "--input", "{FIX}/reviews.jsonl", "--allow", "none", "--max-examples", "0"],
+      "exit": 1,
+      "expect": {
+        "valid": 1, "clean_valid": 1, "valid_after_repair": 0, "repairs_applied": {},
+        "failures_by_class": {"invalid_syntax": 4, "duplicate_key": 1, "empty_array": 1, "empty_output": 1, "enum_violation": 1, "extra_field": 1, "missing_field": 1, "no_json_found": 1, "number_as_string": 1, "out_of_range": 1, "pattern_mismatch": 1, "truncated": 1}
+      }
+    },
+    {
+      "id": "example-mode-folder",
+      "args": ["--example", "{FIX}/city_example.json", "--input", "{FIX}/cities", "--allow", "none"],
+      "exit": 1,
+      "expect": {
+        "schema_source": "inferred_from_example", "n": 3, "valid": 1,
+        "failures_by_class": {"invalid_syntax": 1, "number_as_string": 1, "wrong_type": 1},
+        "failures_by_field": {"$": 1, "$.coastal": 1, "$.population": 1}
+      }
+    },
+    {
+      "id": "inner-array-is-not-taken-as-the-answer",
+      "args": ["--schema", "{FIX}/review_schema.json", "--input", "{FIX}/inner_array.jsonl", "--max-examples", "0"],
+      "exit": 1,
+      "expect": {"n": 2, "valid": 0, "failures_by_class": {"invalid_syntax": 1, "truncated": 1}, "failures_by_field": {"$": 2}}
+    },
+    {
+      "id": "inner-array-trailing-comma-rescued-by-rung",
+      "args": ["--schema", "{FIX}/review_schema.json", "--input", "{FIX}/inner_array.jsonl", "--allow", "trailing_commas,fence,prose", "--max-examples", "0"],
+      "exit": 1,
+      "expect": {"valid": 1, "repairs_applied": {"trailing_commas": 1}, "failures_by_class": {"truncated": 1}}
+    },
+    {
+      "id": "unsupported-keywords-refused",
+      "args": ["--schema", "{FIX}/schema_unsupported.json", "--input", "{FIX}/reviews.jsonl"],
+      "exit": 2,
+      "stderr_contains": ["format at $.when", "oneOf at $.value"]
+    },
+    {
+      "id": "unsupported-keywords-listed-when-allowed",
+      "args": ["--schema", "{FIX}/schema_unsupported.json", "--input", "{FIX}/reviews.jsonl", "--allow-unsupported", "--max-examples", "0"],
+      "exit": 1,
+      "expect": {"unsupported_keywords": [{"path": "$.when", "keyword": "format"}, {"path": "$.value", "keyword": "oneOf"}]}
+    },
+    {
+      "id": "refuse-report-over-outputs-even-with-force",
+      "args": ["--schema", "{FIX}/review_schema.json", "--input", "{FIX}/reviews.jsonl", "--report", "{FIX}/reviews.jsonl", "--force"],
+      "exit": 2,
+      "stderr_contains": ["it is an input"],
+      "unchanged": ["reviews.jsonl"]
+    },
+    {
+      "id": "refuse-log-over-schema-even-with-force",
+      "args": ["--schema", "{FIX}/review_schema.json", "--input", "{FIX}/reviews.jsonl", "--log", "{FIX}/review_schema.json", "--force"],
+      "exit": 2,
+      "stderr_contains": ["it is an input"],
+      "unchanged": ["review_schema.json"]
+    },
+    {
+      "id": "refuse-retry-over-example-even-with-force",
+      "args": ["--example", "{FIX}/city_example.json", "--input", "{FIX}/cities", "--retry-out", "{FIX}/city_example.json", "--force"],
+      "exit": 2,
+      "stderr_contains": ["it is an input"],
+      "unchanged": ["city_example.json"]
+    },
+    {
+      "id": "refuse-report-over-file-in-input-folder",
+      "args": ["--example", "{FIX}/city_example.json", "--input", "{FIX}/cities", "--report", "{FIX}/cities/a.txt", "--force"],
+      "exit": 2,
+      "stderr_contains": ["it is an input"],
+      "unchanged": ["cities/a.txt"]
+    },
+    {
+      "id": "refuse-new-file-inside-input-folder",
+      "args": ["--example", "{FIX}/city_example.json", "--input", "{FIX}/cities", "--report", "{FIX}/cities/report.json", "--force"],
+      "exit": 2,
+      "stderr_contains": ["inside the input folder"],
+      "absent": ["cities/report.json"]
+    },
+    {
+      "id": "existing-output-needs-force",
+      "args": ["--schema", "{FIX}/review_schema.json", "--input", "{FIX}/reviews.jsonl", "--report", "{TMP}/r.json"],
+      "precreate": {"r.json": "old"},
+      "exit": 2,
+      "stderr_contains": ["--force"],
+      "tmp_equals": {"r.json": "old"}
+    },
+    {
+      "id": "write-report-log-and-retries",
+      "args": ["--schema", "{FIX}/review_schema.json", "--input", "{FIX}/reviews.jsonl", "--report", "{TMP}/r.json", "--log", "{TMP}/l.jsonl", "--retry-out", "{TMP}/t.jsonl", "--max-examples", "0"],
+      "exit": 1,
+      "expect": {"n": 16, "valid": 3},
+      "tmp_lines": {"l.jsonl": 16, "t.jsonl": 13},
+      "tmp_contains": {
+        "t.jsonl": ["$.rating is the string \\\"4\\\", expected integer", "Reply again with exactly one JSON value"],
+        "l.jsonl": ["\"repairs\": [\"fence\"]", "\"repairs\": [\"prose\"]"],
+        "r.json": ["\"failures_by_class\""]
+      }
+    }
+  ]
+}

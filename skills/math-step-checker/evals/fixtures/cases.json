@@ -1,0 +1,227 @@
+{
+  "cases": [
+    {
+      "file": "good_linear.txt",
+      "exit": 0,
+      "expect": {
+        "statuses": [
+          "given",
+          "equivalent",
+          "equivalent",
+          "equivalent"
+        ],
+        "first_error": null,
+        "drift_flagged": false,
+        "last_solutions": [
+          "x = 4"
+        ]
+      }
+    },
+    {
+      "file": "sign_slip.txt",
+      "exit": 1,
+      "expect": {
+        "statuses": [
+          "given",
+          "not_equivalent",
+          "equivalent"
+        ],
+        "first_error": {
+          "step": 2,
+          "slip": "sign_when_moving_term"
+        },
+        "drift_flagged": false
+      }
+    },
+    {
+      "file": "dropped_paren.txt",
+      "exit": 1,
+      "expect": {
+        "statuses": [
+          "given",
+          "not_equivalent",
+          "equivalent"
+        ],
+        "first_error": {
+          "step": 2,
+          "slip": "dropped_parenthesis"
+        },
+        "drift_flagged": false
+      }
+    },
+    {
+      "file": "negative_slip.txt",
+      "exit": 1,
+      "expect": {
+        "statuses": [
+          "given",
+          "not_equivalent"
+        ],
+        "first_error": {
+          "step": 2,
+          "slip": "distribute_negative"
+        },
+        "drift_flagged": false
+      }
+    },
+    {
+      "file": "exponent_slip.txt",
+      "exit": 1,
+      "expect": {
+        "statuses": [
+          "given",
+          "not_equivalent"
+        ],
+        "first_error": {
+          "step": 2,
+          "slip": "exponent_rule"
+        },
+        "drift_flagged": false
+      }
+    },
+    {
+      "file": "fraction_slip.txt",
+      "exit": 1,
+      "expect": {
+        "statuses": [
+          "not_equivalent"
+        ],
+        "first_error": {
+          "step": 1,
+          "slip": "fraction_no_common_denominator"
+        },
+        "drift_flagged": false
+      }
+    },
+    {
+      "file": "divide_by_variable.txt",
+      "exit": 1,
+      "expect": {
+        "statuses": [
+          "given",
+          "solution_lost"
+        ],
+        "first_error": {
+          "step": 2,
+          "slip": "divided_by_expression_that_can_be_zero"
+        },
+        "drift_flagged": false
+      }
+    },
+    {
+      "file": "extraneous.txt",
+      "exit": 0,
+      "expect": {
+        "statuses": [
+          "given",
+          "possibly_extraneous",
+          "equivalent",
+          "equivalent",
+          "equivalent"
+        ],
+        "first_error": null,
+        "drift_flagged": false,
+        "last_solutions": [
+          "x = 3"
+        ]
+      }
+    },
+    {
+      "file": "arith_continuation.txt",
+      "exit": 1,
+      "expect": {
+        "statuses": [
+          "given",
+          "equivalent",
+          "not_equivalent"
+        ],
+        "first_error": {
+          "step": 3,
+          "slip": null
+        },
+        "drift_flagged": false
+      }
+    },
+    {
+      "file": "unit_mismatch.txt",
+      "exit": 1,
+      "expect": {
+        "statuses": [
+          "unit_mismatch"
+        ],
+        "first_error": {
+          "step": 1,
+          "slip": null
+        },
+        "drift_flagged": false
+      }
+    },
+    {
+      "file": "unit_scale.txt",
+      "exit": 1,
+      "expect": {
+        "statuses": [
+          "not_equivalent",
+          "equivalent"
+        ],
+        "first_error": {
+          "step": 1,
+          "slip": "unit_conversion_factor"
+        },
+        "drift_flagged": false
+      }
+    },
+    {
+      "file": "rounding_ok.txt",
+      "exit": 0,
+      "expect": {
+        "statuses": [
+          "rounded",
+          "equivalent",
+          "rounded_unmarked"
+        ],
+        "first_error": null,
+        "drift_flagged": false
+      }
+    },
+    {
+      "file": "rounding_drift.txt",
+      "exit": 0,
+      "expect": {
+        "statuses": [
+          "rounded",
+          "equivalent",
+          "equivalent"
+        ],
+        "first_error": null,
+        "drift_flagged": true
+      }
+    },
+    {
+      "file": "unparseable.txt",
+      "exit": 1,
+      "expect": {
+        "statuses": [
+          "unparseable",
+          "unparseable",
+          "equivalent"
+        ],
+        "first_error": {
+          "step": 1,
+          "slip": null
+        },
+        "drift_flagged": false
+      }
+    },
+    {
+      "file": "empty.txt",
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "file": "missing_file.txt",
+      "exit": 2,
+      "expect": {}
+    }
+  ]
+}

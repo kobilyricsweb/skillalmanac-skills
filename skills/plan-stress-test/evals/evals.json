@@ -1,0 +1,46 @@
+{
+  "skill_name": "plan-stress-test",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/plan_scan.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-crm-migration",
+      "prompt": "Stress test this CRM migration plan before we start. Give me the ranked risks and save the register to register.json.",
+      "files": ["evals/files/t1-crm-migration/plan.md"],
+      "assertions": [
+        "[script] plan_scan.py register plan.md register.json prints ok true",
+        "[script] register.json has between 3 and 12 risks and every risk has a non-empty mitigation",
+        "[script] at least one risk has evidence.quote containing 'Train the sales team'",
+        "[script] at least one risk has category 'dependency' or 'external' and cites the vendor enabling bulk import or the sales ops merge rules",
+        "[judge] A rollback risk is present: the plan has no way back if the import of 14,000 accounts goes wrong, and the old licence ends 2026-09-30",
+        "[judge] The reply gives a verdict that follows the stated rule (a score of 20 or more is 'not ready', 12 or more is 'ready after fixes') and ends with a 'Not checked' line",
+        "[judge] No owner, date or number appears in the reply that is not in the plan, except where marked as a suggestion for the author to confirm"
+      ]
+    },
+    {
+      "id": "t2-product-launch",
+      "prompt": "Red team this launch plan. I want to know which parts are most likely to break the 2026-04-14 date.",
+      "files": ["evals/files/t2-product-launch/plan.md"],
+      "assertions": [
+        "[script] plan_scan.py scan plan.md exits 1 and reports no_owner on the Security review step",
+        "[script] the saved or printed register, if validated with plan_scan.py register, has ok true",
+        "[script] the reply mentions 'Legal approval' as an undefined dependency of the press embargo",
+        "[judge] The reply notices that Mei owns three of six steps and is on leave 2026-04-06 to 2026-04-13, and ties this to the 2026-04-14 launch",
+        "[judge] The reply notices that the security review has no owner and sits between the release candidate and the docs without a done criterion",
+        "[judge] The reply does not claim that any holiday, time zone or weekend affects the dates, because the plan does not state one"
+      ]
+    },
+    {
+      "id": "t3-prose-plan",
+      "prompt": "Here is my plan for moving the office, written as a paragraph. Poke holes in it.",
+      "files": ["evals/files/t3-prose-plan/plan.md"],
+      "assertions": [
+        "[script] plan_scan.py scan plan.md prints verdict 'unstructured'",
+        "[script] the reply or the register quotes 'only a short margin' or 'short margin' or the 30 June lease end",
+        "[judge] The reply identifies that the building being ready on 20 June and the movers on the weekend of 27 June leave almost no slack before the lease ends on 30 June",
+        "[judge] The reply identifies that the plan has no success criteria and no fallback if the building or the network is not ready on the Monday",
+        "[judge] The reply names the unwritten assumption that desks and the network will work on the first day, and says which step breaks if it is false",
+        "[judge] The reply does not invent steps, owners or dates that are absent from the paragraph"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "model": "model-a",
+  "price_table": {
+    "as_of": "2026-11-10",
+    "currency": "USD",
+    "unit": "per_1M",
+    "source": "EXAMPLE NUMBERS for tests only, not a real vendor price",
+    "models": {
+      "model-a": {"input": 2.0, "output": 10.0, "cached_input": 0.2, "cache_write": 2.5, "batch_discount": 0.5},
+      "model-b": {"input": 0.5, "output": 2.0}
+    }
+  },
+  "usage": {
+    "requests_per_day": 1000,
+    "days_per_month": 30,
+    "input_tokens_avg": 2000,
+    "input_tokens_p95": 4000,
+    "output_tokens_avg": 500,
+    "output_tokens_p95": 1000,
+    "prefix_share": 0.5,
+    "retry_rate": 0,
+    "tool_calls_per_request": 0
+  },
+  "options": {"use_cache": true, "calls_per_prefix": 10, "batch_share": 0},
+  "subscription": {"price_per_month": 200, "currency": "USD"}
+}

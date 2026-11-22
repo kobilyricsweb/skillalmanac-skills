@@ -1,0 +1,12 @@
+{
+  "note": "Each case runs scripts/jtbd_check.py with the given args (paths relative to evals/fixtures/) and checks the exit code and the JSON fields listed. Expected values were read by hand against the fixture files.",
+  "cases": [
+    {"args": ["study_good.json"], "exit": 0, "expect": {"ok": true, "errors": 0, "warnings": 0, "interviewer_questions": 5, "leading_questions": 0, "interviews_missing_forces": [], "statements_missing_parts": []}},
+    {"args": ["study_bad.json"], "exit": 1, "expect": {"ok": false, "errors": 19, "warnings": 5, "interviewer_questions": 4, "leading_questions": 3, "interviews_missing_forces": ["B1", "B2"], "statements_missing_parts": ["J1"]}},
+    {"args": ["study_good.json", "--min-evidence", "3"], "exit": 1, "expect": {"ok": false, "errors": 1, "warnings": 0}},
+    {"args": ["wrong_shape.json"], "exit": 2, "expect": {}},
+    {"args": ["not_json.json"], "exit": 2, "expect": {}},
+    {"args": ["missing_file.json"], "exit": 2, "expect": {}},
+    {"args": ["bigint.json"], "exit": 2, "expect": {}}
+  ]
+}

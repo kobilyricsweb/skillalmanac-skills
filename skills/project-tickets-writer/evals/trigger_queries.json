@@ -1,0 +1,22 @@
+[
+  {"query": "here are my notes from the planning meeting, turn them into tickets the engineers can pick up", "should_trigger": true},
+  {"query": "break down this feature spec into user stories with acceptance criteria", "should_trigger": true},
+  {"query": "this ticket is way too big, help me split it into smaller ones", "should_trigger": true},
+  {"query": "write acceptance criteria in Given When Then for the checkout discount feature", "should_trigger": true},
+  {"query": "check my tickets file for vague titles and dependency cycles before I send it to the team", "should_trigger": true},
+  {"query": "create a backlog of tickets for the new onboarding flow, with non-goals and definition of done", "should_trigger": true},
+  {"query": "engineers keep bouncing my Jira tickets as unclear, rewrite them so they're accepted", "should_trigger": true},
+  {"query": "turn this Slack thread about the export feature into well-formed tickets with dependencies", "should_trigger": true},
+  {"query": "validate tickets.json: any tickets with no acceptance criteria or more than 6 criteria?", "should_trigger": true},
+  {"query": "I'm a PM, convert this PRD into engineering tickets, one outcome per ticket", "should_trigger": true},
+  {"query": "build me a 6 month product roadmap for our mobile app", "should_trigger": false},
+  {"query": "plan the next sprint and decide who works on what", "should_trigger": false},
+  {"query": "run planning poker with me to estimate these stories", "should_trigger": false},
+  {"query": "create these tickets in Linear for me using the API", "should_trigger": false},
+  {"query": "write a PRD for a referral program", "should_trigger": false},
+  {"query": "summarise this meeting transcript in five bullets", "should_trigger": false},
+  {"query": "write Cucumber step definitions in Python for this feature file", "should_trigger": false},
+  {"query": "fix the bug in my login function, tests are failing", "should_trigger": false},
+  {"query": "draft a status update email to stakeholders about project delays", "should_trigger": false},
+  {"query": "write a risk register for the data centre migration", "should_trigger": false}
+]

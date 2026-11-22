@@ -1,0 +1,3 @@
+```json
+{"city": "Paris", "population": 2100000.5, "coastal": false}
+```

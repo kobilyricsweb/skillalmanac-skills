@@ -1,0 +1,22 @@
+[
+  {"query": "I've got a CSV of customer data, can you do an EDA before I think about modelling anything?", "should_trigger": true},
+  {"query": "profile this dataset for me: types, missing values, weird columns, outliers", "should_trigger": true},
+  {"query": "what's in this data file? give me a first look without drawing conclusions", "should_trigger": true},
+  {"query": "sanity check sales_2024.csv and tell me if anything looks off before I send it to the team", "should_trigger": true},
+  {"query": "explore this export and flag leakage or anything that would break a train/test split", "should_trigger": true},
+  {"query": "run exploratory data analysis on orders.csv and give me findings with caveats", "should_trigger": true},
+  {"query": "do a data quality review of this spreadsheet export saved as csv: duplicates, sentinel values, date problems", "should_trigger": true},
+  {"query": "which columns in this csv are ids or constants, and how much is missing in each?", "should_trigger": true},
+  {"query": "first pass on a new dataset: shape, distributions, correlations, anything suspicious", "should_trigger": true},
+  {"query": "look through survey_results.csv and summarise what you find, but don't over-claim", "should_trigger": true},
+  {"query": "train a gradient boosting model to predict churn from this csv", "should_trigger": false},
+  {"query": "make a dashboard with charts from this sales data", "should_trigger": false},
+  {"query": "clean this csv: fix the dates, remove duplicates and write the cleaned file", "should_trigger": false},
+  {"query": "run a t-test to see if group A and group B differ in conversion rate", "should_trigger": false},
+  {"query": "write a SQL query that joins orders to customers and counts orders per month", "should_trigger": false},
+  {"query": "what Excel formula sums column C when column A equals 'West'?", "should_trigger": false},
+  {"query": "explain what exploratory data analysis is and why it matters", "should_trigger": false},
+  {"query": "scrape the product table from this web page into a csv", "should_trigger": false},
+  {"query": "design an A/B test for our checkout page and compute the sample size", "should_trigger": false},
+  {"query": "convert this csv to json and keep the column order", "should_trigger": false}
+]

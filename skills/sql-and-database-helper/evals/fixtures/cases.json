@@ -1,0 +1,224 @@
+{
+ "note": "Each case runs scripts/sql_check.py with the args (names ending .sql are resolved under evals/fixtures/). Expected values were read off the fixture files by hand; findings are line:id:severity in output order.",
+ "cases": [
+  {
+   "args": [
+    "check",
+    "bad_queries.sql"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "fail",
+    "statements": 11,
+    "counts": {
+     "error": 6,
+     "warning": 8,
+     "info": 0
+    },
+    "findings": [
+     "2:SQL006:warning",
+     "2:SQL001:warning",
+     "3:SQL006:warning",
+     "3:SQL007:error",
+     "4:SQL007:warning",
+     "5:SQL002:error",
+     "5:SQL009:warning",
+     "6:SQL003:error",
+     "7:SQL012:error",
+     "8:SQL008:warning",
+     "9:SQL008:error",
+     "10:SQL011:warning",
+     "11:SQL010:warning",
+     "12:SQL005:error"
+    ]
+   }
+  },
+  {
+   "args": [
+    "check",
+    "bad_queries.sql",
+    "--ignore",
+    "select-star,SQL006,non-transactional-migration"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "fail",
+    "counts": {
+     "error": 6,
+     "warning": 4,
+     "info": 0
+    },
+    "suppressed": 4
+   }
+  },
+  {
+   "args": [
+    "check",
+    "good_queries.sql"
+   ],
+   "exit": 0,
+   "expect": {
+    "verdict": "clean",
+    "statements": 13,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 0
+    },
+    "findings": []
+   }
+  },
+  {
+   "args": [
+    "check",
+    "edge_clean.sql",
+    "--dialect",
+    "postgresql"
+   ],
+   "exit": 0,
+   "expect": {
+    "verdict": "clean",
+    "statements": 9,
+    "findings": []
+   }
+  },
+  {
+   "args": [
+    "check",
+    "edge_sqlite_trigger.sql",
+    "--dialect",
+    "sqlite"
+   ],
+   "exit": 0,
+   "expect": {
+    "verdict": "clean",
+    "statements": 4,
+    "findings": []
+   }
+  },
+  {
+   "args": [
+    "check",
+    "migration_pg_bad.sql",
+    "--dialect",
+    "postgresql"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "fail",
+    "counts": {
+     "error": 1,
+     "warning": 2,
+     "info": 0
+    },
+    "findings": [
+     "2:SQL009:warning",
+     "5:SQL015:warning",
+     "6:SQL013:error"
+    ]
+   }
+  },
+  {
+   "args": [
+    "check",
+    "migration_pg_good.sql",
+    "--dialect",
+    "postgresql"
+   ],
+   "exit": 0,
+   "expect": {
+    "verdict": "clean",
+    "findings": []
+   }
+  },
+  {
+   "args": [
+    "check",
+    "migration_mysql.sql",
+    "--dialect",
+    "mysql"
+   ],
+   "exit": 0,
+   "expect": {
+    "verdict": "review",
+    "counts": {
+     "error": 0,
+     "warning": 1,
+     "info": 1
+    },
+    "findings": [
+     "2:SQL014:info",
+     "5:SQL009:warning"
+    ]
+   }
+  },
+  {
+   "args": [
+    "check",
+    "migration_mysql.sql",
+    "--dialect",
+    "mysql",
+    "--strict"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "review"
+   }
+  },
+  {
+   "args": [
+    "check",
+    "dynamic_sql.sql",
+    "--dialect",
+    "mysql"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "fail",
+    "counts": {
+     "error": 2,
+     "warning": 3,
+     "info": 0
+    },
+    "findings": [
+     "1:SQL004:warning",
+     "5:SQL004:warning",
+     "6:SQL004:warning",
+     "7:SQL005:error",
+     "8:SQL004:error"
+    ]
+   }
+  },
+  {
+   "args": [
+    "check",
+    "suppress.sql"
+   ],
+   "exit": 1,
+   "expect": {
+    "verdict": "fail",
+    "suppressed": 4,
+    "findings": [
+     "5:SQL002:error"
+    ]
+   }
+  },
+  {
+   "args": [
+    "check",
+    "missing_file.sql"
+   ],
+   "exit": 2,
+   "expect": {}
+  },
+  {
+   "args": [
+    "rules"
+   ],
+   "exit": 0,
+   "expect": {
+    "rule_count": 15
+   }
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+{
+  "model": {"name": "huge-405b", "params_b": 405, "layers": 126, "kv_heads": 8, "head_dim": 128},
+  "context": 8192,
+  "hardware": [{"name": "small laptop", "os": "windows", "vram_gb": 6, "ram_gb": 16}]
+}

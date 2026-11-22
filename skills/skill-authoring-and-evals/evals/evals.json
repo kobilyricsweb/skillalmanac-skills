@@ -1,0 +1,122 @@
+{
+  "skill_name": "skill-authoring-and-evals",
+  "note": "Scripted checks are scored by scripts/eval_score.py; judged assertions need a blind grader. Run the three tasks with and without the skill.",
+  "evals": [
+    {
+      "id": "t1-runbook-to-skill",
+      "prompt": "Turn deploy-runbook.md in this folder into an agent skill. Put it in out/ and keep it short. Tell me how you would check that it works.",
+      "files": [
+        "evals/files/t1-runbook-to-skill/"
+      ],
+      "checks": [
+        {
+          "type": "file_exists",
+          "path": "out/SKILL.md",
+          "label": "SKILL.md written"
+        },
+        {
+          "type": "frontmatter_key",
+          "path": "out/SKILL.md",
+          "key": "name",
+          "label": "name present"
+        },
+        {
+          "type": "frontmatter_key",
+          "path": "out/SKILL.md",
+          "key": "description",
+          "label": "description present"
+        },
+        {
+          "type": "file_contains",
+          "path": "out/SKILL.md",
+          "pattern": "use when",
+          "label": "description has a Use when clause"
+        },
+        {
+          "type": "file_contains",
+          "path": "out/SKILL.md",
+          "pattern": "do not use",
+          "label": "description has a boundary"
+        },
+        {
+          "type": "file_not_contains",
+          "path": "out/SKILL.md",
+          "pattern": "^description:\\s*[>|]",
+          "label": "description is a single line"
+        },
+        {
+          "type": "max_lines",
+          "path": "out/SKILL.md",
+          "max": 200,
+          "label": "body stays short"
+        }
+      ],
+      "judge": [
+        "The reply proposes a with-versus-without comparison, not only a read-through"
+      ]
+    },
+    {
+      "id": "t2-fix-silent-skill",
+      "prompt": "My skill in evals/files/t2-fix-silent-skill/ never triggers. Fix it in place under out/ and tell me why it was silent.",
+      "files": [
+        "evals/files/t2-fix-silent-skill/"
+      ],
+      "checks": [
+        {
+          "type": "file_exists",
+          "path": "out/SKILL.md",
+          "label": "fixed file written"
+        },
+        {
+          "type": "file_contains",
+          "path": "out/SKILL.md",
+          "pattern": "use when",
+          "label": "trigger clause added"
+        },
+        {
+          "type": "file_not_contains",
+          "path": "out/SKILL.md",
+          "pattern": "^description:\\s*(I |You |Helps)",
+          "label": "third-person description"
+        }
+      ],
+      "judge": [
+        "The explanation ties the silence to the missing trigger wording, not to the tool"
+      ]
+    },
+    {
+      "id": "t3-eval-set",
+      "prompt": "Write trigger queries and three task evals for the skill in evals/files/t3-eval-set/ and save them under out/.",
+      "files": [
+        "evals/files/t3-eval-set/"
+      ],
+      "checks": [
+        {
+          "type": "file_exists",
+          "path": "out/trigger_queries.json",
+          "label": "queries written"
+        },
+        {
+          "type": "file_contains",
+          "path": "out/trigger_queries.json",
+          "pattern": "\"should_trigger\":\\s*false",
+          "label": "near-miss queries present"
+        },
+        {
+          "type": "file_exists",
+          "path": "out/evals.json",
+          "label": "task evals written"
+        },
+        {
+          "type": "file_contains",
+          "path": "out/evals.json",
+          "pattern": "\"checks\"",
+          "label": "scripted checks present"
+        }
+      ],
+      "judge": [
+        "Near-miss queries share vocabulary with the skill but need another tool"
+      ]
+    }
+  ]
+}

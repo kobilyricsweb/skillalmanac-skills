@@ -1,0 +1,120 @@
+{
+  "note": "Expected values were derived by hand from each fixture (see VERIFICATION.md), then compared with the script output.",
+  "cases": [
+    {
+      "args": ["validate", "good_onboarding.json"],
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "summary": {"emails": 5, "fail": 0, "warn": 0},
+        "codes": [],
+        "timeline_days": [0, 2, 5, 9, 14]
+      }
+    },
+    {
+      "args": ["validate", "bad_winback.json"],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "summary": {"emails": 3, "fail": 13, "warn": 16},
+        "codes": [
+          "FAIL consent-basis-unacceptable -",
+          "FAIL sender-field-missing -",
+          "WARN sender-noreply -",
+          "WARN job-multiple w1",
+          "FAIL subject-fake-reply w1",
+          "WARN subject-urgency w1",
+          "WARN subject-free-claims w1",
+          "WARN subject-exclamations w1",
+          "WARN preheader-repeats-subject w1",
+          "WARN cta-not-https w1",
+          "WARN cta-label-vague w1",
+          "FAIL unsubscribe-missing w1",
+          "WARN list-unsubscribe-header w1",
+          "FAIL sender-missing w1",
+          "FAIL exit-missing w1",
+          "FAIL gap-too-short w2",
+          "FAIL subject-too-long w2",
+          "WARN preheader-missing w2",
+          "WARN cta-label-vague w2",
+          "WARN cta-duplicate-label w2",
+          "WARN list-unsubscribe-header w2",
+          "FAIL sender-missing w2",
+          "FAIL exit-missing w2",
+          "FAIL gap-too-short w3",
+          "WARN subject-urgency w3",
+          "WARN cta-duplicate-url w3",
+          "WARN list-unsubscribe-header w3",
+          "FAIL sender-missing w3",
+          "FAIL exit-missing w3"
+        ],
+        "timeline_days": [0, 1, 2]
+      }
+    },
+    {
+      "args": ["validate", "audit_existing.json"],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "summary": {"emails": 3, "fail": 3, "warn": 13},
+        "codes": [
+          "WARN exit-no-goal -",
+          "WARN subject-exclamations b1",
+          "WARN preheader-repeats-subject b1",
+          "WARN cta-label-vague b1",
+          "WARN list-unsubscribe-header b1",
+          "FAIL gap-too-short b2",
+          "WARN cta-label-vague b2",
+          "WARN cta-duplicate-url b2",
+          "WARN cta-duplicate-label b2",
+          "WARN list-unsubscribe-header b2",
+          "FAIL gap-too-short b3",
+          "WARN subject-urgency b3",
+          "WARN subject-guarantee b3",
+          "WARN subject-all-caps b3",
+          "FAIL unsubscribe-missing b3",
+          "WARN list-unsubscribe-header b3"
+        ],
+        "timeline_days": [0, 1, 2]
+      }
+    },
+    {
+      "args": ["validate", "nurture_warnings_only.json"],
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "summary": {"emails": 3, "fail": 0, "warn": 5},
+        "codes": [
+          "WARN consent-evidence-missing -",
+          "WARN subject-long n1",
+          "WARN preheader-missing n2",
+          "WARN list-unsubscribe-header n2",
+          "WARN gap-too-long n3"
+        ]
+      }
+    },
+    {
+      "args": ["validate", "nurture_warnings_only.json", "--strict"],
+      "exit": 1,
+      "expect": {"ok": false, "summary": {"emails": 3, "fail": 0, "warn": 5}}
+    },
+    {
+      "args": ["validate", "nurture_warnings_only.json", "--min-gap", "5"],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "summary": {"emails": 3, "fail": 1, "warn": 5}
+      }
+    },
+    {
+      "args": ["validate", "missing_file.json"],
+      "exit": 2,
+      "expect": {"ok": false, "error_contains": "cannot read file"}
+    },
+    {
+      "args": ["validate", "not_an_object.json"],
+      "exit": 2,
+      "expect": {"ok": false, "error_contains": "top level must be a JSON object"}
+    }
+  ]
+}

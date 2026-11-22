@@ -1,0 +1,22 @@
+[
+  {"query": "turn these meeting notes into a proper Word document, with headings and a table of action items", "should_trigger": true},
+  {"query": "can you generate a .docx report from this markdown file? numbered sections and captions on the tables please", "should_trigger": true},
+  {"query": "I need a one-page memo as a Word file about the parking change, to go out to all staff", "should_trigger": true},
+  {"query": "write a proposal for the website redesign and save it as a docx, A4, with a pricing table", "should_trigger": true},
+  {"query": "convert my README-style notes into a Word doc that looks professional, heading levels and page numbers", "should_trigger": true},
+  {"query": "check this report.docx: are the headings consistent, do the images have alt text, does it have a title property?", "should_trigger": true},
+  {"query": "build a Word template-based quarterly report from this data summary, use python-docx or whatever works", "should_trigger": true},
+  {"query": "my generated docx has tables with no header row and skipped heading levels, make it follow a style guide and verify it", "should_trigger": true},
+  {"query": "use pandoc to make a styled Word report out of notes.md and then confirm the structure is right", "should_trigger": true},
+  {"query": "create a structured Word document for the audit findings with a contents page and numbered headings", "should_trigger": true},
+  {"query": "export this document to PDF with bookmarks", "should_trigger": false},
+  {"query": "make me a PowerPoint deck from these notes", "should_trigger": false},
+  {"query": "fix the formulas in my Excel budget workbook", "should_trigger": false},
+  {"query": "accept all the tracked changes and reply to the comments in this contract docx", "should_trigger": false},
+  {"query": "write a blog article about remote work, around 900 words", "should_trigger": false},
+  {"query": "create a Google Doc from this outline and share it with the team", "should_trigger": false},
+  {"query": "proofread my cover letter for grammar and tone", "should_trigger": false},
+  {"query": "extract the text and tables from this scanned PDF invoice", "should_trigger": false},
+  {"query": "write a React component that renders a markdown file as HTML", "should_trigger": false},
+  {"query": "what is the difference between a memo and a business letter? explain it to me", "should_trigger": false}
+]

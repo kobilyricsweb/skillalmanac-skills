@@ -1,0 +1,59 @@
+{
+  "note": "Expected values were worked out by hand from the fixture SKILL.md files: query terms fill, pdf, form; per term 3 points in the name, 2 in the description before any 'do not use' clause, 0.5 in the body; score = 100 * points / (5.5 * number of terms).",
+  "cases": [
+    {
+      "args": ["--query", "fill in a PDF form", "@fixtures/claude_skills", "@fixtures/agents_skills"],
+      "exit": 0,
+      "expect": {
+        "query_terms": ["fill", "pdf", "form"],
+        "names": ["pdf-form-filler", "pdf-toolkit", "pdf-text-extractor", "web-form-tester"],
+        "scores": [81.8, 51.5, 33.3, 33.3],
+        "scanned": 7,
+        "shown": 4,
+        "first_fields": {"license": "MIT", "license_class": "permissive", "version": "1.2.0", "has_evals": true, "has_verification": true, "script_count": 1, "matched_terms": ["fill", "pdf", "form"], "issues": []},
+        "excluded": {"pdf-text-extractor": ["fill", "form"]}
+      }
+    },
+    {
+      "args": ["--query", "clean a csv", "--all", "@fixtures/claude_skills", "@fixtures/agents_skills"],
+      "exit": 0,
+      "expect": {
+        "names": ["csv-cleaner", "csv-cleaner", "notes-broken", "pdf-form-filler", "pdf-text-extractor", "pdf-toolkit", "web-form-tester"],
+        "scores": [68.2, 68.2, 0.0, 0.0, 0.0, 0.0, 0.0],
+        "duplicate_names": ["csv-cleaner"],
+        "license_classes_of": {"csv-cleaner": ["permissive", "restrictive"], "pdf-toolkit": ["missing"]},
+        "issue_has": {"notes-broken": "no frontmatter", "pdf-toolkit": "differs from folder name"}
+      }
+    },
+    {
+      "args": ["@fixtures/claude_skills"],
+      "exit": 0,
+      "expect": {
+        "names": ["csv-cleaner", "notes-broken", "pdf-form-filler", "pdf-text-extractor", "pdf-toolkit"],
+        "scanned": 5,
+        "shown": 5,
+        "duplicate_names": []
+      }
+    },
+    {
+      "args": ["--query", "read a pdf", "@fixtures/claude_skills/pdf-form-filler"],
+      "exit": 0,
+      "expect": {"names": ["pdf-form-filler"], "scanned": 1}
+    },
+    {
+      "args": ["--query", "the skill", "@fixtures/claude_skills"],
+      "exit": 0,
+      "expect": {"shown": 5, "warning_has": "no usable words"}
+    },
+    {
+      "args": ["--query", "translate documents Spanish", "@fixtures/claude_skills", "@fixtures/agents_skills"],
+      "exit": 0,
+      "expect": {"query_terms": ["translate", "document", "spanish"], "scanned": 7, "shown": 0, "names": []}
+    },
+    {
+      "args": ["--query", "pdf", "@fixtures/does_not_exist"],
+      "exit": 2,
+      "expect": {}
+    }
+  ]
+}

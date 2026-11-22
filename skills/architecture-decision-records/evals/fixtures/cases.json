@@ -1,0 +1,232 @@
+{
+ "note": "Each case runs scripts/adr_scan.py with args (paths relative to evals/fixtures/) and compares exit code, ok, error/warning counts and the (file, rule) pairs. Expected values were derived by reading the fixture files by hand, not copied from script output.",
+ "cases": [
+  {
+   "args": [
+    "scan",
+    "good/adr"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "adr_count": 4,
+    "errors": 0,
+    "warnings": 0,
+    "findings": []
+   }
+  },
+  {
+   "args": [
+    "scan",
+    "variants/adr"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "adr_count": 2,
+    "errors": 0,
+    "warnings": 0,
+    "findings": []
+   }
+  },
+  {
+   "args": [
+    "scan",
+    "bad/adr"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "adr_count": 8,
+    "errors": 10,
+    "warnings": 6,
+    "numbers": [
+     1,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     10
+    ],
+    "findings": [
+     [
+      null,
+      "numbering-gap"
+     ],
+     [
+      "0001-use-postgres.md",
+      "duplicate-title"
+     ],
+     [
+      "0003-adopt-graphql-gateway.md",
+      "accepted-no-consequences"
+     ],
+     [
+      "0003-adopt-graphql-gateway.md",
+      "placeholder-text"
+     ],
+     [
+      "0004-use-postgres.md",
+      "option-no-downside"
+     ],
+     [
+      "0004-use-postgres.md",
+      "duplicate-title"
+     ],
+     [
+      "0004-use-postgres.md",
+      "thin-consequences"
+     ],
+     [
+      "0005-queue-for-emails.md",
+      "broken-link"
+     ],
+     [
+      "0006-choose-cache.md",
+      "missing-section"
+     ],
+     [
+      "0006-choose-cache.md",
+      "bad-status"
+     ],
+     [
+      "0007-single-region.md",
+      "missing-backlink"
+     ],
+     [
+      "0007-single-region.md",
+      "few-options"
+     ],
+     [
+      "0008-pick-ci.md",
+      "title-number-mismatch"
+     ],
+     [
+      "0008-pick-ci.md",
+      "broken-link"
+     ],
+     [
+      "0010-retire-soap-api.md",
+      "superseded-without-successor"
+     ],
+     [
+      "notes.md",
+      "bad-filename"
+     ]
+    ]
+   }
+  },
+  {
+   "args": [
+    "scan",
+    "edge/adr"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "adr_count": 7,
+    "errors": 8,
+    "warnings": 2,
+    "findings": [
+     [
+      "0001-first-choice.md",
+      "unparsable-link"
+     ],
+     [
+      "0002-duplicate-number.md",
+      "duplicate-number"
+     ],
+     [
+      "0002-no-title-or-status.md",
+      "bad-title"
+     ],
+     [
+      "0002-no-title-or-status.md",
+      "duplicate-number"
+     ],
+     [
+      "0002-no-title-or-status.md",
+      "missing-status"
+     ],
+     [
+      "0002-no-title-or-status.md",
+      "empty-section"
+     ],
+     [
+      "0003-points-at-itself.md",
+      "self-reference"
+     ],
+     [
+      "0004-has-successor-but-accepted.md",
+      "successor-not-accepted"
+     ],
+     [
+      "0004-has-successor-but-accepted.md",
+      "successor-status-mismatch"
+     ],
+     [
+      "0006-superseded-by-a-proposal.md",
+      "successor-not-accepted"
+     ]
+    ]
+   }
+  },
+  {
+   "args": [
+    "scan",
+    "gap/adr"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "errors": 0,
+    "warnings": 1,
+    "findings": [
+     [
+      null,
+      "numbering-gap"
+     ]
+    ]
+   }
+  },
+  {
+   "args": [
+    "scan",
+    "gap/adr",
+    "--strict"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "errors": 0,
+    "warnings": 1
+   }
+  },
+  {
+   "args": [
+    "scan",
+    "noadr"
+   ],
+   "exit": 2,
+   "expect": {}
+  },
+  {
+   "args": [
+    "scan",
+    "does-not-exist"
+   ],
+   "exit": 2,
+   "expect": {}
+  },
+  {
+   "args": [
+    "frobnicate",
+    "good/adr"
+   ],
+   "exit": 2,
+   "expect": {}
+  }
+ ]
+}

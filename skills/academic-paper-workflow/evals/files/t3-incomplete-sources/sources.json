@@ -1,0 +1,8 @@
+[
+  {"id": "nguyen2021", "type": "article-journal", "author": [{"family": "Nguyen", "given": "Linh"}],
+   "title": "Sleep Debt in Residents", "issued": {"date-parts": [[2021]]}},
+  {"id": "patel2019", "type": "book", "author": [{"family": "Patel", "given": "Asha"}],
+   "title": "Shift Work and Health", "issued": {"date-parts": [[2019]]}},
+  {"id": "kim2023", "type": "paper-conference", "author": [{"family": "Kim", "given": "Joon"}],
+   "title": "Rota Design Trials", "container-title": "Proceedings of an Imaginary Congress", "issued": {"date-parts": [[null]]}}
+]

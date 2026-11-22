@@ -1,0 +1,22 @@
+[
+  {"query": "write idiomatic Go for this HTTP client, wrap errors properly and no leaked goroutines", "should_trigger": true},
+  {"query": "my Rust library uses unwrap everywhere, how should I restructure the error handling with thiserror and anyhow?", "should_trigger": true},
+  {"query": "scan my repo for unwrap() and unsafe blocks without SAFETY comments", "should_trigger": true},
+  {"query": "should this Go error be a sentinel or a custom error type? I need callers to use errors.Is", "should_trigger": true},
+  {"query": "review this Go package: I think there are goroutines with no context and ignored errors", "should_trigger": true},
+  {"query": "what's the right layout for a Rust workspace with a lib and a thin binary, and where do integration tests go", "should_trigger": true},
+  {"query": "make my Go code pass staticcheck and go vet but don't redo what they already catch", "should_trigger": true},
+  {"query": "clone() inside a for loop in Rust, is that a problem? check the whole crate", "should_trigger": true},
+  {"query": "agent keeps writing panic() in my Go library code instead of returning errors, fix the habit", "should_trigger": true},
+  {"query": "table-driven tests in Go and where to put test helpers, plus Rust unit vs integration test conventions", "should_trigger": true},
+  {"query": "write idiomatic Python with type hints and pytest fixtures", "should_trigger": false},
+  {"query": "explain how Rust's borrow checker works from scratch", "should_trigger": false},
+  {"query": "migrate my Node.js backend to Go, plan the whole rewrite", "should_trigger": false},
+  {"query": "set up golangci-lint in GitHub Actions and cache the build", "should_trigger": false},
+  {"query": "why is my Rust build so slow, optimize compile times with sccache and lld", "should_trigger": false},
+  {"query": "write a Go program that scrapes a website and saves it to CSV", "should_trigger": false},
+  {"query": "debug this segfault in my C++ code with gdb", "should_trigger": false},
+  {"query": "compare Go and Rust for a new microservice, which one should we pick?", "should_trigger": false},
+  {"query": "review this TypeScript React component for hooks mistakes", "should_trigger": false},
+  {"query": "write a Dockerfile that builds a static Go binary and a Rust binary in multi-stage builds", "should_trigger": false}
+]

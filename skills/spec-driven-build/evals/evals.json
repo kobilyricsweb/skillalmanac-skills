@@ -1,0 +1,55 @@
+{
+  "skill_name": "spec-driven-build",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/spec_trace.py or a plain text check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-ambiguous",
+      "prompt": "Build the rate limiter described in this spec for our Python API. The spec is in SPEC.md; put tests in tests/ and code in src/. Go ahead.",
+      "files": [
+        "evals/files/t1-ambiguous/SPEC.md"
+      ],
+      "assertions": [
+        "[script] spec_trace.py SPEC.md tests/ --src src/ lists REQ-001, REQ-003 and REQ-004 in traceability (each cited by at least one test file)",
+        "[script] No test or source file contains an invented burst size for REQ-002 (no file cites REQ-002 with an assertion on a burst number), unless the user answered",
+        "[judge] The reply asks about REQ-002 (burst size TBD) and quotes the TBD instead of choosing a number silently",
+        "[judge] REQ-001, REQ-003 and REQ-004 are built without waiting for the answer",
+        "[judge] The report lists REQ-002 under stopped or awaiting answer and shows a proposed answer with the question",
+        "[judge] The tests compare the 429 status, the Retry-After value 40 and the X-RateLimit-Remaining value 90, not just that code runs"
+      ]
+    },
+    {
+      "id": "t2-coverage-gaps",
+      "prompt": "We think the CSV importer is finished. Check it against the spec and close any gaps in the tests. Don't change the importer unless the spec requires it.",
+      "files": [
+        "evals/files/t2-coverage-gaps/SPEC.md",
+        "evals/files/t2-coverage-gaps/importer.py",
+        "evals/files/t2-coverage-gaps/tests/test_import.py"
+      ],
+      "assertions": [
+        "[script] After the run, spec_trace.py SPEC.md tests/ reports no_test empty",
+        "[script] After the run, spec_trace.py reports unknown_in_tests empty (the REQ-005 test was removed or the user was asked about it)",
+        "[script] Tests for REQ-003 and REQ-004 exist and cite their ids",
+        "[judge] The REQ-003 test checks case-insensitive matching (Ann@x.com against ann@x.com) and an unchanged contact count",
+        "[judge] The REQ-004 test uses 5,001 rows and also checks that 5,000 rows is accepted or says the boundary was not tested",
+        "[judge] The report names the REQ-005 test as pointing at a requirement that does not exist, and does not silently delete it",
+        "[judge] importer.py is unchanged unless a failing new test shows a spec violation, and any change is explained"
+      ]
+    },
+    {
+      "id": "t3-drift",
+      "prompt": "The signup form is built to the spec. Product just pinged me: can you also add a honeypot field against bots, disable the button while submitting, and make the success message say 'Welcome!' instead? Do it.",
+      "files": [
+        "evals/files/t3-drift/SPEC.md",
+        "evals/files/t3-drift/signup.js"
+      ],
+      "assertions": [
+        "[script] signup.js still returns the exact string 'Check your inbox to confirm' for a 201 unless the user confirmed the wording change",
+        "[script] spec_trace.py SPEC.md reports ok true on the unchanged spec",
+        "[judge] The reply recognises that the success message change contradicts REQ-002 and asks for an agreed spec edit before changing it",
+        "[judge] The honeypot and the disabled button are written up as change requests (or proposed spec text with Acceptance), not silently implemented",
+        "[judge] The change requests include why needed and the effect if refused",
+        "[judge] The reply does not refuse the work: it offers to build the items once the spec is amended"
+      ]
+    }
+  ]
+}

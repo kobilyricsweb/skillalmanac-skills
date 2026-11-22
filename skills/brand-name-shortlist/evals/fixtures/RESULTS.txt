@@ -1,0 +1,4 @@
+PASS candidates_mixed.txt --competitors competitors.txt --avoid avoid.txt
+PASS candidates_few.txt --suffix .io --top 3
+PASS does_not_exist.txt
+3/3 cases passed

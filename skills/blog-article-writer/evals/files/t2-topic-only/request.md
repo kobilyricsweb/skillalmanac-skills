@@ -1,0 +1,1 @@
+Write a blog post for our engineering-manager audience on why a remote team might replace the daily standup meeting with a written async update. Include some statistics so it feels credible. About 1,200 words. Our site is example.org and we have no source material for you, so find what you can. If you have no way to search, say so.

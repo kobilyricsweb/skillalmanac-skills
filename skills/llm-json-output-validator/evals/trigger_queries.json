@@ -1,0 +1,22 @@
+[
+  {"query": "my model keeps wrapping its JSON in ```json fences and json.loads blows up, how often is it happening across these 300 outputs?", "should_trigger": true},
+  {"query": "I have a JSONL of LLM responses and a schema; tell me what percent are valid and which fields fail most", "should_trigger": true},
+  {"query": "should I write a tolerant parser that fixes trailing commas and single quotes in model output, or just retry?", "should_trigger": true},
+  {"query": "write the retry message I send back to the model when its JSON fails validation", "should_trigger": true},
+  {"query": "structured output failure rate for my extraction prompt, here's a folder of 80 raw replies", "should_trigger": true},
+  {"query": "the model sometimes answers 'Here is the JSON:' before the object, how do I strip that safely and log it?", "should_trigger": true},
+  {"query": "validate these completions against my JSON schema without installing jsonschema", "should_trigger": true},
+  {"query": "rating comes back as the string \"4\" in some replies, count how many and decide whether to coerce", "should_trigger": true},
+  {"query": "replies get cut off mid-object, is it safe to auto-close the brackets?", "should_trigger": true},
+  {"query": "check my LLM outputs for missing required fields and extra keys, give me counts by field", "should_trigger": true},
+  {"query": "build me a test set of 50 hard questions to evaluate my chatbot", "should_trigger": false},
+  {"query": "write a system prompt that makes the assistant friendlier", "should_trigger": false},
+  {"query": "design the input schema for an MCP tool that searches tickets", "should_trigger": false},
+  {"query": "what does the claude settings json file look like and where is it stored", "should_trigger": false},
+  {"query": "prettify and sort the keys of this package.json", "should_trigger": false},
+  {"query": "call the API with my prompt and show me the response", "should_trigger": false},
+  {"query": "convert this CSV into JSON", "should_trigger": false},
+  {"query": "explain the difference between JSON Schema draft 7 and 2020-12", "should_trigger": false},
+  {"query": "lint my prompt template for unused placeholders", "should_trigger": false},
+  {"query": "round-trip test my serializer for dates and decimals", "should_trigger": false}
+]

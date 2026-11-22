@@ -1,0 +1,22 @@
+[
+  {"query": "make flashcards from my chapter notes and a schedule so I remember them for my exam in 3 weeks", "should_trigger": true},
+  {"query": "I'm a teacher, give me a 45 minute lesson outline from this reading with checks for understanding", "should_trigger": true},
+  {"query": "turn this lecture transcript into anki cards and tell me when to review them", "should_trigger": true},
+  {"query": "what spaced repetition schedule should I use if my test is on March 3 and I start today", "should_trigger": true},
+  {"query": "check my flashcard deck for cards that give away the answer or are too long", "should_trigger": true},
+  {"query": "build a study plan for organic chemistry, I have 20 minutes a day, use retrieval practice", "should_trigger": true},
+  {"query": "can you make my csv deck import-ready, find duplicate fronts and missing tags", "should_trigger": true},
+  {"query": "how do I teach this unit so students remember it next month? I need retrieval starters and exit tickets", "should_trigger": true},
+  {"query": "create spaced repetition cards and a review calendar from this pdf of my history syllabus", "should_trigger": true},
+  {"query": "my students re-read and highlight. Give me a better study routine for them, with spacing and interleaving explained with sources", "should_trigger": true},
+  {"query": "make a 10 question multiple choice quiz with an answer key from this chapter", "should_trigger": false},
+  {"query": "grade these five student essays against the rubric", "should_trigger": false},
+  {"query": "summarize this chapter into 5 bullet points", "should_trigger": false},
+  {"query": "explain how mitochondria make ATP like I'm twelve", "should_trigger": false},
+  {"query": "write a python script for an Anki add-on that syncs decks", "should_trigger": false},
+  {"query": "translate my Spanish vocabulary flashcards into French", "should_trigger": false},
+  {"query": "plan my team's two-week sprint with tickets and estimates", "should_trigger": false},
+  {"query": "write a 3 year curriculum map and school-wide assessment policy for our district", "should_trigger": false},
+  {"query": "build me a 12 week marathon training schedule", "should_trigger": false},
+  {"query": "fix the grammar and tone of my college application essay", "should_trigger": false}
+]

@@ -1,0 +1,82 @@
+[
+ {
+  "query": "write an ADR for our decision to move from REST to gRPC between services",
+  "should_trigger": true
+ },
+ {
+  "query": "we need to record why we picked Postgres over DynamoDB, can you create the decision record",
+  "should_trigger": true
+ },
+ {
+  "query": "ADR 0007 is replaced by the new caching approach, mark it superseded and link them",
+  "should_trigger": true
+ },
+ {
+  "query": "check our adr folder, I think numbers are missing and some records have no consequences",
+  "should_trigger": true
+ },
+ {
+  "query": "add an architecture decision record to docs/adr for the auth provider choice",
+  "should_trigger": true
+ },
+ {
+  "query": "clean up our decision log, duplicate titles and broken supersedes links everywhere",
+  "should_trigger": true
+ },
+ {
+  "query": "we never documented the Kafka decision, write it up retroactively as an ADR",
+  "should_trigger": true
+ },
+ {
+  "query": "review the adr directory and tell me which accepted ADRs are incomplete",
+  "should_trigger": true
+ },
+ {
+  "query": "draft the next ADR, status proposed, we are still debating monorepo vs polyrepo",
+  "should_trigger": true
+ },
+ {
+  "query": "deprecate ADR-0012 because we dropped that service and update the index",
+  "should_trigger": true
+ },
+ {
+  "query": "help me decide between Kafka and RabbitMQ for our event bus",
+  "should_trigger": false
+ },
+ {
+  "query": "write a design doc for the new billing service with diagrams",
+  "should_trigger": false
+ },
+ {
+  "query": "review this pull request for bugs and style problems",
+  "should_trigger": false
+ },
+ {
+  "query": "write an RFC for changing our public API versioning scheme",
+  "should_trigger": false
+ },
+ {
+  "query": "summarise the notes from yesterday's architecture meeting into action items",
+  "should_trigger": false
+ },
+ {
+  "query": "draw a C4 container diagram of our system",
+  "should_trigger": false
+ },
+ {
+  "query": "write a changelog entry for release 2.4",
+  "should_trigger": false
+ },
+ {
+  "query": "create a runbook for the on-call rotation",
+  "should_trigger": false
+ },
+ {
+  "query": "explain what an architecture decision record is",
+  "should_trigger": false
+ },
+ {
+  "query": "generate a database migration to add an index on orders.created_at",
+  "should_trigger": false
+ }
+]

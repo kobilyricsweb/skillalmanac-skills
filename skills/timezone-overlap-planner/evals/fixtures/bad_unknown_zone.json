@@ -1,0 +1,8 @@
+{
+  "start_date": "2026-03-02",
+  "end_date": "2026-03-06",
+  "participants": [
+    {"name": "Ana", "zone": "America/New_York", "work_start": "09:00", "work_end": "17:00"},
+    {"name": "Zed", "zone": "Mars/Olympus_Mons", "work_start": "09:00", "work_end": "17:00"}
+  ]
+}

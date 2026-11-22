@@ -1,0 +1,22 @@
+[
+  {"query": "I exported my Figma variables as JSON, can you check the aliases resolve and give me CSS custom properties", "should_trigger": true},
+  {"query": "convert these Figma tokens to CSS variables, there are light and dark modes", "should_trigger": true},
+  {"query": "my design tokens json has a dark mode that is missing some values, validate it", "should_trigger": true},
+  {"query": "how do I turn this Figma auto layout frame (vertical, spacing 16, fill container) into flexbox", "should_trigger": true},
+  {"query": "map the Figma component properties for our Button (variant, size, state, boolean icon) to React props", "should_trigger": true},
+  {"query": "what should I name the assets I export from Figma, the layers are called 'Icons / Plus' and 'hero final (2)'", "should_trigger": true},
+  {"query": "find duplicate colour values in this tokens file and tell me which should be aliases", "should_trigger": true},
+  {"query": "these W3C design tokens have unresolved references like {color.brand.missing}, find them all", "should_trigger": true},
+  {"query": "Figma variables 'Mode 1' and 'Mode 2' to prefers-color-scheme CSS, how should the tokens be structured", "should_trigger": true},
+  {"query": "dev handoff from Figma: tokens, spacing and the icon export, what do I need to check before coding", "should_trigger": true},
+  {"query": "write a design handoff document template for our team", "should_trigger": false},
+  {"query": "compare this screenshot of the built page with the design and list pixel differences", "should_trigger": false},
+  {"query": "build a Figma plugin that exports selected frames as PNG", "should_trigger": false},
+  {"query": "call the Figma REST API to list the files in our team project", "should_trigger": false},
+  {"query": "audit this page for WCAG colour contrast and keyboard problems", "should_trigger": false},
+  {"query": "convert this Sketch file into a Tailwind config", "should_trigger": false},
+  {"query": "write React best practices for our component library", "should_trigger": false},
+  {"query": "generate a logo and a colour palette for my new bakery", "should_trigger": false},
+  {"query": "explain what CSS flexbox is and when to use grid instead", "should_trigger": false},
+  {"query": "minify this CSS file and remove unused rules", "should_trigger": false}
+]

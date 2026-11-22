@@ -1,0 +1,22 @@
+[
+  {"query": "can you check that the totals on this supplier invoice add up? I think they overcharged us", "should_trigger": true},
+  {"query": "here is a CSV of my invoices, find any duplicate invoice numbers or gaps in the numbering", "should_trigger": true},
+  {"query": "do the line totals and the VAT on this bill add up to the grand total", "should_trigger": true},
+  {"query": "this invoice says net 30 and was issued on 15 January, what is the due date and does it match what they printed?", "should_trigger": true},
+  {"query": "I round per line but my supplier rounds on the total, which one explains the one cent difference on this quote", "should_trigger": true},
+  {"query": "verify the math on my freelance invoices before I send them, 5% discount on some", "should_trigger": true},
+  {"query": "check this quote for arithmetic mistakes: quantity times unit price, subtotal, tax at 8%", "should_trigger": true},
+  {"query": "did I get billed twice? same supplier same amount on the same day, two different invoice numbers", "should_trigger": true},
+  {"query": "audit these 40 supplier bills for mixed currencies and credit notes that look wrong", "should_trigger": true},
+  {"query": "2/10 net 30 terms: what is the early payment discount and the last day to take it?", "should_trigger": true},
+  {"query": "what VAT rate should I charge on consulting services to a customer in Spain?", "should_trigger": false},
+  {"query": "is this invoice legally valid for tax purposes in Germany?", "should_trigger": false},
+  {"query": "create an invoice template for my design business with my logo and payment details", "should_trigger": false},
+  {"query": "write the journal entries to book this supplier bill in my accounting software", "should_trigger": false},
+  {"query": "read the text out of this scanned receipt photo", "should_trigger": false},
+  {"query": "reconcile my bank statement against these payments", "should_trigger": false},
+  {"query": "write a polite email chasing a customer for an overdue invoice", "should_trigger": false},
+  {"query": "fix the SUM formula in my spreadsheet, it gives #VALUE!", "should_trigger": false},
+  {"query": "what is the weighted average hourly rate across these three contracts", "should_trigger": false},
+  {"query": "convert this invoice from US dollars to euros at today's exchange rate", "should_trigger": false}
+]

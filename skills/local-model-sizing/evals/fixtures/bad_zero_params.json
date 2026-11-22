@@ -1,0 +1,5 @@
+{
+  "model": {"name": "broken", "params_b": 0, "layers": 32, "kv_heads": 8, "head_dim": 128},
+  "context": 8192,
+  "hardware": [{"name": "any", "os": "linux", "vram_gb": 8, "ram_gb": 16}]
+}

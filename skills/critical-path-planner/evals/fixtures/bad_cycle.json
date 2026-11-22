@@ -1,0 +1,10 @@
+{
+  "unit": "days",
+  "tasks": [
+    {"id": "A", "duration": 2, "predecessors": ["C"]},
+    {"id": "B", "duration": 3, "predecessors": ["A"]},
+    {"id": "C", "duration": 1, "predecessors": ["B"]},
+    {"id": "D", "duration": 2, "predecessors": ["B", "X", "B"]},
+    {"id": "E", "duration": 1, "predecessors": ["E"]}
+  ]
+}

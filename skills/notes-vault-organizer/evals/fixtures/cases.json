@@ -1,0 +1,243 @@
+{
+ "note": "Each case runs scripts/vault_scan.py with args (folder and file names relative to evals/fixtures/). 'expect' maps a dotted path in the JSON output to a value checked by hand against the fixture vault; '.*.' collects a field from every list item and '.#' is a list length. 'readonly' hashes every file under that vault before and after the run, with code that shares nothing with the script. 'scan_then_validate' feeds the scan's own move plan to validate-plan.",
+ "cases": [
+  {
+   "name": "messy vault counts and findings",
+   "args": [
+    "scan",
+    "vault_messy"
+   ],
+   "exit": 0,
+   "readonly": "vault_messy",
+   "expect": {
+    "read_only": true,
+    "counts": {
+     "notes": 13,
+     "attachments": 1,
+     "broken_links": 4,
+     "ambiguous_links": 2,
+     "orphans": 6,
+     "duplicate_title_groups": 1,
+     "duplicate_content_groups": 1,
+     "tag_variant_groups": 4,
+     "missing_frontmatter": 5,
+     "planned_moves": 4,
+     "skipped_moves": 0,
+     "unreadable": 0
+    },
+    "broken_links.*.target": [
+     "Missing Note",
+     "Planning Sync",
+     "cover.png",
+     "Dessert.md"
+    ],
+    "broken_links.*.kind": [
+     "wikilink",
+     "wikilink",
+     "embed",
+     "markdown"
+    ],
+    "ambiguous_links.*.target": [
+     "Ideas",
+     "Ideas"
+    ],
+    "orphans.*.path": [
+     "Gamma.md",
+     "Quick thought.md",
+     "Scratch copy.md",
+     "Scratch.md",
+     "Projects/Beta.md",
+     "Recipes/Pasta.md"
+    ],
+    "duplicate_titles.*.paths": [
+     [
+      "Archive/Ideas.md",
+      "Ideas.md"
+     ]
+    ],
+    "duplicate_content.*.paths": [
+     [
+      "Scratch copy.md",
+      "Scratch.md"
+     ]
+    ],
+    "tag_variants.*.suggested": [
+     "idea",
+     "meeting",
+     "project",
+     "reading-list"
+    ],
+    "missing_frontmatter.*.path": [
+     "Ideas.md",
+     "Quick thought.md",
+     "Scratch copy.md",
+     "Scratch.md",
+     "Recipes/Soup.md"
+    ],
+    "move_plan.moves.*.from": [
+     "Scratch copy.md",
+     "Quick thought.md",
+     "Gamma.md",
+     "Project Alpha.md"
+    ],
+    "move_plan.moves.*.to": [
+     "_review/duplicates/Scratch copy.md",
+     "_review/stubs/Quick thought.md",
+     "Projects/Gamma.md",
+     "Projects/Project Alpha.md"
+    ],
+    "move_plan.moves.*.rule": [
+     "duplicate-content",
+     "stub-orphan",
+     "tag-folder",
+     "tag-folder"
+    ],
+    "move_plan.applied": false
+   }
+  },
+  {
+   "name": "clean vault has no findings",
+   "args": [
+    "scan",
+    "vault_clean"
+   ],
+   "exit": 0,
+   "readonly": "vault_clean",
+   "expect": {
+    "counts": {
+     "notes": 3,
+     "attachments": 0,
+     "broken_links": 0,
+     "ambiguous_links": 0,
+     "orphans": 0,
+     "duplicate_title_groups": 0,
+     "duplicate_content_groups": 0,
+     "tag_variant_groups": 0,
+     "missing_frontmatter": 0,
+     "planned_moves": 0,
+     "skipped_moves": 0,
+     "unreadable": 0
+    },
+    "move_plan.moves.#": 0
+   }
+  },
+  {
+   "name": "exclude glob drops the Recipes folder",
+   "args": [
+    "scan",
+    "vault_messy",
+    "--exclude",
+    "Recipes/*"
+   ],
+   "exit": 0,
+   "expect": {
+    "counts.notes": 11,
+    "counts.broken_links": 3,
+    "counts.orphans": 5,
+    "counts.missing_frontmatter": 4
+   }
+  },
+  {
+   "name": "max-items caps lists but not counts",
+   "args": [
+    "scan",
+    "vault_messy",
+    "--max-items",
+    "1"
+   ],
+   "exit": 0,
+   "expect": {
+    "counts.broken_links": 4,
+    "broken_links.#": 1,
+    "truncated.broken_links": 3,
+    "move_plan.moves.#": 4
+   }
+  },
+  {
+   "name": "good plan validates",
+   "args": [
+    "validate-plan",
+    "vault_messy",
+    "plan_good.json"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "moves_checked": 2,
+    "problems.#": 0
+   }
+  },
+  {
+   "name": "bad plan is rejected with every problem named",
+   "args": [
+    "validate-plan",
+    "vault_messy",
+    "plan_bad.json"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "moves_checked": 9,
+    "problems.*.code": [
+     "destination-exists",
+     "source-missing",
+     "unsafe-destination",
+     "forbidden-action",
+     "unsafe-destination",
+     "duplicate-source",
+     "not-a-note",
+     "duplicate-destination"
+    ]
+   }
+  },
+  {
+   "name": "the scan's own plan passes validate-plan",
+   "scan_then_validate": "vault_messy",
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "moves_checked": 4
+   }
+  },
+  {
+   "name": "missing vault exits 2",
+   "args": [
+    "scan",
+    "no_such_vault"
+   ],
+   "exit": 2,
+   "expect": {}
+  },
+  {
+   "name": "vault-root Markdown links resolve and a kept duplicate is not also moved as a stub",
+   "args": [
+    "scan",
+    "vault_root_links"
+   ],
+   "exit": 0,
+   "readonly": "vault_root_links",
+   "expect": {
+    "counts": {
+     "notes": 5,
+     "attachments": 0,
+     "broken_links": 0,
+     "ambiguous_links": 0,
+     "orphans": 3,
+     "duplicate_title_groups": 0,
+     "duplicate_content_groups": 1,
+     "tag_variant_groups": 0,
+     "missing_frontmatter": 2,
+     "planned_moves": 1,
+     "skipped_moves": 0,
+     "unreadable": 0
+    },
+    "move_plan.moves.*.from": [
+     "Twin B.md"
+    ],
+    "move_plan.moves.*.rule": [
+     "duplicate-content"
+    ]
+   }
+  }
+ ]
+}

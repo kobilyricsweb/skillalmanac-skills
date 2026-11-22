@@ -1,0 +1,44 @@
+{
+  "skill_name": "translation-and-localization",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/locale_check.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task also has judge assertions the script does not control. Fixtures for the script itself are in evals/fixtures/.",
+  "evals": [
+    {
+      "id": "t1-ui-german",
+      "prompt": "Translate en.json into German and save it as de.json. Use glossary.json for terminology and limits.json for button lengths. Tell me how you checked it.",
+      "files": ["evals/files/t1-ui-german/en.json", "evals/files/t1-ui-german/glossary.json", "evals/files/t1-ui-german/limits.json"],
+      "assertions": [
+        "[script] locale_check.py en.json de.json --glossary glossary.json --limits limits.json prints errors 0",
+        "[script] de.json contains '{name}', two '%d' tokens in the 'quota' value, and both '<a>' and '</a>' in the 'docs' value",
+        "[script] The 'files' value still contains '{count, plural,', an 'other' branch and the '=0' branch",
+        "[script] 'Acme Cloud' and 'CSV' appear unchanged in de.json",
+        "[judge] The reply states that the comparison script was run and gives its error and warning counts, or says plainly that it was not run",
+        "[judge] The reply lists keys needing context or says none were ambiguous; it does not claim a native-speaker review happened"
+      ]
+    },
+    {
+      "id": "t2-qa-spanish",
+      "prompt": "Our Spanish billing file es.properties came back from a vendor. QA it against en.properties and tell me what must be fixed before release. Do not rewrite the file, just report.",
+      "files": ["evals/files/t2-qa-spanish/en.properties", "evals/files/t2-qa-spanish/es.properties"],
+      "assertions": [
+        "[script] The reply names the missing key 'billing.cancel' and the extra key 'billing.legacy'",
+        "[script] The reply names 'billing.seats' as missing the {1} placeholder",
+        "[script] es.properties is unchanged after the run (the task said report only)",
+        "[judge] The reply separates defects that block release from review-only warnings",
+        "[judge] The reply does not invent a defect in a key that is correct ('billing.title', 'billing.pay')",
+        "[judge] The reply notes the vendor's different email address in 'billing.help' as something to confirm with the product owner, not as a script error"
+      ]
+    },
+    {
+      "id": "t3-arabic-plural",
+      "prompt": "Translate en.json to Arabic (ar.json) for a mobile app. Make the plural message correct for Arabic and tell me what the RTL layout needs from the developers.",
+      "files": ["evals/files/t3-arabic-plural/en.json"],
+      "assertions": [
+        "[script] locale_check.py en.json ar.json prints errors 0",
+        "[script] The 'inbox' value in ar.json contains all six branches: 'zero', 'one', 'two', 'few', 'many' and 'other'",
+        "[script] ar.json keeps '{name}', '%s' and '#' exactly",
+        "[judge] The RTL notes put layout mirroring and bidi isolation of {name} in the UI code, not in the strings, and do not suggest inserting direction characters into every string",
+        "[judge] The reply says the Arabic should be reviewed by a native speaker and does not claim the plural wording was verified"
+      ]
+    }
+  ]
+}

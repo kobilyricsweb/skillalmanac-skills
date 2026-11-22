@@ -1,0 +1,258 @@
+{
+  "note": "Each case runs scripts/plan_scan.py with the given args (paths relative to evals/fixtures/ or evals/files/) and checks the exit code and the listed fields. Expected values were derived by hand from the fixture text before the script was run; see VERIFICATION.md.",
+  "cases": [
+    {
+      "args": [
+        "scan",
+        "plan_bad.md"
+      ],
+      "exit": 1,
+      "expect": {
+        "verdict": "weak",
+        "open_steps": 6,
+        "done_steps": 1,
+        "gap_rate": 0.83,
+        "dependencies_named": 2,
+        "dependencies_undefined": 1,
+        "counts_by_kind": {
+          "date_before_dependency": 1,
+          "no_date": 2,
+          "no_owner": 2,
+          "no_rollback": 1,
+          "no_verification": 4,
+          "undefined_dependency": 1,
+          "vague_date": 1
+        },
+        "high": [
+          [
+            11,
+            "date_before_dependency"
+          ],
+          [
+            13,
+            "no_owner"
+          ],
+          [
+            15,
+            "no_owner"
+          ]
+        ]
+      }
+    },
+    {
+      "args": [
+        "scan",
+        "plan_good.md"
+      ],
+      "exit": 0,
+      "expect": {
+        "verdict": "sound",
+        "open_steps": 4,
+        "gap_rate": 0.0,
+        "dependencies_named": 3,
+        "dependencies_undefined": 0,
+        "counts_by_kind": {},
+        "high": []
+      }
+    },
+    {
+      "args": [
+        "scan",
+        "plan_cycle.md",
+        "--today",
+        "2026-06-11"
+      ],
+      "exit": 1,
+      "expect": {
+        "verdict": "gaps",
+        "open_steps": 5,
+        "counts_by_kind": {
+          "date_before_dependency": 1,
+          "dependency_cycle": 1,
+          "group_owner": 1,
+          "multiple_owners": 1,
+          "no_risk_section": 1,
+          "no_rollback": 1,
+          "overdue": 2,
+          "owner_concentration": 1
+        },
+        "high": [
+          [
+            7,
+            "overdue"
+          ],
+          [
+            8,
+            "date_before_dependency"
+          ],
+          [
+            8,
+            "dependency_cycle"
+          ],
+          [
+            8,
+            "overdue"
+          ]
+        ]
+      }
+    },
+    {
+      "args": [
+        "scan",
+        "plan_cycle.md"
+      ],
+      "exit": 1,
+      "expect": {
+        "counts_by_kind": {
+          "date_before_dependency": 1,
+          "dependency_cycle": 1,
+          "group_owner": 1,
+          "multiple_owners": 1,
+          "no_risk_section": 1,
+          "no_rollback": 1,
+          "owner_concentration": 1
+        }
+      }
+    },
+    {
+      "args": [
+        "scan",
+        "../files/t1-crm-migration/plan.md"
+      ],
+      "exit": 1,
+      "expect": {
+        "verdict": "weak",
+        "open_steps": 7,
+        "dependencies_named": 3,
+        "dependencies_undefined": 2,
+        "counts_by_kind": {
+          "no_date": 1,
+          "no_owner": 1,
+          "no_rollback": 1,
+          "no_verification": 6,
+          "owner_concentration": 2,
+          "undefined_dependency": 2
+        },
+        "high": [
+          [
+            16,
+            "no_owner"
+          ]
+        ]
+      }
+    },
+    {
+      "args": [
+        "scan",
+        "../files/t2-product-launch/plan.md"
+      ],
+      "exit": 1,
+      "expect": {
+        "verdict": "weak",
+        "open_steps": 6,
+        "dependencies_named": 5,
+        "dependencies_undefined": 1,
+        "counts_by_kind": {
+          "no_owner": 1,
+          "no_risk_section": 1,
+          "no_rollback": 1,
+          "no_verification": 4,
+          "owner_concentration": 1,
+          "undefined_dependency": 1
+        },
+        "high": [
+          [
+            11,
+            "no_owner"
+          ]
+        ]
+      }
+    },
+    {
+      "args": [
+        "scan",
+        "../files/t3-prose-plan/plan.md"
+      ],
+      "exit": 1,
+      "expect": {
+        "verdict": "unstructured",
+        "open_steps": 0,
+        "counts_by_kind": {
+          "no_risk_section": 1,
+          "no_rollback": 1,
+          "no_steps": 1,
+          "no_success_criteria": 1
+        },
+        "high": [
+          [
+            0,
+            "no_steps"
+          ],
+          [
+            0,
+            "no_success_criteria"
+          ]
+        ]
+      }
+    },
+    {
+      "args": [
+        "register",
+        "plan_bad.md",
+        "register_good.json"
+      ],
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "risk_count": 5,
+        "errors_count": 0,
+        "uncovered_high_lines": []
+      }
+    },
+    {
+      "args": [
+        "register",
+        "plan_bad.md",
+        "register_bad.json"
+      ],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "risk_count": 3,
+        "errors_count": 6,
+        "uncovered_high_lines": [
+          11,
+          15
+        ]
+      }
+    },
+    {
+      "args": [
+        "scan",
+        "missing_file.md"
+      ],
+      "exit": 2,
+      "expect": {
+        "error": "file not found: <path>"
+      }
+    },
+    {
+      "args": [
+        "scan",
+        "plan_deplist.md"
+      ],
+      "exit": 1,
+      "expect": {
+        "verdict": "gaps",
+        "dependencies_named": 2,
+        "dependencies_undefined": 2,
+        "counts_by_kind": {
+          "no_risk_section": 1,
+          "no_rollback": 1,
+          "no_success_criteria": 1,
+          "undefined_dependency": 2
+        }
+      }
+    }
+  ]
+}

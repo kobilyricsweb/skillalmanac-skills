@@ -1,0 +1,64 @@
+{
+  "note": "Each case runs scripts/swift_scan.py with the args (a name ending in .swift is resolved under evals/fixtures/) and compares the exit code and the listed fields. 'findings' is a list of [line, rule, severity]. Expected values were derived by hand from the numbered fixture lines, not copied from script output.",
+  "cases": [
+    {
+      "args": ["Bad.swift"],
+      "exit": 1,
+      "expect": {
+        "total_findings": 8,
+        "counts_by_rule": {"force-unwrap-density": 1, "main-queue-in-async": 2, "print-in-app-code": 1, "state-reference-type": 3, "try-bang": 1},
+        "findings": [[18, "state-reference-type", "high"], [19, "state-reference-type", "high"], [22, "state-reference-type", "warn"], [29, "force-unwrap-density", "warn"], [29, "try-bang", "high"], [31, "print-in-app-code", "warn"], [32, "main-queue-in-async", "warn"], [36, "main-queue-in-async", "warn"]],
+        "force_unwraps": 3,
+        "code_lines": 41,
+        "force_per_100": 7.32,
+        "density_lines": [29, 30, 47]
+      }
+    },
+    {
+      "args": ["Good.swift"],
+      "exit": 0,
+      "expect": {"total_findings": 0, "findings": [], "force_unwraps": 0}
+    },
+    {
+      "args": ["Edge.swift"],
+      "exit": 0,
+      "expect": {"total_findings": 0, "findings": [], "force_unwraps": 0}
+    },
+    {
+      "args": ["FeedTests.swift"],
+      "exit": 0,
+      "expect": {"total_findings": 0, "test_files_skipped_for_rules": 1}
+    },
+    {
+      "args": ["FeedTests.swift", "--include-tests"],
+      "exit": 1,
+      "expect": {
+        "total_findings": 3,
+        "findings": [[5, "try-bang", "high"], [6, "force-unwrap-density", "warn"], [9, "print-in-app-code", "warn"]],
+        "force_unwraps": 3,
+        "code_lines": 10,
+        "force_per_100": 30.0
+      }
+    },
+    {
+      "args": ["LongBody.swift"],
+      "exit": 0,
+      "expect": {"total_findings": 0}
+    },
+    {
+      "args": ["LongBody.swift", "--max-body-lines", "10"],
+      "exit": 1,
+      "expect": {"total_findings": 1, "findings": [[4, "giant-view-body", "warn"]], "body_lines": 12}
+    },
+    {
+      "args": ["LongBody.swift", "--max-body-lines", "5"],
+      "exit": 1,
+      "expect": {"total_findings": 1, "findings": [[4, "giant-view-body", "high"]], "body_lines": 12}
+    },
+    {
+      "args": ["no_such_dir"],
+      "exit": 2,
+      "expect": {}
+    }
+  ]
+}

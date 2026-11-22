@@ -1,0 +1,22 @@
+[
+  {"query": "write release notes for v2.4.0 from this git log", "should_trigger": true},
+  {"query": "turn these merged PR titles into a changelog entry for our users", "should_trigger": true},
+  {"query": "what version should I bump to? here are the commits since the last tag, some are breaking", "should_trigger": true},
+  {"query": "clean up my CHANGELOG.md Unreleased section so it reads like release notes", "should_trigger": true},
+  {"query": "summarize what changed since v1.8.2 for the release announcement, customer-facing", "should_trigger": true},
+  {"query": "I have conventional commits, can you group them by feat and fix and write the notes", "should_trigger": true},
+  {"query": "do we need a major or a minor release with these changes?", "should_trigger": true},
+  {"query": "generate a changelog from my commit history, flag anything that might be a breaking change", "should_trigger": true},
+  {"query": "draft the GitHub release description from the commits since last release", "should_trigger": true},
+  {"query": "these commit messages are messy, turn them into user-friendly release notes without making things up", "should_trigger": true},
+  {"query": "tag v1.5.0 and push it to origin", "should_trigger": false},
+  {"query": "write a good commit message for this diff", "should_trigger": false},
+  {"query": "create a git worktree and open a PR for my feature branch", "should_trigger": false},
+  {"query": "write API reference docs for the new endpoints", "should_trigger": false},
+  {"query": "what is the latest claude code changelog", "should_trigger": false},
+  {"query": "set up semantic-release in my CI pipeline", "should_trigger": false},
+  {"query": "write a blog post announcing our new product launch", "should_trigger": false},
+  {"query": "review this pull request for bugs", "should_trigger": false},
+  {"query": "explain what semantic versioning is", "should_trigger": false},
+  {"query": "squash my last five commits into one", "should_trigger": false}
+]

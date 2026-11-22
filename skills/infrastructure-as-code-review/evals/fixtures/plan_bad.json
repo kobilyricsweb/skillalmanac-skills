@@ -1,0 +1,25 @@
+{
+  "format_version": "1.2",
+  "resource_changes": [
+    {"address": "aws_db_instance.main", "mode": "managed", "type": "aws_db_instance", "name": "main",
+     "change": {"actions": ["delete", "create"], "replace_paths": [["identifier"]]},
+     "action_reason": "replace_because_cannot_update"},
+    {"address": "aws_s3_bucket.logs", "mode": "managed", "type": "aws_s3_bucket", "name": "logs",
+     "change": {"actions": ["delete"]}, "action_reason": "delete_because_no_resource_config"},
+    {"address": "aws_instance.web", "mode": "managed", "type": "aws_instance", "name": "web",
+     "change": {"actions": ["create", "delete"]}, "action_reason": "replace_because_cannot_update"},
+    {"address": "aws_subnet.a", "mode": "managed", "type": "aws_subnet", "name": "a",
+     "change": {"actions": ["delete", "create"]}},
+    {"address": "aws_security_group.web", "mode": "managed", "type": "aws_security_group", "name": "web",
+     "change": {"actions": ["update"]}},
+    {"address": "aws_cloudwatch_log_group.old", "mode": "managed", "type": "aws_cloudwatch_log_group", "name": "old",
+     "change": {"actions": ["delete"]}},
+    {"address": "aws_iam_role_policy_attachment.x", "mode": "managed", "type": "aws_iam_role_policy_attachment", "name": "x",
+     "change": {"actions": ["create"]}},
+    {"address": "aws_vpc.main", "mode": "managed", "type": "aws_vpc", "name": "main",
+     "change": {"actions": ["no-op"]}},
+    {"address": "data.aws_ami.base", "mode": "data", "type": "aws_ami", "name": "base",
+     "change": {"actions": ["read"]}}
+  ],
+  "resource_drift": [{"address": "aws_instance.web"}]
+}

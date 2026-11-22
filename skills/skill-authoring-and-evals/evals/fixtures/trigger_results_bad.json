@@ -1,0 +1,162 @@
+[
+  {
+    "query": "my skill never loads on its own, what's wrong with the description",
+    "loaded": [
+      false,
+      false,
+      true
+    ]
+  },
+  {
+    "query": "turn this deploy runbook into a SKILL.md the agent can load on demand",
+    "loaded": [
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "query": "how do I test that my skill actually makes the agent better",
+    "loaded": [
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "query": "write evals for the skill in .claude/skills/pdf-notes",
+    "loaded": [
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "query": "claude ignores my skill half the time, how do I make it trigger",
+    "loaded": [
+      false,
+      false,
+      true
+    ]
+  },
+  {
+    "query": "is this a skill or should it just go in AGENTS.md",
+    "loaded": [
+      false,
+      false,
+      true
+    ]
+  },
+  {
+    "query": "review my skill folder before I publish it",
+    "loaded": [
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "query": "I wrote a SKILL.md, can you check the frontmatter and tell me what's missing",
+    "loaded": [
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "query": "create a skill that teaches the agent our release process and prove it works",
+    "loaded": [
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "query": "benchmark my skill with and without it installed",
+    "loaded": [
+      false,
+      false,
+      true
+    ]
+  },
+  {
+    "query": "write an AGENTS.md for this repo with the build commands",
+    "loaded": [
+      true,
+      false,
+      true
+    ]
+  },
+  {
+    "query": "make a hook that runs prettier after every edit",
+    "loaded": [
+      false,
+      false,
+      false
+    ]
+  },
+  {
+    "query": "what does SKILL.md stand for in this tutorial video",
+    "loaded": [
+      true,
+      false,
+      true
+    ]
+  },
+  {
+    "query": "create a subagent that reviews database migrations",
+    "loaded": [
+      true,
+      false,
+      true
+    ]
+  },
+  {
+    "query": "build an MCP server that exposes our internal wiki",
+    "loaded": [
+      false,
+      false,
+      false
+    ]
+  },
+  {
+    "query": "write unit tests for my parser module",
+    "loaded": [
+      false,
+      false,
+      false
+    ]
+  },
+  {
+    "query": "explain how the Python import system finds modules",
+    "loaded": [
+      false,
+      false,
+      false
+    ]
+  },
+  {
+    "query": "add a slash command that prints the git status",
+    "loaded": [
+      false,
+      false,
+      false
+    ]
+  },
+  {
+    "query": "summarise this README for a new teammate",
+    "loaded": [
+      false,
+      false,
+      false
+    ]
+  },
+  {
+    "query": "set up eslint and prettier for the project",
+    "loaded": [
+      false,
+      false,
+      false
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "note": "Expected values were derived by hand from each fixture (arithmetic and character counts re-done independently), then compared with the script output.",
+  "cases": [
+    {"file": "good_plan.json", "exit": 0, "expect": {"valid": true, "errors": 0, "warnings": 0, "codes": {}}},
+    {"file": "bad_plan.json", "exit": 1, "expect": {"valid": false, "errors": 16, "warnings": 3, "codes": {
+      "conversion_undefined": 1, "budget_mismatch": 1, "forecast_conversions_mismatch": 1, "cpa_above_target": 1,
+      "bid_learning_data_thin": 1, "negatives_missing": 1, "copy_over_limit": 2, "copy_exclamation": 1,
+      "claim_absolute": 1, "claim_finance": 3, "landing_url_missing": 1, "utm_format": 1, "utm_missing": 1,
+      "utm_inconsistent": 1, "total_budget_mismatch": 1, "utm_source_varies": 1}}},
+    {"file": "housing_plan.json", "exit": 1, "expect": {"valid": false, "errors": 3, "warnings": 0, "codes": {
+      "special_category_targeting": 2, "claim_housing": 1}}},
+    {"file": "negative_conflict_plan.json", "exit": 1, "expect": {"valid": false, "errors": 2, "warnings": 2, "codes": {
+      "negatives_thin": 1, "negative_blocks_keyword": 2, "keyword_overlap": 1}}},
+    {"file": "not_json.txt", "exit": 2, "expect": {"valid": false}},
+    {"file": "missing_file.json", "exit": 2, "expect": {"valid": false}}
+  ]
+}

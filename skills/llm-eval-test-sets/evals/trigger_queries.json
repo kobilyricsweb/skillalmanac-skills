@@ -1,0 +1,22 @@
+[
+  {"query": "I'm changing the prompt on our support bot, can you help me write a test set so I can tell if it got better?", "should_trigger": true},
+  {"query": "how many test cases do I need in my eval set before I can trust the pass rate", "should_trigger": true},
+  {"query": "check my eval dataset jsonl for duplicates and leakage between the train and test split", "should_trigger": true},
+  {"query": "I want a golden set for my RAG app that includes questions it should refuse to answer, to measure hallucination", "should_trigger": true},
+  {"query": "build a benchmark of 50 cases for our summarizer with graders for each case", "should_trigger": true},
+  {"query": "which grader should I use for numeric answers vs lists vs open-ended text in an LLM evaluation?", "should_trigger": true},
+  {"query": "my model eval scores jumped after the prompt tweak and I suspect test prompts leaked into the few-shot examples", "should_trigger": true},
+  {"query": "is my llm evaluation set balanced? 90% of the cases are the same type", "should_trigger": true},
+  {"query": "write adversarial and edge test cases for my extraction prompt and put them in a cases file", "should_trigger": true},
+  {"query": "review this eval set before we use it to choose between two models", "should_trigger": true},
+  {"query": "write unit tests for this python function using pytest", "should_trigger": false},
+  {"query": "does my skill's description trigger on the right requests? write trigger tests for it", "should_trigger": false},
+  {"query": "run these 100 prompts through the model and give me the pass rate", "should_trigger": false},
+  {"query": "what is ai hallucination and why do chatbots make things up", "should_trigger": false},
+  {"query": "which llm scores highest on public benchmarks this month", "should_trigger": false},
+  {"query": "write a better system prompt for my customer support bot", "should_trigger": false},
+  {"query": "split my customer CSV into train and test sets for a sklearn model", "should_trigger": false},
+  {"query": "estimate the monthly token cost of running my chatbot", "should_trigger": false},
+  {"query": "fine-tune a model on my 5000 support tickets", "should_trigger": false},
+  {"query": "generate 20 quiz questions about world history for my students", "should_trigger": false}
+]

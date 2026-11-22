@@ -1,0 +1,322 @@
+{
+ "note": "Each case runs scripts/find_local_docs.py on a fixture project (paths relative to evals/fixtures/). 'versions' rows are [ecosystem, kind, version, file, line]; 'docs' rows are 'kind|path|lines'. Expected values were derived by hand from the fixture files, then compared with the script output.",
+ "cases": [
+  {
+   "args": [
+    "p_npm",
+    "acme-widgets"
+   ],
+   "exit": 0,
+   "expect": {
+    "found": true,
+    "resolved_version": "2.3.1",
+    "resolved_from": "installed",
+    "version_mismatch": false,
+    "versions": [
+     [
+      "npm",
+      "declared",
+      "^2.3.0",
+      "package.json",
+      5
+     ],
+     [
+      "npm",
+      "locked",
+      "2.3.1",
+      "package-lock.json",
+      13
+     ],
+     [
+      "npm",
+      "locked_nested",
+      "1.9.0",
+      "package-lock.json",
+      17
+     ],
+     [
+      "npm",
+      "installed",
+      "2.3.1",
+      "node_modules/acme-widgets/package.json",
+      3
+     ],
+     [
+      "npm",
+      "installed_types",
+      "2.3.9",
+      "node_modules/@types/acme-widgets/package.json",
+      1
+     ]
+    ],
+    "docs": [
+     "changelog|node_modules/acme-widgets/CHANGELOG.md|4",
+     "readme|node_modules/acme-widgets/README.md|2",
+     "types|node_modules/acme-widgets/dist/index.d.ts|2",
+     "entry|node_modules/acme-widgets/dist/index.js|1",
+     "types|node_modules/@types/acme-widgets/index.d.ts|1"
+    ],
+    "warnings": 0
+   }
+  },
+  {
+   "args": [
+    "p_npm_mismatch",
+    "acme-widgets"
+   ],
+   "exit": 0,
+   "expect": {
+    "found": true,
+    "resolved_version": "2.3.1",
+    "resolved_from": "installed",
+    "version_mismatch": true,
+    "versions": [
+     [
+      "npm",
+      "locked",
+      "2.4.0",
+      "package-lock.json",
+      5
+     ],
+     [
+      "npm",
+      "installed",
+      "2.3.1",
+      "node_modules/acme-widgets/package.json",
+      3
+     ]
+    ],
+    "docs": [
+     "types|node_modules/acme-widgets/index.d.ts|1"
+    ],
+    "warnings": 2
+   }
+  },
+  {
+   "args": [
+    "p_pnpm",
+    "@acme/client"
+   ],
+   "exit": 0,
+   "expect": {
+    "found": true,
+    "resolved_version": "3.2.0",
+    "resolved_from": "locked",
+    "version_mismatch": false,
+    "versions": [
+     [
+      "npm",
+      "locked",
+      "3.2.0",
+      "pnpm-lock.yaml",
+      12
+     ]
+    ],
+    "docs": [],
+    "warnings": 1
+   }
+  },
+  {
+   "args": [
+    "p_yarn",
+    "@acme/client"
+   ],
+   "exit": 0,
+   "expect": {
+    "found": true,
+    "resolved_version": "3.1.4",
+    "resolved_from": "locked",
+    "version_mismatch": false,
+    "versions": [
+     [
+      "npm",
+      "locked",
+      "3.1.4",
+      "yarn.lock",
+      5
+     ]
+    ],
+    "docs": [],
+    "warnings": 1
+   }
+  },
+  {
+   "args": [
+    "p_pnp",
+    "@acme/client"
+   ],
+   "exit": 0,
+   "expect": {
+    "found": true,
+    "resolved_version": "3.0.5",
+    "resolved_from": "locked",
+    "version_mismatch": false,
+    "versions": [
+     [
+      "npm",
+      "locked",
+      "3.0.5",
+      "yarn.lock",
+      5
+     ]
+    ],
+    "docs": [],
+    "warnings": 2
+   }
+  },
+  {
+   "args": [
+    "p_python",
+    "acme_tools"
+   ],
+   "exit": 0,
+   "expect": {
+    "found": true,
+    "resolved_version": "1.4.2",
+    "resolved_from": "installed",
+    "version_mismatch": true,
+    "versions": [
+     [
+      "python",
+      "pinned",
+      "1.4.0",
+      "requirements.txt",
+      2
+     ],
+     [
+      "python",
+      "locked",
+      "1.4.2",
+      "poetry.lock",
+      3
+     ],
+     [
+      "python",
+      "installed",
+      "1.4.2",
+      ".venv/Lib/site-packages/acme_tools-1.4.2.dist-info/METADATA",
+      3
+     ]
+    ],
+    "docs": [
+     "metadata|.venv/Lib/site-packages/acme_tools-1.4.2.dist-info/METADATA|10",
+     "entry|.venv/Lib/site-packages/acme_tools/__init__.py|5",
+     "types_marker|.venv/Lib/site-packages/acme_tools/py.typed|0",
+     "types|.venv/Lib/site-packages/acme_tools/__init__.pyi|1"
+    ],
+    "warnings": 1
+   }
+  },
+  {
+   "args": [
+    "p_uv",
+    "acme-tools"
+   ],
+   "exit": 0,
+   "expect": {
+    "found": true,
+    "resolved_version": "1.5.0",
+    "resolved_from": "locked",
+    "version_mismatch": false,
+    "versions": [
+     [
+      "python",
+      "locked",
+      "1.5.0",
+      "uv.lock",
+      5
+     ]
+    ],
+    "docs": [],
+    "warnings": 1
+   }
+  },
+  {
+   "args": [
+    "p_go",
+    "example.com/acme/kit"
+   ],
+   "exit": 0,
+   "expect": {
+    "found": true,
+    "resolved_version": "v1.8.0",
+    "resolved_from": "installed",
+    "version_mismatch": false,
+    "versions": [
+     [
+      "go",
+      "checksum_listed",
+      "v1.7.0",
+      "go.sum",
+      1
+     ],
+     [
+      "go",
+      "checksum_listed",
+      "v1.8.0",
+      "go.sum",
+      3
+     ],
+     [
+      "go",
+      "declared",
+      "v1.8.0",
+      "go.mod",
+      6
+     ],
+     [
+      "go",
+      "installed",
+      "v1.8.0",
+      "vendor/modules.txt",
+      1
+     ]
+    ],
+    "docs": [
+     "readme|vendor/example.com/acme/kit/README.md|1",
+     "source_docs|vendor/example.com/acme/kit/doc.go|2",
+     "source|vendor/example.com/acme/kit/kit.go|3"
+    ],
+    "warnings": 0
+   }
+  },
+  {
+   "args": [
+    "p_python",
+    "acme-tools",
+    "--ecosystem",
+    "npm"
+   ],
+   "exit": 1,
+   "expect": {
+    "found": false,
+    "resolved_version": null,
+    "versions": [],
+    "docs": [],
+    "warnings": 1
+   }
+  },
+  {
+   "args": [
+    "p_empty",
+    "acme-widgets"
+   ],
+   "exit": 1,
+   "expect": {
+    "found": false,
+    "resolved_version": null,
+    "versions": [],
+    "docs": [],
+    "warnings": 1
+   }
+  },
+  {
+   "args": [
+    "p_does_not_exist",
+    "acme-widgets"
+   ],
+   "exit": 2,
+   "expect": {}
+  }
+ ]
+}

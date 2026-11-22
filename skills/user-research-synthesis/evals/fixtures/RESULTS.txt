@@ -1,0 +1,9 @@
+PASS notes_good.json themes_good.json
+PASS notes_good.json themes_bad.json
+PASS notes_bad.json
+PASS notes_good.json themes_good.json --min-quotes 4 --min-participants 4
+PASS notes_warn.json
+PASS notes_warn.json --strict
+PASS broken.json
+PASS nope.json
+8/8 cases passed

@@ -1,0 +1,44 @@
+{
+  "skill_name": "systematic-debugging",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/ledger_check.py or a plain check; [judge] assertions need a blind grader. The ledger script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-orders-page-one",
+      "prompt": "Support says the orders screen shows the wrong page 1 (see BUG_REPORT.md). Find the cause and fix it. Keep your debugging record in ledger.md.",
+      "files": ["evals/files/t1-orders-page-one/pager.py", "evals/files/t1-orders-page-one/api.py", "evals/files/t1-orders-page-one/BUG_REPORT.md"],
+      "assertions": [
+        "[script] ledger_check.py ledger.md exits 0 (ok true)",
+        "[script] After the fix, list_orders(range 1..25, page=1, size=10) returns 1..10 AND list_users with the same arguments still returns 1..10",
+        "[script] A regression test file exists and the ledger records its failing output from before the fix",
+        "[judge] The root cause is stated as a mismatch between a 1-based caller and a 0-based paginate (or equivalent), located at list_orders; the agent did not change the contract of paginate",
+        "[judge] At least two hypotheses were recorded, one of them blaming paginate, and it has an experiment that refutes or rules it out",
+        "[judge] The final reply says what was not verified"
+      ]
+    },
+    {
+      "id": "t2-draft-ledger",
+      "prompt": "I wrote this debugging ledger and I am about to apply the fix. Check it and tell me whether I can proceed. Save a corrected ledger to ledger_fixed.md only if the facts in it allow that.",
+      "files": ["evals/files/t2-draft-ledger/ledger.md"],
+      "assertions": [
+        "[script] The reply names untested hypotheses H2 and H3",
+        "[script] The reply names E1 as changing two variables",
+        "[script] The reply says there is no regression test recorded and the fix should wait",
+        "[judge] The agent does not invent experiment results, a failing test output or a confirmed root cause in ledger_fixed.md; items it cannot know are marked as still to do",
+        "[judge] The agent notes that H1 is marked confirmed on the strength of a two-variable experiment, so the confirmation is not valid",
+        "[judge] The root cause line is flagged as a guess (probably)"
+      ]
+    },
+    {
+      "id": "t3-flaky-test",
+      "prompt": "Read NOTES.md. The assistant wants to mark the flaky test as fixed. Tell me whether it is, and what has to happen before we can say so.",
+      "files": ["evals/files/t3-flaky-test/NOTES.md"],
+      "assertions": [
+        "[script] The reply gives a number of consecutive passing runs between 20 and 30 as the evidence needed (23 at a 5/40 failure rate for 95% confidence)",
+        "[script] The reply says that 3 passes prove nothing, with the odds or the failure rate behind it",
+        "[judge] The reply says a sleep that makes a timing bug disappear is a mask until a mechanism is shown, and asks for the root cause or a controlled single-variable experiment instead",
+        "[judge] The reply says the CI-only failure is itself a clue and proposes finding what differs between CI and the laptop, one difference at a time",
+        "[judge] The reply does not claim the test is or is not fixed as a fact"
+      ]
+    }
+  ]
+}

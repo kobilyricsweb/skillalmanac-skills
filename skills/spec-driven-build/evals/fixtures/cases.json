@@ -1,0 +1,15 @@
+{
+  "note": "Each case runs scripts/spec_trace.py with the given args (paths starting with spec_ are relative to evals/fixtures/) and checks the exit code and the listed JSON fields. Expected values were read by hand from the fixture specs and tests.",
+  "cases": [
+    {"args": ["spec_good/SPEC.md", "spec_good/tests", "--src", "spec_good/src"], "exit": 0,
+     "expect": {"ok": true, "requirements_total": 5, "no_test": [], "unknown_in_tests": [], "no_acceptance": [], "open_markers": [], "duplicate_ids": [], "deferred": ["REQ-005"], "no_code": []}},
+    {"args": ["spec_bad/SPEC.md", "spec_bad/tests"], "exit": 1,
+     "expect": {"ok": false, "requirements_total": 5, "no_acceptance": ["REQ-002"], "no_test": ["REQ-002", "REQ-004"], "only_skipped_tests": ["REQ-003"], "duplicate_ids": ["REQ-003"], "deferred": ["REQ-006"],
+                "unknown_ids": ["REQ-4", "REQ-099"], "open_marker_ids": ["REQ-002"]}},
+    {"args": ["spec_bad/SPEC.md"], "exit": 1,
+     "expect": {"ok": false, "no_acceptance": ["REQ-002"], "duplicate_ids": ["REQ-003"], "no_test": null}},
+    {"args": ["spec_good/SPEC.md", "spec_good/tests", "--src", "spec_bad/tests", "--require-code"], "exit": 1,
+     "expect": {"ok": false, "no_code": ["REQ-002", "REQ-004"]}},
+    {"args": ["spec_missing/SPEC.md"], "exit": 2, "expect": {}}
+  ]
+}

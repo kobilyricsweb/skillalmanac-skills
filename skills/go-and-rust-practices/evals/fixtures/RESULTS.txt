@@ -1,0 +1,10 @@
+PASS scan bad_lib.go
+PASS scan good_lib.go
+PASS scan main_ok.go
+PASS scan bad_lib.rs
+PASS scan good_lib.rs
+PASS scan tree
+PASS scan tree --only rust
+PASS scan does_not_exist.go
+PASS rules
+9/9 cases passed

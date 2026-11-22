@@ -1,0 +1,28 @@
+{
+  "goal": "File the return",
+  "first_action": "Gather the documents",
+  "first_action_minutes": 5,
+  "limits": {
+    "max_step_minutes": 45,
+    "daily_capacity_minutes": 240
+  },
+  "next_action": "s1",
+  "steps": [
+    {
+      "id": "s1",
+      "title": "Write the income summary note",
+      "minutes": 30,
+      "energy": "high",
+      "context": "laptop",
+      "day": "mon"
+    },
+    {
+      "id": "s2",
+      "title": "Choose the deduction method",
+      "minutes": 30,
+      "energy": "high",
+      "context": "laptop",
+      "day": "mon"
+    }
+  ]
+}

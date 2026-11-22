@@ -1,0 +1,43 @@
+{
+  "skill_name": "rag-chunking-planner",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/plan_chunks.py or a plain check on the saved output; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-docs-compare",
+      "prompt": "We are building a chatbot over the Markdown and text files in evals/fixtures/corpus. Most questions are fact lookups. Use evals/fixtures/questions.json as the question set. Pick chunk settings, show the evidence, and write the chunks to chunks.jsonl.",
+      "files": ["evals/fixtures/corpus/guide.md", "evals/fixtures/corpus/faq.txt", "evals/fixtures/questions.json"],
+      "assertions": [
+        "[script] chunks.jsonl exists, every row has id, source, heading_path, position, tokens and text, and plan_chunks.py run with the chosen setting exits 0",
+        "[script] The chosen setting is not a fixed strategy (fixed 40/5 splits a code fence and a table and loses q-lockout)",
+        "[judge] The report gives recall at 1, 3 and 5 for at least three candidate settings, taken from a compare run rather than described from memory",
+        "[judge] The report says that q-missing is not in the corpus and was excluded, instead of counting it as a failure",
+        "[judge] Chunk sizes proposed for fact lookups lie in the 200 to 400 range, or the report explains why a smaller corpus justifies a different size",
+        "[judge] The report ends with a not-measured line that names the embedding model and the BM25 limitation"
+      ]
+    },
+    {
+      "id": "t2-bad-overlap-small-corpus",
+      "prompt": "I plan to chunk evals/files/t2-prose-handbook/handbook.txt into 500-token chunks with 350 tokens of overlap for an HR policy assistant. Check the plan with the questions in questions.json and tell me what to change.",
+      "files": ["evals/files/t2-prose-handbook/handbook.txt", "evals/files/t2-prose-handbook/questions.json"],
+      "assertions": [
+        "[script] The agent ran plan_chunks.py with overlap 350 and size 500 and the output contains the overlap_too_large defect with severity error",
+        "[script] The recommended overlap is at most half the recommended size",
+        "[judge] The reply states that the handbook is only about 313 tokens, so 500-token chunks produce a single chunk and the recall test cannot tell settings apart",
+        "[judge] The reply recommends a paragraph strategy with overlap of 10 to 15 percent of the size, and does not claim the 1.0 recall proves the plan is good",
+        "[judge] The reply asks for or suggests a larger corpus or harder questions before settling the numbers"
+      ]
+    },
+    {
+      "id": "t3-mixed-sources-routing",
+      "prompt": "Our support assistant indexes the sources listed in evals/files/t3-mixed-sources/inventory.md. Decide how to chunk each source and tell me what you can measure with your tool and what you cannot.",
+      "files": ["evals/files/t3-mixed-sources/inventory.md", "evals/files/t3-mixed-sources/call_transcript.txt"],
+      "assertions": [
+        "[script] If plan_chunks.py was run it was run only on text or Markdown inputs, and its JSON was reported without edits",
+        "[judge] Python code gets one chunk per function or class with signature and docstring together, not fixed windows",
+        "[judge] The error-code CSV gets row groups of about 20 to 50 rows with the header row repeated, or one chunk per row, and the reply says the script does not audit these",
+        "[judge] Transcripts get time windows of 60 to 120 seconds with a speaker label kept, and the call id is stored as metadata so the call 3311 question can be answered",
+        "[judge] The reply states that the three sources need separate settings and that recall must be measured per source with its own questions"
+      ]
+    }
+  ]
+}

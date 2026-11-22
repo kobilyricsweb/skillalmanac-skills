@@ -1,0 +1,22 @@
+[
+  {"query": "my text to speech keeps reading 1984 as one thousand nine hundred eighty four, can you prep the script", "should_trigger": true},
+  {"query": "how long will this narration run? it's 900 words, I read at about 150 words per minute", "should_trigger": true},
+  {"query": "split my voiceover script into chunks under 2500 characters without cutting sentences", "should_trigger": true},
+  {"query": "prepare this script for TTS: spell out the numbers, dates and prices", "should_trigger": true},
+  {"query": "the AI voice mangles the acronyms and URLs in my explainer script, fix the spoken form", "should_trigger": true},
+  {"query": "make a pronunciation list and SSML version of this narration script", "should_trigger": true},
+  {"query": "flag the sentences in my voiceover that are too long to say in one breath", "should_trigger": true},
+  {"query": "I'm recording narration myself, can you mark pauses and tell me where the tongue twisters are", "should_trigger": true},
+  {"query": "convert $4.50 and 3:30pm and Dr. Lee into how a voice should say them in this audiobook sample", "should_trigger": true},
+  {"query": "estimate the duration of this podcast intro script with pauses for commas and paragraphs", "should_trigger": true},
+  {"query": "write me a 5 minute YouTube video script about composting", "should_trigger": false},
+  {"query": "clone my voice so the narration sounds exactly like me", "should_trigger": false},
+  {"query": "generate the audio file from this script with a female voice", "should_trigger": false},
+  {"query": "fix the timestamps and line lengths in this SRT subtitle file", "should_trigger": false},
+  {"query": "clean up this meeting transcript, remove the ums and fix speaker labels", "should_trigger": false},
+  {"query": "translate my narration script into Spanish", "should_trigger": false},
+  {"query": "make this paragraph sound less like an AI wrote it", "should_trigger": false},
+  {"query": "build a programmatic video from this script with captions and stock footage", "should_trigger": false},
+  {"query": "convert the number 1500 to a roman numeral in my Python function", "should_trigger": false},
+  {"query": "suggest a title, description and tags for my video about composting", "should_trigger": false}
+]

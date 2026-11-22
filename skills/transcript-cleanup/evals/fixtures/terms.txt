@@ -1,0 +1,2 @@
+[00:01] Kim: we moved to kubernetes last week.
+[00:05] Dr. Park: The post gress upgrade is next.

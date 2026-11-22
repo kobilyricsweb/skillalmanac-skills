@@ -1,0 +1,127 @@
+{
+  "note": "Expected values were worked out by hand from the zone rules (see VERIFICATION.md) before being saved, then compared with the script output. {fx} is the fixtures folder, {tmp} is a throwaway folder created by run_fixtures.py.",
+  "cases": [
+    {
+      "name": "ny_london_dst: one all-inside slot before the US change, a wider window after it, DST drift reported",
+      "args": ["plan", "{fx}/ny_london_dst.json"],
+      "exit": 1,
+      "checks": [
+        {"path": "dates.0.best_quality", "equals": "all_inside"},
+        {"path": "dates.0.windows.0.earliest_start_utc", "equals": "2026-03-02T15:00:00Z"},
+        {"path": "dates.0.windows.0.latest_start_utc", "equals": "2026-03-02T15:00:00Z"},
+        {"path": "dates.5.status", "equals": "everyone_off"},
+        {"path": "dates.7.windows.0.earliest_start_utc", "equals": "2026-03-09T14:00:00Z"},
+        {"path": "dates.7.windows.0.latest_start_utc", "equals": "2026-03-09T15:00:00Z"},
+        {"path": "dst_changes.0.date", "equals": "2026-03-08"},
+        {"path": "dst_changes.0.participant", "equals": "Ana"},
+        {"path": "dst_changes.0.to_utc_offset", "equals": "-04:00"},
+        {"path": "relative_offset_shifts.0.offset_difference_before_minutes", "equals": -300},
+        {"path": "relative_offset_shifts.0.offset_difference_after_minutes", "equals": -240},
+        {"path": "rotation_plan.slots.5.start_utc", "equals": "2026-03-09T14:30:00Z"},
+        {"path": "rotation_plan.no_rotation_needed", "equals": true}
+      ]
+    },
+    {
+      "name": "ny_london_nodst: clean week, exit 0",
+      "args": ["plan", "{fx}/ny_london_nodst.json"],
+      "exit": 0,
+      "checks": [
+        {"path": "summary.findings", "equals": []},
+        {"path": "dst_changes", "equals": []},
+        {"path": "dates.4.windows.0.best_start_utc", "equals": "2026-03-06T15:00:00Z"}
+      ]
+    },
+    {
+      "name": "ny_tokyo: no overlap, least-bad slots with cost per person, rotation alternates who pays",
+      "args": ["plan", "{fx}/ny_tokyo.json"],
+      "exit": 1,
+      "checks": [
+        {"path": "dates.0.best_quality", "equals": "one_outside"},
+        {"path": "dates.0.windows.0.least_bad", "equals": true},
+        {"path": "dates.0.windows.0.best_start_utc", "equals": "2026-02-02T21:00:00Z"},
+        {"path": "dates.0.windows.0.pain_by_person", "equals": {"Ana": 15.0, "Ken": 180.0}},
+        {"path": "dates.0.windows.0.local_times_by_person.Ken.status", "equals": "outside"},
+        {"path": "dates.0.windows.1.best_start_utc", "equals": "2026-02-03T00:00:00Z"},
+        {"path": "dates.0.windows.1.pain_by_person", "equals": {"Ana": 180.0, "Ken": 15.0}},
+        {"path": "rotation_plan.slots.0.start_utc", "equals": "2026-02-02T21:00:00Z"},
+        {"path": "rotation_plan.slots.1.start_utc", "equals": "2026-02-04T00:00:00Z"},
+        {"path": "rotation_plan.slots.2.start_utc", "equals": "2026-02-04T21:00:00Z"},
+        {"path": "rotation_plan.slots.3.start_utc", "equals": "2026-02-06T00:00:00Z"},
+        {"path": "rotation_plan.total_pain_by_person", "equals": {"Ana": 390.0, "Ken": 390.0}},
+        {"path": "rotation_plan.fairness_score", "equals": 1.0}
+      ]
+    },
+    {
+      "name": "night_shift_holiday: midnight-wrapping shift, a holiday, a weekend",
+      "args": ["plan", "{fx}/night_shift_holiday.json"],
+      "exit": 1,
+      "checks": [
+        {"path": "dates.0.windows.0.earliest_start_utc", "equals": "2026-01-12T18:00:00Z"},
+        {"path": "dates.0.windows.0.latest_start_utc", "equals": "2026-01-12T22:30:00Z"},
+        {"path": "dates.4.windows.0.quality", "equals": "all_inside"},
+        {"path": "dates.2.best_quality", "equals": "several_outside"},
+        {"path": "dates.2.windows.0.best_start_utc", "equals": "2026-01-15T07:30:00Z"},
+        {"path": "dates.2.windows.0.pain_by_person", "equals": {"Mia": 450.0, "Ravi": 540.0}},
+        {"path": "dates.2.windows.1.quality", "equals": "day_off"},
+        {"path": "dates.5.status", "equals": "everyone_off"},
+        {"path": "dates.6.best_quality", "equals": "day_off"},
+        {"path": "rotation_plan.skipped_dates.1.reason", "equals": "best_slot_is_on_a_day_off"}
+      ]
+    },
+    {
+      "name": "no tz database but fixed offsets: works, warns that DST is not tracked",
+      "args": ["--simulate-no-tzdb", "plan", "{fx}/ny_london_fixed_offsets.json"],
+      "exit": 0,
+      "checks": [
+        {"path": "inputs.tz_database", "equals": "missing"},
+        {"path": "warnings.0.code", "equals": "fixed_offset_no_dst_tracking"},
+        {"path": "dates.0.windows.0.best_start_utc", "equals": "2026-03-02T15:00:00Z"}
+      ]
+    },
+    {
+      "name": "no tz database and no offsets: reports it and exits 2",
+      "args": ["--simulate-no-tzdb", "plan", "{fx}/ny_london_nodst.json"],
+      "exit": 2,
+      "checks": [{"path": "error", "equals": "no_tz_database"}]
+    },
+    {
+      "name": "ambiguous abbreviation IST is rejected",
+      "args": ["plan", "{fx}/bad_ambiguous_ist.json"],
+      "exit": 2,
+      "checks": [{"path": "error", "equals": "ambiguous_zone"}]
+    },
+    {
+      "name": "unknown zone is rejected",
+      "args": ["plan", "{fx}/bad_unknown_zone.json"],
+      "exit": 2,
+      "checks": [{"path": "error", "equals": "unknown_zone"}]
+    },
+    {
+      "name": "output path equal to the input is refused even with --force, input unchanged",
+      "args": ["plan", "{fx}/ny_london_nodst.json", "--out", "{fx}/ny_london_nodst.json", "--force"],
+      "exit": 2,
+      "checks": [{"path": "error", "equals": "output_is_input"}],
+      "input_unchanged": "{fx}/ny_london_nodst.json"
+    },
+    {
+      "name": "--out to a new path writes the same report; a second run without --force is refused",
+      "args": ["plan", "{fx}/ny_london_nodst.json", "--out", "{tmp}/report.json"],
+      "exit": 0,
+      "checks": [{"path": "summary.findings", "equals": []}],
+      "then_file_json": {"path": "{tmp}/report.json", "equals_stdout": true},
+      "then_args": ["plan", "{fx}/ny_london_nodst.json", "--out", "{tmp}/report.json"],
+      "then_exit": 2
+    },
+    {
+      "name": "check-zones separates good, ambiguous and unknown names",
+      "args": ["check-zones", "IST", "Asia/Kolkata", "Mars/Olympus", "--date", "2026-03-10"],
+      "exit": 1,
+      "checks": [
+        {"path": "zones.0.status", "equals": "ambiguous_zone"},
+        {"path": "zones.1.status", "equals": "ok"},
+        {"path": "zones.1.utc_offset_at_noon_utc", "equals": "+05:30"},
+        {"path": "zones.2.status", "equals": "unknown_zone"}
+      ]
+    }
+  ]
+}

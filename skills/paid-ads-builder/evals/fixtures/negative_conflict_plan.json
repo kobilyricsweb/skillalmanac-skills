@@ -1,0 +1,37 @@
+{
+  "business": "Harbor Plumbing (fictional)",
+  "vertical": "general",
+  "currency": "USD",
+  "total_budget": 300,
+  "target_cpa": 25,
+  "conversion": {"name": "call_click", "definition": "Tap on the phone number on the landing page; one per session; 7-day window"},
+  "campaigns": [
+    {
+      "name": "search-small-test",
+      "platform": "google_search",
+      "objective": "leads",
+      "bid_strategy": "manual_cpc",
+      "audience": {"locations": ["Austin, TX"]},
+      "daily_budget": 10,
+      "days": 30,
+      "budget": 300,
+      "utm_campaign": "search-test-2026-12",
+      "forecast": {"cpc": 2.0, "cvr": 0.1, "clicks": 150, "conversions": 15},
+      "negative_keywords": ["free", "emergency plumber"],
+      "ad_groups": [
+        {
+          "name": "emergency",
+          "landing_url": "https://harbor.example/emergency?utm_source=google&utm_medium=cpc&utm_campaign=search-test-2026-12",
+          "keywords": ["[emergency plumber]"],
+          "ads": [{"headlines": ["Emergency Plumber", "Quote Before Work", "Local Licensed Team"], "descriptions": ["Upfront quote before any work starts.", "Request a quote online in two minutes."]}]
+        },
+        {
+          "name": "after-hours",
+          "landing_url": "https://harbor.example/after-hours?utm_source=google&utm_medium=cpc&utm_campaign=search-test-2026-12",
+          "keywords": ["emergency plumber", "[night plumber]"],
+          "ads": [{"headlines": ["Night Plumber Austin", "Quote Before Work", "Local Licensed Team"], "descriptions": ["Upfront quote before any work starts.", "Request a quote online in two minutes."]}]
+        }
+      ]
+    }
+  ]
+}

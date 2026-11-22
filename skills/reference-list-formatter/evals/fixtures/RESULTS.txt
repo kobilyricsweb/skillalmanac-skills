@@ -1,0 +1,11 @@
+PASS format good.bib --style apa
+PASS format good.bib --style mla
+PASS format good.bib --style chicago
+PASS format good.bib --style ieee
+PASS format bad.bib --style apa
+PASS format bad.bib --style mla
+PASS format ai.json --style apa
+PASS format ai.json --style mla
+PASS format t2_chatgpt.json --style mla
+PASS format missing_file.bib --style apa
+10/10 cases passed

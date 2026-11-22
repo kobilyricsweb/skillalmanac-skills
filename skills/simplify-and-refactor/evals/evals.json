@@ -1,0 +1,49 @@
+{
+  "skill_name": "simplify-and-refactor",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use pytest, scripts/refactor_diff.py or a plain check; [judge] assertions need a blind grader. refactor_diff.py is the skill's own tool, so each task also has judge assertions that measure something it does not control. The fixtures under evals/files/ are inputs; evals/files/t3-review-agent-cleanup/expected_refactor_diff.json is the hand-checked script output for task 3.",
+  "evals": [
+    {
+      "id": "t1-clean-up-invoice",
+      "prompt": "Clean up build_invoice in invoice.py. It is a nested mess. There are no tests. Keep it working exactly as it does now; other jobs depend on it.",
+      "files": ["evals/files/t1-clean-up-invoice/invoice.py"],
+      "assertions": [
+        "[script] a test file exists whose tests pass against the ORIGINAL invoice.py (run the agent's tests against a copy of the original)",
+        "[script] the agent's tests also pass against the refactored invoice.py",
+        "[script] refactor_diff.py original refactored exits 0 (build_invoice signature unchanged, including notes=[])",
+        "[script] calling build_invoice twice with a total above 1000 and no notes argument yields notes ['large order', 'large order'] on the second call (the shared default list is kept)",
+        "[script] build_invoice({'name': 'a', 'active': True, 'vip': True}, [{'price': 7, 'qty': 3}], []) returns total 19 (the // truncation is kept)",
+        "[judge] The tests were written before the code was changed (order visible in the transcript or commits) and assert current outputs, not desired ones",
+        "[judge] The mutable default and the truncating arithmetic are reported under found-not-fixed and not silently changed",
+        "[judge] The reply ends with the fixed report (Goal, Commits, Behaviour, Public surface, Found not fixed, Not checked)"
+      ]
+    },
+    {
+      "id": "t2-rename-and-fix",
+      "prompt": "In lib.py rename avg to mean, rename pct to percent_of, and while you are at it simplify and fix anything wrong in them. report.py uses both. Keep the commits clean.",
+      "files": ["evals/files/t2-rename-and-fix/lib.py", "evals/files/t2-rename-and-fix/report.py"],
+      "assertions": [
+        "[script] report.py still imports and runs: weekly([{'n': 2}, {'n': 4}]) returns {'mean': 3.0, 'share': 150}, with no ImportError",
+        "[script] after the work, lib.py still exposes avg and pct names that return the same values as before for avg([1, 2]) and pct(1, 3) (kept as aliases), unless the transcript shows the user was asked and agreed to remove them",
+        "[script] pct(1, 3) still returns 33 (truncation kept) unless a separate commit labelled as a behaviour change exists",
+        "[script] the renames are in a commit separate from any simplification, and any fix is in a commit separate from the renames (git log inspection)",
+        "[judge] The division by zero in pct and the truncation are named as found-not-fixed or put in a separately labelled, user-approved change; they are not mixed into a refactor commit",
+        "[judge] The agent searched for callers of the renamed names before renaming and says what it searched",
+        "[judge] The reply ends with the fixed report and lists what was not checked (for example other repositories importing lib)"
+      ]
+    },
+    {
+      "id": "t3-review-agent-cleanup",
+      "prompt": "An agent was told to 'clean up' before.py and produced after.py. Tell me whether it is a safe, behaviour-preserving refactor. Do not edit either file.",
+      "files": ["evals/files/t3-review-agent-cleanup/before.py", "evals/files/t3-review-agent-cleanup/after.py"],
+      "assertions": [
+        "[script] neither before.py nor after.py is modified (hash check)",
+        "[script] the reply names count_items as removed",
+        "[script] the reply says the parse_ids parameter sep was renamed to separator, so callers passing sep= break",
+        "[script] the reply says Registry.get lost its default parameter",
+        "[judge] The reply states that Registry.get on a missing key now raises KeyError where it returned None before",
+        "[judge] The reply says the logging call in Registry.add and the module-level log were removed, a behaviour and surface change",
+        "[judge] The verdict is not safe; the reply does not call the regex precompilation unsafe, and it names what it did not check (callers in other files, dynamic access)"
+      ]
+    }
+  ]
+}

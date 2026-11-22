@@ -1,0 +1,6 @@
+{
+  "min_rest_min": 660,
+  "max_booked_min_per_day": 600,
+  "require_room": true,
+  "capacity": {"rooms": {"Ward": 2}}
+}

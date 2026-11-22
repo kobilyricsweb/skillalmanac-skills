@@ -1,0 +1,71 @@
+{
+  "note": "Expected values were derived by hand from each fixture file (see VERIFICATION.md), then compared with the script output.",
+  "cases": [
+    {
+      "args": ["check", "tokens_good.json"],
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "tokens": 12,
+        "modes": ["light", "dark"],
+        "counts": {"error": 0, "warning": 0},
+        "counts_by_code": {},
+        "css_preview": ":root {\n  --color-neutral-50: #f5f5f5;\n  --color-neutral-900: #111111;\n  --color-brand-primary: #0B5FFF;\n  --color-surface-default: #ffffff;\n  --color-text-default: var(--color-neutral-900);\n  --color-action-primary: var(--color-brand-primary);\n  --space-sm: 8px;\n  --space-md: 16px;\n  --radius-card: 12px;\n  --font-family-body: Inter, \"Segoe UI\", system-ui, sans-serif;\n  --font-weight-bold: 700;\n  --motion-ease-out: cubic-bezier(0.2, 0, 0, 1);\n}\n[data-theme=\"light\"] {\n  --color-surface-default: #ffffff;\n  --color-text-default: var(--color-neutral-900);\n}\n[data-theme=\"dark\"] {\n  --color-surface-default: #121212;\n  --color-text-default: var(--color-neutral-50);\n}\n"
+      }
+    },
+    {
+      "args": ["check", "tokens_bad.json"],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "tokens": 11,
+        "counts": {"error": 10, "warning": 3},
+        "counts_by_code": {
+          "alias_type_mismatch": 1,
+          "circular_alias": 2,
+          "duplicate_value": 1,
+          "invalid_value": 2,
+          "legacy_value_key": 1,
+          "missing_mode_value": 1,
+          "missing_type": 1,
+          "naming_violation": 2,
+          "undeclared_mode": 1,
+          "unresolved_alias": 1
+        },
+        "error_paths": [
+          "color.Brand Blue", "color.accent_color", "color.bg", "color.bg2",
+          "color.surface.default", "color.text.default", "legacy.x", "size.lg",
+          "space.gap", "space.md"
+        ],
+        "css_preview": ":root {\n  --color-brand-primary: #0B5FFF;\n  --color-brand-secondary: #0b5fff;\n}\n"
+      }
+    },
+    {
+      "args": ["check", "tokens_dupkey.json"],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "tokens": 3,
+        "modes_declared": false,
+        "counts": {"error": 3, "warning": 0},
+        "counts_by_code": {"css_name_collision": 2, "duplicate_key": 1},
+        "css_preview": ":root {\n  --space-sm: 8px;\n}\n"
+      }
+    },
+    {
+      "args": ["css", "tokens_good.json"],
+      "exit": 0,
+      "expect": {}
+    },
+    {
+      "args": ["check", "tokens_notjson.json"],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "args": ["check", "does_not_exist.json"],
+      "exit": 2,
+      "expect": {}
+    }
+  ]
+}

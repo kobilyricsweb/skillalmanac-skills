@@ -1,0 +1,8 @@
+[
+  {"id": "q-rollback-days", "question": "How long is the previous build kept for rollback?", "expected_passage": "The previous build is kept for fourteen days", "source": "guide.md"},
+  {"id": "q-free-limit", "question": "How many deploys per day on the Free plan?", "expected_passage": "| Free | 5 |", "source": "guide.md"},
+  {"id": "q-lockout", "question": "How long is an account locked after failed sign-in attempts?", "expected_passage": "Accounts are locked for fifteen minutes after five failed sign-in attempts", "source": "faq.txt"},
+  {"id": "q-refund-window", "question": "How many days after purchase can I get a refund?", "expected_passage": "Refunds are available for thirty days after purchase", "source": "faq.txt"},
+  {"id": "q-span", "question": "Which command shows the status of the api service?", "expected_passage": "deploy rollback --service api --to previous deploy status --service api", "source": "guide.md"},
+  {"id": "q-missing", "question": "What is the SLA?", "expected_passage": "The uptime commitment is 99.9 percent", "source": "guide.md"}
+]

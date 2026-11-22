@@ -1,0 +1,16 @@
+PASS validate deck_good.json
+PASS validate deck_bad.json
+PASS validate deck_good.csv
+PASS validate deck_bad.csv
+PASS validate deck_noheader.csv
+PASS validate deck_absent.json
+PASS schedule --start 2026-12-01
+PASS schedule --start 2026-12-01 --profile dense
+PASS schedule --start 2026-12-01 --exam 2026-12-11
+PASS schedule --start 2026-12-01 --exam 2026-12-11 --cards 50 --new-per-day 20
+PASS schedule --start 2026-12-01 --exam 2026-12-02
+PASS schedule --start 2026-12-01 --exam 2026-11-20
+PASS schedule --start 2026-02-30
+PASS schedule --start 2026-12-01 --cards 50
+PASS schedule --start 2026-12-01 --exam 2026-12-04 --cards 100 --new-per-day 20
+15/15 cases passed

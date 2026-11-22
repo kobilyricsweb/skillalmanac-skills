@@ -1,0 +1,53 @@
+{
+ "skill_name": "react-native-practices",
+ "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/rn_scan.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has judge assertions that measure something it does not control.",
+ "evals": [
+  {
+   "id": "t1-slow-feed",
+   "prompt": "This notes screen lags badly with a couple of thousand notes on a mid-range Android phone. The app is Expo. Fix it and tell me what you changed. Save the fixed file as NotesScreen.fixed.tsx.",
+   "files": [
+    "evals/files/t1-slow-feed/NotesScreen.tsx"
+   ],
+   "assertions": [
+    "[script] rn_scan.py on NotesScreen.fixed.tsx reports summary.warn equal to 0",
+    "[script] NotesScreen.fixed.tsx contains 'FlatList' and 'keyExtractor' and does not contain '<ScrollView'",
+    "[script] NotesScreen.fixed.tsx does not contain 'key={index}'",
+    "[judge] The row is a separate memoised component or the renderItem is a stable reference, and the answer says why",
+    "[judge] The answer states which react-native and Expo versions it assumed or that it read them, and does not present unconfirmed version claims as fact",
+    "[judge] The route param no longer carries the whole note object, or the answer flags it as a risk",
+    "[judge] The reply ends with the fixed report (Versions, Changed, Scan, Verified on device, Unconfirmed claims, Not checked) and says performance was not measured on a device"
+   ]
+  },
+  {
+   "id": "t2-camera-permission",
+   "prompt": "Our scan button silently does nothing for some users and on iPhones the top margin looks wrong. Fix the file, keeping Expo. Save as ScanButton.fixed.tsx and list anything I must add to app config.",
+   "files": [
+    "evals/files/t2-camera-permission/ScanButton.tsx"
+   ],
+   "assertions": [
+    "[script] rn_scan.py on ScanButton.fixed.tsx reports no platform-literal-invalid finding",
+    "[script] ScanButton.fixed.tsx contains 'canAskAgain' and 'openSettings'",
+    "[script] ScanButton.fixed.tsx does not contain '? 44 : 0'",
+    "[judge] The code handles three outcomes: granted, denied and can ask again, denied and cannot ask again",
+    "[judge] The answer tells the user an iOS camera usage description string and a rebuild are needed, and does not claim an over-the-air update is enough",
+    "[judge] The margin fix uses safe-area insets or a named constant with a reason, not another bare number",
+    "[judge] The answer marks any module-specific field name it could not confirm as verify (unconfirmed)"
+   ]
+  },
+  {
+   "id": "t3-prerelease-review",
+   "prompt": "Review ProfileScreen.tsx and the release plan 'build on the dev client, ship the same day' as a pre-release check. Report problems, do not rewrite the file.",
+   "files": [
+    "evals/files/t3-prerelease-review/ProfileScreen.tsx"
+   ],
+   "assertions": [
+    "[script] The reply mentions line 5 and 'console.debug'",
+    "[script] The reply does not contain a rewritten full ProfileScreen file (no line starting 'export function ProfileScreen' in a code block)",
+    "[judge] The reply says a release-mode build on real iOS and Android devices is needed before shipping, not a development client",
+    "[judge] The reply names store requirements (target API level or privacy manifest) as things to confirm on the day, tagged as unconfirmed rather than stated as exact numbers",
+    "[judge] The reply notes the inline renderItem as minor and the missing accessibility labels on the Pressable as a real gap",
+    "[judge] The reply uses the fixed report format and its Not checked line is not empty"
+   ]
+  }
+ ]
+}

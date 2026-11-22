@@ -1,0 +1,8 @@
+{
+  "keys": {
+    "MODE": {"type": "string", "required": true, "enum": ["dev", "staging", "prod"]},
+    "SERVER_PORT": {"type": "int", "required": true},
+    "DEBUG": {"type": "bool"},
+    "API_KEY": {"type": "string", "required": true}
+  }
+}

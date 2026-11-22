@@ -1,0 +1,37 @@
+{
+  "items": [
+    {
+      "id": "chat2023",
+      "type": "software",
+      "title": "ChatGPT",
+      "author": [{"literal": "OpenAI"}],
+      "issued": {"date-parts": [[2023, 3, 14]]},
+      "version": "Mar 14",
+      "genre": "Large language model",
+      "description": "Explain how sleep affects memory consolidation",
+      "URL": "https://chat.openai.com/chat"
+    },
+    {
+      "id": "kim2022a",
+      "type": "article-journal",
+      "title": "Sleep and learning in adolescents",
+      "author": [{"family": "Kim", "given": "Jae-won"}, {"family": "Alvarez", "given": "Maria Elena"}],
+      "issued": {"date-parts": [[2022]]},
+      "container-title": "Adolescent Research Review",
+      "volume": "7",
+      "page": "e0234",
+      "DOI": "https://doi.org/10.2000/arr.7.e0234"
+    },
+    {
+      "id": "kim2022b",
+      "type": "article-journal",
+      "title": "Napping in adolescents",
+      "author": [{"family": "Kim", "given": "Jae-won"}, {"family": "Alvarez", "given": "Maria Elena"}],
+      "issued": {"date-parts": [[2022]]},
+      "container-title": "Adolescent Research Review",
+      "volume": "8",
+      "issue": "1",
+      "page": "3-9"
+    }
+  ]
+}

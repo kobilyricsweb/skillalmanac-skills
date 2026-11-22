@@ -1,0 +1,22 @@
+[
+  {"query": "here's my chorus, can you check whether the lines rhyme and tell me how many syllables each one has", "should_trigger": true},
+  {"query": "is my haiku really 5-7-5? three lines pasted below", "should_trigger": true},
+  {"query": "I wrote a verse and a chorus for my own song, tighten the bridge and fix the uneven lines", "should_trigger": true},
+  {"query": "my limerick doesn't scan, help me fix the rhyme scheme", "should_trigger": true},
+  {"query": "check my sonnet for rhyme scheme and meter, it's 14 lines", "should_trigger": true},
+  {"query": "my lyrics feel cliche, flag the stock phrases and suggest fresher images", "should_trigger": true},
+  {"query": "audit my rap verse: bars, internal rhymes, end rhyme coverage", "should_trigger": true},
+  {"query": "does my chorus repeat the title enough? I want a stronger hook for my original song", "should_trigger": true},
+  {"query": "help me draft an original ballad about a flooded village and then check the stanza rhymes", "should_trigger": true},
+  {"query": "I wrote this poem myself, what rhyme scheme am I using and where does the rhythm break", "should_trigger": true},
+  {"query": "write out the full lyrics of a famous 80s power ballad", "should_trigger": false},
+  {"query": "rewrite my favourite song's chorus with a few words changed so it's technically new", "should_trigger": false},
+  {"query": "write a song in the exact style of a named pop star, reusing her signature lines", "should_trigger": false},
+  {"query": "what is the meaning of this classic song's lyrics?", "should_trigger": false},
+  {"query": "translate these Spanish song lyrics into English", "should_trigger": false},
+  {"query": "write a 500-word short story about a lighthouse keeper", "should_trigger": false},
+  {"query": "proofread my cover letter for grammar mistakes", "should_trigger": false},
+  {"query": "can I legally sample this song? clear the rights for my release", "should_trigger": false},
+  {"query": "give me chords and a melody for a folk song", "should_trigger": false},
+  {"query": "find the lyrics to the song that goes 'something about a river' so I can read them", "should_trigger": false}
+]

@@ -1,0 +1,22 @@
+[
+  {"query": "plan a 5 day trip to Japan for two, mid budget, we don't like rushing", "should_trigger": true},
+  {"query": "can you build me an itinerary for a long weekend in Lisbon", "should_trigger": true},
+  {"query": "is my day in Paris too packed? I have 5 things scheduled between 9 and 6", "should_trigger": true},
+  {"query": "make me a budget table for a week in Greece for a family of four", "should_trigger": true},
+  {"query": "what documents do I need to prepare for a trip abroad, make a checklist", "should_trigger": true},
+  {"query": "check this itinerary json for overlapping activities and missing travel time", "should_trigger": true},
+  {"query": "help me plan our honeymoon, 10 days, I want a day by day plan with costs", "should_trigger": true},
+  {"query": "fix my holiday plan, the museum and the lunch overlap and I can't get across town in 5 minutes", "should_trigger": true},
+  {"query": "put together a 3 day Rome schedule and tell me what I should double check before booking", "should_trigger": true},
+  {"query": "we're going to Berlin in March, plan the days so we aren't exhausted", "should_trigger": true},
+  {"query": "book me the cheapest flight to Madrid next Friday", "should_trigger": false},
+  {"query": "do I need a visa for Thailand? give me a legal answer I can rely on", "should_trigger": false},
+  {"query": "give me turn-by-turn directions from Heathrow to Paddington", "should_trigger": false},
+  {"query": "what is the history of the Colosseum", "should_trigger": false},
+  {"query": "plan the schedule for my two-week software release", "should_trigger": false},
+  {"query": "write a blog post about my trip to Bali last year", "should_trigger": false},
+  {"query": "translate these restaurant menus from Italian to English", "should_trigger": false},
+  {"query": "make a monthly household budget spreadsheet", "should_trigger": false},
+  {"query": "plan the agenda for our company offsite meeting, 3 sessions", "should_trigger": false},
+  {"query": "find hotels under 100 dollars in Prague right now with live prices", "should_trigger": false}
+]

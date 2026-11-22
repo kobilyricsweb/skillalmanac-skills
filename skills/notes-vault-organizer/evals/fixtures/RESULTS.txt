@@ -1,0 +1,9 @@
+PASS messy vault counts and findings
+PASS clean vault has no findings
+PASS exclude glob drops the Recipes folder
+PASS max-items caps lists but not counts
+PASS good plan validates
+PASS bad plan is rejected with every problem named
+PASS the scan's own plan passes validate-plan
+PASS missing vault exits 2
+8/8 cases passed

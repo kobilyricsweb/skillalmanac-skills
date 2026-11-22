@@ -1,0 +1,22 @@
+[
+  {"query": "can you review my terraform before I merge, it creates an RDS and a security group", "should_trigger": true},
+  {"query": "is this terraform plan safe to apply? it says 1 to destroy", "should_trigger": true},
+  {"query": "check these kubernetes manifests for anything that could take prod down", "should_trigger": true},
+  {"query": "look over this cloudformation template for security problems and missing deletion policies", "should_trigger": true},
+  {"query": "audit our .tf files for open security groups, IAM wildcards and public S3 buckets", "should_trigger": true},
+  {"query": "why does terraform want to destroy and recreate my database? read the plan output", "should_trigger": true},
+  {"query": "scan this helm-rendered yaml for latest tags and missing resource limits", "should_trigger": true},
+  {"query": "review the opentofu module in infra/ for hard-coded secrets and missing tags", "should_trigger": true},
+  {"query": "second pair of eyes on this IaC pull request, I'm worried about cost and blast radius", "should_trigger": true},
+  {"query": "our AWS bill jumped, check the terraform for log groups with no retention and unencrypted volumes", "should_trigger": true},
+  {"query": "review this pull request that changes the React checkout form", "should_trigger": false},
+  {"query": "write terraform for a new VPC with three private subnets", "should_trigger": false},
+  {"query": "run terraform apply on staging for me", "should_trigger": false},
+  {"query": "audit the live AWS account for public buckets using the CLI", "should_trigger": false},
+  {"query": "explain what a kubernetes deployment is", "should_trigger": false},
+  {"query": "write a Dockerfile for my Flask app", "should_trigger": false},
+  {"query": "review my SQL migration for locking problems", "should_trigger": false},
+  {"query": "set up a GitHub Actions pipeline that runs tflint", "should_trigger": false},
+  {"query": "convert this cloudformation template to terraform", "should_trigger": false},
+  {"query": "do a general code review of this Python service for bugs and style", "should_trigger": false}
+]

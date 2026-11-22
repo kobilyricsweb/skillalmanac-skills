@@ -1,0 +1,18 @@
+{
+  "app": {"name": "Acme Cloud"},
+  "nav": {"dashboard": "Dashboard", "invoices": "Invoices"},
+  "greeting": "Hello, {name}!",
+  "cart": "{count, plural, one {# item in your cart} other {# items in your cart}}",
+  "save": "Save",
+  "ok": "OK",
+  "msgs": "You have %d new messages",
+  "terms": "Read the <a>terms of service</a> before you continue.",
+  "tip": "Open the Dashboard to see your activity",
+  "gender": "{gender, select, male {He liked this} female {She liked this} other {They liked this}}",
+  "btn": {"submit": "Submit"},
+  "extra_src": "Delete account",
+  "signin": "Sign in with OAuth",
+  "help": "Help",
+  "banner": "Upgrade now",
+  "settings": "Settings"
+}

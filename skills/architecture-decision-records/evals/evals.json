@@ -1,0 +1,57 @@
+{
+ "skill_name": "architecture-decision-records",
+ "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/adr_scan.py or a plain string check on the output files; [judge] assertions need a blind grader. The scan is the skill's own tool, so each task has at least one judge assertion about something it does not control.",
+ "evals": [
+  {
+   "id": "t1-supersede",
+   "prompt": "Record this in the adr folder, following our existing records. Request text is in evals/files/t1-supersede/request.md and the folder is evals/files/t1-supersede/adr.",
+   "files": [
+    "evals/files/t1-supersede/request.md",
+    "evals/files/t1-supersede/adr/"
+   ],
+   "assertions": [
+    "[script] adr_scan.py scan adr prints ok true with zero errors",
+    "[script] a new file adr/0003-*.md exists, and no existing number is reused",
+    "[script] 0001 now has Status: superseded and 'Superseded by: 0003'; 0003 has 'Supersedes: 0001'",
+    "[script] 0003 contains '2 engineer days' or 'two engineer days' and 'six weeks'",
+    "[judge] 0003 Context states what changed since 0001 (four consumers, two needing history) and the Decision sentence names Kafka with a reason from that context",
+    "[judge] Consequences lists at least one negative (migration cost or per-partition ordering) and a follow-up; no benefit or number appears that the request did not give",
+    "[judge] The reasoning text of 0001 (Context, Options, Decision, Consequences) is unchanged apart from status and link lines"
+   ]
+  },
+  {
+   "id": "t2-repair",
+   "prompt": "Our adr folder (evals/files/t2-repair/adr) has grown messy. Check it, fix what is mechanical, and list what needs a human decision. Do not invent decisions or consequences we never discussed. Request in evals/files/t2-repair/request.md.",
+   "files": [
+    "evals/files/t2-repair/request.md",
+    "evals/files/t2-repair/adr/"
+   ],
+   "assertions": [
+    "[script] 0007 and 0001 now mirror each other, or the 0007 Supersedes line is removed: scan shows no missing-backlink",
+    "[script] 0010 either has a Superseded by link to an existing ADR or a status other than superseded: scan shows no superseded-without-successor",
+    "[script] 0005 no longer links to a missing ADR 0009 with status superseded: scan shows no broken-link",
+    "[script] 0003 Consequences does not contain TBD",
+    "[judge] The report lists, as needing a human, 0003 (consequences never discussed) and 0007 (only one option) instead of inventing text for them",
+    "[judge] No new options, costs or consequences were fabricated; any changed Consequences text is limited to what the original files already imply",
+    "[judge] The final report states the remaining scan findings by rule and what was not checked"
+   ]
+  },
+  {
+   "id": "t3-retro",
+   "prompt": "Write the ADR for the decision described in evals/files/t3-retro/notes.md, saved in evals/files/t3-retro/adr. Request is in the notes file.",
+   "files": [
+    "evals/files/t3-retro/notes.md",
+    "evals/files/t3-retro/adr/"
+   ],
+   "assertions": [
+    "[script] a new file adr/0003-*.md exists",
+    "[script] the file contains '1,100' and '9,000' and '50,000'",
+    "[script] the file contains the words 'retroactively'",
+    "[script] scan of the folder reports the new file as either clean or with only a few-options finding (no invented second option is needed to pass)",
+    "[judge] Options considered does not invent alternatives that the notes say were never evaluated; it records that no alternative was weighed, or lists only Auth0",
+    "[judge] Consequences names lock-in and the unpriced jump above 50,000 users as costs and gives a revisit trigger without inventing a price",
+    "[judge] The report says the missing option comparison is a gap for a human, and the scan's few-options finding is explained rather than silenced"
+   ]
+  }
+ ]
+}

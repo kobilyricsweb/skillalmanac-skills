@@ -1,0 +1,19 @@
+PASS song_clean.txt verse-chorus with title
+PASS song_clean.txt without title (hook auto-detected as a whole line)
+PASS song_flawed.txt verse-chorus
+PASS haiku_good.txt
+PASS haiku_bad.txt (four lines, wrong counts)
+PASS limerick_good.txt
+PASS sonnet_good.txt
+PASS ballad_good.txt
+PASS aaba_good.txt with refrain title
+PASS rap_sample.txt
+PASS quirk.txt default: wind and find are only a near rhyme
+PASS quirk.txt with overrides (fire=2, wind rhymes like find)
+PASS quirk.txt with --keep-parentheses
+PASS song_clean.txt compared with a supplied text (6-word shared run)
+PASS mixed_script.txt (Hebrew line skipped, flagged)
+PASS empty.txt exits 2
+PASS unknown form exits 2
+PASS word tables (syllables, known misses, rhyme pairs)
+18/18 checks passed

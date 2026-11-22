@@ -1,0 +1,12 @@
+PASS messy.csv --target churned
+PASS messy.csv --no-corr
+PASS quoting.csv
+PASS quoting.csv --strict
+PASS dates_dayfirst.csv
+PASS dates_ambiguous.csv
+PASS shape.csv
+PASS ../files/t2-orders-export/orders.csv
+PASS header_only.csv
+PASS no_such_file.csv
+PASS messy.csv --target not_a_column
+11/11 cases passed

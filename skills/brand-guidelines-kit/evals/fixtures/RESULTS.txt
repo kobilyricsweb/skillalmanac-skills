@@ -1,0 +1,7 @@
+PASS check good.json
+PASS check bad.json
+PASS check missing_roles.json
+PASS check edge.json
+PASS check does_not_exist.json
+PASS check not_json.txt
+6/6 cases passed

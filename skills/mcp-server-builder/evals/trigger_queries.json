@@ -1,0 +1,22 @@
+[
+  {"query": "I'm building an MCP server for our internal CRM, help me design the tools", "should_trigger": true},
+  {"query": "review my MCP server's tool list, the model keeps picking the wrong tool", "should_trigger": true},
+  {"query": "should this be an MCP tool or a resource? it just returns the current config", "should_trigger": true},
+  {"query": "stdio or HTTP for my Model Context Protocol server that wraps our billing API?", "should_trigger": true},
+  {"query": "how do I handle API keys and auth in an MCP server I'm writing", "should_trigger": true},
+  {"query": "write the JSON schemas for the tools of my MCP server and make them strict", "should_trigger": true},
+  {"query": "what should I test before I publish my MCP server, and how do I write a test client for it", "should_trigger": true},
+  {"query": "expose my Postgres database to an agent through an MCP server, what are the design rules", "should_trigger": true},
+  {"query": "validate this tools/list JSON for my MCP server, names, descriptions and schemas", "should_trigger": true},
+  {"query": "give me a publishing checklist for my open source MCP server: README, versioning, examples", "should_trigger": true},
+  {"query": "how do I add an existing MCP server to my editor config", "should_trigger": false},
+  {"query": "build a chatbot that calls tools through the Messages API", "should_trigger": false},
+  {"query": "write a REST API with OpenAPI schemas for a ticketing system", "should_trigger": false},
+  {"query": "what is the best MCP server for browsing the web? compare a few for me", "should_trigger": false},
+  {"query": "my Claude desktop app says the MCP server failed to start, fix my config file", "should_trigger": false},
+  {"query": "explain what the Model Context Protocol is in two paragraphs", "should_trigger": false},
+  {"query": "write a webhook handler that validates a JSON payload in Python", "should_trigger": false},
+  {"query": "design the tool-calling loop for my LangChain agent", "should_trigger": false},
+  {"query": "set up OAuth login for my React web app", "should_trigger": false},
+  {"query": "write a SKILL.md that teaches an agent my deployment process", "should_trigger": false}
+]

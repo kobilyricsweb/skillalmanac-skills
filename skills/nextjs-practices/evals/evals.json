@@ -1,0 +1,46 @@
+{
+ "skill_name": "nextjs-practices",
+ "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/next_scan.py; [judge] assertions need a blind grader. The scanner is the skill's own tool, so each task has judge assertions that measure something it does not control.",
+ "evals": [
+  {
+   "id": "t1-audit-and-report",
+   "prompt": "Audit the Next.js app in evals/fixtures/bad_site/app. Fix what is wrong without changing what the pages show, then give me a report of what you found and what you left.",
+   "files": [
+    "evals/fixtures/bad_site"
+   ],
+   "assertions": [
+    "[script] next_scan.py scan on the fixed app/ prints no finding with severity error",
+    "[script] The fixed app has no file containing 'use client' that imports from 'server-only', 'next/headers', 'node:fs' or ../../lib/db",
+    "[script] dashboard/page.tsx no longer has the possible-waterfall finding and still calls both getStats and the /me fetch",
+    "[judge] 'use client' was removed from or moved out of settings/page.tsx by extracting a small client leaf, not by deleting state logic",
+    "[judge] The report uses the fixed shape (Version, Scanner before/after, Fixed, Kept on purpose, Judgement changes, Not checked) and states the Next major was not determinable or assumed",
+    "[judge] The report does not claim runtime caching or performance was measured"
+   ]
+  },
+  {
+   "id": "t2-cache-decision",
+   "prompt": "This Next.js 15 product page calls fetch('https://api.shop.example/products/' + id) with no options and shows the price and stock. Prices change a few times a day, stock changes on every sale and must be near-live. Tell me how to fetch and cache it, and write the code.",
+   "files": [],
+   "assertions": [
+    "[script] The answer text contains 'revalidate' or 'tags'",
+    "[judge] States that in Next 15 plain fetch is not cached by default, so caching must be opted into",
+    "[judge] Separates the slow-changing price (time-based or tag revalidation) from the near-live stock (not cached or a short Suspense-wrapped dynamic read) instead of one setting for both",
+    "[judge] Starts independent reads in parallel rather than awaiting them in sequence",
+    "[judge] Does not recommend 'use cache' or cacheComponents as a Next 15 setting without saying it applies to 16"
+   ]
+  },
+  {
+   "id": "t3-metadata-and-route",
+   "prompt": "In my Next.js 15 app add SEO metadata for app/blog/[slug]/page.tsx (title from the post, canonical, no indexing of ?page= duplicates) and add a Stripe-style webhook at app/api/hooks/route.ts. Posts come from a database via getPost(slug).",
+   "files": [],
+   "assertions": [
+    "[script] The answer contains 'generateMetadata' and 'alternates' and 'canonical'",
+    "[script] The answer contains 'await params'",
+    "[script] The webhook code reads the body with request.text() or arrayBuffer before JSON.parse",
+    "[judge] getPost is wrapped in React cache() so generateMetadata and the page share one query",
+    "[judge] The handler verifies the signature before acting and does not use a Server Action for the webhook",
+    "[judge] Says what was not run or verified (no build was executed)"
+   ]
+  }
+ ]
+}

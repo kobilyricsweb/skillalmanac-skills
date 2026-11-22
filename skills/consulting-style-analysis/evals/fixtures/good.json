@@ -1,0 +1,48 @@
+{
+  "answer": "Gross margin fell 3 points in Q3 mainly because freight costs rose, not because prices or mix changed; renegotiate freight contracts first.",
+  "summary": "Gross margin fell from 41% to 38% in Q3. The main cause is freight: per-unit shipping cost rose 18% after two carrier contracts reset in July. Price changes and product mix explain under half a point combined. Raw material cost was flat. We recommend renegotiating the two carrier contracts that expire in March, which carry about 70% of the increase, and pausing the planned discount campaign until freight is resolved. The operations lead should bring revised carrier quotes to the finance review on 15 December.",
+  "issue_tree": {
+    "id": "Q",
+    "text": "Why did gross margin fall 3 points in Q3 and what should we do",
+    "universe": ["revenue_side", "cost_side"],
+    "children": [
+      {
+        "id": "R",
+        "text": "Revenue per unit",
+        "covers": ["revenue_side"],
+        "universe": ["price", "mix"],
+        "children": [
+          {"id": "R1", "text": "Price realised", "covers": ["price"]},
+          {"id": "R2", "text": "Product mix", "covers": ["mix"]}
+        ]
+      },
+      {
+        "id": "C",
+        "text": "Cost per unit",
+        "covers": ["cost_side"],
+        "universe": ["materials", "freight"],
+        "children": [
+          {"id": "C1", "text": "Raw materials", "covers": ["materials"]},
+          {"id": "C2", "text": "Freight and shipping", "covers": ["freight"]}
+        ]
+      }
+    ]
+  },
+  "hypotheses": [
+    {"id": "H1", "node": "R1", "statement": "Realised price did not fall in Q3", "falsifier": "Average invoice price per unit is lower than Q2 by more than 0.5%", "status": "supported"},
+    {"id": "H2", "node": "R2", "statement": "Mix shift to lower-margin products is small", "falsifier": "Low-margin products' share of units rose by more than 3 points", "status": "supported"},
+    {"id": "H3", "node": "C1", "statement": "Raw material cost per unit was flat", "falsifier": "Material cost per unit is up more than 2% on Q2", "status": "supported"},
+    {"id": "H4", "node": "C2", "statement": "Freight cost per unit rose enough to explain most of the fall", "falsifier": "Freight cost per unit rose by less than 10%", "status": "supported"}
+  ],
+  "evidence": [
+    {"id": "E1", "hypothesis": "H1", "direction": "supports", "claim": "Average invoice price per unit was 24.10 in Q2 and 24.05 in Q3", "source": "Finance ERP export invoices_q2_q3.csv, pulled 2026-10-20", "source_type": "primary_data", "confidence": 0.9},
+    {"id": "E2", "hypothesis": "H2", "direction": "supports", "claim": "Low-margin product share of units moved from 22% to 23%", "source": "Sales mix report Q3, page 4", "source_type": "primary_data", "confidence": 0.8},
+    {"id": "E3", "hypothesis": "H3", "direction": "supports", "claim": "Material cost per unit 9.80 in Q2 and 9.85 in Q3", "source": "Cost accounting ledger, Q3 close pack", "source_type": "primary_data", "confidence": 0.9},
+    {"id": "E4", "hypothesis": "H4", "direction": "supports", "claim": "Freight cost per unit rose from 3.10 to 3.66 (+18%)", "source": "Logistics invoices summary, Q3 close pack, table 2", "source_type": "primary_data", "confidence": 0.9},
+    {"id": "E5", "hypothesis": "H4", "direction": "supports", "claim": "Carrier contracts A and B reset to new rates on 1 July", "source": "Interview with logistics manager, 2026-10-22", "source_type": "interview", "confidence": 0.7}
+  ],
+  "sections": [
+    {"id": "S1", "title": "Margin fell because freight cost per unit rose 18%", "body": "Freight per unit went from 3.10 to 3.66 after two carrier contracts reset on 1 July.", "so_what": "Renegotiate the two carrier contracts that expire in March before anything else.", "supports": ["H4"]},
+    {"id": "S2", "title": "Price, mix and materials do not explain the fall", "body": "Invoice price moved by 0.05, low-margin share by one point, material cost by 0.05 per unit.", "so_what": "Pause the planned discount campaign because price is not the problem.", "supports": ["H1", "H2", "H3"]}
+  ]
+}

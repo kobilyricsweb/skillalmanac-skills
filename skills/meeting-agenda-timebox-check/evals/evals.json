@@ -1,0 +1,46 @@
+{
+  "skill_name": "meeting-agenda-timebox-check",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions run scripts/check_agenda.py on the agent's final agenda file (saved as final_agenda.md in the skill's layout) or use a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. The facts in the input files were checked by hand: t1 sums to 35 min in a 30 min slot, t2 to 110 min with no break in a 120 min slot, t3 to 40 min in a 45 min slot.",
+  "evals": [
+    {
+      "id": "t1-thirty-minute-staff",
+      "prompt": "Check this agenda for my 30 minute staff meeting and fix it so it fits. Save the corrected agenda as final_agenda.md.",
+      "files": ["evals/files/t1-thirty-minute-staff/agenda.md"],
+      "assertions": [
+        "[script] check_agenda.py final_agenda.md exits 0, or exits 1 with no error-severity finding",
+        "[script] total_min in the report is at most 27 (30 minus the 3 minute buffer)",
+        "[script] the decide item for the December support rota has a question mark in its outcome or question",
+        "[script] attendee_hours.slot is 3.5 (7 people, 30 minutes), not an invented figure",
+        "[judge] The office move update is turned into a pre-read (or cut), because the draft says no discussion is needed; the rota decision item is not shortened below 10 minutes",
+        "[judge] The open floor item is given an owner and an outcome, or removed, and the reply says which"
+      ]
+    },
+    {
+      "id": "t2-planning-session",
+      "prompt": "This is my two hour planning session agenda for 10 people. Is it solid? Fix what is wrong and save the result as final_agenda.md, then tell me what you changed.",
+      "files": ["evals/files/t2-planning-session/agenda.md"],
+      "assertions": [
+        "[script] check_agenda.py final_agenda.md reports no finding with severity error",
+        "[script] the report has a break item of at least 5 minutes and no NO_BREAK finding",
+        "[script] total_min in the report is at most 108 (120 minus the 12 minute buffer)",
+        "[script] no item typed decide has more than 15 minutes unless the reply names that warning and the user's reason",
+        "[script] attendee_hours.slot is 20.0",
+        "[judge] The wrap up item is given a goal type, an owner and an outcome, and the risks item no longer says 'talk about'",
+        "[judge] The first decide item is still in the first half of the slot; no decide item was cut to save time"
+      ]
+    },
+    {
+      "id": "t3-fits-already",
+      "prompt": "Will this agenda work for 45 minutes? Check it before I send it round.",
+      "files": ["evals/files/t3-fits-already/agenda.md"],
+      "assertions": [
+        "[script] check_agenda.py on the agent's agenda file reports total_min 40 and buffer_min 5",
+        "[script] the report has attendee_hours null (the user gave no attendee count)",
+        "[script] suggested_cuts is empty",
+        "[judge] The reply says the agenda fits and does not invent cuts, extra items or an attendee count",
+        "[judge] Any wording changes are limited to giving the discuss item a result-verb outcome or a question, and the reply says the agenda was not changed otherwise",
+        "[judge] The reply ends with the fixed report shape, including what was not checked"
+      ]
+    }
+  ]
+}

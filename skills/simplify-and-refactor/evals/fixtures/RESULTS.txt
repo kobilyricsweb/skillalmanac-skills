@@ -1,0 +1,7 @@
+PASS before.py good_after.py
+PASS before.py bad_after.py
+PASS before.py reformatted_after.py
+PASS before.py syntax_error.py
+PASS before.py does_not_exist.py
+PASS before.py
+6/6 cases passed

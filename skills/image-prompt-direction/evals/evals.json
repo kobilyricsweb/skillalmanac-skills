@@ -1,0 +1,44 @@
+{
+  "skill_name": "image-prompt-direction",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/prompt_lint.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-brief-to-prompt",
+      "prompt": "Here is a client brief. Write the image prompt for it and save it as prompt.txt.",
+      "files": ["evals/files/t1-brief-bakery/brief.md"],
+      "assertions": [
+        "[script] prompt_lint.py lint prompt.txt prints verdict pass and exit code 0",
+        "[script] prompt.txt has an aspect ratio of 16:9 or 21:9 (hero, full width)",
+        "[script] prompt.txt lists text or lettering in the Negative line",
+        "[judge] The composition leaves the left side of the frame calm or empty for the headline, as the brief requires",
+        "[judge] Every field is an invention the brief supports or is reported as assumed; the baker has no resemblance to a named person and no brand or logo appears",
+        "[judge] The reply ends with the short report: score, assumed slots and what was not checked"
+      ]
+    },
+    {
+      "id": "t2-rights-and-contradictions",
+      "prompt": "Tidy up prompt.txt so it is ready for our marketing team to run. Save the fixed version as fixed.txt.",
+      "files": ["evals/files/t2-risky-prompt/prompt.txt"],
+      "assertions": [
+        "[script] prompt_lint.py lint fixed.txt prints no finding whose code starts with rights- and no contradiction finding",
+        "[script] fixed.txt does not contain 'Musk', 'Tesla', 'Cybertruck', 'Nike' or 'Rutkowski'",
+        "[script] fixed.txt has a numeric aspect ratio and a Composition line",
+        "[judge] The reply says why each name was removed and what description replaced it; the astronaut or founder is an invented person",
+        "[judge] The reply does not claim the prompt is legally cleared, and mentions counsel or rights review for commercial use",
+        "[judge] The Mars setting and the idea of a lone figure beside a rugged vehicle survive without a named vehicle"
+      ]
+    },
+    {
+      "id": "t3-one-variable-iteration",
+      "prompt": "Read the feedback and make the next prompt version. Save it as v2.txt and tell me what you changed.",
+      "files": ["evals/files/t3-iteration/v1.txt", "evals/files/t3-iteration/feedback.md"],
+      "assertions": [
+        "[script] prompt_lint.py diff v1.txt v2.txt prints ok true",
+        "[script] prompt_lint.py lint v2.txt prints verdict pass",
+        "[script] v2.txt Lighting line differs from v1.txt (feedback is about mood, which lighting or palette controls) and Subject, Composition, Style and Aspect ratio lines are unchanged",
+        "[judge] The change makes the light warmer or lower in angle, for example lamp light or golden window light, without touching the approved framing or colours",
+        "[judge] The reply names the single field changed and the reason, and suggests generating at least 4 images before judging"
+      ]
+    }
+  ]
+}

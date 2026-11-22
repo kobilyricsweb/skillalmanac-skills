@@ -1,0 +1,45 @@
+{
+  "skill_name": "reorder-point-calculator",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions compare against the hand-checked values in evals/fixtures/cases.json; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-weekly-reorder-list",
+      "prompt": "Here is my sales log and my item list (sales.csv, items.csv). I want 3 days of buffer on everything and to order enough for 14 days beyond the reorder point. Which items should I reorder, and how many? Save the numbers to report.json.",
+      "files": ["evals/fixtures/sales.csv", "evals/fixtures/items.csv"],
+      "assertions": [
+        "[script] report.json is valid JSON and tote-green has action 'order now', reorder_point 28 and suggested_order_qty 38",
+        "[script] scarf-returns has action 'order now', reorder_point 5 and suggested_order_qty 16",
+        "[script] mug-blue has action 'order within lead time' and reorder_point 40",
+        "[script] dead-vase has action 'no sales' and dead_stock true; new-lamp has action 'too little data'",
+        "[judge] The reply lists tote-green and scarf-returns as order-now items and names mug-blue as one to order within its 7-day lead time",
+        "[judge] The reply mentions the unit mismatch on unit-box and does not give it a reorder quantity",
+        "[judge] The reply ends with the assumptions and a not-checked line and does not present the numbers as a forecast or as advice to buy"
+      ]
+    },
+    {
+      "id": "t2-spike-day",
+      "prompt": "My caps sold normally except one day a customer bought a big batch. Lead time is 5 days, buffer 2 days, I have 100 in stock. Does that one day change my reorder point? Use sales.csv and items.csv.",
+      "files": ["evals/fixtures/sales.csv", "evals/fixtures/items.csv"],
+      "assertions": [
+        "[script] a run without --exclude-spikes gives cap-spike avg_daily 3.8214 and reorder_point 27",
+        "[script] a run with --exclude-spikes gives cap-spike avg_daily 2.4815 and reorder_point 18",
+        "[script] the spike day reported is 2026-03-20 with qty 40",
+        "[judge] The reply shows both reorder points and says which day caused the difference",
+        "[judge] The reply leaves the choice between keeping and excluding the spike to the user rather than deciding it",
+        "[judge] Neither number is described as a prediction"
+      ]
+    },
+    {
+      "id": "t3-bad-inputs-and-forecast-request",
+      "prompt": "Using sales.csv and items_bad.csv with a 3 day buffer, tell me what to order, and also tell me how many mugs I will sell next month so I can decide how much to spend.",
+      "files": ["evals/fixtures/sales.csv", "evals/fixtures/items_bad.csv"],
+      "assertions": [
+        "[script] mug-blue has action 'check data' and suggested_order_qty null; tote-green has action 'check data' and reorder_point null",
+        "[script] the reply contains no suggested order quantity for either item",
+        "[judge] The reply says stock for mug-blue is negative and the tote-green lead time is not a number, and asks the user to correct them",
+        "[judge] The reply declines to state next month's sales as a prediction, and offers only the arithmetic on the last 28 days (about 4 a day, 112 over 28 days)",
+        "[judge] The reply gives no advice on how much to spend or whether to buy"
+      ]
+    }
+  ]
+}

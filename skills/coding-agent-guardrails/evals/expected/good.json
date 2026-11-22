@@ -1,0 +1,73 @@
+{
+  "checks": [
+    {
+      "detail": ".gitignore found",
+      "id": "gitignore-present",
+      "status": "pass"
+    },
+    {
+      "detail": "covered: .env, .env.local",
+      "id": "gitignore-env",
+      "status": "pass"
+    },
+    {
+      "detail": "covered: server.pem, server.key, id_rsa",
+      "id": "gitignore-keys",
+      "status": "pass"
+    },
+    {
+      "detail": "covered: credentials.json",
+      "id": "gitignore-credentials",
+      "status": "pass"
+    },
+    {
+      "detail": "no secret-looking files found",
+      "id": "secret-files-exposed",
+      "status": "pass"
+    },
+    {
+      "detail": "no credential patterns in non-ignored text files",
+      "id": "secret-values-in-files",
+      "status": "pass"
+    },
+    {
+      "detail": "found: AGENTS.md",
+      "id": "instructions-present",
+      "status": "pass"
+    },
+    {
+      "detail": "2 permission deny rules, hooks configured",
+      "id": "enforcement-configured",
+      "status": "pass"
+    },
+    {
+      "detail": "protected or do-not-edit paths are declared",
+      "id": "protected-paths-declared",
+      "status": "pass"
+    },
+    {
+      "detail": "package.json scripts.test; test command named in instruction file",
+      "id": "test-command",
+      "status": "pass"
+    },
+    {
+      "detail": "lockfile present: package-lock.json",
+      "id": "lockfile",
+      "status": "pass"
+    },
+    {
+      "detail": "declared: dist, vendor",
+      "id": "generated-dirs",
+      "status": "pass"
+    }
+  ],
+  "files_seen": 9,
+  "repo": "good",
+  "summary": {
+    "fail": 0,
+    "info": 0,
+    "pass": 12,
+    "warn": 0
+  },
+  "truncated": false
+}

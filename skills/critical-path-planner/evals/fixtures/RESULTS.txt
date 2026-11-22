@@ -1,0 +1,10 @@
+PASS kitchen_renovation.json
+PASS clean_launch.json
+PASS late_event.json
+PASS bad_cycle.json
+PASS bad_duplicate_id.json
+PASS no_such_file.json
+PASS kitchen_renovation.json --out kitchen_renovation.json
+PASS kitchen_renovation.json --out kitchen_renovation.json --force
+PASS --out writes, refuses existing file, accepts --force
+9/9 cases passed

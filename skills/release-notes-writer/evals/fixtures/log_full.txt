@@ -1,0 +1,60 @@
+commit 9f2b7c1d4e5a60718293a4b5c6d7e8f901a2b3c4 (HEAD -> main)
+Author: A Dev <dev@example.com>
+Date:   Mon Nov 16 10:00:00 2026 +0000
+
+    feat(api)!: remove the v1 orders endpoint
+
+    BREAKING CHANGE: GET /v1/orders is gone. Clients must call /v2/orders.
+
+    Closes #210
+
+commit 8e1a6b0c3d4f5970182a3b4c5d6e7f80912a3b4c
+Author: A Dev <dev@example.com>
+Date:   Mon Nov 16 09:00:00 2026 +0000
+
+    feat(ui): add dark mode toggle (#215)
+
+commit 7d0f5a9b2c3e4860718192a3b4c5d6e7f8091a2b
+Author: A Dev <dev@example.com>
+Date:   Sun Nov 15 18:00:00 2026 +0000
+
+    refactor(auth): split the token handler into helpers
+
+commit 6c9e4f8a1b2d3750617081920a3b4c5d6e7f8091
+Author: A Dev <dev@example.com>
+Date:   Sun Nov 15 17:00:00 2026 +0000
+
+    fix(ui): correct the toggle icon in dark mode
+
+commit 5b8d3e7f0a1c2640516070819a2b3c4d5e6f7081
+Author: A Dev <dev@example.com>
+Date:   Sun Nov 15 16:00:00 2026 +0000
+
+    Revert "fix(ui): correct the toggle icon in dark mode"
+
+    This reverts commit 6c9e4f8a1b2d3750617081920a3b4c5d6e7f8091.
+
+commit 4a7c2d6e9f0b1530405060718091a2b3c4d5e6f7
+Author: A Dev <dev@example.com>
+Date:   Sat Nov 14 12:00:00 2026 +0000
+
+    update stuff
+
+commit 3f6b1c5d8e9a0420304050607080192a3b4c5d6e
+Author: B Dev <dev2@example.com>
+Date:   Sat Nov 14 11:00:00 2026 +0000
+
+    feat(ui): add dark mode toggle (#215)
+
+commit 2e5a0b4c7d8f9310203040506070809102a3b4c5
+Merge: 1d49fa3 3f6b1c5
+Author: A Dev <dev@example.com>
+Date:   Fri Nov 13 15:00:00 2026 +0000
+
+    Merge branch 'main' into feature
+
+commit 1d49fa3b6c7e8200102030405060708090a1b2c3
+Author: A Dev <dev@example.com>
+Date:   Fri Nov 13 14:00:00 2026 +0000
+
+    fix(db): handle null values in the migration step

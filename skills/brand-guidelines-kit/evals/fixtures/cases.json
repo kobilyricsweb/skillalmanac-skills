@@ -1,0 +1,17 @@
+{
+  "cases": [
+    {"args": ["check", "good.json"], "exit": 0,
+     "expect": {"ok": true, "errors": 0, "warnings": 0, "codes": [], "ratios": [16.96, 16.12, 7.23, 6.87, 6.7]}},
+    {"args": ["check", "bad.json"], "exit": 1,
+     "expect": {"ok": false, "errors": 6, "warnings": 2,
+                "codes": ["duplicate_color", "invalid_hex", "low_contrast", "spacing_not_ascending", "spacing_off_grid", "spacing_off_grid", "type_scale_not_monotonic", "type_scale_not_monotonic"],
+                "ratios": [4.48]}},
+    {"args": ["check", "missing_roles.json"], "exit": 1,
+     "expect": {"ok": false, "errors": 3, "warnings": 1,
+                "codes": ["missing_role", "missing_role", "missing_type_scale", "unknown_role"], "ratios": []}},
+    {"args": ["check", "edge.json"], "exit": 1,
+     "expect": {"ok": false, "errors": 1, "warnings": 0, "codes": ["low_contrast"], "ratios": [4.54, 3.03, 3.03]}},
+    {"args": ["check", "does_not_exist.json"], "exit": 2, "expect": {}},
+    {"args": ["check", "not_json.txt"], "exit": 2, "expect": {}}
+  ]
+}

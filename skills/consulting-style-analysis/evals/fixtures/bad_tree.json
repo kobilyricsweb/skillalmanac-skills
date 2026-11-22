@@ -1,0 +1,23 @@
+{
+  "answer": "Sales are down because of competitors.",
+  "summary": "Sales are down. Competitors are the cause.",
+  "issue_tree": {
+    "id": "Q",
+    "text": "Why are sales down",
+    "universe": ["online", "retail", "wholesale", "export", "catalog"],
+    "children": [
+      {"id": "A", "text": "Digital channels", "covers": ["online", "export"]},
+      {"id": "B", "text": "Stores", "covers": ["retail", "online"]},
+      {"id": "C", "text": "Partners", "covers": ["wholesale", "franchise"]}
+    ]
+  },
+  "hypotheses": [
+    {"id": "H1", "node": "A", "statement": "Online conversion fell", "falsifier": "Conversion rate is flat", "status": "open"}
+  ],
+  "evidence": [
+    {"id": "E1", "hypothesis": "H1", "direction": "supports", "claim": "Conversion fell from 3.1% to 2.4%", "source": "Analytics dashboard export 2026-11-01", "source_type": "primary_data", "confidence": 0.8}
+  ],
+  "sections": [
+    {"id": "S1", "title": "Online conversion fell", "body": "Conversion fell from 3.1% to 2.4%.", "so_what": "Fix the checkout flow before the holiday peak.", "supports": ["H1"]}
+  ]
+}

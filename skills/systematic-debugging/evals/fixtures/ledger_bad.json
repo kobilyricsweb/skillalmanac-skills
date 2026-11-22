@@ -1,0 +1,13 @@
+{
+  "reproduction": {"command": "python export.py --shard 7", "reproduced": "yes"},
+  "hypotheses": [
+    {"id": "H1", "statement": "Queue sentinel missing", "prediction": "Sending it ends the hang", "status": "open"},
+    {"id": "H2", "statement": "Pool exhausted", "prediction": "More connections end the hang", "status": "open"}
+  ],
+  "experiments": [
+    {"id": "E1", "hypothesis": "H1", "variables_changed": ["sentinel", "pool size"], "result": "finished", "outcome": "inconclusive"}
+  ],
+  "root_cause": {"text": "The writer thread blocks on an empty queue after the worker exits early."},
+  "regression_test": {"id": "T1", "path": "tests/test_export.py::test_empty_shard_finishes", "failed_before_fix": true, "failure_output": "Failed: Timeout >5.0s", "seq": 5},
+  "fix": {"description": "Send sentinel in finally", "test": "T1", "seq": 3}
+}

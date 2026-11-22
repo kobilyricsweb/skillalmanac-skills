@@ -1,0 +1,8 @@
+item,lead_time_days,stock,moq,unit,buffer_days
+mug-blue,7,50,24,pcs,
+tote-green,10,18,12,pcs,4
+cap-spike,5,100,10,pcs,2
+scarf-returns,0,3,6,pcs,5
+dead-vase,14,30,6,pcs,
+new-lamp,7,20,5,pcs,
+unit-box,7,10,1,pcs,

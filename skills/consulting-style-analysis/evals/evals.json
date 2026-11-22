@@ -1,0 +1,47 @@
+{
+  "skill_name": "consulting-style-analysis",
+  "note": "Drafted, not run. No with-skill or baseline run exists. [script] assertions use scripts/analysis_check.py or a plain check; [judge] assertions need a blind grader. The script is the skill's own tool, so each task also has judge assertions that measure something it does not control.",
+  "evals": [
+    {
+      "id": "t1-churn-analysis",
+      "prompt": "Churn doubled last quarter. Using the notes, do a consulting-style analysis of why and what we should do. Save the structured file as analysis.json and the write-up as memo.md.",
+      "files": ["evals/files/t1-churn-notes/notes.md"],
+      "assertions": [
+        "[script] analysis_check.py check analysis.json prints ok true",
+        "[script] summary_words in the output is 150 or less",
+        "[script] every evidence row quotes a source that appears in notes.md (the file name, a report name or 'exit survey')",
+        "[judge] memo.md opens with the answer, not with method or background",
+        "[judge] The competitor price cut is recorded with low confidence (0.4 or less) because it is one unconfirmed rep statement",
+        "[judge] The tenure finding (9.4% under 90 days vs 1.6% older) and the 40% larger July cohort are used together as the likely main cause, and the exit-survey sample (31 of 118) is flagged as small",
+        "[judge] The report names what was not checked"
+      ]
+    },
+    {
+      "id": "t2-fix-broken-tree",
+      "prompt": "This analysis file is a mess. Run the checks, fix the structure, and tell me what is still unsupported. Do not invent sources.",
+      "files": ["evals/files/t2-broken-tree/analysis.json"],
+      "assertions": [
+        "[script] The fixed file passes analysis_check.py check with ok true, or the reply states exactly which errors remain and why they cannot be fixed without new data",
+        "[script] No evidence row has a non-empty source that was not in the original file or supplied by the user",
+        "[script] No evidence row with source_type assumption has confidence above 0.4",
+        "[judge] The 'pricing' tag is owned by exactly one branch and the missing 'product' branch is added or the universe is reduced with an explanation",
+        "[judge] The reply says the pricing hypothesis has no sourced evidence instead of inventing a source",
+        "[judge] Every section keeps a real so-what line, not a recap"
+      ]
+    },
+    {
+      "id": "t3-market-entry",
+      "prompt": "Should Harbor Foods launch in the Nordics next year? Give me the analysis the way a consulting team would, with a summary I can read in a minute.",
+      "files": ["evals/files/t3-market-entry/facts.md"],
+      "assertions": [
+        "[script] analysis_check.py check on the produced analysis.json prints ok true",
+        "[script] summary_words is 150 or less",
+        "[script] The tree has at least 3 and at most 5 first-level children",
+        "[judge] The first sentence of the summary is a recommendation (go, no-go or conditional go), not a description of the analysis",
+        "[judge] The management share target (3% in three years) is marked as an assumption or low confidence because it has no method",
+        "[judge] The margin arithmetic is right: 34% gross margin less about 6 points shipping leaves about 28% before listing fees, and the listing fee is treated as a first-year cost of about 8% of sales",
+        "[judge] The memo contains no figure absent from facts.md unless it is labelled an assumption"
+      ]
+    }
+  ]
+}

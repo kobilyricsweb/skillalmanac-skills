@@ -1,0 +1,22 @@
+[
+  {"query": "we have people in New York, London and Bangalore, what is the best time for a weekly call that is fair to everyone", "should_trigger": true},
+  {"query": "find overlap hours between San Francisco and Berlin for a 30 minute standup", "should_trigger": true},
+  {"query": "my freelancer is in Manila and I am in Toronto, when can we both be in working hours next week", "should_trigger": true},
+  {"query": "does daylight saving mess up our Monday meeting between Chicago and Paris in March", "should_trigger": true},
+  {"query": "rotate who takes the early morning call between our Sydney and London teams over the next two months", "should_trigger": true},
+  {"query": "Ravi works nights from 22:00 to 06:00 in Kolkata, find a slot with our LA team", "should_trigger": true},
+  {"query": "three of us across Asia/Tokyo, Europe/Berlin and America/Denver, rank the meeting windows by how many people are inside working hours", "should_trigger": true},
+  {"query": "there is no common working time between Auckland and Lisbon, what is the least bad slot and who pays for it", "should_trigger": true},
+  {"query": "the US switches clocks on March 8 and Europe on March 29, which dates will our 15:00 UTC call be wrong for people", "should_trigger": true},
+  {"query": "plan a meeting window for our remote team, Israel works Sunday to Thursday, the rest Monday to Friday", "should_trigger": true},
+  {"query": "what time is 3pm New York in Tokyo", "should_trigger": false},
+  {"query": "send a calendar invite to the whole team for Thursday at 10", "should_trigger": false},
+  {"query": "make a poll so my team can vote on availability", "should_trigger": false},
+  {"query": "write a Python function that converts a datetime between time zones using pytz", "should_trigger": false},
+  {"query": "explain why we have daylight saving time and who invented it", "should_trigger": false},
+  {"query": "build me a shift rota for a 24 hour support desk", "should_trigger": false},
+  {"query": "set up a world clock widget on my phone", "should_trigger": false},
+  {"query": "write a meeting agenda with time boxes for a 45 minute sync", "should_trigger": false},
+  {"query": "fix the timestamp bug where my database stores local time instead of UTC", "should_trigger": false},
+  {"query": "book me a flight to Singapore and tell me the jet lag plan", "should_trigger": false}
+]

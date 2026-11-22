@@ -1,0 +1,5 @@
+[00:00:05] Sarah Lee: Okay so, um, yesterday I finished the
+[00:00:09] Sarah: migration script and I I tested it.
+[00:00:14] TOM: Nice. Any blockers?
+
+[00:00:20] Sarah Lee: Just one, uh, blocker: the staging box.

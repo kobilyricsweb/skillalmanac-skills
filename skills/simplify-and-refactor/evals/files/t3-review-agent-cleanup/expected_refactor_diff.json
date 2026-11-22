@@ -1,0 +1,68 @@
+{
+  "added_public_names": [],
+  "after": "evals/files/t3-review-agent-cleanup/after.py",
+  "ast_identical": false,
+  "before": "evals/files/t3-review-agent-cleanup/before.py",
+  "bodies_changed": [
+    "Registry.add",
+    "Registry.get",
+    "clean_name",
+    "parse_ids"
+  ],
+  "changed_signatures": [
+    {
+      "after": "(self, key)",
+      "before": "(self, key, default=None)",
+      "breaking": true,
+      "changes": [
+        "param_removed:default"
+      ],
+      "kind": "method",
+      "name": "Registry.get"
+    },
+    {
+      "after": "(text, separator=',')",
+      "before": "(text, sep=',')",
+      "breaking": true,
+      "changes": [
+        "param_removed:sep",
+        "optional_param_added:separator"
+      ],
+      "kind": "function",
+      "name": "parse_ids"
+    }
+  ],
+  "imports": {
+    "added": [],
+    "removed": [
+      "import logging"
+    ]
+  },
+  "possible_renames": [],
+  "public_surface_source": "no_underscore_rule",
+  "removed_public_names": [
+    "count_items",
+    "log"
+  ],
+  "surface_preserved": false,
+  "top_level_definitions": {
+    "only_in_after": [
+      {
+        "kind": "variable",
+        "name": "_WS"
+      }
+    ],
+    "only_in_before": [
+      {
+        "kind": "function",
+        "name": "count_items"
+      },
+      {
+        "kind": "variable",
+        "name": "log"
+      }
+    ],
+    "preserved": false
+  },
+  "verdict": "surface_changed"
+}

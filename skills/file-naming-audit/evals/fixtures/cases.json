@@ -1,0 +1,1002 @@
+{
+ "cases": [
+  {
+   "name": "messy listing, dates read month-first",
+   "args": [
+    "--listing",
+    "@listing_messy.txt",
+    "--convention",
+    "{date}_{name}_v{nn}",
+    "--date-order",
+    "mdy"
+   ],
+   "exit": 1,
+   "expect": {
+    "pattern": "{date}_{name}_v{nn}",
+    "source": "given",
+    "files_total": 13,
+    "dirs_total": 3,
+    "ignored": 0,
+    "violations_by_code": {
+     "COPY_SUFFIX": 1,
+     "DOUBLE_SEPARATOR": 1,
+     "FINAL_STYLE": 2,
+     "MIXED_CASE": 5,
+     "NON_SORTABLE_DATE": 3,
+     "NO_DATE": 4,
+     "NO_VERSION": 3,
+     "RISKY_CHAR": 2,
+     "SPACE": 5,
+     "UPPER_EXT": 1,
+     "VERSION_FORMAT": 3
+    },
+    "fix_by_path": {
+     "2026-03-03_homepage-hero_v1.psd": "auto",
+     "Brand Assets": "auto",
+     "Brand Assets/2026-03-05  Logo--Alt_V3.svg": "auto",
+     "Brand Assets/logo_FINAL2.svg": "needs_decision",
+     "Homepage Hero Final.PSD": "needs_decision",
+     "exports/03-04-2026_banner_v02.png": "auto",
+     "exports/12Mar2026_banner_v04.png": "auto",
+     "exports/14-03-2026_banner_v03.png": "auto",
+     "exports/Banner (1).png": "needs_decision",
+     "notes/meeting & budget #2 v2.txt": "needs_decision"
+    },
+    "rename_plan": [
+     [
+      "2026-03-03_homepage-hero_v1.psd",
+      "2026-03-03_homepage-hero_v01.psd"
+     ],
+     [
+      "Brand Assets/2026-03-05  Logo--Alt_V3.svg",
+      "Brand-Assets/2026-03-05_logo-alt_v03.svg"
+     ],
+     [
+      "Brand Assets/2026-03-05_logo_v01.svg",
+      "Brand-Assets/2026-03-05_logo_v01.svg"
+     ],
+     [
+      "Brand Assets/logo_FINAL2.svg",
+      "Brand-Assets/logo_FINAL2.svg"
+     ],
+     [
+      "exports/03-04-2026_banner_v02.png",
+      "exports/2026-03-04_banner_v02.png"
+     ],
+     [
+      "exports/12Mar2026_banner_v04.png",
+      "exports/2026-03-12_banner_v04.png"
+     ],
+     [
+      "exports/14-03-2026_banner_v03.png",
+      "exports/2026-03-14_banner_v03.png"
+     ]
+    ],
+    "dir_renames": [
+     [
+      "Brand Assets",
+      "Brand-Assets"
+     ]
+    ],
+    "held_back": [],
+    "collisions": [],
+    "needs_decision": {
+     "Brand Assets/logo_FINAL2.svg": [
+      "FINAL_STYLE",
+      "NO_DATE",
+      "NO_VERSION"
+     ],
+     "Homepage Hero Final.PSD": [
+      "FINAL_STYLE",
+      "NO_DATE",
+      "NO_VERSION"
+     ],
+     "exports/Banner (1).png": [
+      "COPY_SUFFIX",
+      "NO_DATE",
+      "NO_VERSION"
+     ],
+     "notes/meeting & budget #2 v2.txt": [
+      "NO_DATE"
+     ]
+    },
+    "version_series": [
+     {
+      "series": "homepage-hero*.psd",
+      "versions": [
+       1,
+       2
+      ],
+      "latest_by_number": "2026-03-03_homepage-hero_v02.psd",
+      "latest_by_mtime": null,
+      "latest_ambiguous": false,
+      "mtime_disagrees": false,
+      "duplicate_numbers": [],
+      "gaps": []
+     }
+    ],
+    "plan_is_collision_free": true
+   }
+  },
+  {
+   "name": "messy listing, dates read day-first",
+   "args": [
+    "--listing",
+    "@listing_messy.txt",
+    "--convention",
+    "{date}_{name}_v{nn}",
+    "--date-order",
+    "dmy"
+   ],
+   "exit": 1,
+   "expect": {
+    "pattern": "{date}_{name}_v{nn}",
+    "source": "given",
+    "files_total": 13,
+    "dirs_total": 3,
+    "ignored": 0,
+    "violations_by_code": {
+     "COPY_SUFFIX": 1,
+     "DOUBLE_SEPARATOR": 1,
+     "FINAL_STYLE": 2,
+     "MIXED_CASE": 5,
+     "NON_SORTABLE_DATE": 3,
+     "NO_DATE": 4,
+     "NO_VERSION": 3,
+     "RISKY_CHAR": 2,
+     "SPACE": 5,
+     "UPPER_EXT": 1,
+     "VERSION_FORMAT": 3
+    },
+    "fix_by_path": {
+     "2026-03-03_homepage-hero_v1.psd": "auto",
+     "Brand Assets": "auto",
+     "Brand Assets/2026-03-05  Logo--Alt_V3.svg": "auto",
+     "Brand Assets/logo_FINAL2.svg": "needs_decision",
+     "Homepage Hero Final.PSD": "needs_decision",
+     "exports/03-04-2026_banner_v02.png": "auto",
+     "exports/12Mar2026_banner_v04.png": "auto",
+     "exports/14-03-2026_banner_v03.png": "auto",
+     "exports/Banner (1).png": "needs_decision",
+     "notes/meeting & budget #2 v2.txt": "needs_decision"
+    },
+    "rename_plan": [
+     [
+      "2026-03-03_homepage-hero_v1.psd",
+      "2026-03-03_homepage-hero_v01.psd"
+     ],
+     [
+      "Brand Assets/2026-03-05  Logo--Alt_V3.svg",
+      "Brand-Assets/2026-03-05_logo-alt_v03.svg"
+     ],
+     [
+      "Brand Assets/2026-03-05_logo_v01.svg",
+      "Brand-Assets/2026-03-05_logo_v01.svg"
+     ],
+     [
+      "Brand Assets/logo_FINAL2.svg",
+      "Brand-Assets/logo_FINAL2.svg"
+     ],
+     [
+      "exports/03-04-2026_banner_v02.png",
+      "exports/2026-04-03_banner_v02.png"
+     ],
+     [
+      "exports/12Mar2026_banner_v04.png",
+      "exports/2026-03-12_banner_v04.png"
+     ],
+     [
+      "exports/14-03-2026_banner_v03.png",
+      "exports/2026-03-14_banner_v03.png"
+     ]
+    ],
+    "dir_renames": [
+     [
+      "Brand Assets",
+      "Brand-Assets"
+     ]
+    ],
+    "held_back": [],
+    "collisions": [],
+    "needs_decision": {
+     "Brand Assets/logo_FINAL2.svg": [
+      "FINAL_STYLE",
+      "NO_DATE",
+      "NO_VERSION"
+     ],
+     "Homepage Hero Final.PSD": [
+      "FINAL_STYLE",
+      "NO_DATE",
+      "NO_VERSION"
+     ],
+     "exports/Banner (1).png": [
+      "COPY_SUFFIX",
+      "NO_DATE",
+      "NO_VERSION"
+     ],
+     "notes/meeting & budget #2 v2.txt": [
+      "NO_DATE"
+     ]
+    },
+    "version_series": [
+     {
+      "series": "homepage-hero*.psd",
+      "versions": [
+       1,
+       2
+      ],
+      "latest_by_number": "2026-03-03_homepage-hero_v02.psd",
+      "latest_by_mtime": null,
+      "latest_ambiguous": false,
+      "mtime_disagrees": false,
+      "duplicate_numbers": [],
+      "gaps": []
+     }
+    ],
+    "plan_is_collision_free": true
+   }
+  },
+  {
+   "name": "messy listing, no date order given",
+   "args": [
+    "--listing",
+    "@listing_messy.txt",
+    "--convention",
+    "{date}_{name}_v{nn}"
+   ],
+   "exit": 1,
+   "expect": {
+    "pattern": "{date}_{name}_v{nn}",
+    "source": "given",
+    "files_total": 13,
+    "dirs_total": 3,
+    "ignored": 0,
+    "violations_by_code": {
+     "AMBIGUOUS_DATE": 1,
+     "COPY_SUFFIX": 1,
+     "DOUBLE_SEPARATOR": 1,
+     "FINAL_STYLE": 2,
+     "MIXED_CASE": 5,
+     "NON_SORTABLE_DATE": 2,
+     "NO_DATE": 5,
+     "NO_VERSION": 3,
+     "RISKY_CHAR": 2,
+     "SPACE": 5,
+     "UPPER_EXT": 1,
+     "VERSION_FORMAT": 3
+    },
+    "fix_by_path": {
+     "2026-03-03_homepage-hero_v1.psd": "auto",
+     "Brand Assets": "auto",
+     "Brand Assets/2026-03-05  Logo--Alt_V3.svg": "auto",
+     "Brand Assets/logo_FINAL2.svg": "needs_decision",
+     "Homepage Hero Final.PSD": "needs_decision",
+     "exports/03-04-2026_banner_v02.png": "needs_decision",
+     "exports/12Mar2026_banner_v04.png": "auto",
+     "exports/14-03-2026_banner_v03.png": "auto",
+     "exports/Banner (1).png": "needs_decision",
+     "notes/meeting & budget #2 v2.txt": "needs_decision"
+    },
+    "rename_plan": [
+     [
+      "2026-03-03_homepage-hero_v1.psd",
+      "2026-03-03_homepage-hero_v01.psd"
+     ],
+     [
+      "Brand Assets/2026-03-05  Logo--Alt_V3.svg",
+      "Brand-Assets/2026-03-05_logo-alt_v03.svg"
+     ],
+     [
+      "Brand Assets/2026-03-05_logo_v01.svg",
+      "Brand-Assets/2026-03-05_logo_v01.svg"
+     ],
+     [
+      "Brand Assets/logo_FINAL2.svg",
+      "Brand-Assets/logo_FINAL2.svg"
+     ],
+     [
+      "exports/12Mar2026_banner_v04.png",
+      "exports/2026-03-12_banner_v04.png"
+     ],
+     [
+      "exports/14-03-2026_banner_v03.png",
+      "exports/2026-03-14_banner_v03.png"
+     ]
+    ],
+    "dir_renames": [
+     [
+      "Brand Assets",
+      "Brand-Assets"
+     ]
+    ],
+    "held_back": [],
+    "collisions": [],
+    "needs_decision": {
+     "Brand Assets/logo_FINAL2.svg": [
+      "FINAL_STYLE",
+      "NO_DATE",
+      "NO_VERSION"
+     ],
+     "Homepage Hero Final.PSD": [
+      "FINAL_STYLE",
+      "NO_DATE",
+      "NO_VERSION"
+     ],
+     "exports/03-04-2026_banner_v02.png": [
+      "AMBIGUOUS_DATE",
+      "NO_DATE"
+     ],
+     "exports/Banner (1).png": [
+      "COPY_SUFFIX",
+      "NO_DATE",
+      "NO_VERSION"
+     ],
+     "notes/meeting & budget #2 v2.txt": [
+      "NO_DATE"
+     ]
+    },
+    "version_series": [
+     {
+      "series": "homepage-hero*.psd",
+      "versions": [
+       1,
+       2
+      ],
+      "latest_by_number": "2026-03-03_homepage-hero_v02.psd",
+      "latest_by_mtime": null,
+      "latest_ambiguous": false,
+      "mtime_disagrees": false,
+      "duplicate_numbers": [],
+      "gaps": []
+     }
+    ],
+    "plan_is_collision_free": true
+   }
+  },
+  {
+   "name": "case collisions held back from the plan",
+   "args": [
+    "--listing",
+    "@listing_collisions.txt",
+    "--convention",
+    "{name}"
+   ],
+   "exit": 1,
+   "expect": {
+    "pattern": "{name}",
+    "source": "given",
+    "files_total": 7,
+    "dirs_total": 3,
+    "ignored": 0,
+    "violations_by_code": {
+     "MIXED_CASE": 3,
+     "SPACE": 1
+    },
+    "fix_by_path": {
+     "Docs/Plan.txt": "auto",
+     "Docs/Report.txt": "held_back",
+     "Notes/Report Draft.txt": "held_back"
+    },
+    "rename_plan": [
+     [
+      "Docs/Plan.txt",
+      "Docs/plan.txt"
+     ]
+    ],
+    "dir_renames": [],
+    "held_back": [
+     "Docs/Report.txt",
+     "Notes/Report Draft.txt"
+    ],
+    "collisions": [
+     [
+      "Docs",
+      "docs"
+     ],
+     [
+      "Docs/Report.txt",
+      "Docs/report.txt"
+     ]
+    ],
+    "needs_decision": {},
+    "version_series": [],
+    "plan_is_collision_free": true
+   }
+  },
+  {
+   "name": "version series, duplicates and mtime disagreement",
+   "args": [
+    "--listing",
+    "@listing_versions.txt",
+    "--convention",
+    "{date}_{name}_v{nn}"
+   ],
+   "exit": 1,
+   "expect": {
+    "pattern": "{date}_{name}_v{nn}",
+    "source": "given",
+    "files_total": 6,
+    "dirs_total": 1,
+    "ignored": 0,
+    "violations_by_code": {
+     "DUPLICATE_VERSION": 2,
+     "VERSION_FORMAT": 1
+    },
+    "fix_by_path": {
+     "shoot/2026-03-06_cover_v3.psd": "needs_decision",
+     "shoot/2026-03-09_cover_v03.psd": "needs_decision"
+    },
+    "rename_plan": [],
+    "dir_renames": [],
+    "held_back": [],
+    "collisions": [],
+    "needs_decision": {
+     "shoot/2026-03-06_cover_v3.psd": [
+      "DUPLICATE_VERSION"
+     ],
+     "shoot/2026-03-09_cover_v03.psd": [
+      "DUPLICATE_VERSION"
+     ]
+    },
+    "version_series": [
+     {
+      "series": "shoot/cover*.psd",
+      "versions": [
+       1,
+       2,
+       3,
+       3,
+       10
+      ],
+      "latest_by_number": "shoot/2026-03-04_cover_v10.psd",
+      "latest_by_mtime": "shoot/2026-03-06_cover_v3.psd",
+      "latest_ambiguous": false,
+      "mtime_disagrees": true,
+      "duplicate_numbers": [
+       [
+        "shoot/2026-03-06_cover_v3.psd",
+        "shoot/2026-03-09_cover_v03.psd"
+       ]
+      ],
+      "gaps": [
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ]
+     }
+    ],
+    "plan_is_collision_free": true
+   }
+  },
+  {
+   "name": "inferred convention from the dominant pattern",
+   "args": [
+    "--listing",
+    "@listing_inferred.txt"
+   ],
+   "exit": 1,
+   "expect": {
+    "pattern": "{date}_{name}_v{nn}",
+    "source": "inferred",
+    "files_total": 8,
+    "dirs_total": 1,
+    "ignored": 0,
+    "violations_by_code": {
+     "FINAL_STYLE": 1,
+     "MIXED_CASE": 1,
+     "NO_DATE": 2,
+     "NO_VERSION": 2,
+     "SPACE": 2
+    },
+    "fix_by_path": {
+     "Sketch Final.png": "needs_decision",
+     "old stuff": "auto",
+     "old stuff/ideas.txt": "needs_decision"
+    },
+    "rename_plan": [
+     [
+      "old stuff/ideas.txt",
+      "old-stuff/ideas.txt"
+     ]
+    ],
+    "dir_renames": [
+     [
+      "old stuff",
+      "old-stuff"
+     ]
+    ],
+    "held_back": [],
+    "collisions": [],
+    "needs_decision": {
+     "Sketch Final.png": [
+      "FINAL_STYLE",
+      "NO_DATE",
+      "NO_VERSION"
+     ],
+     "old stuff/ideas.txt": [
+      "NO_DATE",
+      "NO_VERSION"
+     ]
+    },
+    "version_series": [
+     {
+      "series": "footer*.png",
+      "versions": [
+       1,
+       2
+      ],
+      "latest_by_number": "2026-02-20_footer_v02.png",
+      "latest_by_mtime": null,
+      "latest_ambiguous": false,
+      "mtime_disagrees": false,
+      "duplicate_numbers": [],
+      "gaps": []
+     },
+     {
+      "series": "hero-image*.jpg",
+      "versions": [
+       1,
+       2
+      ],
+      "latest_by_number": "2026-02-01_hero-image_v02.jpg",
+      "latest_by_mtime": null,
+      "latest_ambiguous": false,
+      "mtime_disagrees": false,
+      "duplicate_numbers": [],
+      "gaps": []
+     }
+    ],
+    "plan_is_collision_free": true
+   }
+  },
+  {
+   "name": "highest version number shared by two files: latest is ambiguous",
+   "args": [
+    "--listing",
+    "@listing_tied_latest.txt",
+    "--convention",
+    "{date}_{name}_v{nn}"
+   ],
+   "exit": 1,
+   "expect": {
+    "pattern": "{date}_{name}_v{nn}",
+    "source": "given",
+    "files_total": 3,
+    "dirs_total": 1,
+    "ignored": 0,
+    "violations_by_code": {
+     "DUPLICATE_VERSION": 2
+    },
+    "fix_by_path": {
+     "cover/2026-04-10_magazine-cover_v10.indd": "needs_decision",
+     "cover/2026-04-12_magazine-cover_v10.indd": "needs_decision"
+    },
+    "rename_plan": [],
+    "dir_renames": [],
+    "held_back": [],
+    "collisions": [],
+    "needs_decision": {
+     "cover/2026-04-10_magazine-cover_v10.indd": [
+      "DUPLICATE_VERSION"
+     ],
+     "cover/2026-04-12_magazine-cover_v10.indd": [
+      "DUPLICATE_VERSION"
+     ]
+    },
+    "version_series": [
+     {
+      "series": "cover/magazine-cover*.indd",
+      "versions": [
+       9,
+       10,
+       10
+      ],
+      "latest_by_number": null,
+      "latest_by_mtime": "cover/2026-04-12_magazine-cover_v10.indd",
+      "latest_ambiguous": true,
+      "mtime_disagrees": false,
+      "duplicate_numbers": [
+       [
+        "cover/2026-04-10_magazine-cover_v10.indd",
+        "cover/2026-04-12_magazine-cover_v10.indd"
+       ]
+      ],
+      "gaps": []
+     }
+    ],
+    "plan_is_collision_free": true
+   }
+  },
+  {
+   "name": "clean listing exits 0",
+   "args": [
+    "--listing",
+    "@listing_clean.txt",
+    "--convention",
+    "{date}_{name}_v{nn}"
+   ],
+   "exit": 0,
+   "expect": {
+    "pattern": "{date}_{name}_v{nn}",
+    "source": "given",
+    "files_total": 3,
+    "dirs_total": 1,
+    "ignored": 0,
+    "violations_by_code": {},
+    "fix_by_path": {},
+    "rename_plan": [],
+    "dir_renames": [],
+    "held_back": [],
+    "collisions": [],
+    "needs_decision": {},
+    "version_series": [
+     {
+      "series": "exports/banner*.png",
+      "versions": [
+       1,
+       2
+      ],
+      "latest_by_number": "exports/2026-03-05_banner_v02.png",
+      "latest_by_mtime": null,
+      "latest_ambiguous": false,
+      "mtime_disagrees": false,
+      "duplicate_numbers": [],
+      "gaps": []
+     }
+    ],
+    "plan_is_collision_free": true
+   }
+  },
+  {
+   "name": "path length with a sync prefix",
+   "args": [
+    "--listing",
+    "@listing_clean.txt",
+    "--convention",
+    "{date}_{name}_v{nn}",
+    "--max-path",
+    "40",
+    "--prefix-len",
+    "8"
+   ],
+   "exit": 1,
+   "expect": {
+    "pattern": "{date}_{name}_v{nn}",
+    "source": "given",
+    "files_total": 3,
+    "dirs_total": 1,
+    "ignored": 0,
+    "violations_by_code": {
+     "OVER_LENGTH": 2
+    },
+    "fix_by_path": {
+     "exports/2026-03-04_banner_v01.png": "needs_decision",
+     "exports/2026-03-05_banner_v02.png": "needs_decision"
+    },
+    "rename_plan": [],
+    "dir_renames": [],
+    "held_back": [],
+    "collisions": [],
+    "needs_decision": {
+     "exports/2026-03-04_banner_v01.png": [
+      "OVER_LENGTH"
+     ],
+     "exports/2026-03-05_banner_v02.png": [
+      "OVER_LENGTH"
+     ]
+    },
+    "version_series": [
+     {
+      "series": "exports/banner*.png",
+      "versions": [
+       1,
+       2
+      ],
+      "latest_by_number": "exports/2026-03-05_banner_v02.png",
+      "latest_by_mtime": null,
+      "latest_ambiguous": false,
+      "mtime_disagrees": false,
+      "duplicate_numbers": [],
+      "gaps": []
+     }
+    ],
+    "plan_is_collision_free": true
+   }
+  },
+  {
+   "name": "date taken from modified time only when asked",
+   "args": [
+    "--listing",
+    "@listing_mtime.txt",
+    "--convention",
+    "{date}_{name}_v{nn}",
+    "--date-from-mtime"
+   ],
+   "exit": 1,
+   "expect": {
+    "pattern": "{date}_{name}_v{nn}",
+    "source": "given",
+    "files_total": 2,
+    "dirs_total": 1,
+    "ignored": 0,
+    "violations_by_code": {
+     "NO_DATE": 2
+    },
+    "fix_by_path": {
+     "notes/agenda_v01.txt": "needs_decision",
+     "notes/meeting-notes_v01.txt": "auto"
+    },
+    "rename_plan": [
+     [
+      "notes/meeting-notes_v01.txt",
+      "notes/2026-03-06_meeting-notes_v01.txt"
+     ]
+    ],
+    "dir_renames": [],
+    "held_back": [],
+    "collisions": [],
+    "needs_decision": {
+     "notes/agenda_v01.txt": [
+      "NO_DATE"
+     ]
+    },
+    "version_series": [],
+    "plan_is_collision_free": true
+   }
+  },
+  {
+   "name": "forbidden characters, reserved name, trailing dot",
+   "args": [
+    "--listing",
+    "@listing_chars.txt",
+    "--convention",
+    "{name}"
+   ],
+   "exit": 1,
+   "expect": {
+    "pattern": "{name}",
+    "source": "given",
+    "files_total": 6,
+    "dirs_total": 1,
+    "ignored": 0,
+    "violations_by_code": {
+     "FORBIDDEN_CHAR": 2,
+     "MIXED_CASE": 2,
+     "RESERVED_NAME": 1,
+     "RISKY_CHAR": 1,
+     "SPACE": 1,
+     "TRAILING_DOT_SPACE": 1
+    },
+    "fix_by_path": {
+     "CON.txt": "needs_decision",
+     "Q&A #3.txt": "auto",
+     "draft.txt.": "auto",
+     "report:summary.txt": "auto",
+     "what?.txt": "auto"
+    },
+    "rename_plan": [
+     [
+      "Q&A #3.txt",
+      "q-a-3.txt"
+     ],
+     [
+      "draft.txt.",
+      "draft.txt"
+     ],
+     [
+      "report:summary.txt",
+      "report-summary.txt"
+     ],
+     [
+      "what?.txt",
+      "what.txt"
+     ]
+    ],
+    "dir_renames": [],
+    "held_back": [],
+    "collisions": [],
+    "needs_decision": {
+     "CON.txt": [
+      "RESERVED_NAME"
+     ]
+    },
+    "version_series": [],
+    "plan_is_collision_free": true
+   }
+  },
+  {
+   "name": "ascii option folds accents, cannot fold other scripts",
+   "args": [
+    "--listing",
+    "@listing_ascii.txt",
+    "--convention",
+    "{name}",
+    "--ascii"
+   ],
+   "exit": 1,
+   "expect": {
+    "pattern": "{name}",
+    "source": "given",
+    "files_total": 3,
+    "dirs_total": 0,
+    "ignored": 0,
+    "violations_by_code": {
+     "NON_ASCII": 2
+    },
+    "fix_by_path": {
+     "caf\u00e9.txt": "auto",
+     "\u65e5\u672c.txt": "needs_decision"
+    },
+    "rename_plan": [
+     [
+      "caf\u00e9.txt",
+      "cafe.txt"
+     ]
+    ],
+    "dir_renames": [],
+    "held_back": [],
+    "collisions": [],
+    "needs_decision": {
+     "\u65e5\u672c.txt": [
+      "NON_ASCII"
+     ]
+    },
+    "version_series": [],
+    "plan_is_collision_free": true
+   }
+  },
+  {
+   "name": "non-ascii names are fine without the option",
+   "args": [
+    "--listing",
+    "@listing_ascii.txt",
+    "--convention",
+    "{name}"
+   ],
+   "exit": 0,
+   "expect": {
+    "pattern": "{name}",
+    "source": "given",
+    "files_total": 3,
+    "dirs_total": 0,
+    "ignored": 0,
+    "violations_by_code": {},
+    "fix_by_path": {},
+    "rename_plan": [],
+    "dir_renames": [],
+    "held_back": [],
+    "collisions": [],
+    "needs_decision": {},
+    "version_series": [],
+    "plan_is_collision_free": true
+   }
+  },
+  {
+   "name": "folder walk skips hidden folders",
+   "args": [
+    "@tree_basic",
+    "--convention",
+    "{date}_{name}_v{nn}"
+   ],
+   "exit": 1,
+   "expect": {
+    "pattern": "{date}_{name}_v{nn}",
+    "source": "given",
+    "files_total": 3,
+    "dirs_total": 1,
+    "ignored": 1,
+    "violations_by_code": {
+     "MIXED_CASE": 1,
+     "NO_DATE": 2,
+     "NO_VERSION": 2,
+     "SPACE": 2,
+     "VERSION_FORMAT": 1
+    },
+    "fix_by_path": {
+     "Client Files": "auto",
+     "Client Files/2026-03-01_brief_v1.txt": "auto",
+     "Client Files/Meeting Notes.txt": "needs_decision",
+     "readme.txt": "needs_decision"
+    },
+    "rename_plan": [
+     [
+      "Client Files/2026-03-01_brief_v1.txt",
+      "Client-Files/2026-03-01_brief_v01.txt"
+     ],
+     [
+      "Client Files/Meeting Notes.txt",
+      "Client-Files/Meeting Notes.txt"
+     ]
+    ],
+    "dir_renames": [
+     [
+      "Client Files",
+      "Client-Files"
+     ]
+    ],
+    "held_back": [],
+    "collisions": [],
+    "needs_decision": {
+     "Client Files/Meeting Notes.txt": [
+      "NO_DATE",
+      "NO_VERSION"
+     ],
+     "readme.txt": [
+      "NO_DATE",
+      "NO_VERSION"
+     ]
+    },
+    "version_series": [],
+    "plan_is_collision_free": true
+   }
+  },
+  {
+   "name": "folder walk with hidden folders included",
+   "args": [
+    "@tree_basic",
+    "--convention",
+    "{date}_{name}_v{nn}",
+    "--include-hidden"
+   ],
+   "exit": 1,
+   "expect": {
+    "pattern": "{date}_{name}_v{nn}",
+    "source": "given",
+    "files_total": 4,
+    "dirs_total": 2,
+    "ignored": 0,
+    "violations_by_code": {
+     "MIXED_CASE": 1,
+     "NO_DATE": 3,
+     "NO_VERSION": 3,
+     "SPACE": 2,
+     "VERSION_FORMAT": 1
+    },
+    "fix_by_path": {
+     ".hidden/skipped.txt": "needs_decision",
+     "Client Files": "auto",
+     "Client Files/2026-03-01_brief_v1.txt": "auto",
+     "Client Files/Meeting Notes.txt": "needs_decision",
+     "readme.txt": "needs_decision"
+    },
+    "rename_plan": [
+     [
+      "Client Files/2026-03-01_brief_v1.txt",
+      "Client-Files/2026-03-01_brief_v01.txt"
+     ],
+     [
+      "Client Files/Meeting Notes.txt",
+      "Client-Files/Meeting Notes.txt"
+     ]
+    ],
+    "dir_renames": [
+     [
+      "Client Files",
+      "Client-Files"
+     ]
+    ],
+    "held_back": [],
+    "collisions": [],
+    "needs_decision": {
+     ".hidden/skipped.txt": [
+      "NO_DATE",
+      "NO_VERSION"
+     ],
+     "Client Files/Meeting Notes.txt": [
+      "NO_DATE",
+      "NO_VERSION"
+     ],
+     "readme.txt": [
+      "NO_DATE",
+      "NO_VERSION"
+     ]
+    },
+    "version_series": [],
+    "plan_is_collision_free": true
+   }
+  }
+ ]
+}

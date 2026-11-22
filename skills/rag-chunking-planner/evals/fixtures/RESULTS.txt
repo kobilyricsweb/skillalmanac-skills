@@ -1,0 +1,11 @@
+PASS fixed 40/5: splits the code fence and the table, loses one answer on a boundary
+PASS paragraph 50/10: no split blocks, one duplicate pair, many orphans
+PASS paragraph 70/35 on prose: overlap carries one whole paragraph, no defects
+PASS paragraph 50/30: overlap above half the chunk is an error
+PASS heading 80/0 with heading prefix: clean, heading context kept in the indexed text
+PASS heading 60/0: sections above the size are repacked by paragraph
+PASS compare ranks the three settings by recall
+PASS missing path exits 2
+PASS overlap equal to size exits 2
+PASS output file, overwrite guard, malformed questions
+10/10 cases passed

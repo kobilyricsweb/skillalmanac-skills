@@ -1,0 +1,45 @@
+{
+  "skill_name": "schedule-conflict-check",
+  "note": "Drafted, not run with a model. No with-skill or baseline run exists for these tasks. [script] assertions compare the agent's JSON or reply with the hand-checked results in evals/fixtures/cases.json; [judge] assertions need a blind grader. The script is the skill's own tool, so each task has at least one judge assertion it does not control. Input files are the fixtures themselves.",
+  "evals": [
+    {
+      "id": "t1-clinic-day",
+      "prompt": "Here is our front-desk booking export for Monday and one Saturday (evals/fixtures/clinic.csv). Opening hours are 9-12 and 13-17 on Monday and Tuesday, DrB has a 10:30-10:45 break, every appointment needs 10 minutes turnover, and the only valid providers are DrA and DrB, rooms R1 and R2 (rules in evals/fixtures/clinic_rules.json). Tell me everything that is wrong and what could move where. Do not move anything yourself.",
+      "files": ["evals/fixtures/clinic.csv", "evals/fixtures/clinic_rules.json"],
+      "assertions": [
+        "[script] The reply or saved JSON names the 8 hard conflicts: resource overlap b2+b3 and b4+b5, room overlap b3+b5, client double-booking b3+b5, outside hours for b6, b7 and b11, unknown provider DrX on b9",
+        "[script] The reply names the 2 soft conflicts: buffer breach b1+b2 (5 minutes short) and DrB break overlap on b4",
+        "[script] b8 is reported as having no provider and b10 as a rejected row (end before start); neither is silently dropped or given an invented provider",
+        "[script] b7 is reported as fixed and unmovable, and b9 gets no move suggestion",
+        "[judge] Moves are presented as options with the order caveat, and nothing is described as already changed",
+        "[judge] The reply ends with a Not checked line that mentions at least recurring bookings or daylight saving and rules the user did not state"
+      ]
+    },
+    {
+      "id": "t2-ward-roster",
+      "prompt": "Check this ward roster (evals/fixtures/roster.csv) against our rules: at least 11 hours between one shift ending and the next starting on another day, no more than 10 hours booked per person per day, and the Ward holds 2 people at a time. Every shift needs a room. Which shifts break which rule, and by how much?",
+      "files": ["evals/fixtures/roster.csv", "evals/fixtures/roster_rules.json"],
+      "assertions": [
+        "[script] Ward over capacity is reported for s1, s3 and s4 from 15:00 to 21:00 on 2026-03-02 (360 minutes)",
+        "[script] Ana's rest gap between s1 and s2 is reported as 8 hours, 180 minutes short of the rule",
+        "[script] Dee's s5 is reported as 120 minutes over the daily limit and as having no room",
+        "[script] Eli's two shifts on 2026-03-04 are not reported",
+        "[judge] The reply makes no statement about whether the 11 hour rule is legally required anywhere",
+        "[judge] The reply says the daily-limit problem has no automatic move and leaves the choice to the user"
+      ]
+    },
+    {
+      "id": "t3-calendar-export",
+      "prompt": "This calendar export (evals/fixtures/events.ics) is our hall and room bookings. Check it for clashes and tell me what you could not check.",
+      "files": ["evals/fixtures/events.ics"],
+      "assertions": [
+        "[script] Workshop A (e1) and Workshop B (e2) are reported as overlapping for 30 minutes, once for resource Room Blue and once for room Hall",
+        "[script] The cancelled event e3 is not treated as a booking",
+        "[script] e4 (the all-day event) is reported as having no resource",
+        "[script] e2 is reported as recurring with only its first instance checked",
+        "[judge] The Not checked line says later occurrences of the recurring event were not checked, and does not claim the whole series is clash-free",
+        "[judge] The reply does not ask for or invent client names"
+      ]
+    }
+  ]
+}

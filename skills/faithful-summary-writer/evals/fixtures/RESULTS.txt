@@ -1,0 +1,8 @@
+PASS good summary, target 0.4
+PASS bad summary: invented name, altered numbers, negation flip, invented claim, copied sentence
+PASS bad summary with --tolerance 0.1 accepts the 6.6 percent change but not 16.7 percent
+PASS dropped hedge (and a partial-sentence negation prompt)
+PASS good summary against the executive band is too long
+PASS empty summary file
+PASS missing source file
+7/7 cases passed

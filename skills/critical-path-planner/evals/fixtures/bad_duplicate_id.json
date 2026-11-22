@@ -1,0 +1,6 @@
+{
+  "tasks": [
+    {"id": "A", "duration": 2},
+    {"id": "A", "duration": 3, "predecessors": ["A"]}
+  ]
+}

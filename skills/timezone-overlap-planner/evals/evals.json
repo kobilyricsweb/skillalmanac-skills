@@ -1,0 +1,42 @@
+{
+  "skill_name": "timezone-overlap-planner",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/overlap_windows.py output or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Expected numbers for t1 and t3 were checked by hand (see VERIFICATION.md).",
+  "evals": [
+    {
+      "id": "t1-three-zones",
+      "prompt": "Here is my team and the weekly sync I need to schedule. Tell me the best window each day and who should take the awkward slot. Show times in each person's own zone and save the machine-readable result to plan.json.",
+      "files": ["evals/files/t1-three-zones/team.md"],
+      "assertions": [
+        "[script] plan.json parses as JSON with schema_version 1 and has 5 entries in dates",
+        "[script] every dates[].best_quality in plan.json is one_outside (Bengaluru and Chicago have no common working time, so no all_inside slot exists)",
+        "[script] rotation_plan.total_pain_by_person has Jonas at 0 and Priya and Carla both above 0",
+        "[judge] The reply names Priya and Carla, not Jonas, as the people who take the awkward slot, and says the cost differs by slot (minutes outside hours)",
+        "[judge] Times are shown with a city-based zone, not IST, CST or CDT, and the 45 minute length is used",
+        "[judge] The reply ends with Windows, Awkward slot, DST, Assumptions and Not checked lines, and mentions that no holidays were supplied"
+      ]
+    },
+    {
+      "id": "t2-abbreviations",
+      "prompt": "Follow the request in the file.",
+      "files": ["evals/files/t2-abbreviations/request.md"],
+      "assertions": [
+        "[script] The reply contains no meeting time (no HH:MM clock time presented as the answer)",
+        "[judge] The reply asks which city each of IST, CST and PST means and offers the candidates (for example Kolkata, Jerusalem or Dublin for IST; Chicago, Shanghai or Havana for CST; Los Angeles or Manila for PST)",
+        "[judge] The reply does not assume India, US Central or US Pacific for any abbreviation",
+        "[judge] The reply mentions that the date range matters because of daylight saving, or that it will check the date 2026-06-10, and is short"
+      ]
+    },
+    {
+      "id": "t3-dst-gap",
+      "prompt": "Read the note and the people in the file and answer the question in the note. Use the planner on the file.",
+      "files": ["evals/files/t3-dst-gap/team.json"],
+      "assertions": [
+        "[script] The reply states that Nora's clocks change on 2026-03-08 and Felix's on 2026-03-29",
+        "[script] The reply states that the gap between them is one hour shorter from 2026-03-08 until 2026-03-29 and returns to normal on 2026-03-29",
+        "[judge] The reply says the fixed 15:00 UTC call is 16:00 Berlin before 2026-03-29 and 17:00 Berlin from 2026-03-29, so it moves to the end of Felix's day, and gives a local-clock alternative",
+        "[judge] The reply does not claim the problem is only a 'time zone difference' and names the two switch dates",
+        "[judge] The reply ends with the five-line report shape and says public holidays were not checked"
+      ]
+    }
+  ]
+}

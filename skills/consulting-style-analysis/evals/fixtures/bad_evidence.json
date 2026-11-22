@@ -1,0 +1,25 @@
+{
+  "answer": "Margin fell because freight rose.",
+  "summary": "Margin moved because freight rose and prices stayed flat while volumes held steady across every region this quarter. Margin moved because freight rose and prices stayed flat while volumes held steady across every region this quarter. Margin moved because freight rose and prices stayed flat while volumes held steady across every region this quarter. Margin moved because freight rose and prices stayed flat while volumes held steady across every region this quarter. Margin moved because freight rose and prices stayed flat while volumes held steady across every region this quarter. Margin moved because freight rose and prices stayed flat while volumes held steady across every region this quarter. Margin moved because freight rose and prices stayed flat while volumes held steady across every region this quarter. Margin moved because freight rose and prices stayed flat while volumes held steady across every region this quarter. Margin moved because freight rose and prices stayed flat while volumes held steady across every region this quarter.",
+  "issue_tree": {
+    "id": "Q",
+    "text": "Why did margin fall",
+    "universe": ["revenue_side", "cost_side"],
+    "children": [
+      {"id": "R", "text": "Revenue", "covers": ["revenue_side"]},
+      {"id": "C", "text": "Cost", "covers": ["cost_side"]}
+    ]
+  },
+  "hypotheses": [
+    {"id": "H1", "node": "R", "statement": "Prices fell", "falsifier": "Average price is flat", "status": "open"},
+    {"id": "H2", "node": "C", "statement": "Freight rose", "falsifier": "", "status": "open"}
+  ],
+  "evidence": [
+    {"id": "E1", "hypothesis": "H2", "direction": "supports", "claim": "Freight per unit rose 18%", "source": "", "source_type": "primary_data", "confidence": 0.9},
+    {"id": "E2", "hypothesis": "H2", "direction": "supports", "claim": "Carriers raised rates", "source": "Logistics manager, interview", "source_type": "interview", "confidence": 1.4}
+  ],
+  "sections": [
+    {"id": "S1", "title": "Freight drove the fall", "body": "Freight per unit rose 18%.", "so_what": "", "supports": ["H2"]},
+    {"id": "S2", "title": "Prices", "body": "Prices were flat.", "so_what": "Prices", "supports": ["H1"]}
+  ]
+}

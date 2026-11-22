@@ -1,0 +1,5 @@
+invoice_number,supplier,issue_date,due_date,terms,description,quantity,unit_price,tax_rate,line_total,stated_total
+D-100,Cafe Supply,2026-01-15,2026-03-02,eom30,Coffee beans,2,18.50,8,37.00,47.74
+D-100,Cafe Supply,,,,Milk,6,1.20,8,7.20,
+D-101,Cafe Supply,2026-02-01,2026-03-02,2/10 net 30,Cups,4,25.00,8,100.00,108.00
+D-102,Cafe Supply,2026-04-03,,pay when able,Napkins,1,10.00,0,10.00,10.00

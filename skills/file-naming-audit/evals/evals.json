@@ -1,0 +1,46 @@
+{
+  "skill_name": "file-naming-audit",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/naming_audit.py on the task file or a plain check of the agent's files; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control. Expected script values were read by hand from a run of the script on each task file on 2026-11-21.",
+  "evals": [
+    {
+      "id": "t1-agency-drive",
+      "prompt": "Our agency naming convention is {date}_{project}_{asset}_v{nn}, for example 2026-03-04_northwind_homepage-hero_v02.psd. The attached listing is the Client Briefs and Social folders. Audit it and give me a rename plan. Do not rename anything.",
+      "files": ["evals/files/t1-agency-drive/listing.txt"],
+      "assertions": [
+        "[script] naming_audit.py --listing listing.txt --convention '{date}_{project}_{asset}_v{nn}' exits 1 and plan_is_collision_free is true",
+        "[script] the agent's plan file contains the row 'Social/2026-03-07_northwind_reel_v2.mp4,Social/2026-03-07_northwind_reel_v02.mp4'",
+        "[script] the agent's plan file has no row whose old path is 'Social/IG post 03.04.2026.png' (03.04 is ambiguous without a stated order)",
+        "[script] in the agent's plan file the two northwind brief files with FINAL in their names keep their file names unchanged (only the folder part of the path may change)",
+        "[judge] The reply asks the user whether numeric dates such as 03.04.2026 are day-first or month-first instead of choosing one",
+        "[judge] The reply lists the FINAL, final2 and (1) files as needing the user's decision and does not invent version numbers or dates for them",
+        "[judge] The reply states that nothing was renamed and tells the user to apply the plan on a copy or after a backup because links to these files can break"
+      ]
+    },
+    {
+      "id": "t2-logo-folder",
+      "prompt": "Here is the file list of our Logos and Exports folders. We have no written convention. Tell me what is wrong with the names and what a sensible rule set would be.",
+      "files": ["evals/files/t2-logo-folder/listing.txt"],
+      "assertions": [
+        "[script] naming_audit.py --listing listing.txt (no convention) reports convention.source inferred, needs_confirmation true, and a collision between Logos/Logo.png and Logos/logo.png",
+        "[script] the reply names Exports/AUX.txt as a reserved device name and Exports/Final?.pdf as containing a forbidden character",
+        "[script] the reply flags the 119-character file name in Exports as too long",
+        "[judge] The inferred pattern is shown as a proposal with its evidence and the user is asked to confirm it before date or version tokens are treated as defects",
+        "[judge] The reply says that Logos/Logo.png and Logos/logo.png are one name on Windows and default macOS volumes, and does not pick a winner without checking whether the files are identical",
+        "[judge] Logos/Brand Mark.svg is not given a plan rename to brand-mark.svg because that name already exists; the reply says why it was held back"
+      ]
+    },
+    {
+      "id": "t3-which-is-latest",
+      "prompt": "Which of these magazine cover files is the latest, and do the names follow {date}_{name}_v{nn}? The second column is each file's modified time.",
+      "files": ["evals/files/t3-which-is-latest/listing.txt"],
+      "assertions": [
+        "[script] naming_audit.py --listing listing.txt --convention '{date}_{name}_v{nn}' exits 0 and reports latest_by_number 2026-04-10_magazine-cover_v10.indd with mtime_disagrees true",
+        "[script] the reply names 2026-04-10_magazine-cover_v10.indd as the latest indd version",
+        "[script] the reply does not name 2026-04-09_magazine-cover_v09.indd as the latest",
+        "[judge] The reply explains that the highest version number decides, that the v09 file has a newer modified time, and that the disagreement is reported for the user to look at",
+        "[judge] The v10 pdf is treated as an export of the same version, not as a duplicate of the indd",
+        "[judge] The reply says all five names follow the convention and does not suggest renames"
+      ]
+    }
+  ]
+}

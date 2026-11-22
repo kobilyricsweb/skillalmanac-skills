@@ -1,0 +1,39 @@
+{
+  "note": "Expected values were computed by hand from the formulas in SKILL.md (see VERIFICATION.md) and then compared with the script output.",
+  "cases": [
+    {
+      "spec": "dense_8b.json", "exit": 0, "global_warnings_contain": [],
+      "rows": [
+        {"hw": 0, "quant": "Q4_K_M", "weights_gb": 4.85, "kv_gb": 1.07, "total_gb": 6.42, "verdict": "fits_fully", "tokens_per_second_ceiling": 185.6},
+        {"hw": 0, "quant": "FP16", "weights_gb": 16.0, "total_gb": 17.57, "verdict": "fits_fully", "tokens_per_second_ceiling": 56.2},
+        {"hw": 1, "quant": "Q4_K_M", "verdict": "fits_fully", "max_context": 11201},
+        {"hw": 1, "quant": "Q5_K_M", "verdict": "partial_offload", "approx_gpu_share": 0.94},
+        {"hw": 1, "quant": "FP16", "verdict": "partial_offload", "approx_gpu_share": 0.39, "tokens_per_second_ceiling": 4.6}
+      ],
+      "recommendation_starts": [[1, "8 GB laptop GPU: best fit is Q4_K_M"]]
+    },
+    {
+      "spec": "moe_30b.json", "exit": 0, "global_warnings_contain": ["MoE model: memory uses TOTAL parameters"],
+      "rows": [
+        {"hw": 0, "quant": "FP16", "verdict": "does_not_fit"},
+        {"hw": 0, "quant": "Q4_K_M", "weights_gb": 18.19, "total_gb": 21.91, "verdict": "fits_fully", "tokens_per_second_ceiling": 219.9},
+        {"hw": 1, "quant": "Q4_K_M", "verdict": "cpu_only", "tokens_per_second_ceiling": 33.0},
+        {"hw": 1, "quant": "Q8_0", "verdict": "does_not_fit"}
+      ],
+      "hw_warnings_contain": [[0, "unified memory on macOS"]]
+    },
+    {
+      "spec": "warnings_case.json", "exit": 0,
+      "global_warnings_contain": ["above the trained limit 32768", "KV cache dtype q8_0"],
+      "rows": [
+        {"hw": 0, "quant": "Q4_K_M", "kv_gb": 39.93, "verdict": "does_not_fit"},
+        {"hw": 0, "quant": "Q2_K", "verdict": "partial_offload", "max_context_with_offload": 32768}
+      ],
+      "hw_warnings_contain": [[0, "only one GPU is counted"]],
+      "row_warnings_contain": [[0, "Q4_K_M", "KV estimate is approximate"]]
+    },
+    {"spec": "too_big.json", "exit": 1, "rows": [{"hw": 0, "quant": "Q2_K", "verdict": "does_not_fit"}]},
+    {"spec": "bad_zero_params.json", "exit": 2},
+    {"spec": "no_such_file.json", "exit": 2}
+  ]
+}

@@ -1,0 +1,16 @@
+sequenceDiagram
+    autonumber
+    participant U as User
+    participant W as Web App
+    participant A as Orders API
+    participant P as Payment Provider
+    U->>W: Place order
+    W->>+A: POST /orders
+    A->>+P: Charge card
+    P-->>-A: Charge result
+    alt payment accepted
+        A-->>W: 201 order id
+    else payment declined
+        A-->>-W: 402 declined
+    end
+    W-->>U: Show confirmation

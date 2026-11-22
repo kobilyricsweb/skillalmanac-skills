@@ -1,0 +1,160 @@
+{
+  "study": "feedback-tracking-switchers",
+  "interviews": [
+    {
+      "id": "I1",
+      "participant": "P1",
+      "turns": [
+        {
+          "n": 1,
+          "speaker": "interviewer",
+          "text": "Tell me about the last time you switched how your team tracks customer feedback."
+        },
+        {
+          "n": 2,
+          "speaker": "participant",
+          "text": "That was in September. We had feedback scattered across email and a shared spreadsheet, and in a roadmap review I couldn't find the three complaints about exports that a customer had sent."
+        },
+        {
+          "n": 3,
+          "speaker": "interviewer",
+          "text": "What happened next?"
+        },
+        {
+          "n": 4,
+          "speaker": "participant",
+          "text": "I started looking at tools that night. Honestly I kept hoping the spreadsheet would hold up, because everyone already knew how to use it and changing it felt like a big deal."
+        },
+        {
+          "n": 5,
+          "speaker": "interviewer",
+          "text": "What made you pick that one in the end?"
+        },
+        {
+          "n": 6,
+          "speaker": "participant",
+          "text": "The demo showed every complaint tagged to the customer and the date, so I could see all export complaints in one view. But I worried the team wouldn't tag things consistently and it would end up just as messy."
+        },
+        {
+          "n": 7,
+          "speaker": "interviewer",
+          "text": "Walk me through the first week using it."
+        },
+        {
+          "n": 8,
+          "speaker": "participant",
+          "text": "I imported the spreadsheet on a Tuesday. By Friday I could answer in a minute which customers had asked for exports, which was what I needed for the roadmap review."
+        }
+      ],
+      "codes": [
+        {
+          "force": "push",
+          "turn": 2,
+          "quote": "I couldn't find the three complaints about exports"
+        },
+        {
+          "force": "habit",
+          "turn": 4,
+          "quote": "everyone already knew how to use it"
+        },
+        {
+          "force": "pull",
+          "turn": 6,
+          "quote": "I could see all export complaints in one view"
+        },
+        {
+          "force": "anxiety",
+          "turn": 6,
+          "quote": "I worried the team wouldn't tag things consistently"
+        }
+      ]
+    },
+    {
+      "id": "I2",
+      "participant": "P2",
+      "turns": [
+        {
+          "n": 1,
+          "speaker": "interviewer",
+          "text": "Take me back to when you first thought about changing how you handle support tickets."
+        },
+        {
+          "n": 2,
+          "speaker": "participant",
+          "text": "It was after the outage in March. Customers emailed three different inboxes and we answered some twice and missed others, and my manager asked me why a refund took nine days."
+        },
+        {
+          "n": 3,
+          "speaker": "interviewer",
+          "text": "What did you do about it?"
+        },
+        {
+          "n": 4,
+          "speaker": "participant",
+          "text": "For two weeks I just added a rule to forward everything to one inbox. It sort of worked, and I knew how to maintain it, so I didn't want to start over."
+        },
+        {
+          "n": 5,
+          "speaker": "interviewer",
+          "text": "How did you decide?"
+        },
+        {
+          "n": 6,
+          "speaker": "participant",
+          "text": "A colleague showed me her shared queue where each ticket had an owner. I wanted that: one place where nobody can claim a ticket without their name on it."
+        },
+        {
+          "n": 7,
+          "speaker": "interviewer",
+          "text": "Was there anything that gave you pause?"
+        },
+        {
+          "n": 8,
+          "speaker": "participant",
+          "text": "Not really. The price was fine and migration was one afternoon, I checked with their support before buying."
+        }
+      ],
+      "codes": [
+        {
+          "force": "push",
+          "turn": 2,
+          "quote": "my manager asked me why a refund took nine days"
+        },
+        {
+          "force": "habit",
+          "turn": 4,
+          "quote": "I knew how to maintain it"
+        },
+        {
+          "force": "pull",
+          "turn": 6,
+          "quote": "one place where nobody can claim a ticket without their name on it"
+        },
+        {
+          "force": "anxiety",
+          "none_found": true,
+          "note": "asked directly about doubts before purchase; participant named none"
+        }
+      ]
+    }
+  ],
+  "job_statements": [
+    {
+      "id": "J1",
+      "situation": "work requests arrive in several places and I cannot answer a simple question about them when someone senior asks",
+      "motivation": "see everything on one topic in a single place",
+      "outcome": "answer the question in minutes without searching",
+      "text": "When work requests arrive in several places and I cannot answer a simple question about them when someone senior asks, I want to see everything on one topic in a single place, so I can answer the question in minutes without searching.",
+      "evidence": [
+        {
+          "interview": "I1",
+          "turn": 2
+        },
+        {
+          "interview": "I2",
+          "turn": 2
+        }
+      ]
+    }
+  ]
+}

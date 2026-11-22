@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "required": ["id", "when"],
+  "properties": {
+    "id": {"type": "integer", "minimum": 1},
+    "when": {"type": "string", "format": "date-time"}
+  }
+}

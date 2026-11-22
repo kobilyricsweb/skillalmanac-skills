@@ -1,0 +1,5 @@
+a1b2c3d feat(search): add fuzzy matching to the search bar (#101)
+b2c3d4e fix(export): stop CSV export losing the last row (#102)
+c3d4e5f perf(api): cache the user list lookup (#103)
+d4e5f6a docs(readme): explain the new install steps
+e5f6a7b chore(ci): pin the node version

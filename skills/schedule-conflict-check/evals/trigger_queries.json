@@ -1,0 +1,22 @@
+[
+  {"query": "here's our clinic booking export, can you check it for double-booked slots", "should_trigger": true},
+  {"query": "who is double-booked in this roster? it's a csv of shifts", "should_trigger": true},
+  {"query": "does my staff rota break the 11 hour rest between shifts rule", "should_trigger": true},
+  {"query": "find overlapping appointments in this .ics export from our salon calendar", "should_trigger": true},
+  {"query": "two classes ended up in the same room at the same time, find every clash in the timetable", "should_trigger": true},
+  {"query": "check these bookings for turnover buffer problems, we need 15 minutes between clients", "should_trigger": true},
+  {"query": "which of my appointments fall outside opening hours or over the lunch break", "should_trigger": true},
+  {"query": "is any room over capacity in this event schedule", "should_trigger": true},
+  {"query": "list the unassigned slots and any provider booked twice in this schedule file", "should_trigger": true},
+  {"query": "find the nearest free slot for the booking that clashes with another one", "should_trigger": true},
+  {"query": "find a good meeting time for people in New York, Berlin and Tokyo", "should_trigger": false},
+  {"query": "what is the critical path of this project and which tasks have slack", "should_trigger": false},
+  {"query": "book a dentist appointment for me next Tuesday and send the invite", "should_trigger": false},
+  {"query": "write an agenda for tomorrow's 45 minute meeting with timeboxes", "should_trigger": false},
+  {"query": "build a weekly shift rota from scratch for five nurses", "should_trigger": false},
+  {"query": "does the daylight saving change break my weekly call between London and Sydney", "should_trigger": false},
+  {"query": "is this labour contract's overtime clause legal in California", "should_trigger": false},
+  {"query": "convert this calendar file to a spreadsheet with nicer formatting", "should_trigger": false},
+  {"query": "summarize the meeting notes and list action items", "should_trigger": false},
+  {"query": "plan my two week trip to Japan day by day", "should_trigger": false}
+]

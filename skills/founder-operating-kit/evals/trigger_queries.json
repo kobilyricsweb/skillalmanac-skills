@@ -1,0 +1,82 @@
+[
+ {
+  "query": "how many months of runway do we have, here's our monthly cash csv",
+  "should_trigger": true
+ },
+ {
+  "query": "set up a weekly operating review for my 4-person startup",
+  "should_trigger": true
+ },
+ {
+  "query": "help me build a decision log with owners and due dates for our team",
+  "should_trigger": true
+ },
+ {
+  "query": "calculate our burn rate and runway from this spreadsheet of monthly revenue and spend",
+  "should_trigger": true
+ },
+ {
+  "query": "draft this month's investor update from our metrics",
+  "should_trigger": true
+ },
+ {
+  "query": "I need a hiring scorecard template for our first engineer interview loop",
+  "should_trigger": true
+ },
+ {
+  "query": "check my weekly review file, I think some decisions have no owner",
+  "should_trigger": true
+ },
+ {
+  "query": "what should our north star metric be and how do we define it for a weekly check-in",
+  "should_trigger": true
+ },
+ {
+  "query": "set up a founder operating cadence: metrics sheet, weekly review, decision log",
+  "should_trigger": true
+ },
+ {
+  "query": "compute month over month growth and 3 month CMGR from my revenue csv",
+  "should_trigger": true
+ },
+ {
+  "query": "how much should I raise in my seed round",
+  "should_trigger": false
+ },
+ {
+  "query": "value my startup using revenue multiples",
+  "should_trigger": false
+ },
+ {
+  "query": "build me a full 3-statement financial model with cohorts and scenarios in Excel",
+  "should_trigger": false
+ },
+ {
+  "query": "write a pitch deck for my seed round",
+  "should_trigger": false
+ },
+ {
+  "query": "review this employment contract for the new hire",
+  "should_trigger": false
+ },
+ {
+  "query": "compute my company's corporate tax for 2026",
+  "should_trigger": false
+ },
+ {
+  "query": "write meeting notes and action items from this call transcript",
+  "should_trigger": false
+ },
+ {
+  "query": "write a PRD for the onboarding feature",
+  "should_trigger": false
+ },
+ {
+  "query": "rewrite my resume to match this job posting",
+  "should_trigger": false
+ },
+ {
+  "query": "which cap table structure is best for a 20% option pool",
+  "should_trigger": false
+ }
+]

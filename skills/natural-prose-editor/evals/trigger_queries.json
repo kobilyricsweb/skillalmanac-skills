@@ -1,0 +1,22 @@
+[
+  {"query": "humanize this paragraph, it sounds like ChatGPT wrote it", "should_trigger": true},
+  {"query": "can you remove the AI tone from my blog draft but keep all my numbers", "should_trigger": true},
+  {"query": "make this sound less robotic and more like a real person wrote it", "should_trigger": true},
+  {"query": "de-slop this cover letter, too many 'delve' and 'tapestry' type words", "should_trigger": true},
+  {"query": "tighten this and strip the filler, I don't want it to read like a bot", "should_trigger": true},
+  {"query": "my report has hedging everywhere, may potentially maybe, fix it without changing what it claims", "should_trigger": true},
+  {"query": "edit my essay so it stops sounding like generated text, keep my voice", "should_trigger": true},
+  {"query": "every sentence in this draft starts the same way and uses 'not just X but Y', rewrite so it flows naturally", "should_trigger": true},
+  {"query": "scan this text for AI-sounding phrases and tell me which lines to fix", "should_trigger": true},
+  {"query": "clean up this LLM-written product description so it reads naturally", "should_trigger": true},
+  {"query": "translate this paragraph into Spanish", "should_trigger": false},
+  {"query": "summarize this article in three bullet points", "should_trigger": false},
+  {"query": "write a 500-word blog post about remote work", "should_trigger": false},
+  {"query": "is this statistic about churn actually correct? fact-check it", "should_trigger": false},
+  {"query": "rewrite my essay so Turnitin and GPTZero can't tell an AI wrote it", "should_trigger": false},
+  {"query": "fix the grammar and spelling in this email", "should_trigger": false},
+  {"query": "is this text AI generated? give me a percentage", "should_trigger": false},
+  {"query": "make this code comment shorter", "should_trigger": false},
+  {"query": "shorten this to a tweet", "should_trigger": false},
+  {"query": "improve the SEO of this landing page copy with better keywords", "should_trigger": false}
+]

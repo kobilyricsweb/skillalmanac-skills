@@ -1,0 +1,157 @@
+{
+  "note": "Expected values were checked by hand against source_report.txt on 2026-11-21 (see VERIFICATION.md). Paths are relative to evals/fixtures.",
+  "cases": [
+    {
+      "name": "good summary, target 0.4",
+      "args": [
+        "source_report.txt",
+        "summary_good.txt",
+        "--target",
+        "0.4"
+      ],
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "ratio_status": "within",
+        "unsupported_texts": [],
+        "altered": [],
+        "negation_sentences": [],
+        "hedge_sentences": [],
+        "copied_count": 0,
+        "weak_or_unsupported_sentences": [],
+        "keyword_coverage": 1.0
+      }
+    },
+    {
+      "name": "bad summary: invented name, altered numbers, negation flip, invented claim, copied sentence",
+      "args": [
+        "source_report.txt",
+        "summary_bad.txt",
+        "--target",
+        "0.4"
+      ],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "unsupported_texts": [
+          "Greenfield Foundation"
+        ],
+        "altered": [
+          "$45,000",
+          "21 percent"
+        ],
+        "negation_sentences": [
+          4
+        ],
+        "hedge_sentences": [],
+        "copied_count": 1,
+        "weak_or_unsupported_sentences": [
+          3
+        ]
+      }
+    },
+    {
+      "name": "bad summary with --tolerance 0.1 accepts the 6.6 percent change but not 16.7 percent",
+      "args": [
+        "source_report.txt",
+        "summary_bad.txt",
+        "--target",
+        "0.4",
+        "--tolerance",
+        "0.1"
+      ],
+      "exit": 1,
+      "expect": {
+        "altered": [
+          "21 percent"
+        ]
+      }
+    },
+    {
+      "name": "dropped hedge (and a partial-sentence negation prompt)",
+      "args": [
+        "source_report.txt",
+        "summary_hedge.txt",
+        "--target",
+        "0.1"
+      ],
+      "exit": 1,
+      "expect": {
+        "hedge_sentences": [
+          1
+        ],
+        "negation_sentences": [
+          1
+        ],
+        "unsupported_texts": [],
+        "altered": []
+      }
+    },
+    {
+      "name": "good summary against the executive band is too long",
+      "args": [
+        "source_report.txt",
+        "summary_good.txt",
+        "--target",
+        "executive"
+      ],
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "ratio_status": "too_long",
+        "ratio": 0.4904
+      }
+    },
+    {
+      "name": "empty summary file",
+      "args": [
+        "source_report.txt",
+        "summary_empty.txt"
+      ],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "name": "missing source file",
+      "args": [
+        "no_such_source.txt",
+        "summary_good.txt"
+      ],
+      "exit": 2,
+      "expect": {}
+    },
+    {
+      "name": "reversed score 4-5 and 18 months written as 20 cities are flagged; 38,832 -> about 39,000 is accepted",
+      "args": [
+        "source_vote.txt",
+        "summary_vote.txt",
+        "--target",
+        "0.9"
+      ],
+      "exit": 1,
+      "expect": {
+        "ok": false,
+        "altered": [
+          "4-5",
+          "20"
+        ],
+        "unsupported_texts": []
+      }
+    },
+    {
+      "name": "same source, faithful numbers (5-4 kept, 18 months and 12 sites kept, 3-sig-digit rounding)",
+      "args": [
+        "source_vote.txt",
+        "summary_vote_ok.txt",
+        "--target",
+        "0.9"
+      ],
+      "exit": 0,
+      "expect": {
+        "ok": true,
+        "altered": [],
+        "unsupported_texts": []
+      }
+    }
+  ]
+}

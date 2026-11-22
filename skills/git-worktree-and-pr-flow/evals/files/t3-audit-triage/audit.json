@@ -1,0 +1,282 @@
+{
+  "branches": [
+    {
+      "age_days": 1.0,
+      "checked_out_in": [],
+      "name": "Feature/NewThing",
+      "sha": "dddddddddddddddddddddddddddddddddddddddd",
+      "source": "loose",
+      "upstream": "origin/Feature/NewThing",
+      "upstream_ref_exists": false
+    },
+    {
+      "age_days": 10.0,
+      "checked_out_in": [
+        "alive-task"
+      ],
+      "name": "chore/local-only",
+      "sha": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "source": "loose",
+      "upstream": null,
+      "upstream_ref_exists": null
+    },
+    {
+      "age_days": 2.0,
+      "checked_out_in": [
+        "gone-task"
+      ],
+      "name": "feat/login-form",
+      "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "source": "loose",
+      "upstream": "origin/feat/login-form",
+      "upstream_ref_exists": true
+    },
+    {
+      "age_days": 45.0,
+      "checked_out_in": [
+        "mid-rebase"
+      ],
+      "name": "fix/old-bug",
+      "sha": "cccccccccccccccccccccccccccccccccccccccc",
+      "source": "loose",
+      "upstream": "origin/fix/old-bug",
+      "upstream_ref_exists": false
+    },
+    {
+      "age_days": 0.0,
+      "checked_out_in": [],
+      "name": "fix/this-slug-is-way-too-long-for-the-limit-set-here-x",
+      "sha": "ffffffffffffffffffffffffffffffffffffffff",
+      "source": "loose",
+      "upstream": null,
+      "upstream_ref_exists": null
+    },
+    {
+      "age_days": 1.0,
+      "checked_out_in": [
+        "(primary)"
+      ],
+      "name": "main",
+      "sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "source": "loose",
+      "upstream": "origin/main",
+      "upstream_ref_exists": true
+    },
+    {
+      "age_days": null,
+      "checked_out_in": [],
+      "name": "wip-stuff",
+      "sha": "1111111111111111111111111111111111111111",
+      "source": "packed",
+      "upstream": null,
+      "upstream_ref_exists": null
+    }
+  ],
+  "common_dir": "/work/bad/.git",
+  "counts": {
+    "error": 1,
+    "info": 2,
+    "warn": 13
+  },
+  "findings": [
+    {
+      "code": "stale_worktree",
+      "detail": "checkout directory /work/bad-wt/gone-task is gone; `git worktree prune` removes the record",
+      "severity": "error",
+      "subject": "gone-task"
+    },
+    {
+      "code": "detached_worktree",
+      "detail": "HEAD is detached: commits made here belong to no branch",
+      "severity": "warn",
+      "subject": "detached-task"
+    },
+    {
+      "code": "idle_worktree",
+      "detail": "HEAD has not moved for 20.0 days (limit 14)",
+      "severity": "warn",
+      "subject": "alive-task"
+    },
+    {
+      "code": "locked_worktree_missing",
+      "detail": "locked (usb disk) and its directory /work/bad-wt/locked-gone is gone; unlock before pruning",
+      "severity": "warn",
+      "subject": "locked-gone"
+    },
+    {
+      "code": "naming_violation",
+      "detail": "contains uppercase; type 'Feature' not in feat,fix,chore,docs,refactor,test,perf,ci,build,hotfix,release",
+      "severity": "warn",
+      "subject": "Feature/NewThing"
+    },
+    {
+      "code": "naming_violation",
+      "detail": "longer than 50 characters; slug longer than 40 characters",
+      "severity": "warn",
+      "subject": "fix/this-slug-is-way-too-long-for-the-limit-set-here-x"
+    },
+    {
+      "code": "naming_violation",
+      "detail": "no type prefix (expected <type>/<slug>)",
+      "severity": "warn",
+      "subject": "wip-stuff"
+    },
+    {
+      "code": "no_upstream",
+      "detail": "no tracking branch configured; local-only for 10.0 days",
+      "severity": "warn",
+      "subject": "chore/local-only"
+    },
+    {
+      "code": "operation_in_progress",
+      "detail": "rebase-merge present: finish or abort that operation before anything else",
+      "severity": "warn",
+      "subject": "mid-rebase"
+    },
+    {
+      "code": "stale_branch",
+      "detail": "last update 45.0 days ago (limit 30)",
+      "severity": "warn",
+      "subject": "fix/old-bug"
+    },
+    {
+      "code": "stale_lock",
+      "detail": "index.lock is 60 minutes old",
+      "severity": "warn",
+      "subject": "(primary)"
+    },
+    {
+      "code": "upstream_gone",
+      "detail": "tracks origin/Feature/NewThing, which no longer exists (merged and deleted, or never fetched)",
+      "severity": "warn",
+      "subject": "Feature/NewThing"
+    },
+    {
+      "code": "upstream_gone",
+      "detail": "tracks origin/fix/old-bug, which no longer exists (merged and deleted, or never fetched)",
+      "severity": "warn",
+      "subject": "fix/old-bug"
+    },
+    {
+      "code": "worktree_branch_missing",
+      "detail": "HEAD points to refs/heads/deleted-branch, which does not exist (deleted or unborn)",
+      "severity": "warn",
+      "subject": "locked-gone"
+    },
+    {
+      "code": "no_upstream",
+      "detail": "no tracking branch configured",
+      "severity": "info",
+      "subject": "fix/this-slug-is-way-too-long-for-the-limit-set-here-x"
+    },
+    {
+      "code": "no_upstream",
+      "detail": "no tracking branch configured",
+      "severity": "info",
+      "subject": "wip-stuff"
+    }
+  ],
+  "git_dir": "/work/bad/.git",
+  "not_checked": [
+    "whether any branch is merged",
+    "uncommitted changes in worktrees",
+    "commit contents and message format"
+  ],
+  "now": 1800000000,
+  "ok": false,
+  "policy": {
+    "max_name_length": 50,
+    "max_slug_length": 40,
+    "stale_branch_days": 30,
+    "stale_worktree_days": 14,
+    "trunk": [
+      "main",
+      "master",
+      "develop",
+      "development",
+      "trunk",
+      "prod",
+      "production",
+      "staging"
+    ],
+    "types": [
+      "feat",
+      "fix",
+      "chore",
+      "docs",
+      "refactor",
+      "test",
+      "perf",
+      "ci",
+      "build",
+      "hotfix",
+      "release"
+    ],
+    "unpushed_grace_days": 3
+  },
+  "remote_branch_count": 2,
+  "schema_version": 1,
+  "tool": "repo_branch_audit",
+  "worktrees": [
+    {
+      "age_days": null,
+      "exists": true,
+      "head": "main",
+      "head_kind": "branch",
+      "id": "(primary)",
+      "lock_reason": null,
+      "locked": false,
+      "path": "/work/bad"
+    },
+    {
+      "age_days": 20.0,
+      "exists": true,
+      "head": "chore/local-only",
+      "head_kind": "branch",
+      "id": "alive-task",
+      "lock_reason": null,
+      "locked": false,
+      "path": "/work/bad-wt/alive-task"
+    },
+    {
+      "age_days": 1.0,
+      "exists": true,
+      "head": "7777777777777777777777777777777777777777",
+      "head_kind": "detached",
+      "id": "detached-task",
+      "lock_reason": null,
+      "locked": false,
+      "path": "/work/bad-wt/detached-task"
+    },
+    {
+      "age_days": 1.0,
+      "exists": false,
+      "head": "feat/login-form",
+      "head_kind": "branch",
+      "id": "gone-task",
+      "lock_reason": null,
+      "locked": false,
+      "path": "/work/bad-wt/gone-task"
+    },
+    {
+      "age_days": 1.0,
+      "exists": false,
+      "head": "deleted-branch",
+      "head_kind": "branch",
+      "id": "locked-gone",
+      "lock_reason": "usb disk",
+      "locked": true,
+      "path": "/work/bad-wt/locked-gone"
+    },
+    {
+      "age_days": 1.0,
+      "exists": true,
+      "head": "fix/old-bug",
+      "head_kind": "branch",
+      "id": "mid-rebase",
+      "lock_reason": null,
+      "locked": false,
+      "path": "/work/bad-wt/mid-rebase"
+    }
+  ]
+}

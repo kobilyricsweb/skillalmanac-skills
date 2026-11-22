@@ -1,0 +1,21 @@
+{
+  "note": "Each case runs scripts/timeline_check.py on a fixture. 'touch' lists empty placeholder asset files that run_fixtures.py creates in a temporary root, so no binary media is stored in the package. Expected values were derived by hand from the fixture JSON.",
+  "cases": [
+    {"name": "good timeline", "args": ["good.json"], "touch": ["assets/intro.mp4", "assets/outro.mp4", "assets/bed-track.mp3", "assets/headline-sans.ttf"], "exit": 0,
+     "expect": {"ok": true, "summary": {"errors": 0, "warnings": 0, "tracks": 3, "clips": 6, "assets": 4}, "codes": []}},
+    {"name": "bad timeline", "args": ["bad.json"], "touch": ["assets/intro.mp4", "assets/broll.mp4", "assets/song.mp3"], "exit": 1,
+     "expect": {"ok": false, "summary": {"errors": 10, "warnings": 3, "tracks": 4, "clips": 10, "assets": 4},
+                "codes": ["E_BEYOND_DURATION", "E_CAPTION_LINE_LENGTH", "E_CAPTION_OUTSIDE_SAFE_AREA", "E_CAPTION_TOO_FAST", "E_CAPTION_TOO_MANY_LINES", "E_MISSING_ASSET", "E_NO_LICENSE", "E_OVERLAP", "E_TRIM_BEYOND_SOURCE", "E_UNKNOWN_ASSET", "W_FPS_MISMATCH", "W_OFF_FRAME_GRID", "W_RESOLUTION_MISMATCH"]}},
+    {"name": "warnings only passes", "args": ["warn_only.json"], "touch": ["assets/clip-24fps.mp4"], "exit": 0,
+     "expect": {"ok": true, "summary": {"errors": 0, "warnings": 1, "tracks": 1, "clips": 1, "assets": 1}, "codes": ["W_FPS_MISMATCH"]}},
+    {"name": "warnings only fails under strict", "args": ["warn_only.json", "--strict"], "touch": ["assets/clip-24fps.mp4"], "exit": 1,
+     "expect": {"ok": false, "summary": {"errors": 0, "warnings": 1, "tracks": 1, "clips": 1, "assets": 1}, "codes": ["W_FPS_MISMATCH"]}},
+    {"name": "caption limit from the command line", "args": ["good.json", "--max-line-chars", "20"], "touch": ["assets/intro.mp4", "assets/outro.mp4", "assets/bed-track.mp3", "assets/headline-sans.ttf"], "exit": 1,
+     "expect": {"ok": false, "codes": ["E_CAPTION_LINE_LENGTH", "E_CAPTION_LINE_LENGTH"]}},
+    {"name": "duplicate key is fatal", "args": ["dup_key.json"], "touch": [], "exit": 2, "expect": {"ok": false}},
+    {"name": "NaN is fatal", "args": ["nan.json"], "touch": [], "exit": 2, "expect": {"ok": false}},
+    {"name": "missing timeline file is fatal", "args": ["does_not_exist.json"], "touch": [], "exit": 2, "expect": {"ok": false}},
+    {"name": "5000-digit integer is fatal", "args": ["bigint.json"], "touch": [], "exit": 2, "expect": {"ok": false}},
+    {"name": "invalid UTF-8 is fatal", "args": ["bad_utf8.json"], "touch": [], "exit": 2, "expect": {"ok": false}}
+  ]
+}

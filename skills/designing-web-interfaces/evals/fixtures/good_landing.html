@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invoice Desk</title>
+<style>
+:root {
+  --text: #1f2933;
+  --muted: #52606d;
+  --bg: #ffffff;
+  --surface: #f5f7fa;
+  --accent: #0b5cad;
+  --danger: #b42318;
+  --space-1: 4px; --space-2: 8px; --space-3: 16px; --space-4: 24px; --space-5: 48px;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --text: #e4e7eb; --muted: #9aa5b1; --bg: #121820; --surface: #1c2430; --accent: #7ab8f5; --danger: #ff8a80; }
+}
+body { font-family: system-ui, sans-serif; font-size: 1rem; line-height: 1.5; color: var(--text); background: var(--bg); margin: 0; }
+h1 { font-size: 2rem; line-height: 1.2; font-weight: 700; margin: 0 0 var(--space-3); }
+h2 { font-size: 1.25rem; line-height: 1.3; font-weight: 600; margin: var(--space-4) 0 var(--space-2); }
+p { max-width: 65ch; margin: 0 0 var(--space-3); }
+small { font-size: 0.875rem; color: var(--muted); }
+main { max-width: 960px; margin: 0 auto; padding: var(--space-4) var(--space-3); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-3); }
+.card { background: var(--surface); padding: var(--space-3); border-radius: 8px; transition: background-color 150ms; }
+button, a.btn { min-height: 44px; padding: var(--space-2) var(--space-3); border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: var(--bg); font-size: 1rem; }
+button:hover, a.btn:hover { filter: brightness(1.1); }
+button:focus-visible, a.btn:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+input { min-height: 44px; padding: var(--space-2); border: 1px solid var(--muted); border-radius: 8px; font-size: 1rem; }
+.error { color: var(--danger); font-size: 0.875rem; }
+.empty { color: var(--muted); }
+@media (min-width: 640px) { main { padding: var(--space-5) var(--space-4); } }
+@media (min-width: 1024px) { h1 { font-size: 2.5rem; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Send invoices and see who has paid</h1>
+  <p>Invoice Desk lists every invoice with its status, and reminds late payers for you.</p>
+  <h2>Recent invoices</h2>
+  <div class="grid" aria-busy="false">
+    <div class="card"><h3>Acme Ltd</h3><small>Paid 3 March</small></div>
+    <div class="card"><h3>Birch Co</h3><small>Due 12 March</small></div>
+  </div>
+  <p class="empty">No invoices yet. Create your first invoice to see it here.</p>
+  <form>
+    <label for="email">Email</label>
+    <input id="email" type="email" aria-invalid="false">
+    <p class="error" role="alert"></p>
+    <button type="submit">Send link</button> <span class="loading" hidden>Sending</span>
+  </form>
+</main>
+</body>
+</html>

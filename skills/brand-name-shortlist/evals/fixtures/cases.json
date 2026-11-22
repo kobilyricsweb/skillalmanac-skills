@@ -1,0 +1,32 @@
+{
+  "note": "Each case runs scripts/score_names.py with args (paths relative to evals/fixtures/) and compares the exit code and the listed fields. Expected values were worked out by hand from the rules in the script (see VERIFICATION.md).",
+  "cases": [
+    {
+      "args": ["candidates_mixed.txt", "--competitors", "competitors.txt", "--avoid", "avoid.txt"],
+      "exit": 0,
+      "expect": {
+        "shortlist": ["Budgetr", "Fynex", "Nestegg", "Pennywise", "Coinfield"],
+        "scores": {"Budgetr": 100, "Lumo": 95, "Kwik": 90, "Nestegg": 97, "Coinfield": 92, "Spendsmart": 85, "Xqzt": 31},
+        "verdicts": {"Monetra": "cut", "Spendsmart": "cut", "Xqzt": "cut", "Fixturecompanyhq": "cut", "Brightloom": "review", "Budgetr": "keep"},
+        "flag_codes": {"Monetra": ["competitor_exact"], "Spendsmart": ["consonant_cluster", "avoid_word"], "Ledgerly": ["near_duplicate"], "Cashflow2go": ["digit", "consonant_cluster", "ambiguous_spelling"]},
+        "near_duplicate_pairs": [["Ledgerly", "Ledgerlee", 2], ["Tallybird", "Tallybud", 2]]
+      }
+    },
+    {
+      "args": ["candidates_few.txt", "--suffix", ".io", "--top", "3"],
+      "exit": 1,
+      "expect": {
+        "shortlist": ["Pennywise"],
+        "shortfall": true,
+        "verdicts": {"Penny wise": "cut", "Brkstnd": "cut", "Xqzt": "cut"},
+        "flag_codes": {"Penny wise": ["multi_word", "doubled_letter", "exact_duplicate"]},
+        "domains": {"Penny wise": ["pennywise.io"]}
+      }
+    },
+    {
+      "args": ["does_not_exist.txt"],
+      "exit": 2,
+      "expect": {}
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {"query": "my Flutter ListView janks when I scroll, how do I find out why and fix it", "should_trigger": true},
+  {"query": "review this Flutter screen before I open the PR", "should_trigger": true},
+  {"query": "should I use setState, Provider, Riverpod or Bloc for a mid-size Flutter app", "should_trigger": true},
+  {"query": "the whole page rebuilds every time I type in a TextField in Flutter", "should_trigger": true},
+  {"query": "how do I handle errors from async calls in my Dart/Flutter app without crashing", "should_trigger": true},
+  {"query": "write widget tests for this Flutter login screen and tell me what to mock", "should_trigger": true},
+  {"query": "add Semantics and tap target sizes so my Flutter app works with TalkBack", "should_trigger": true},
+  {"query": "checklist before I upload my Flutter app to Google Play and the App Store", "should_trigger": true},
+  {"query": "scan my lib folder for print statements, missing const and setState inside build", "should_trigger": true},
+  {"query": "when should I write a MethodChannel in Flutter instead of using a plugin", "should_trigger": true},
+  {"query": "my React Native FlatList stutters on Android, how do I fix it", "should_trigger": false},
+  {"query": "convert this SwiftUI view to UIKit", "should_trigger": false},
+  {"query": "build a Dart shelf REST server with a Postgres connection", "should_trigger": false},
+  {"query": "write the App Store description and keywords for my fitness app", "should_trigger": false},
+  {"query": "how do React hooks like useMemo prevent re-renders", "should_trigger": false},
+  {"query": "set up Jetpack Compose navigation in a Kotlin Android app", "should_trigger": false},
+  {"query": "design a color palette and logo for my new mobile app brand", "should_trigger": false},
+  {"query": "write Jest tests for this TypeScript function", "should_trigger": false},
+  {"query": "explain Dart isolates versus JavaScript web workers in general terms", "should_trigger": false},
+  {"query": "design the database schema for an orders service in Postgres", "should_trigger": false}
+]

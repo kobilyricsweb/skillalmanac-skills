@@ -1,0 +1,8 @@
+PASS frontmatter-keys           only open-spec keys used
+PASS name-format                name 'go-and-rust-practices' is valid
+PASS description-length         description is 612 chars
+PASS body-lines                 SKILL.md body has 114 lines
+PASS body-tokens                body is about 2763 tokens by chars/4
+PASS package-size               package is 62454 bytes in 7 files
+
+RESULT: PASS (0 fail, 0 warn)

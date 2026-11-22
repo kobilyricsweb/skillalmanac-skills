@@ -1,0 +1,160 @@
+{
+ "note": "Expected values were worked out by hand from the fixture files (see VERIFICATION.md), then compared with script output.",
+ "cases": [
+  {
+   "args": [
+    "good_lisbon.json"
+   ],
+   "exit": 0,
+   "expect": {
+    "ok": true,
+    "errors": 0,
+    "warnings": 0,
+    "facts_to_verify": 0,
+    "total": 484.0,
+    "remaining": 516.0,
+    "by_category": {
+     "lodging": 240.0,
+     "food": 130.0,
+     "activities": 114.0,
+     "transport": 0.0,
+     "other": 0.0
+    },
+    "codes": []
+   }
+  },
+  {
+   "args": [
+    "bad_mixed.json"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "errors": 7,
+    "warnings": 8,
+    "facts_to_verify": 8,
+    "total": 350.0,
+    "remaining": -50.0,
+    "codes": [
+     "hours_not_listed",
+     "long_day",
+     "missing_transit_buffer",
+     "missing_transit_buffer",
+     "mixed_currency",
+     "no_meal_block",
+     "over_budget",
+     "overlap",
+     "pacing_limit",
+     "price_not_listed",
+     "stale_check",
+     "unverified_fact",
+     "unverified_fact",
+     "unverified_fact",
+     "verified_without_source"
+    ]
+   }
+  },
+  {
+   "args": [
+    "../files/t2-packed-day.json"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "errors": 3,
+    "warnings": 7,
+    "facts_to_verify": 6,
+    "total": 75.0,
+    "remaining": 325.0,
+    "by_category": {
+     "lodging": 0.0,
+     "food": 0.0,
+     "activities": 75.0,
+     "transport": 0.0,
+     "other": 0.0
+    },
+    "codes": [
+     "missing_transit_buffer",
+     "missing_transit_buffer",
+     "no_meal_block",
+     "pacing_limit",
+     "unverified_fact",
+     "unverified_fact",
+     "unverified_fact",
+     "unverified_fact",
+     "unverified_fact",
+     "unverified_fact"
+    ]
+   }
+  },
+  {
+   "args": [
+    "../files/t3-over-budget.json"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "errors": 1,
+    "warnings": 4,
+    "facts_to_verify": 4,
+    "total": 530.0,
+    "remaining": -30.0,
+    "by_category": {
+     "lodging": 300.0,
+     "food": 50.0,
+     "activities": 180.0,
+     "transport": 0.0,
+     "other": 0.0
+    },
+    "codes": [
+     "over_budget",
+     "unverified_fact",
+     "unverified_fact",
+     "unverified_fact",
+     "unverified_fact"
+    ]
+   }
+  },
+  {
+   "args": [
+    "no_location.json"
+   ],
+   "exit": 1,
+   "expect": {
+    "ok": false,
+    "errors": 1,
+    "warnings": 3,
+    "facts_to_verify": 0,
+    "total": 0.0,
+    "remaining": 100.0,
+    "codes": [
+     "missing_location",
+     "missing_location",
+     "missing_location",
+     "missing_transit_buffer"
+    ]
+   }
+  },
+  {
+   "args": [
+    "does_not_exist.json"
+   ],
+   "exit": 2,
+   "expect": null
+  },
+  {
+   "args": [
+    "not_json.json"
+   ],
+   "exit": 2,
+   "expect": null
+  },
+  {
+   "args": [
+    "bigint.json"
+   ],
+   "exit": 2,
+   "expect": null
+  }
+ ]
+}

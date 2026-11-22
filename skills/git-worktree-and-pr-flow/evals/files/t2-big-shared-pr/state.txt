@@ -1,0 +1,7 @@
+Branch: feat/checkout-rewrite, pushed, PR #214 open.
+Authors on the branch: me and Dana (she pushed 3 commits yesterday).
+origin/main has moved 27 commits since the branch started.
+`git diff --shortstat origin/main...HEAD` -> 41 files changed, 1204 insertions(+), 696 deletions(-)
+Of which: package-lock.json 612 lines; 9 files are pure renames/moves (140 lines); the rest is behaviour change plus tests.
+Rebase attempt locally gave conflicts on 6 of the first 8 commits.
+Reviewer says the PR is too big to review.

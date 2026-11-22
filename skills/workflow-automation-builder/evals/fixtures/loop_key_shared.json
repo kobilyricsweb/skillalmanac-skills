@@ -1,0 +1,129 @@
+{
+  "name": "paid-order-to-invoice",
+  "purpose": "When a shop order is paid, create one invoice, decrement stock per line item, and tell the finance channel.",
+  "owner": "ops-oncall@example.com",
+  "alert_channel": "#ops-automation-alerts",
+  "concurrency": {
+    "max_parallel_runs": 5
+  },
+  "dead_letter": {
+    "destination": "table:automation_dead_letters",
+    "fields": [
+      "run_id",
+      "step_id",
+      "event_id",
+      "error_class",
+      "attempts",
+      "payload_ref",
+      "first_failed_at"
+    ],
+    "retention_days": 30
+  },
+  "defaults": {
+    "on_error": {
+      "retry": {
+        "max_attempts": 4,
+        "backoff": "exponential_jitter",
+        "initial_seconds": 2,
+        "max_seconds": 300
+      },
+      "then": "dead_letter"
+    }
+  },
+  "trigger": {
+    "type": "poll",
+    "dedupe_key": "{{trigger.record.id}}",
+    "next": "only_paid"
+  },
+  "steps": [
+    {
+      "id": "only_paid",
+      "type": "filter",
+      "condition": "{{trigger.body.status}} == 'paid'",
+      "next": "load_customer",
+      "on_reject": null
+    },
+    {
+      "id": "load_customer",
+      "type": "action",
+      "kind": "read",
+      "timeout_seconds": 15,
+      "config": {
+        "method": "GET",
+        "url": "https://crm.example.com/customers/{{trigger.body.customer_id}}",
+        "headers": {
+          "Authorization": "Bearer {{secrets.CRM_API_TOKEN}}"
+        }
+      },
+      "rate_limit": {
+        "max_per_minute": 60
+      },
+      "next": "create_invoice"
+    },
+    {
+      "id": "create_invoice",
+      "type": "action",
+      "kind": "write",
+      "timeout_seconds": 20,
+      "config": {
+        "method": "POST",
+        "url": "https://billing.example.com/invoices",
+        "headers": {
+          "Authorization": "Bearer {{secrets.BILLING_API_TOKEN}}"
+        }
+      },
+      "idempotency_key": "{{trigger.body.event_id}}-create-invoice",
+      "rate_limit": {
+        "max_per_minute": 30
+      },
+      "next": "each_item"
+    },
+    {
+      "id": "each_item",
+      "type": "loop",
+      "over": "{{trigger.body.line_items}}",
+      "loop": {
+        "max_iterations": 200,
+        "exit_when": "{{item}} is empty"
+      },
+      "body": "decrement_stock",
+      "next": "notify_finance"
+    },
+    {
+      "id": "decrement_stock",
+      "type": "action",
+      "kind": "write",
+      "timeout_seconds": 15,
+      "config": {
+        "method": "POST",
+        "url": "https://stock.example.com/adjustments",
+        "headers": {
+          "Authorization": "Bearer {{secrets.STOCK_API_TOKEN}}"
+        }
+      },
+      "idempotency_key": "{{trigger.body.event_id}}-stock",
+      "rate_limit": {
+        "max_per_minute": 120
+      },
+      "next": null
+    },
+    {
+      "id": "notify_finance",
+      "type": "action",
+      "kind": "write",
+      "timeout_seconds": 10,
+      "config": {
+        "method": "POST",
+        "url": "{{secrets.FINANCE_CHAT_WEBHOOK_URL}}"
+      },
+      "idempotency_key": "{{trigger.body.event_id}}-notify",
+      "rate_limit": {
+        "max_per_minute": 20
+      },
+      "next": null,
+      "on_error": {
+        "then": "skip"
+      }
+    }
+  ]
+}

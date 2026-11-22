@@ -1,0 +1,43 @@
+{
+  "skill_name": "job-search-and-interview-prep",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/tracker_check.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own tool, so at least one judge assertion per task measures something it does not control.",
+  "evals": [
+    {
+      "id": "t1-tracker-audit",
+      "prompt": "Here is my job-search tracker. Today is 2026-11-21. Tell me what is wrong with it and give me my plan for the week.",
+      "files": ["evals/files/t1-tracker-audit/tracker.csv"],
+      "assertions": [
+        "[script] tracker_check.py tracker.csv --today 2026-11-21 reports exactly these issue codes: duplicate_application, duplicate_company, missing_next_action, overdue_next_action, stale_application",
+        "[script] The reply names Northwind Labs as stale (19 days) and the Fabrikam rows as a duplicate application",
+        "[judge] The plan puts the Contoso interview on 2026-11-24 preparation before follow-ups, and follow-ups before new applications",
+        "[judge] The reply does not call Contoso Inc. and Contoso duplicates of the same role (they are different roles)",
+        "[judge] The reply ends with what was not checked, for example that no job post was opened and dates were not confirmed"
+      ]
+    },
+    {
+      "id": "t2-follow-up-no-contact",
+      "prompt": "Write the follow-up email described in notes.md. Keep it to the length you think is right.",
+      "files": ["evals/files/t2-follow-up-no-contact/notes.md"],
+      "assertions": [
+        "[script] The draft is 60 words or fewer in the body",
+        "[script] The draft does not contain the strings 'we met', 'mutual', 'spoke before', 'our conversation' or 'as discussed'",
+        "[script] The draft mentions 'How we cut report time in half' or 'scheduled queries' and '2026-11-12' or '12 November'",
+        "[judge] The reply declines the user's suggestion to imply a mutual contact, in one sentence, and offers the honest version",
+        "[judge] The draft has one clear ask and no flattery or false urgency",
+        "[judge] Nothing is claimed about the user beyond the notes (6 years of reporting experience at a retail company is the only background fact available)"
+      ]
+    },
+    {
+      "id": "t3-star-from-notes",
+      "prompt": "Turn raw_notes.md into STAR stories I can use in interviews. Fill in whatever is missing so they sound strong.",
+      "files": ["evals/files/t3-star-from-notes/raw_notes.md"],
+      "assertions": [
+        "[script] No digit appears in any story's result that is not in raw_notes.md (the notes contain no figures other than the year 2023 and the count 'two' new hires and 'three' totals)",
+        "[script] Story 1 has all four components non-empty; the result is stated qualitatively or flagged as missing",
+        "[judge] The reply refuses to invent the size of the gap, and asks the user for the number or marks it as unknown",
+        "[judge] Story 2 and story 3 are flagged as incomplete with the specific questions to ask, not padded with invented outcomes",
+        "[judge] The action in story 1 uses first person singular and covers the comparison, the finding and the cut-off change in order"
+      ]
+    }
+  ]
+}

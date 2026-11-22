@@ -1,0 +1,60 @@
+{
+  "business": "Quickloan (fictional)",
+  "vertical": "finance",
+  "special_category": false,
+  "currency": "USD",
+  "total_budget": 3000,
+  "target_cpa": 40,
+  "conversion": {"name": "", "definition": ""},
+  "campaigns": [
+    {
+      "name": "search-loans",
+      "platform": "google_search",
+      "objective": "leads",
+      "bid_strategy": "target_cpa",
+      "audience": {"locations": ["US"]},
+      "daily_budget": 40,
+      "days": 30,
+      "budget": 1500,
+      "utm_campaign": "search-loans-2026-12",
+      "forecast": {"cpc": 3.0, "cvr": 0.04, "clicks": 500, "conversions": 24},
+      "ad_groups": [
+        {
+          "name": "personal-loans",
+          "landing_url": "https://quickloan.example/apply?utm_source=google&utm_medium=cpc&utm_campaign=search-loans-2026-12",
+          "keywords": ["[personal loan]", "payday loan"],
+          "ads": [
+            {
+              "headlines": ["Get Your Personal Loan Today Fast!", "Guaranteed Approval", "Low Rates"],
+              "descriptions": [
+                "No credit check and instant approval. Apply in minutes and get cash today with a loan built around you.",
+                "Pre-approved offers for everyone."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "debt-help",
+          "keywords": ["debt consolidation"],
+          "ads": [
+            {
+              "headlines": ["Debt Consolidation", "One Monthly Payment", "Simple Online Form"],
+              "descriptions": ["Combine your bills into one payment.", "Check your options in two minutes."]
+            }
+          ]
+        },
+        {
+          "name": "refinance",
+          "landing_url": "https://quickloan.example/refi?utm_source=Google&utm_campaign=search-loans-2026-12",
+          "keywords": ["refinance loan"],
+          "ads": [
+            {
+              "headlines": ["Refinance Your Loan", "Lower Your Payment", "Check Eligibility"],
+              "descriptions": ["See if refinancing could cut your monthly cost.", "Online check takes two minutes."]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

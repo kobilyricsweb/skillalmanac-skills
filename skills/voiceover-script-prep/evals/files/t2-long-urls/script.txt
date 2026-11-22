@@ -1,0 +1,3 @@
+Our onboarding takes 3 steps. First, open the SaaS dashboard and click "Settings. Second, paste the API key and the SDK token. Third, ask the CEO to approve the SOW, which is due 03/04/2026.
+
+For details see https://docs.example.com/v2/setup/guide/step-1/advanced?tab=keys#tokens before 10 AM.

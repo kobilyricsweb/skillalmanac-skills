@@ -1,0 +1,10 @@
+{"role":"user","session_id":"a","content":"Summarise the build log."}
+{"role":"assistant","session_id":"a","content":null,"tool_calls":[{"id":"c1","function":{"name":"run_command","arguments":"{\"command\": \"cat build.log\"}"}}]}
+{"role":"tool","session_id":"a","tool_call_id":"c1","content":"build ok in 41s"}
+{"type":"summary","summary":"earlier context compacted"}
+{this line is not json
+{"role":"assistant","session_id":"b","content":"The build finished in 41 seconds."}
+{"role":"user","session_id":"b","content":"Thanks."}
+{"broken": [1, 2,
+{"role":"assistant","session_id":"b","content":"You are welcome."}
+{"type":"file-history-snapshot","files":[]}

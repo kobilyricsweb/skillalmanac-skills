@@ -1,0 +1,12 @@
+{
+  "note": "Each case runs scripts/prose_scan.py with the given args (paths relative to evals/fixtures/) and checks the exit code and the JSON fields listed.",
+  "cases": [
+    {"args": ["scan", "ai_heavy.md"], "exit": 1, "expect": {"verdict": "heavy", "words": 101, "sentences": 10, "per_100_words": 20.79, "counts_by_category": {"filler": 2, "hedging": 2, "inflation": 2, "parallelism": 3, "residue": 1, "vocabulary": 11}, "finding_lines": [3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 7, 7, 7, 7, 9, 9, 9, 9]}},
+    {"args": ["scan", "human_clean.md"], "exit": 0, "expect": {"verdict": "clean", "words": 83, "sentences": 7, "per_100_words": 0.0, "counts_by_category": {}, "finding_lines": []}},
+    {"args": ["facts", "facts_original.md", "facts_edit_good.md"], "exit": 0, "expect": {"ok": true}},
+    {"args": ["facts", "facts_original.md", "facts_edit_bad.md"], "exit": 1, "expect": {"ok": false, "missing_numbers": ["$4.5", "12"], "added_numbers": ["$5"], "missing_urls": ["https://example.com/filing/881"], "missing_quotes": ["we will hire 30 engineers by June."]}},
+    {"args": ["facts", "names_original.md", "names_edit_added.md"], "exit": 1, "expect": {"ok": false, "added_names": ["Dr", "Lee"]}},
+    {"args": ["scan", "opener_heres_the_thing.md"], "exit": 1, "expect": {"verdict": "heavy", "words": 8, "sentences": 1, "counts_by_category": {"filler": 1}, "finding_lines": [1]}},
+    {"args": ["scan", "missing_file.md"], "exit": 2, "expect": {}}
+  ]
+}

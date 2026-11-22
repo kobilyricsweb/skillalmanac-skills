@@ -1,0 +1,24 @@
+{
+  "note": "Each case runs scripts/synthesis_check.py with the given args (files relative to evals/fixtures/). Expected values were derived by hand from the fixture files before the script was run; see VERIFICATION.md. 'codes' is the sorted list of finding codes.",
+  "cases": [
+    {"args": ["notes_good.json", "themes_good.json"], "exit": 0,
+     "expect": {"ok": true, "errors": 0, "warnings": 0, "codes": [],
+                "max_confidence": {"T1": "low", "T2": "high", "T3": "low"}, "participants_never_cited": []}},
+    {"args": ["notes_good.json", "themes_bad.json"], "exit": 1,
+     "expect": {"ok": false, "errors": 12, "warnings": 2,
+                "codes": ["bad_confidence", "below_threshold", "below_threshold", "confidence_overstated", "count_claim_mismatch",
+                          "duplicate_quote", "missing_contradictions_field", "missing_statement", "participant_dominates_theme",
+                          "quote_from_observation", "quote_not_found", "quote_note_unknown", "quote_participant_mismatch",
+                          "vague_quantifier"],
+                "participants_never_cited": ["P05"]}},
+    {"args": ["notes_bad.json"], "exit": 1,
+     "expect": {"ok": false, "errors": 2, "warnings": 3, "untagged_notes": 2,
+                "codes": ["duplicate_note_id", "participant_over_represented_in_notes", "unknown_tag", "untagged_note", "untagged_note"]}},
+    {"args": ["notes_good.json", "themes_good.json", "--min-quotes", "4", "--min-participants", "4"], "exit": 1,
+     "expect": {"ok": false, "errors": 2, "warnings": 0, "codes": ["below_threshold", "below_threshold"]}},
+    {"args": ["notes_warn.json"], "exit": 0, "expect": {"ok": true, "errors": 0, "warnings": 1, "codes": ["untagged_note"]}},
+    {"args": ["notes_warn.json", "--strict"], "exit": 1, "expect": {"ok": false, "errors": 0, "warnings": 1, "codes": ["untagged_note"]}},
+    {"args": ["broken.json"], "exit": 2, "expect": {"ok": false, "fatal_contains": "not valid JSON"}},
+    {"args": ["nope.json"], "exit": 2, "expect": {"ok": false, "fatal_contains": "file not found"}}
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "skill_name": "plain-language-readability",
+  "note": "Drafted, not run. No with-skill or baseline run exists for these tasks. [script] assertions use scripts/readability.py or a plain string check; [judge] assertions need a blind grader. The script is the skill's own measuring tool, so each task also has judge assertions the script does not control. Baseline figures of the inputs (measured by the script): t1 grade 15.3, 162 words; t2 grade 9.8, 118 words; t3 grade 12.6, 139 words.",
+  "evals": [
+    {
+      "id": "t1-council-notice",
+      "prompt": "Rewrite this council notice in plain English for residents at a reading level of grade 8 or lower. Keep every date, time, amount and contact detail exactly. Save to rewrite.md and tell me what you checked.",
+      "files": ["evals/files/t1-council-notice/original.md"],
+      "assertions": [
+        "[script] readability.py original.md --rewrite rewrite.md --grade 8 exits 0 (numbers preserved, links preserved, grade 8 or lower)",
+        "[script] rewrite.md contains '4 January 2027', '7:00', '18 December 2026', '48 hours', '35', '020 7946 0123' and 'waste@council.example'",
+        "[script] comparison.metrics.long_sentence_count.after is 0",
+        "[judge] The kerbside rule still says bins put out after 7:00 may or might not be collected, never that they will not be",
+        "[judge] The assisted-collection request is still tied to residents who cannot follow the new arrangements and to the 18 December 2026 deadline",
+        "[judge] The reply ends with a short report that lists before and after figures, what was kept on purpose and what was not checked (for example, no real-reader test)"
+      ]
+    },
+    {
+      "id": "t2-support-macro",
+      "prompt": "Make this customer-support macro easy to read, about grade 7. 'chargeback' is a term our customers see on their bank statements, so keep it, but explain it once. Replace the words in jargon.txt. Save to rewrite.md.",
+      "files": ["evals/files/t2-support-macro/original.md", "evals/files/t2-support-macro/jargon.txt"],
+      "assertions": [
+        "[script] readability.py original.md --rewrite rewrite.md --grade 7 --jargon jargon.txt exits 0",
+        "[script] the jargon entry for 'chargeback' has status kept_with_gloss and the four replace terms have status replaced_or_absent",
+        "[script] rewrite.md contains '$89.99', '120', '14', '5' and 'https://help.example.com/disputes'",
+        "[judge] The condition that the amount was charged within the last 120 days is still a condition for the chargeback",
+        "[judge] The card being deactivated and a replacement arriving within 5 business days are both still stated, as facts about what will happen",
+        "[judge] The tone stays courteous; the rewrite does not add apologies, promises or deadlines that the original did not contain"
+      ]
+    },
+    {
+      "id": "t3-grade5-lesson",
+      "prompt": "This science paragraph is for a grade 5 class. Rewrite it so a grade 5 student can read it alone (grade 6 or lower on the formula). The word photosynthesis must stay because it is the lesson topic. Keep the facts. Save to rewrite.md.",
+      "files": ["evals/files/t3-grade5-lesson/original.md"],
+      "assertions": [
+        "[script] readability.py original.md --rewrite rewrite.md --grade 6 exits 0",
+        "[script] rewrite.md contains 'photosynthesis' (case-insensitive) and the numbers '2' and '30' are preserved (numbers_preserved is true)",
+        "[script] comparison.warnings does not contain a choppy-text warning (average sentence at least 8 words)",
+        "[judge] The word photosynthesis is explained once, in 15 words or fewer, the first time it appears",
+        "[judge] Scientists' estimate about 2 people is still presented as an estimate that varies, not as a fixed fact",
+        "[judge] No new science is added (for example no new organs, gases or numbers), and the home experiment keeps its 30-minute wait"
+      ]
+    }
+  ]
+}
