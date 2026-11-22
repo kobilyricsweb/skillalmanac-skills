@@ -1,0 +1,7 @@
+[
+  {"id": 1, "name": "Ada Lovelace", "address": {"city": "London", "zip": "W1"}, "tags": ["math", "poetry"], "active": true},
+  {"id": 2, "name": "Grace \"Amazing\" Hopper", "address": {"city": "New York", "zip": "10001"}, "tags": ["navy", "compilers", "cobol"], "active": false},
+  {"id": 3, "name": "Alan Turing", "address": {"city": "Wilmslow", "zip": null}, "tags": [], "active": true},
+  {"id": 4, "name": "Katherine Johnson", "address": {"city": "Hampton", "zip": "23666", "geo": {"lat": 37.02, "lon": -76.34}}, "tags": ["orbits"], "active": true},
+  {"id": 5, "name": "Linus, Torvalds", "tags": ["kernel", "git"], "active": false, "score": 9.5}
+]

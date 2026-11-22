@@ -1,0 +1,9 @@
+{
+  "columns": {
+    "id": {"type": "int", "required": true, "unique": true},
+    "order_date": {"type": "date", "required": true},
+    "email": {"type": "email"},
+    "status": {"enum": ["open", "closed"]},
+    "amount": {"type": "float", "min": 0, "max": 100}
+  }
+}

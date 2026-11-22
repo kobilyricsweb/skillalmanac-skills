@@ -1,0 +1,31 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Ada Rivera
+N:Rivera;Ada;;;
+ORG:Northwind Traders;Accounts
+EMAIL;TYPE=INTERNET:ada.rivera@example.com
+TEL;TYPE=CELL:+1-555-0101
+ADR;TYPE=HOME:;;12 Harbor Road;Portsmouth;NH;03801;USA
+NOTE:Prefers email over phone. Met at the
+  spring trade fair in Boston.
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:Chen;Marco;;;
+EMAIL;TYPE=INTERNET:marco.chen@example.org
+TEL;TYPE=WORK:+1-555-0142
+TEL;TYPE=CELL:+1-555-0143
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+FN:Priya Nair
+ORG:Lakeside Clinic
+EMAIL;TYPE=INTERNET:PRIYA.NAIR@example.com
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+FN:Ada R.
+EMAIL;TYPE=INTERNET:ADA.RIVERA@example.com
+EMAIL;TYPE=INTERNET:ada.r@example.net
+NOTE:Call after 5\, not before
+END:VCARD

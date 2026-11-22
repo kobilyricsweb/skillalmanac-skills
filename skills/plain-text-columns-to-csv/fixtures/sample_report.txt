@@ -1,0 +1,12 @@
+Region        Units   Revenue    Rep
+------        -----   -------    ---------
+North         1204    $18,420        Ana Ruiz
+South         980     $12,515        Ben Okafor
+East          1150    $16,090        Chloe Park
+West          742     $9,870         Dev Patel
+Central       1333    $21,004        Eli Moreau
+Coastal       611     $7,140         Fatima Noor
+Highlands     508     $6,205         Gus Halvorsen
+Tokyo         418
+Lisbon        877     $10,662        Sami Lund
+Oslo          390     $4,880         Rina Dass

@@ -1,0 +1,4 @@
+[
+  {"order": "A-100", "buyer": {"name": "Ana & Co", "region": "West"}, "lines": [{"sku": "S-1", "qty": 2}, {"sku": "S-2", "qty": 1}], "paid": true},
+  {"order": "A-101", "buyer": {"name": "<Ben>", "region": "East"}, "lines": [{"sku": "S-3", "qty": 5}], "paid": false, "note": null}
+]

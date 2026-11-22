@@ -1,0 +1,11 @@
+{
+  "room": {"width": 144, "length": 120},
+  "items": [
+    {"name": "sofa", "x": 30, "y": 10, "w": 84, "d": 36},
+    {"name": "coffee_table", "x": 60, "y": 40, "w": 40, "d": 24},
+    {"name": "armchair", "x": 104, "y": 60, "w": 30, "d": 30}
+  ],
+  "doors": [
+    {"wall": "north", "offset": 20, "width": 32}
+  ]
+}

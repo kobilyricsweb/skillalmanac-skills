@@ -1,0 +1,14 @@
+Our quarterly review covers every product line we ship, along with the support queue and the release calendar.
+
+The team met on Monday to discuss the backlog and the three open incidents from the previous sprint.
+The team agreed that the onboarding flow needs a full rewrite before the spring launch.
+The team also noted that two documentation pages are out of date and need a named owner.
+Before we start, let us delve into the numbers for the last quarter.
+It's important to note that churn fell by four points after the pricing change in March.
+Engineering will reduce the support backlog in order to keep first response times under one business day.
+Refund requests from mobile users grew faster than desktop requests for the first time since the redesign.
+Refund requests stayed flat, which suggests that the new trial settings are working as intended.
+Refund requests from the EU fell slightly after the policy update.
+At the end of the day, the numbers tell a clear story about the new pricing model.
+Engineering will not claim all the credit, but the result is a testament to the support staff's hard work.
+Engineering will focus on three goals next quarter: faster onboarding, fewer billing errors, and clearer release notes.

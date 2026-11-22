@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Release notes</title>
+  <style>body { font-family: sans-serif; }</style>
+</head>
+<body>
+  <nav><a href="/">Home</a> <a href="/archive">Archive</a></nav>
+  <script>console.log("tracking");</script>
+  <article>
+    <h1>Release notes</h1>
+    <p>Version <strong>2.4</strong> ships with <em>faster</em> search. See the <a href="docs/setup guide.html">setup guide</a>.</p>
+    <img src="chart.png" alt="Search timing chart">
+    <h2>Changes</h2>
+    <ul>
+      <li>Search results load in half the time</li>
+      <li>Export supports <code>CSV</code> files
+        <ol>
+          <li>Headers are optional</li>
+          <li>Dates use ISO format</li>
+        </ol>
+      </li>
+    </ul>
+    <h2>Known limits</h2>
+    <table>
+      <tr><th>Plan</th><th>Seats</th></tr>
+      <tr><td>Team</td><td>25</td></tr>
+      <tr><td>Business | Plus</td><td>100</td></tr>
+    </table>
+    <blockquote>Thanks to the beta group for testing.</blockquote>
+    <pre>npm run build
+npm test</pre>
+  </article>
+</body>
+</html>

@@ -1,0 +1,9 @@
+import subprocess
+
+
+def run_report(cmd):
+    return subprocess.run(cmd, shell=True, check=False)
+
+
+def calc(expr):
+    return eval(expr)

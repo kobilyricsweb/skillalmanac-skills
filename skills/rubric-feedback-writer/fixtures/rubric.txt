@@ -1,0 +1,23 @@
+Criterion 1: Light-dependent reactions (max 4)
+Exemplary (4): names water as the electron source, states that light splits water and releases oxygen, and names ATP and NADPH as products
+Proficient (3): states that light splits water and releases oxygen, and names ATP or NADPH
+Developing (2): states that light is needed and that oxygen is released, with no product named
+Beginning (1): mentions the light reactions with no accurate detail
+
+Criterion 2: Calvin cycle (max 4)
+Exemplary (4): fixes carbon dioxide into sugar using ATP and NADPH from the light reactions, describes a cycle, and names RuBisCO
+Proficient (3): says carbon dioxide is fixed into sugar using ATP and NADPH
+Developing (2): says carbon dioxide is turned into sugar
+Beginning (1): mentions the Calvin cycle with no accurate detail
+
+Criterion 3: Role of chlorophyll (max 4)
+Exemplary (4): states that chlorophyll absorbs mainly red and blue light, reflects green light, and sits in the thylakoid membranes
+Proficient (3): states that chlorophyll absorbs light and names the thylakoid
+Developing (2): states that chlorophyll absorbs light
+Beginning (1): mentions chlorophyll with no role
+
+Criterion 4: Ecosystem significance (max 4)
+Exemplary (4): links photosynthesis to the oxygen supply and to the food chain, and gives one example
+Proficient (3): links photosynthesis to the oxygen supply or to the food chain
+Developing (2): states that plants need photosynthesis
+Beginning (1): mentions the environment with no link to photosynthesis

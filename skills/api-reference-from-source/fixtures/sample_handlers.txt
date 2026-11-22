@@ -1,0 +1,35 @@
+"""Order handlers used as the smoke-test sample."""
+from flask import Flask, request, jsonify, abort
+
+app = Flask(__name__)
+
+ORDERS = {}
+
+
+@app.route("/orders/<int:order_id>", methods=["GET"])
+def get_order(order_id: int):
+    """Return one order by id."""
+    order = ORDERS.get(order_id)
+    if order is None:
+        abort(404)
+    return jsonify({"id": order_id, "item": order["item"], "qty": order["qty"]})
+
+
+@app.route("/orders", methods=["POST"])
+def create_order():
+    body = request.get_json()
+    item = body.get("item")
+    qty = int(body.get("qty", 1))
+    if not item:
+        return jsonify({"error": "item is required"}), 400
+    new_id = len(ORDERS) + 1
+    ORDERS[new_id] = {"item": item, "qty": qty}
+    return jsonify({"id": new_id}), 201
+
+
+@app.route("/orders/search", methods=["GET"])
+def search_orders():
+    term = request.args.get("q", "")
+    limit = request.args.get("limit", 10, type=int)
+    hits = [{"id": k, "item": v["item"]} for k, v in ORDERS.items() if term in v["item"]]
+    return jsonify(hits[:limit])

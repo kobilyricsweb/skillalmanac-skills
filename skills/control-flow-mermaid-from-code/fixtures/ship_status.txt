@@ -1,0 +1,25 @@
+﻿def ship_status(order, stock):
+    """Return a shipping status and reduce stock in place."""
+    if order is None:
+        return "invalid"
+    lines = order.get("lines", [])
+    if not lines:
+        return "empty"
+    missing = 0
+    # Lines are processed in order; only lines that fit are shipped.
+    for line in lines:
+        sku = line["sku"]
+        qty = line["qty"]
+        if qty <= 0:
+            raise ValueError("bad quantity")
+        available = stock.get(sku, 0)
+        if available < qty:
+            missing += 1
+            continue
+        stock[sku] = available - qty
+    # Decide the status from the missing count.
+    if missing == len(lines):
+        return "backordered"
+    if missing > 0:
+        return "partial"
+    return "ready"

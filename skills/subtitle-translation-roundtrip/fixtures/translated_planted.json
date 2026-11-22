@@ -1,0 +1,12 @@
+{
+  "format": "srt-cues-v1",
+  "cue_count": 6,
+  "cues": [
+    {"cue": 1, "text": "Bienvenidos de nuevo al canal."},
+    {"cue": 2, "text": "Hoy vamos a visitar el antiguo puerto."},
+    {"cue": 3, "text": "Mantengan las manos dentro del bote."},
+    {"cue": 4, "text": "El agua de este puerto es muy fría, incluso en verano."},
+    {"cue": 5, "text": "Gracias por ver."},
+    {"cue": 6, "text": "Nos vemos la próxima vez."}
+  ]
+}

@@ -1,0 +1,11 @@
+Keyword density is one of the oldest checks in on-page editing, and one of the most misunderstood. A keyword density check counts how often a phrase appears in the visible text of a page and divides that count by the total number of words. The result describes the page as written. It does not predict how a search engine will rank the page.
+
+Start with a plain draft. Read the page text without menus, footers, and navigation labels, and paste it into a plain text file. List the phrases you care about, one per line, the way a reader would type them, such as keyword density or page text.
+
+The count is case-insensitive, so Keyword Density and KEYWORD DENSITY match the same phrase. Matches are whole words only, so the word page does not match pages or webpage. Punctuation is ignored. Plurals and synonyms are not matched unless you list them on their own lines.
+
+Check the absent keywords too. A keyword with zero matches means the page never uses that phrase. Sometimes that is a real gap, such as a product page that never names its category. Sometimes the list was written for another page entirely. Decide which case applies before you change anything, and write the decision next to the keyword.
+
+Density numbers are descriptive only. No density value is a target, and no percentage guarantees a position in search results. Two pages with the same density can read very differently. Judge the draft by whether a reader finds the answer quickly and whether the text sounds like a person wrote it.
+
+Save the total word count, the count and density for each keyword, and the absent list for every revision. Compare revisions only when they were measured with the same method on the same text.

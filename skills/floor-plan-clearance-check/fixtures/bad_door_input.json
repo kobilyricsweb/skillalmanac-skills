@@ -1,0 +1,9 @@
+{
+  "room": {"width": 144, "length": 120},
+  "items": [
+    {"name": "sofa", "x": 30, "y": 10, "w": 84, "d": 36}
+  ],
+  "doors": [
+    {"wall": "north", "offset": 130, "width": 32}
+  ]
+}

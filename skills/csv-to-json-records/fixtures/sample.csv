@@ -1,0 +1,7 @@
+id,price,active,name
+1,9.99,true,Apple
+2,12.50,false,Banana
+3,,true,Cherry
+4,3.00,TRUE,"Dragon fruit, red"
+5,0.75,false,Elderberry
+6,100,true,Fig

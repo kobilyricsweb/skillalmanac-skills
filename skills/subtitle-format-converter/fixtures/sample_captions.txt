@@ -1,0 +1,30 @@
+WEBVTT
+Kind: captions
+Language: en
+
+NOTE
+This comment block is dropped on conversion.
+It can run to several lines.
+
+STYLE
+::cue {
+  color: yellow;
+}
+
+1
+00:00:00.000 --> 00:00:02.500 align:start position:10%
+<v Ana>Welcome back to the show.
+
+00:00:02.500 --> 00:00:05.000 line:90%
+Today we <c.yellow>test</c> conversions.
+And the captions roll.
+
+00:00:05.000 --> 00:00:07.200
+And the captions roll.
+Next we check the timing.
+
+00:00:07.200 --> 00:00:10.000
+Later <i>italic</i> text &amp; more.
+
+00:00:10.000 --> 00:00:12.000
+Final cue.

@@ -1,0 +1,7 @@
+# edge fixture: each line exercises one refusal or error path
+1 B TiB
+-300 C K
+1_000 m km
+5 cups mL
+5 m
+7 m m

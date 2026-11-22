@@ -1,0 +1,25 @@
+Release notes for the spring tour, written 2026-03-14 by the editorial desk.
+The full schedule lives at https://example.com/tour/schedule.
+Tickets go on sale 01/02/2026 for the first wave.
+Map links: www.example.org/maps/venues, and tips at https://example.net/tips/travel?ref=newsletter.
+Follow the news #SpringTour and the recap tag #ReleaseNotes today.
+Contact the press office at press@example.com before Friday.
+Credit goes to @editor_desk and @Photo_Lead for the cover.
+Doors open 12/25/2026 for the holiday show.
+Read the archive at https://example.com/archive/2025/index.html.
+Second listing: https://example.com/tour/schedule (duplicate on purpose).
+Short form www.example.org/faq, see the notes below.
+Lineup details (see https://example.com/lineup).
+The desk log shows 2026-02-30 as a rejected entry.
+Tags #SpringTour and #Tour2026 cover the rest of the season.
+Ask @editor_desk about the photo credits on the cover.
+Final sign-off on 2026-11-22 for the autumn leg.
+Plain prose with no links, mentions, or tags in this line at all.
+Shipping note: C# examples are out of scope for this issue.
+The contact form is listed as example.com/contact without a scheme, which is not extracted.
+Second wave news carries the tag #Tickets for fans.
+Ticket resale rules changed on 2026-06-01 per the desk.
+The venue list has 14 cities.
+Mailing list address: newsletter at example dot com.
+Sponsor note: 1/2 of the proceeds go to the fund.
+End of notes, see you at the next release.

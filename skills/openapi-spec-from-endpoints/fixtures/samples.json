@@ -1,0 +1,8 @@
+{
+  "samples": [
+    {"id": "s1", "method": "POST", "path": "/books", "kind": "request", "body": {"title": "Dune", "pages": 412, "price": 9.99}},
+    {"id": "s2", "method": "POST", "path": "/books", "kind": "response", "status": 201, "body": {"id": "1", "title": "Dune", "pages": 412, "price": 9.99}},
+    {"id": "s3", "method": "GET", "path": "/books/{id}", "kind": "response", "status": 200, "body": {"id": "2", "title": "Emma", "pages": 881, "price": 12.5}},
+    {"id": "s4", "method": "GET", "path": "/books/{id}", "kind": "response", "status": 404, "body": {"error": "not_found"}}
+  ]
+}

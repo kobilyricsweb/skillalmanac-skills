@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+"""Small Python 2 sample used for the smoke run of the scan.
+
+The text print "not code" inside this docstring must not be flagged.
+"""
+import os
+
+def load_names(path):
+    # xrange in a comment is ignored
+    names = {}
+    for i in xrange(10):
+        names[str(i)] = i
+    if names.has_key("3"):
+        print "found three"
+    try:
+        value = raw_input("name: ")
+    except IOError, err:
+        value = None
+    label = `value`
+    text = unicode(value)
+    return names, text, label, os.sep
+
+
+if __name__ == "__main__":
+    load_names("names.txt")

@@ -1,0 +1,12 @@
+<catalog region="US">
+  <book id="b1" lang="en">
+    <title>Dune</title>
+    <tag>sci-fi</tag>
+    <tag>classic</tag>
+  </book>
+  <book id="b2" lang="en">
+    <title>Emma</title>
+    <tag>romance</tag>
+  </book>
+  <note>Prices <b>may</b> change.</note>
+</catalog>

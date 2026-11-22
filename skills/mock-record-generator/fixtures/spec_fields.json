@@ -1,0 +1,10 @@
+{
+  "fields": [
+    {"name": "id", "type": "uuid"},
+    {"name": "full_name", "type": "name"},
+    {"name": "email", "type": "email"},
+    {"name": "age", "type": "int", "min": 18, "max": 65},
+    {"name": "score", "type": "float", "min": 0, "max": 1, "decimals": 2},
+    {"name": "plan", "type": "enum", "values": ["free", "pro", "team"]}
+  ]
+}

@@ -1,0 +1,6 @@
+item,quantity,unit_price,note
+Widget A,4,2.50,in stock
+Gear | B,12,10.00,backorder
+Spring,5,0.75
+Bolt,1200,0.05,
+Cable,3,1250.00,fragile

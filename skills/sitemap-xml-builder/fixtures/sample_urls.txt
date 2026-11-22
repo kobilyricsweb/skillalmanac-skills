@@ -1,0 +1,10 @@
+https://example.com/
+https://example.com/about
+https://example.com/about/ 2026-10-01
+https://example.com/blog/post-one 2026-09-14
+https://example.com/blog/post-two#comments
+http://example.com/legacy
+https://example.com/contact
+https://Example.com/Pricing 2026-11-02
+https://example.com/docs/getting-started 2026-11-20
+https://example.com/search?q=sitemap

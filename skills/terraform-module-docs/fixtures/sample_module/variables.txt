@@ -1,0 +1,27 @@
+# Module inputs.
+variable "region" {
+  type        = string
+  default     = "us-east-1"
+  description = "AWS region for the bucket. Use \"us-east-1\" for the default."
+}
+
+variable "bucket_name" {
+  type        = string
+  description = "Name of the S3 bucket to create."
+
+  validation {
+    condition     = length(var.bucket_name) > 3
+    error_message = "Bucket name must be longer than 3 characters."
+  }
+}
+
+variable "admin_password" {
+  type        = string
+  default     = "changeme" # placeholder only
+  description = "Initial admin password."
+}
+
+variable "enable_versioning" {
+  type    = bool
+  default = true
+}

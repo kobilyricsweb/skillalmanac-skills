@@ -1,0 +1,1 @@
+curl -G 'https://example.com/search?q=shoes' -d 'page=2' -d 'api_key=abc123' -k -o result.json -H 'Accept: text/html' -d @payload.txt

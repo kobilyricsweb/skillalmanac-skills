@@ -1,0 +1,20 @@
+Jane Doe <jane.doe@example.com>
+Sales desk: sales@example.org
+Reach john..doe@example.com for billing
+Ping mike@example.net for details.
+Duplicate entry: JANE.DOE@example.com
+(no address on this line)
+anna_k@example.co.uk, bob-smith@example.io
+Typo: two@@example.com
+charlie+news@sub.example.com
+Notes: call back on Tuesday
+Repeat: bob-smith@example.io
+
+Meeting moved to Thursday
+Thanks,
+The team
+Office hours: 9 to 5
+Please reply by Friday.
+Thanks again
+End of list
+Contact list ends here

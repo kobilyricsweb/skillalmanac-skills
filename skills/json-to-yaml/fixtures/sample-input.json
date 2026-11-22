@@ -1,0 +1,15 @@
+{
+  "flag": "yes",
+  "label": "build: stage #2",
+  "count": 3,
+  "ratio": 0.5,
+  "empty_list": [],
+  "empty_object": {},
+  "nothing": null,
+  "date_text": "2024-01-01",
+  "summary": "first line\nsecond line\n",
+  "steps": [
+    {"id": "1", "note": "plain"},
+    ["nested", "list"]
+  ]
+}

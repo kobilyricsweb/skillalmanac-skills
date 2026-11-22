@@ -1,0 +1,6 @@
+{"timestamp":"2026-11-20T11:00:00Z","level":"info","message":"job 7 started"}
+{"ts":"2026-11-20T11:00:01Z","severity":"warn","msg":"job 7 slow 900 ms"}
+{"time":"2026-11-20T11:00:02Z","level":"error","msg":"job 8 failed code 17"}
+{"message":"no time here","level":"ERROR"}
+{"timestamp":"2026-11-20T11:00:03Z","message":"no level"}
+{"timestamp":"2026-11-20T11:00:04Z","level":"ERROR","msg":"broken json

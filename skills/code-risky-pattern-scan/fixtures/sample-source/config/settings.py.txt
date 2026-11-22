@@ -1,0 +1,2 @@
+REGION = "us-east-1"
+AWS_ACCESS_KEY_ID = "@@FAKE_AWS_KEY@@"

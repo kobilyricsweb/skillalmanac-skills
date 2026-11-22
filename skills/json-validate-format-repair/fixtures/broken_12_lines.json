@@ -1,0 +1,12 @@
+{
+  "name": 'demo-app',
+  "version": "1.0",   // semantic version
+  "tags": ["json", "format"],
+  "limits": {
+    "max_items": 50,
+    "pages": [1, 2, 3]
+  },
+  "active": true,
+  "notes": "plain text value",
+  "empty": null,
+}

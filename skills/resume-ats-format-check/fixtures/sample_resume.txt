@@ -1,0 +1,40 @@
+Jordan Example
+jordan.example@example.com | (555) 010-2034 | Springfield, OR
+
+MY JOURNEY
+I have spent most of my career turning messy operations data into clear weekly reports for small teams.
+
+EXPERIENCE
+Operations Analyst, Harbor Freight Supply
+Jan 2019 - Mar 2021
+• Built the weekly inventory report that replaced three manual spreadsheets.
+- Cut reconciliation time from two days to about four hours.
+
+Data Coordinator, Pinecrest Clinic
+03/2021 - 06/2023
+- Maintained patient scheduling exports and resolved duplicate-record errors.
+- Trained eleven front-desk staff on the new intake form and its validation rules.
+
+Shift Lead, Riverside Warehouse
+2023-07 - 2024-02
+- Scheduled crews for three loading docks across two overnight shifts, tracked attendance and overtime for payroll review, and reconciled timesheets against badge logs every Friday before the payroll cutoff so that errors never reached the paycheck stage.
+
+SKILLS
+Python                     Excel
+SQL                        Tableau
+Project planning           Stakeholder reporting
+★ Certified Scrum Master
+Tools: Git | Jira | Power BI
+
+Languages: English (native) • Spanish (conversational)
+Hobbies: woodworking, trail running, and volunteering at the county food bank.
+
+Summary of Results Achieved:
+Reduced missed deliveries by 18 percent in the second half of 2022 through better route planning.
+
+CERTIFICATIONS
+Lean Six Sigma Yellow Belt, 2020
+
+References available upon request.
+Interests: data visualization and open-source spreadsheet tools.
+Availability: two weeks notice.

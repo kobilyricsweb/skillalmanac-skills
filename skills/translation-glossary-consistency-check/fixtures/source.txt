@@ -1,0 +1,6 @@
+Your invoice is attached to this refund request.
+Update the shipping address on your account.
+Check the invoice before you request a refund.
+No terms in this line.
+The account holder reviewed the invoice.
+Send the refund to the shipping address.

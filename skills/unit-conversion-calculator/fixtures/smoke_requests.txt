@@ -1,0 +1,5 @@
+# smoke fixture: one request per line, value from-unit to-unit
+3.5 mi km
+350 F C
+2 cup mL
+2 cup g

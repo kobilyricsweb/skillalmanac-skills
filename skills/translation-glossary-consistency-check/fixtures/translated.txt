@@ -1,0 +1,6 @@
+Su factura está adjunta a esta solicitud de reembolso.
+Actualice la dirección de envío en su cuenta.
+Revise la factura antes de solicitar una devolución.
+Esta línea no tiene términos.
+El titular de la cuenta revisó el recibo.
+Envíe el reembolso a la dirección postal.

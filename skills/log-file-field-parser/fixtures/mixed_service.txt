@@ -1,0 +1,30 @@
+2026-11-20T10:00:01Z INFO service=api Starting worker pool size=8
+2026-11-20T10:00:02Z DEBUG service=api Loaded config from /etc/app/config.yaml
+2026-11-20T10:00:03Z INFO service=api Listening on port 8080
+2026-11-20T10:00:05Z WARNING service=api Slow query took 1200 ms
+2026-11-20T10:00:06Z INFO service=api request id=1001 completed status=200
+2026-11-20T10:00:07Z ERROR service=api request id=1002 failed status=500
+2026-11-20T10:00:08Z DEBUG service=api cache miss key=user:88
+2026-11-20T10:00:09Z INFO service=api request id=1003 completed status=200
+2026-11-20T10:00:10Z ERROR service=api request id=1004 failed status=500
+2026-11-20T10:00:11Z WARNING service=api Slow query took 1450 ms
+2026-11-20T10:00:12Z INFO service=api request id=1005 completed status=200
+2026-11-20T10:00:13Z DEBUG service=api cache hit key=user:91
+2026-11-20T10:00:14Z ERROR service=api request id=1006 failed status=503
+    at handler (app.js:88)
+2026-11-20T10:00:16Z INFO service=api request id=1007 completed status=200
+2026-11-20T10:00:17Z WARNING service=api Retry scheduled attempt=2 for id=1006
+2026-11-20T10:00:18Z ERROR service=db connection lost after 30 s
+2026-11-20T10:00:19Z INFO service=db reconnected after 2 attempts
+Nov 20 10:00:20 worker-1 INFO job nightly-export started
+Nov 20 10:00:21 worker-1 DEBUG job nightly-export batch 1 of 4
+Nov 20 10:00:21 worker-1 ERROR job nightly-export failed on batch 2
+Nov 20 10:00:23 worker-1 retrying job, no level here
+2026-11-20T10:00:24Z INFO service=api request id=1008 completed status=200
+2026-11-20T10:00:25Z INFO service=api request id=1009 completed status=200
+2026-11-20T10:00:26Z DEBUG service=api cache miss key=user:17
+2026-11-20T10:00:27Z ERROR service=db connection lost after 31 s
+2026-11-20T10:00:28Z INFO service=db reconnected after 1 attempts
+--- end of batch 7 ---
+2026-11-20T10:00:30Z WARNING service=api Retry scheduled attempt=3 for id=1008
+Nov 20 10:00:31 worker-1 INFO job nightly-export finished

@@ -1,0 +1,8 @@
+id,customer_name,signup_date,balance,active
+1,Ann O'Neil,2024-01-15,10.50,true
+2,Bo Chen,2024-02-03,0,false
+3,Dee Park,2024-02-29,25.75,true
+4,"Eve, the ""Great""",2024-03-10,,false
+5,Finn Ruiz,2024-04-01,99.99,true
+6,Gia Lund,2024-05-18,-3.2,false
+7,Hal Ito,2024-06-30,1200,true

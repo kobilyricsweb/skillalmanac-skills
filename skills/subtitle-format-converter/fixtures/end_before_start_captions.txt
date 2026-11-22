@@ -1,0 +1,11 @@
+1
+00:00:01,000 --> 00:00:03,000
+First line of the test.
+
+2
+00:00:04,000 --> 00:00:03,500
+This cue ends before it starts.
+
+3
+00:00:05,000 --> 00:00:06,000
+Third line of the test.

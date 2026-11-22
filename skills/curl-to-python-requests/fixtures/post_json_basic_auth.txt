@@ -1,0 +1,5 @@
+curl -X POST 'https://api.example.com/v1/orders?region=us' \
+  -H 'Accept: application/json' \
+  -H 'X-Client: smoke-test' \
+  -u 'demo_user:s3cret-pass' \
+  --json '{"item": "widget", "qty": 2, "password": "hunter2"}'

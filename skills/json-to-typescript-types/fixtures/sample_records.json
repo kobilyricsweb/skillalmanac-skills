@@ -1,0 +1,7 @@
+[
+  {"id": 1, "name": "Ada", "email": "ada@example.com", "address": {"city": "London", "zip": "EC1A"}, "nickname": "A", "deleted_at": null, "labels": []},
+  {"id": 2, "name": "Lin", "email": null, "address": {"city": "Taipei", "zip": "100"}, "deleted_at": null, "labels": []},
+  {"id": 3, "name": "Omar", "email": "omar@example.com", "address": {"city": "Cairo", "zip": "11511"}, "nickname": null, "deleted_at": null, "labels": []},
+  {"id": 4, "name": "Sam", "email": "sam@example.com", "address": {"city": "Austin", "zip": "73301"}, "score": "9", "deleted_at": null, "labels": []},
+  {"id": 5, "name": "Yuki", "email": "yuki@example.com", "address": {"city": "Osaka", "zip": "530-0001"}, "score": 9.5, "deleted_at": null, "labels": []}
+]

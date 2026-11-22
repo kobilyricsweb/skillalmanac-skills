@@ -1,0 +1,5 @@
+Item      Qty   Price
+----      ---   -----
+Pencil    12    0.40
+Eraser    3     0.25
+Ruler     1     1.10
