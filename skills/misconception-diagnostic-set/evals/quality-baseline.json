@@ -1,0 +1,22 @@
+{
+  "fingerprint": "5638f4d5eed5850ea737ae62d8a09215d3136ca28ec75ea4a535aec3275f21d0",
+  "job": "aggregate_isolated_b800023f6386d0fb",
+  "results": [
+    {
+      "id": "misconception-diagnostic-set__q100_ordinary",
+      "answer": "Item 1\nPrompt: Lina adds 2/7 + 3/7. Which answer is correct? Select one choice and give one sentence explaining your reasoning.\nA. 5/7\nB. 5/14\nC. 6/7\nCorrect response: A. 5/7. The denominators are equal, so keep 7 as the denominator and add 2 + 3 to get 5.\nTargeted misconception: M1—adding both numerators and denominators (choice B).\nCautious distractor reasoning: Choosing B may suggest the student added 2 + 3 and 7 + 7, but it could also reflect uncertainty about what the denominator represents. Choosing C may suggest multiplication of the numerators, though it could be a calculation slip or guess.\nAlternative explanations: A student might select the correct choice by estimation, pattern recognition, or guessing without understanding the rule. A wrong choice may result from misreading the symbols rather than holding the targeted misconception.\nInterpretation limit: One response is insufficient to establish a stable misconception; interpret the choice together with the written reasoning.\nFollow-up probe: Without choices, solve 4/9 + 2/9 and explain why the denominator changes or stays the same.\n\nItem 2\nPrompt: Omar adds 2/5 + 4/5. Which answer is correct? Select one choice and give one sentence explaining your reasoning.\nA. 6/10\nB. 8/5\nC. 6/5\nCorrect response: C. 6/5. Because both fractions have denominator 5, keep 5 and add the numerators: 2 + 4 = 6.\nTargeted misconception: M2—multiplying the numerators when adding (choice B).\nCautious distractor reasoning: Choosing B may indicate multiplication of 2 and 4 while retaining the common denominator, but it might instead come from confusing addition with a recently practiced multiplication procedure. Choosing A may indicate adding both denominators and numerators, though equivalent-fraction confusion or guessing is also possible.\nAlternative explanations: A student may reject 6/5 because it is greater than one, make an arithmetic error, or know the procedure without understanding why it works.\nInterpretation limit: The item distinguishes likely strategies only provisionally; the student’s sentence and performance on another item are needed before drawing a conclusion.\nFollow-up probe: Ask, “Is 3/8 + 3/8 equal to 6/8 or 9/8? Explain using eighth-sized pieces.”",
+      "individual_job": "factory100_base_isolated_15117e0eeba1"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill_isolated_cases",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "case_context_isolated": true,
+  "answer_word_budget": 600,
+  "individual_worker_jobs": [
+    "factory100_base_isolated_15117e0eeba1"
+  ],
+  "method_note": "Every case uses its own fresh context. Both arms use identical model/effort/budget; raw responses unchanged, original prompts/assertions preserved, prior failures retained. Aggregate is a provenance index, not a model call.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

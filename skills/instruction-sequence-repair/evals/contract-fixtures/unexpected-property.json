@@ -1,0 +1,32 @@
+{
+  "repaired_steps": [
+    {
+      "original_position": 2,
+      "new_position": 1,
+      "text": "Add the card."
+    },
+    {
+      "original_position": 1,
+      "new_position": 2,
+      "text": "Close the box."
+    }
+  ],
+  "move_log": [
+    {
+      "step_text": "Add the card.",
+      "original_position": 2,
+      "new_position": 1,
+      "supporting_dependency": "Adding the card must precede closing the box."
+    },
+    {
+      "step_text": "Close the box.",
+      "original_position": 1,
+      "new_position": 2,
+      "supporting_dependency": "Adding the card must precede closing the box."
+    }
+  ],
+  "verification_notes": [],
+  "unresolved_issues": [],
+  "reachability_status": "supported",
+  "__unexpected_fixture_property__": 0
+}

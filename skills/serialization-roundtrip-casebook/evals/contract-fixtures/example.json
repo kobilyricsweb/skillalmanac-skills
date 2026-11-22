@@ -1,0 +1,21 @@
+{
+  "cases": [
+    {
+      "case_id": "E1",
+      "source_value": {
+        "code": "a"
+      },
+      "serialized_form": "{\"code\":\"a\"}",
+      "reconstructed_value": {
+        "code": "a"
+      },
+      "semantic_equality": "equal",
+      "byte_equality": "equal",
+      "information_loss": "none",
+      "ambiguity_notes": []
+    }
+  ],
+  "coverage": "Covers the supplied required-string representative value.",
+  "unresolved_ambiguities": [],
+  "verification_statement": "Applying the documented representation and reconstruction preserves code value ‘a’. UTF-8 encoding and the supplied exact serialized text establish the byte sequence for E1. No runtime serializer was executed, and no implementation change was made or proposed."
+}

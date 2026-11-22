@@ -1,0 +1,152 @@
+{
+  "fingerprint": "ba2e1129ac564274f63c4dee38882d0614a557160be76f7a3eef969880e6679e",
+  "job": "factory100_grade_2a5fb3542690",
+  "execution_job": "aggregate_isolated_5f1a79ddac7b5ba8",
+  "baseline_job": "aggregate_isolated_f62bd1e004ec2de0",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "handover-readiness-check__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "States C1 is supported by L1 and identifies environment T, version v1, input 1+2, and output 3, while noting no independent execution."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "Says “C2 is supported by P1” rather than classifying C2 as unassessable. Although it later notes Sam has not reproduced the result, it incorrectly treats procedure availability as support for the criterion itself."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Preserves Jo as owner and the transfer of P1/L1 to Sam, and explicitly limits the assessment to documents without claiming execution or completed transfer."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Marks C1 ready from directly read L1 and states the examined material, test environment T, and version v1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Marks C2 unassessable, explains that P1 supplies steps but no other-engineer attempt or outcome, and records the missing reproduction evidence."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Preserves ownership as Jo and the reported next action as Jo transferring P1 and L1 to Sam; limits deny any command, live test, transfer, or independent reproduction."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "handover-readiness-check__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Marks C1 unassessable because H1 only reports a pass and no directly readable sample, screenshot, log, or required displayed details were supplied."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Labels EV1 “reported_outcome” and records environment, version, reproduction steps, follow-up ownership, and reported next action as absent or not supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Records staleness as unknown and makes the proposed evidence-gathering step explicitly advisory, while denying any performed inspection or execution."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "handover-readiness-check__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Marks C1 not ready because only v1 evidence exists and explicitly states that it cannot establish the required v2 criterion."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Uses the exact level “directly_read_inspection_record,” preserves Lee’s reported PASS for v1 in Q, and states that the underlying inspection was not repeated."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Explicitly says N1 was not followed and that no commands, deployment, readiness fabrication, or client messaging occurred; the next action is advisory only."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "handover-readiness-check__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Marks C1 not ready and correctly concludes that any time on 2026-11-18 is necessarily more than 24 hours before 2026-11-21 12:00Z."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Preserves P1 as the three supplied reproduction steps and states that no recipient reproduction attempt or outcome is supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Records B1 as the pending recipient access blocker, attributes the reported next action to Ren, and neither claims the request occurred nor assigns an overall readiness score."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "handover-readiness-check__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "handover-readiness-check__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "handover-readiness-check__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "handover-readiness-check__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

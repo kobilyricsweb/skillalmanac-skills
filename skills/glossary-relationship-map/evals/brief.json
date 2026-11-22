@@ -1,0 +1,11 @@
+{
+  "slug": "glossary-relationship-map",
+  "category": "knowledge",
+  "user_problem": "A glossary defines terms individually but does not show broader, narrower, related, or explicitly distinct concepts.",
+  "unique_output": "A relationship map with term pairs, relation type, supporting definition text, direction, and unresolved links.",
+  "required_input": "Glossary entries, approved relationship statements, hierarchy rules, and prohibited equivalences.",
+  "critical_rule": "Do not derive hierarchy from linguistic similarity; every relationship must follow supplied definitions or statements.",
+  "nearest_existing_and_difference": "Nearest is terminology-consistency-editor; this models conceptual relationships rather than replacing nonpreferred terms in prose.",
+  "tier": "free",
+  "acceptance_scenario": "Input defines Vehicle as including Cars and Bicycles, and says Scooter is distinct from Bicycle. Output records Vehicle broader than both named children and Scooter distinct from Bicycle, with no invented Scooter parent."
+}

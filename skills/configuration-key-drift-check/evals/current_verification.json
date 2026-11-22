@@ -1,0 +1,283 @@
+{
+  "status": "draft; release gates open",
+  "evidence": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "script_sha256": "4afc72c156f0f04a7a38f21a8de130b35e0544bd00458d22b499c8e3e350c71f",
+    "fixtures": [
+      {
+        "id": "good",
+        "exit": 0,
+        "expected_exit": 0,
+        "passed": true,
+        "output": {
+          "configuration_count": 2,
+          "errors": [],
+          "findings": [],
+          "ok": true
+        }
+      },
+      {
+        "id": "domain-defect",
+        "exit": 1,
+        "expected_exit": 1,
+        "passed": true,
+        "output": {
+          "configuration_count": 1,
+          "errors": [],
+          "findings": [
+            {
+              "code": "DUPLICATE_CONFIG_KEY",
+              "configuration": "prod",
+              "keys": [
+                "PORT"
+              ]
+            },
+            {
+              "code": "MISSING_REQUIRED_KEY",
+              "configuration": "prod",
+              "keys": [
+                "HOST"
+              ]
+            }
+          ],
+          "ok": false
+        }
+      },
+      {
+        "id": "malformed",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "configuration_count": 1,
+          "errors": [
+            {
+              "code": "DUPLICATE_DECLARED_KEY",
+              "message": "required_keys contains a duplicate key"
+            }
+          ],
+          "findings": [],
+          "input_error": true,
+          "ok": false
+        }
+      },
+      {
+        "id": "boundary",
+        "exit": 0,
+        "expected_exit": 0,
+        "passed": true,
+        "output": {
+          "configuration_count": 1,
+          "errors": [],
+          "findings": [],
+          "ok": true
+        }
+      },
+      {
+        "id": "extra-not-used",
+        "exit": 1,
+        "expected_exit": 1,
+        "passed": true,
+        "output": {
+          "configuration_count": 1,
+          "errors": [],
+          "findings": [
+            {
+              "code": "UNEXPECTED_KEY",
+              "configuration": "prod",
+              "keys": [
+                "Z"
+              ]
+            }
+          ],
+          "ok": false
+        }
+      },
+      {
+        "id": "numeric_token_bound",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "number exceeds coefficient-digit or exponent limit (1000)",
+          "errors": []
+        }
+      },
+      {
+        "id": "nonstring_config_key",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "configuration_count": 1,
+          "errors": [
+            {
+              "code": "CONFIGURATION_KEY_TYPE",
+              "message": "configuration keys must be nonempty strings of at most 200 characters"
+            }
+          ],
+          "findings": [],
+          "input_error": true,
+          "ok": false
+        }
+      },
+      {
+        "id": "unhashable_declared_key",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "configuration_count": 1,
+          "errors": [
+            {
+              "code": "KEY_TYPE",
+              "message": "required_keys contains an invalid key"
+            }
+          ],
+          "findings": [],
+          "input_error": true,
+          "ok": false
+        }
+      },
+      {
+        "id": "unhashable_config_name",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "configuration_count": 1,
+          "errors": [
+            {
+              "code": "CONFIGURATION_NAME",
+              "message": "configuration names must be unique nonempty strings"
+            }
+          ],
+          "findings": [],
+          "input_error": true,
+          "ok": false
+        }
+      },
+      {
+        "id": "overlapping_declarations",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "configuration_count": 1,
+          "errors": [
+            {
+              "code": "REQUIRED_OPTIONAL_OVERLAP",
+              "message": "required and optional keys overlap"
+            }
+          ],
+          "findings": [],
+          "input_error": true,
+          "ok": false
+        }
+      },
+      {
+        "id": "case_sensitive_keys",
+        "exit": 1,
+        "expected_exit": 1,
+        "passed": true,
+        "output": {
+          "configuration_count": 1,
+          "errors": [],
+          "findings": [
+            {
+              "code": "MISSING_REQUIRED_KEY",
+              "configuration": "prod",
+              "keys": [
+                "A"
+              ]
+            },
+            {
+              "code": "UNEXPECTED_KEY",
+              "configuration": "prod",
+              "keys": [
+                "a"
+              ]
+            }
+          ],
+          "ok": false
+        }
+      },
+      {
+        "id": "duplicate_json_key",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "duplicate JSON object key",
+          "errors": []
+        }
+      },
+      {
+        "id": "nonfinite",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "non-finite JSON number",
+          "errors": []
+        }
+      },
+      {
+        "id": "truncated",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "Expecting value: line 1 column 6 (char 5)",
+          "errors": []
+        }
+      },
+      {
+        "id": "missing_file",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "[WinError 2] The system cannot find the file specified: '<local-path>'",
+          "errors": []
+        }
+      }
+    ],
+    "fixtures_passed": 15,
+    "fixtures_total": 15,
+    "lint_fail": 0,
+    "lint_warn": 0
+  },
+  "lint_fail": 0,
+  "lint_warn": 0,
+  "package_files": {
+    "LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "LISTING.md": "a9554378bba2a3ffabe2573f49830c839dca5e946c44b55ea4813fe44c0973b4",
+    "NOTICE.txt": "a881c4c5bb34462ac1edb0b17f220469d6db8cc61e5680b2ade431d295386459",
+    "references/input-contract.md": "909651b2ee4a51f603fbdd4b86da1e802f4ca21fc8bb47cdc1176106cbbba049",
+    "scripts/audit.py": "4afc72c156f0f04a7a38f21a8de130b35e0544bd00458d22b499c8e3e350c71f",
+    "SKILL.md": "a984b7afc5c1d637d900b3af42bf4cab3b59c651db3c74848dd31b1a8710fa8f",
+    "VERIFICATION.md": "72e0c22afb5bf2b9c375fe66ea9fb963d4d7907a0d87c45690a532b976217767"
+  },
+  "licence_decision": {
+    "license": "Apache-2.0",
+    "copyright": "Copyright 2026 Global Media Holdings (skillalmanac.com)",
+    "approved": true,
+    "decision": "Owner decision17,2026-11-21; Claude confirmation20261121_claude_to_codex_licence_and_commercial_rule_confirmed.md",
+    "tier": "free",
+    "pricing_rule": "editorial tier; independent of Platform Score and User Score",
+    "standard_source": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+    "standard_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  }
+}

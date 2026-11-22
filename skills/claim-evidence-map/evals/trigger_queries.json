@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Map claims in this draft to the excerpts and source IDs I provide.",
+    "should_trigger": true
+  },
+  {
+    "query": "Classify each statement as supported, partly supported, unsupported, or conflicting from these supplied notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an evidence trace table using only the attached passages.",
+    "should_trigger": true
+  },
+  {
+    "query": "Which paragraphs support each claim in this internal memo?",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare these claims with the quotations and preserve exact locations.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit this draft against the source packet without browsing.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show unsupported claims and conflicting excerpts in this document set.",
+    "should_trigger": true
+  },
+  {
+    "query": "Link every factual sentence to a supplied source ID.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a claim-to-excerpt matrix from these records.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify partial support in this draft using only the provided evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Browse the web to fact-check this article.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rank these sources by credibility using current internet research.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite the page to make every claim persuasive.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send the evidence table to my editor by email.",
+    "should_trigger": false
+  },
+  {
+    "query": "Publish these citations to the website.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find new sources for claims missing evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Change the database records to mark these claims verified.",
+    "should_trigger": false
+  },
+  {
+    "query": "Predict which claims will rank highest in search.",
+    "should_trigger": false
+  },
+  {
+    "query": "Approve the draft for legal publication.",
+    "should_trigger": false
+  },
+  {
+    "query": "Extract song lyrics and provide the complete text.",
+    "should_trigger": false
+  }
+]

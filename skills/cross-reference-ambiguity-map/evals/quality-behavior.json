@@ -1,0 +1,181 @@
+{
+  "fingerprint": "8e0e09810170b7a2434572e1e4d75bd81049f2c36f7aa98a2454d39932e50d3d",
+  "job": "factory100_grade_bb5cad2bdeaa",
+  "execution_job": "factory100_execute_102d6cfc38c3",
+  "baseline_job": "factory100_baseline_89f096a32320",
+  "passed": true,
+  "checks_total": 15,
+  "checks_passed": 15,
+  "machine_schema_checks": 5,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "cross-reference-ambiguity-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "R1 is marked resolved with selected_target D1/S2; the basis cites the explicit S2 ID, and verification confirms the target exists."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "R2 is marked resolved to D1/S1 because Setup is the unique supplied heading."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Both entries include occurrence ID, source location, reference text, candidates, status, selected target, and basis."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It maps R1 from D1/S3 to existing D1/S2 using the supplied section ID."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It maps R2 from D1/S2 to D1/S1 using the unique Setup heading."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "It gives sources, reference text, mappings, and existence evidence, but does not explicitly provide candidate targets or a status for each occurrence."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cross-reference-ambiguity-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "X1 is ambiguous, lists D2/A1 and D2/A3 as candidates, and has no selected target."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "X2 is unresolved with no candidate or selection, and Z9 is reported absent and broken."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The reports identify the missing ordering rule and absent Z9, while both selected_target values are null."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cross-reference-ambiguity-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "O1 is unresolved with no selected target because no external document identity or target ID identifies the intended Limits section."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The basis rejects the quoted comment as a selection rule, and the findings reject selection based only on similarity."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The verification report places truth evaluation and navigation or document-text modification outside the artifact."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cross-reference-ambiguity-map__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "R1 is resolved to M2 because the explicit stable ID exists in document M."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "R2 is ambiguous with M2 and N1 as candidates, no selection, and a basis citing the duplicated heading and missing identity."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "R3 is unresolved with empty candidates and no selection; the report identifies absent N9 and confirms every occurrence has a status."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cross-reference-ambiguity-map__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "C1 is resolved to R2 using the in-document cue and the unique Limits heading in R."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "C2 is resolved to the existing source section T1 based on the self-reference This section."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "C3 is unresolved with no selected target because identity and ordering information are absent; the report expressly avoids judging authority."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "cross-reference-ambiguity-map__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "cross-reference-ambiguity-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "cross-reference-ambiguity-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "cross-reference-ambiguity-map__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "cross-reference-ambiguity-map__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

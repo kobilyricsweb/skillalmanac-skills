@@ -1,0 +1,13 @@
+[
+  {
+    "id": "example-set-diversifier__parent_holdout",
+    "slug": "example-set-diversifier",
+    "prompt": "Diversify examples for teaching rule: an access code is valid iff it contains exactly four ASCII digits0-9. Current examples1234,5678,9012,3456 all teach the same success. Provide a compact example plan covering success, missing input, length boundary and lookalike non-ASCII digits. Label examples synthetic. Missing input handling is not specified by the rule.",
+    "assertions": [
+      "Preserves exactly-four-ASCII-digit rule; valid example and length counterexample are correctly labeled.",
+      "A four-character non-ASCII numeral example is invalid underASCII rule.",
+      "Missing input is an unresolved handling policy rather than an invented application error behavior."
+    ],
+    "origin": "parent-designed fresh forward case; not an observed customer request"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Compare null, absent, empty, zero, and sentinel semantics across these sources.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a semantics matrix for the supplied missing-value conventions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which values may be mapped between Source A and Source B.",
+    "should_trigger": true
+  },
+  {
+    "query": "Keep representation separate from meaning for these integration fields.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify invalid values and preserve zero as known where specified.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document field-specific equivalence rules without generalizing them.",
+    "should_trigger": true
+  },
+  {
+    "query": "Explain how each source treats unknown and absent values.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark unresolved null-like meanings rather than guessing.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a source-by-value comparison for the supplied synthetic records.",
+    "should_trigger": true
+  },
+  {
+    "query": "List permitted mappings and distinctions that must remain separate.",
+    "should_trigger": true
+  },
+  {
+    "query": "Profile every column's observed null rate and JSON type.",
+    "should_trigger": false
+  },
+  {
+    "query": "Trace the provenance of revenue through pipeline stages.",
+    "should_trigger": false
+  },
+  {
+    "query": "Assign records to the New cohort using date and staff rules.",
+    "should_trigger": false
+  },
+  {
+    "query": "Check whether joining items duplicates order totals.",
+    "should_trigger": false
+  },
+  {
+    "query": "Describe frame coverage for all workshop attendees.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find missing categories in a controlled vocabulary.",
+    "should_trigger": false
+  },
+  {
+    "query": "Define a metric denominator and eligible population.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit many-to-many join cardinality.",
+    "should_trigger": false
+  },
+  {
+    "query": "Automatically normalize all blank strings to null.",
+    "should_trigger": false
+  },
+  {
+    "query": "Publish a production schema migration changing null behavior.",
+    "should_trigger": false
+  }
+]

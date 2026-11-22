@@ -1,0 +1,40 @@
+{
+  "routing_rules": [
+    {
+      "rule_id": "R1",
+      "conditions": [
+        "category is billing"
+      ],
+      "destination_role": "Billing Desk",
+      "precedence": null,
+      "exception": null
+    }
+  ],
+  "request_results": [
+    {
+      "request_id": "E1",
+      "matched_rules": [
+        "R1"
+      ],
+      "selected_destination": "Billing Desk",
+      "status": "routed",
+      "ambiguity_or_gap": null
+    },
+    {
+      "request_id": "E2",
+      "matched_rules": [],
+      "selected_destination": "General Intake",
+      "status": "routed",
+      "ambiguity_or_gap": "Unknown category handled by the approved fallback."
+    }
+  ],
+  "fallback_behavior": "Unknown categories route to General Intake.",
+  "input_gaps": [
+    "Directory validation: all named destinations are present in the supplied directory."
+  ],
+  "scope_exclusions": [
+    "Approval authority",
+    "Staffing capacity",
+    "External dispatch"
+  ]
+}

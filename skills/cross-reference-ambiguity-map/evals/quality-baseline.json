@@ -1,0 +1,13 @@
+{
+  "fingerprint": "ade39fe20b84c24afecca17e8127deb770916f4b268e849fd489664e2c88218e",
+  "job": "factory100_baseline_89f096a32320",
+  "results": [
+    {
+      "id": "cross-reference-ambiguity-map__q100_ordinary",
+      "answer": "R1: “section S2” occurs at D1/S3. The supplied section ID uniquely identifies D1/S2, headed “Checks”; target exists. R2: “Setup section” occurs at D1/S2. The unique heading “Setup” identifies D1/S1; target exists. Mapping: R1 → D1/S2 (“Checks”); R2 → D1/S1 (“Setup”). The references are cross-references to sections within D1, and each target is verified by the supplied inventory."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

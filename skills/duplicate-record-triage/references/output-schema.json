@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["comparison_rules", "classifications", "unresolved_cases", "remediation_boundary"],
+  "properties": {
+    "comparison_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["field", "comparison"],
+        "properties": {
+          "field": {"type": "string"},
+          "comparison": {"enum": ["exact", "trim", "case_fold", "trim_and_case_fold"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "candidate_rule": {
+      "type": ["object", "null"],
+      "required": ["condition", "fields", "threshold", "blocking_key", "provenance"],
+      "properties": {
+        "condition": {"type": "string"},
+        "fields": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "threshold": {"type": ["number", "string", "null"]},
+        "blocking_key": {"type": ["string", "null"]},
+        "provenance": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "classifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["record_ids", "classification", "rule_basis", "original_values", "conflicts"],
+        "properties": {
+          "record_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "classification": {"enum": ["exact_duplicate", "normalized_match", "candidate", "unmatched", "unresolved"]},
+          "rule_basis": {"type": "string"},
+          "original_values": {"type": "object"},
+          "transformed_values": {"type": ["object", "null"]},
+          "conflicts": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "unresolved_cases": {"type": "array", "items": {"type": "string"}},
+    "remediation_boundary": {"type": "string"}
+  },
+  "allOf": [{
+    "if": {"properties": {"classifications": {"contains": {"properties": {"classification": {"const": "candidate"}}}}}},
+    "then": {"required": ["candidate_rule"], "properties": {"candidate_rule": {"type": "object"}}}
+  }],
+  "additionalProperties": false
+}

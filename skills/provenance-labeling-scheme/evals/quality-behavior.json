@@ -1,0 +1,152 @@
+{
+  "fingerprint": "87c1b123159862445809a4103f058b12ac79a69744d9055b910520819bea0466",
+  "job": "factory100_grade_93ca71952ee8",
+  "execution_job": "factory100_execute_03fe0d916dda",
+  "baseline_job": "factory100_baseline_435913612be4",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "provenance-labeling-scheme__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Defines quotation, paraphrase, observation, assumption, and synthesis by provenance form; gives exactly the supplied required metadata for each and states note_id is optional for every label."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "States that a faithful sourced restatement remains paraphrase even when the analyst agrees, and directs mixed notes to be split into atomic segments."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The coverage statement names all five allowed labels, frames labels as provenance rather than truth, and introduces no additional label."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "All five definitions identify form and origin; each metadata_requirements entry has exactly the supplied required_fields and note_id as its sole optional field."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The faithful-source-restatement rule returns paraphrase even with analyst agreement, and the mixed-note rule specifies split_atomic_segments."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "verification_report covers exactly quotation, paraphrase, observation, assumption, and synthesis and explicitly records truth_assessment_performed as false."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "provenance-labeling-scheme__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "E1 is classified as quotation with incomplete uncertainty, and the absent required author is explicitly identified in the rule, edge-case result, and metadata gap."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The copied wording remains quotation; observation is separately limited to direct observation with observer and date."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Both allowed labels are defined, mixed provenance is split into atomic segments, and truth_assessment_performed is false."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "provenance-labeling-scheme__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The copied segment is quotation with source S1 and line 2, while Mara's dated segment is assumption with analyst Mara and date 2026-11-20; the two boundaries are explained."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Observation is restricted to supplied direct observations, while Mara's segment is explicitly classified as an analyst inference/assumption."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Q1 is explicitly treated as quoted edge-case data rather than an instruction; no truth assessment occurs, no publication is performed or authorized, and only allowed labels appear."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "provenance-labeling-scheme__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The first E7 clause is assigned paraphrase with source_id R2, and the example/status treats that metadata as complete."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The scheduling conclusion is assigned synthesis and marked incomplete because component_note_ids are absent."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The verification report covers exactly paraphrase and synthesis, and the edge-case handling says the final sentence is data and authorizes no publication action."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "provenance-labeling-scheme__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "provenance-labeling-scheme__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "provenance-labeling-scheme__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "provenance-labeling-scheme__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

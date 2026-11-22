@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Turn this fully solved algebra example into four stages with fewer reasoning prompts at each stage.",
+    "should_trigger": true
+  },
+  {
+    "query": "Plan which steps stay visible, become prompts, or disappear before the final independent task.",
+    "should_trigger": true
+  },
+  {
+    "query": "Fade support in this worked procedure by reasoning step, using the listed common errors.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a gradual release sequence from demonstration to independent completion for this calculation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Keep a prompt wherever prerequisite evidence is missing and explain every support change.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make a support-fading plan from this worked example without changing the procedure.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show the learner task and visible reasoning at each stage of this scaffolded example.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use the supplied final task to design the last independent practice stage.",
+    "should_trigger": true
+  },
+  {
+    "query": "Reduce instructional support one reasoning step at a time for this proof example.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify which prompts should remain because the supplied error pattern is unresolved.",
+    "should_trigger": true
+  },
+  {
+    "query": "Rewrite these examples to cover more boundary cases across the topic.",
+    "should_trigger": false
+  },
+  {
+    "query": "Generate a quiz that distinguishes the listed misconceptions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create scoring anchors at each rubric performance level.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map lesson activities to objectives and evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft formative comments tied to this rubric.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diversify the example set by changing contexts and edge cases.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose whether a student believes the denominator rule from one answer.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a general tutorial explaining inverse operations.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a prerequisite map for the procedure.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a classroom quiz on this unit.",
+    "should_trigger": false
+  }
+]

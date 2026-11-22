@@ -1,0 +1,6 @@
+{
+  "synthetic": true,
+  "input": "Existing page has two distinguishable unanchored sections: ‘Setup: Connect the cable.’ and ‘Care: Wipe with a dry cloth.’ No new evidence, impact criteria, revalidation request, or removal request is supplied.",
+  "expected_artifact": {"changes": [{"change_id": "CH1", "location": "local-section-1", "location_type": "reviewer_created", "current_summary": "Setup: Connect the cable.", "action": "retain", "evidence_references": [], "user_impact": "not supplied", "priority": "unknown", "readiness": "proposed", "verification_gap": null, "notes": "No factual revalidation or content change is requested."}, {"change_id": "CH2", "location": "local-section-2", "location_type": "reviewer_created", "current_summary": "Care: Wipe with a dry cloth.", "action": "retain", "evidence_references": [], "user_impact": "not supplied", "priority": "unknown", "readiness": "proposed", "verification_gap": null, "notes": "No factual revalidation or content change is requested."}], "open_questions": [], "exclusions": ["Publishing and direct page editing are outside scope."]},
+  "status": "specification; not an executed test"
+}

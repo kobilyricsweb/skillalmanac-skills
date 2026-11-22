@@ -1,0 +1,49 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "configuration-drift-explainer__parent_holdout",
+        "slug": "configuration-drift-explainer",
+        "prompt": "Explain only these redacted snapshots: before {timeoutSeconds:30,beta:true}, after {timeoutSeconds:10}. Note N1 says timeoutSeconds is a total request deadline; N2 says it is idle time between chunks, with no ordering or authority given. No beta default or removal policy supplied. Values are examples, not live configuration. Do not inspect files.",
+        "assertions": [
+          "Lists timeoutSeconds30 to10 and beta removal accurately.",
+          "Preserves conflicting timeout semantics and unknown beta default rather than asserting an actual operational effect.",
+          "Distinguishes observed changes from hypotheses and claims no file inspection, deployment or runtime verification."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "Comparison scope: Offline comparison of the supplied example snapshots only. Values are observations, not live configuration.\n\nGrouped annotated diff — ungrouped changed-key section:\n- timeoutSeconds: changed from 30 to 10.\n  Supplied notes conflict: N1 describes a total request deadline; N2 describes idle time between chunks. No ordering or authority is supplied, so the behavior meaning is unresolved.\n  Operational relevance: Possible timeout-behavior difference, but the specific effect is unknown because the notes conflict.\n  Deployment impact: Possible-but-unknown; no rollout, restart, or deployment information is supplied.\n  Reversibility: Unknown; no rollback information is supplied.\n  Evidence gap: authoritative interpretation and operational status are missing.\n- beta: removed from the after snapshot; before value true.\n  Supplied behavior note: None. No beta default or removal policy is supplied.\n  Operational relevance: Unknown.\n  Deployment impact: Possible-but-unknown; inheritance or default behavior must not be assumed.\n  Reversibility: Unknown.\n  Evidence gap: default, inheritance, and removal-policy information are missing.\n\nUnchanged, added, and redacted keys: None supplied beyond the entries above; no redaction markers are present.\n\nUnresolved questions: Which timeout note is authoritative? Is timeoutSeconds a total deadline or idle interval? Does beta have a default or inherited value after removal? Is any rollout or restart required? What rollback information applies?\n\nAcceptance checks: Both observed differences are covered; observations are separated from consequences; the conflicting notes are preserved; unknown deployment and reversibility details remain explicit; no files, services, repositories, dashboards, or secrets were inspected.",
+      "grade": {
+        "id": "configuration-drift-explainer__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The answer records timeoutSeconds changing from 30 to 10 and beta being removed after having the value true."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "It preserves both conflicting timeout interpretations, labels the behavior unresolved, and states that beta's default, inheritance, and removal policy are unknown rather than asserting an operational effect."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "The answer separates supplied snapshot differences from possible-but-unknown consequences and explicitly states that no files, services, repositories, dashboards, or secrets were inspected; it also claims no deployment or runtime verification."
+          }
+        ]
+      },
+      "binding": {
+        "id": "configuration-drift-explainer__parent_holdout",
+        "slug": "configuration-drift-explainer",
+        "skill_sha256": "9bd929ee3842f0ee2a889fd82dafdc558955d895b071e1f60f362bf6198ccf89",
+        "contract_sha256": "58226ac33a99fd61d7fba7ecaacc2c7e0d420de0472b813420321e6d5d04ff7d",
+        "assertions_sent_to_executor": false
+      },
+      "round": "initial"
+    }
+  ]
+}

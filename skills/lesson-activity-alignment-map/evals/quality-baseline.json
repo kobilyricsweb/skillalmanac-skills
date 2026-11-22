@@ -1,0 +1,13 @@
+{
+  "fingerprint": "fbaacb6011cb445c3e02309a4a1c14c3c8dca1de45fee2811d27bedd3e0c893d",
+  "job": "factory100_baseline_f27aa15eb1b3",
+  "results": [
+    {
+      "id": "lesson-activity-alignment-map__q100_ordinary",
+      "answer": "{\"map\":[{\"objective\":\"O1\",\"activities\":[\"A1\"],\"evidence\":\"Two supplied shape cards receive learner labels; the product is a two-label card.\",\"criterion\":\"C1: both labels are correct.\",\"alignment\":\"Direct\"},{\"objective\":\"O2\",\"activities\":[\"A2\"],\"evidence\":\"Teacher explains the three-side rule while learners listen; no learner product is produced.\",\"criterion\":\"C2: learner gives a reason mentioning three sides.\",\"alignment\":\"Partial/indirect\"}],\"activity_details\":[{\"id\":\"A1\",\"time\":\"3 minutes\",\"product\":\"Two-label card\"},{\"id\":\"A2\",\"time\":\"2 minutes\",\"product\":\"None\"}],\"total_time\":\"5 minutes\",\"notes\":[\"A1 directly elicits evidence for O1 and C1.\",\"A2 addresses O2 content, but the stated activity does not elicit the learner explanation required by C2.\",\"No activities were changed or added.\"]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

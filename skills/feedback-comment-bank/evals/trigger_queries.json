@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Write concise formative comments for each supplied rubric criterion and response pattern.",
+    "should_trigger": true
+  },
+  {
+    "query": "Tie every feedback comment to observable evidence and give one supported next action.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a reusable comment bank that avoids trait judgments and unsupported claims.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use this rubric and these response patterns to draft comments within 20 words.",
+    "should_trigger": true
+  },
+  {
+    "query": "Distinguish “not shown” from “missing” in the feedback wording.",
+    "should_trigger": true
+  },
+  {
+    "query": "Add a prohibited-overclaim note for each rubric-based comment.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write encouraging revision comments without assigning scores.",
+    "should_trigger": true
+  },
+  {
+    "query": "Organize comments by criterion, evidence pattern, and available revision opportunity.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use only the supplied observable patterns when drafting formative feedback.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a comment for a claim that has no supporting detail, with a concrete revision action.",
+    "should_trigger": true
+  },
+  {
+    "query": "Reply to this dissatisfied customer using a warm service tone.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build scoring anchors for levels 2 and 3.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create diagnostic questions for these misconceptions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map activities to learning objectives and evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Fade support across a worked example.",
+    "should_trigger": false
+  },
+  {
+    "query": "Give the student a final grade from this rubric.",
+    "should_trigger": false
+  },
+  {
+    "query": "Tell me whether the learner is lazy based on this response.",
+    "should_trigger": false
+  },
+  {
+    "query": "Infer the learner's intention from omitted evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send these comments to the class roster.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite the lesson to align with the objectives.",
+    "should_trigger": false
+  }
+]

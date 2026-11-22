@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create serialization roundtrip cases from these type and normalization rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show missing versus empty field behavior in a serialization casebook.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build examples that distinguish semantic equality from byte equality.",
+    "should_trigger": true
+  },
+  {
+    "query": "Represent date normalization and reconstructed values offline.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify information loss across these documented serialization transformations.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create synthetic source, serialized, and reconstructed value pairs.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag unresolved roundtrip behavior when defaults are undocumented.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check arithmetic and timestamp correctness in these roundtrip examples.",
+    "should_trigger": true
+  },
+  {
+    "query": "Cover omission and preservation boundaries in this data contract.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review serialization cases without executing a serializer.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design command-line help examples for this tool.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review dependency upgrade impact from release notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Specify idempotency behavior for exact replays.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design cache invalidation cases for product lists.",
+    "should_trigger": false
+  },
+  {
+    "query": "Prove the serializer is compatible with production clients.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose malformed payloads from a live service.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review proposed logs for missing required context.",
+    "should_trigger": false
+  },
+  {
+    "query": "Explain configuration drift between environments.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit retry budgets and concurrency limits.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify this format against an external standard.",
+    "should_trigger": false
+  }
+]

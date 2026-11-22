@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Map each lesson objective to the activity that produces observable evidence for it.",
+    "should_trigger": true
+  },
+  {
+    "query": "Classify these activities as direct evidence, partial evidence, exposure, or uncovered.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show the learner action and product that support each objective-activity connection.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check whether this lesson's activities actually demonstrate the supplied assessment criteria.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify objectives with no activity producing the required evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Account for the stated time limits and report any infeasible lesson allocation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Do not infer alignment from shared topic; require an observable learner action.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map the lecture, summary, and comparison task to the objective and evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate exposure from actual evidence of objective attainment in this lesson plan.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an alignment matrix using only these objectives, activities, products, and criteria.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a prerequisite map for the steps in this procedure.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a staged sequence that fades worked-example support.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write diagnostic items for the named misconceptions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create rubric anchors at the boundary between levels.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft feedback comments for missing supporting evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design new classroom activities for this objective.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide whether students learned from attending the lecture.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create an assessment rubric from this lesson topic.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a tutorial on comparing arguments.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diversify examples to cover more cases.",
+    "should_trigger": false
+  }
+]

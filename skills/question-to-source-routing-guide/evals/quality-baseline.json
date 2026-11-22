@@ -1,0 +1,13 @@
+{
+  "fingerprint": "80eb606b21cb711af4ff0e880711e3aa631ec1d3a39bc12be81b783e1f15fea9",
+  "job": "factory100_baseline_b40a8387a71b",
+  "results": [
+    {
+      "id": "question-to-source-routing-guide__q100_ordinary",
+      "answer": "{\"route\":\"KB1\",\"freshness_cue\":\"KB1 updated 2026-11-10; use the dated authorized procedure as the current primary source.\",\"fallback\":\"NOTE1, updated 2026-11-15, only if KB1 is unavailable.\",\"basis\":\"R1 designates KB1 as primary for VPN password-reset procedures. Acceptable evidence is the reset procedure recorded in the authorized source.\",\"exceptions\":[\"Do not route to NOTE1 while KB1 is available.\",\"No additional exception is supplied.\"],\"verification_report\":\"Verify that the answer is supported by the VPN reset procedure in KB1. If KB1 cannot be accessed, verify against NOTE1 and record that the fallback was used.\"}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

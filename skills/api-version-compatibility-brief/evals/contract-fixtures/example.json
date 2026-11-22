@@ -1,0 +1,57 @@
+{
+  "comparisons": [
+    {
+      "area": "path",
+      "element": "/notes",
+      "version_1": "GET /notes",
+      "version_2": "GET /notes",
+      "classification": "unchanged",
+      "impact": "The documented path remains present."
+    },
+    {
+      "area": "method",
+      "element": "GET /notes",
+      "version_1": "GET",
+      "version_2": "GET",
+      "classification": "unchanged",
+      "impact": "The documented method remains unchanged."
+    },
+    {
+      "area": "response_field",
+      "element": "id",
+      "version_1": "required string",
+      "version_2": "required string",
+      "classification": "unchanged",
+      "impact": "Documented type and requiredness match."
+    },
+    {
+      "area": "response_field",
+      "element": "label",
+      "version_1": null,
+      "version_2": "optional string",
+      "classification": "added",
+      "impact": "The field appears only in the supplied v2 inventory."
+    },
+    {
+      "area": "status_code",
+      "element": "200 for GET /notes",
+      "version_1": "200",
+      "version_2": "200",
+      "classification": "unchanged",
+      "impact": "The documented success status remains unchanged."
+    },
+    {
+      "area": "behavior",
+      "element": "behavior notes",
+      "version_1": null,
+      "version_2": null,
+      "classification": "behaviorally_uncertain",
+      "impact": "Behavior cannot be compared from the supplied specifications."
+    }
+  ],
+  "conflicts": [],
+  "unresolved_items": [
+    "Runtime behavior and migration readiness are not established."
+  ],
+  "scope": "Documentary comparison only; no endpoints were tested."
+}

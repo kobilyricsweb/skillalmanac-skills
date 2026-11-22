@@ -1,0 +1,7 @@
+{
+  "input_gaps": [],
+  "scope_exclusions": [
+    "Approval authority",
+    "Actions after procedure termination"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "synthetic": true,
+  "input": "Notes: [{\"id\":\"N1\",\"text\":\"The editor stores each draft locally.\"}]. Purpose: prepare a short product briefing for support staff. Requested sections, in order: Overview; Risks. Constraint: outline only.",
+  "expected_artifact": {
+    "basis_summary": {
+      "note_ids": [
+        "N1"
+      ],
+      "purpose": "Prepare a short product briefing for support staff.",
+      "purpose_status": "supplied"
+    },
+    "outline": [
+      {
+        "heading": "Overview",
+        "purpose": "Describe the stated storage behavior.",
+        "support_status": "supported",
+        "supporting_note_ids": [
+          "N1"
+        ],
+        "subpoints": [
+          {
+            "text": "Each draft is stored locally by the editor.",
+            "evidence_kind": "direct",
+            "note_ids": [
+              "N1"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Risks",
+        "purpose": "Cover requested risks once evidence is supplied.",
+        "support_status": "gap",
+        "supporting_note_ids": [],
+        "subpoints": []
+      }
+    ],
+    "gap_register": [
+      {
+        "section": "Risks",
+        "reason": "No note states a risk.",
+        "research_question": "What risks, if any, are associated with local draft storage?"
+      }
+    ],
+    "conflict_register": [],
+    "verification_report": {
+      "substantive_points_traced": true,
+      "unsupported_requested_sections_isolated": true,
+      "note_instructions_executed": false,
+      "omissions": []
+    }
+  },
+  "status": "specification; not an executed test"
+}

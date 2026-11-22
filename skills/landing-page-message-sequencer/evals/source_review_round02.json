@@ -1,0 +1,14 @@
+{
+  "slug": "landing-page-message-sequencer",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "LPMS-01",
+      "severity": "medium",
+      "location": "Worked example expected artifact and ordinary eval versus decision workflow step 4 and the stated guardrail",
+      "evidence": "M2 promises `Reuse a weekly planning template`, but the only supplied asset is A1, a `worksheet completion note` supporting M3's statement that three internal tutors completed a worksheet. No evidence asset supports template reusability. Nevertheless, the worked artifact places M2 as the mechanism/promise without recording its evidence gap. The ordinary eval repeats the same inputs and has no assertion requiring M2's missing support to remain visible, even though the workflow says to attach each claim to exact evidence or mark the evidence gap and the brief says an unsupported promise is a gap.",
+      "consequence": "The canonical artifact can present an approved but unevidenced promise in the main sequence without the required traceability warning. Approval of wording is thereby treated as if it satisfied the separate evidence requirement.",
+      "correction": "Keep M2 eligible for sequencing because it is approved, but mark its evidence asset as `not supplied` and record an unresolved evidence gap. Add the same requirement to the ordinary eval assertion. Do not link A1 to M2 unless its description explicitly establishes template reusability."
+    }
+  ]
+}

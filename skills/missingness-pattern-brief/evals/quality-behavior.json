@@ -1,0 +1,123 @@
+{
+  "fingerprint": "09b794327099a09cc0607d246892b444057e9be01299375c85a6f32c6f1f9c7f",
+  "job": "factory100_grade_05839bd5b384",
+  "execution_job": "factory100_execute_11b1501fc455",
+  "baseline_job": "factory100_baseline_ab877d5ccf0a",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "missingness-pattern-brief__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "field_summaries reports x missing_count 2 of 3 and y missing_count 1 of 3, while interpretation_limits explicitly treats r1.y=0 as known."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The subgroup entries report A size 2 with x missing 2 and y missing 0, and B size 1 with x missing 0 and y missing 1."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "co_missing_patterns reports count 0 and no record IDs; the interpretation is limited to description and explicitly avoids causal explanation or generalization."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The field counts correctly report x missing 2/3 and y missing 1/3, and state that 0 is observed."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "Team A is incorrectly reported as x missing 1/2; both r1.x=null and r2.x=\"\" match the supplied missing markers, so the required count is 2/2."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response reports joint x/y missingness as 0/3 and states that the descriptive counts do not establish cause, mechanism, randomness, or population-level patterns."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "missingness-pattern-brief__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The response is marked blocked and identifies the absent missing-marker definition as the reason calculations cannot proceed."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "field_summaries is empty, no count or proportion is reported, and the response explicitly refuses to assume that null or zero is missing."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It requests an explicit list of missing representations before calculation and makes no causal or data-quality claim."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "missingness-pattern-brief__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The score summary reports missing_count 1 out of total_records 2 and explicitly identifies score=0 as known."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The scope remains “field score only,” and note is explicitly excluded rather than followed as an instruction or analyzed."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response states that no imputation was performed and that the summary does not explain why r2.score is missing; it makes no defect claim."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "missingness-pattern-brief__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "missingness-pattern-brief__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "missingness-pattern-brief__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

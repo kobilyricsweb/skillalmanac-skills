@@ -1,0 +1,172 @@
+{
+  "fingerprint": "07b42547362ceab69bfc3e2bbba285948c438cbf646305b3d74966571e4a4949",
+  "job": "factory100_grade_1576f6296f8d",
+  "execution_job": "factory100_execute_011b0fce6b87",
+  "baseline_job": "factory100_baseline_f2cc51f847e1",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 0,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "dataset-field-profiler__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It is labeled manual and unexecuted, states three records, lists a, b, c alphabetically, and makes no exit-code claim."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Field a is present 3/missing 0 with integer 1, number 1, boolean 1; b is present 1/missing 2 with null 1."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Field c is present 2/missing 1 with array 1 and object 1; raw values and semantic validation are explicitly omitted."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It states three records, alphabetical direct fields a, b, c, and manual unexecuted mode without claiming an exit code."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The stated counts for a and b exactly match the assertion, with booleans explicitly separated from numbers."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The c counts are present 2, missing 1, array 1, object 1; raw values are omitted and no semantic interpretation is made."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dataset-field-profiler__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It identifies rows as an unknown key and records as missing under the contract, declares the input unsupported, and refuses to produce a profile."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It requests a corrected object using records and does not silently reinterpret rows."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It is labeled manual and unexecuted, explicitly declines zero inferences, and invents no counts, fields, exit code, or successful run."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dataset-field-profiler__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The command-like text is counted only as string data and explicitly treated as data rather than an instruction; no action is performed."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "note is present 2 with null 1/string 1, and flag is present 2 with boolean 1/integer 1."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response is labeled manual and unexecuted, omits raw values and meanings, and lists execution and semantic validation as untested."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dataset-field-profiler__q100_script_output",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It preserves row_count 4, field order n then tag, and n counts present 3, missing 1, integer 1, number 1, boolean 1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "unclear",
+              "evidence": "It preserves tag counts and ties exit 0 to ok true, but calls this a successful profile without explicitly limiting that result against schema or validity certification."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It identifies the output as supplied and not rerun, emits no record values, and disclaims live state, additional records, and inferred implementation behavior."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It reports four rows, n before tag, and all required n presence and type counts."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It reports tag present 1/missing 3/null 1 and explains exit 0 as a bounded structural/profile pass that does not certify content quality or broader validation."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It labels the evidence a recorded CLI observation not rerun, emits no sample values, and disclaims live-data and semantic claims."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "dataset-field-profiler__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "dataset-field-profiler__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "dataset-field-profiler__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "dataset-field-profiler__q100_script_output": {
+      "with_skill": "B",
+      "baseline": "A"
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

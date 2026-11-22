@@ -1,0 +1,123 @@
+{
+  "fingerprint": "da94bb757b2ce5424295f95c07fbe6cfc4dc747a102877c4e7026cd8bed5740c",
+  "job": "factory100_grade_7e96b0dac789",
+  "execution_job": "factory100_execute_220a7005cf85",
+  "baseline_job": "factory100_baseline_0ce543878b0c",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "editorial-dependency-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Overview is marked “may proceed” because S1 is approved, and Methods is marked “may proceed” because P1 is available."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Results is explicitly blocked by pending C1 and by Methods remaining an unresolved prerequisite until completion is supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "The named owners and both blocking paths are represented, but the response does not state that drafting, owner assignment, approval, and publishing are outside scope."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Overview and Methods both have status “can_proceed,” supported respectively by approved S1 and available P1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Results includes pending C1 and unknown Methods as prerequisites, and both are listed as blocking paths."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Nia, Omar, and Lei are preserved; both Results blocking paths are reported; and the outside_scope list covers drafting, assigning owners, granting approval, and publishing."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "editorial-dependency-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Appendix shows T1 available and can_proceed while its owner remains Unknown; no publication approval is inferred."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Findings is blocked by unknown A1 and unresolved Appendix completion, with Appendix represented as a section prerequisite rather than an approval."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The gaps name the missing A1 status, approval rules, owners, and fallback permissions, while outside_scope excludes drafting and inferred approval actions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "editorial-dependency-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Lead is blocked for print because PH1 is missing, and the only authorized fallback is explicitly limited to web."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Sidebar is blocked by unresolved Lead completion despite F1 being available."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The quoted note is identified as data rather than permission, owners remain Unknown, and drafting, assigning owners, granting approval, and publishing are listed outside scope."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "editorial-dependency-map__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "editorial-dependency-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "editorial-dependency-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

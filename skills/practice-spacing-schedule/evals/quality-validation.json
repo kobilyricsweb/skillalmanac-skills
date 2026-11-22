@@ -1,0 +1,48 @@
+{
+  "fingerprint": "4d406258a68931c3177b2b5dfaa554b47933f29c61430ebd893f975769dccb64",
+  "passed": true,
+  "lint": {
+    "skill": "practice-spacing-schedule",
+    "fail": 0,
+    "warn": 0,
+    "items": [
+      {
+        "level": "PASS",
+        "code": "frontmatter-keys",
+        "message": "only open-spec keys used"
+      },
+      {
+        "level": "PASS",
+        "code": "name-format",
+        "message": "name 'practice-spacing-schedule' is valid"
+      },
+      {
+        "level": "PASS",
+        "code": "description-length",
+        "message": "description is 378 chars"
+      },
+      {
+        "level": "PASS",
+        "code": "body-lines",
+        "message": "SKILL.md body has 24 lines"
+      },
+      {
+        "level": "PASS",
+        "code": "body-tokens",
+        "message": "body is about 760 tokens by chars/4"
+      },
+      {
+        "level": "PASS",
+        "code": "package-size",
+        "message": "package is 37000 bytes in 8 files"
+      }
+    ]
+  },
+  "quick_exit": 0,
+  "quick_stdout": "Skill is valid!\n",
+  "quick_stderr": "",
+  "schema_error": null,
+  "fixture_exit": 0,
+  "fixture_stdout": "{\"passed\": true, \"fixtures\": [{\"id\": \"example\", \"passed\": true, \"valid\": true, \"errors\": []}, {\"id\": \"missing-required\", \"passed\": true, \"valid\": false, \"errors\": [{\"path\": \"$\", \"code\": \"required\", \"message\": \"Missing schedule_status\"}]}, {\"id\": \"wrong-root\", \"passed\": true, \"valid\": false, \"errors\": [{\"path\": \"$\", \"code\": \"type\", \"message\": \"Expected object\"}]}, {\"id\": \"unexpected-property\", \"passed\": true, \"valid\": false, \"errors\": [{\"path\": \"$\", \"code\": \"additionalProperties\", \"message\": \"Unexpected property __unexpected_fixture_property__\"}]}]}\n",
+  "fixture_stderr": ""
+}

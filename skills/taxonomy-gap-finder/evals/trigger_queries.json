@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Find unassigned items and conflicting memberships in this supplied taxonomy.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review category definitions for weak wording and list unresolved reviewer questions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an assignment coverage report without inventing missing categories.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check which supplied items lack a category under this exclusivity rule.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify multiply assigned items and definition gaps from this taxonomy snapshot.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit taxonomy coverage using only the provided definitions and assignments.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag self-referential or underspecified category definitions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show taxonomy gaps while preserving unknown authority and missing evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review these item-category assignments for coverage and explicit conflicts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Produce a reviewer-question list for unresolved taxonomy assignments.",
+    "should_trigger": true
+  },
+  {
+    "query": "Validate the full taxonomy parent-child graph and detect cycles.",
+    "should_trigger": false
+  },
+  {
+    "query": "Research keyword demand for each category.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a content plan for uncategorized topics.",
+    "should_trigger": false
+  },
+  {
+    "query": "Automatically assign every item to the best category.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rank categories globally by search volume.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a product taxonomy from scratch with new categories.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit duplicate rows in the assignment table.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a PRD for a taxonomy management platform.",
+    "should_trigger": false
+  },
+  {
+    "query": "Calculate weighted rates for category conversion.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design a navigation dashboard for taxonomy analytics.",
+    "should_trigger": false
+  }
+]

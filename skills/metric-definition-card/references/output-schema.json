@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "metric_name",
+    "purpose",
+    "formula",
+    "metric_class",
+    "numerator",
+    "denominator",
+    "population",
+    "window",
+    "timezone",
+    "exclusions",
+    "grain",
+    "freshness",
+    "zero_policy",
+    "source_notes",
+    "unresolved_choices",
+    "implementation_questions"
+  ],
+  "properties": {
+    "metric_name": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "formula": {
+      "type": "string"
+    },
+    "metric_class": {
+      "type": "string",
+      "enum": [
+        "count",
+        "ratio",
+        "rate",
+        "percentage",
+        "duration",
+        "other",
+        "unresolved"
+      ]
+    },
+    "numerator": {
+      "type": "string"
+    },
+    "denominator": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "population": {
+      "type": "string"
+    },
+    "window": {
+      "type": "string"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "exclusions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "grain": {
+      "type": "string"
+    },
+    "freshness": {
+      "type": "string"
+    },
+    "zero_policy": {
+      "type": "string"
+    },
+    "source_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_choices": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "implementation_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

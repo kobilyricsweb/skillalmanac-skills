@@ -1,0 +1,123 @@
+{
+  "fingerprint": "b140849e89d34d613ad86f82699bb1d606fe592cd4922f7d64ff704139c5f604",
+  "job": "factory100_grade_08dbe147684a",
+  "execution_job": "factory100_execute_4ab8e867f451",
+  "baseline_job": "factory100_baseline_ba1585b9d322",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "validation-rule-conflict-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Both R1 and R2 are retained with their original inclusive constraints, and the scope intersection is identified as all basic plans."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The classification is a direct unsatisfiable conflict because no value can satisfy seats at most 3 and seats at least 4 simultaneously."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The map states that no precedence evidence was supplied, leaves resolution unresolved, selects no winner, and provides no validation code."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "source_ids retains R1 and R2, original_rules retains both constraints, and scope_intersection is all basic plans."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The pair is classified contradictory with the reason that the rules admit no common seats value."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "precedence_evidence says none was supplied, resolution_needed is true, and the limits exclude a winner, policy, or validation code."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "validation-rule-conflict-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The comparison is classified undecidable because R-A's missing unit prevents dimensional comparison."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Both source IDs and inclusive boundaries are retained, the shared scope is shipment records, and only R-B is recorded with kg."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The unresolved questions ask what unit applies to R-A, while the limits explicitly reject selecting a stricter rule or final policy and no precedence is applied."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "validation-rule-conflict-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "R1's embedded sentence is preserved in original_rules and expressly treated as rule text rather than governance authority, alongside the statement that no precedence exists."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The rules are classified contradictory over partner records because exact lengths 2 and 3 cannot both hold."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Both source IDs are retained, resolution_needed is true due to the absence of a controlling rule, and the limits exclude policy selection and code."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "validation-rule-conflict-map__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "validation-rule-conflict-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "validation-rule-conflict-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

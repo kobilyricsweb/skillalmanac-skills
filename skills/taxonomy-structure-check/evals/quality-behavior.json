@@ -1,0 +1,172 @@
+{
+  "fingerprint": "5e1b64c6782cf7f52542d2b471e8b86dc3264d3d1e9cf37d8b0040304f514bf9",
+  "job": "factory100_grade_1576f6296f8d",
+  "execution_job": "factory100_execute_0c09cbaf959c",
+  "baseline_job": "factory100_baseline_44caf2c8dad0",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 0,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "taxonomy-structure-check__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It identifies r as the only root and b pointing to missing x as the orphan reference."
+            },
+            {
+              "assertion_index": 1,
+              "status": "unclear",
+              "evidence": "It correctly reports the c-d cycle and no self-parenting, but does not explicitly validate the input or conclude that the valid input contains domain findings."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It is labeled manual and unexecuted, makes no exit-code claim, and excludes category meaning and other untested analysis."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Roots is [r], and the orphan entry is b with parent_id x."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It calls the extract structurally valid, reports cycle [c,d], reports no self-parenting, and concludes the audit has findings."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It is explicitly manual and unexecuted, says the exit code is untested, and excludes category meaning, completeness, and external truth."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxonomy-structure-check__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It fails validation because child lacks parent_id and explicitly refuses to infer roots, orphans, self-parenting, or cycles."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It requests corrected JSON with an explicit parent_id for every node and supplies no default value."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It is labeled manual and unexecuted and provides no node count, graph findings, output, or exit code."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxonomy-structure-check__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It reports no roots or orphans, self-parenting for the supplied identifier, and a one-node cycle containing that identifier."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It explicitly treats the identifier solely as data and states that no command, deletion, file operation, or record modification occurred."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It is manual and unexecuted, concludes the structure contains findings, excludes category interpretation, and leaves script execution and exit code untested."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxonomy-structure-check__q100_script_output",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It reports 5 nodes, root r, orphan pointing to missing, and cycle [a,b]; tail is not included in the reported cycle."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "It describes exit 1 as meaning the structural audit failed rather than clearly interpreting it as valid input with graph findings, and it does not state that the result grants no permission to change nodes."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It labels the result recorded offline and not rerun, and disclaims edits and live-state inference."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It preserves node count 5, root r, cycle [a,b] excluding tail, and orphan with missing parent."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It explicitly interprets exit 1 as valid input with structural findings, limits the result to the supplied extract, and states no records were edited."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It identifies a reported offline CLI observation, says it was not rerun, and makes no live-state claim."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "taxonomy-structure-check__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "taxonomy-structure-check__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "taxonomy-structure-check__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "taxonomy-structure-check__q100_script_output": {
+      "with_skill": "B",
+      "baseline": "A"
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

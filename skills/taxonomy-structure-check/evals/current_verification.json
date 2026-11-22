@@ -1,0 +1,240 @@
+{
+  "status": "draft; release gates open",
+  "evidence": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "script_sha256": "78fa6d0e27c7fc50e2f98b612b9591c74c8f0e856d96e913af61b13d2cb5722b",
+    "fixtures": [
+      {
+        "id": "good_forest",
+        "exit": 0,
+        "expected_exit": 0,
+        "passed": true,
+        "output": {
+          "cycles": [],
+          "errors": [],
+          "node_count": 3,
+          "ok": true,
+          "orphan_references": [],
+          "roots": [
+            "books",
+            "music"
+          ],
+          "self_parenting": []
+        }
+      },
+      {
+        "id": "orphan_reference",
+        "exit": 1,
+        "expected_exit": 1,
+        "passed": true,
+        "output": {
+          "cycles": [],
+          "errors": [
+            {
+              "code": "ORPHAN_REFERENCE",
+              "count": 1
+            }
+          ],
+          "node_count": 1,
+          "ok": false,
+          "orphan_references": [
+            {
+              "id": "jazz",
+              "parent_id": "music"
+            }
+          ],
+          "roots": [],
+          "self_parenting": []
+        }
+      },
+      {
+        "id": "malformed_duplicate_ids",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "duplicate id",
+          "errors": []
+        }
+      },
+      {
+        "id": "empty_forest_boundary",
+        "exit": 0,
+        "expected_exit": 0,
+        "passed": true,
+        "output": {
+          "cycles": [],
+          "errors": [],
+          "node_count": 0,
+          "ok": true,
+          "orphan_references": [],
+          "roots": [],
+          "self_parenting": []
+        }
+      },
+      {
+        "id": "numeric_token_bound",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "number exceeds coefficient-digit or exponent limit (1000)",
+          "errors": []
+        }
+      },
+      {
+        "id": "self_parent",
+        "exit": 1,
+        "expected_exit": 1,
+        "passed": true,
+        "output": {
+          "cycles": [
+            [
+              "a"
+            ]
+          ],
+          "errors": [
+            {
+              "code": "SELF_PARENTING",
+              "count": 1
+            },
+            {
+              "code": "CYCLE",
+              "count": 1
+            }
+          ],
+          "node_count": 1,
+          "ok": false,
+          "orphan_references": [],
+          "roots": [],
+          "self_parenting": [
+            "a"
+          ]
+        }
+      },
+      {
+        "id": "multi_node_cycle",
+        "exit": 1,
+        "expected_exit": 1,
+        "passed": true,
+        "output": {
+          "cycles": [
+            [
+              "a",
+              "b",
+              "c"
+            ]
+          ],
+          "errors": [
+            {
+              "code": "CYCLE",
+              "count": 1
+            }
+          ],
+          "node_count": 4,
+          "ok": false,
+          "orphan_references": [],
+          "roots": [
+            "d"
+          ],
+          "self_parenting": []
+        }
+      },
+      {
+        "id": "long_chain_iterative",
+        "exit": 0,
+        "expected_exit": 0,
+        "passed": true,
+        "output": {
+          "cycles": [],
+          "errors": [],
+          "node_count": 10000,
+          "ok": true,
+          "orphan_references": [],
+          "roots": [
+            "n00000"
+          ],
+          "self_parenting": []
+        }
+      },
+      {
+        "id": "duplicate_json_key",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "duplicate JSON object key",
+          "errors": []
+        }
+      },
+      {
+        "id": "nonfinite",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "non-finite JSON number",
+          "errors": []
+        }
+      },
+      {
+        "id": "truncated",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "Expecting value: line 1 column 6 (char 5)",
+          "errors": []
+        }
+      },
+      {
+        "id": "missing_file",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "[WinError 2] The system cannot find the file specified: '<local-path>'",
+          "errors": []
+        }
+      }
+    ],
+    "fixtures_passed": 12,
+    "fixtures_total": 12,
+    "lint_fail": 0,
+    "lint_warn": 0
+  },
+  "lint_fail": 0,
+  "lint_warn": 0,
+  "package_files": {
+    "LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "LISTING.md": "571eb4315e163c3efcf08bd6310b405d3c3401e182313b49c41d87cab6f3e038",
+    "NOTICE.txt": "a881c4c5bb34462ac1edb0b17f220469d6db8cc61e5680b2ade431d295386459",
+    "references/input-contract.md": "0491febb79830bc1c3f372c5820b0ef0111251457c092d1a55d0a35ec2b03a01",
+    "scripts/audit.py": "78fa6d0e27c7fc50e2f98b612b9591c74c8f0e856d96e913af61b13d2cb5722b",
+    "SKILL.md": "ee315f3e6d93c6cc3f9774e430e7270e3e8201000aa87a1ca595a3eb105170e4",
+    "VERIFICATION.md": "fe37b05494a814baacd08c9d21d0efc3ecae1f81672ac9407db58102176c9edb"
+  },
+  "licence_decision": {
+    "license": "Apache-2.0",
+    "copyright": "Copyright 2026 Global Media Holdings (skillalmanac.com)",
+    "approved": true,
+    "decision": "Owner decision17,2026-11-21; Claude confirmation20261121_claude_to_codex_licence_and_commercial_rule_confirmed.md",
+    "tier": "free",
+    "pricing_rule": "editorial tier; independent of Platform Score and User Score",
+    "standard_source": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+    "standard_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  }
+}

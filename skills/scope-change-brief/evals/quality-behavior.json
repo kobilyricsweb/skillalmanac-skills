@@ -1,0 +1,326 @@
+{
+  "fingerprint": "2bcbc91e817c68fbf9c7dc7a1f991b172509076b523fd482963d55646fc37705",
+  "job": "factory100_grade_976824d8be55",
+  "execution_job": "aggregate_isolated_b435e1dc1a27a0d4",
+  "baseline_job": "aggregate_isolated_c701e876efb7a00a",
+  "passed": true,
+  "checks_total": 30,
+  "checks_passed": 30,
+  "machine_schema_checks": 10,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "scope-change-brief__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "D1-D2 mark the CSV and its date/title fields unchanged, while D3-D4 mark artist and the JSON export as additions; none is labeled a conflict."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "A1 records Mira’s baseline approval as reported_unverified and unresolved due to missing authority; A2 leaves CR-7 approval unresolved, and N1-N3 identify the authority and approval decisions."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "C1 is preserved with status observed; U3 says dependencies, estimates, schedule, and risks are not supplied. The artifact only documents the request and does not implement exports or claim tests."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The comparison says the CSV remains in scope, date/title remain present, artist expands its schema, and JSON is a new deliverable; these are treated as consistent changes, not conflicts."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Mira’s email is recorded while her authority remains unresolved; CR-7 is explicitly not approved. Decisions 1-2 call for resolving baseline authority and approving, rejecting, or revising CR-7."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "C1 is explicitly identified as an observed criterion. Dependencies, estimates, schedule impact, and risks appear under missing information, and the disposition explicitly says not to implement the change."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-change-brief__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "B1 is preserved verbatim as the supplied baseline, while E1 and approval A1 explain that the acceptance label lacks an approver, approval act, authority evidence, date, and conditions; A1 is reported_unverified and unresolved."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "D1 marks the weekly CSV unchanged and D2 marks date as removed. U1 explicitly leaves the title field unresolved because R1 is silent about it."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "U2 records rationale, acceptance criteria, owner, dependencies, estimate, and schedule as not supplied; A2 and N3-N4 leave change authority and approval unresolved. No project record is altered."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-change-brief__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "B1 and B2 are both preserved with resolution_state conflicting, and U1/N1-N2 leave selection of CSV versus JSON to an authorized decision."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "R1Q quotes the ticket’s deploy-and-approve text and explicitly classifies it as rationale data, not authority or an executable instruction. It is not used in the approvals records."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "A1 is reported_unverified and preserves Jo’s scope as discovery and comparison only and the date 2026-11-10. R1/I1 preserve the artist addition while leaving its format unresolved; N1-N5 cover the governing baseline, Jo’s authority, and change approval."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-change-brief__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "D1 classifies daily-to-weekly delivery as a modification, D4 classifies removal of artist from JSON as a removal, and D5 classifies the CSV as an addition."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "C1 is preserved with status observed. I3-I5 and U1 record dependencies, estimate, schedule date, rollback plan, and request owner as not supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "A1 is limited to comparison and impact review and notes that Lev’s authority excludes production changes; A2 and N1-N2 leave production-change authority and approval unresolved."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-change-brief__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "D2 records PDF-to-HTML as a modification, D4 records due date as an addition, and D1/D3 record monthly delivery, account ID, and total as unchanged."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "C1 is preserved as observed and sourced to Ticket C8; U3 states that dependencies, estimate, and schedule are not supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "A0 is reported_unverified because Noor’s authority is absent; A1 is prototype-only and expressly excludes production replacement. A2 and N3-N4 leave production authority and approval unresolved without inferring it from Noor’s title."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-change-brief__q100_fresh_3",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "D2 classifies XML-to-CSV as a modification, D4 classifies currency_code as an addition, and D1/D3 classify Monday delivery, invoice_id, and amount as unchanged."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "AP1 records A0 as reported_unverified and unresolved with no approver, scope, date, or authority. AP2 limits Sam’s established authority to currency-code terminology and explicitly excludes formats, releases, and production changes."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "U2-U3 and AP3 record production-change approval, dependencies, estimate, implementation schedule, and rollback plan as absent or unresolved; N2-N3 leave the governing authority and approval decisions unresolved."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-change-brief__q100_fresh_4",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "D1 classifies the in-app notification containing ticket ID and priority as an addition, thereby including the new priority field. U1 and N2 explicitly leave the Friday email and cadence unresolved rather than classifying them as retained or removed."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "A0 is reported_unverified and unresolved. N1 cites Ravi’s claimed acceptance date of 2026-11-04 and identifies both missing authority and missing acceptance scope."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "C1 is preserved as observed. A1 limits Uma’s approval to the two interface labels, while A2 and N3-N4 require separate authority and approval for the delivery channel, release, and production change."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-change-brief__q100_fresh_5",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "D1-D3 mark failed-payment coverage, two retries, and event ID unchanged; D4 marks 10-to-5-minute intervals as a modification; D5 marks the HMAC signature header as an addition."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "C1 is recorded verbatim with status observed and source W3. The response contains no optional proposal."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "A1 limits Paz’s approval to the HMAC-SHA256 algorithm and excludes rollout and production changes; A2 leaves production approval unresolved. N1 explicitly asks who holds production-change and rollout authority."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-change-brief__q100_fresh_6",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "D1-D3 mark nightly SFTP delivery, shipment_id, and carrier_code unchanged; D4-D5 classify tracking_url and PGP encryption as additions."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The suggestions-field criterion is recorded with status optional_proposal, while I4 and U2 explicitly state that no observed acceptance criterion is supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "A1 limits Chen’s approval to the tracking_url definition and cites H1’s exclusions. N1 separately identifies the authority decision, and N2 separately asks whether the authorized party approves the production changes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope-change-brief__q100_fresh_7",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "D1-D2 classify the JSON feed, sensor_id, and reading as unchanged; D3 classifies hourly-to-15-minute publication as a modification; D4 classifies quality_flag as an addition."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "C1 is recorded with status observed. The response makes no four-publications-per-hour impact claim, so it does not misrepresent such a calculation as a supplied estimate or verified capacity result."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "N1 separately asks who has authority for cadence and rollout, and N2 asks whether that authority approves the change. Both repeat that Mei’s 2026-11-17 approval covers only quality_flag definition and sandbox validation and excludes cadence, releases, and production changes."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "scope-change-brief__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "scope-change-brief__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "scope-change-brief__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "scope-change-brief__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "scope-change-brief__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "scope-change-brief__q100_fresh_3": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "scope-change-brief__q100_fresh_4": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "scope-change-brief__q100_fresh_5": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "scope-change-brief__q100_fresh_6": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "scope-change-brief__q100_fresh_7": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "worked-example-fading-plan",
+  "category": "education",
+  "user_problem": "Learners need a progression from fully demonstrated solutions to independent work without abrupt difficulty jumps.",
+  "unique_output": "A staged sequence specifying which solution steps remain shown, prompted, or removed at each stage.",
+  "required_input": "Target procedure, complete worked example, prerequisite list, common errors, and final independent task.",
+  "critical_rule": "Fade support by reasoning step, not cosmetic detail, and retain prompts where prerequisite evidence is absent.",
+  "nearest_existing_and_difference": "Nearest is example-set-diversifier; this sequences diminishing support rather than redesigning examples for boundary coverage.",
+  "tier": "free",
+  "acceptance_scenario": "Input procedure solves 2x+3=11 in four steps; learners often forget inverse operations. Output creates full demonstration, then a version prompting subtraction, then one prompting division, then 3x+2=14 independently."
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "transitions",
+    "unresolved_cases",
+    "normalization_assumptions",
+    "scope_exclusions"
+  ],
+  "properties": {
+    "transitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_state",
+          "event",
+          "guard",
+          "destination",
+          "effect",
+          "evidence",
+          "status"
+        ],
+        "properties": {
+          "source_state": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "guard": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "destination": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "effect": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "enum": [
+              "documented",
+              "conditional",
+              "conflicting",
+              "unspecified"
+            ]
+          }
+        }
+      }
+    },
+    "unresolved_cases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "normalization_assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scope_exclusions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

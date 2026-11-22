@@ -1,0 +1,11 @@
+{
+  "slug": "section-heading-coverage-check",
+  "category": "content",
+  "user_problem": "Document headings may promise topics, scope or conclusions that their sections do not actually cover.",
+  "unique_output": "A heading-by-heading coverage table showing the heading promise, supporting section content, missing elements, overbroad wording and bounded repair options.",
+  "required_input": "A complete document with stable heading or section IDs, the intended hierarchy, and any protected headings or required topics.",
+  "critical_rule": "Assess coverage from the supplied section content rather than the heading alone; never invent missing content or silently alter protected headings.",
+  "nearest_existing_and_difference": "Nearest is content-refresh-plan; this audits heading-to-section alignment in a supplied document rather than planning evidence-driven updates.",
+  "tier": "free",
+  "acceptance_scenario": "Input heading 'Costs and limitations' introduces a section that discusses fees but no limitations. Output marks costs covered, limitations absent, and offers either narrowing the heading or adding supported limitation content."
+}

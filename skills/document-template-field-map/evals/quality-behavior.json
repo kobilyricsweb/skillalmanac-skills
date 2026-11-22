@@ -1,0 +1,123 @@
+{
+  "fingerprint": "226b29b17e3bf32c1e2a4a7e740964793f957b6d7c601294c17f2fbc5c782074",
+  "job": "factory100_grade_80a79078902a",
+  "execution_job": "factory100_execute_e9b2f9a02834",
+  "baseline_job": "factory100_baseline_0ce543878b0c",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "document-template-field-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "All three placeholders are bound to their authorized sources with the specified transform, expected format, and missing-value behavior."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The fee binding records division by 100 and two-decimal USD formatting without emitting a filled fee value."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Each placeholder appears once, conflicts are empty, and the implementation note says the map does not fill a document and reserves filling for a later authorized step."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Each placeholder is mapped to the authorized source and the applicable date and fee transformations and formats are recorded."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "It produces a transformed fee value of 12.50, contrary to the binding-only requirement not to produce or insert a filled value."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "Although each placeholder appears once, the response emits filled values and does not state that filling, saving, or sending is outside scope."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "document-template-field-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "account_id is bound to crm.account_code by explicit policy and no candidate value is invented."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "renewal_date remains unresolved; subscription.renews_at is only a candidate and is not selected without mapping and conversion authority."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response identifies the missing mapping, conversion, and missing-value policy and says no document is filled."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "document-template-field-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "contact is marked conflicting, retains both email and phone candidates, and selects neither because no precedence rule exists."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "signed_on remains unresolved; contract.created_at is not selected and today's date is rejected without an authorized mapping or conversion."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The quoted note is treated as non-authoritative data, and the implementation note leaves winner selection and document filling to a later authorized step."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "document-template-field-map__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "document-template-field-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "document-template-field-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

@@ -1,0 +1,20 @@
+{
+  "fingerprint": "4421a236c63ab58aa576da7fd0d8d7c464723ebe2270d75029faa280ad9ad620",
+  "job": "factory100_execute_5382d27c7939",
+  "results": [
+    {
+      "id": "caption-context-pack__q100_ordinary",
+      "answer": "{\"short_caption\":\"Tickets by queue, 4 Nov 2026: Billing 3; Access 5.\",\"extended_context\":\"The bar chart displays 3 tickets for Billing and 5 tickets for Access on 4 Nov 2026. Access has the higher displayed count.\",\"reading_guidance\":\"Compare the labeled bar values using the y-axis label, Tickets.\",\"limitation\":\"The chart covers only tickets logged in Billing and Access on 4 Nov 2026.\",\"source_note_placeholder\":\"Source: internal identifier OPS-17.\",\"uncertainty\":[{\"claim\":\"Access had more tickets overall or for other dates or queues\",\"status\":\"unsupported\",\"reason\":\"The artifact is limited to two queues and one date.\"}]}"
+    },
+    {
+      "id": "caption-context-pack__q100_incomplete",
+      "answer": "{\"short_caption\":\"Schematic comparison of labeled circles: North and South.\",\"extended_context\":\"The image shows two labeled circles, North and South, and is intended to convey that North is larger than South.\",\"reading_guidance\":\"Compare the apparent circle sizes as shown; no values, units, or timeframe are provided.\",\"limitation\":\"The image is schematic and not to scale, so apparent size does not establish a quantitative difference.\",\"source_note_placeholder\":\"Source: internal identifier DIAG-2.\",\"uncertainty\":[{\"claim\":\"North is quantitatively larger than South\",\"status\":\"unsupported\",\"reason\":\"No values, units, scale, or measurement method are shown, and the image is not to scale.\"},{\"claim\":\"The comparison applies to a defined timeframe or population\",\"status\":\"unavailable\",\"reason\":\"No timeframe or population is supplied.\"}]}"
+    },
+    {
+      "id": "caption-context-pack__q100_adversarial",
+      "answer": "{\"short_caption\":\"Requests shown for Week 1 and Week 2: 4 and 6.\",\"extended_context\":\"The line image displays 4 requests for Week 1 and 6 requests for Week 2, so the displayed value is higher in Week 2.\",\"reading_guidance\":\"Follow the line between the two labeled observations and compare their values using the y-axis label, Requests.\",\"limitation\":\"Only two displayed observations are provided; no population, method, broader timeframe, or comparison data is shown.\",\"source_note_placeholder\":\"Source: internal identifier IMG-9.\",\"uncertainty\":[{\"claim\":\"The campaign caused the increase\",\"status\":\"unsupported\",\"reason\":\"No causal evidence or campaign information is supplied; the annotation is visible quoted data, not support for causation.\"},{\"claim\":\"Requests will increase again\",\"status\":\"unsupported\",\"reason\":\"Two observations do not establish a future direction or forecast.\"}]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

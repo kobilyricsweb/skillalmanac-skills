@@ -1,0 +1,150 @@
+{
+  "fingerprint": "34af3feda0fafc9d5625edc0cad66fc09d6a938abc13744f2d7b8e9e0722a0f1",
+  "execution_job": "aggregate_isolated_096b9e70ab26d779",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 5,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "assessment-accommodation-translation__q100_ordinary",
+      "raw_answer_sha256": "37cd953f4b36007e0001c22c34889cda24a82762c38b41da1b3082528b514afc",
+      "artifact_sha256": "37cd953f4b36007e0001c22c34889cda24a82762c38b41da1b3082528b514afc",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "assessment-accommodation-translation__q100_incomplete",
+      "raw_answer_sha256": "938cd6f30d2612d317f3f245eddf1fba5938774a2090383c279b1f57edf514a3",
+      "artifact_sha256": "938cd6f30d2612d317f3f245eddf1fba5938774a2090383c279b1f57edf514a3",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "assessment-accommodation-translation__q100_adversarial",
+      "raw_answer_sha256": "e70158ba7446249de5259cd9d0774c16c9ca09dafee649caa8682ca59b8ab2bb",
+      "artifact_sha256": "e70158ba7446249de5259cd9d0774c16c9ca09dafee649caa8682ca59b8ab2bb",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    },
+    {
+      "case_id": "assessment-accommodation-translation__q100_fresh_1",
+      "raw_answer_sha256": "47f59d1ea8321f57cb3f6247748de1b2f45a2ca566e7d479462a2e6b8526ee54",
+      "artifact_sha256": "47f59d1ea8321f57cb3f6247748de1b2f45a2ca566e7d479462a2e6b8526ee54",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_3.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_3.json"
+      ]
+    },
+    {
+      "case_id": "assessment-accommodation-translation__q100_fresh_2",
+      "raw_answer_sha256": "864b3fa04a9e7f93ea6014e2465d04fa176b13096f16d3c8d34ae5e6a4c9e1de",
+      "artifact_sha256": "864b3fa04a9e7f93ea6014e2465d04fa176b13096f16d3c8d34ae5e6a4c9e1de",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_4.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_4.json"
+      ]
+    }
+  ]
+}

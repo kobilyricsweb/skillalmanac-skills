@@ -1,0 +1,13 @@
+{
+  "fingerprint": "7e57d73cc80f90179c5bd9c795e4be518eeb005cb266223c226e6ae9fdb99f9b",
+  "job": "factory100_baseline_4864d4cccc17",
+  "results": [
+    {
+      "id": "glossary-relationship-map__q100_ordinary",
+      "answer": "Relationship map:\n- T1 Container → broader-than → T2 Box.\n- T2 Box → narrower-than → T1 Container (mechanical inverse).\n- T2 Box ↔ related-to ↔ T3 Label (symmetric).\n\nProhibited equivalences:\n- T2 Box is not equivalent to T3 Label.\n- No other equivalences are established.\n\nUnresolved links:\n- No approved relation is supplied between T1 Container and T3 Label; do not infer one transitively from T1–T2 and T2–T3.\n- No distinct-from relations are supplied.\n\nVerification report:\n- All three entries are represented.\n- Approved broader-than and related-to statements are preserved.\n- The inverse narrower-than relation is included.\n- Symmetry of related-to is represented.\n- No transitive inference is applied.\n- No prohibited equivalence is asserted."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

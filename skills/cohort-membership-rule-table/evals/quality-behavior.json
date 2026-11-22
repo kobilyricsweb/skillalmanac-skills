@@ -1,0 +1,123 @@
+{
+  "fingerprint": "9307e463e7889ff66d5b3e3803125674ca850a4e685c1d1dafb40ca8ba1b1790",
+  "job": "factory100_grade_2d6d90fbe7d9",
+  "execution_job": "factory100_execute_c17bc6310f12",
+  "baseline_job": "factory100_baseline_e5e484949fb4",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "cohort-membership-rule-table__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Classifies R1 included and traces active status, the inclusive 2026-11-01 boundary, and false test flag."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Classifies R2 excluded specifically because test_flag is true."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Classifies R3 excluded because its status is inactive and presents no unresolved conflict."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Classifies R1 included with an explicit path through active status, inclusive start date, and false test flag."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Classifies R2 excluded through the true test-flag exclusion."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Classifies R3 excluded for inactive status and supplies an empty unresolved_conflicts list."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cohort-membership-rule-table__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Shows score 2 satisfying both Early’s minimum and Late’s maximum conditions."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Marks R1 indeterminate because both cohorts qualify while multiple membership is prohibited and no winner can be selected."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Identifies the missing precedence rule without inventing one."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cohort-membership-rule-table__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Keeps unknown consent unknown and classifies R1 as indeterminate."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Classifies R2 included using its in-range date, true consent, and false blocked value."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "States that the note overriding unknown consent is not operative and provides no cohort population estimate."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "cohort-membership-rule-table__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "cohort-membership-rule-table__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "cohort-membership-rule-table__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

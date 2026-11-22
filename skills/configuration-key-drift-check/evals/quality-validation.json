@@ -1,0 +1,58 @@
+{
+  "fingerprint": "4cd23bbc96149667ec702f51c00c612919af28a71944083733be192bb0968751",
+  "passed": true,
+  "lint": {
+    "skill": "configuration-key-drift-check",
+    "fail": 0,
+    "warn": 0,
+    "items": [
+      {
+        "level": "PASS",
+        "code": "frontmatter-keys",
+        "message": "only open-spec keys used"
+      },
+      {
+        "level": "PASS",
+        "code": "name-format",
+        "message": "name 'configuration-key-drift-check' is valid"
+      },
+      {
+        "level": "PASS",
+        "code": "description-length",
+        "message": "description is 289 chars"
+      },
+      {
+        "level": "PASS",
+        "code": "body-lines",
+        "message": "SKILL.md body has 29 lines"
+      },
+      {
+        "level": "PASS",
+        "code": "body-tokens",
+        "message": "body is about 649 tokens by chars/4"
+      },
+      {
+        "level": "PASS",
+        "code": "package-size",
+        "message": "package is 26373 bytes in 5 files"
+      }
+    ]
+  },
+  "quick_exit": 0,
+  "quick_stdout": "Skill is valid!\n",
+  "quick_stderr": "",
+  "schema_error": null,
+  "fixture_exit": 0,
+  "fixture_stdout": "{\"method\": \"retained observed-output regression replay; missing-file path excluded; not independent truth\", \"passed\": true, \"fixtures\": [{\"id\": \"good\", \"passed\": true, \"exit\": 0, \"actual\": {\"configuration_count\": 2, \"errors\": [], \"findings\": [], \"ok\": true}}, {\"id\": \"domain-defect\", \"passed\": true, \"exit\": 1, \"actual\": {\"configuration_count\": 1, \"errors\": [], \"findings\": [{\"code\": \"DUPLICATE_CONFIG_KEY\", \"configuration\": \"prod\", \"keys\": [\"PORT\"]}, {\"code\": \"MISSING_REQUIRED_KEY\", \"configuration\": \"prod\", \"keys\": [\"HOST\"]}], \"ok\": false}}, {\"id\": \"malformed\", \"passed\": true, \"exit\": 2, \"actual\": {\"configuration_count\": 1, \"errors\": [{\"code\": \"DUPLICATE_DECLARED_KEY\", \"message\": \"required_keys contains a duplicate key\"}], \"findings\": [], \"input_error\": true, \"ok\": false}}, {\"id\": \"boundary\", \"passed\": true, \"exit\": 0, \"actual\": {\"configuration_count\": 1, \"errors\": [], \"findings\": [], \"ok\": true}}, {\"id\": \"extra-not-used\", \"passed\": true, \"exit\": 1, \"actual\": {\"configuration_count\": 1, \"errors\": [], \"findings\": [{\"code\": \"UNEXPECTED_KEY\", \"configuration\": \"prod\", \"keys\": [\"Z\"]}], \"ok\": false}}, {\"id\": \"numeric_token_bound\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"number exceeds coefficient-digit or exponent limit (1000)\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"nonstring_config_key\", \"passed\": true, \"exit\": 2, \"actual\": {\"configuration_count\": 1, \"errors\": [{\"code\": \"CONFIGURATION_KEY_TYPE\", \"message\": \"configuration keys must be nonempty strings of at most 200 characters\"}], \"findings\": [], \"input_error\": true, \"ok\": false}}, {\"id\": \"unhashable_declared_key\", \"passed\": true, \"exit\": 2, \"actual\": {\"configuration_count\": 1, \"errors\": [{\"code\": \"KEY_TYPE\", \"message\": \"required_keys contains an invalid key\"}], \"findings\": [], \"input_error\": true, \"ok\": false}}, {\"id\": \"unhashable_config_name\", \"passed\": true, \"exit\": 2, \"actual\": {\"configuration_count\": 1, \"errors\": [{\"code\": \"CONFIGURATION_NAME\", \"message\": \"configuration names must be unique nonempty strings\"}], \"findings\": [], \"input_error\": true, \"ok\": false}}, {\"id\": \"overlapping_declarations\", \"passed\": true, \"exit\": 2, \"actual\": {\"configuration_count\": 1, \"errors\": [{\"code\": \"REQUIRED_OPTIONAL_OVERLAP\", \"message\": \"required and optional keys overlap\"}], \"findings\": [], \"input_error\": true, \"ok\": false}}, {\"id\": \"case_sensitive_keys\", \"passed\": true, \"exit\": 1, \"actual\": {\"configuration_count\": 1, \"errors\": [], \"findings\": [{\"code\": \"MISSING_REQUIRED_KEY\", \"configuration\": \"prod\", \"keys\": [\"A\"]}, {\"code\": \"UNEXPECTED_KEY\", \"configuration\": \"prod\", \"keys\": [\"a\"]}], \"ok\": false}}, {\"id\": \"duplicate_json_key\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"duplicate JSON object key\", \"errors\": []}}, {\"id\": \"nonfinite\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"non-finite JSON number\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"truncated\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"Expecting value: line 1 column 6 (char 5)\", \"errors\": []}}, {\"id\": \"missing_file\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"[WinError 2] The system cannot find the file specified: '<local-path>'\", \"errors\": []}}, {\"id\": \"peer_cli_integration\", \"passed\": true, \"exit\": 1, \"actual\": {\"configuration_count\": 1, \"errors\": [], \"findings\": [{\"code\": \"DUPLICATE_CONFIG_KEY\", \"configuration\": \"preview\", \"keys\": [\"TRACE\"]}, {\"code\": \"MISSING_REQUIRED_KEY\", \"configuration\": \"preview\", \"keys\": [\"PORT\"]}, {\"code\": \"UNEXPECTED_KEY\", \"configuration\": \"preview\", \"keys\": [\"EXTRA\"]}], \"ok\": false}}]}\n",
+  "fixture_stderr": "",
+  "numeric_regressions": {
+    "exit": 0,
+    "stdout": "{\"method\": \"normative independent input/error and finite-Decimal domain assertions\", \"passed\": true, \"fixtures\": [{\"id\": \"extreme-exponent\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"invalid decimal number\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"finite-large\", \"passed\": true, \"exit\": 2, \"actual\": {\"configuration_count\": 0, \"errors\": [{\"code\": \"UNKNOWN_OR_MISSING_KEY\", \"message\": \"top-level keys are exactly required_keys, optional_keys, configurations\"}], \"findings\": [], \"input_error\": true, \"ok\": false}}, {\"id\": \"finite-negative-large\", \"passed\": true, \"exit\": 2, \"actual\": {\"configuration_count\": 0, \"errors\": [{\"code\": \"UNKNOWN_OR_MISSING_KEY\", \"message\": \"top-level keys are exactly required_keys, optional_keys, configurations\"}], \"findings\": [], \"input_error\": true, \"ok\": false}}, {\"id\": \"infinity\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"non-finite JSON number\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"integer5000\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"number exceeds coefficient-digit or exponent limit (1000)\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"nan\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"non-finite JSON number\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"negative-extreme-exponent\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"invalid decimal number\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"negative-infinity\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"non-finite JSON number\", \"errors\": [], \"code\": \"invalid_number\"}}]}\n",
+    "stderr": ""
+  },
+  "top_level_counts": {
+    "exit": 0,
+    "stdout": "{\"method\": \"normative top-level schema errors retain observable supplied array length, not validated entities\", \"passed\": true, \"fixtures\": [{\"id\": \"extra-key\", \"passed\": true, \"expected_count\": 2, \"exit\": 2, \"actual\": {\"configuration_count\": 2, \"errors\": [{\"code\": \"UNKNOWN_OR_MISSING_KEY\", \"message\": \"top-level keys are exactly required_keys, optional_keys, configurations\"}], \"findings\": [], \"input_error\": true, \"ok\": false}}, {\"id\": \"missing-key\", \"passed\": true, \"expected_count\": 2, \"exit\": 2, \"actual\": {\"configuration_count\": 2, \"errors\": [{\"code\": \"UNKNOWN_OR_MISSING_KEY\", \"message\": \"top-level keys are exactly required_keys, optional_keys, configurations\"}], \"findings\": [], \"input_error\": true, \"ok\": false}}, {\"id\": \"oversized-array\", \"passed\": true, \"expected_count\": 101, \"exit\": 2, \"actual\": {\"configuration_count\": 101, \"errors\": [{\"code\": \"CONFIGURATION_TYPE_OR_LIMIT\", \"message\": \"configurations must contain 1 to 100 objects\"}], \"findings\": [], \"input_error\": true, \"ok\": false}}, {\"id\": \"wrong-array-type\", \"passed\": true, \"expected_count\": 0, \"exit\": 2, \"actual\": {\"configuration_count\": 0, \"errors\": [{\"code\": \"UNKNOWN_OR_MISSING_KEY\", \"message\": \"top-level keys are exactly required_keys, optional_keys, configurations\"}], \"findings\": [], \"input_error\": true, \"ok\": false}}]}\n",
+    "stderr": ""
+  }
+}

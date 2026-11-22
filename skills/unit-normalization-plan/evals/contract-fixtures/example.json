@@ -1,0 +1,25 @@
+{
+  "field_specifications": [
+    {
+      "field": "cable_length",
+      "original_value": 2,
+      "source_unit": "m",
+      "target_unit": "cm",
+      "supplied_formula": "target = source * 100",
+      "precision_rule": "whole centimetres",
+      "validation_checks": [
+        "Confirm the source label is m before applying the formula.",
+        "Confirm multiplication is in the supplied source-to-target direction.",
+        "Retain the original value 2 m."
+      ],
+      "status": "planned",
+      "planned_output": 200
+    }
+  ],
+  "quarantined_cases": [],
+  "scope_limits": [
+    "Applies only to cable_length records explicitly labeled m.",
+    "The output 200 cm is an illustration, not an executed source-data change."
+  ],
+  "execution_authorized": false
+}

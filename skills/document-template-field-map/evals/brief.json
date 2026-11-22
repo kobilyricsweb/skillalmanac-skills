@@ -1,0 +1,11 @@
+{
+  "slug": "document-template-field-map",
+  "category": "operations",
+  "user_problem": "Template placeholders have unclear sources, conversions and missing-value behavior.",
+  "unique_output": "Placeholder-to-supplied-source binding map with declared transforms, conflicts and unresolved values, not a filled or sent document.",
+  "required_input": "Template placeholders, candidate source fields and explicit mapping/transform policies.",
+  "critical_rule": "Similar field names do not prove equivalence; no source or transform may be invented.",
+  "nearest_existing_and_difference": "dataset-field-dictionary-builder defines fields; this binds fields to template placeholders under explicit mapping rules.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Template client_name maps explicitly to customer.display_name; invoice_date has no mapping and remains unknown rather than using today."
+}

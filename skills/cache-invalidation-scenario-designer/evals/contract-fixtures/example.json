@@ -1,0 +1,36 @@
+{
+  "scenario_table": [
+    {
+      "mutation": "M1",
+      "affected_key": "profile:{id}",
+      "reader": "R1",
+      "relationship_status": "specified",
+      "invalidation_timing": "immediately",
+      "allowed_staleness": "none after M1",
+      "evidence": [
+        "K1",
+        "R1",
+        "M1",
+        "I1",
+        "A1"
+      ]
+    }
+  ],
+  "affected_keys": [
+    "profile:{id}"
+  ],
+  "readers": [
+    "R1"
+  ],
+  "invalidation_timing": "fully_specified",
+  "allowed_staleness": "fully_specified",
+  "evidence": [
+    "K1 maps profile:{id} to one profile.",
+    "R1 reads K1.",
+    "I1 explicitly connects M1 to matching K1.",
+    "A1 defines R1's staleness allowance."
+  ],
+  "unresolved_relationships": [],
+  "conflicts": [],
+  "verification_statement": "The casebook describes only the supplied specification; it does not verify runtime cache behavior."
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Map every tutorial step to prerequisites, state, inputs, artifacts, and verification cues.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find setup dependencies that the tutorial introduces too late.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a prerequisite graph from these supplied instructional steps without running them.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify missing knowledge, credentials, prior state, and artifacts in this tutorial.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which step produces each artifact and where it is consumed.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review this tutorial for hidden dependencies and unverifiable checkpoints.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark omitted prerequisites as unknown instead of assuming the environment.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map this five-step walkthrough and flag a credential dependency introduced after it is needed.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a step-level dependency register for a tutorial author.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check whether each tutorial step has the inputs and verification cue it needs.",
+    "should_trigger": true
+  },
+  {
+    "query": "Execute the tutorial in my environment and report the actual result.",
+    "should_trigger": false
+  },
+  {
+    "query": "Install the missing packages and configure the credentials.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a complete handover checklist for the operations team.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a general documentation page explaining this product.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run a deployment and verify the production endpoint.",
+    "should_trigger": false
+  },
+  {
+    "query": "Research the official setup requirements online.",
+    "should_trigger": false
+  },
+  {
+    "query": "Refactor the tutorial commands so they work on every operating system.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit the document for accessibility and inclusive language.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare two runbooks and decide which procedure is factually correct.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send the listed credentials to the learner and notify the team.",
+    "should_trigger": false
+  }
+]

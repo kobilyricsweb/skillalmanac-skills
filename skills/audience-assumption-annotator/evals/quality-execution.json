@@ -1,0 +1,51 @@
+{
+  "fingerprint": "9866eb4d406815b69a22ef00b227b2180229fbba491a419d5298ef600d74b664",
+  "job": "aggregate_isolated_06239c7a7e681a84",
+  "results": [
+    {
+      "id": "audience-assumption-annotator__q100_ordinary",
+      "answer": "{\"annotations\":[{\"passage\":\"Open the dashboard and export the report as CSV.\",\"location\":\"P1\",\"assumption_type\":\"access\",\"evidence\":\"The audience has view-only dashboard accounts, and the available resources explicitly state that no export permission is provided.\",\"status\":\"mismatch\",\"consequence\":\"Readers can open and view the dashboard but cannot complete the CSV export.\",\"bounded_clarification\":\"State who will export and provide the CSV, or replace the export instruction with a view-only action available to these accounts.\"},{\"passage\":\"Use the downloaded file for the meeting.\",\"location\":\"P2\",\"assumption_type\":\"context\",\"evidence\":\"P2 presumes a downloaded file exists, but the stated lack of export permission prevents the preceding download workflow from producing it.\",\"status\":\"mismatch\",\"consequence\":\"Readers will not have the referenced file for the meeting.\",\"bounded_clarification\":\"Identify the accessible meeting resource, or state that an authorized person will provide the CSV before the meeting.\"}],\"unresolved\":[],\"coverage\":{\"reviewed_locations\":[\"P1 reviewed: opening and viewing the dashboard require no annotation because dashboard access with viewing permission is supplied; exporting as CSV is annotated because export permission is explicitly unavailable.\",\"P2 reviewed: reliance on the downloaded file is annotated because the supplied access cannot produce it.\",\"No motivation or general technical-ability assumptions were inferred from contractor status. The statement that readers understand reports supports ordinary report use, while web browsing is the only stated technical prerequisite.\"],\"unavailable_inputs\":[]}}",
+      "individual_job": "factory100_exec_isolated_84f8a585f24f"
+    },
+    {
+      "id": "audience-assumption-annotator__q100_incomplete",
+      "answer": "{\"annotations\":[{\"passage\":\"Compare the two charts before class.\",\"location\":\"P1\",\"assumption_type\":\"access\",\"evidence\":\"The instruction requires access to two charts before class, but available resources and access were not supplied. The chart-reading prerequisite establishes ability, not access.\",\"status\":\"unresolved\",\"consequence\":\"It cannot be established whether attendees can complete the comparison before class.\",\"bounded_clarification\":\"Identify where and how attendees can access both charts before class.\"}],\"unresolved\":[{\"issue\":\"Compatibility of the pre-class chart comparison and the follow-on conclusion task with the audience’s available resources cannot be determined.\",\"missing_or_conflicting_input\":\"Available resources and access, including whether both charts are provided before class, were not supplied.\"}],\"coverage\":{\"reviewed_locations\":[\"P1 reviewed; the ability to read a simple chart supports the knowledge demand, but access to both charts before class is unresolved and annotated.\",\"P2 reviewed; bringing a conclusion to the discussion requires no separate annotation because the draft explicitly directs attendees to form it from P1, although feasibility remains conditional on the unresolved chart access.\",\"No assumption about device ownership or prior attendance was made; no motivation issue is evidenced.\"],\"unavailable_inputs\":[\"Available resources and access.\"]}}",
+      "individual_job": "factory100_exec_isolated_8f9e43ae98e1"
+    },
+    {
+      "id": "audience-assumption-annotator__q100_adversarial",
+      "answer": "{\"annotations\":[{\"passage\":\"Upload the image from your company phone.\",\"location\":\"P1\",\"assumption_type\":\"access\",\"evidence\":\"The audience has access to a shared desktop and an upload page, but company-phone access is not established. The supplied inputs do not explicitly deny phone access.\",\"status\":\"unresolved\",\"consequence\":\"Some readers may be unable to obtain or upload an image from the specified device.\",\"bounded_clarification\":\"State where the image is available and permit upload from the shared desktop, or explicitly identify company-phone access as a prerequisite.\"}],\"unresolved\":[{\"issue\":\"Whether volunteers have access to a company phone containing the required image.\",\"missing_or_conflicting_input\":\"Company-phone access and the image’s available location are not established.\"}],\"coverage\":{\"reviewed_locations\":[\"P1 reviewed; its company-phone access assumption is annotated as unresolved.\",\"P2 reviewed; no annotation is needed because basic browser use and access to the upload page support selecting Submit.\",\"The margin note was reviewed only as supplied data; its claim about volunteers’ motivation is unsupported and excluded from the findings.\"],\"unavailable_inputs\":[\"Confirmation of company-phone access and the image’s available location.\"]}}",
+      "individual_job": "factory100_exec_isolated_7829225b2239"
+    },
+    {
+      "id": "audience-assumption-annotator__q100_fresh_1",
+      "answer": "{\"annotations\":[],\"unresolved\":[],\"coverage\":{\"reviewed_locations\":[\"P1 reviewed; no annotation is needed because the declared audience profile affirmatively states that trainees are issued a printed safety handbook. The separate resource list's failure to list a printer or printed handbook does not negate that fact or create a conflict.\",\"P2 reviewed; no annotation is needed because basic browser search is a known prerequisite, and each trainee has access to a workstation with the handbook PDF open in a browser. These facts support using the browser's search function to find the equipment code.\"],\"unavailable_inputs\":[]}}",
+      "individual_job": "factory100_exec_isolated_e8bef8276cd6"
+    },
+    {
+      "id": "audience-assumption-annotator__q100_fresh_2",
+      "answer": "{\"annotations\":[{\"passage\":\"Circle one answer in the workbook.\",\"location\":\"P1\",\"assumption_type\":\"access\",\"evidence\":\"The audience profile says learners were issued a printed workbook, while the resource list says the workbook is provided only as a PDF. These statements directly conflict. Printing access and device ownership cannot be inferred from the remote-learner label.\",\"status\":\"conflict\",\"consequence\":\"The instruction may be straightforward for a printed copy but may require an unspecified annotation method for a PDF.\",\"bounded_clarification\":\"Mark one answer in the workbook using the method available for your copy.\"}],\"unresolved\":[{\"issue\":\"The workbook format and corresponding method for marking an answer cannot be established consistently.\",\"missing_or_conflicting_input\":\"The profile states that learners received a printed workbook; the resource list states that the workbook is available only as a PDF.\"}],\"coverage\":{\"reviewed_locations\":[\"P1 reviewed; the instruction depends on the workbook format, which is explicitly disputed by the supplied inputs, so it is annotated conditionally without inferring printing or device access.\",\"P2 reviewed; no annotation is needed because learners are explicitly able to use a glossary and the available PDF explicitly includes one. The workbook-format conflict does not negate that affirmative support for the PDF glossary.\"],\"unavailable_inputs\":[]}}",
+      "individual_job": "factory100_exec_isolated_b397023f6eda"
+    },
+    {
+      "id": "audience-assumption-annotator__q100_fresh_3",
+      "answer": "{\"annotations\":[{\"passage\":\"Convert the reading from mg/L to ppm before continuing.\",\"location\":\"P1\",\"assumption_type\":\"knowledge\",\"evidence\":\"The supplied prerequisites establish that readers can read decimal measurements and use a calculator, but explicitly state that no unit-conversion relationship is supplied. Scientific training and unit-conversion knowledge are excluded assumptions.\",\"status\":\"unresolved\",\"consequence\":\"Readers may be unable to determine the correct conversion relationship and therefore may not know whether or how to change the numerical value.\",\"bounded_clarification\":\"State the conversion relationship that applies in this sampling context, including any conditions needed for it to be valid.\"}],\"unresolved\":[{\"issue\":\"Whether readers know the applicable relationship between mg/L and ppm cannot be established.\",\"missing_or_conflicting_input\":\"No unit-conversion relationship is supplied, and unit-conversion knowledge may not be inferred from the audience label.\"}],\"coverage\":{\"reviewed_locations\":[\"P1 reviewed; the instruction silently assumes an applicable unit-conversion relationship not established by the supplied prerequisites or resources, so it is annotated as unresolved.\",\"P2 reviewed; no annotation is needed because Worksheet A is explicitly available and the audience can read decimal measurements, supporting recording the original reading.\"],\"unavailable_inputs\":[\"The applicable mg/L-to-ppm conversion relationship and any conditions governing its use are not supplied.\"]}}",
+      "individual_job": "factory100_exec_isolated_7ebe72cab88e"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools_isolated_cases",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "case_context_isolated": true,
+  "answer_word_budget": 600,
+  "individual_worker_jobs": [
+    "factory100_exec_isolated_84f8a585f24f",
+    "factory100_exec_isolated_8f9e43ae98e1",
+    "factory100_exec_isolated_7829225b2239",
+    "factory100_exec_isolated_e8bef8276cd6",
+    "factory100_exec_isolated_b397023f6eda",
+    "factory100_exec_isolated_7ebe72cab88e"
+  ],
+  "method_note": "Every case uses its own fresh context. Both arms use identical model/effort/budget; raw responses unchanged, original prompts/assertions preserved, prior failures retained. Aggregate is a provenance index, not a model call."
+}

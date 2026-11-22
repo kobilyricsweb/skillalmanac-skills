@@ -1,0 +1,614 @@
+{
+  "required_keys": [
+    "HOST"
+  ],
+  "optional_keys": [],
+  "configurations": [
+    {
+      "name": "c0",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c1",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c2",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c3",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c4",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c5",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c6",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c7",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c8",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c9",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c10",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c11",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c12",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c13",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c14",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c15",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c16",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c17",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c18",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c19",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c20",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c21",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c22",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c23",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c24",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c25",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c26",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c27",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c28",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c29",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c30",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c31",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c32",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c33",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c34",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c35",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c36",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c37",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c38",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c39",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c40",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c41",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c42",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c43",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c44",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c45",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c46",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c47",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c48",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c49",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c50",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c51",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c52",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c53",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c54",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c55",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c56",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c57",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c58",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c59",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c60",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c61",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c62",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c63",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c64",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c65",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c66",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c67",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c68",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c69",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c70",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c71",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c72",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c73",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c74",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c75",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c76",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c77",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c78",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c79",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c80",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c81",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c82",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c83",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c84",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c85",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c86",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c87",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c88",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c89",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c90",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c91",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c92",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c93",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c94",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c95",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c96",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c97",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c98",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c99",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "c100",
+      "keys": [
+        "HOST"
+      ]
+    }
+  ]
+}

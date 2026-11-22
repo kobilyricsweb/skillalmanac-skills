@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create a review queue for evidence records using their supplied review periods and dependencies.",
+    "should_trigger": true
+  },
+  {
+    "query": "Calculate which evidence items are due for review and show the date arithmetic.",
+    "should_trigger": true
+  },
+  {
+    "query": "Prioritize evidence review based on the supplied dependent-claim policy.",
+    "should_trigger": true
+  },
+  {
+    "query": "Leave evidence without a review rule unscheduled in the queue.",
+    "should_trigger": true
+  },
+  {
+    "query": "List the claims affected by each evidence item and its review trigger.",
+    "should_trigger": true
+  },
+  {
+    "query": "Distinguish review due from evidence being false or superseded.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a collection-wide evidence attention queue from these records.",
+    "should_trigger": true
+  },
+  {
+    "query": "Apply explicit supersession notes without inventing additional status.",
+    "should_trigger": true
+  },
+  {
+    "query": "Verify every evidence record is covered and every calculated date is supported.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create neutral interim labels for evidence awaiting review.",
+    "should_trigger": true
+  },
+  {
+    "query": "Refresh this single knowledge page with newer evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Split this long article into separate user-task pages.",
+    "should_trigger": false
+  },
+  {
+    "query": "Resolve which supplied policy controls the other.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a finding aid from this archive inventory.",
+    "should_trigger": false
+  },
+  {
+    "query": "Disambiguate AR occurrences using the approved glossary.",
+    "should_trigger": false
+  },
+  {
+    "query": "Check terminology consistency throughout the documentation set.",
+    "should_trigger": false
+  },
+  {
+    "query": "Declare this evidence false because its review date passed.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent a six-month review date for records with no rule.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send reminders and update the linked claims automatically.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify the evidence as reliable under an external standard.",
+    "should_trigger": false
+  }
+]

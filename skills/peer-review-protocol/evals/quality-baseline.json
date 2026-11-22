@@ -1,0 +1,12 @@
+{
+  "fingerprint": "a6f96433390d1995c993b3eeaab05236373a1062eeb6d2339987ba396580ff19",
+  "job": "factory100_baseline_d46002e2c27a",
+  "results": [
+    {
+      "id": "peer-review-protocol__q100_ordinary",
+      "answer": "Six-minute peer-review protocol\n\n0:00–0:45 — Confirm the artifact is one plain-text paragraph and identify the author’s choice.\n0:45–1:45 — Check the evidence location: verify that the paragraph uses a fact supplied in the prompt, such as “Park A has two benches” or “Park B has one bench and one fountain.”\n1:45–2:45 — Check rubric alignment: clear choice, one accurate supplied fact, and one sentence connecting that fact to the choice.\n2:45–3:30 — Ask the author: “Which supplied fact most directly supports your choice?”\n3:30–4:30 — Select one revision: clarify the choice-to-fact connection or correct an inaccurate supplied fact.\n4:30–5:30 — Handle disagreement by quoting the relevant paragraph wording, comparing it with the prompt and rubric, and recording the unresolved interpretation without assessing personal qualities.\n5:30–6:00 — Completion check: one paragraph, plain text, clear choice, accurate supplied fact, explicit connection sentence, and feedback limited to paragraph content and rubric alignment."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

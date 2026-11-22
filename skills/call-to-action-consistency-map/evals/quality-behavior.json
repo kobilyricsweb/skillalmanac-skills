@@ -1,0 +1,152 @@
+{
+  "fingerprint": "1f9f7d75dc1729c602d1735c798c5988097a5a819237517a53e31a9db6da364a",
+  "job": "factory100_grade_2d6d90fbe7d9",
+  "execution_job": "factory100_execute_6a8c30f08074",
+  "baseline_job": "factory100_baseline_89f096a32320",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "call-to-action-consistency-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Marks the evaluating-stage CTA as a fit and summarizes the approved web-page path."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Marks the described screenshot-based educational demonstration destination as a fit."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Makes no purchase, signup-performance, conversion, or implementation claim and proposes no replacement CTA."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Explicitly finds the CTA stage-compatible and approved within the web-page scope."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Finds the two-minute method demonstration consistent with the CTA promise."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Notes there is no purchase or signup step without claiming performance or implementation, and does not propose a replacement."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "call-to-action-consistency-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Marks the new-reader introductory-education transition and approved email wording as a fit."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Sets destination_result to unresolved and identifies the missing factual destination description."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "States that the name alone establishes neither content nor guide, signup, or purchase capability and does not claim checkout occurred."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "call-to-action-consistency-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Marks the comparing-reader direct-purchase transition as prohibited."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Separately marks checkout as fitting the current purchase CTA while explaining that it fails the surrounding comparison message."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Offers “Compare plans” as a proposed approved CTA dependent on an actual comparison destination and rejects the relabeling request as non-authoritative data."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "call-to-action-consistency-map__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Marks direct consultation booking as prohibited for a first-time reader while finding that the scheduling form fits the current booking CTA."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Explicitly identifies the conflict between the educational-overview copy and the booking CTA and destination."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Proposes “Read the overview” and states that the existing scheduling destination must be replaced or shown to contain the overview."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "call-to-action-consistency-map__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "call-to-action-consistency-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "call-to-action-consistency-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "call-to-action-consistency-map__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

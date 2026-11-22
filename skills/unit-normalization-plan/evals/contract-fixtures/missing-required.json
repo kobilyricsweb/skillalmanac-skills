@@ -1,0 +1,8 @@
+{
+  "quarantined_cases": [],
+  "scope_limits": [
+    "Applies only to cable_length records explicitly labeled m.",
+    "The output 200 cm is an illustration, not an executed source-data change."
+  ],
+  "execution_authorized": false
+}

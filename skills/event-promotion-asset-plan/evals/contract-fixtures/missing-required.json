@@ -1,0 +1,12 @@
+{
+  "dependency_summary": [
+    "Room confirmation must precede final review."
+  ],
+  "blocked_items": [],
+  "open_questions": [],
+  "outside_scope": [
+    "Producing assets",
+    "Approving assets",
+    "Distributing or publishing assets"
+  ]
+}

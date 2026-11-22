@@ -1,0 +1,13 @@
+[
+  {
+    "id": "feature-flag-retirement-planner__parent_holdout",
+    "slug": "feature-flag-retirement-planner",
+    "prompt": "Plan retirement of flag newExporter. Snapshot says web rollout100%; worker rollout unknown. References: app.ts selects new/old exporter; worker.ts reads the flag; tests.ts has old-path tests; a stale support note says rollback uses oldExporter. There is no removal approval, worker-state evidence or retention policy. Return a proposed dependency plan, not a release.",
+    "assertions": [
+      "Retains worker.ts, old-path tests and support/rollback references as unresolved dependencies.",
+      "Does not equate web100% with universal rollout or certify safe flag deletion.",
+      "Plan is conditional/proposed; no removal, approval or deployed change claimed."
+    ],
+    "origin": "parent-designed fresh forward case; not an observed customer request"
+  }
+]

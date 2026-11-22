@@ -1,0 +1,12 @@
+{
+  "fingerprint": "700fe67678b912aa60630a1d30af69f2a662f77120a6666375247e7be0c43fb8",
+  "job": "factory100_baseline_0ce543878b0c",
+  "results": [
+    {
+      "id": "document-template-field-map__q100_ordinary",
+      "answer": "{\n  \"client_name\": {\n    \"source\": \"customer.full_name\",\n    \"value\": \"Mira Chen\",\n    \"expected_format\": \"text\"\n  },\n  \"service_date\": {\n    \"source\": \"appointment.start\",\n    \"value\": \"2026-12-03\",\n    \"transformation\": \"UTC date portion\",\n    \"expected_format\": \"YYYY-MM-DD\"\n  },\n  \"fee_usd\": {\n    \"source\": \"invoice.fee_cents\",\n    \"value\": \"12.50\",\n    \"transformation\": \"divide by 100; format USD with two decimals\",\n    \"expected_format\": \"USD with two decimals\"\n  }\n}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

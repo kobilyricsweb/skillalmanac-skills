@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "audience",
+    "objective",
+    "sections",
+    "sequence_rationale",
+    "rejection_log",
+    "unresolved_gaps"
+  ],
+  "properties": {
+    "audience": {
+      "type": "string"
+    },
+    "objective": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "order",
+          "visitor_question",
+          "message_ids",
+          "approved_claim",
+          "evidence",
+          "cta",
+          "cta_status",
+          "restrictions",
+          "gaps"
+        ],
+        "properties": {
+          "order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "visitor_question": {
+            "type": "string"
+          },
+          "message_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "approved_claim": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidence": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "asset_id": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "location": {
+                "type": "string"
+              },
+              "support_status": {
+                "enum": [
+                  "direct",
+                  "not_supplied",
+                  "conflicting"
+                ]
+              }
+            },
+            "required": [
+              "asset_id",
+              "description",
+              "location",
+              "support_status"
+            ],
+            "additionalProperties": false
+          },
+          "cta": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "wording": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "destination": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "audience": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "authority_status": {
+                "enum": [
+                  "authorized",
+                  "not_supplied",
+                  "conflicting",
+                  "prohibited"
+                ]
+              },
+              "prerequisites": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "wording",
+              "destination",
+              "audience",
+              "authority_status",
+              "prerequisites"
+            ],
+            "additionalProperties": false
+          },
+          "cta_status": {
+            "enum": [
+              "not_applicable",
+              "authorized",
+              "unresolved",
+              "prohibited"
+            ]
+          },
+          "restrictions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "gaps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "cta_status": {
+                  "const": "authorized"
+                }
+              },
+              "required": [
+                "cta_status"
+              ]
+            },
+            "then": {
+              "properties": {
+                "cta": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "sequence_rationale": {
+      "type": "string"
+    },
+    "rejection_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "item_id",
+          "reason",
+          "status"
+        ],
+        "properties": {
+          "item_id": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "unsupported",
+              "unauthorized",
+              "conflicting",
+              "prohibited"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "unresolved_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

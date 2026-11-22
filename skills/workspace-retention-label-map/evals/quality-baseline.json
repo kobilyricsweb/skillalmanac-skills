@@ -1,0 +1,17 @@
+{
+  "fingerprint": "c9f5ec8b8e187cf0b2e208dbe9272a8021a26b163c9fc7aefce46fd020c11c87",
+  "job": "factory100_baseline_608baf589df6",
+  "results": [
+    {
+      "id": "workspace-retention-label-map__q100_ordinary",
+      "answer": "Draft map:\n\nA — Description: “Purchase order; status signed.” Cues: order purpose present; explicit signed status present. Assigned label: ORDER-FINAL. Rule: M1. Conflict: none. Exclusion: not a training sample as described. Approved-label check: ORDER-FINAL is approved.\n\nB — Description: “Purchase order; status draft.” Cues: order purpose present; explicit draft status present. Assigned label: ORDER-DRAFT. Rule: M2. Conflict: none. Exclusion: not a training sample as described. Approved-label check: ORDER-DRAFT is approved.\n\nUnresolved queue: none for A or B. Items lacking an order purpose or explicit signed/draft status remain unresolved. Training samples require manual review. Signed and draft cues together require manual review.\n\nRule register: M1: Signed order → ORDER-FINAL. M2: Draft order → ORDER-DRAFT. No retention periods inferred."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "raw_response_unchanged": true,
+  "recovered_storage_callback": true,
+  "batch_protocol_complete": true,
+  "request_prompts_exactly_match_current_cases": true,
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

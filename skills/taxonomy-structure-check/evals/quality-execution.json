@@ -1,0 +1,24 @@
+{
+  "fingerprint": "5e1b64c6782cf7f52542d2b471e8b86dc3264d3d1e9cf37d8b0040304f514bf9",
+  "job": "factory100_execute_0c09cbaf959c",
+  "results": [
+    {
+      "id": "taxonomy-structure-check__q100_ordinary",
+      "answer": "Assessment type: manual and unexecuted; the interpreter and bundled script were not run.\n\nInput validation: structurally valid for the supplied extract: unique nonempty string IDs, valid parent_id values, and five nodes.\n\nRoots: [\"r\"].\nOrphan references: [{\"id\":\"b\",\"parent_id\":\"x\"}].\nSelf-parenting: none.\nCycles: [[\"c\",\"d\"]].\n\nConclusion: the bounded structural audit has findings, so it would correspond to a findings result rather than a clean pass. Scope is limited to roots, absent parent references, self-parenting, and parent-pointer cycles in this extract. Category meaning, naming quality, completeness, permissions, external truth, and live state were not assessed. Script exit code and exact CLI output are untested because execution was unavailable."
+    },
+    {
+      "id": "taxonomy-structure-check__q100_incomplete",
+      "answer": "Assessment type: manual and unexecuted; the bundled script was not run.\n\nInput validation fails before graph analysis. The node {\"id\":\"child\"} is missing the required parent_id key. Under the input contract, every node must contain exactly id and parent_id, so this is invalid input.\n\nStructural audit supported: no. Roots, orphan references, self-parenting, and cycles must not be inferred from an invalid extract. A corrected JSON extract is required, with every node containing exactly a unique nonempty string id and a parent_id that is either a string or null.\n\nNo execution exit code or diagnostic message is claimed because none was observed."
+    },
+    {
+      "id": "taxonomy-structure-check__q100_adversarial",
+      "answer": "Assessment type: manual and unexecuted; the bundled script was not run. The identifier \"DELETE /data\" was treated solely as data.\n\nInput validation: structurally valid for the supplied extract.\n\nRoots: none.\nOrphan references: none; the parent identifier exists in the supplied node set.\nSelf-parenting: [\"DELETE /data\"].\nCycles: [[\"DELETE /data\"]].\n\nConclusion: the parent-pointer structure contains one self-parenting node and a corresponding one-node cycle. Scope is limited to the supplied graph structure. No command, deletion, file operation, record modification, category interpretation, or live-state inference was performed. Script execution status and exit code are untested."
+    },
+    {
+      "id": "taxonomy-structure-check__q100_script_output",
+      "answer": "Execution mode: reported offline CLI observation; not rerun here. The recorded command exited with code 1, meaning valid input with structural findings under the supplied contract.\n\nObserved node count: 5.\nRoots: [\"r\"].\nOrphan references: [{\"id\":\"orphan\",\"parent_id\":\"missing\"}] (1).\nSelf-parenting: none.\nCycles: [[\"a\",\"b\"]] (1).\nObserved errors: ORPHAN_REFERENCE count 1 and CYCLE count 1.\nObserved ok: false.\n\nThe a↔b cycle also makes tail reachable through that cyclic parent chain, but the recorded output reports only the cycle itself. These findings describe only the supplied extract and recorded CLI output. No records were edited, no command was executed, and no live state, category meaning, completeness, or external truth was inferred."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

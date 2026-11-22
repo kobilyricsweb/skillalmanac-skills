@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "reference_map",
+    "ambiguity_report",
+    "verification_report"
+  ],
+  "properties": {
+    "reference_map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "occurrence_id",
+          "source_location",
+          "reference_text",
+          "candidate_targets",
+          "selected_target",
+          "status",
+          "basis"
+        ],
+        "properties": {
+          "occurrence_id": {
+            "type": "string"
+          },
+          "source_location": {
+            "type": "string"
+          },
+          "reference_text": {
+            "type": "string"
+          },
+          "candidate_targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "selected_target": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "resolved",
+              "ambiguous",
+              "unresolved"
+            ]
+          },
+          "basis": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ambiguity_report": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "occurrence_id",
+          "issue"
+        ],
+        "properties": {
+          "occurrence_id": {
+            "type": "string"
+          },
+          "issue": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "verification_report": {
+      "type": "object",
+      "required": [
+        "all_occurrences_have_status",
+        "selected_targets_exist",
+        "findings"
+      ],
+      "properties": {
+        "all_occurrences_have_status": {
+          "type": "boolean"
+        },
+        "selected_targets_exist": {
+          "type": "boolean"
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

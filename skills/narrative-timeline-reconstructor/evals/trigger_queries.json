@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Reconstruct a timeline from these unordered event notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Keep exact dates separate from relative timing in this narrative.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show dependencies and unresolved placement for each event.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve conflicting statements about whether E3 came before or after E2.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a chronological scaffold without inventing missing dates.",
+    "should_trigger": true
+  },
+  {
+    "query": "Assign event IDs and report timing precision from these notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn these dated and undated notes into an ordered narrative.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify which event sequences are fixed and which remain uncertain.",
+    "should_trigger": true
+  },
+  {
+    "query": "Keep date ranges and approximate timing visibly distinct.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an event table with sources, dependencies, and conflicts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Determine whether a manager’s decision was authorized.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit every requirement against the completed document.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft reusable answers for the returns FAQ.",
+    "should_trigger": false
+  },
+  {
+    "query": "Explain the rationale for substantive paragraph revisions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Plan a content refresh based on new research.",
+    "should_trigger": false
+  },
+  {
+    "query": "Classify decisions by authority and evidence status.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find unsupported heading promises in each section.",
+    "should_trigger": false
+  },
+  {
+    "query": "Apply the glossary consistently across the manuscript.",
+    "should_trigger": false
+  },
+  {
+    "query": "Infer the exact date from the phrase “shortly afterward.”",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a customer reply for this individual complaint.",
+    "should_trigger": false
+  }
+]

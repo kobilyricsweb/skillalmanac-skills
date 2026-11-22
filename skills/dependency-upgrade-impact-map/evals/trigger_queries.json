@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Map these dependency release-note changes to the supplied usage references.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an offline impact review for upgrading this dependency.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify named call sites exposed to removed dependency APIs.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate direct matches from possible textual exposure in this upgrade analysis.",
+    "should_trigger": true
+  },
+  {
+    "query": "List required reviews for the documented dependency changes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Explain what remains unverified because the usage list may be incomplete.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare old and new dependency notes against these project references.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a bounded migration impact map without running code.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag conflicts between dependency notes and supplied environment constraints.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark whether each named usage site is exposed to the documented removal.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design cache invalidation scenarios for these mutation events.",
+    "should_trigger": false
+  },
+  {
+    "query": "Explain configuration drift between two environments.",
+    "should_trigger": false
+  },
+  {
+    "query": "Retire these feature flags and schedule removal work.",
+    "should_trigger": false
+  },
+  {
+    "query": "Prove the upgrade is safe in production.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run the dependency upgrade and fix compilation errors.",
+    "should_trigger": false
+  },
+  {
+    "query": "Specify duplicate-request behavior for idempotency keys.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review static log templates for prohibited fields.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create serialization roundtrip cases for this data format.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit retry limits and backoff budgets.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose a live outage after upgrading a package.",
+    "should_trigger": false
+  }
+]

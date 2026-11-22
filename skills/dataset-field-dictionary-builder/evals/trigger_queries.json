@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Turn these schema notes into a field dictionary with source wording and null meanings.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document each column's expected type, allowed values, and unresolved questions from these notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a data dictionary while separating sample observations from supplied definitions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Clarify what each inherited table field means without guessing missing business semantics.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map these fields to definitions and flag ambiguous blank-value meanings.",
+    "should_trigger": true
+  },
+  {
+    "query": "Produce a provenance-aware dictionary for this undocumented dataset.",
+    "should_trigger": true
+  },
+  {
+    "query": "Record field constraints and open questions from the supplied schema notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make a concise dictionary for these columns, preserving conflicting source statements.",
+    "should_trigger": true
+  },
+  {
+    "query": "Capture allowed values and null behavior for the fields in this table.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document fields from notes and examples without calculating profile statistics.",
+    "should_trigger": true
+  },
+  {
+    "query": "Profile this dataset with null counts, type counts, and distributions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit whether every record satisfies the schema contract.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find duplicate records and recommend which row to keep.",
+    "should_trigger": false
+  },
+  {
+    "query": "Validate the parent-child taxonomy graph.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a product requirements document for a data catalog.",
+    "should_trigger": false
+  },
+  {
+    "query": "Calculate activation rate from this spreadsheet.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a marketing campaign brief for the dataset.",
+    "should_trigger": false
+  },
+  {
+    "query": "Search the web for authoritative meanings of these fields.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design a dashboard showing column completeness trends.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose remediation SQL to backfill missing values.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create an offline refresh plan for this page using the new evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map proposed updates to exact headings and paragraphs in the existing page.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show what to retain, update, and verify from these supplied materials.",
+    "should_trigger": true
+  },
+  {
+    "query": "Prioritize documentation changes by the user impact I provide.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn these release notes into a bounded content update plan.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify outdated sections without rewriting the whole page.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag evidence gaps before anyone edits this guide.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare the old page with the supplied new evidence and preserve supported text.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a change register with evidence references and exact locations.",
+    "should_trigger": true
+  },
+  {
+    "query": "Plan updates for this existing article without browsing or publishing.",
+    "should_trigger": true
+  },
+  {
+    "query": "Rewrite and publish the article for maximum SEO traffic.",
+    "should_trigger": false
+  },
+  {
+    "query": "Browse competitors and calculate an SEO score for each section.",
+    "should_trigger": false
+  },
+  {
+    "query": "Replace the page with a complete new draft.",
+    "should_trigger": false
+  },
+  {
+    "query": "Publish the approved changes to the CMS.",
+    "should_trigger": false
+  },
+  {
+    "query": "Email the refresh plan to the content team.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose the newest evidence automatically and discard older notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent missing statistics to make the update compelling.",
+    "should_trigger": false
+  },
+  {
+    "query": "Change the live page and update its metadata.",
+    "should_trigger": false
+  },
+  {
+    "query": "Guarantee the refreshed page will rank first.",
+    "should_trigger": false
+  },
+  {
+    "query": "Give legal advice on whether this content may be published.",
+    "should_trigger": false
+  }
+]

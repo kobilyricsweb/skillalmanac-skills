@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Map these approved messages across the supplied audience states and transition rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a nurture logic map with entry condition, prerequisite, transition, timing, and stop condition.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show what message follows each supplied state transition and why.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build the supported path from New to Ready using only these rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify unplaced messages, unreachable states, and missing transitions in this sequence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Add the supplied opt-out condition as an immediate terminal branch.",
+    "should_trigger": true
+  },
+  {
+    "query": "Represent this proposed sequence as a state-and-message flow map.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check whether every sequence step has a supplied entry rule.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document the prerequisites and timing constraints for this audience sequence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn these audience states and approved messages into an auditable nurture path.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write a complete campaign brief including channels, goals, budget, and owners.",
+    "should_trigger": false
+  },
+  {
+    "query": "Predict which step will get the most engagement.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send the next message to everyone who qualifies.",
+    "should_trigger": false
+  },
+  {
+    "query": "Match audience profiles to messages and show evidence for each fit.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a tone constraint card from our approved samples.",
+    "should_trigger": false
+  },
+  {
+    "query": "Adapt this sequence message into social, email, and landing-page copy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find reusable message assets across our channels.",
+    "should_trigger": false
+  },
+  {
+    "query": "Answer these buyer objections with supported product facts.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose the best transition when the supplied rules conflict.",
+    "should_trigger": false
+  },
+  {
+    "query": "Infer that an audience is ready because it has reached a job title state.",
+    "should_trigger": false
+  }
+]

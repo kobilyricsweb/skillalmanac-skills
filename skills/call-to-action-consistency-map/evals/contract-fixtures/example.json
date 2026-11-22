@@ -1,0 +1,18 @@
+{
+  "assets": [
+    {
+      "asset": "Email E1",
+      "current_cta": "Read the introduction.",
+      "audience_state": "new",
+      "promised_destination": "Opening introductory content.",
+      "destination_description": "A one-page introduction with no signup or purchase.",
+      "stage_result": "fit",
+      "destination_result": "fit",
+      "mismatch": null,
+      "proposed_approved_cta": null
+    }
+  ],
+  "missing_inputs": [],
+  "conflicts": [],
+  "progression_summary": "The supplied path from a new audience to introductory education is consistent; no break is evidenced."
+}

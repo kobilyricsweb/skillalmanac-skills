@@ -1,0 +1,150 @@
+[
+  {
+    "id": "good",
+    "input": {
+      "baseline": {
+        "headline": "Save",
+        "body": "Today"
+      },
+      "changed_field": "headline",
+      "variants": [
+        {
+          "id": "A",
+          "fields": {
+            "headline": "Save now",
+            "body": "Today"
+          }
+        },
+        {
+          "id": "B",
+          "fields": {
+            "headline": "Save more",
+            "body": "Today"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "ok": true,
+      "variant_count": 2,
+      "findings": []
+    },
+    "expected_codes": []
+  },
+  {
+    "id": "domain-defect",
+    "input": {
+      "baseline": {
+        "headline": "Save",
+        "body": "Today",
+        "cta": "Shop"
+      },
+      "changed_field": "headline",
+      "variants": [
+        {
+          "id": "A",
+          "fields": {
+            "headline": "Save now",
+            "body": "Tomorrow",
+            "cta": "Shop"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "ok": false,
+      "variant_count": 1,
+      "findings": [
+        {
+          "variant": "A",
+          "codes": [
+            "MORE_THAN_ONE_CHANGED",
+            "CHANGED_FIELD_MISMATCH"
+          ],
+          "changed_fields": [
+            "body",
+            "headline"
+          ]
+        }
+      ]
+    },
+    "expected_codes": [
+      "MORE_THAN_ONE_CHANGED",
+      "CHANGED_FIELD_MISMATCH"
+    ]
+  },
+  {
+    "id": "malformed",
+    "input": {
+      "baseline": {
+        "headline": "Save"
+      },
+      "changed_field": "headline",
+      "variants": [
+        {
+          "id": "A",
+          "fields": {
+            "headline": "Save"
+          }
+        },
+        {
+          "id": "A",
+          "fields": {
+            "headline": "Go"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "input_error": true
+    },
+    "expected_codes": [
+      "VARIANT_ID"
+    ]
+  },
+  {
+    "id": "boundary",
+    "input": {
+      "baseline": {
+        "headline": "Save"
+      },
+      "changed_field": "headline",
+      "variants": [
+        {
+          "id": "A",
+          "fields": {
+            "headline": "Save"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "ok": false,
+      "variant_count": 1,
+      "findings": [
+        {
+          "variant": "A",
+          "codes": [
+            "NO_CHANGE",
+            "CHANGED_FIELD_MISMATCH"
+          ],
+          "changed_fields": []
+        }
+      ]
+    },
+    "expected_codes": [
+      "NO_CHANGE",
+      "CHANGED_FIELD_MISMATCH"
+    ]
+  },
+  {
+    "id": "numeric_token_bound",
+    "input": {
+      "ignored": 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    },
+    "expected": {
+      "input_error": true
+    },
+    "exit": 2
+  }
+]

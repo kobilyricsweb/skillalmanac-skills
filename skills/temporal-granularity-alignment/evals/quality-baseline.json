@@ -1,0 +1,13 @@
+{
+  "fingerprint": "ed5ba70726dd4604eb4c488cd841b47a55b46b2b4ccedd2c299e383c43289a7e",
+  "job": "factory100_baseline_d0cbd9f4b46c",
+  "results": [
+    {
+      "id": "temporal-granularity-alignment__q100_ordinary",
+      "answer": "Temporal alignment plan:\n\n- Target grain: UTC Gregorian calendar month, using an inclusive start and exclusive end. January 2026 is [2026-01-01T00:00Z, 2026-02-01T00:00Z).\n- Source A: retain its daily UTC grain for validation, and permit aggregation by summing only the supplied daily observations within the explicitly supplied comparison window [2026-01-01T00:00Z, 2026-01-03T00:00Z). The permitted sum is 2 + 3 = 5 units.\n- Source B: retain the supplied January 2026 observation at monthly grain, with value 5 and the same January boundary.\n- Boundary handling: include an observation whose period starts at the January boundary; exclude periods or portions beginning at 2026-02-01T00:00Z. Do not reinterpret inclusive/exclusive semantics.\n- Comparability: the supplied Source A coverage reconciles to Source B’s value numerically for the two observed days, but this does not establish complete January coverage because no observations or completion rule are supplied for the remainder of January. Treat the comparison as limited to the supplied window, not as a full-month validation.\n- Permitted transformations: UTC boundary normalization, filtering to the stated window, and summing the supplied daily counts to monthly grain.\n- Forbidden transformations: expanding Source B into daily rows, imputing or extrapolating missing January days, assuming zero activity, changing time zones or calendar definitions, or treating the partial Source A coverage as complete.\n- Outside scope: no join execution, gap filling, completeness certification, reconciliation beyond the supplied window, or conclusions about the rest of January."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

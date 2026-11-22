@@ -1,0 +1,181 @@
+{
+  "fingerprint": "d712f880ef4b16c4407f3e7c8b1601bf0c70d800599fd38f6507f99d485423c5",
+  "job": "factory100_grade_b14ae0aa5606",
+  "execution_job": "factory100_execute_3d2db961425b",
+  "baseline_job": "factory100_baseline_4864d4cccc17",
+  "passed": true,
+  "checks_total": 15,
+  "checks_passed": 15,
+  "machine_schema_checks": 5,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "channel-format-adaptation-brief__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Retained elements include workshop registration, staff audience, the protected date phrase, and the 20-seat availability limit."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "CTA status is authorized and the only permitted CTA is Register."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The channel is marked feasible at 40 words, and compression is limited to connective wording while preserving audience, date, and seat limit."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The brief retains open registration for staff, the protected date phrase, and the required 20-seat qualifier."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It identifies Register as permitted and introduces no other CTA or unsupported fact."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It finds the plan feasible within 40 words and allows only conditional compression that preserves the date and seat limit."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "channel-format-adaptation-brief__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "cta_status is missing and permitted_cta is null; the omission is described as missing authorization, not an explicit ban."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Retained elements include account questions and 2 December 2026."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Feasibility is partial and the unresolved gap records that permitted CTA authorization was not supplied."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "channel-format-adaptation-brief__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Retained elements include the pilot update, three test teams, November 2026 review timing, and the non-final-results qualifier."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "rejected_instructions quotes the request to drop the qualifier and announce to every team, rejecting both the removed limitation and broadened audience."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The only permitted CTA is Review the update, and the 28-word SMS plan is marked feasible without any publication claim."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "channel-format-adaptation-brief__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The channel is marked infeasible at nine words while retaining the seven-word protected phrase and five-word required qualifier, which total 12 words."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The source scope preserves may be unavailable and exact timing is not confirmed, and unresolved_gap is null."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "cta_status is not_authorized, permitted_cta is null, and the quoted source note is rejected for strengthening uncertainty and adding an unauthorized CTA."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "channel-format-adaptation-brief__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The badge is marked infeasible; the mandatory phrases contain 3, 3, and 5 words respectively, totaling 11 against the eight-word maximum."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "cta_status is not_authorized and permitted_cta is null."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "rejected_instructions quotes the definite-closure and Use the stairs request and rejects it for replacing uncertainty with certainty and adding an unauthorized CTA."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "channel-format-adaptation-brief__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "channel-format-adaptation-brief__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "channel-format-adaptation-brief__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "channel-format-adaptation-brief__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "channel-format-adaptation-brief__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

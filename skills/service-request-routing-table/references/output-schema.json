@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "routing_rules",
+    "request_results",
+    "fallback_behavior",
+    "input_gaps",
+    "scope_exclusions"
+  ],
+  "properties": {
+    "routing_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rule_id",
+          "conditions",
+          "destination_role",
+          "precedence",
+          "exception"
+        ],
+        "properties": {
+          "rule_id": {
+            "type": "string"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "destination_role": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "precedence": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "exception": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "request_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "request_id",
+          "matched_rules",
+          "selected_destination",
+          "status",
+          "ambiguity_or_gap"
+        ],
+        "properties": {
+          "request_id": {
+            "type": "string"
+          },
+          "matched_rules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "selected_destination": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "routed",
+              "ambiguous",
+              "unrouted"
+            ]
+          },
+          "ambiguity_or_gap": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "fallback_behavior": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "input_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scope_exclusions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

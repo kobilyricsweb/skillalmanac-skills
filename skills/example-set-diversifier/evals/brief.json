@@ -1,0 +1,10 @@
+{
+  "slug": "example-set-diversifier",
+  "category": "content",
+  "user_problem": "Instructional content often repeats near-identical examples and fails to show meaningful boundary cases.",
+  "unique_output": "An example plan varying context, difficulty, input quality, edge condition, and expected lesson.",
+  "free_or_pack_candidate": "pack_candidate",
+  "test_case": "Given four repetitive examples, redesign the set to include a normal case, missing-input case, conflict, and boundary case.",
+  "overlap_to_check": "Instruction authoring, accessibility, and generic content editing.",
+  "specific_guardrail": "Teaching examples from supplied learning objective/rules; label synthetic examples. Preserve intended lesson and avoid stereotypes, fabricated customer cases or ungrounded expected answers."
+}

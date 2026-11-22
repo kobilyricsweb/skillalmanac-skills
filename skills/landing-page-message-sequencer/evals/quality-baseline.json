@@ -1,0 +1,12 @@
+{
+  "fingerprint": "067e4e903e43f60eafc9940cca6f9bfe4249c023a3e89e2c1f313e628fd6e6a9",
+  "job": "factory100_baseline_44caf2c8dad0",
+  "results": [
+    {
+      "id": "landing-page-message-sequencer__q100_ordinary",
+      "answer": "Audience: small museum staff. Objective: request a demo.\n\n1. Promise: “Catalog objects in one workspace.” Support with evidence asset E1: “Product guide documents single-workspace cataloging,” at /guide.\n2. Qualification: “Imports require CSV headers.”\n3. CTA: “Request a demo,” linking to /demo.\n\nQuestion mapping: “What does it do?” → M1. “What must I prepare?” → M2. “What next?” → CTA after M2.\n\nSequence rationale: establish the approved product promise, then disclose the preparation requirement, then present the authorized next step. No other claims are added."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

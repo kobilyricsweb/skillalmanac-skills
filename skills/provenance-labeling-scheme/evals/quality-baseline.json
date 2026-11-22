@@ -1,0 +1,13 @@
+{
+  "fingerprint": "6b8ddfd201956e8313d8b62dbde160e8171a3e1418654e5191f4db87e630ee8a",
+  "job": "factory100_baseline_435913612be4",
+  "results": [
+    {
+      "id": "provenance-labeling-scheme__q100_ordinary",
+      "answer": "Allowed labels describe provenance form, not truth. quotation: exact source wording; requires source_id and location. Example: [quotation, source_id=S1, location=p3]. paraphrase: faithful restatement from a source; requires source_id. Example: [paraphrase, source_id=S1] “The deadline is Friday.” observation: directly recorded by an observer on a date; requires observer and date. assumption: analyst-supplied premise on a date; requires analyst and date. synthesis: content assembled from cited note components; requires component_note_ids. Example: [synthesis, component_note_ids=[N1,N2]]. note_id is optional for every label. Mixed-content rule: split a note into atomic segments and label each segment separately. A faithful sourced restatement remains paraphrase even when the analyst agrees with it. Coverage: all five allowed labels are defined, every required metadata field is specified, optional note_id is addressed, mixed content is handled, and the agreement edge case is covered."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

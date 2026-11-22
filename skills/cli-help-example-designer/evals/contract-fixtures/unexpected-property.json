@@ -1,0 +1,86 @@
+{
+  "schema_interpretation": {
+    "command": [
+      "note",
+      "add"
+    ],
+    "positionals": [
+      "TEXT is required; supplied example value: hi"
+    ],
+    "options": [
+      "--tag VALUE is optional; VALUE is work or personal"
+    ],
+    "relations": [],
+    "rendering": "token_array"
+  },
+  "prerequisites": [],
+  "valid_examples": [
+    {
+      "purpose": "Add the supplied note without a tag",
+      "tokens": [
+        "note",
+        "add",
+        "hi"
+      ],
+      "expected_result": {
+        "status": "supplied",
+        "text": "Stores the supplied note."
+      },
+      "shell": null,
+      "rendered_command": null
+    },
+    {
+      "purpose": "Add the supplied note with an allowed tag",
+      "tokens": [
+        "note",
+        "add",
+        "hi",
+        "--tag",
+        "work"
+      ],
+      "expected_result": {
+        "status": "supplied",
+        "text": "Stores the supplied note."
+      },
+      "shell": null,
+      "rendered_command": null
+    }
+  ],
+  "rejected_example": {
+    "status": "available",
+    "tokens": [
+      "note",
+      "add"
+    ],
+    "violated_rule": "TEXT is required.",
+    "reason": "The command omits its required positional argument.",
+    "shell": null,
+    "rendered_command": null
+  },
+  "option_coverage": [
+    {
+      "option": "--tag",
+      "status": "demonstrated",
+      "example_purpose_or_reason": "Shown in the allowed-tag example."
+    }
+  ],
+  "assumptions_or_conflicts": [],
+  "acceptance_checks": [
+    {
+      "check": "Declared-token compliance",
+      "outcome": "pass",
+      "basis": "Every shown command token comes from the supplied grammar or supplied example values."
+    },
+    {
+      "check": "Required positional compliance",
+      "outcome": "pass",
+      "basis": "Each valid example includes TEXT."
+    },
+    {
+      "check": "Non-execution",
+      "outcome": "pass",
+      "basis": "The artifact designs examples and reports no execution."
+    }
+  ],
+  "__unexpected_fixture_property__": 0
+}

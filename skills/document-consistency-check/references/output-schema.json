@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "comparisons",
+    "unresolved_questions",
+    "limits"
+  ],
+  "properties": {
+    "comparisons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "comparison_id",
+          "field_type",
+          "subject",
+          "assertions",
+          "classification",
+          "basis",
+          "unresolved_questions"
+        ],
+        "properties": {
+          "comparison_id": {
+            "type": "string"
+          },
+          "field_type": {
+            "enum": [
+              "entity",
+              "quantity",
+              "unit",
+              "date",
+              "version",
+              "other"
+            ]
+          },
+          "subject": {
+            "type": "string"
+          },
+          "assertions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "document_id",
+                "location_state",
+                "location_value",
+                "original_value",
+                "qualifiers",
+                "normalized_display"
+              ],
+              "properties": {
+                "document_id": {
+                  "type": "string"
+                },
+                "location_state": {
+                  "enum": [
+                    "available_location",
+                    "location_unavailable"
+                  ]
+                },
+                "location_value": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "original_value": {
+                  "type": "string"
+                },
+                "qualifiers": {
+                  "type": "string"
+                },
+                "normalized_display": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          },
+          "classification": {
+            "enum": [
+              "consistent",
+              "contradictory",
+              "different scope",
+              "unknown"
+            ]
+          },
+          "basis": {
+            "type": "string"
+          },
+          "unresolved_questions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "unresolved_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

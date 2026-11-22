@@ -1,0 +1,37 @@
+{
+  "scope": "Offline comparison of the two supplied snapshots.",
+  "changes": [
+    {
+      "key": "LOG_MODE",
+      "change_type": "changed",
+      "before_present": true,
+      "before": "brief",
+      "after_present": true,
+      "after": "full",
+      "behavior": "The supplied note says full records detailed application events.",
+      "behavior_status": "documented",
+      "deployment_impact": "documented",
+      "reversibility": "documented",
+      "group": "logging"
+    }
+  ],
+  "alignments": [],
+  "deployment_notes": [
+    "Changing LOG_MODE requires a restart.",
+    "Documented rollback is restoring brief and restarting."
+  ],
+  "unresolved": [
+    "TOKEN remains redacted and unchanged; its value was not reconstructed."
+  ],
+  "inspection_status": "offline-only",
+  "acceptance_checks": [
+    "Every added, removed, or unequal key is represented once.",
+    "Unchanged keys are excluded from changes.",
+    "Presence flags distinguish absence from a supplied null value.",
+    "Redaction markers are preserved without reconstruction.",
+    "Observed changes are separated from supplied behavior statements.",
+    "Behavior-note conflicts can be represented without overloading deployment status.",
+    "Unknowns are explicit.",
+    "No live inspection or deployment action is claimed."
+  ]
+}

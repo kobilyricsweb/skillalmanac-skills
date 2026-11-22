@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "missing_inputs",
+    "objections",
+    "unresolved_conflicts"
+  ],
+  "properties": {
+    "missing_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "objections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "objection_id",
+          "objection",
+          "concern_acknowledgment",
+          "supported_response",
+          "evidence_ids",
+          "limitation",
+          "prohibited_assurance_check",
+          "rejected_supplied_claims",
+          "next_question",
+          "support_status"
+        ],
+        "properties": {
+          "objection_id": {
+            "type": "string"
+          },
+          "objection": {
+            "type": "string"
+          },
+          "concern_acknowledgment": {
+            "type": "string"
+          },
+          "supported_response": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "limitation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "prohibited_assurance_check": {
+            "type": "string",
+            "enum": [
+              "clear",
+              "prohibited assurance avoided",
+              "unresolved because list missing"
+            ]
+          },
+          "rejected_supplied_claims": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "source_label",
+                "claim",
+                "rejection_reason"
+              ],
+              "properties": {
+                "source_label": {
+                  "type": "string"
+                },
+                "claim": {
+                  "type": "string"
+                },
+                "rejection_reason": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "next_question": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "support_status": {
+            "type": "string",
+            "enum": [
+              "full",
+              "partial",
+              "unsupported",
+              "conflict",
+              "unanswered"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "unresolved_conflicts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

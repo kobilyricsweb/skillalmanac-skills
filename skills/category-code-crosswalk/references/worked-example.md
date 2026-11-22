@@ -1,0 +1,3 @@
+Synthetic input: source list has A1=Books and A2=Music. Target list has B7=Print books and B8=E-books. An approved note states that A1 maps to B7 and B8. No note or definition supplies a relationship for A2.
+
+Artifact: one relationship records A1 to B7 as a supported one-to-many member, and another records A1 to B8 as the second member of that same one-to-many mapping; both cite the supplied note. A2 is accounted for as blocked because the supplied evidence cannot determine its target, and the unresolved entry requests an approved mapping note or other authorized evidence for A2. The artifact does not infer that Music maps to a target, does not claim that A2 has no target, does not collapse B7 and B8, and does not treat label similarity as evidence.

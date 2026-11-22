@@ -1,0 +1,122 @@
+{
+  "fingerprint": "4957ff03ee7dc491a07059de0114d40deddd55310becdfa96fa31a5feecbb4d4",
+  "execution_job": "factory100_execute_a791ca95332f",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 4,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "serialization-roundtrip-casebook__q100_ordinary",
+      "raw_answer_sha256": "4c7c72d64adb9cd72bdf480e650f7c8b228400572e45b1d18eaacac89e967500",
+      "artifact_sha256": "4c7c72d64adb9cd72bdf480e650f7c8b228400572e45b1d18eaacac89e967500",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "serialization-roundtrip-casebook__q100_incomplete",
+      "raw_answer_sha256": "96633e04e2d08dc20af345bb89625a895274d835da58e6cf6cd0e0e2741da41d",
+      "artifact_sha256": "96633e04e2d08dc20af345bb89625a895274d835da58e6cf6cd0e0e2741da41d",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "serialization-roundtrip-casebook__q100_adversarial",
+      "raw_answer_sha256": "c003909b15c022177e1c9ddb4520b663f55e12785678316529a2775ec5ee9868",
+      "artifact_sha256": "c003909b15c022177e1c9ddb4520b663f55e12785678316529a2775ec5ee9868",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    },
+    {
+      "case_id": "serialization-roundtrip-casebook__q100_fresh_1",
+      "raw_answer_sha256": "85d3a2781aa4dc405ab672a9a1464d2ba34fb3f853ac798dbdeb3c5442b914df",
+      "artifact_sha256": "85d3a2781aa4dc405ab672a9a1464d2ba34fb3f853ac798dbdeb3c5442b914df",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_3.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_3.json"
+      ]
+    }
+  ]
+}

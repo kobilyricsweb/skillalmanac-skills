@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create synthetic response anchors showing the boundary between levels 2 and 3 of this rubric.",
+    "should_trigger": true
+  },
+  {
+    "query": "Score each anchor criterion by criterion and tie every rationale to the supplied descriptor.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build paired anchors that change only the observable rubric feature.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show what distinguishes one relevant fact from two relevant facts in these rubric anchors.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use the prompt and scoring rules to create short fictional calibration responses.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag ambiguous rubric boundaries instead of inventing a standard.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create anchors for each supplied performance level and explain the boundary evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Apply the non-scorable conditions when constructing these synthetic responses.",
+    "should_trigger": true
+  },
+  {
+    "query": "Tell me which descriptor supports each score in the anchor set.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a rubric calibration artifact from these criteria without scoring real students.",
+    "should_trigger": true
+  },
+  {
+    "query": "Rewrite the example set to cover more contexts and edge cases.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose which misconception caused this wrong response.",
+    "should_trigger": false
+  },
+  {
+    "query": "Fade prompts from this worked solution toward independence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map activities to learning objectives and evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write actionable comments for responses missing evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent a stronger standard for excellent writing.",
+    "should_trigger": false
+  },
+  {
+    "query": "Give this student's final grade from the rubric.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a general scoring rubric for argument writing.",
+    "should_trigger": false
+  },
+  {
+    "query": "List prerequisite skills for this task.",
+    "should_trigger": false
+  },
+  {
+    "query": "Make a quiz that distinguishes common misconceptions.",
+    "should_trigger": false
+  }
+]

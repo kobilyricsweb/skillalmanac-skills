@@ -1,0 +1,150 @@
+{
+  "fingerprint": "d8b76553d0dcd85794920ae8fd20251ba3c1ececc267be75023ce7ec72bf60b9",
+  "execution_job": "factory100_execute_abba688f7a4c",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 5,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "glossary-relationship-map__q100_ordinary",
+      "raw_answer_sha256": "1b29d967d1905c2cc196d46db4ea8a3636f55dec325900bac08280f2f646ccee",
+      "artifact_sha256": "1b29d967d1905c2cc196d46db4ea8a3636f55dec325900bac08280f2f646ccee",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "glossary-relationship-map__q100_incomplete",
+      "raw_answer_sha256": "d9b2438bb42ed15715aef64540e5af9a2e97503ce0f5b68357d64ad075f1bcc4",
+      "artifact_sha256": "d9b2438bb42ed15715aef64540e5af9a2e97503ce0f5b68357d64ad075f1bcc4",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "glossary-relationship-map__q100_adversarial",
+      "raw_answer_sha256": "3eeaa2aaa058f88ca4e559b5a01570cb826a74af10917011b09e2e59ab9180b3",
+      "artifact_sha256": "3eeaa2aaa058f88ca4e559b5a01570cb826a74af10917011b09e2e59ab9180b3",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    },
+    {
+      "case_id": "glossary-relationship-map__q100_fresh_1",
+      "raw_answer_sha256": "2ef361fe9d36904ccf696870d61c6ac0ac308f9fad8c113e277751a3d4655ddd",
+      "artifact_sha256": "2ef361fe9d36904ccf696870d61c6ac0ac308f9fad8c113e277751a3d4655ddd",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_3.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_3.json"
+      ]
+    },
+    {
+      "case_id": "glossary-relationship-map__q100_fresh_2",
+      "raw_answer_sha256": "6c789c972e97eaf165d383d1e7a05a23c94d772df41b19d576e8c31fe5ff3c56",
+      "artifact_sha256": "6c789c972e97eaf165d383d1e7a05a23c94d772df41b19d576e8c31fe5ff3c56",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_4.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_4.json"
+      ]
+    }
+  ]
+}

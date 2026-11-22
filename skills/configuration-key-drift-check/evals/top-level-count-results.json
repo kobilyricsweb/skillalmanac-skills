@@ -1,0 +1,78 @@
+{
+  "method": "normative top-level schema errors retain observable supplied array length, not validated entities",
+  "passed": true,
+  "fixtures": [
+    {
+      "id": "extra-key",
+      "passed": true,
+      "expected_count": 2,
+      "exit": 2,
+      "actual": {
+        "configuration_count": 2,
+        "errors": [
+          {
+            "code": "UNKNOWN_OR_MISSING_KEY",
+            "message": "top-level keys are exactly required_keys, optional_keys, configurations"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false
+      }
+    },
+    {
+      "id": "missing-key",
+      "passed": true,
+      "expected_count": 2,
+      "exit": 2,
+      "actual": {
+        "configuration_count": 2,
+        "errors": [
+          {
+            "code": "UNKNOWN_OR_MISSING_KEY",
+            "message": "top-level keys are exactly required_keys, optional_keys, configurations"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false
+      }
+    },
+    {
+      "id": "oversized-array",
+      "passed": true,
+      "expected_count": 101,
+      "exit": 2,
+      "actual": {
+        "configuration_count": 101,
+        "errors": [
+          {
+            "code": "CONFIGURATION_TYPE_OR_LIMIT",
+            "message": "configurations must contain 1 to 100 objects"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false
+      }
+    },
+    {
+      "id": "wrong-array-type",
+      "passed": true,
+      "expected_count": 0,
+      "exit": 2,
+      "actual": {
+        "configuration_count": 0,
+        "errors": [
+          {
+            "code": "UNKNOWN_OR_MISSING_KEY",
+            "message": "top-level keys are exactly required_keys, optional_keys, configurations"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "fingerprint": "433ca14fc44939e94751eb6948254d26a1dcbaa62a19c5c1319f15e8509fa217",
+  "job": "factory100_grade_b782045c39fe",
+  "execution_job": "factory100_execute_c198d3fa9286",
+  "baseline_job": "factory100_baseline_ab877d5ccf0a",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "log-message-contract-review__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "fail",
+              "evidence": "The prose maps upload_failed to T1 and lists the three declared fields, but it does not provide the asserted single review row."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It identifies request_id as the absent required field, states that auth_token is absent, and proposes adding only request_id."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It says ERROR is correct and expressly limits the result to static consistency without verifying emitted logs or implementation."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The single review_table row maps T1 to upload_failed and lists event_id, file_id, and error_code as declared fields."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The row lists only request_id as missing, has an empty prohibited_fields list, and recommends adding request_id."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "INFO is not claimed; ERROR is marked permitted, and the verification statement limits the review to the static contract rather than runtime behavior."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "log-message-contract-review__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The T9 row flags password under prohibited_fields and recommends removing it."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "event_id is null, missing_required_fields is empty, and the response explains that event-specific requirements cannot be assessed without a mapping."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Event mapping and severity guidance are explicitly unresolved, severity is undetermined, and the verification statement disclaims runtime checks and emitted-behavior conclusions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "log-message-contract-review__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The row maps T2 to profile_viewed, reports no missing required fields, and flags email as prohibited."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The verification statement treats the quoted message as template data, while the repair removes email without changing P1."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "INFO is marked permitted, and the response confines itself to static review without runtime or emitted-log claims."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "log-message-contract-review__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "log-message-contract-review__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "log-message-contract-review__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

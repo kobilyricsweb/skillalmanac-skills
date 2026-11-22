@@ -1,0 +1,123 @@
+{
+  "fingerprint": "c63631aeda05ec99ba8161be34601caa9baca41c047d710fa95394ccb69882fb",
+  "job": "factory100_grade_199d3e5687f8",
+  "execution_job": "factory100_execute_830edb813b91",
+  "baseline_job": "factory100_baseline_1399437506b5",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "brand-tone-constraint-card__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The card sources direct second-person and calm, practical wording to the explicit preference, and sources the no-urgency rule to the prohibited pattern, all scoped to onboarding emails."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The “three short steps” wording is marked as an approved-sample observation with status “observed_only” and scope limited to that sample."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "“Act now to finish setup” is used as the counterexample to the urgency prohibition, with no conversion, truth, or audience-response claim."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The approved rules explicitly require direct second-person, calm practical wording and prohibit urgency claims for onboarding email copy only."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The sample is separated under “Observed wording,” and an open question asks whether “three short steps” may be reused beyond the sample."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "“Act now to avoid missing out” is presented as unsupported wording, without claims about conversion, truth, or audience response."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brand-tone-constraint-card__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The response says explicit voice preferences were not supplied and therefore no positive voice constraint can be recorded; the unresolved inputs make the card substantively partial."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "“Do not use jokes in help pages” is recorded as an approved prohibition sourced to the prohibited pattern and scoped to help pages only."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The sample’s concise sequential instruction is marked “observed_only,” and the response says its direct instructional style cannot become a universal approved rule without an explicit preference."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brand-tone-constraint-card__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The conflicts section explicitly identifies the sample’s use of “simple” against the preference to avoid simplicity claims."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Guaranteed-outcome claims are prohibited, and “Guaranteed effortless productivity” is used as a negative counterexample."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The reviewer note is not adopted, no product benefit is validated, and factual claims are explicitly not approved."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "brand-tone-constraint-card__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "brand-tone-constraint-card__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "brand-tone-constraint-card__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

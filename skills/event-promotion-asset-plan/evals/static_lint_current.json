@@ -1,0 +1,42 @@
+{
+  "skill": "event-promotion-asset-plan",
+  "fail": 0,
+  "warn": 1,
+  "items": [
+    {
+      "level": "PASS",
+      "code": "frontmatter-keys",
+      "message": "only open-spec keys used"
+    },
+    {
+      "level": "PASS",
+      "code": "name-format",
+      "message": "name 'event-promotion-asset-plan' is valid"
+    },
+    {
+      "level": "PASS",
+      "code": "description-length",
+      "message": "description is 204 chars"
+    },
+    {
+      "level": "PASS",
+      "code": "body-lines",
+      "message": "SKILL.md body has 4 lines"
+    },
+    {
+      "level": "PASS",
+      "code": "body-tokens",
+      "message": "body is about 344 tokens by chars/4"
+    },
+    {
+      "level": "PASS",
+      "code": "package-size",
+      "message": "package is 15119 bytes in 5 files"
+    },
+    {
+      "level": "WARN",
+      "code": "evals-task",
+      "message": "evals/evals.json is missing"
+    }
+  ]
+}

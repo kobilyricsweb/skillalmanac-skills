@@ -1,0 +1,22 @@
+{
+  "fingerprint": "a297c92ee2e69ff640b44ad4964017a95ecacc840b4073d0c0c031156a3286e8",
+  "job": "aggregate_isolated_701b2712b8caabf7",
+  "results": [
+    {
+      "id": "assessment-accommodation-translation__q100_ordinary",
+      "answer": "Baseline: A 20-minute paper vocabulary quiz in room R1 at 09:00, consisting of 10 written items scored for word meaning. Standard materials are a pencil and printed quiz.\n\nApproved changes: Provide exactly 50% additional time and a low-distraction room. Fifty percent of 20 minutes is 10 minutes, so the accommodated testing time is 30 minutes. If testing begins at 09:00, it ends at 09:30.\n\nLogistics: Use room R2 from 09:00 to 09:30, provided R2 is confirmed to meet the low-distraction requirement; its 09:00–09:40 availability leaves a 10-minute scheduling margin. Assign the available proctor and supply the standard pencil and printed quiz. Preserve all 10 items, the written-response format, and scoring for word meaning.\n\nImplementation versus authorization: The quoted approval authorizes only the additional 10 minutes and a low-distraction room. Reserving R2, confirming that it is low-distraction, assigning the proctor, and arranging materials are implementation steps. The approval does not authorize changing item content, response format, scoring criteria, materials, assistance, breaks, or any other assessment condition. If R2 cannot be confirmed as low-distraction, another qualifying room must be arranged; availability alone does not establish that qualification.",
+      "individual_job": "factory100_base_isolated_50bee89e901a"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill_isolated_cases",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "case_context_isolated": true,
+  "answer_word_budget": 600,
+  "individual_worker_jobs": [
+    "factory100_base_isolated_50bee89e901a"
+  ],
+  "method_note": "Every case uses its own fresh context. Both arms use identical model/effort/budget; raw responses unchanged, original prompts/assertions preserved, prior failures retained. Aggregate is a provenance index, not a model call.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

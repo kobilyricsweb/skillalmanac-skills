@@ -1,0 +1,22 @@
+{
+  "audience": "library visitors",
+  "entries": [
+    {
+      "question": "May I bring a drink into the reading room?",
+      "direct_response": "Water in a closed bottle is allowed; other drinks are not allowed.",
+      "supported_detail": [
+        "The permission applies in the reading room only."
+      ],
+      "exceptions": [
+        "Drinks other than water in a closed bottle are excluded."
+      ],
+      "unknown_cases": [
+        "Drink situations not covered by the supplied rules remain unknown."
+      ],
+      "escalation": "Ask the Service Desk about uncovered cases.",
+      "status": "complete"
+    }
+  ],
+  "missing_inputs": [],
+  "conflicts": []
+}

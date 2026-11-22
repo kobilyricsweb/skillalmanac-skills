@@ -1,0 +1,14 @@
+{
+  "slug": "example-set-diversifier",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "ESD-2",
+      "severity": "medium",
+      "location": "Worked example, Expected artifact versus skill return contract and per-example requirements",
+      "evidence": "The skill requires an “objective-and-rule summary” and says each proposed example must specify the “supplied rule applied” and “what differs from other examples.” The worked artifact begins with the overlap diagnosis and its plan bullets provide roles, scenarios, tasks, and lessons, but no objective-and-rule summary or explicit rule-applied and differentiation fields.",
+      "consequence": "The canonical artifact models an incomplete output and could cause evaluations or implementations to omit required traceability from each synthetic example to the supplied teaching rules.",
+      "correction": "Add an objective-and-rule summary, and add an explicit supplied-rule and meaningful-difference entry to every proposed example."
+    }
+  ]
+}

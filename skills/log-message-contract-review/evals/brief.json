@@ -1,0 +1,11 @@
+{
+  "slug": "log-message-contract-review",
+  "category": "software",
+  "user_problem": "Proposed logs may omit diagnostic context, leak prohibited fields, or use inconsistent event identifiers.",
+  "unique_output": "A review table mapping each log template to required fields, prohibited fields, severity rules, and repair notes.",
+  "required_input": "Proposed log templates, event definitions, required context list, redaction policy, and severity guidance.",
+  "critical_rule": "Evaluate only declared fields and policies; never request secrets or infer that a log proves runtime behavior.",
+  "nearest_existing_and_difference": "Nearest is configuration-drift-explainer; this reviews static observability contracts rather than explaining configuration changes.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input event payment_rejected requires order_id and reason_code, forbids card_number, severity warning. Template contains order_id and card_number. Output flags missing reason_code, prohibited card_number, and confirms warning severity."
+}

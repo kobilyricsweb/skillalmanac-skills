@@ -1,0 +1,11 @@
+{
+  "slug": "reading-guide-question-ladder",
+  "category": "education",
+  "user_problem": "A supplied text needs questions that progress from locating information to interpreting and evaluating it.",
+  "unique_output": "A question ladder with text location, cognitive move, expected evidence, and answerability check.",
+  "required_input": "Complete short passage, learning goal, permitted question levels, and expected response length.",
+  "critical_rule": "Every question must be answerable from the passage unless explicitly labeled as reflection requiring no factual claim.",
+  "nearest_existing_and_difference": "Nearest is source-note-to-outline; this creates evidence-grounded reading prompts rather than organizing notes into content.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input passage says a town moved market day after floods reduced attendance; goal is causal-language analysis. Output asks what changed, what reason is stated, and whether the passage proves floods were the sole cause; expected answer says no."
+}

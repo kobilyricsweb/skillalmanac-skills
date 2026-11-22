@@ -1,0 +1,14 @@
+{
+  "orphan_markers": [],
+  "unbound_definitions": [],
+  "unresolved_issues": [],
+  "boundary_note": {
+    "explicitly_supplied_scopes": [
+      "The † qualifier applies to R1C1 and R1C2 through the row-label rule."
+    ],
+    "unresolved_scopes": [],
+    "outside_scope": [
+      "The qualifier does not establish whether any equipment-plan value is accurate."
+    ]
+  }
+}

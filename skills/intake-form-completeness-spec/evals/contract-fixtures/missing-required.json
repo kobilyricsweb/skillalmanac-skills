@@ -1,0 +1,17 @@
+{
+  "completeness_examples": [
+    {
+      "request_type": "locker request",
+      "status": "unresolved",
+      "reasons": [
+        "employee_code E12 matches the supplied format, but no roster validation result is supplied"
+      ]
+    }
+  ],
+  "unresolved_conflicts": [],
+  "gaps": [
+    "Purpose or routing need for employee_code is not supplied",
+    "Roster validation result is missing",
+    "employee_code requiredness for visitor pass is unspecified"
+  ]
+}

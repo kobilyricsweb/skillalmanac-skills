@@ -1,0 +1,5 @@
+{
+  "unresolved": [],
+  "conflicts": [],
+  "implementation_note": "A later authorized filling step would read the selected sources and apply only the listed transform; this map does not fill a document."
+}

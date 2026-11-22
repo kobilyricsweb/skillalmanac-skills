@@ -1,0 +1,94 @@
+{
+  "fingerprint": "3817d24b7599a5083126ecd54b32d0412c4d6a852b65b0e704c999b9a3dc39bb",
+  "execution_job": "factory100_execute_51a8a20003aa",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 3,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "lesson-activity-alignment-map__q100_ordinary",
+      "raw_answer_sha256": "40406da1cffe249d26631b750c1f9e30c98ad4909195d00396371760dcb03618",
+      "artifact_sha256": "7085b9308f3fe1a4fe1a0ae69e6c2f7c5ec6213903a255448d15c9b9b5585fb5",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "lesson-activity-alignment-map__q100_incomplete",
+      "raw_answer_sha256": "4c4452e6d3b4c67ca43f792ce4c093a8057488936c43c0696d0cae6d7f66e66b",
+      "artifact_sha256": "86fc7311152326010898a565f9715f2607347cf6a35a8611242e203ac4b6b392",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "lesson-activity-alignment-map__q100_adversarial",
+      "raw_answer_sha256": "70d85ae5627e1cfd5f477c88c51ef3acb53aa683cd97abaa80f34684f6503970",
+      "artifact_sha256": "2eb4fc6f37e9656146b28bfcb889a84343c32fd649477590a531f01dbee05f1a",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    }
+  ]
+}

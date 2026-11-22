@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "basis_summary",
+    "outline",
+    "gap_register",
+    "conflict_register",
+    "verification_report"
+  ],
+  "properties": {
+    "basis_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "note_ids",
+        "purpose",
+        "purpose_status"
+      ],
+      "properties": {
+        "note_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "purpose": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "purpose_status": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "unspecified",
+            "ambiguous"
+          ]
+        }
+      }
+    },
+    "outline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "heading",
+          "purpose",
+          "support_status",
+          "supporting_note_ids",
+          "subpoints"
+        ],
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "support_status": {
+            "type": "string",
+            "enum": [
+              "supported",
+              "gap",
+              "conflicted",
+              "partially_supported"
+            ]
+          },
+          "supporting_note_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "subpoints": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "text",
+                "evidence_kind",
+                "note_ids"
+              ],
+              "properties": {
+                "text": {
+                  "type": "string"
+                },
+                "evidence_kind": {
+                  "type": "string",
+                  "enum": [
+                    "direct",
+                    "definition",
+                    "structural",
+                    "unresolved"
+                  ]
+                },
+                "note_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "gap_register": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "section",
+          "reason",
+          "research_question"
+        ],
+        "properties": {
+          "section": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "research_question": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "conflict_register": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "note_ids",
+          "issue",
+          "resolution_status"
+        ],
+        "properties": {
+          "note_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "issue": {
+            "type": "string"
+          },
+          "resolution_status": {
+            "type": "string",
+            "enum": [
+              "unresolved",
+              "resolved_by_supplied_precedence"
+            ]
+          }
+        }
+      }
+    },
+    "verification_report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "substantive_points_traced",
+        "unsupported_requested_sections_isolated",
+        "note_instructions_executed",
+        "omissions"
+      ],
+      "properties": {
+        "substantive_points_traced": {
+          "type": "boolean"
+        },
+        "unsupported_requested_sections_isolated": {
+          "type": "boolean"
+        },
+        "note_instructions_executed": {
+          "type": "boolean"
+        },
+        "omissions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

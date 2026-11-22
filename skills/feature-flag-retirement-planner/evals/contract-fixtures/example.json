@@ -1,0 +1,62 @@
+{
+  "scope": {
+    "flag": "nav_old",
+    "owner": "Web",
+    "state": "disabled",
+    "execution_boundary": "offline_planning_only"
+  },
+  "evidence_ledger": [
+    {
+      "reference": "config/flags.yml",
+      "category": "configuration",
+      "evidence_status": "confirmed",
+      "state_or_usage": "usage_evidence"
+    },
+    {
+      "reference": "owner approval before cleanup",
+      "category": "policy",
+      "evidence_status": "confirmed",
+      "state_or_usage": "policy_evidence"
+    }
+  ],
+  "dependency_order": [
+    {
+      "step": "Obtain owner approval before any cleanup assessment.",
+      "basis": "supplied"
+    },
+    {
+      "step": "Verify whether the confirmed configuration reference remains active.",
+      "basis": "proposed"
+    }
+  ],
+  "checklist": [
+    {
+      "target": "nav_old retirement decision",
+      "prerequisites": [],
+      "future_action": "Obtain and record approval from Web.",
+      "closure_evidence": "Recorded owner approval",
+      "rollback_boundary": null,
+      "unresolved_risk": "Rollback information is not supplied."
+    },
+    {
+      "target": "config/flags.yml",
+      "prerequisites": [
+        "Recorded owner approval"
+      ],
+      "future_action": "Verify the role and activity of the configuration reference before proposing cleanup.",
+      "closure_evidence": "Reference-specific verification result",
+      "rollback_boundary": null,
+      "unresolved_risk": "Disabled state does not establish that the configuration is inactive or removable."
+    }
+  ],
+  "rollback_boundary": null,
+  "unresolved": [
+    "Rollback method and boundary are unknown.",
+    "No dependency information was supplied."
+  ],
+  "acceptance_checks": [
+    "Preserve the supplied reference and status.",
+    "Keep disabled state separate from usage evidence.",
+    "Do not edit configuration, remove the flag, or deploy changes."
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "fingerprint": "1af4e7eabf0ec4bf1ce3ecd45a12ffe52c093c5e4ae5ba41e5f9a333d5bd7a53",
+  "job": "factory100_grade_cb0633483c20",
+  "execution_job": "factory100_execute_249a02b13374",
+  "baseline_job": "factory100_baseline_4864d4cccc17",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "objection-response-evidence-grid__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "O1 is supported only by E1's one two-person team, with the lack of a general success rate stated in the adjacent limitation."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "O2 says E2 establishes that setup time varies with data access and that no supplied evidence supports a Friday guarantee."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Each objection has a targeted next question, and both records mark prohibited assurances as avoided without giving a guarantee."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The O1 row limits support to one two-person team in E1 and immediately states that this is not a general success rate or guarantee."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The O2 row refuses a completion-date guarantee, cites E2's data-access condition, and notes that no Friday schedule evidence exists."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Both rows contain targeted next questions, and the closing statement explicitly prohibits outcome and completion-date guarantees."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "objection-response-evidence-grid__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "missing_inputs contains \"prohibited_assurances,\" and no assurance policy is invented."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "O1 has support_status \"unsupported,\" prohibited_assurance_check \"unresolved because list missing,\" and a response explaining that E1 covers document text but not comments."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The limitation preserves E1's silence about comments, and the next question asks for specification or sample-export evidence about comment inclusion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "objection-response-evidence-grid__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The supported response says users require the Refund Approver permission and cites E1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The response states that titles and membership are insufficient and that no permission record for a named user was supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The exact sales-note claim is reproduced and rejected as unsupported and guaranteed; the next question asks which users have a current permission record."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "objection-response-evidence-grid__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "O7 is marked partial, with support limited to immediate searchability of CSV-imported labels in one sample workspace and limitations covering reindexing and other methods."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The rejected claim exactly reproduces S3's sentence, labels S3 as the source, and rejects its permanence and universal label, workspace, and method scope as exceeding M4."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "No future-search assurance is made, and the next question requests evidence for other methods, additional workspaces, and post-reindexing searchability."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "objection-response-evidence-grid__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "objection-response-evidence-grid__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "objection-response-evidence-grid__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "objection-response-evidence-grid__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

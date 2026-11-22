@@ -1,0 +1,123 @@
+{
+  "fingerprint": "9e6a750b4022b850d445337b4301ca4e43f8c43cc080cbd11931ad0b841fc2d2",
+  "job": "factory100_grade_cb0633483c20",
+  "execution_job": "factory100_execute_249a02b13374",
+  "baseline_job": "factory100_baseline_f27aa15eb1b3",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "null-semantics-comparison__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "fail",
+              "evidence": "The matrix omits explicit rows for each source's empty string and negative values, Source B's UNK and absent representations as inputs, and Source A's zero; those meanings appear only partially elsewhere."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The allowed_mapping field gives only \"A null -> B UNK for seats only, one direction\" and does not call it reversible or an equivalence."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Invalid handling rejects empty strings and negatives; N/A remains not applicable with no B equivalent, absence is kept distinct from unknown, and the mapping is expressly scoped to seats."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The matrix separately records A null, A and B absence, both empty strings, both zero values, A N/A, B UNK, and negative values, with zero defined as known none."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The sole allowed mapping is A null to B UNK, scoped to seats, marked one-way and described as a transformation; no reverse mapping is authorized."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response rejects empty strings and negatives, keeps A N/A as not applicable, distinguishes the two absence meanings, and limits the transformation to seats."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "null-semantics-comparison__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The matrix records all declared A meanings, B ? as unknown, both empty strings as known empty codes, and B absence as not declared with unknown certainty."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "allowed_mappings is empty, and the response states that no transformation or equivalence rule was supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Empty string is explicitly preserved as a known empty code, while B's absent-field meaning is identified as unresolved and requiring supplied semantics."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "null-semantics-comparison__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The exact quoted token is classified as invalid, and invalid_value_handling says to reject it without reinterpreting it as missing or unknown."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Both A and B zero are recorded as known status zero, and allowed_mappings is empty."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response distinguishes A null/unknown from B absence/not provided and states that no cross-source conversion is authorized."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "null-semantics-comparison__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "null-semantics-comparison__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "null-semantics-comparison__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

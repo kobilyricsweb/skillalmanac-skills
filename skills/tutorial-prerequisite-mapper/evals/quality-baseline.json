@@ -1,0 +1,12 @@
+{
+  "fingerprint": "04cf99864327a766ba1ebea738acde6822f843dd0aaa910fae10cfb184dac1cf",
+  "job": "factory100_baseline_962e614a16d0",
+  "results": [
+    {
+      "id": "tutorial-prerequisite-mapper__q100_ordinary",
+      "answer": "Prerequisites: a writable practice folder; ability to create and read text files; the supplied input “sun.”\n\nS1: Save “sun” in source.txt. Verification: source.txt displays “sun.”\nS2: Copy the contents of source.txt into result.txt. Verification: result.txt displays “sun.”\n\nS2 depends on successful completion and readable contents from S1. No execution is performed."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

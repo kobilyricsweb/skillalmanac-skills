@@ -1,0 +1,11 @@
+{
+  "slug": "null-semantics-comparison",
+  "category": "data",
+  "user_problem": "Multiple sources use null-like values differently, causing unsafe equivalence assumptions during integration.",
+  "unique_output": "A semantics matrix comparing null, absent, empty, zero, sentinel values, and documented downstream treatment.",
+  "required_input": "Per-source null conventions, sample synthetic records, field definitions, and stated transformation rules.",
+  "critical_rule": "Keep representation and meaning separate; never collapse values unless an explicit equivalence rule permits it.",
+  "nearest_existing_and_difference": "Nearest is dataset-field-profiler; this compares declared missing-value semantics rather than observed JSON types.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input Source A uses null for unknown age, Source B uses -1 for unknown, and empty is invalid in both. Output maps null↔-1 only for age, rejects empty, and preserves zero as known."
+}

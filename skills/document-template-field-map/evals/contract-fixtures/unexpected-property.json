@@ -1,0 +1,34 @@
+{
+  "bindings": [
+    {
+      "placeholder": "{{member}}",
+      "candidate_sources": [
+        "person.display_name"
+      ],
+      "selected_source": "person.display_name",
+      "status": "bound",
+      "rationale": "The supplied policy explicitly maps member to person.display_name.",
+      "transform": null,
+      "expected_format": "text",
+      "conflict_note": null,
+      "missing_value_behavior": "Remain unknown if the source value is missing."
+    },
+    {
+      "placeholder": "{{joined}}",
+      "candidate_sources": [
+        "person.joined_at"
+      ],
+      "selected_source": "person.joined_at",
+      "status": "bound",
+      "rationale": "The supplied policy explicitly maps joined to person.joined_at.",
+      "transform": "Use the UTC date portion.",
+      "expected_format": "YYYY-MM-DD",
+      "conflict_note": null,
+      "missing_value_behavior": "Remain unknown if the source value is missing."
+    }
+  ],
+  "unresolved": [],
+  "conflicts": [],
+  "implementation_note": "A later authorized filling step would read the selected sources and apply only the listed transform; this map does not fill a document.",
+  "__unexpected_fixture_property__": 0
+}

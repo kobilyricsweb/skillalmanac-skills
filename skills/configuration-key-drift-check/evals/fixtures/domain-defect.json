@@ -1,0 +1,1 @@
+{"required_keys": ["PORT", "HOST"], "optional_keys": ["DEBUG"], "configurations": [{"name": "prod", "keys": ["PORT", "PORT", "DEBUG"]}]}

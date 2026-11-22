@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Write two short probes that distinguish these explicitly named fraction misconceptions.",
+    "should_trigger": true
+  },
+  {
+    "query": "For each item, identify the targeted misconception, likely distractor reasoning, and interpretation limit.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a diagnostic set for this objective using the supplied response format and item count.",
+    "should_trigger": true
+  },
+  {
+    "query": "Add a follow-up probe before interpreting a student's misconception from an answer.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate conceptual misconceptions from ordinary calculation errors in these items.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an evidence-to-investigate diagnostic set, not a diagnosis, for the listed beliefs.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use only the misconceptions I provide and explain what each item cannot distinguish.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design a choice-and-explanation item that targets the stated denominator misconception.",
+    "should_trigger": true
+  },
+  {
+    "query": "Key the correct rule and cautious distractor interpretation for each diagnostic question.",
+    "should_trigger": true
+  },
+  {
+    "query": "Tell me whether this item can discriminate the two supplied misconceptions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make a broad classroom quiz for this chapter.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a staged fading plan from this solved example.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build rubric anchors with responses at levels 2 and 3.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map each lesson activity to objective evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a bank of rubric-based feedback comments.",
+    "should_trigger": false
+  },
+  {
+    "query": "Infer what the student believes from this single incorrect answer.",
+    "should_trigger": false
+  },
+  {
+    "query": "Generate varied examples covering edge cases.",
+    "should_trigger": false
+  },
+  {
+    "query": "Explain the correct fraction rule in a tutorial.",
+    "should_trigger": false
+  },
+  {
+    "query": "List prerequisites for comparing fractions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Assign scores to these student responses.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "synthetic": true,
+  "input": "Approved change notes: CN1 says workspace owners can export a member list as CSV. Affected audiences: workspace owners on the Team plan. Release status: limited beta. Limitations: exports contain names and email addresses only; beta access is enabled for selected workspaces. Required action: none. Evidence references: DOC1 supports CN1 and the listed limitations. Permitted CTA: “Read the beta guide.”",
+  "expected_artifact": {
+    "headline_options": [
+      "Limited beta: member-list CSV export for selected Team workspaces",
+      "Team workspace owners can try member-list CSV export in limited beta"
+    ],
+    "confirmed_change": "Workspace owners in selected Team-plan workspaces can export a member list as CSV.",
+    "audience_impact": "The documented change applies to workspace owners on the Team plan whose workspaces have beta access.",
+    "release_status": "limited beta",
+    "limitation": "Exports contain only names and email addresses, and access is limited to selected workspaces.",
+    "migration_note": "No action is required.",
+    "cta": "Read the beta guide.",
+    "unresolved_items": [],
+    "fact_trace": [
+      {
+        "statement": "Workspace owners can export a member list as CSV.",
+        "evidence_references": [
+          "CN1",
+          "DOC1"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "statement": "Access is limited to selected Team workspaces.",
+        "evidence_references": [
+          "DOC1"
+        ],
+        "status": "confirmed"
+      }
+    ],
+    "outside_scope": [
+      "Product authorization",
+      "Deployment",
+      "User notification"
+    ]
+  },
+  "status": "specification; not an executed test"
+}

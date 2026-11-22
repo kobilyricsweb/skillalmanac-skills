@@ -1,0 +1,24 @@
+{
+  "comparison_basis": "Identical SKU values; difference is second minus first",
+  "rows": [
+    {
+      "item": "P1",
+      "first_observation": 2,
+      "second_observation": 1,
+      "count_times": [
+        "11:00",
+        "12:00"
+      ],
+      "difference": -1,
+      "documented_adjustment": "One unit transferred out",
+      "arithmetic_explanation": "2 - 1 transferred unit = 1, matching the second observation",
+      "classification": "explainable_difference",
+      "evidence": [
+        "T1"
+      ],
+      "proposed_next_step": "Submit the reconciliation for supervisor review"
+    }
+  ],
+  "unresolved_inputs": [],
+  "review_summary": "The supplied transfer explains the preserved one-unit decrease; no record change was performed."
+}

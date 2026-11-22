@@ -1,0 +1,22 @@
+{
+  "slug": "terminology-consistency-editor",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "TCE-4",
+      "severity": "high",
+      "location": "Verification instructions versus explicit-authorized-edit exception",
+      "evidence": "The verification instructions require every proposed replacement to be “outside protected text.” The final paragraph nevertheless permits an explicitly requested quotation rewrite as a labeled proposed paraphrase and permits a scoped code-rename proposal. Those proposals concern text that the skill otherwise classifies as protected, so they cannot satisfy the categorical verification assertion.",
+      "consequence": "A correctly labeled, explicitly authorized exception must either fail the stated verification or be incorrectly reported as outside protected text. This makes the recovery path added for authorized broader edits internally inconsistent.",
+      "correction": "Separate default glossary replacements from authorized exception proposals. Verify ordinary replacements as outside protected text; verify quotation paraphrases by confirming the original is preserved and the proposal is not attributed as verbatim; verify code-rename proposals as scoped, non-executed proposals."
+    },
+    {
+      "id": "TCE-5",
+      "severity": "medium",
+      "location": "Worked example, Expected artifact versus required return structure",
+      "evidence": "The required return includes “scope and exclusions” and a “candidate-term inventory,” and the preferred-terms table must contain concept, preferred term, observed variants, scope, and glossary-grounded rationale. The worked artifact omits the first two sections and reduces the table to shorthand mappings without explicit concept, scope, or rationale fields.",
+      "consequence": "The canonical example teaches an output that lacks required context and traceability, making it harder to verify why a term was grouped or where a policy applies.",
+      "correction": "Add explicit scope/exclusions and candidate-inventory sections, and expand each preferred-terms row to include all required fields."
+    }
+  ]
+}

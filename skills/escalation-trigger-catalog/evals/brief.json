@@ -1,0 +1,11 @@
+{
+  "slug": "escalation-trigger-catalog",
+  "category": "operations",
+  "user_problem": "Teams need observable escalation triggers rather than vague instructions such as escalate when serious.",
+  "unique_output": "A catalog of trigger, threshold, evidence required, escalation destination, timing, and explicit non-trigger examples.",
+  "required_input": "Escalation policy, measurable thresholds, named destinations, timing rules, and supplied boundary examples.",
+  "critical_rule": "Do not define severity or thresholds not present in the policy; ambiguous cases remain policy gaps.",
+  "nearest_existing_and_difference": "Nearest is approval-path-mapper; this operationalizes escalation conditions rather than approval sequences.",
+  "tier": "free",
+  "acceptance_scenario": "Input says escalate to Lead when backlog exceeds 25 for two consecutive checks; one check at 27 is insufficient. Output states the two-check trigger and lists 27 then 24 as a non-trigger."
+}

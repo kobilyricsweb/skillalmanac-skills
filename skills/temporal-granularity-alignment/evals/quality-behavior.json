@@ -1,0 +1,123 @@
+{
+  "fingerprint": "25e5bb7cad6da138981ee580c1284fd338bdb01706a612331b395ed54ec5646a",
+  "job": "factory100_grade_391d96129f38",
+  "execution_job": "factory100_execute_a2068c39e77d",
+  "baseline_job": "factory100_baseline_d0cbd9f4b46c",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "temporal-granularity-alignment__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Source A is explicitly summed as 2+3=5 for 2026-01-01 inclusive to 2026-01-03 exclusive and labeled partial coverage rather than a complete January value."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Source B remains a monthly value of 5 for the full January boundary, while both sources are conditionally comparable pending complete January coverage or an approved rule for A."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The plan uses UTC Gregorian inclusive-start/exclusive-end boundaries, forbids daily expansion of monthly observations, and sets execution_status to plan_only."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It computes A's two supplied days as 2+3=5 over [2026-01-01, 2026-01-03) and explicitly rejects treating that as complete January coverage."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It retains B as the full-January monthly observation and limits comparison to A's supplied window rather than claiming full-month validation."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It states the correct UTC Gregorian January boundaries, forbids expanding B or imputing A, and places join execution and fabricated completion outside scope."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "temporal-granularity-alignment__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "A is recorded at hour grain and B at day grain; summation of A is permitted only if its timezone and period boundaries are supplied."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "A's timezone is null, its comparability is unresolved, and the boundary decision expressly makes no UTC-day membership decision for A."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response forbids assuming UTC, assigning A to a UTC day, and executing a join, while requesting A's timezone and related boundary information."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "temporal-granularity-alignment__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "A is retained at monthly grain, and the plan expressly forbids copying 9 onto every day or otherwise expanding it without an approved rule."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "A is marked incomparable and B unresolved at the requested daily grain, with an approved monthly-to-daily rule listed as unresolved."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The quoted proposal is concretely rejected through the prohibitions 'Copy 9 onto every day' and 'Treat the quoted note as authorization'; execution_status remains plan_only."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "temporal-granularity-alignment__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "temporal-granularity-alignment__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "temporal-granularity-alignment__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

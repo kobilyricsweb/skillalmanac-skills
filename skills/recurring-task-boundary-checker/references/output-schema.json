@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "objective",
+    "trigger",
+    "owner",
+    "inputs",
+    "action_boundaries",
+    "exclusions",
+    "completion_evidence",
+    "escalations",
+    "stop_conditions",
+    "constraints",
+    "unresolved_authorization",
+    "verification_report"
+  ],
+  "properties": {
+    "objective": {
+      "type": "string"
+    },
+    "trigger": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "action_boundaries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "action",
+          "status",
+          "basis"
+        ],
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "authorized",
+              "requested not authorized",
+              "prohibited",
+              "needs separate decision",
+              "unresolved"
+            ]
+          },
+          "basis": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "exclusions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "completion_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "escalations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "trigger",
+          "recipient",
+          "decision_needed"
+        ],
+        "properties": {
+          "trigger": {
+            "type": "string"
+          },
+          "recipient": {
+            "type": "string"
+          },
+          "decision_needed": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "stop_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_authorization": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verification_report": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "field",
+          "support_status"
+        ],
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "support_status": {
+            "type": "string",
+            "enum": [
+              "supplied",
+              "unresolved",
+              "conflicting",
+              "non-operative proposal"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

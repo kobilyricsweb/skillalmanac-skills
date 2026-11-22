@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "decisions",
+    "input_gaps",
+    "scope_exclusions"
+  ],
+  "properties": {
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "decision_id",
+          "trigger",
+          "decision_question",
+          "branches",
+          "supporting_passages",
+          "status"
+        ],
+        "properties": {
+          "decision_id": {
+            "type": "string"
+          },
+          "trigger": {
+            "type": "string"
+          },
+          "decision_question": {
+            "type": "string"
+          },
+          "branches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "observable_condition",
+                "branch_action",
+                "role",
+                "rejoin_or_termination",
+                "supporting_passages",
+                "missing_or_ambiguous"
+              ],
+              "properties": {
+                "observable_condition": {
+                  "type": "string"
+                },
+                "branch_action": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "role": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "rejoin_or_termination": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "supporting_passages": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "missing_or_ambiguous": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          },
+          "supporting_passages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "enum": [
+              "documented",
+              "partial",
+              "conflicting",
+              "non_observable"
+            ]
+          }
+        }
+      }
+    },
+    "input_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scope_exclusions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

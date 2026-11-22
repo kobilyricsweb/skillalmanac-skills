@@ -1,0 +1,13 @@
+[
+  {
+    "id": "dataset-field-dictionary-builder__parent_holdout",
+    "slug": "dataset-field-dictionary-builder",
+    "prompt": "Create a dictionary for fields status and qty from notes: N1 status values are A=active and P=paused; N2 qty null means not collected; N3 qty null means not applicable. Two sample rows have qty0 and qty2, but no business definition or rule for zero is supplied. These are illustrative product records.",
+    "assertions": [
+      "Preserves A/P meanings fromN1.",
+      "Shows the two conflicting null meanings without choosing a winner or equating null with zero.",
+      "Does not invent a business definition or zero semantics from two sample values."
+    ],
+    "origin": "parent-designed fresh forward case; not an observed customer request"
+  }
+]

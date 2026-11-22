@@ -1,0 +1,11 @@
+{
+  "slug": "research-note-deduplication-plan",
+  "category": "knowledge",
+  "user_problem": "A note collection repeats observations with different wording, obscuring independent evidence and genuine disagreement.",
+  "unique_output": "A clustering plan distinguishing exact duplicates, paraphrases, shared-source repetitions, related notes, and contradictions.",
+  "required_input": "Labeled notes, source IDs, dates, quoted versus paraphrased markers, and explicit comparison rules.",
+  "critical_rule": "Never merge notes solely by topical similarity; preserve separate provenance and all contradictory wording.",
+  "nearest_existing_and_difference": "Nearest is duplicate-record-triage; this plans knowledge-note consolidation while protecting source independence rather than matching operational records.",
+  "tier": "free",
+  "acceptance_scenario": "Input N1 and N2 both paraphrase source S1 saying delivery took two days; N3 from S2 says three days. Output clusters N1/N2 as shared-source repetition and retains N3 as contradiction."
+}

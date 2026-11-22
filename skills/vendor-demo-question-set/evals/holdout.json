@@ -1,0 +1,24 @@
+[
+  {
+    "id": "vendor-demo-question-set__parent_holdout",
+    "slug": "vendor-demo-question-set",
+    "prompt": "Prepare a20-minute demo plan from requirements: Q1 show CSV export, prioritymust, requested8minutes; Q2 show role change, prioritymust,8minutes; Q3 show offline operation, priorityshould,8minutes. Vendor supplied no feature evidence. Request a demo script and evidence-capture criteria. No competitor info or budget scoring requested.",
+    "assertions": [
+      "Maps each requirement to a requested demonstration and evidence to capture, not already-observed proof.",
+      "Explicitly handles24minutes of requests versus20-minute cap by prioritizing/deferring or labeling proposed changed timings, not an overfull claimed20-minute plan.",
+      "Does not claim vendor supports these features or invent rankings/pricing recommendations."
+    ],
+    "origin": "parent-designed fresh forward case; not an observed customer request"
+  },
+  {
+    "id": "vendor-demo-question-set__fresh_after_repair",
+    "slug": "vendor-demo-question-set",
+    "prompt": "Create a15-minute demo plan. MustQ1 CSV export has a supplied8-minute slot; mustQ2 role restriction has a supplied6-minute slot; shouldQ3 offline mode has a supplied7-minute slot. Do not alter these slot durations silently. No vendor capabilities have been observed. Show in-cap agenda and deferred items with evidence requests.",
+    "assertions": [
+      "In-cap agenda preserves8+6mandatory minutes and fits15minutes, deferring the7-minute optional item outside the cap.",
+      "Distinguishes requested demonstrations/evidence from observed vendor capability.",
+      "Shows21minutes of requested content and the resulting overflow/deferral without silent duration changes."
+    ],
+    "origin": "fresh parent follow-up case; not used in the repair text"
+  }
+]

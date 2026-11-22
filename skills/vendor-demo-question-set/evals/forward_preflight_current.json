@@ -1,0 +1,91 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "vendor-demo-question-set__parent_holdout",
+        "slug": "vendor-demo-question-set",
+        "prompt": "Prepare a20-minute demo plan from requirements: Q1 show CSV export, prioritymust, requested8minutes; Q2 show role change, prioritymust,8minutes; Q3 show offline operation, priorityshould,8minutes. Vendor supplied no feature evidence. Request a demo script and evidence-capture criteria. No competitor info or budget scoring requested.",
+        "assertions": [
+          "Maps each requirement to a requested demonstration and evidence to capture, not already-observed proof.",
+          "Explicitly handles24minutes of requests versus20-minute cap by prioritizing/deferring or labeling proposed changed timings, not an overfull claimed20-minute plan.",
+          "Does not claim vendor supports these features or invent rankings/pricing recommendations."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "Objective: Prepare a 20-minute proposed demonstration script for Q1 CSV export, Q2 role change, and Q3 offline operation. No capability is treated as observed or verified.\n\nAssumptions: Q1 and Q2 are must priorities; Q3 is should. Supplied requested times are binding for the requested segments. No workflow, participants, data, or evidence format was supplied.\n\nTimed script and overflow:\n- 0:00–8:00 Q1, must: Ask the vendor to perform a CSV export using representative data. Capture the live steps, file produced, fields included, filters or limits, errors, and whether the result is downloadable. Ask what permissions, configuration, and export limits apply.\n- 8:00–16:00 Q2, must: Ask the vendor to change a user role and demonstrate the resulting access behavior. Capture the actor, role settings, affected functions, denied/allowed actions, and audit trail if shown. Ask whether changes require admin privileges or propagation time.\n- 16:00–24:00 Q3, should: Ask the vendor to demonstrate offline operation and subsequent synchronization. Capture supported offline actions, unavailable functions, local data behavior, conflict handling, and sync status. Ask which devices, clients, and conditions are supported.\n\nVerification report: supplied segment total is 8+8+8 = 24 minutes, exceeding the 20-minute cap by 4 minutes. Therefore no fully in-cap agenda exists while preserving all supplied segment durations. The feasible in-cap agenda contains Q1 and Q2 for 16 minutes, leaving 4 minutes for transition or clarification; Q3 is deferred unless its duration is renegotiated. Any changed timing is a proposed renegotiation, not a substitute constraint.\n\nEvidence checklist: timestamped notes, screen capture if permitted, exact test data, observed outputs, prerequisites, limitations, error messages, and vendor-provided follow-up evidence. Later validation remains unresolved.\n\nNon-findings: no capability, competitor comparison, budget score, ranking, or vendor claim is established.",
+      "grade": {
+        "id": "vendor-demo-question-set__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "For Q1, Q2, and Q3, the answer requests a live demonstration and specifies outputs, steps, permissions, limitations, and other evidence to capture without treating them as observed."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "It calculates 24 requested minutes against the 20-minute cap, includes Q1 and Q2 within 16 minutes, and defers Q3 unless its duration is renegotiated."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "It states that no capability, competitor comparison, budget score, ranking, or vendor claim is established and gives no pricing recommendation."
+          }
+        ]
+      },
+      "binding": {
+        "id": "vendor-demo-question-set__parent_holdout",
+        "slug": "vendor-demo-question-set",
+        "skill_sha256": "8a5c311a50117b07e1f698ed4e4bed2cbbbb97ddbb7ff60c7a1cb8e8ed7c9c71",
+        "contract_sha256": "472271bbb4ededbe9ffaafe3672b110767f3852a5fe1e430a2a7315acc1fb397",
+        "assertions_sent_to_executor": false
+      },
+      "round": "repaired"
+    },
+    {
+      "case": {
+        "id": "vendor-demo-question-set__fresh_after_repair",
+        "slug": "vendor-demo-question-set",
+        "prompt": "Create a15-minute demo plan. MustQ1 CSV export has a supplied8-minute slot; mustQ2 role restriction has a supplied6-minute slot; shouldQ3 offline mode has a supplied7-minute slot. Do not alter these slot durations silently. No vendor capabilities have been observed. Show in-cap agenda and deferred items with evidence requests.",
+        "assertions": [
+          "In-cap agenda preserves8+6mandatory minutes and fits15minutes, deferring the7-minute optional item outside the cap.",
+          "Distinguishes requested demonstrations/evidence from observed vendor capability.",
+          "Shows21minutes of requested content and the resulting overflow/deferral without silent duration changes."
+        ],
+        "origin": "fresh parent follow-up case; not used in the repair text"
+      },
+      "answer": "Objective: Create a proposed 15-minute demonstration plan for Q1 CSV export, Q2 role restriction, and Q3 offline mode. No vendor capability is observed or verified.\n\nSupplied priorities and slots: Q1 must, 8 minutes; Q2 must, 6 minutes; Q3 should, 7 minutes. Total requested time is 21 minutes, exceeding the cap by 6 minutes.\n\nIn-cap agenda using binding supplied durations:\n- 0:00–8:00 Q1 CSV export. Request a live export with representative data. Capture steps, file/output, fields, filters, limits, permissions, and errors. Ask what prerequisites apply.\n- 8:00–14:00 Q2 role restriction. Request a live role/access change and tests of allowed and denied actions. Capture role configuration, affected functions, propagation, and audit evidence. Ask whether admin access or special setup is required.\n- 14:00–15:00: reserve for transition and clarification; this is not a Q3 demonstration.\n\nDeferred item: Q3 offline mode, should, supplied 7-minute slot. Defer unless the cap is extended by 6 minutes or the vendor and team approve a renegotiated slot. No timing is silently changed.\n\nTraceability: Q1 included, Q2 included, Q3 deferred due to overflow. Evidence requests for all items are demonstration notes, screen capture if permitted, exact test data, prerequisites, observed outputs, limitations, and vendor follow-up documentation. Later validation evidence remains separate and unresolved.\n\nFollow-ups: What data/environment is needed? Which user roles are required? What offline actions and sync conditions would be tested? Who owns later validation? No ranking, score, market claim, or capability conclusion is made.",
+      "grade": {
+        "id": "vendor-demo-question-set__fresh_after_repair",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The in-cap agenda preserves Q1's 8-minute slot and Q2's 6-minute slot, fits them within 14 minutes of the 15-minute cap, and defers Q3's 7-minute slot."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "The answer states that no vendor capability is observed or verified and consistently frames feature activity and evidence as demonstration requests and later validation."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "It explicitly totals the requested slots at 21 minutes, identifies a 6-minute overflow, and defers Q3 without silently changing any supplied duration."
+          }
+        ]
+      },
+      "binding": {
+        "id": "vendor-demo-question-set__fresh_after_repair",
+        "slug": "vendor-demo-question-set",
+        "skill_sha256": "8a5c311a50117b07e1f698ed4e4bed2cbbbb97ddbb7ff60c7a1cb8e8ed7c9c71",
+        "contract_sha256": "472271bbb4ededbe9ffaafe3672b110767f3852a5fe1e430a2a7315acc1fb397",
+        "assertions_sent_to_executor": false
+      },
+      "round": "repaired"
+    }
+  ]
+}

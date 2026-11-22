@@ -1,0 +1,7 @@
+Required input fields are: source names; field names and definitions; each source's conventions for null, absent, empty, zero, sentinel, and invalid values; synthetic sample records; and explicit transformation or equivalence rules. State whether a convention applies globally or only to a named field.
+
+Inventory every required category for every source and field. If a representation or category has no declared meaning, label it unknown and list it as unresolved. A declared sentinel convention does not supply a missing literal-null convention. Include each declared invalid representation in the semantics matrix; invalid_value_handling then states the required rejection or other supplied treatment.
+
+For every permitted mapping, specify direction, field scope, rule_kind, and rule_basis. Use rule_kind transformation for a supplied directional conversion rule and equivalence only for a rule that explicitly declares semantic equivalence. A one-way transformation does not authorize a reverse mapping. State treatment of values outside the rule's scope.
+
+The output must include a semantics matrix; representation-versus-meaning notes; allowed mappings with their supplied basis; preserved distinctions; invalid-value handling; downstream treatment; and unresolved conflicts. Never collapse values from resemblance alone; zero is not missing unless explicitly stated; absent and null remain distinct unless mapped; invalid does not become unknown; and a field-specific rule does not generalize to other fields.

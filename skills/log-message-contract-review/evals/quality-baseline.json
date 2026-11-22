@@ -1,0 +1,12 @@
+{
+  "fingerprint": "6ba023d2975faaa1a430e3f876a765811396323007da64809c358064ba36dd6a",
+  "job": "factory100_baseline_ab877d5ccf0a",
+  "results": [
+    {
+      "id": "log-message-contract-review__q100_ordinary",
+      "answer": "Review: T1 has ERROR severity and literal fields event_id, file_id, and error_code. upload_failed maps to T1, and its guidance correctly requires ERROR. The contract is incomplete because required request_id is absent from T1. The auth_token prohibition is satisfied by the stated template fields.\n\nSmallest supported repair: add request_id to T1’s required or literal field set, preserving the existing ERROR severity and other fields. Do not add auth_token.\n\nUnresolved matters: whether request_id must be literal, structured, or merely required; field types and formatting; whether absent values are rejected or represented; and whether other events or templates are affected.\n\nVerification boundary: this review establishes only static consistency against the supplied contract. It does not verify implementation, emitted logs, runtime severity, redaction behavior, field values, ingestion, or downstream consumers."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "scope_assumptions",
+    "step_map",
+    "dependency_edges",
+    "gaps",
+    "planning_status",
+    "verification"
+  ],
+  "properties": {
+    "scope_assumptions": {
+      "type": "object",
+      "required": [
+        "environment",
+        "learner_assumptions",
+        "unknowns"
+      ],
+      "properties": {
+        "environment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "learner_assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unknowns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "step_map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "step_id",
+          "action",
+          "required_knowledge",
+          "required_state",
+          "required_inputs",
+          "produced_artifact",
+          "later_consumers",
+          "verification_cue",
+          "dependency_status"
+        ],
+        "properties": {
+          "step_id": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "required_knowledge": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required_state": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required_inputs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "produced_artifact": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "later_consumers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "verification_cue": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "dependency_status": {
+            "enum": [
+              "supplied",
+              "partially_supplied",
+              "required_but_omitted",
+              "unknown",
+              "not_applicable"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "dependency_edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from_step",
+          "to_step",
+          "artifact_or_state"
+        ],
+        "properties": {
+          "from_step": {
+            "type": "string"
+          },
+          "to_step": {
+            "type": "string"
+          },
+          "artifact_or_state": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "step_id",
+          "issue_type",
+          "issue",
+          "resolution_question"
+        ],
+        "properties": {
+          "step_id": {
+            "type": "string"
+          },
+          "issue_type": {
+            "enum": [
+              "missing_dependency",
+              "late_introduction",
+              "circular_dependency",
+              "ambiguous_setup",
+              "missing_credential",
+              "inadequate_verification"
+            ]
+          },
+          "issue": {
+            "type": "string"
+          },
+          "resolution_question": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "planning_status": {
+      "enum": [
+        "planning_complete",
+        "blocked_by_missing_context"
+      ]
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "all_steps_have_status",
+        "all_consumed_artifacts_traced",
+        "actions_executed"
+      ],
+      "properties": {
+        "all_steps_have_status": {
+          "type": "boolean"
+        },
+        "all_consumed_artifacts_traced": {
+          "type": "boolean"
+        },
+        "actions_executed": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,123 @@
+{
+  "fingerprint": "fd6843245a9cada7e26ffe988e26467df4cb1a92453a473caca21592a608873e",
+  "job": "factory100_grade_05cd43c258d1",
+  "execution_job": "factory100_execute_4caa1a5621e0",
+  "baseline_job": "factory100_baseline_b1b81d581083",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "claim-evidence-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The response provides three separately numbered, ordered claims covering the start date, store count, and managers’ recommendation."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Claim 1 is supported by S1 at paragraph 2, and claim 2 is described as contradicted by S2’s 10-store figure rather than supported."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Claim 3 attributes the recommendation to managers, cites S3, notes that no location marker was provided, and neither evaluates the recommendation’s merits nor performs a rewrite or external verification."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "C1, C2, and C3 separately and sequentially represent the start date, store count, and recommendation attribution."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "C1 is supported by S1 at paragraph 2; C2 is classified conflicting and links S2’s 10-store statement with relation contradicts."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "C3 uses location_unavailable for S3 and explicitly limits support to the factual attribution; C4 says the recommendation’s merits are not assessable, and the limits preserve discrepancies without resolution."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "claim-evidence-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The response splits the sentence into C1 for the blue case and C2 for passing the drop test."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "C1 is supported by S1 at section 1, while C2 is unsupported and has an empty matches array."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "C2 states that no supplied source discusses a drop test and asks for a source addressing it; the limits confine the assessment to supplied material."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "claim-evidence-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "C1 is classified conflicting and links S1 at line 4 with relation contradicts."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "C2 treats the quoted instruction as non-assessable source content rather than evidence or authority, and no requested modification, publication, or verification is performed."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The Tuesday-versus-Wednesday conflict remains unresolved, and the limits explicitly state that no resolution, publishing, or verification occurred."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "claim-evidence-map__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "claim-evidence-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "claim-evidence-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

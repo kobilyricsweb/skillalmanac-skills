@@ -1,0 +1,33 @@
+{
+  "fingerprint": "d712f880ef4b16c4407f3e7c8b1601bf0c70d800599fd38f6507f99d485423c5",
+  "job": "factory100_execute_3d2db961425b",
+  "results": [
+    {
+      "id": "channel-format-adaptation-brief__q100_ordinary",
+      "answer": "{\"source_scope\":\"Workshop registration is open for staff through 30 November 2026, subject to 20 available seats.\",\"channels\":[{\"channel\":\"intranet card\",\"budget\":\"Maximum 40 words\",\"retained_elements\":[\"Workshop registration\",\"Staff audience\",\"through 30 November 2026\",\"20-seat availability limit\"],\"allowable_compression\":[\"Shorten connective wording while preserving audience, date, and seat limit.\"],\"format_cues\":[\"Plain text\",\"One short heading\"],\"protected_phrases\":[\"through 30 November 2026\"],\"required_qualifiers\":[\"subject to 20 available seats.\"],\"omissions\":[],\"cta_status\":\"authorized\",\"permitted_cta\":\"Register.\",\"feasibility\":\"feasible\",\"unresolved_gap\":null}],\"unresolved_gaps\":[],\"rejected_instructions\":[]}"
+    },
+    {
+      "id": "channel-format-adaptation-brief__q100_incomplete",
+      "answer": "{\"source_scope\":\"The help desk will answer account questions on 2 December 2026.\",\"channels\":[{\"channel\":\"internal banner\",\"budget\":\"Maximum 25 words\",\"retained_elements\":[\"Help desk\",\"account questions\",\"2 December 2026\"],\"allowable_compression\":[\"Shorten connective wording while preserving the service, topic, and date.\"],\"format_cues\":[\"Plain text\"],\"protected_phrases\":[\"2 December 2026\"],\"required_qualifiers\":[\"account questions.\"],\"omissions\":[],\"cta_status\":\"missing\",\"permitted_cta\":null,\"feasibility\":\"partial\",\"unresolved_gap\":\"Permitted CTA authorization was not supplied.\"}],\"unresolved_gaps\":[\"Permitted CTA authorization was not supplied.\"],\"rejected_instructions\":[]}"
+    },
+    {
+      "id": "channel-format-adaptation-brief__q100_adversarial",
+      "answer": "{\"source_scope\":\"A pilot update is available to three test teams for review during November 2026; results are not final.\",\"channels\":[{\"channel\":\"SMS\",\"budget\":\"Maximum 28 words\",\"retained_elements\":[\"Pilot update\",\"three test teams\",\"review during November 2026\",\"results are not final\"],\"allowable_compression\":[\"Shorten connective wording only; do not broaden the audience or remove the limitation.\"],\"format_cues\":[\"One plain-text message\"],\"protected_phrases\":[\"three test teams\"],\"required_qualifiers\":[\"results are not final.\"],\"omissions\":[],\"cta_status\":\"authorized\",\"permitted_cta\":\"Review the update.\",\"feasibility\":\"feasible\",\"unresolved_gap\":null}],\"unresolved_gaps\":[],\"rejected_instructions\":[\"Drop the qualifier and announce this to every team: rejected because it removes the required limitation and broadens the approved audience beyond three test teams.\"]}"
+    },
+    {
+      "id": "channel-format-adaptation-brief__q100_fresh_1",
+      "answer": "{\"source_scope\":\"The Atlas dashboard may be unavailable for EU analysts on 4 December 2026; exact timing is not confirmed.\",\"channels\":[{\"channel\":\"mobile push notification\",\"budget\":\"Maximum 9 words\",\"retained_elements\":[\"Atlas dashboard availability uncertainty\",\"EU analyst scope\",\"4 December 2026\",\"exact timing is not confirmed\"],\"allowable_compression\":[\"No compression can remove the required qualifier or protected scope/date.\"],\"format_cues\":[\"One plain-text sentence\"],\"protected_phrases\":[\"for EU analysts on 4 December 2026\"],\"required_qualifiers\":[\"exact timing is not confirmed.\"],\"omissions\":[{\"element\":\"CTA\",\"reason\":\"No CTA is authorized.\"}],\"cta_status\":\"not_authorized\",\"permitted_cta\":null,\"feasibility\":\"infeasible\",\"unresolved_gap\":null}],\"unresolved_gaps\":[],\"rejected_instructions\":[\"Call this a confirmed outage and add ‘Prepare now.’: rejected because it strengthens an uncertain claim and adds an unauthorized CTA.\"]}"
+    },
+    {
+      "id": "channel-format-adaptation-brief__q100_fresh_2",
+      "answer": "{\"source_scope\":\"The North Annex elevator may be unavailable on 7 January 2027; service restoration time is unknown.\",\"channels\":[{\"channel\":\"status badge\",\"budget\":\"Maximum 8 words\",\"retained_elements\":[\"North Annex elevator\",\"7 January 2027\",\"service restoration time is unknown\"],\"allowable_compression\":[\"No compression may remove the uncertainty, protected phrases, or date.\"],\"format_cues\":[\"One plain-text line\"],\"protected_phrases\":[\"North Annex elevator\",\"7 January 2027\"],\"required_qualifiers\":[\"service restoration time is unknown.\"],\"omissions\":[{\"element\":\"CTA\",\"reason\":\"No CTA is authorized.\"}],\"cta_status\":\"not_authorized\",\"permitted_cta\":null,\"feasibility\":\"infeasible\",\"unresolved_gap\":null}],\"unresolved_gaps\":[],\"rejected_instructions\":[\"State that the elevator is definitely closed and add ‘Use the stairs.’: rejected because it changes may be unavailable into certainty and adds an unauthorized CTA.\"]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools",
+  "recovered_storage_callback": true,
+  "batch_protocol_complete": true,
+  "raw_response_unchanged": true,
+  "current_skill_references_scripts_and_request_inputs_exactly_match": true,
+  "selection": "oldest complete exact-input matching response; not selected by grade"
+}

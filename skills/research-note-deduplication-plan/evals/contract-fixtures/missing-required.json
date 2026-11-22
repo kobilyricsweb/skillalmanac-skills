@@ -1,0 +1,50 @@
+{
+  "clusters": [
+    {
+      "cluster_id": "C1",
+      "note_ids": [
+        "N1",
+        "N2"
+      ],
+      "relationship": "paraphrase",
+      "evidence_basis": "shared_source_repetition",
+      "rationale": "Both notes assert that the pilot began on Monday in different wording and derive from S1.",
+      "preserved_provenance": [
+        {
+          "note_id": "N1",
+          "source_id": "S1",
+          "date": "2026-01-05",
+          "form": "quotation",
+          "original_text": "The pilot began Monday."
+        },
+        {
+          "note_id": "N2",
+          "source_id": "S1",
+          "date": "2026-01-05",
+          "form": "paraphrase",
+          "original_text": "The pilot started on Monday."
+        }
+      ]
+    }
+  ],
+  "pair_decisions": [
+    {
+      "note_ids": [
+        "N1",
+        "N2"
+      ],
+      "classification": "paraphrase",
+      "rationale": "The wording differs while the stated event and day are the same.",
+      "provenance_treatment": "Retain both note records and label them shared-source repetition rather than independent corroboration."
+    }
+  ],
+  "unresolved_comparisons": [],
+  "verification_report": {
+    "all_note_ids_accounted_for": true,
+    "topical_only_merges": [],
+    "provenance_loss_found": false,
+    "contradictions_remain_visible": true,
+    "notes_left_unclustered": [],
+    "issues": []
+  }
+}

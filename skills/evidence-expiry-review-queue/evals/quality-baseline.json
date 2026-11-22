@@ -1,0 +1,12 @@
+{
+  "fingerprint": "01c7adb7864695200c86727808f58aebb0bb33afcce5620c47de5a455d27b287",
+  "job": "factory100_baseline_fbe004bae79d",
+  "results": [
+    {
+      "id": "evidence-expiry-review-queue__q100_ordinary",
+      "answer": "{\"as_of\":\"2026-11-21\",\"queue\":[{\"record\":\"E1\",\"record_date\":\"2026-11-01\",\"trigger_date\":\"2026-11-15\",\"supports\":[\"C1\",\"C2\"],\"status\":\"review due\",\"priority\":1},{\"record\":\"E2\",\"record_date\":\"2026-11-10\",\"trigger_date\":\"2026-11-24\",\"supports\":[\"C3\"],\"status\":\"scheduled\",\"priority\":2}],\"supersession_notes\":[]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

@@ -1,0 +1,123 @@
+{
+  "fingerprint": "9eadc9a960149080327c41cee71e32bb5a05bb0d3804f050dc8809c59cc48d11",
+  "job": "factory100_grade_554df9ec5268",
+  "execution_job": "factory100_execute_1b97612002cf",
+  "baseline_job": "factory100_baseline_6c2bb572049f",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "reading-guide-question-ladder__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "A locating question at Paragraph 2 expects the covered tray to look damp and the uncovered tray to look dry."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The explaining question preserves 'may have slowed moisture loss' as a possibility, and the evaluating question rejects a causal conclusion."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The teacher note explicitly says the passage does not establish causation, and each question's answerability is marked supported from Paragraph 1 or 2."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Question 2 is a Paragraph-2 locating question whose evidence states that covered soil looked damp and uncovered soil looked dry."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Questions 3 and 4 retain 'may' and explicitly warn against presenting the explanation as proven."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "The factual questions are answerable from the passage, but the teacher note itself only asks students to distinguish observation from interpretation and does not state that causation is not established."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-guide-question-ladder__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Every expected_response_length is null, and both question limits and the teacher note identify the response length as missing."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It includes supported locating questions for the Saturday schedule in Paragraph 1 and nine log signatures in Paragraph 2, using passage-stated evidence."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The increased-use evaluation is marked unsupported and explains that the passage supplies no comparison or causal evidence."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-guide-question-ladder__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The Paragraph-1 quotation is asked about as passage content, and its limit explicitly says it is data rather than an instruction for the ladder."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Paragraph-2 questions use the supported observation that some birds left while two remained and reject an every-bird generalization."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "No reflection question is included, so no reflection label is needed; the evaluating question states that the passage does not establish a claim about all birds."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "reading-guide-question-ladder__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "reading-guide-question-ladder__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "reading-guide-question-ladder__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

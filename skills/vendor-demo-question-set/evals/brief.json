@@ -1,0 +1,10 @@
+{
+  "slug": "vendor-demo-question-set",
+  "category": "operations",
+  "user_problem": "Teams need structured questions for a vendor demonstration based only on their stated requirements.",
+  "unique_output": "A prioritized demonstration script linking each requirement to a requested live action, evidence to capture, and follow-up question.",
+  "free_or_pack_candidate": "pack_candidate",
+  "test_case": "Given eight requirements, create a timed script and flag two requirements that cannot be demonstrated from the supplied scope.",
+  "overlap_to_check": "Market research, procurement scoring, and meeting minutes.",
+  "specific_guardrail": "Supplied requirements only, no vendor rankings or internet research. Demonstration is proposed, not observed proof; total duration must fit supplied time or identify overflow."
+}

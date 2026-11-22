@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Explain the operational meaning of this redacted before-and-after config diff.",
+    "should_trigger": true
+  },
+  {
+    "query": "Group these supplied configuration changes by behavior and deployment impact.",
+    "should_trigger": true
+  },
+  {
+    "query": "Annotate added, removed, and changed keys with documented consequences and unknowns.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare these two config snapshots without inspecting the environment.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which configuration changes are reversible based on the supplied rollback notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an evidence-bounded explanation of configuration drift.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify deployment effects stated in these configuration notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Explain this diff while preserving secret redactions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate observed configuration changes from documented behavior claims.",
+    "should_trigger": true
+  },
+  {
+    "query": "Produce an annotated configuration drift report from these snapshots.",
+    "should_trigger": true
+  },
+  {
+    "query": "Validate that every required configuration key exists.",
+    "should_trigger": false
+  },
+  {
+    "query": "Read my .env file and find the production setting.",
+    "should_trigger": false
+  },
+  {
+    "query": "Perform a live deployment using the new configuration.",
+    "should_trigger": false
+  },
+  {
+    "query": "Migrate this configuration format and update all services.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review this pull request for code-quality issues.",
+    "should_trigger": false
+  },
+  {
+    "query": "Prove that the timeout change caused the outage.",
+    "should_trigger": false
+  },
+  {
+    "query": "Discover secrets from the redacted values.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a release checklist for the entire deployment.",
+    "should_trigger": false
+  },
+  {
+    "query": "Inspect Kubernetes and report current config drift.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a generic configuration management tutorial.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "headline_options",
+    "confirmed_change",
+    "audience_impact",
+    "release_status",
+    "limitation",
+    "migration_note",
+    "cta",
+    "unresolved_items",
+    "fact_trace",
+    "outside_scope"
+  ],
+  "properties": {
+    "headline_options": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confirmed_change": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "audience_impact": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "release_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "limitation": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "migration_note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "cta": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "unresolved_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fact_trace": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "statement",
+          "evidence_references",
+          "status"
+        ],
+        "properties": {
+          "statement": {
+            "type": "string"
+          },
+          "evidence_references": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "enum": [
+              "confirmed",
+              "unverified",
+              "conflicting",
+              "unresolved"
+            ]
+          }
+        }
+      }
+    },
+    "outside_scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

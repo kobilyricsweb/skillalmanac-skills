@@ -1,0 +1,9 @@
+{
+  "original_author_job": "volume05_author_operations",
+  "requested_model": "gpt-5.6-luna",
+  "effort": "medium",
+  "method": "supplied-brief offline authorship; no tool use",
+  "licence_approved": true,
+  "copyright_holder": "Global Media Holdings",
+  "source_references": "no third-party skill text supplied"
+}

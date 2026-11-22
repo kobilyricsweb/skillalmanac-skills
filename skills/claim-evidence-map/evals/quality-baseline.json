@@ -1,0 +1,12 @@
+{
+  "fingerprint": "3a71e89ad62b1c3dd48c1cd355c415ebe2de0a65ac82af90f1c536c4c9147513",
+  "job": "factory100_baseline_b1b81d581083",
+  "results": [
+    {
+      "id": "claim-evidence-map__q100_ordinary",
+      "answer": "Claims: (1) The pilot began on 3 May — supported by S1, location paragraph 2. (2) The pilot served 12 stores — contradicted by S2, location table A, which says it covered 10 stores. (3) Managers recommend extending the pilot — supported by S3; no location marker is provided."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

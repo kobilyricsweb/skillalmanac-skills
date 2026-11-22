@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "cases",
+    "uncovered_branches",
+    "unknown_branches",
+    "unreachable_branches",
+    "conflicting_branches",
+    "coverage_summary",
+    "unresolved_rules",
+    "boundary_notes",
+    "budget"
+  ],
+  "properties": {
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "case_id",
+          "inputs",
+          "condition_evaluation",
+          "expected_path",
+          "expected_action",
+          "supporting_rule",
+          "boundary_rationale",
+          "coverage_status"
+        ],
+        "properties": {
+          "case_id": {
+            "type": "string"
+          },
+          "inputs": {
+            "type": "object"
+          },
+          "condition_evaluation": {
+            "type": "string"
+          },
+          "expected_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "expected_action": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "supporting_rule": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "boundary_rationale": {
+            "type": "string"
+          },
+          "coverage_status": {
+            "enum": [
+              "covered",
+              "unknown",
+              "unreachable",
+              "conflicting"
+            ]
+          }
+        }
+      }
+    },
+    "uncovered_branches": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unknown_branches": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unreachable_branches": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conflicting_branches": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "coverage_summary": {
+      "type": "string"
+    },
+    "unresolved_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "boundary_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "supplied_minutes",
+        "allocated_minutes",
+        "status"
+      ],
+      "properties": {
+        "supplied_minutes": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "allocated_minutes": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "status": {
+          "enum": [
+            "within_budget",
+            "infeasible",
+            "not_supplied",
+            "unresolved"
+          ]
+        }
+      }
+    }
+  }
+}

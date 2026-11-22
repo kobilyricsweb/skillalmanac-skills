@@ -1,0 +1,6 @@
+{
+  "synthetic": true,
+  "input": "Prompt: Name one benefit of shade trees in a playground. Criterion C1, relevance: Level 1 = names a playground-related benefit; Level 0 = gives no playground-related benefit. Scoring rule: score C1 only. Non-scorable condition: blank response. Build an anchor for Level 1.",
+  "expected_artifact": {"anchors": [{"label": "Level 1 anchor", "synthetic_response": "Shade trees give children a cooler place to play.", "criterion_results": [{"criterion": "C1 relevance", "result": 1, "rationale": "The response names a playground-related benefit: a cooler place to play."}], "boundary_feature": "A relevant playground benefit is present.", "non_scorable_treatment": "The response is not blank, so the non-scorable condition does not apply."}], "ambiguity_notes": []},
+  "status": "specification; not an executed test"
+}

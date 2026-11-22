@@ -1,0 +1,16 @@
+{
+  "fingerprint": "45a75677c659c0710d758acae7fa5b3329e7f7fef5120cde7296bf3fbd4abc36",
+  "job": "factory100_base_medium_4ec89b7d7704",
+  "results": [
+    {
+      "id": "intake-form-completeness-spec__q100_ordinary",
+      "answer": "Completeness specification\n\nNew badge:\n- employee_id: required; must be exactly six digits and successfully validated against the supplied HR roster.\n- delivery_site: optional; if present, must be “Site A” or “Site B”; no external validation required.\n- loss_report: not required.\n\nReplace badge:\n- employee_id: required; must be exactly six digits and successfully validated against the supplied HR roster.\n- delivery_site: optional; if present, must be “Site A” or “Site B”; no external validation required.\n- loss_report: required; must begin with “IR-” and be successfully validated by Security.\n\nDecision rules:\n- Incomplete: any required field is absent or invalid.\n- Unresolved: required external validation results are missing and no known defect already makes the submission incomplete.\n- Complete: all required fields are present, format-valid, and successfully externally validated.\n\nCase evaluations:\n1. New badge {employee_id:123456}: Unresolved. The identifier is present and format-valid, but no successful HR-roster validation is supplied.\n2. Replace badge {employee_id:123456, loss_report:IR-7}: Unresolved. Both fields are present and format-valid, but successful HR-roster and Security validations are not supplied.\n3. Replace badge {employee_id:123456}: Incomplete. loss_report is absent. HR-roster validation is also unresolved, but the missing required field is sufficient for rejection as incomplete.\n\nNo submission is changed."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "method_note": "Both arms use the same model and effort; old failures retained, sources and valid tests unchanged by this profile selection.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

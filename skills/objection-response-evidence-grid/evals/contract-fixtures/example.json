@@ -1,0 +1,26 @@
+{
+  "missing_inputs": [],
+  "objections": [
+    {
+      "objection_id": "O1",
+      "objection": "Does export include document text?",
+      "concern_acknowledgment": "The included content types matter for the export.",
+      "supported_response": "The supplied export specification states that document text is included.",
+      "evidence_ids": [
+        "E1"
+      ],
+      "limitation": "E1 does not address comments or images.",
+      "prohibited_assurance_check": "prohibited assurance avoided",
+      "rejected_supplied_claims": [
+        {
+          "source_label": "N1",
+          "claim": "Every part of every document is exported.",
+          "rejection_reason": "E1 supports document text only and does not establish export of every content type."
+        }
+      ],
+      "next_question": "Do comments or images also need to be included?",
+      "support_status": "full"
+    }
+  ],
+  "unresolved_conflicts": []
+}

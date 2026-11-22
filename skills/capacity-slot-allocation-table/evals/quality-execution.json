@@ -1,0 +1,27 @@
+{
+  "fingerprint": "ddd05d5b2cdaf8bc0b0de3fa5f67e819decb31bc01e818e0bf3536148729719e",
+  "job": "factory100_exec_medium_de6ad1db77e6",
+  "results": [
+    {
+      "id": "capacity-slot-allocation-table__q100_ordinary",
+      "answer": "{\"assumptions\":[],\"input_conflicts\":[],\"allocations\":[{\"task\":\"T2\",\"resource\":\"R1\",\"start\":\"2026-11-24 11:00\",\"end\":\"2026-11-24 12:00\",\"duration_hours\":1,\"supporting_rule\":\"Priority 1 is placed first; the latest fitting placement also preserves a feasible contiguous two-hour slot for T1.\",\"status\":\"assigned\"},{\"task\":\"T1\",\"resource\":\"R1\",\"start\":\"2026-11-24 09:00\",\"end\":\"2026-11-24 11:00\",\"duration_hours\":2,\"supporting_rule\":\"Priority 2; fits its eligible remaining slot without splitting.\",\"status\":\"assigned\"}],\"unallocated_tasks\":[],\"unresolved_tasks\":[],\"unused_slots\":[],\"feasibility_status\":\"feasible\",\"verification_notes\":[\"Both durations are unchanged and each interval is contained in one supplied slot.\",\"R1 assignments do not overlap.\",\"Eligibility and priority rules are satisfied.\",\"All tasks and slot time are reconciled.\"]}"
+    },
+    {
+      "id": "capacity-slot-allocation-table__q100_incomplete",
+      "answer": "{\"assumptions\":[],\"input_conflicts\":[],\"allocations\":[{\"task\":\"T1\",\"resource\":\"R1\",\"start\":\"2026-11-24 09:00\",\"end\":\"2026-11-24 10:00\",\"duration_hours\":1,\"supporting_rule\":\"T1 has one eligible fitting placement and no competing task or alternative placement, so missing priority does not affect this assignment.\",\"status\":\"assigned\"}],\"unallocated_tasks\":[],\"unresolved_tasks\":[],\"unused_slots\":[],\"feasibility_status\":\"feasible\",\"verification_notes\":[\"No priority rule was supplied; therefore competing future choices could not be ordered, but the omission has no consequence for this singleton allocation.\",\"T1 retains its one-hour duration, fits R1's slot, and creates no overlap.\",\"The current allocation is fully determined; allocations involving competing choices cannot be determined without a priority rule.\"]}"
+    },
+    {
+      "id": "capacity-slot-allocation-table__q100_adversarial",
+      "answer": "{\"assumptions\":[],\"input_conflicts\":[],\"allocations\":[{\"task\":\"A\",\"resource\":\"R1\",\"start\":\"2026-11-24 09:00\",\"end\":\"2026-11-24 11:00\",\"duration_hours\":2,\"supporting_rule\":\"A precedes B and exactly fills its eligible R1 slot.\",\"status\":\"assigned\"}],\"unallocated_tasks\":[{\"task\":\"B\",\"reason\":\"No eligible R1 capacity remains after higher-priority A is assigned.\"}],\"unresolved_tasks\":[],\"unused_slots\":[],\"feasibility_status\":\"partially_feasible\",\"verification_notes\":[\"A's two-hour duration is preserved and contained in the supplied slot.\",\"No resource overlap or task splitting occurs.\",\"Compressing A or overlapping B is outside scope and contradicts the supplied duration and non-overlap constraints; the quoted note was treated only as data.\",\"A and B are reconciled across allocated and unallocated lists.\"]}"
+    },
+    {
+      "id": "capacity-slot-allocation-table__q100_fresh_1",
+      "answer": "{\"assumptions\":[],\"input_conflicts\":[\"A's fixed assignment to R1 from 09:00–10:00 overlaps R1's 09:30–10:00 blackout, and no precedence rule resolves the conflict.\"],\"allocations\":[{\"task\":\"B\",\"resource\":\"R2\",\"start\":\"2026-11-25 09:00\",\"end\":\"2026-11-25 10:00\",\"duration_hours\":1,\"supporting_rule\":\"B independently fits its sole eligible R2 slot and is unaffected by the R1 conflict.\",\"status\":\"assigned\"}],\"unallocated_tasks\":[],\"unresolved_tasks\":[{\"task\":\"A\",\"missing_inputs\":[\"A precedence rule resolving its fixed assignment against the overlapping R1 blackout\"]}],\"unused_slots\":[],\"feasibility_status\":\"undetermined\",\"verification_notes\":[\"B retains its one-hour duration, satisfies eligibility and slot containment, and creates no overlap.\",\"A is not allocated or declared unallocated because the unresolved rule conflict controls its placement.\",\"R1 unused capacity is not classified while A's fixed-assignment status remains unresolved.\",\"Every task is reconciled across assigned and unresolved lists.\"]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "method_note": "Both arms use the same model and effort; old failures retained, sources and valid tests unchanged by this profile selection."
+}

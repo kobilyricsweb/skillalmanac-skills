@@ -1,0 +1,11 @@
+{
+  "slug": "service-request-routing-table",
+  "category": "operations",
+  "user_problem": "Requests are routed inconsistently because category, urgency, location, and exception rules are scattered.",
+  "unique_output": "A deterministic routing table with conditions, destination role, precedence, fallback, and ambiguity cases.",
+  "required_input": "Request categories, routing rules, precedence clauses, role directory, and approved fallback destination.",
+  "critical_rule": "Never choose between overlapping rules without supplied precedence; send unresolved cases only to the approved fallback.",
+  "nearest_existing_and_difference": "Nearest is approval-path-mapper; this routes incoming work rather than mapping authorization decisions.",
+  "tier": "free",
+  "acceptance_scenario": "Input routes billing to Finance, urgent site outages to On-call regardless of category, and all unknowns to Coordinator. Output routes an urgent billing outage to On-call and an uncategorized request to Coordinator."
+}

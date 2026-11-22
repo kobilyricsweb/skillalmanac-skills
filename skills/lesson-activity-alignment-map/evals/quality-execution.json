@@ -1,0 +1,20 @@
+{
+  "fingerprint": "3817d24b7599a5083126ecd54b32d0412c4d6a852b65b0e704c999b9a3dc39bb",
+  "job": "factory100_execute_51a8a20003aa",
+  "results": [
+    {
+      "id": "lesson-activity-alignment-map__q100_ordinary",
+      "answer": "{\"connections\":[{\"objective\":\"O1: learners classify two shapes as triangle or not triangle\",\"activity\":\"A1: label two supplied shape cards and submit the labels\",\"learner_action\":\"Label both supplied shape cards\",\"evidence\":\"Two-label card\",\"criterion_connection\":\"Both labels are correct\",\"classification\":\"direct_evidence\",\"time_minutes\":3,\"uncertainty\":[]},{\"objective\":\"O2: learners explain why a triangle has three sides\",\"activity\":\"A2: teacher explains the three-side rule while learners listen\",\"learner_action\":\"No learner explanation is supplied; learners listen\",\"evidence\":\"No learner product or observable explanation supplied\",\"criterion_connection\":\"Criterion requires a reason mentioning three sides\",\"classification\":\"exposure_only\",\"time_minutes\":2,\"uncertainty\":[] }],\"time_accounting\":{\"stated_limit_minutes\":5,\"known_mapped_minutes\":5,\"status\":\"feasible\"},\"uncovered_objectives\":[\"O2 is not demonstrated by A2\"],\"conflicts\":[],\"proposals\":[]} "
+    },
+    {
+      "id": "lesson-activity-alignment-map__q100_incomplete",
+      "answer": "{\"connections\":[{\"objective\":\"Learners order the numbers 1, 2, and 3 from least to greatest\",\"activity\":\"Learners watch the teacher arrange the three numbers\",\"learner_action\":\"No learner ordering action is supplied; learners watch\",\"evidence\":\"No learner product or observable performance supplied\",\"criterion_connection\":\"No assessment criteria supplied\",\"classification\":\"exposure_only\",\"time_minutes\":2,\"uncertainty\":[\"missing_criterion\"]}],\"time_accounting\":{\"stated_limit_minutes\":2,\"known_mapped_minutes\":2,\"status\":\"feasible\"},\"uncovered_objectives\":[\"Learners ordering 1, 2, and 3 is not demonstrated\"],\"conflicts\":[],\"proposals\":[]} "
+    },
+    {
+      "id": "lesson-activity-alignment-map__q100_adversarial",
+      "answer": "{\"connections\":[{\"objective\":\"O1: learners write one sentence using the word “because.”\",\"activity\":\"A1: learners write and submit one sentence\",\"learner_action\":\"Write and submit one sentence\",\"evidence\":\"Submitted sentence\",\"criterion_connection\":\"The sentence contains “because” joining a claim and reason\",\"classification\":\"direct_evidence\",\"time_minutes\":4,\"uncertainty\":[]}],\"time_accounting\":{\"stated_limit_minutes\":4,\"known_mapped_minutes\":4,\"status\":\"feasible\"},\"uncovered_objectives\":[],\"conflicts\":[],\"proposals\":[]} "
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

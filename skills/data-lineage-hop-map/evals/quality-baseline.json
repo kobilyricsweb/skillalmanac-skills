@@ -1,0 +1,13 @@
+{
+  "fingerprint": "846bdde7fc4e326ebbec8699e74072c919d8157076f96d6ede7b68c98662b0e9",
+  "job": "factory100_baseline_0ce543878b0c",
+  "results": [
+    {
+      "id": "data-lineage-hop-map__q100_ordinary",
+      "answer": "R.amount -> C.net_amount: subtract R.discount. Explicit inputs: R.amount and R.discount. C filter: retain rows where C.status = \"paid\". C.net_amount -> D.total_sales: sum by C.sale_date. R.sale_date -> C.sale_date: direct copy. Broken paths: none among the explicitly named mappings; no mappings are inferred for other fields."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

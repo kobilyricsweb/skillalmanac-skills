@@ -1,0 +1,19 @@
+{
+  "synthetic": true,
+  "input": "Rubric criterion: Clarity—define a specialized term when first used. Observable pattern: the response first uses “flux” without a definition. Tone: neutral. Revision opportunity: add a brief definition at first use. Comment limit: 25 words. Do not score.",
+  "expected_artifact": {
+    "entries": [
+      {
+        "criterion": "Clarity",
+        "observable_pattern": "The first use of “flux” has no definition shown.",
+        "comment": "Define “flux” at its first use so readers can follow the specialized term.",
+        "next_action": "Add a brief definition where “flux” first appears.",
+        "prohibited_overclaim": "Do not infer the learner’s knowledge or assign a score.",
+        "status": "supported"
+      }
+    ],
+    "missing_inputs": [],
+    "conflicts": []
+  },
+  "status": "specification; not an executed test"
+}

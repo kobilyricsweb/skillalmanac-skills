@@ -1,0 +1,20 @@
+{
+  "required_keys": [
+    "HOST",
+    "PORT"
+  ],
+  "optional_keys": [
+    "TRACE"
+  ],
+  "configurations": [
+    {
+      "name": "preview",
+      "keys": [
+        "HOST",
+        "TRACE",
+        "TRACE",
+        "EXTRA"
+      ]
+    }
+  ]
+}

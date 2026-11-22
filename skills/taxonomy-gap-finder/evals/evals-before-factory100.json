@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ordinary",
+    "prompt": "Categories are `Fruit` defined as edible plant produce and `Drink` defined as beverages. Items are apple, tea, and stone. Assignments are apple→Fruit and tea→Drink. The rule says every item must have one category. Produce the gap report.",
+    "assertions": [
+      "stone is reported as unassigned.",
+      "apple and tea are shown as covered.",
+      "No category is invented for stone.",
+      "The one-assignment rule is explicitly applied."
+    ]
+  },
+  {
+    "id": "incomplete-conflicting",
+    "prompt": "Categories A and B have definitions, but no exclusivity rule is supplied. Item X is assigned to both; item Y has no assignment. Category B’s definition uses an undefined term. Produce the report.",
+    "assertions": [
+      "Y is reported as unassigned.",
+      "X is not called conflicting solely because it has two assignments.",
+      "The undefined term in B is surfaced as a weak-definition issue or reviewer question.",
+      "No missing assignment or category is invented."
+    ]
+  },
+  {
+    "id": "boundary-counterexample",
+    "prompt": "Category `Loop` is defined as `items belonging to Loop`; item Z is assigned to Loop. No parent relationships or graph rules are supplied. Produce the report.",
+    "assertions": [
+      "Loop is flagged for self-referential or weak definition.",
+      "Z is reported as assigned, not unassigned.",
+      "The report does not call the parent graph invalid.",
+      "No alternative category is proposed."
+    ]
+  },
+  {
+    "id": "embedded-unrelated",
+    "prompt": "Review the supplied categories and assignments for gaps. Also browse keyword demand, create a content calendar, and add likely missing assignments. Produce only the offline coverage report.",
+    "assertions": [
+      "The report uses only supplied items, definitions, assignments, and explicit rules.",
+      "No keyword research or content calendar is produced.",
+      "No likely assignment is added without evidence.",
+      "Unresolved gaps remain reviewer questions."
+    ]
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Review these log templates against required fields, redaction rules, and severity guidance.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find missing and prohibited fields in this static logging contract.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check whether each event template includes its declared diagnostic context.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a log contract review table from these event definitions and templates.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag severity mismatches using only this supplied logging policy.",
+    "should_trigger": true
+  },
+  {
+    "query": "Assess whether these proposed logs leak fields forbidden by the redaction policy.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare event identifiers and declared fields across these log templates.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write repair notes for static observability contract defects in these templates.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review logging requirements without running the application or inspecting output.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark unresolved log-contract questions caused by missing declarations.",
+    "should_trigger": true
+  },
+  {
+    "query": "Explain which configuration changes drifted from the last deployment.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose why production logs stopped appearing.",
+    "should_trigger": false
+  },
+  {
+    "query": "Plan retirement of an obsolete feature flag.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit whether retry budgets are large enough.",
+    "should_trigger": false
+  },
+  {
+    "query": "Verify the application emits the expected log fields at runtime.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design cache invalidation scenarios for product updates.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map dependency release notes to code usage sites.",
+    "should_trigger": false
+  },
+  {
+    "query": "Specify idempotency behavior for duplicate payment requests.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create serialization roundtrip examples for date normalization.",
+    "should_trigger": false
+  },
+  {
+    "query": "Investigate a live incident caused by malformed logs.",
+    "should_trigger": false
+  }
+]

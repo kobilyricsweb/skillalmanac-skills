@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create a bounded caption pack for this supplied chart.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write a short caption and extended context using only the visible labels.",
+    "should_trigger": true
+  },
+  {
+    "query": "Add a reading key, limitation, and internal source-note placeholder.",
+    "should_trigger": true
+  },
+  {
+    "query": "Describe the displayed comparison without claiming a cause.",
+    "should_trigger": true
+  },
+  {
+    "query": "Caption this image while preserving the supplied uncertainty.",
+    "should_trigger": true
+  },
+  {
+    "query": "Explain how to read this chart without inventing methodology.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn the artifact description into publication-ready caption components.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag any intended takeaway not supported by the visual.",
+    "should_trigger": true
+  },
+  {
+    "query": "State the visible values and timeframe with a bounded limitation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Prepare context text for an existing visual, not a dashboard redesign.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design a dashboard layout around this chart.",
+    "should_trigger": false
+  },
+  {
+    "query": "Infer why Team B has more tickets.",
+    "should_trigger": false
+  },
+  {
+    "query": "Identify the people shown in this image.",
+    "should_trigger": false
+  },
+  {
+    "query": "Annotate audience assumptions in the accompanying prose.",
+    "should_trigger": false
+  },
+  {
+    "query": "Repair the order of these chart-production instructions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map dependencies among the publication sections.",
+    "should_trigger": false
+  },
+  {
+    "query": "Assess whether the whole handoff is ready.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write an abstract for the report containing this chart.",
+    "should_trigger": false
+  },
+  {
+    "query": "Claim whether the difference is statistically significant.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find external sources to verify the chart.",
+    "should_trigger": false
+  }
+]

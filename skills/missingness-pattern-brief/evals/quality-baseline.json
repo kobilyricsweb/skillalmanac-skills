@@ -1,0 +1,12 @@
+{
+  "fingerprint": "2dd1f72947a2b17fc9ff84e201e300956c33128f562d880e0e1d2d8781f327b9",
+  "job": "factory100_baseline_ab877d5ccf0a",
+  "results": [
+    {
+      "id": "missingness-pattern-brief__q100_ordinary",
+      "answer": "Scope: 3 records; fields x and y. Missing markers are null and blank text; 0 is observed.\n\nField counts: x missing 2/3 records (66.7%); x observed 1/3 (33.3%). y missing 1/3 (33.3%); y observed 2/3 (66.7%). Field denominators are 3 records each.\n\nSubgroups:\n- Team A: 2 records. x missing 1/2; y missing 0/2.\n- Team B: 1 record. x missing 0/1; y missing 1/1.\n\nPairwise co-missingness of x and y uses the 3 records with both fields in scope: 0/3 records have both missing. The supported co-missingness count is therefore zero, with denominator 3. No record is excluded from the pairwise check because all records contain both fields, even when a field is missing.\n\nExclusions: none for the stated scope. Interpretation limits: these descriptive counts do not establish cause, mechanism, randomness, or population-level missingness patterns; subgroup comparisons are especially limited for Team B because it has one record."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

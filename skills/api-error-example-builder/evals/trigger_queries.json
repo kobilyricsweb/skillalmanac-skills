@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Build client examples for these documented API errors and flag missing recovery guidance.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a matrix of request, response, action, and fallback for each supplied error case.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show how an SDK should handle the listed documented statuses without inventing retry behavior.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn these API error definitions into minimal handling scenarios.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare the supplied error cases and identify which lacks recovery instructions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document example client reactions for these supplied error responses.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make a bounded error-response example table from this API contract.",
+    "should_trigger": true
+  },
+  {
+    "query": "For each documented error, give a request, response, client action, and fallback.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create offline API error examples using only the contract below.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag unknown recovery guidance in these API handling examples.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write a complete API reference from scratch.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review this code for bugs and style issues.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit retry budgets and exponential backoff across services.",
+    "should_trigger": false
+  },
+  {
+    "query": "Test whether this live endpoint returns the documented status.",
+    "should_trigger": false
+  },
+  {
+    "query": "Generate an SDK implementation with production-ready exception classes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design authentication and authorization policy for the API.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run these requests and report actual responses.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a generic API documentation website.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide whether all 429 responses are safe to retry.",
+    "should_trigger": false
+  },
+  {
+    "query": "Monitor API incidents and notify the on-call engineer.",
+    "should_trigger": false
+  }
+]

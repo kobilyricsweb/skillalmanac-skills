@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Turn these stated requirements into a prioritized vendor demo agenda with live actions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a time-boxed demonstration script and flag requirements that cannot be shown.",
+    "should_trigger": true
+  },
+  {
+    "query": "For each requirement, specify what the vendor should demonstrate and what we should capture.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build follow-up questions tied directly to the supplied requirements.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check whether this demo plan fits the supplied 30-minute window.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map every buying requirement to a requested action and evidence item.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify demo overflow without silently dropping lower-priority requirements.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate proposed demonstration evidence from later product validation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design a vendor walkthrough based only on our stated workflow and constraints.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag requirements that lack data, participants, or an observable demonstration action.",
+    "should_trigger": true
+  },
+  {
+    "query": "Research the vendor market and recommend the best product.",
+    "should_trigger": false
+  },
+  {
+    "query": "Score three vendors against a procurement framework.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write meeting minutes from the vendor demo that already happened.",
+    "should_trigger": false
+  },
+  {
+    "query": "Verify the vendor's performance claims using internet sources.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a market-size report for this software category.",
+    "should_trigger": false
+  },
+  {
+    "query": "Negotiate pricing and send the vendor an email.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a generic product requirements document without supplied requirements.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide which supplier should win using weighted procurement scoring.",
+    "should_trigger": false
+  },
+  {
+    "query": "Schedule the demonstration on everyone's calendars.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit the vendor's security controls using external certifications.",
+    "should_trigger": false
+  }
+]

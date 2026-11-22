@@ -1,0 +1,12 @@
+{
+  "fingerprint": "7aa0d6cd1b2905dedcc4db908c29f036dc50dfb7f9bbeb287d572aa84ae786de",
+  "job": "factory100_baseline_6c2bb572049f",
+  "results": [
+    {
+      "id": "sampling-frame-coverage-note__q100_ordinary",
+      "answer": "Coverage account: The target population is all current Garden Club North members during May. The frame is a portal snapshot exported on 31 May and includes only members with an email account in the club portal; paper-only members are excluded. Coverage is therefore limited to portal-represented members and may omit current members who do not use the portal.\n\nTime bound: Findings apply to the 31 May snapshot and the May target period. Duplicate mechanism: one member may have both personal and work portal accounts, creating duplicate records and possible overcounting unless accounts are linked. Unknowns: whether all current members use the portal, and whether duplicate accounts can be reliably identified. Conflicts: the target includes all current members, while the inclusion rule requires a portal email account.\n\nVerification findings: The supplied facts establish the inclusion and exclusion rules and the duplicate risk; they do not establish total coverage or deduplication quality. Outside scope: changing the frame, contacting members, linking accounts, or estimating missing-member counts."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

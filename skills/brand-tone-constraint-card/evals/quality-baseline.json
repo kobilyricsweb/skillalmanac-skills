@@ -1,0 +1,12 @@
+{
+  "fingerprint": "97207679a3904d36f46a8290901a2c954865399072950c2ff8be034c5c76b777",
+  "job": "factory100_baseline_1399437506b5",
+  "results": [
+    {
+      "id": "brand-tone-constraint-card__q100_ordinary",
+      "answer": "Observed wording: “You can finish setup in three short steps.”\n\nApproved rules: for onboarding email copy only, use direct second-person language and calm, practical wording. Do not use urgency claims such as “Act now.”\n\nWriter tests:\n- Does the copy address the reader as “you” or use an equally direct construction?\n- Is the wording calm, practical, and free of pressure-based urgency?\n- Is the rule being applied only to onboarding email copy?\n- Does the copy avoid adding unsupported claims about time, effort, outcomes, or risk?\n\nSupported counterexamples:\n- Supported: “You can finish setup in three short steps.”\n- Not supported: “Act now to avoid missing out.”\n- Not supported by the supplied rules: a claim that setup will take a specific number of minutes, unless separately approved.\n\nOpen questions: whether contractions, imperative verbs, or specific formatting conventions are preferred; whether “three short steps” is reusable beyond the approved sample; whether these constraints apply to subject lines and calls to action within onboarding emails."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

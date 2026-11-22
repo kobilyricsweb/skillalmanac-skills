@@ -1,0 +1,17 @@
+{
+  "blocking_paths": [
+    "D1 pending -> Analysis blocked",
+    "Intro completion unknown -> Analysis blocked"
+  ],
+  "gaps": [
+    "Owner for Analysis is not supplied.",
+    "Completion status for Intro is not supplied."
+  ],
+  "cycle_or_conflict_notes": [],
+  "outside_scope": [
+    "Drafting content",
+    "Assigning owners",
+    "Granting approval",
+    "Publishing"
+  ]
+}

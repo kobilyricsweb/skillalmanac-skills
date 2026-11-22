@@ -1,0 +1,13 @@
+{
+  "fingerprint": "95c8f6137611759d239d7b55c4e318f5b6b8d9bf8e873bbd284d749a09cd6a8c",
+  "job": "factory100_baseline_6d0cc2075393",
+  "results": [
+    {
+      "id": "persona-message-fit-table__q100_ordinary",
+      "answer": "| Profile/need | Match | CTA | Evidence/status |\n|---|---|---|---|\n| P-A / N-A | M-A: “See uncovered shifts on one board” | Open the scheduling guide | Supported by E-A; matched to the assigned need |\n| P-B / N-B | M-C: “View reports awaiting review” | Open the review guide | Supported by E-C; matched to the assigned need |\n\nBlocked candidate: M-B, “Receive automatic tax advice,” is excluded for every profile because tax advice is outside product scope.\n\nUnmatched messages: none among the non-excluded messages. M-A and M-C are matched; M-B is blocked rather than unmatched.\n\nNeed coverage: N-A is covered by M-A for P-A. N-B is covered by M-C for P-B. Both explicit profile-to-need assignments have coverage. No motivations, performance claims, or additional attributes are inferred."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

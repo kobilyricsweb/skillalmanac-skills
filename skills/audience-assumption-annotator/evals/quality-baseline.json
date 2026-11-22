@@ -1,0 +1,22 @@
+{
+  "fingerprint": "70828c5fa43ba6692a59823fdd62b4b2a16312eb08efe93bee5ac76c37abaeb6",
+  "job": "aggregate_isolated_5111612e006c1a6c",
+  "results": [
+    {
+      "id": "audience-assumption-annotator__q100_ordinary",
+      "answer": "Declared-profile baseline: The audience understands reports, can browse the web, and has view-only dashboard access. They do not have export permission. No motivation or technical ability is inferred from contractor status.\n\nPassage-linked findings:\n\n1. P1, “Open the dashboard”\nAssumption: Readers can locate, access, and authenticate to the relevant dashboard.\nEvidence: Dashboard viewing access is available, but the draft supplies no URL, navigation path, workspace/report name, or authentication prerequisite.\nLikely consequence: A new contractor may open the wrong dashboard or be unable to begin without additional direction.\nBounded clarification: Identify the dashboard and report, and state the access path or link. Specify authentication only if required.\nUnresolved: Whether credentials, invitations, or a particular report view are already configured.\n\n2. P1, “export the report as CSV”\nAssumption: Readers have permission and an available control to export.\nEvidence: The declared profile explicitly says accounts are view-only and have no export permission.\nLikely consequence: The instruction cannot be completed as written; readers may encounter a disabled or absent export option and wrongly attribute the failure to their own actions.\nBounded clarification: Replace this step with an authorized workflow, such as asking a named report owner to export the CSV or providing contractors with an approved pre-exported file. Do not instruct them to bypass permissions.\nUnresolved: Who is authorized to export, how the request should be made, expected turnaround, and where the resulting file will be delivered.\n\n3. P2, “Use the downloaded file for the meeting”\nAssumption: P1 produced a downloaded file and readers can identify the correct file.\nEvidence: No export permission exists, so no download is available through the stated workflow. The draft also omits filename, storage location, version/date, and meeting identity.\nLikely consequence: Readers may have no file, use a stale or incorrect file, or be uncertain how the file is meant to support the meeting.\nBounded clarification: State where the authorized CSV will be provided, how to confirm its report name and reporting date, which meeting it supports, and the permitted action (for example, review or present it).\nUnresolved: File provider, delivery location, naming/version convention, meeting date/title, freshness requirement, and intended use.\n\nCoverage: Both passages and all declared constraints were assessed. The central blocking mismatch is the required CSV export versus view-only access. Navigation, authentication, file handoff, version identification, meeting context, and intended file use remain underspecified. No assumptions were made about contractors’ motivation or technical ability.",
+      "individual_job": "factory100_base_isolated_7aa896e00835"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill_isolated_cases",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "case_context_isolated": true,
+  "answer_word_budget": 600,
+  "individual_worker_jobs": [
+    "factory100_base_isolated_7aa896e00835"
+  ],
+  "method_note": "Every case uses its own fresh context. Both arms use identical model/effort/budget; raw responses unchanged, original prompts/assertions preserved, prior failures retained. Aggregate is a provenance index, not a model call.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

@@ -1,0 +1,25 @@
+{
+  "objective": "Compare two whole numbers.",
+  "requested_count": 1,
+  "delivered_count": 1,
+  "shortfall_reasons": [],
+  "items": [
+    {
+      "item_text": "Which is larger: 9 or 12? Explain in one sentence.",
+      "response_format": "Choose one answer and give one sentence of reasoning.",
+      "correct_response": "12 is larger because it has one ten and two ones, while 9 has no tens.",
+      "targeted_misconception": "A number with more digits is always smaller.",
+      "expected_distractor_reasoning": "Choosing 9 because 12 has more digits would be consistent with the supplied misconception.",
+      "alternative_explanations": [
+        "The learner may have reversed the comparison accidentally."
+      ],
+      "interpretation_limit": "One response cannot establish that the learner holds the misconception.",
+      "follow_up_probe": "Which is larger: 8 or 21? Explain using place value."
+    }
+  ],
+  "missing_inputs": [],
+  "conflicts": [],
+  "interpretation_limits": [
+    "Responses provide evidence to investigate, not a diagnosis."
+  ]
+}

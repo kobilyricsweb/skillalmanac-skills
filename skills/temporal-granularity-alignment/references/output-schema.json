@@ -1,0 +1,90 @@
+{
+  "type": "object",
+  "required": [
+    "target_grain",
+    "sources",
+    "boundary_decisions",
+    "gaps",
+    "unresolved_inputs",
+    "execution_status"
+  ],
+  "properties": {
+    "target_grain": {
+      "type": "string"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "native_grain",
+          "coverage_period",
+          "boundary_convention",
+          "timezone",
+          "calendar",
+          "permitted_transformation",
+          "forbidden_transformations",
+          "meaning_effect",
+          "comparability_status"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string"
+          },
+          "native_grain": {
+            "type": "string"
+          },
+          "coverage_period": {
+            "type": ["string", "null"]
+          },
+          "boundary_convention": {
+            "type": ["string", "null"]
+          },
+          "timezone": {
+            "type": ["string", "null"]
+          },
+          "calendar": {
+            "type": ["string", "null"]
+          },
+          "permitted_transformation": {
+            "type": ["string", "null"]
+          },
+          "forbidden_transformations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "meaning_effect": {
+            "enum": ["preserved", "changed", "unknown"]
+          },
+          "comparability_status": {
+            "enum": ["comparable", "conditionally_comparable", "incomparable", "unresolved"]
+          }
+        }
+      }
+    },
+    "boundary_decisions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "execution_status": {
+      "enum": ["plan_only", "executed"]
+    }
+  }
+}

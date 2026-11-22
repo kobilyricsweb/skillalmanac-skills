@@ -1,0 +1,11 @@
+{
+  "slug": "cohort-membership-rule-table",
+  "category": "data",
+  "user_problem": "Analysts need deterministic cohort assignment from supplied inclusion, exclusion, precedence, and date rules.",
+  "unique_output": "A rule table plus synthetic classifications showing included, excluded, overlapping, and indeterminate cases.",
+  "required_input": "Cohort definitions, fields, date boundaries, exclusion rules, precedence, and missing-value behavior.",
+  "critical_rule": "Do not assign a record when required inputs are missing or overlapping rules lack stated precedence.",
+  "nearest_existing_and_difference": "Nearest is metric-definition-card; this operationalizes cohort membership rather than documenting a metric population and denominator.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input cohort New requires signup in January 2026; exclude staff; missing staff status is indeterminate. Records are Jan 5 nonstaff, Jan 8 staff, Jan 9 unknown. Output: included, excluded, indeterminate."
+}

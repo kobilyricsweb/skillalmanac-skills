@@ -1,0 +1,49 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "dataset-field-dictionary-builder__parent_holdout",
+        "slug": "dataset-field-dictionary-builder",
+        "prompt": "Create a dictionary for fields status and qty from notes: N1 status values are A=active and P=paused; N2 qty null means not collected; N3 qty null means not applicable. Two sample rows have qty0 and qty2, but no business definition or rule for zero is supplied. These are illustrative product records.",
+        "assertions": [
+          "Preserves A/P meanings fromN1.",
+          "Shows the two conflicting null meanings without choosing a winner or equating null with zero.",
+          "Does not invent a business definition or zero semantics from two sample values."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "Field dictionary\n\n| Field | Source wording | Normalized definition | Expected type | Allowed values | Null meaning | Sample-derived observations | Open question | Provenance note |\n|---|---|---|---|---|---|---|---|---|\n| status | N1: A=active; P=paused | Status uses A for active and P for paused. | not supplied | A=active; P=paused; exhaustiveness not supplied | not supplied | not supplied | Are A and P exhaustive? What do null, blank, or omitted values mean? | N1 |\n| qty | N2: null means not collected. N3: null means not applicable. | Quantity field; its business definition and type are not supplied. Null has conflicting supplied meanings: not collected and not applicable. | not supplied | not supplied | unresolved: not collected (N2) versus not applicable (N3) | Two illustrative rows contain qty=0 and qty=2; these are observations only. | Does zero have a defined business meaning? How should not collected and not applicable be distinguished? | N2, N3; sample rows |\n\nBlank/empty-string semantics: not supplied.\n\nUnresolved questions: qty null semantics conflict; zero semantics are undefined; status allowed-value exhaustiveness and missing-value semantics are unspecified.",
+      "grade": {
+        "id": "dataset-field-dictionary-builder__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The status entry states \"A=active; P=paused\" and says status uses A for active and P for paused."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "The qty entry preserves \"not collected (N2) versus not applicable (N3)\" as an unresolved conflict and lists qty=0 only as an observation."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "The answer says the qty business definition and type are not supplied, calls sample values observations only, and states that zero semantics are undefined."
+          }
+        ]
+      },
+      "binding": {
+        "id": "dataset-field-dictionary-builder__parent_holdout",
+        "slug": "dataset-field-dictionary-builder",
+        "skill_sha256": "c7eb339923abedcde59b6335e774583eae63759b50313712c77ba3ed6ec35957",
+        "contract_sha256": "c4283097d82252779193fb7b9fe9a8a46a54d63e6c165bc3e33031cdb6d4b6dc",
+        "assertions_sent_to_executor": false
+      },
+      "round": "initial"
+    }
+  ]
+}

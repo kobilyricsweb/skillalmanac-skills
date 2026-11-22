@@ -1,0 +1,28 @@
+{
+  "missing_dimensions": [],
+  "cells": [
+    {
+      "role": "editor",
+      "resource": "page",
+      "operation": "read",
+      "status": "allow",
+      "condition": null,
+      "evidence": [
+        "P1, Policy A"
+      ]
+    },
+    {
+      "role": "viewer",
+      "resource": "page",
+      "operation": "read",
+      "status": "deny",
+      "condition": null,
+      "evidence": [
+        "D1, Policy A: default deny for unmentioned combinations"
+      ]
+    }
+  ],
+  "unresolved_conflicts": [],
+  "assumptions": [],
+  "scope_note": "This is a documentary permission model; it does not alter access or establish runtime authorization behavior."
+}

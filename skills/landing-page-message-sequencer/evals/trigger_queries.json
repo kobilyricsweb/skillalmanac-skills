@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Sequence these approved landing-page messages by visitor question and evidence asset.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a section-by-section content order for one audience and CTA.",
+    "should_trigger": true
+  },
+  {
+    "query": "Arrange our approved page claims and show which asset supports each one.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a landing-page message sequence without writing HTML.",
+    "should_trigger": true
+  },
+  {
+    "query": "Order these messages and quarantine the claims that exceed our evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map each page section to a visitor question, proof asset, and authorized CTA.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn this approved message list into a traceable page sequence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Sequence the page content while preserving CTA restrictions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show where unsupported page promises must be left as gaps.",
+    "should_trigger": true
+  },
+  {
+    "query": "Organize eight approved messages into a focused landing-page narrative.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design the landing page in HTML and CSS.",
+    "should_trigger": false
+  },
+  {
+    "query": "Predict which hero headline will convert best.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write an SEO brief and keyword plan for this page.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a marketing campaign brief for the launch.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map factual claims to evidence across the whole knowledge base.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run an A/B test and validate the winning variant.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent stronger copy for the unsupported promise.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a frontend component hierarchy for the page.",
+    "should_trigger": false
+  },
+  {
+    "query": "Research search demand for this landing-page topic.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft a complete sales page with new testimonials.",
+    "should_trigger": false
+  }
+]

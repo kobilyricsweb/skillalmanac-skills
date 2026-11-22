@@ -1,0 +1,13 @@
+{
+  "fingerprint": "0e76d02586cbf53d2889bbe0bb9ceb20e39884621985f46e7ba0f9fa5c46affa",
+  "job": "factory100_baseline_6c2bb572049f",
+  "results": [
+    {
+      "id": "service-request-routing-table__q100_ordinary",
+      "answer": "| Rule | Match | Destination |\n|---|---|---|\n| R4 | Any urgent request | Emergency Desk |\n| R1 | Plumbing, North, non-urgent | North Facilities |\n| R2 | Plumbing, South, non-urgent | South Facilities |\n| R3 | Electrical, non-urgent | General Intake |\n| Fallback | Unknown or unmatched category | General Intake |\n\nApplications:\n- T1: R4 matches because active water flow is urgent; Emergency Desk. R4 takes precedence over R1.\n- T2: R2 matches; South Facilities. No fallback.\n- T3: Category painting is unmatched and not urgent; fallback applies; General Intake.\n\nGaps: no additional routing rule is supplied for non-urgent unmatched locations or categories beyond the stated fallback. Staffing, approval authority, and dispatch are not assessed."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

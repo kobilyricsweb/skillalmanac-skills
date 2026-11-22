@@ -1,0 +1,12 @@
+{
+  "fingerprint": "37fd1ddcb33e3047777b9d5907d0b7e2cc98f0ac503e8339b2532391255c6dd1",
+  "job": "factory100_baseline_916157293b0d",
+  "results": [
+    {
+      "id": "permission-matrix-spec__q100_ordinary",
+      "answer": "Permission matrix for resource: report\n\n| Role | Read | Delete |\n|---|---|---|\n| Editor | Allow. Evidence: P1, Policy A. | Conditional allow only when status=draft. Evidence: P2, Policy A. |\n| Viewer | Allow. Evidence: P3, Policy A. | Deny. Evidence: D1 default deny in Policy A; no allowing statement. |\n\nEvidence coverage: every role-resource-operation cell is covered by P1, P2, P3, or D1. No exceptions exist. P2 is the only condition and applies solely to editor deletion of draft reports. This is a documentation matrix only; no access controls are altered or tested."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

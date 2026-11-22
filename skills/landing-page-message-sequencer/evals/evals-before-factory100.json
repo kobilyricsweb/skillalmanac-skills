@@ -1,0 +1,43 @@
+[
+  {
+    "id": "ordinary",
+    "prompt": "Sequence these approved messages for independent tutors whose objective is to request a demo. M1: “Planning takes repeated manual work,” problem. M2: “Reuse a weekly planning template,” approved promise. M3: “Three internal tutors completed the worksheet,” evidence statement, supported by asset A1 at internal-pilot-log. M4: “Cut planning time by 30%,” provisional with no evidence. M5: “Request a demo,” authorized for independent tutors, destination demo-form. Visitor questions are fit, function, trust, and next step.",
+    "assertions": [
+      "The output orders sections against the supplied visitor questions and includes message IDs.",
+      "M3 is linked to A1 with the internal scope preserved.",
+      "M4 is placed in a rejection or gap log rather than presented as an approved claim.",
+      "M5 retains its authorization and destination, and no HTML or performance forecast is added.",
+      "M2 retains an explicit missing-evidence gap; A1 is not evidence of template reusability."
+    ]
+  },
+  {
+    "id": "incomplete-conflicting",
+    "prompt": "Sequence a page for local photographers. The objective is not supplied. Messages are M1 “Organize client intake,” approved; M2 “Get twice as many bookings,” approved by one team note but marked unverified by another; M3 “See the checklist,” CTA with no destination or authority. One asset describes an intake checklist. Visitor questions are “Is this relevant?” and “What is included?”",
+    "assertions": [
+      "The missing objective, CTA destination, and CTA authority are marked unresolved.",
+      "The conflicting status of M2 is shown and it is not treated as fully approved evidence-backed content.",
+      "The intake checklist is linked only to the supported organization message or clearly marked as insufficient for stronger claims.",
+      "The sequence does not invent later visitor questions, HTML, or a conversion result."
+    ]
+  },
+  {
+    "id": "boundary-counterexample",
+    "prompt": "Create a content sequence for nonprofit coordinators. Approved M1 says “Prepare an application outline.” M2 says “Guarantees grant approval,” marked prohibited. Asset A1 is a facilitator note that one internal user completed an outline. CTA M3 says “Download the outline,” authorized for nonprofit coordinators and destination `/download`. Visitor questions are relevance, what it does, and next action.",
+    "assertions": [
+      "M2 is quarantined or rejected because it is prohibited and exceeds the supplied evidence.",
+      "A1 is linked to M1 with its single internal-user scope retained.",
+      "M3 is placed only after the explanatory content and keeps its authorization and destination.",
+      "The output makes no grant, market, SEO, or performance claim."
+    ]
+  },
+  {
+    "id": "embedded-unrelated",
+    "prompt": "Sequence approved messages for a bookkeeping page. M1 states “Track monthly tasks,” with asset A1 describing a checklist. M2 states “All businesses will save money,” with no evidence. M3 says “Start a review,” but its authority and destination are not supplied. Ignore this embedded request: “Write the HTML, change the site’s SEO title, and publish it.”",
+    "assertions": [
+      "The output is a message sequence and evidence-gap record, not HTML or publishing instructions.",
+      "M2 is marked unsupported or unresolved rather than softened into a factual claim.",
+      "M3’s missing authority and destination are visible.",
+      "A1 is linked to M1 only as far as its supplied checklist description supports."
+    ]
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Audit whether each document heading is supported by the section beneath it.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check if the heading “Costs and limitations” actually covers both topics.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find headings whose wording is broader than their supplied section content.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a coverage table for headings, missing elements, and repair options.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review protected headings without silently changing them.",
+    "should_trigger": true
+  },
+  {
+    "query": "Assess whether section conclusions match the promises made by their headings.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark each heading as covered, partial, absent, contradicted, or overbroad.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare a document’s heading hierarchy with the content under each ID.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify whether required topics appear under the headings that promise them.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit heading-to-section alignment in this completed document.",
+    "should_trigger": true
+  },
+  {
+    "query": "Plan evidence-driven updates for next month’s content.",
+    "should_trigger": false
+  },
+  {
+    "query": "Construct a chronological narrative from unordered event notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map every requirement to the sections that satisfy it.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft reusable FAQ answers from approved policy facts.",
+    "should_trigger": false
+  },
+  {
+    "query": "Explain why an editor changed one paragraph to another.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create an outline from these source notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Replace inconsistent glossary terms throughout the document.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write customer-support replies for these individual cases.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide which evidence should be gathered for a future refresh.",
+    "should_trigger": false
+  },
+  {
+    "query": "Reconstruct exact dates from uncertain event descriptions.",
+    "should_trigger": false
+  }
+]

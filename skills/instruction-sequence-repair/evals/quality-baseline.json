@@ -1,0 +1,12 @@
+{
+  "fingerprint": "27333142f73466046e3b6d18b377426d10b2d05ef3a8a38cba51789bbc113ce3",
+  "job": "factory100_baseline_fbe004bae79d",
+  "results": [
+    {
+      "id": "instruction-sequence-repair__q100_ordinary",
+      "answer": "1. “Open the empty case.”\n2. “Attach the blue tag.”\n3. “Verify the blue tag is attached.”\n4. “Place the card in the case.”\n\nThis preserves every step exactly, satisfies all dependencies, and ends with the case open and containing the card, with tag attachment verified."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

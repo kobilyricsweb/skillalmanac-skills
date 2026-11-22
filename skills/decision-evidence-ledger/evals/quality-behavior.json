@@ -1,0 +1,123 @@
+{
+  "fingerprint": "053149b52261c7200d35f5e0058948e238a983f03f4bc9ce6da5512c91e2049a",
+  "job": "factory100_grade_459cde157a11_attempt2",
+  "execution_job": "factory100_execute_996d0dd1d6fd",
+  "baseline_job": "factory100_baseline_e5e484949fb4",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "decision-evidence-ledger__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "S1, S2, S3, and S4 are separately recorded; the decision is web and is tied to Leah’s supplied authority and approval."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "The response explicitly lists “S1 proposes kiosk, while S4 approves web” under conflicts, even though S1 is only a proposal and no account disputes Leah’s decision."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The relations state that S4 uses the test report as rationale linking to S2, while S3 separately establishes Leah’s authority."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "E1 records Niko’s proposal, E2 records the measurements, and E4 records Leah’s web decision as final based on the authority in E3/S3."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "E1 is retained as related historical context, conflicts is empty, and the coverage notes explain why a proposal is not an incompatible authorized decision."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "A structured E2-to-E4 relation is explicitly labeled rationale_for, while E3 separately supplies scope-specific authority."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision-evidence-ledger__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "E1 labels Ana’s claim “reported approval; finality unresolved” and states that her team-lead title does not establish approval authority."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Ana’s statement and Bo’s proposal are separate E1 and E2 entries, linked only as related context, with an empty conflicts list."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "E3 treats the template as evidence of existence only; open questions explicitly cover authority, approval time, and implementation status."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision-evidence-ledger__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "E1 preserves Sam’s red proposal, while E3 records Priya’s blue approval as final, authorized through A2, and timed Tuesday."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The conflicts list is empty, the proposal is described as historical context, and the response rejects the requested claim of unanimous agreement."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "E4 preserves the quoted command as record content; the coverage notes state that deletion, publication, and claiming unanimity are outside scope and were not performed or authorized."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "decision-evidence-ledger__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "decision-evidence-ledger__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "decision-evidence-ledger__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "inventory-count-reconciliation-plan",
+  "category": "operations",
+  "user_problem": "Two supplied inventory counts disagree and require a controlled review plan without changing records.",
+  "unique_output": "A reconciliation worksheet grouping exact matches, explainable differences, recount candidates, and unresolved discrepancies.",
+  "required_input": "Two count lists, item identifiers, documented adjustments, count times, and permitted resolution steps.",
+  "critical_rule": "Never alter a count or assume shrinkage; retain both observations and cite any adjustment used.",
+  "nearest_existing_and_difference": "Nearest is duplicate-record-triage; this reconciles count discrepancies rather than classifying record similarity.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input morning count X=10, evening X=8, documented sale of 2; Y is 5 versus 3 with no adjustment. Output explains X arithmetically and marks Y for recount without changing either value."
+}

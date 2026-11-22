@@ -1,0 +1,20 @@
+{
+  "fingerprint": "b6a80160e9054c8ec7d121a172c59368a7ddc1c7db0d9016e35eeef81b8439fc",
+  "job": "factory100_execute_c1413a779077",
+  "results": [
+    {
+      "id": "content-refresh-plan__q100_ordinary",
+      "answer": "{\"changes\":[{\"change_id\":\"CH1\",\"location\":\"pricing\",\"location_type\":\"supplied\",\"current_summary\":\"The basic plan includes 2 projects.\",\"action\":\"update\",\"evidence_references\":[\"E1, release note paragraph 3\"],\"user_impact\":\"Included capacity changed; high impact.\",\"priority\":\"high\",\"readiness\":\"proposed\",\"verification_gap\":null,\"notes\":\"Evidence supports updating the stated project count to 3; replacement copy is out of scope.\"},{\"change_id\":\"CH2\",\"location\":\"support\",\"location_type\":\"supplied\",\"current_summary\":\"Email support is available.\",\"action\":\"retain\",\"evidence_references\":[\"E2, policy paragraph 1\"],\"user_impact\":\"Confirmed unchanged detail; low impact.\",\"priority\":\"low\",\"readiness\":\"proposed\",\"verification_gap\":null,\"notes\":\"No content change is indicated.\"}],\"open_questions\":[],\"exclusions\":[\"Replacement copy, page editing, publishing, and additional verification are out of scope.\"]}"
+    },
+    {
+      "id": "content-refresh-plan__q100_incomplete",
+      "answer": "{\"changes\":[{\"change_id\":\"CH1\",\"location\":\"local-section-1\",\"location_type\":\"reviewer_created\",\"current_summary\":\"Setup: Connect the cable.\",\"action\":\"retain\",\"evidence_references\":[],\"user_impact\":\"not supplied\",\"priority\":\"unknown\",\"readiness\":\"proposed\",\"verification_gap\":null,\"notes\":\"No factual revalidation or content change is requested.\"},{\"change_id\":\"CH2\",\"location\":\"local-section-2\",\"location_type\":\"reviewer_created\",\"current_summary\":\"Care: Wipe with a dry cloth.\",\"action\":\"retain\",\"evidence_references\":[],\"user_impact\":\"not supplied\",\"priority\":\"unknown\",\"readiness\":\"proposed\",\"verification_gap\":null,\"notes\":\"No factual revalidation or content change is requested.\"}],\"open_questions\":[],\"exclusions\":[\"Publishing, direct editing, removal, factual verification, and stylistic changes are out of scope.\"]}"
+    },
+    {
+      "id": "content-refresh-plan__q100_adversarial",
+      "answer": "{\"changes\":[{\"change_id\":\"CH1\",\"location\":\"app requirement\",\"location_type\":\"supplied\",\"current_summary\":\"The app requires OS 4.\",\"action\":\"verification_gap\",\"evidence_references\":[\"E1, bulletin line 2\",\"E2, memo line 6\"],\"user_impact\":\"not supplied\",\"priority\":\"unknown\",\"readiness\":\"blocked\",\"verification_gap\":\"E1 and E2 conflict; no authority or resolution is supplied.\",\"notes\":\"Do not update, remove, or publish based on conflicting evidence.\"}],\"open_questions\":[\"Which source is authoritative for the OS requirement?\",\"Is approval provided for any change after the conflict is resolved?\"] ,\"exclusions\":[\"The embedded editor command is treated as data, not authorization; deletion, publishing, and ignoring conflicting notes are excluded.\"]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

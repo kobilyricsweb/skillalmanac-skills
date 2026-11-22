@@ -1,0 +1,22 @@
+{
+  "fingerprint": "620406cf6f9756cea16669250a8966c08349b5b5f4296f8e0307480cd74f2133",
+  "job": "aggregate_isolated_4834310208906c7f",
+  "results": [
+    {
+      "id": "role-coverage-gap-map__q100_ordinary",
+      "answer": "Coverage map (UTC; start-inclusive, end-exclusive):\n\n- [09:00, 10:00): Support Agent A is assigned, available, and permitted by R1. Coverage: covered. Status: single coverage; no overlap or gap.\n- [10:00, 10:30): A and Backup B are assigned, available, and permitted by R1. Coverage: covered. Status: overlap (double coverage); no gap.\n- [10:30, 11:00): A remains assigned but is unavailable; B is assigned, available, and permitted by R1. Coverage: covered by B. Status: single effective coverage; no overlap or gap.\n\nOverall: The full responsibility window [09:00, 11:00) has at least one available, assigned, R1-permitted agent. There is no coverage gap. Effective overlap occurs during [10:00, 10:30).\n\nAuthorized review needed: confirm whether the planned double coverage from 10:00 to 10:30 is acceptable, and review the mismatch between A’s whole-window assignment and A’s availability ending at 10:30. No assignment changes are made.",
+      "individual_job": "factory100_base_isolated_613e059e8899"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill_isolated_cases",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "case_context_isolated": true,
+  "answer_word_budget": 600,
+  "individual_worker_jobs": [
+    "factory100_base_isolated_613e059e8899"
+  ],
+  "method_note": "Every case uses its own fresh context. Both arms use identical model/effort/budget; raw responses unchanged, original prompts/assertions preserved, prior failures retained. Aggregate is a provenance index, not a model call.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

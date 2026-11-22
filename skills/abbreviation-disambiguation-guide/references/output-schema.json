@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["occurrences", "coverage", "scope_limits"],
+  "properties": {
+    "occurrences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "location", "excerpt", "possible_expansions", "evidence", "status", "questions"],
+        "properties": {
+          "id": {"type": "string"},
+          "location": {"type": "string"},
+          "excerpt": {"type": "string"},
+          "possible_expansions": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "evidence": {"type": "array", "items": {"type": "string"}},
+          "status": {"type": "string", "enum": ["resolved_by_supplied_evidence", "unresolved", "input_gap", "conflicting_evidence"]},
+          "questions": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["supplied_ids", "covered_ids", "unsupported_expansions"],
+      "properties": {
+        "supplied_ids": {"type": "array", "items": {"type": "string"}},
+        "covered_ids": {"type": "array", "items": {"type": "string"}},
+        "unsupported_expansions": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "scope_limits": {"type": "array", "items": {"type": "string"}}
+  }
+}

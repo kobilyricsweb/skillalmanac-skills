@@ -1,0 +1,84 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "cases",
+    "coverage",
+    "unresolved_ambiguities",
+    "verification_statement"
+  ],
+  "properties": {
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "case_id",
+          "source_value",
+          "serialized_form",
+          "reconstructed_value",
+          "semantic_equality",
+          "byte_equality",
+          "information_loss",
+          "ambiguity_notes"
+        ],
+        "properties": {
+          "case_id": {
+            "type": "string"
+          },
+          "source_value": {},
+          "serialized_form": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reconstructed_value": {},
+          "semantic_equality": {
+            "type": "string",
+            "enum": [
+              "equal",
+              "not_equal",
+              "unresolved"
+            ]
+          },
+          "byte_equality": {
+            "type": "string",
+            "enum": [
+              "equal",
+              "not_equal",
+              "unresolved"
+            ]
+          },
+          "information_loss": {
+            "type": "string",
+            "enum": [
+              "none",
+              "present",
+              "unknown"
+            ]
+          },
+          "ambiguity_notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "coverage": {
+      "type": "string"
+    },
+    "unresolved_ambiguities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verification_statement": {
+      "type": "string"
+    }
+  }
+}

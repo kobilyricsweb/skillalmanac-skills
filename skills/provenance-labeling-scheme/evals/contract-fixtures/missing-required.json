@@ -1,0 +1,129 @@
+{
+  "decision_rules": [
+    {
+      "condition": "Wording is copied directly.",
+      "label_result": [
+        "quotation"
+      ],
+      "uncertainty": "resolved",
+      "segmentation_action": "not_applicable",
+      "handling": "Classify the copied segment as quotation and assess its required metadata."
+    },
+    {
+      "condition": "Content restates an identified source.",
+      "label_result": [
+        "paraphrase"
+      ],
+      "uncertainty": "resolved",
+      "segmentation_action": "not_applicable",
+      "handling": "Classify the restated segment as paraphrase and assess its required metadata."
+    },
+    {
+      "condition": "Content records a direct observation.",
+      "label_result": [
+        "observation"
+      ],
+      "uncertainty": "resolved",
+      "segmentation_action": "not_applicable",
+      "handling": "Classify the observed segment as observation and assess its required metadata."
+    },
+    {
+      "condition": "A note mixes provenance forms.",
+      "label_result": [],
+      "uncertainty": "resolved",
+      "segmentation_action": "split_atomic_segments",
+      "handling": "Split at every provenance-form boundary; classify each atomic segment independently with its applicable allowed label and metadata status."
+    }
+  ],
+  "metadata_requirements": [
+    {
+      "label": "quotation",
+      "required_fields": [
+        "source_id",
+        "location"
+      ],
+      "optional_fields": [
+        "note_id"
+      ],
+      "unknown_fields": []
+    },
+    {
+      "label": "paraphrase",
+      "required_fields": [
+        "source_id"
+      ],
+      "optional_fields": [
+        "note_id"
+      ],
+      "unknown_fields": []
+    },
+    {
+      "label": "observation",
+      "required_fields": [
+        "observer",
+        "date"
+      ],
+      "optional_fields": [
+        "note_id"
+      ],
+      "unknown_fields": []
+    }
+  ],
+  "edge_case_handling": [
+    {
+      "edge_case": "Copied wording without a location",
+      "result": "Keep quotation and mark the missing location.",
+      "uncertainty": "incomplete"
+    },
+    {
+      "edge_case": "Copied wording followed by a direct observation",
+      "result": "Split at the boundary and independently classify quotation and observation segments.",
+      "uncertainty": "resolved"
+    }
+  ],
+  "synthetic_examples": [
+    {
+      "content": "‘The indicator is blue.’",
+      "labels": [
+        "quotation"
+      ],
+      "metadata": {
+        "source_id": "S1",
+        "location": "line 2"
+      },
+      "status": "complete"
+    },
+    {
+      "content": "The source describes the indicator as blue.",
+      "labels": [
+        "paraphrase"
+      ],
+      "metadata": {
+        "source_id": "S1"
+      },
+      "status": "complete"
+    },
+    {
+      "content": "The indicator appeared blue.",
+      "labels": [
+        "observation"
+      ],
+      "metadata": {
+        "observer": "O1",
+        "date": "2026-11-20"
+      },
+      "status": "complete"
+    }
+  ],
+  "verification_report": {
+    "covered_labels": [
+      "quotation",
+      "paraphrase",
+      "observation"
+    ],
+    "missing_definitions": [],
+    "rule_conflicts": [],
+    "metadata_gaps": [],
+    "truth_assessment_performed": false
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "fingerprint": "c8209ae8ac1d4dfc453ef62637ebdf19e573222085310715d46a112b32d91fbe",
+  "execution_job": "factory100_execute_5d7df6c6f7ab",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 4,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "data-lineage-hop-map__q100_ordinary",
+      "raw_answer_sha256": "375c0c45e01adc18ed478de1f530cc6e82397cd990afb57492126ea1a3c222bf",
+      "artifact_sha256": "375c0c45e01adc18ed478de1f530cc6e82397cd990afb57492126ea1a3c222bf",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "data-lineage-hop-map__q100_incomplete",
+      "raw_answer_sha256": "32874eb67c78c3cd15ed5928e086e171d150d8990f7eccffd29ac6cf599aeb60",
+      "artifact_sha256": "32874eb67c78c3cd15ed5928e086e171d150d8990f7eccffd29ac6cf599aeb60",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "data-lineage-hop-map__q100_adversarial",
+      "raw_answer_sha256": "857a29df271b7a9882a8c637288493c8c004b3aeacc6192ac9010f4219bb6033",
+      "artifact_sha256": "857a29df271b7a9882a8c637288493c8c004b3aeacc6192ac9010f4219bb6033",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    },
+    {
+      "case_id": "data-lineage-hop-map__q100_fresh_1",
+      "raw_answer_sha256": "4a24d2d229a6fe7f4f2ab24acb78c066cfd25487efe9a6dfd93d6a40b8b301dd",
+      "artifact_sha256": "4a24d2d229a6fe7f4f2ab24acb78c066cfd25487efe9a6dfd93d6a40b8b301dd",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_3.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_3.json"
+      ]
+    }
+  ]
+}

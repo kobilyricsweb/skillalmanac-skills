@@ -1,0 +1,22 @@
+{
+  "fingerprint": "fc7aec69d5a0cdac69c3400de2423dd3927d3ba90fd065cfc7bd66949e5802ce",
+  "job": "aggregate_isolated_22cd0745003a3bc5",
+  "results": [
+    {
+      "id": "knowledge-article-split-plan__q100_ordinary",
+      "answer": "Split into three articles:\n\n1. Wi-Fi overview\n- URL: /wifi\n- Source section: “Overview”\n- Purpose: route office staff to the two task articles.\n- Owner: IT Support\n\n2. Connect to Wi-Fi\n- Proposed URL: /wifi/connect\n- Source section: “Connect”\n- Owner: IT Support\n\n3. Reset and verify a Wi-Fi password\n- Proposed URL: /wifi/reset-password\n- Source sections, kept together and in order: “Reset and verify” and “Warning”\n- Owner: IT Support\n\nNavigation plan:\n- The overview links to both task articles.\n- Each task article links back to the overview.\n- The reset article retains the warning alongside the reset-and-verification procedure.\n\nRedirect plan:\n- /wifi remains the overview URL, so no redirect is needed for the existing URL.\n- If any old or alternate URLs are retired during later implementation, redirect them to /wifi in accordance with the stated convention.\n\nScope note: This is a structural split plan only. No content should be rewritten or migrated as part of this work.",
+      "individual_job": "factory100_base_isolated_0a8c0277837d"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill_isolated_cases",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "case_context_isolated": true,
+  "answer_word_budget": 600,
+  "individual_worker_jobs": [
+    "factory100_base_isolated_0a8c0277837d"
+  ],
+  "method_note": "Every case uses its own fresh context. Both arms use identical model/effort/budget; raw responses unchanged, original prompts/assertions preserved, prior failures retained. Aggregate is a provenance index, not a model call.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

@@ -1,0 +1,38 @@
+{
+  "relationship_map": [
+    {
+      "source_term": "V1",
+      "target_term": "C1",
+      "relation_type": "broader-than",
+      "direction": "directed",
+      "support": "Approved statement: V1 is broader than C1.",
+      "status": "supported"
+    },
+    {
+      "source_term": "C1",
+      "target_term": "V1",
+      "relation_type": "narrower-than",
+      "direction": "directed",
+      "support": "Approved statement: V1 is broader than C1; the supplied broader-than rule permits the corresponding narrower-than inverse.",
+      "status": "supported"
+    }
+  ],
+  "prohibited_equivalences": [
+    {
+      "terms": [
+        "V1",
+        "C1"
+      ],
+      "support": "Supplied prohibition: V1 and C1 are not equivalent.",
+      "status": "prohibited"
+    }
+  ],
+  "unresolved_links": [],
+  "verification_report": {
+    "all_edges_supported": true,
+    "all_prohibitions_preserved": true,
+    "inverse_handling": "Only the declared broader-than inverse was added.",
+    "unlinked_terms": [],
+    "issues": []
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "synthetic": true,
+  "input": "Errors: E_NAME triggers when name is empty; one supplied note says status 400 and another says status 422; body {\"code\":\"E_NAME\"}; guidance: ask the user to enter a name. Request schema: POST accepts required string field name. Client policy: display the supplied error and retain the form. No fallback is documented.",
+  "expected_artifact": {
+    "scope": "Offline illustration of the supplied E_NAME documentation.",
+    "assumptions": [
+      "No endpoint was executed."
+    ],
+    "scenarios": [
+      {
+        "error_id": "E_NAME",
+        "condition": "name is empty",
+        "request": {
+          "name": ""
+        },
+        "status": [
+          400,
+          422
+        ],
+        "response_body": {
+          "code": "E_NAME"
+        },
+        "client_action": "Display the supplied error and retain the form.",
+        "safe_fallback": "unknown",
+        "recovery_status": "present"
+      }
+    ],
+    "missing_guidance": [
+      "No safe fallback is documented."
+    ],
+    "conflicts": [
+      "Supplied notes conflict on whether E_NAME has status 400 or 422."
+    ],
+    "acceptance_checks": [
+      "One scenario covers the supplied error.",
+      "Both supplied status candidates are preserved as integers without choosing one.",
+      "No request was executed."
+    ]
+  },
+  "status": "specification; not an executed test"
+}

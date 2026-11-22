@@ -1,0 +1,7 @@
+{
+  "unresolved_questions": [],
+  "assumptions": [],
+  "limits": [
+    "The map analyzes compatibility only and does not implement a validator or create policy."
+  ]
+}

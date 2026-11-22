@@ -1,0 +1,50 @@
+{
+  "protocol_status": "complete",
+  "missing_inputs": [],
+  "total_minutes": 3,
+  "timed_sequence": [
+    {
+      "start_minute": 0,
+      "end_minute": 1,
+      "action": "Read the sentence and locate the event name and date.",
+      "artifact_evidence": "Point to the words naming the event and date."
+    },
+    {
+      "start_minute": 1,
+      "end_minute": 2,
+      "action": "Record one observation and one author question against the rubric.",
+      "artifact_evidence": "Quote or identify the relevant phrase."
+    },
+    {
+      "start_minute": 2,
+      "end_minute": 2.5,
+      "action": "If a rubric reading is disputed, quote the criterion and record both readings for author or instructor resolution; otherwise perform a final evidence check.",
+      "artifact_evidence": "Identify the disputed wording or confirm no dispute."
+    },
+    {
+      "start_minute": 2.5,
+      "end_minute": 3,
+      "action": "Author selects one rubric-aligned revision if needed, then complete the final check.",
+      "artifact_evidence": "Identify the selected sentence change or state that none is needed."
+    }
+  ],
+  "artifact_checks": [
+    {
+      "criterion": "Name Event Q",
+      "check": "Confirm that the sentence names Event Q.",
+      "evidence_location": "Event-name words in the sentence"
+    },
+    {
+      "criterion": "State day 2",
+      "check": "Confirm that the sentence states day 2.",
+      "evidence_location": "Date words in the sentence"
+    }
+  ],
+  "author_questions": [
+    "Which words in your sentence show the required date?"
+  ],
+  "revision_choice": "Select one change that addresses a missing rubric element, or record that both elements are present.",
+  "disagreement_procedure": "During the timed disagreement interval, quote the disputed rubric criterion, identify the competing readings, and ask the author or instructor to decide.",
+  "completion_check": "Confirm that both rubric checks have evidence and that any selected revision is recorded.",
+  "infeasibility_note": null
+}

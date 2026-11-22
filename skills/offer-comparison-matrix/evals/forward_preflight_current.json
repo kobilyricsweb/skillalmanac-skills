@@ -1,0 +1,49 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "offer-comparison-matrix__parent_holdout",
+        "slug": "offer-comparison-matrix",
+        "prompt": "Compare three internal draft offers: O1 beginner kit, includes two templates, promise=\"organize first project\"; O2 team kit, includes checklist+workshop, promise=\"cut delivery time50%\", no evidence; O3 beginner kit, includes two templates, promise=\"organize first project\", same stated terms asO1. No competitors, demand data, prices or experiments supplied.",
+        "assertions": [
+          "Preserves O1/O3 equivalence rather than inventing differentiators.",
+          "Marks O2 50% outcome unsupported.",
+          "No invented competitor comparison, willingness to pay, demand ranking or validated winning offer."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "{\"matrix\":[{\"offer\":\"O1 beginner kit\",\"audience\":\"beginner\",\"promise\":\"organize first project\",\"included_assets\":\"two templates\",\"proof_available\":\"not supplied\",\"proof_status\":\"not supplied\",\"friction\":\"not supplied\",\"testable_distinctions\":\"Compare against O3 for any supplied distinction; none supplied\",\"constraints\":\"not supplied\",\"unresolved_items\":\"No proof source, owner, or date supplied\"},{\"offer\":\"O2 team kit\",\"audience\":\"team\",\"promise\":\"cut delivery time50%\",\"included_assets\":\"checklist+workshop\",\"proof_available\":\"not supplied\",\"proof_status\":\"not supplied\",\"friction\":\"not supplied\",\"testable_distinctions\":\"Compare team audience, assets, and promise with the beginner offers; no result should be assumed\",\"constraints\":\"not supplied\",\"unresolved_items\":\"The promise has no supplied evidence; no proof source, owner, or date supplied\"},{\"offer\":\"O3 beginner kit\",\"audience\":\"beginner\",\"promise\":\"organize first project\",\"included_assets\":\"two templates\",\"proof_available\":\"not supplied\",\"proof_status\":\"not supplied\",\"friction\":\"not supplied\",\"testable_distinctions\":\"No distinction supplied from O1\",\"constraints\":\"same stated terms as O1\",\"unresolved_items\":\"Relationship to O1 should be confirmed; no proof source, owner, or date supplied\"}],\"cross_offer_summary\":\"O1 and O3 have the same supplied audience, promise, assets, and stated terms; no distinction is supplied. O2 differs by audience, assets, and promise, but its time-saving promise lacks supplied evidence. No competitors, demand data, prices, or experiments are supplied. No winner is selected.\"}",
+      "grade": {
+        "id": "offer-comparison-matrix__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The cross_offer_summary states that O1 and O3 have the same supplied audience, promise, assets, and terms and that no distinction is supplied."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "O2's unresolved_items says the promise has no supplied evidence, and the summary says its time-saving promise lacks supplied evidence."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "The summary says no competitors, demand data, prices, or experiments are supplied and selects no winner; the matrix invents none of these."
+          }
+        ]
+      },
+      "binding": {
+        "id": "offer-comparison-matrix__parent_holdout",
+        "slug": "offer-comparison-matrix",
+        "skill_sha256": "2dbfc0460eff1b8a58ec7d03353e78dc64b6f5d2a846e94cef532f03e49ff132",
+        "contract_sha256": "7d43ce6c0a57097da7fcaaa57123a460e066e17a93fa8c7e8e75f1c859060665",
+        "assertions_sent_to_executor": false
+      },
+      "round": "initial"
+    }
+  ]
+}

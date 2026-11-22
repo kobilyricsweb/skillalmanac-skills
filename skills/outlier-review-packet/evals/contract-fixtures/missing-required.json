@@ -1,0 +1,31 @@
+{
+  "review_items": [
+    {
+      "record_id": "A",
+      "observed_value": 3,
+      "unit": null,
+      "triggering_rule": "R1: count strictly greater than 2",
+      "supplied_context": {
+        "source_note": "manual"
+      },
+      "evidence_available": [
+        "Observed count 3",
+        "Supplied source_note manual"
+      ],
+      "evidence_gaps": [
+        "No source evidence establishes whether correction is warranted."
+      ],
+      "allowed_dispositions": [
+        "retain",
+        "correct-with-source"
+      ],
+      "flag_status": "flagged",
+      "reviewer_decision": null
+    }
+  ],
+  "omitted_records": [],
+  "verification_notes": [
+    "B is not flagged because 2 is not strictly greater than 2.",
+    "A's flag is not a finding of error."
+  ]
+}

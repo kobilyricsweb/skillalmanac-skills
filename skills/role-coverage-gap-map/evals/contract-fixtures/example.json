@@ -1,0 +1,36 @@
+{
+  "time_zone": "UTC",
+  "intervals": [
+    {
+      "responsibility": "monitor queue",
+      "required_window": "09:00–11:00",
+      "interval": "09:00–10:00",
+      "assigned_role": "Analyst A",
+      "availability": "09:00–10:00",
+      "backup": null,
+      "coverage_status": "covered",
+      "overlap_or_gap": null,
+      "supporting_rule": "P1 permits analysts to monitor the queue.",
+      "unresolved_issue": null
+    },
+    {
+      "responsibility": "monitor queue",
+      "required_window": "09:00–11:00",
+      "interval": "10:00–11:00",
+      "assigned_role": "Analyst A",
+      "availability": null,
+      "backup": null,
+      "coverage_status": "uncovered",
+      "overlap_or_gap": "Coverage gap from 10:00 to 11:00.",
+      "supporting_rule": "P1 permits analysts to monitor the queue, but no availability supports this interval.",
+      "unresolved_issue": null
+    }
+  ],
+  "gap_conflict_register": [
+    "The required interval 10:00–11:00 is uncovered.",
+    "No backup is assigned for the required window."
+  ],
+  "review_decisions": [
+    "An authorized reviewer must decide how to address the uncovered interval; no assignment change is made."
+  ]
+}

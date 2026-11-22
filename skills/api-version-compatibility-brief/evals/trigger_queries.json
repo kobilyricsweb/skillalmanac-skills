@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Synthetic test spec: compare these two API version documents field by field.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: classify added, removed, renamed, and changed contract elements between v1 and v2.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: determine whether matching API field names are actually compatible from the supplied types and semantics.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: write a compatibility brief for these two documented endpoint inventories.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: compare request requiredness and response status codes across API versions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: flag uncertain rename intent when the specifications change a field name without a rename note.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: identify documented path and method differences between two API releases.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: preserve internal specification conflicts while comparing the versions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: summarize contract changes without testing live endpoints.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: produce a version-to-version API inventory comparison from these documents.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: build examples of how the documented API should return validation errors.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: model states and events as a transition table.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: resolve missing locale keys through explicit fallback chains.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: map field validation conflicts and precedence clauses.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: check role permissions for resources and operations.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: call both endpoints and report observed responses.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: write a client migration implementation for the new API.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: certify that the API is backward compatible in production.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: load-test the two API versions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: compare undocumented behavior inferred from source code.",
+    "should_trigger": false
+  }
+]

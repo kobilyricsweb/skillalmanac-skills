@@ -1,0 +1,30 @@
+{
+  "slug": "dataset-field-dictionary-builder",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "DFD-004",
+      "severity": "high",
+      "location": "worked example: closed_at null meaning",
+      "evidence": "S3 states only that active accounts have an empty closed_at; it does not state the converse that an empty value means the account is active. The artifact nevertheless reports \"unresolved ambiguity: active or not recorded,\" converting a one-way condition into two competing interpretations of an empty value.",
+      "consequence": "The example teaches false entailment from the source and may cause readers to classify every empty closed_at as evidence of active status.",
+      "correction": "Preserve the directional evidence: \"S3: active accounts have an empty value; S4: an empty value may indicate not recorded.\" Ask whether emptiness identifies active status, whether the conditions overlap, and what other conditions can produce emptiness."
+    },
+    {
+      "id": "DFD-005",
+      "severity": "medium",
+      "location": "required output fields and worked example: null versus blank handling",
+      "evidence": "The skill requires null meaning to be explained separately from blank, but its output schema has only a null-meaning field, and the worked example places evidence about an empty string in that field. No source says that an empty string and null are equivalent.",
+      "consequence": "A conforming artifact can collapse two representations that the instructions explicitly require it to distinguish.",
+      "correction": "Add separate null-semantics and blank/empty-semantics fields, or provide an equivalent structured separation. In the example, mark null semantics not supplied and record the S3/S4 evidence only under blank/empty semantics."
+    },
+    {
+      "id": "DFD-006",
+      "severity": "medium",
+      "location": "incomplete-conflicting evaluation: ended_on assertion",
+      "evidence": "The prompt says no note defines ended_on, while the assertion requires it to have an \"unresolved definition.\" The contract instead requires \"not supplied\" for absent material and reserves unresolved conflict/ambiguity for supplied statements that conflict or leave competing meanings.",
+      "consequence": "The evaluation expects the wrong state and would reject an output that follows the contract's corrected absence-versus-conflict distinction.",
+      "correction": "Require ended_on's normalized definition and null or blank semantics to be marked \"not supplied\"; any request for the missing definition may appear as an open question."
+    }
+  ]
+}

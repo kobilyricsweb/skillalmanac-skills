@@ -1,0 +1,11 @@
+{
+  "slug": "persona-message-fit-table",
+  "category": "marketing",
+  "user_problem": "Approved audience profiles and messages need matching without inventing motivations or market behavior.",
+  "unique_output": "A fit table linking each supplied need to message, evidence, disqualifier, permitted CTA, and unresolved gap.",
+  "required_input": "Audience profiles, approved needs, message library, evidence notes, exclusions, and allowed calls to action.",
+  "critical_rule": "Use only stated audience attributes and needs; never infer sensitive traits, intent, or likely conversion.",
+  "nearest_existing_and_difference": "Nearest is landing-page-message-sequencer; this matches messages to supplied profiles rather than ordering one page narrative.",
+  "tier": "free",
+  "acceptance_scenario": "Input profile P1 needs offline export, message M1 promises supplied CSV export evidence E1, CTA 'View export guide'; M2 concerns collaboration. Output matches M1 to P1 and leaves M2 unmatched."
+}

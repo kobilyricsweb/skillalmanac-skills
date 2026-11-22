@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "assets",
+    "missing_inputs",
+    "conflicts",
+    "progression_summary"
+  ],
+  "properties": {
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "asset",
+          "current_cta",
+          "audience_state",
+          "promised_destination",
+          "destination_description",
+          "stage_result",
+          "destination_result",
+          "mismatch",
+          "proposed_approved_cta"
+        ],
+        "properties": {
+          "asset": {
+            "type": "string"
+          },
+          "current_cta": {
+            "type": "string"
+          },
+          "audience_state": {
+            "type": "string"
+          },
+          "promised_destination": {
+            "type": "string"
+          },
+          "destination_description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stage_result": {
+            "enum": [
+              "fit",
+              "mismatch",
+              "prohibited",
+              "unresolved",
+              "conflicting"
+            ]
+          },
+          "destination_result": {
+            "enum": [
+              "fit",
+              "mismatch",
+              "unresolved",
+              "conflicting"
+            ]
+          },
+          "mismatch": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "proposed_approved_cta": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "missing_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "asset",
+          "issue"
+        ],
+        "properties": {
+          "asset": {
+            "type": "string"
+          },
+          "issue": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "progression_summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

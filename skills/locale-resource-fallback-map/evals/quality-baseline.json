@@ -1,0 +1,12 @@
+{
+  "fingerprint": "7cf56c7dfd7e32ffbf0b8dafdf86f53ae114683b789a8eedd83eaa9e5c3cb2ed",
+  "job": "factory100_baseline_ab877d5ccf0a",
+  "results": [
+    {
+      "id": "locale-resource-fallback-map__q100_ordinary",
+      "answer": "Resolution chain for fr-CA: fr-CA → fr → root.\n- fr-CA/greet: “Allô” (found in fr-CA).\n- fr-CA/bye: “Au revoir” (fallback to fr).\n- fr-CA/help: missing-key marker (not found in fr-CA, fr, or root).\n\nResources remain unchanged. The fr chain is fr → root, but no separate fr lookups were requested."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

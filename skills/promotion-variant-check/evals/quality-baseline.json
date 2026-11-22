@@ -1,0 +1,21 @@
+{
+  "fingerprint": "43ed51ab94e151e9b91bb6721e18f2922d5b9cc0fb1047ce3970a962ae894b50",
+  "job": "factory100_baseline_f2cc51f847e1",
+  "results": [
+    {
+      "id": "promotion-variant-check__q100_ordinary",
+      "answer": "Input scope: baseline fields headline=Save and body=Today; changed_field=headline; variants A, B, and C. Exact string comparison.\n\nFindings: A changes only headline, so it matches the declared singleton changed field. B changes no fields, producing NO_CHANGE and CHANGED_FIELD_MISMATCH. C changes headline and body, producing MORE_THAN_ONE_CHANGED and CHANGED_FIELD_MISMATCH. Applicable codes may co-occur under the supplied contract.\n\nDesign finding: A is the only compliant single-field headline variant; B is unchanged; C changes an additional field. No copy was rewritten or published.\n\nExecution mode: manual, unexecuted assessment. Untested limits: no script, publication system, rendering, or live behavior was inspected."
+    },
+    {
+      "id": "promotion-variant-check__q100_script_output",
+      "answer": "Input scope: two recorded variants against baseline Plan/Details, with changed_field=headline.\n\nConcrete findings: variant same has changed_fields [] and codes NO_CHANGE plus CHANGED_FIELD_MISMATCH. Variant declared-plus-other has changed_fields [body, headline] and codes MORE_THAN_ONE_CHANGED plus CHANGED_FIELD_MISMATCH. The recorded output reports variant_count 2, errors [], ok false, and exit 1.\n\nExit meaning: in this recorded CLI observation, exit 1 accompanies failed validation (ok false).\n\nLimits: this interprets supplied stdout only. The command was not rerun; no records were edited and no live state, publishing outcome, or implementation behavior is inferred."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "raw_response_unchanged": true,
+  "recovered_storage_callback": true,
+  "batch_protocol_complete": true,
+  "request_prompts_exactly_match_current_cases": true,
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

@@ -1,0 +1,31 @@
+{
+  "queue": [
+    {
+      "evidence_item": "E1",
+      "supplied_rule": "Review 7 calendar days after the evidence date.",
+      "trigger_date": "2026-11-17",
+      "date_calculation": "2026-11-10 + 7 calendar days = 2026-11-17",
+      "dependent_claims": [
+        "C1"
+      ],
+      "priority_basis": "Only supplied item; trigger date is on or before 2026-11-21.",
+      "interim_label": "review due",
+      "supersession_status": "not_stated"
+    }
+  ],
+  "unscheduled": [],
+  "open_questions": [
+    "Does any supersession status apply to E1 despite no supersession note being supplied?"
+  ],
+  "verification_report": [
+    "E1 is covered.",
+    "The trigger-date calculation applies the supplied seven-calendar-day rule.",
+    "Review due indicates attention is due, not that E1 or C1 is false."
+  ],
+  "outside_scope": [
+    "Editing dependent claims",
+    "Declaring supersession",
+    "Creating reminders"
+  ],
+  "__unexpected_fixture_property__": 0
+}

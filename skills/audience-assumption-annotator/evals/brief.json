@@ -1,0 +1,11 @@
+{
+  "slug": "audience-assumption-annotator",
+  "category": "content",
+  "user_problem": "A draft silently assumes reader knowledge, access, motivation, or context that may not be supplied.",
+  "unique_output": "An annotation list identifying exact passages, assumption type, consequence, and bounded clarification option.",
+  "required_input": "Complete draft, declared audience profile, known prerequisites, available resources, and excluded assumptions.",
+  "critical_rule": "Do not stereotype the audience; flag only assumptions evidenced by the text and profile mismatch.",
+  "nearest_existing_and_difference": "Nearest is tutorial-prerequisite-mapper; this annotates assumptions throughout prose rather than mapping prerequisites to procedural steps.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input audience is first-time staff with browser access only; draft says 'open the admin console as usual.' Output flags prior familiarity and unavailable admin access, then requests an access prerequisite or alternate path."
+}

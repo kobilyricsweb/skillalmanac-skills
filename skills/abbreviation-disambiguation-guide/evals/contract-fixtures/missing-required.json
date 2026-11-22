@@ -1,0 +1,14 @@
+{
+  "coverage": {
+    "supplied_ids": [
+      "P1"
+    ],
+    "covered_ids": [
+      "P1"
+    ],
+    "unsupported_expansions": []
+  },
+  "scope_limits": [
+    "This guide does not edit the memo or establish a preferred term."
+  ]
+}

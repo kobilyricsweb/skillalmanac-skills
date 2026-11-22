@@ -1,0 +1,21 @@
+{
+  "fingerprint": "8de5dd4b8691c6c939419d01c78687c068822b6c9c8827dc18a8f2a9d2a2366e",
+  "job": "factory100_baseline_f2cc51f847e1",
+  "results": [
+    {
+      "id": "dataset-field-profiler__q100_ordinary",
+      "answer": "Input scope: three records. Direct fields, sorted alphabetically: a, b, c. Raw values are omitted.\n\nManual profile: a is present in all 3 records: integer 1, number 1, boolean 1, null 0, array 0, object 0, string 0, missing 0. b is present in 1 record: null 1; integer, number, boolean, array, object, string all 0; missing 2. c is present in 2 records: array 1 and object 1; integer, number, boolean, null, string all 0; missing 1. Booleans are counted separately from numbers.\n\nExecution mode: manual, unexecuted assessment; the bundled script was not run or modified.\n\nUntested limits: no schema, nested-field analysis, environment, parser behavior, or script output was inspected."
+    },
+    {
+      "id": "dataset-field-profiler__q100_script_output",
+      "answer": "Input scope: four recorded records with direct fields n and tag.\n\nConcrete observations: row_count is 4 and field_count is 2. Field n is present in 3 records and missing in 1; counts are integer 1, number 1, boolean 1, with null, array, object, and string all 0. Field tag is present in 1 record and missing in 3; null is 1 and all other type counts are 0. The recorded output has errors [], ok true, and exit 0.\n\nExit meaning: in this recorded CLI observation, exit 0 accompanies a successful profile (ok true).\n\nLimits: output was interpreted as supplied; the command was not rerun. No live state, additional records, nested fields, or implementation behavior is inferred."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "raw_response_unchanged": true,
+  "recovered_storage_callback": true,
+  "batch_protocol_complete": true,
+  "request_prompts_exactly_match_current_cases": true,
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

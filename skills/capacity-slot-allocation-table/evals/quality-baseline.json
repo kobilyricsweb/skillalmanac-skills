@@ -1,0 +1,16 @@
+{
+  "fingerprint": "84ddba029cb0b6e3e1298dafdbcde809a1691eed44681648270654876cfede1f",
+  "job": "factory100_base_medium_c8deb81fd455",
+  "results": [
+    {
+      "id": "capacity-slot-allocation-table__q100_ordinary",
+      "answer": "Assumptions/conflicts: Supplied local times are used as written. Tasks are non-splittable, R1 cannot work simultaneously, and priority is processed numerically. No conflicts exist in the selected allocation.\n\nAllocations:\n- T1 (priority 2, 2 hours): R1, 2026-11-24 09:00–11:00.\n- T2 (priority 1, 1 hour): R1, 2026-11-24 11:00–12:00.\n\nDecision rationale: T2 is placed first. Its 11:00–12:00 placement preserves the complete 09:00–11:00 slot needed by T1, keeping one remaining task feasible. This satisfies the preservation rule; it is also the latest fitting placement.\n\nUnallocated tasks: None.\n\nUnused slots: None.\n\nFeasibility: Feasible. Each task uses an eligible resource, receives its full duration without splitting, remains within supplied availability, and does not overlap another task.\n\nVerification notes: Total task duration is 3 hours and total R1 availability is 3 hours. T2 precedes T1 in allocation decision order even though T1 occurs earlier chronologically. The final schedule preserves priority logic while fitting both tasks."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "method_note": "Both arms use the same model and effort; old failures retained, sources and valid tests unchanged by this profile selection.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

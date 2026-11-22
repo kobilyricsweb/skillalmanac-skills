@@ -1,0 +1,20 @@
+[
+  {
+    "id": "example",
+    "file": "contract-fixtures/example.json",
+    "expected_valid": true,
+    "expectation_basis": "schema-example or one explicit structural mutation; independent jsonschema oracle checked"
+  },
+  {
+    "id": "missing-required",
+    "file": "contract-fixtures/missing-required.json",
+    "expected_valid": false,
+    "expectation_basis": "schema-example or one explicit structural mutation; independent jsonschema oracle checked"
+  },
+  {
+    "id": "wrong-root",
+    "file": "contract-fixtures/wrong-root.json",
+    "expected_valid": false,
+    "expectation_basis": "schema-example or one explicit structural mutation; independent jsonschema oracle checked"
+  }
+]

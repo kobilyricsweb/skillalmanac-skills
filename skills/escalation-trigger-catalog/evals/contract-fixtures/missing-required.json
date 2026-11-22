@@ -1,0 +1,60 @@
+{
+  "example_evaluations": [
+    {
+      "example": "A",
+      "result": "triggers",
+      "reason": "The report contains 3 errors, which is greater than 2."
+    },
+    {
+      "example": "B",
+      "result": "does_not_trigger",
+      "reason": "The report contains exactly 2 errors, the supplied non-trigger boundary."
+    }
+  ],
+  "policy_gaps": [
+    "Severity is not defined."
+  ],
+  "outside_scope": [
+    "Alert design or implementation",
+    "Sending notifications",
+    "Incident diagnosis",
+    "Performing or authorizing an escalation"
+  ],
+  "verification_report": {
+    "checks": [
+      {
+        "subject": "Q1 observable condition, operator, threshold, and hourly window",
+        "status": "preserved",
+        "source_trace": "Policy Q1",
+        "notes": "Preserves error_count > 2 in one hourly report."
+      },
+      {
+        "subject": "Q1 evidence",
+        "status": "preserved",
+        "source_trace": "Policy Q1 evidence clause",
+        "notes": "Uses the hourly report."
+      },
+      {
+        "subject": "Q1 destination and timing",
+        "status": "preserved",
+        "source_trace": "Policy Q1",
+        "notes": "Uses Support and within 30 minutes."
+      },
+      {
+        "subject": "Q1 non-trigger boundary",
+        "status": "preserved",
+        "source_trace": "Supplied boundary",
+        "notes": "Exactly 2 does not trigger."
+      },
+      {
+        "subject": "Q1 severity",
+        "status": "unresolved",
+        "source_trace": "No severity statement supplied",
+        "notes": "Severity remains undefined."
+      }
+    ],
+    "issues": [
+      "Q1 severity is undefined."
+    ]
+  }
+}

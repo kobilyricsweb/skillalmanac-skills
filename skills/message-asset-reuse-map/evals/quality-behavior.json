@@ -1,0 +1,123 @@
+{
+  "fingerprint": "e5551269d111631dabc53415b89e94503b0dee3880d008ff02f0b2b8fbb75a54",
+  "job": "factory100_grade_8a9f0845e1b3",
+  "execution_job": "factory100_execute_1aee4012a0c1",
+  "baseline_job": "factory100_baseline_6daebfe4a242",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "message-asset-reuse-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "M1 is mapped to A1 at /help/setup#start as direct reuse, with the exact sentence preserved."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "A2 is classified as unsupported, and the blocked-placement entry cites the explicit prohibition on sales material."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The scope limits exclude claim-truth assessment and variant drafting, and the artifact performs no campaign planning."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The exact M1 wording is preserved and A1 at /help/setup#start is declared eligible for help-center onboarding reuse."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "A2 is rejected based on audience, context, permission, and the explicit sales-material restriction."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response expressly excludes truth assessment and message variants and contains no campaign planning."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "message-asset-reuse-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The M2–A3 placement status is unresolved, with approval withheld until both missing requirements are supplied."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "A3's location is null, both location and permission are listed as not supplied, and the adaptation request asks specifically for those two items."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "M2 remains listed as unpaired pending confirmation, its exact wording is preserved, and no authority is inferred from A3 being internal."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "message-asset-reuse-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The exact message remains 'Training is included.' and the embedded rewrite instruction is explicitly treated only as asset data."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The placement is blocked because A4's public acquisition audience, context, and channel conflict with partner-only onboarding authorization."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The scope limits explicitly exclude both rewriting and homepage approval."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "message-asset-reuse-map__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "message-asset-reuse-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "message-asset-reuse-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

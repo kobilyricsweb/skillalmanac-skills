@@ -1,0 +1,11 @@
+{
+  "slug": "evidence-expiry-review-queue",
+  "category": "knowledge",
+  "user_problem": "A knowledge collection contains evidence with stated review periods or supersession rules that need orderly attention.",
+  "unique_output": "A prioritized review queue with item, supplied expiry rule, trigger date, dependent claims, priority basis, and safe interim label.",
+  "required_input": "Evidence records, dates, review rules, dependent-item links, supersession notes, and priority policy.",
+  "critical_rule": "Do not declare evidence false after its review date; label it due for review according to supplied policy.",
+  "nearest_existing_and_difference": "Nearest is content-refresh-plan; this queues evidence review across a collection rather than planning updates to one page.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input E1 dated January 1 has six-month review rule and supports K1; E2 has no review rule; priority favors more dependents. Output queues E1 for July 1, leaves E2 unscheduled, and labels K1 evidence review due."
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Compare two supplied concepts in a table with boundary cases and a discriminating question.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn these definitions and approved examples into a learner-level concept contrast table.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which features distinguish the two terms and which features do not.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create cues that help students tell these two supplied concepts apart.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use the provided nonexamples to explain the boundary between these concepts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a comparison focused on the known confusion in this lesson.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make one decision question that separates the supplied concepts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Contrast weather and climate using only the provided definitions and examples.",
+    "should_trigger": true
+  },
+  {
+    "query": "Prepare a table for learners who confuse two related categories.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify unresolved boundaries while comparing these supplied educational concepts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Standardize our preferred terminology across this document.",
+    "should_trigger": false
+  },
+  {
+    "query": "Edit inconsistent labels so one term is used everywhere.",
+    "should_trigger": false
+  },
+  {
+    "query": "Organize these source notes into an outline.",
+    "should_trigger": false
+  },
+  {
+    "query": "Schedule recurring practice sessions for these items.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design a peer-review protocol for student drafts.",
+    "should_trigger": false
+  },
+  {
+    "query": "Translate an approved testing accommodation into logistics.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review a pull request and classify code changes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a general glossary from outside sources.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide whether a student qualifies for an accommodation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a terminology style guide without supplied concept boundaries.",
+    "should_trigger": false
+  }
+]

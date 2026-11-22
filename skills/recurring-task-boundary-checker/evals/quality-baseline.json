@@ -1,0 +1,13 @@
+{
+  "fingerprint": "f8a134414c3832e284b64be3c27655863c4f5d5277e15e4aa24d3955fad84757",
+  "job": "factory100_baseline_6daebfe4a242",
+  "results": [
+    {
+      "id": "recurring-task-boundary-checker__q100_ordinary",
+      "answer": "Proposed recurrence contract for human review\n\nObjective: Review the shared intake queue each weekday at 09:00.\nOwner: Support lead.\nInput condition: Use queue records updated by 08:55.\n\nAuthorized action: Label records whose supplied category is Billing or Access.\nExclusions: Do not edit record text or contact submitters.\n\nEvidence: Append each processed record ID, applied label, and review timestamp to the audit log.\n\nEscalation: Send records with conflicting categories to the Support lead for a category decision; do not apply an uncertain label.\n\nRun limits: Process at most 20 records per run.\n\nSkip condition: Skip the run when the queue export is unavailable.\n\nTermination: Stop recurrence after 2026-12-31.\n\nStatus: Proposed for human review only; do not schedule or execute."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

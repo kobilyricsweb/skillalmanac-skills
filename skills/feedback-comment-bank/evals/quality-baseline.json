@@ -1,0 +1,17 @@
+{
+  "fingerprint": "a9648ff9fb4a9916c79bf949e8e855360ad1167883c01de5dada82717aa43b34",
+  "job": "factory100_baseline_071d165319fc",
+  "results": [
+    {
+      "id": "feedback-comment-bank__q100_ordinary",
+      "answer": "{\"criterion\":\"Evidence\",\"comments\":[\"You linked the claim to the temperature observation. Add one sentence explaining that the covered cup's higher temperature shows less heat loss.\",\"The observation is supplied, but the connection to the claim is not yet explicit. Explain how 42°C versus 35°C supports the claim.\",\"Good use of a specific observation. Strengthen the evidence by stating that the covered cup stayed warmer, indicating reduced heat loss.\"]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "raw_response_unchanged": true,
+  "recovered_storage_callback": true,
+  "batch_protocol_complete": true,
+  "request_prompts_exactly_match_current_cases": true,
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

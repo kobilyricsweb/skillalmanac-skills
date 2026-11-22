@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["artifact_name", "baseline_as_supplied", "baseline_acceptance_evidence", "requested_changes", "deltas", "impacts", "acceptance_criteria", "approvals", "unresolved_items", "decisions_needed"],
+  "properties": {
+    "artifact_name": {"const": "scope_change_brief"},
+    "baseline_as_supplied": {"type": "array", "items": {"$ref": "#/$defs/record"}},
+    "baseline_acceptance_evidence": {"type": "array", "items": {"$ref": "#/$defs/record"}},
+    "requested_changes": {"type": "array", "items": {"$ref": "#/$defs/record"}},
+    "deltas": {"type": "array", "items": {"$ref": "#/$defs/delta"}},
+    "impacts": {"type": "array", "items": {"$ref": "#/$defs/impact"}},
+    "acceptance_criteria": {"type": "array", "items": {"$ref": "#/$defs/criterion"}},
+    "approvals": {"type": "array", "items": {"$ref": "#/$defs/approval"}},
+    "unresolved_items": {"type": "array", "items": {"$ref": "#/$defs/unresolved"}},
+    "decisions_needed": {"type": "array", "items": {"$ref": "#/$defs/unresolved"}}
+  },
+  "$defs": {
+    "record": {"type": "object", "additionalProperties": false, "required": ["id", "content", "source", "basis", "resolution_state"], "properties": {"id": {"type": "string"}, "content": {"type": "string"}, "source": {"type": "string"}, "basis": {"enum": ["stated", "inferred", "unknown"]}, "resolution_state": {"enum": ["clear", "unresolved", "conflicting"]}}},
+    "delta": {"type": "object", "additionalProperties": false, "required": ["id", "classification", "before", "after", "source", "basis", "resolution_state"], "properties": {"id": {"type": "string"}, "classification": {"enum": ["addition", "removal", "modification", "unchanged"]}, "before": {"type": ["string", "null"]}, "after": {"type": ["string", "null"]}, "source": {"type": "string"}, "basis": {"enum": ["stated", "inferred", "unknown"]}, "resolution_state": {"enum": ["clear", "unresolved", "conflicting"]}}},
+    "impact": {"type": "object", "additionalProperties": false, "required": ["id", "category", "content", "source", "basis", "resolution_state"], "properties": {"id": {"type": "string"}, "category": {"enum": ["deliverable", "interface", "dependency", "owner", "risk", "acceptance"]}, "content": {"type": "string"}, "source": {"type": "string"}, "basis": {"enum": ["stated", "inferred", "unknown"]}, "resolution_state": {"enum": ["clear", "unresolved", "conflicting"]}}},
+    "criterion": {"type": "object", "additionalProperties": false, "required": ["id", "content", "status", "source", "basis", "resolution_state"], "properties": {"id": {"type": "string"}, "content": {"type": "string"}, "status": {"enum": ["observed", "optional_proposal"]}, "source": {"type": "string"}, "basis": {"enum": ["stated", "inferred", "unknown"]}, "resolution_state": {"enum": ["clear", "unresolved", "conflicting"]}}},
+    "approval": {"type": "object", "additionalProperties": false, "required": ["id", "state", "approver", "scope", "date", "conditions", "source", "basis", "resolution_state"], "properties": {"id": {"type": "string"}, "state": {"enum": ["established", "reported_unverified", "unresolved", "conflicting"]}, "approver": {"type": ["string", "null"]}, "scope": {"type": ["string", "null"]}, "date": {"type": ["string", "null"]}, "conditions": {"type": ["string", "null"]}, "source": {"type": "string"}, "basis": {"enum": ["stated", "inferred", "unknown"]}, "resolution_state": {"enum": ["clear", "unresolved", "conflicting"]}}},
+    "unresolved": {"type": "object", "additionalProperties": false, "required": ["id", "content", "source", "basis", "resolution_state"], "properties": {"id": {"type": "string"}, "content": {"type": "string"}, "source": {"type": "string"}, "basis": {"enum": ["stated", "inferred", "unknown"]}, "resolution_state": {"enum": ["unresolved", "conflicting"]}}}
+  }
+}

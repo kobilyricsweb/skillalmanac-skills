@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scope_map",
+    "orphan_markers",
+    "unbound_definitions",
+    "unresolved_issues",
+    "boundary_note"
+  ],
+  "properties": {
+    "scope_map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "cell_id",
+          "visible_value",
+          "marker",
+          "definition_reference",
+          "authorized_scope",
+          "affected_cell_ids",
+          "status",
+          "rationale"
+        ],
+        "properties": {
+          "cell_id": {
+            "type": "string"
+          },
+          "visible_value": {
+            "type": "string"
+          },
+          "marker": {
+            "type": "string"
+          },
+          "definition_reference": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "authorized_scope": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "affected_cell_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "resolved",
+              "unresolved",
+              "orphaned"
+            ]
+          },
+          "rationale": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "orphan_markers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "marker",
+          "placement_cell_id",
+          "reason"
+        ],
+        "properties": {
+          "marker": {
+            "type": "string"
+          },
+          "placement_cell_id": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "unbound_definitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "marker",
+          "definition_text",
+          "reason"
+        ],
+        "properties": {
+          "marker": {
+            "type": "string"
+          },
+          "definition_text": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "unresolved_issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "marker",
+          "details"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "inheritance",
+              "definition_conflict",
+              "ambiguous_placement"
+            ]
+          },
+          "marker": {
+            "type": "string"
+          },
+          "details": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "boundary_note": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "explicitly_supplied_scopes",
+        "unresolved_scopes",
+        "outside_scope"
+      ],
+      "properties": {
+        "explicitly_supplied_scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unresolved_scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "outside_scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

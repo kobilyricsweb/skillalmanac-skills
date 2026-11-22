@@ -1,0 +1,66 @@
+{
+  "context": "QueueLite pickup workflow at an anonymous bakery.",
+  "source_items": [
+    {
+      "item": "Weekend pickup felt easier.",
+      "classification": "company-assumption",
+      "status": "unverified"
+    },
+    {
+      "item": "Setup checklist dated 3 May.",
+      "classification": "supplied-record",
+      "status": "supplied"
+    }
+  ],
+  "core_questions": [
+    "How did the weekend pickup workflow operate before and after QueueLite?",
+    "What setup work was required, and who performed it?",
+    "What difficulties or unchanged aspects did you observe?"
+  ],
+  "fact_confirmations": [
+    "Is the description of the before-and-after pickup workflow accurate?",
+    "What record, if any, supports observations about weekend pickup?"
+  ],
+  "permission_prompts": [
+    "If any wording is considered for quotation, may it be submitted later for written approval with anonymous attribution?"
+  ],
+  "evidence_requests": [
+    {
+      "request": "Confirm whether the 3 May setup checklist accurately records the setup work.",
+      "artifact_type": "follow-up-request"
+    }
+  ],
+  "unresolved": [
+    "No baseline measure is supplied.",
+    "Quotation permission has not been granted."
+  ],
+  "timed_agenda": {
+    "status": "planning_estimate",
+    "time_cap": 20,
+    "allocations": [
+      {
+        "segment": "Opening",
+        "minutes": 2,
+        "purpose": "Context and consent questions."
+      },
+      {
+        "segment": "Core questions",
+        "minutes": 12,
+        "purpose": "Workflow and setup questions."
+      },
+      {
+        "segment": "Evidence follow-up",
+        "minutes": 4,
+        "purpose": "Confirm records and gaps."
+      },
+      {
+        "segment": "Permission follow-up",
+        "minutes": 2,
+        "purpose": "Ask about later written approval."
+      }
+    ],
+    "optional_outside_core": [
+      "Additional limitation probes"
+    ]
+  }
+}

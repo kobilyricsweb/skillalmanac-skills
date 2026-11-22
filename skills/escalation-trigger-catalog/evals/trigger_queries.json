@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Convert this escalation policy into observable triggers with exact thresholds.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show the evidence, destination, timing, and non-trigger for each escalation condition.",
+    "should_trigger": true
+  },
+  {
+    "query": "Evaluate whether these supplied backlog examples trigger escalation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve consecutive-check and comparison-operator requirements in the catalog.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify policy gaps where severity or timing is not defined.",
+    "should_trigger": true
+  },
+  {
+    "query": "Distinguish a warning example from an actual escalation trigger.",
+    "should_trigger": true
+  },
+  {
+    "query": "List explicit non-trigger examples supported by this policy.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark ambiguous escalation thresholds instead of choosing an industry default.",
+    "should_trigger": true
+  },
+  {
+    "query": "Trace each catalog entry to the policy language that supports it.",
+    "should_trigger": true
+  },
+  {
+    "query": "Determine whether 27 followed by 24 satisfies the stated two-check trigger.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map who approves each stage of this authorization process.",
+    "should_trigger": false
+  },
+  {
+    "query": "Route incoming requests by category, urgency, and location.",
+    "should_trigger": false
+  },
+  {
+    "query": "Extract decision branches and rejoin points from this SOP.",
+    "should_trigger": false
+  },
+  {
+    "query": "Define which fields are required for each intake request type.",
+    "should_trigger": false
+  },
+  {
+    "query": "Allocate these jobs to finite resource slots without overlap.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent a severity scale for this incident policy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose the root cause of the backlog increase.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send an escalation notification to the named Lead now.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify that the escalation policy meets an external standard.",
+    "should_trigger": false
+  },
+  {
+    "query": "Approve the escalation and authorize emergency spending.",
+    "should_trigger": false
+  }
+]

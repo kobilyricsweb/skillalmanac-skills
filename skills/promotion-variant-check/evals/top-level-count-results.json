@@ -1,0 +1,78 @@
+{
+  "method": "normative top-level schema errors retain observable supplied array length, not validated entities",
+  "passed": true,
+  "fixtures": [
+    {
+      "id": "extra-key",
+      "passed": true,
+      "expected_count": 2,
+      "exit": 2,
+      "actual": {
+        "errors": [
+          {
+            "code": "TOP_LEVEL_SCHEMA",
+            "message": "top-level keys are exactly baseline, variants, changed_field"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false,
+        "variant_count": 2
+      }
+    },
+    {
+      "id": "missing-key",
+      "passed": true,
+      "expected_count": 2,
+      "exit": 2,
+      "actual": {
+        "errors": [
+          {
+            "code": "TOP_LEVEL_SCHEMA",
+            "message": "top-level keys are exactly baseline, variants, changed_field"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false,
+        "variant_count": 2
+      }
+    },
+    {
+      "id": "oversized-array",
+      "passed": true,
+      "expected_count": 201,
+      "exit": 2,
+      "actual": {
+        "errors": [
+          {
+            "code": "VARIANT_TYPE_OR_LIMIT",
+            "message": "variants must contain 1 to 200 objects"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false,
+        "variant_count": 201
+      }
+    },
+    {
+      "id": "wrong-array-type",
+      "passed": true,
+      "expected_count": 0,
+      "exit": 2,
+      "actual": {
+        "errors": [
+          {
+            "code": "TOP_LEVEL_SCHEMA",
+            "message": "top-level keys are exactly baseline, variants, changed_field"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false,
+        "variant_count": 0
+      }
+    }
+  ]
+}

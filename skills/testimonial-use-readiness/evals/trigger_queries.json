@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Review this customer quote for permission, excerpt scope, attribution, and placement blockers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check whether this testimonial is ready for the proposed website placement.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare the full testimonial with the intended excerpt and flag removed qualifiers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a readiness table for this supplied endorsement and its written usage terms.",
+    "should_trigger": true
+  },
+  {
+    "query": "Determine whether the supplied permission covers this brochure use.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit attribution and edit disclosure for this testimonial excerpt.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify unresolved scope gaps before publishing this customer statement.",
+    "should_trigger": true
+  },
+  {
+    "query": "Trace each testimonial-use conclusion to the supplied permission language.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark this quote ready or blocked based only on the provided terms.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review an existing testimonial’s conditions without preparing an interview.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write interview questions to obtain a new customer testimonial.",
+    "should_trigger": false
+  },
+  {
+    "query": "Prepare a case-study interview kit for a customer conversation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create an overall marketing campaign strategy for this launch.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare several prewritten promotion variants for tone and compliance.",
+    "should_trigger": false
+  },
+  {
+    "query": "Plan revisions to refresh an existing landing page.",
+    "should_trigger": false
+  },
+  {
+    "query": "Authenticate whether this speaker actually said the quote.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide whether this testimonial is legally enforceable.",
+    "should_trigger": false
+  },
+  {
+    "query": "Predict conversion performance from this endorsement.",
+    "should_trigger": false
+  },
+  {
+    "query": "Publish the testimonial to the company website.",
+    "should_trigger": false
+  },
+  {
+    "query": "Ask the customer for permission to use a new quote.",
+    "should_trigger": false
+  }
+]

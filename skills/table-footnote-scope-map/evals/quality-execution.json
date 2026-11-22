@@ -1,0 +1,23 @@
+{
+  "fingerprint": "be626a63018bdf923107ac60369a43af3729e8dde42b5825c64a654296e93166",
+  "job": "factory100_exec_medium_9a30c62606d7",
+  "results": [
+    {
+      "id": "table-footnote-scope-map__q100_ordinary",
+      "answer": "{\"scope_map\":[{\"cell_id\":\"H2\",\"visible_value\":\"Email\",\"marker\":\"‡\",\"definition_reference\":\"‡ = business days only.\",\"authorized_scope\":\"Every data cell in column H2\",\"affected_cell_ids\":[\"R1C1\",\"R2C1\"],\"status\":\"resolved\",\"rationale\":\"The supplied legend expressly authorizes a marker in a column heading to apply to every data cell in that column.\"}],\"orphan_markers\":[],\"unbound_definitions\":[],\"unresolved_issues\":[],\"boundary_note\":{\"explicitly_supplied_scopes\":[\"‡ applies to R1C1 and R2C1 through the column-heading rule.\"],\"unresolved_scopes\":[\"No broader scope is authorized for H1, H3, row labels, or other cells.\"],\"outside_scope\":[\"The map does not verify whether Yes or No is accurate, nor does it establish any meaning beyond the supplied qualifier and legend.\"]}}"
+    },
+    {
+      "id": "table-footnote-scope-map__q100_incomplete",
+      "answer": "{\"scope_map\":[{\"cell_id\":\"R1C1\",\"visible_value\":\"Read?\",\"marker\":\"?\",\"definition_reference\":null,\"authorized_scope\":null,\"affected_cell_ids\":[],\"status\":\"orphaned\",\"rationale\":\"The marker is placed in R1C1, but no definition for ? and no inheritance rule are supplied; therefore no qualifier scope can be bound.\"}],\"orphan_markers\":[{\"marker\":\"?\",\"placement_cell_id\":\"R1C1\",\"reason\":\"No definition for ? is supplied.\"}],\"unbound_definitions\":[{\"marker\":\"#\",\"definition_text\":\"manager approval required\",\"reason\":\"A definition is supplied, but no # placement appears.\"}],\"unresolved_issues\":[],\"boundary_note\":{\"explicitly_supplied_scopes\":[],\"unresolved_scopes\":[\"The meaning and scope of ? remain unresolved.\",\"No inheritance from R1C1 to its row, column, or table is authorized.\"],\"outside_scope\":[\"The map does not interpret Read?, validate the access claims, or apply the unplaced # definition.\"]}}"
+    },
+    {
+      "id": "table-footnote-scope-map__q100_adversarial",
+      "answer": "{\"scope_map\":[{\"cell_id\":\"R1C1\",\"visible_value\":\"Ready\",\"marker\":\"§\",\"definition_reference\":\"§ = packaging excluded; § = packaging included.\",\"authorized_scope\":\"R1C1 only\",\"affected_cell_ids\":[\"R1C1\"],\"status\":\"unresolved\",\"rationale\":\"The legend expressly limits a data-cell marker to that cell, but the two supplied definitions conflict, so the qualifier meaning is unresolved.\"}],\"orphan_markers\":[],\"unbound_definitions\":[],\"unresolved_issues\":[{\"kind\":\"definition_conflict\",\"marker\":\"§\",\"details\":\"The supplied definitions conflict: packaging excluded versus packaging included.\"}],\"boundary_note\":{\"explicitly_supplied_scopes\":[\"§ is authorized for R1C1 only by the data-cell legend.\"],\"unresolved_scopes\":[\"Which § definition binds remains unresolved.\"],\"outside_scope\":[\"The separate quoted note does not override the legend or verify delivery claims; no scope is authorized for R2C1 or the table generally.\"]}}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools",
+  "executor_model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "method_note": "Both arms use the same model and effort; old low-effort failures retained, sources and valid tests unchanged by this profile selection."
+}

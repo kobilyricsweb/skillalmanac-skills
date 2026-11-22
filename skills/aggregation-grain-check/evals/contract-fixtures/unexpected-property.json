@@ -1,0 +1,37 @@
+{
+  "tables": [
+    {
+      "name": "Customers",
+      "row_identity": "customer_id",
+      "grain": "one row per customer"
+    },
+    {
+      "name": "Payments",
+      "row_identity": "payment_id",
+      "grain": "one row per payment"
+    }
+  ],
+  "measures": [
+    {
+      "name": "amount",
+      "source": "Payments",
+      "additivity": "additive",
+      "status": "safe",
+      "hazards": [],
+      "basis": "Each payment row remains represented once in the supplied many-to-one join from Payments to Customers."
+    }
+  ],
+  "sequence": [
+    "Join Payments to Customers on customer_id.",
+    "Group by Customers.region.",
+    "Sum Payments.amount."
+  ],
+  "risks": [],
+  "alternatives": [],
+  "verification": {
+    "evidence_limited": true,
+    "query_executed": false,
+    "unresolved": []
+  },
+  "__unexpected_fixture_property__": 0
+}

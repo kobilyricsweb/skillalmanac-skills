@@ -1,0 +1,13 @@
+{
+  "fingerprint": "cb4ff480249576e635536a8baf2f6981e5da1927b9365e85c8ec00ff985142a2",
+  "job": "factory100_baseline_f27aa15eb1b3",
+  "results": [
+    {
+      "id": "null-semantics-comparison__q100_ordinary",
+      "answer": "{\"matrix\":[{\"input\":\"A seats:null\",\"meaning\":\"unknown\",\"B representation\":\"UNK\",\"result\":\"allowed one-way mapping\"},{\"input\":\"A seats absent\",\"meaning\":\"not collected\",\"B representation\":\"absent\",\"result\":\"distinction preserved; not mapped to UNK\"},{\"input\":\"A seats:\\\"N/A\\\"\",\"meaning\":\"not applicable\",\"B representation\":\"none specified\",\"result\":\"unresolved conflict\"},{\"input\":\"B seats:0\",\"meaning\":\"known none\",\"A representation\":0,\"result\":\"preserved\"}],\"allowed_mapping\":\"A null -> B UNK for seats only, one direction.\",\"preserved_distinctions\":[\"unknown versus not collected/not provided\",\"known zero\"],\"invalid_handling\":[\"Reject empty strings.\",\"Reject negative values.\"],\"downstream_treatment\":\"Treat A null and B UNK as unknown; treat absent values as not provided or not collected, without substituting unknown. Treat 0 as a known count of none.\",\"unresolved_conflicts\":[\"A sentinel N/A means not applicable, but B defines no equivalent.\",\"Whether B can represent not applicable separately is unspecified.\"]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

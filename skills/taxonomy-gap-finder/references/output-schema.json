@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "scope",
+    "definition_coverage",
+    "item_coverage",
+    "unassigned_items",
+    "conflicting_memberships",
+    "weak_definition_findings",
+    "unresolved_questions",
+    "excluded_checks"
+  ],
+  "properties": {
+    "scope": {
+      "type": "object",
+      "required": [
+        "item_ids",
+        "category_ids",
+        "rules"
+      ],
+      "properties": {
+        "item_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "category_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "definition_coverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "category_id",
+          "definition",
+          "status"
+        ],
+        "properties": {
+          "category_id": {
+            "type": "string"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "adequate_on_supplied_standard",
+              "review_question",
+              "unknown_without_standard"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "item_coverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "item_id",
+          "assigned_category_ids",
+          "status",
+          "basis"
+        ],
+        "properties": {
+          "item_id": {
+            "type": "string"
+          },
+          "assigned_category_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "enum": [
+              "assigned",
+              "unassigned",
+              "conflicting"
+            ]
+          },
+          "basis": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "unassigned_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conflicting_memberships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "item_id",
+          "category_ids",
+          "violated_rule"
+        ],
+        "properties": {
+          "item_id": {
+            "type": "string"
+          },
+          "category_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "violated_rule": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "weak_definition_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "category_id",
+          "wording",
+          "finding_type",
+          "certainty",
+          "basis"
+        ],
+        "properties": {
+          "category_id": {
+            "type": "string"
+          },
+          "wording": {
+            "type": "string"
+          },
+          "finding_type": {
+            "enum": [
+              "missing_required_element",
+              "self_reference",
+              "circular_wording",
+              "undefined_term",
+              "unbounded_catch_all",
+              "insufficient_specificity"
+            ]
+          },
+          "certainty": {
+            "enum": [
+              "confirmed_against_supplied_standard",
+              "review_question"
+            ]
+          },
+          "basis": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "unresolved_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "excluded_checks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

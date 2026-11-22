@@ -1,0 +1,11 @@
+{
+  "slug": "contradiction-resolution-dossier",
+  "category": "knowledge",
+  "user_problem": "Two supplied knowledge sources conflict and reviewers need a focused packet for an authorized resolver.",
+  "unique_output": "A dossier containing conflicting statements, exact scopes, dates, authorities, downstream uses, and decision questions.",
+  "required_input": "Source excerpts, metadata, authority rules, affected artifacts, and the named resolving role.",
+  "critical_rule": "Do not choose a winner unless supplied precedence conclusively resolves the conflict; otherwise frame the decision.",
+  "nearest_existing_and_difference": "Nearest is document-consistency-check; this packages one consequential contradiction for resolution rather than surveying consistency broadly.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input Handbook H says retain drafts 30 days; Policy P says 60 days; P outranks H; articles A1 and A2 cite H. Output identifies P as controlling under supplied precedence and lists A1/A2 for review."
+}

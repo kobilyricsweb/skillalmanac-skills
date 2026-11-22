@@ -1,0 +1,39 @@
+{
+  "synthetic": true,
+  "input": "D1, location line 1: “Model K is version 3.” D2, location header: “Model K is version 3.” Both records concern the same Model K release.",
+  "expected_artifact": {
+    "comparisons": [
+      {
+        "comparison_id": "CMP1",
+        "field_type": "version",
+        "subject": "Model K release",
+        "assertions": [
+          {
+            "document_id": "D1",
+            "location_state": "available_location",
+            "location_value": "line 1",
+            "original_value": "version 3",
+            "qualifiers": "Model K",
+            "normalized_display": "version 3"
+          },
+          {
+            "document_id": "D2",
+            "location_state": "available_location",
+            "location_value": "header",
+            "original_value": "version 3",
+            "qualifiers": "Model K",
+            "normalized_display": "version 3"
+          }
+        ],
+        "classification": "consistent",
+        "basis": "Both peer documents state the same version for the established same release.",
+        "unresolved_questions": []
+      }
+    ],
+    "unresolved_questions": [],
+    "limits": [
+      "No authority ranking or external truth assessment was performed."
+    ]
+  },
+  "status": "specification; not an executed test"
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create realistic CLI examples from this command grammar.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design valid and invalid uses for these declared flags and constraints.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a CLI help example suite with option coverage.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show token-array examples because no shell is specified.",
+    "should_trigger": true
+  },
+  {
+    "query": "Give me one rejected combination for these mutually exclusive options.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn this CLI schema into concise usage examples and prerequisites.",
+    "should_trigger": true
+  },
+  {
+    "query": "Ensure the examples respect required and dependent flags.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create examples for every meaningful option in this supplied command contract.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document a valid path and a correctly rejected path without executing anything.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make shell-specific CLI examples using the supplied shell grammar.",
+    "should_trigger": true
+  },
+  {
+    "query": "Run these commands and report their real output.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a complete command-line user manual.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent useful flags for this unfinished CLI.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review my shell script for security issues.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build the CLI implementation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Generate generic agent instructions for command execution.",
+    "should_trigger": false
+  },
+  {
+    "query": "Test whether this binary is installed on my machine.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a release migration plan for the CLI.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose flags based on common Unix conventions rather than the schema.",
+    "should_trigger": false
+  },
+  {
+    "query": "Upload the generated command output to our documentation site.",
+    "should_trigger": false
+  }
+]

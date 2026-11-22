@@ -1,0 +1,100 @@
+{
+  "method": "normative independent input/error and finite-Decimal domain assertions",
+  "passed": true,
+  "fixtures": [
+    {
+      "id": "extreme-exponent",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "invalid decimal number",
+        "errors": [],
+        "code": "invalid_number"
+      }
+    },
+    {
+      "id": "finite-large",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "unknown or missing top-level key",
+        "errors": []
+      }
+    },
+    {
+      "id": "finite-negative-large",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "unknown or missing top-level key",
+        "errors": []
+      }
+    },
+    {
+      "id": "infinity",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "non-finite JSON number",
+        "errors": [],
+        "code": "invalid_number"
+      }
+    },
+    {
+      "id": "integer5000",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "number exceeds coefficient-digit or exponent limit (1000)",
+        "errors": [],
+        "code": "invalid_number"
+      }
+    },
+    {
+      "id": "nan",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "non-finite JSON number",
+        "errors": [],
+        "code": "invalid_number"
+      }
+    },
+    {
+      "id": "negative-extreme-exponent",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "invalid decimal number",
+        "errors": [],
+        "code": "invalid_number"
+      }
+    },
+    {
+      "id": "negative-infinity",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "non-finite JSON number",
+        "errors": [],
+        "code": "invalid_number"
+      }
+    }
+  ]
+}

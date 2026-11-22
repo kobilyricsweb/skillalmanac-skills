@@ -1,0 +1,12 @@
+{
+  "fingerprint": "37c1c3f8f981cd2e09e30877462cc453f59989b23ab1e418facd9aec5767fe50",
+  "job": "factory100_baseline_fbe004bae79d",
+  "results": [
+    {
+      "id": "faq-answer-boundary-builder__q100_ordinary",
+      "answer": "{\"entries\":[{\"question\":\"Can I return an unopened badge holder?\",\"answer\":\"Yes, if it is a standard unopened badge holder returned within 14 calendar days of delivery with a receipt. Any refund uses the original payment method. Do not guarantee when funds will appear. Unknown cases: Ask the Returns Policy Team to review the case.\"},{\"question\":\"Can I return an engraved badge holder?\",\"answer\":\"No. Engraved items are excluded from returns. For an unknown or disputed case: Ask the Returns Policy Team to review the case.\"}]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

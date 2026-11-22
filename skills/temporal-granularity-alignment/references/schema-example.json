@@ -1,0 +1,51 @@
+{
+  "synthetic": true,
+  "input": "Source A: daily counts in UTC Gregorian days, with inclusive start and exclusive end. Values: 2026-04-01 is 1 and 2026-04-02 is 2. Source B: one UTC Gregorian calendar-week count for the week beginning 2026-03-30, value 3, with inclusive start and exclusive end. Target grain: calendar week beginning Monday. Approved rule: sum A's daily counts into that week. The supplied A observations cover only 2026-04-01 through 2026-04-03 exclusive; no rule supplies the remaining days of the week.",
+  "expected_artifact": {
+    "target_grain": "UTC Gregorian calendar week beginning Monday",
+    "sources": [
+      {
+        "source_id": "A",
+        "native_grain": "day",
+        "timezone": "UTC",
+        "calendar": "Gregorian",
+        "permitted_transformation": "Sum the two supplied daily counts into the covered portion of the week beginning 2026-03-30; do not represent the result as a full-week value.",
+        "forbidden_transformations": [
+          "Create finer-than-daily observations",
+          "Treat the partial-period sum as the complete weekly observation"
+        ],
+        "meaning_effect": "changed",
+        "comparability_status": "conditionally_comparable",
+        "coverage_period": "2026-04-01 inclusive to2026-04-03 exclusive",
+        "boundary_convention": "inclusive start, exclusive end"
+      },
+      {
+        "source_id": "B",
+        "native_grain": "calendar week",
+        "timezone": "UTC",
+        "calendar": "Gregorian",
+        "permitted_transformation": "Retain at native weekly grain.",
+        "forbidden_transformations": [
+          "Expand the weekly value into daily values",
+          "Compare as equivalent to an incomplete daily coverage window"
+        ],
+        "meaning_effect": "preserved",
+        "comparability_status": "conditionally_comparable",
+        "coverage_period": "2026-03-30 inclusive to2026-04-06 exclusive",
+        "boundary_convention": "inclusive start, exclusive end"
+      }
+    ],
+    "boundary_decisions": [
+      "Use the week beginning Monday 2026-03-30 with inclusive start and exclusive end.",
+      "Source A covers only 2026-04-01 through 2026-04-03 exclusive; the remaining days of Source B's weekly period are not supplied."
+    ],
+    "gaps": [
+      "Daily observations for the rest of the weekly period are missing from Source A."
+    ],
+    "unresolved_inputs": [
+      "Whether complete daily coverage can be supplied before comparing with Source B."
+    ],
+    "execution_status": "plan_only"
+  },
+  "status": "specification; not an executed test"
+}

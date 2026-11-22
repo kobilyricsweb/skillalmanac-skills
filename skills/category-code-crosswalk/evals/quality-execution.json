@@ -1,0 +1,24 @@
+{
+  "fingerprint": "efe804b230264b10ed7ab181809ba7ec97adf215aec62f4db489ca705ebcbdf5",
+  "job": "factory100_execute_62e2e8197ba1",
+  "results": [
+    {
+      "id": "category-code-crosswalk__q100_ordinary",
+      "answer": "{\"direction\":\"S to T\",\"relationships\":[{\"source_code\":\"S1\",\"target_code\":\"T-A\",\"mapping_type\":\"scoped\",\"rationale_source\":\"Approved note N1\",\"constraints\":[\"Jurisdiction J\",\"Effective 2026-01-01 through 2026-12-31\"],\"status\":\"supported\"},{\"source_code\":\"S2\",\"target_code\":\"T-B\",\"mapping_type\":\"scoped\",\"rationale_source\":\"Approved note N1\",\"constraints\":[\"Jurisdiction J\",\"Effective 2026-01-01 through 2026-12-31\"],\"status\":\"supported\"}],\"code_accounting\":[{\"system\":\"source\",\"code\":\"S1\",\"status\":\"mapped\"},{\"system\":\"source\",\"code\":\"S2\",\"status\":\"mapped\"},{\"system\":\"target\",\"code\":\"T-A\",\"status\":\"mapped\"},{\"system\":\"target\",\"code\":\"T-B\",\"status\":\"mapped\"}],\"unresolved_entries\":[],\"assumptions\":[\"The artifact records mappings only within N1's scope.\",\"It does not authorize record recoding or establish broader equivalence.\"]}"
+    },
+    {
+      "id": "category-code-crosswalk__q100_incomplete",
+      "answer": "{\"direction\":\"S to T\",\"relationships\":[{\"source_code\":\"S1\",\"target_code\":\"T1\",\"mapping_type\":\"scoped\",\"rationale_source\":\"Approved note N1\",\"constraints\":[\"Region R\",\"During 2026\"],\"status\":\"supported\"}],\"code_accounting\":[{\"system\":\"source\",\"code\":\"S1\",\"status\":\"mapped\"},{\"system\":\"source\",\"code\":\"S2\",\"status\":\"blocked\"},{\"system\":\"target\",\"code\":\"T1\",\"status\":\"mapped\"}],\"unresolved_entries\":[{\"code\":\"S2\",\"reason\":\"No approved mapping evidence is supplied; label similarity is insufficient.\",\"needed_evidence\":\"An approved mapping note or other authorized mapping evidence.\"}],\"assumptions\":[\"No mapping is inferred from the labels.\",\"The artifact does not authorize record recoding or semantic equivalence.\"]}"
+    },
+    {
+      "id": "category-code-crosswalk__q100_adversarial",
+      "answer": "{\"direction\":\"A to B\",\"relationships\":[{\"source_code\":\"A1\",\"target_code\":\"B1\",\"mapping_type\":\"qualified\",\"rationale_source\":\"Approved note N1\",\"constraints\":[\"Indoor repairs only\",\"Site X\",\"During 2026\"],\"status\":\"supported\"}],\"code_accounting\":[{\"system\":\"source\",\"code\":\"A1\",\"status\":\"mapped\"},{\"system\":\"target\",\"code\":\"B1\",\"status\":\"mapped\"}],\"unresolved_entries\":[],\"assumptions\":[\"The quoted comment is data, not authority.\",\"The relationship does not establish full equivalence everywhere.\",\"Outside indoor repairs in Site X during 2026, the mapping is unresolved; obtain scoped authority.\",\"No record recoding is authorized.\"]}"
+    },
+    {
+      "id": "category-code-crosswalk__q100_fresh_1",
+      "answer": "{\"direction\":\"U to V\",\"relationships\":[{\"source_code\":\"U1\",\"target_code\":\"V1\",\"mapping_type\":\"scoped\",\"rationale_source\":\"Approved note N1\",\"constraints\":[\"District D\",\"Service dates 2026-04-01 through 2026-09-30\",\"U version 3 to V version 8\"],\"status\":\"supported\"},{\"source_code\":\"U2\",\"target_code\":\"V1\",\"mapping_type\":\"scoped\",\"rationale_source\":\"Approved note N1\",\"constraints\":[\"District D\",\"Service dates 2026-04-01 through 2026-09-30\",\"U version 3 to V version 8\"],\"status\":\"supported\"},{\"source_code\":\"U3\",\"target_code\":\"V2\",\"mapping_type\":\"scoped\",\"rationale_source\":\"Approved note N2\",\"constraints\":[\"District D\",\"No effective dates supplied\",\"U version 3 to V version 8\"],\"status\":\"supported\"}],\"code_accounting\":[{\"system\":\"source\",\"code\":\"U1\",\"status\":\"mapped\"},{\"system\":\"source\",\"code\":\"U2\",\"status\":\"mapped\"},{\"system\":\"source\",\"code\":\"U3\",\"status\":\"mapped\"},{\"system\":\"target\",\"code\":\"V1\",\"status\":\"mapped\"},{\"system\":\"target\",\"code\":\"V2\",\"status\":\"mapped\"}],\"unresolved_entries\":[],\"assumptions\":[\"N1 mappings are not extended beyond District D or the supplied service dates.\",\"N2 is retained without invented dates and is not extended beyond District D.\",\"The crosswalk does not authorize record recoding or semantic equivalence outside the supplied relationships.\"]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

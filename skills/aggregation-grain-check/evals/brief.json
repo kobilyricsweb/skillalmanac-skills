@@ -1,0 +1,11 @@
+{
+  "slug": "aggregation-grain-check",
+  "category": "data",
+  "user_problem": "A proposed summary may double-count entities because measure grain and grouping grain are mismatched.",
+  "unique_output": "A grain worksheet naming row identity, measure additivity, grouping keys, duplication risks, and safe alternatives.",
+  "required_input": "Table keys, measure definitions, join relationships, intended grouping, and supplied aggregation rules.",
+  "critical_rule": "Do not declare a sum safe unless uniqueness or an approved deduplication rule is evidenced in the input.",
+  "nearest_existing_and_difference": "Nearest is join-cardinality-audit; this evaluates aggregation safety after relationships are supplied rather than auditing join cardinality itself.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input orders has one row per order with total; items has many rows per order; proposed join then sum total by customer. Output flags duplicated totals and proposes aggregating orders before the item join."
+}

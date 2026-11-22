@@ -1,0 +1,13 @@
+{
+  "fingerprint": "43f7b245782d4bd78a18aa325f907cc761425aa7382e1a9d4a6c7b65c5fe19f9",
+  "job": "factory100_baseline_608baf589df6",
+  "results": [
+    {
+      "id": "sop-decision-point-extractor__q100_ordinary",
+      "answer": "Decision table:\n\n| Point | Genuine decision/condition | Branch action | Outcome | Source |\n|---|---|---|---|---|\n| P2 | Parcel seal is visibly broken | Yes: place parcel in Hold Bin | Procedure terminates at P3 | P2-P3 |\n| P2 | Parcel seal is not visibly broken | Place parcel on Intake Shelf; proceed to Labeling | Rejoins at named downstream stage | P2, P4 |\n\nRole: Receiving Clerk performs P1-P4. Labeling is a named downstream stage, not a role assignment. Initial actions: P1 logs every parcel; P2 checks seal condition. Termination: visibly broken branch ends the procedure after Hold Bin placement. Rejoin/continuation: intact-seal branch continues from Intake Shelf to Labeling. Uncovered conditions: no condition is specified for an unclear, indeterminate, or partially observed seal. No approval or routing rules are created."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

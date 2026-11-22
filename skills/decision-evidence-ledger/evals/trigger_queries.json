@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Turn these product notes into a ledger of final decisions, proposals, assumptions, and evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate approved choices from suggestions in this decision record and show conflicts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Extract decisions and supporting evidence from this dated project note.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a traceable decision ledger from the supplied transcript excerpt.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify which statements are assumptions versus confirmed decisions in these notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare two conflicting decision records without choosing an authority silently.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a source-linked ledger from these meeting decision notes, not meeting minutes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark unresolved approval and preserve contradictory dates in this decision log.",
+    "should_trigger": true
+  },
+  {
+    "query": "Classify each statement in this supplied decision memo and list open questions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make an evidence-backed ledger from these fictional product decisions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Interview the stakeholders and run a decision workshop.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write polished meeting minutes from this meeting.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose the best product decision using your own judgment.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send the decision log to everyone by email.",
+    "should_trigger": false
+  },
+  {
+    "query": "Change the production database based on the approved decision.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find current market evidence online for this decision.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a complete product requirements document.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit the repository and verify the implementation independently.",
+    "should_trigger": false
+  },
+  {
+    "query": "Update the cloud security rules to enforce the decision.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rank the team members responsible for the disagreement.",
+    "should_trigger": false
+  }
+]

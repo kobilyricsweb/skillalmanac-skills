@@ -1,0 +1,27 @@
+{
+  "approved_label_check": [
+    {
+      "label": "AGREEMENT-FINAL",
+      "approved": true
+    }
+  ],
+  "unresolved_queue": [],
+  "rule_register": [
+    {
+      "rule_id": "M1",
+      "rule": "Signed agreement maps to AGREEMENT-FINAL."
+    },
+    {
+      "rule_id": "M2",
+      "rule": "Draft agreement maps to AGREEMENT-DRAFT."
+    }
+  ],
+  "exclusion_register": [
+    {
+      "exclusion_id": "E1",
+      "exclusion": "Training samples are excluded and require manual review."
+    }
+  ],
+  "decision_summary": "The synthetic description meets the supplied Signed agreement definition and M1 assigns an approved label.",
+  "operative_authorization": false
+}

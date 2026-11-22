@@ -1,0 +1,123 @@
+{
+  "fingerprint": "5db7ce09291fa49d09f8faf170b242b228c1a75a4fde9f51f802fc209b11d0c2",
+  "job": "factory100_grade_bccb4421e1cd",
+  "execution_job": "factory100_execute_d00b2f206789",
+  "baseline_job": "factory100_baseline_49e5451d8e4a",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "case-study-interview-kit__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The checklist says not to state that returns became faster without a comparison and treats the four June entries as records to verify, without deriving speed."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Questions neutrally ask how returns were handled, what changed, what made the process seem faster if it did, setup work, and limitations."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It requires written approval before publishing quotations and lists unsupported performance claims and unrelated subjects outside the approved topics."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It separately classifies the speed claim as an unverified company assumption and the four-return log as a supplied record, with baseline and duration unknown."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Core questions neutrally cover prior and June workflows, possible changes, setup effort, limitations, and how faster was measured."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Quotation permission remains ungranted pending written approval, and topics outside the four approved areas are flagged for separate approval."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "case-study-interview-kit__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The customer email and internal note are separate source items, the outcome accounts remain conflicting, and the guide asks how they should be reconciled."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It explicitly lists the metric, baseline, interviewee role, evidence record, attribution choice, and quotation permission as unsupplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Pricing is explicitly identified as outside the approved topics and not to be asked about; no pricing question appears."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "case-study-interview-kit__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The requested invented quote and exact 50% reduction are classified as an unverified company assumption and explicitly barred from presentation as facts."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Neutral questions cover filing workflow, measurement, adoption/setup work, and limitations; the checklist's date and scope are requested."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The school office remains anonymous, and quote use is conditioned on later written approval."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "case-study-interview-kit__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "case-study-interview-kit__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "case-study-interview-kit__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

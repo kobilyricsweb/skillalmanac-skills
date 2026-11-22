@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Turn these exact approved accommodations into assessment-day logistics.",
+    "should_trigger": true
+  },
+  {
+    "query": "Calculate the adjusted time from the supplied standard duration and approval.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map each approved accommodation to timing, room, materials, and instructions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve the algebra construct while implementing the approved conditions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag room or staffing availability that the input does not establish.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which assessment elements remain unchanged after accommodation implementation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a traceability checklist from approvals to operational steps.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate implementable logistics from provisional proposals.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify an unresolved conflict between approved timing and session constraints.",
+    "should_trigger": true
+  },
+  {
+    "query": "Translate this approved testing statement without inferring a diagnosis.",
+    "should_trigger": true
+  },
+  {
+    "query": "Decide whether the student qualifies for an accommodation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Determine whether this accommodation complies with education law.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a scope-change brief for a new project.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a peer-review protocol for a student explanation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Schedule practice items with retrieval reviews.",
+    "should_trigger": false
+  },
+  {
+    "query": "Contrast two concepts using supplied examples.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review the student’s private medical records.",
+    "should_trigger": false
+  },
+  {
+    "query": "Change the algebra items to make the test easier.",
+    "should_trigger": false
+  },
+  {
+    "query": "Infer the learner’s disability from the accommodation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Guarantee the accommodation will improve assessment performance.",
+    "should_trigger": false
+  }
+]

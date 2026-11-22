@@ -1,0 +1,48 @@
+{
+  "fingerprint": "6ba7a446b1a1a1928dd00e275fa068c6e4f0c7af1b46a6dd286140f0241df1a7",
+  "passed": true,
+  "lint": {
+    "skill": "duplicate-record-triage",
+    "fail": 0,
+    "warn": 0,
+    "items": [
+      {
+        "level": "PASS",
+        "code": "frontmatter-keys",
+        "message": "only open-spec keys used"
+      },
+      {
+        "level": "PASS",
+        "code": "name-format",
+        "message": "name 'duplicate-record-triage' is valid"
+      },
+      {
+        "level": "PASS",
+        "code": "description-length",
+        "message": "description is 340 chars"
+      },
+      {
+        "level": "PASS",
+        "code": "body-lines",
+        "message": "SKILL.md body has 21 lines"
+      },
+      {
+        "level": "PASS",
+        "code": "body-tokens",
+        "message": "body is about 622 tokens by chars/4"
+      },
+      {
+        "level": "PASS",
+        "code": "package-size",
+        "message": "package is 33159 bytes in 8 files"
+      }
+    ]
+  },
+  "quick_exit": 0,
+  "quick_stdout": "Skill is valid!\n",
+  "quick_stderr": "",
+  "schema_error": null,
+  "fixture_exit": 0,
+  "fixture_stdout": "{\"passed\": true, \"fixtures\": [{\"id\": \"example\", \"passed\": true, \"valid\": true, \"errors\": []}, {\"id\": \"missing-required\", \"passed\": true, \"valid\": false, \"errors\": [{\"path\": \"$\", \"code\": \"required\", \"message\": \"Missing comparison_rules\"}]}, {\"id\": \"wrong-root\", \"passed\": true, \"valid\": false, \"errors\": [{\"path\": \"$\", \"code\": \"type\", \"message\": \"Expected object\"}]}, {\"id\": \"unexpected-property\", \"passed\": true, \"valid\": false, \"errors\": [{\"path\": \"$\", \"code\": \"additionalProperties\", \"message\": \"Unexpected property __unexpected_fixture_property__\"}]}]}\n",
+  "fixture_stderr": ""
+}

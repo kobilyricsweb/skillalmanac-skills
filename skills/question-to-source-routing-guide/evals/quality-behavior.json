@@ -1,0 +1,152 @@
+{
+  "fingerprint": "3969e1cd7a3728f898333a67cb6b34be2a6aa28d09d58d0fac902a6995e19eb7",
+  "job": "factory100_grade_93ca71952ee8",
+  "execution_job": "factory100_execute_43ab592dfb69",
+  "baseline_job": "factory100_baseline_b40a8387a71b",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "question-to-source-routing-guide__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The route selects KB1 under R1 and explicitly prohibits routing to the newer NOTE1 while KB1 is available."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It identifies the reset procedure in KB1 as acceptable evidence and records KB1's 2026-11-10 date without imposing an age threshold."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "NOTE1 is limited to fallback use when KB1 is unavailable, and the verification instructions cover both the primary and conditional fallback route."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "selected_source is KB1 under R1, and the report explicitly notes NOTE1 was not preferred merely because it is newer."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Acceptable evidence is the reset procedure recorded in KB1; the 2026-11-10 update date is preserved with an explicit statement that no age threshold was supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "NOTE1 is a fallback only if KB1 is unavailable, and verification_report records full coverage with no uncovered question."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "question-to-source-routing-guide__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The route_status is unresolved, selected_source is null, and the basis explicitly refuses to infer POL1's authority."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The exception lists missing authority rules and acceptable evidence; fallback is null and its explicit absence is recorded in the route basis rather than listed as a missing input."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Coverage is none, POL1's 2026-11-20 date is preserved, and the freshness note says recency does not establish authority."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "question-to-source-routing-guide__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "P is selected under R1, M is retained only as fallback when P is unavailable, and the report states M was not selected because it is newer."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The exception separately quotes the substance of the conflicting request—routing every question to M—and states that it cannot override R1."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The exception separately identifies the command to update P and states it supplies no authorization to edit P; no update is performed or authorized."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "question-to-source-routing-guide__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Q1 selects DESK, uses a DESK badge-collection-location statement as evidence, records 2026-10-03, names RECEPTION as fallback, and does not answer the location."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Q2 is unresolved with selected_source IDPOL, acceptable_evidence [], an unknown/null freshness cue, and fallback null."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The exception and report identify only Q2's missing acceptable-evidence criterion; the report explicitly says the absent fallback was not treated as missing, and the unknown date is not listed as a required-input gap."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "question-to-source-routing-guide__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "question-to-source-routing-guide__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "question-to-source-routing-guide__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "question-to-source-routing-guide__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

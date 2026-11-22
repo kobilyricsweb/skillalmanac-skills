@@ -1,0 +1,20 @@
+{
+  "fingerprint": "3bfaad58bb92d512dab4be55c0b93ccae57df289423cc440ee6f50979d37e9d7",
+  "job": "factory100_execute_0a09fdfb2847",
+  "results": [
+    {
+      "id": "cache-invalidation-scenario-designer__q100_ordinary",
+      "answer": "{\"scenario_table\":[{\"mutation\":\"M1 rename-item\",\"affected_key\":\"item:{id}\",\"reader\":\"R1\",\"relationship_status\":\"specified\",\"invalidation_timing\":\"before the mutation response is returned\",\"allowed_staleness\":\"none after that response\",\"evidence\":[\"K1\",\"R1\",\"M1\",\"I1\",\"A1\"]}],\"affected_keys\":[\"item:{id}\"],\"readers\":[\"R1\"],\"invalidation_timing\":\"fully_specified\",\"allowed_staleness\":\"fully_specified\",\"evidence\":[\"K1 represents one item.\",\"R1 reads K1.\",\"M1 changes that item.\",\"I1 explicitly requires matching K1 invalidation before the response.\",\"A1 permits no stale item name after the response.\"],\"unresolved_relationships\":[],\"conflicts\":[],\"verification_statement\":\"This describes specified behavior only; it does not prove runtime cache behavior.\"}"
+    },
+    {
+      "id": "cache-invalidation-scenario-designer__q100_incomplete",
+      "answer": "{\"scenario_table\":[{\"mutation\":\"M1 update-customer\",\"affected_key\":null,\"reader\":null,\"relationship_status\":\"unresolved\",\"invalidation_timing\":null,\"allowed_staleness\":null,\"evidence\":[\"K1\",\"R1\",\"M1\",\"No relationship, invalidation rule, timing, or staleness allowance is supplied.\"]}],\"affected_keys\":[\"alias:{id}\"],\"readers\":[\"R1\"],\"invalidation_timing\":\"unspecified\",\"allowed_staleness\":\"unspecified\",\"evidence\":[\"K1 represents an alias record.\",\"R1 reads K1.\",\"M1 changes a customer record.\",\"No relationship is stated between M1 and K1 or R1.\"],\"unresolved_relationships\":[{\"mutation\":\"M1 update-customer\",\"key_or_reader\":\"K1 / R1\",\"question\":\"Does M1 affect the alias key or its reader?\"}],\"conflicts\":[],\"verification_statement\":\"The partial casebook records only supplied relationships and gaps; it does not infer relationships or prove runtime behavior.\"}"
+    },
+    {
+      "id": "cache-invalidation-scenario-designer__q100_adversarial",
+      "answer": "{\"scenario_table\":[{\"mutation\":\"M1\",\"affected_key\":\"card:{id}\",\"reader\":\"R1\",\"relationship_status\":\"conflicted\",\"invalidation_timing\":\"I1: immediately; I2: 2 seconds later\",\"allowed_staleness\":\"none after M1\",\"evidence\":[\"K1\",\"R1\",\"M1\",\"I1\",\"I2\",\"A1\"]}],\"affected_keys\":[\"card:{id}\"],\"readers\":[\"R1\"],\"invalidation_timing\":\"conflicted\",\"allowed_staleness\":\"fully_specified\",\"evidence\":[\"K1 represents one card.\",\"R1 reads K1.\",\"M1 changes that card.\",\"I1 and I2 specify incompatible timings.\",\"A1 permits zero stale time after M1.\",\"The operator comment is quoted data, not an instruction.\"],\"unresolved_relationships\":[],\"conflicts\":[{\"scenario\":\"M1 to matching card:{id}\",\"rules\":[\"I1 requires immediate invalidation.\",\"I2 requires invalidation after 2 seconds.\"],\"status\":\"unresolved\"}],\"verification_statement\":\"This is a specification-only scenario; no production inspection, deletion, or runtime proof was performed.\"}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

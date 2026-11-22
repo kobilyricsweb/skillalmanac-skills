@@ -1,0 +1,15 @@
+{
+  "synthetic": true,
+  "input": "Task P has duration 1 hour and is eligible for R. Resource R has one slot on 2026-11-25 from 09:00 to 10:00. P has priority 1. Splitting and simultaneous work are prohibited; there are no fixed assignments or blackouts.",
+  "expected_artifact": {
+    "assumptions": [],
+    "input_conflicts": [],
+    "allocations": [{"task": "P", "resource": "R", "start": "2026-11-25 09:00", "end": "2026-11-25 10:00", "duration_hours": 1, "supporting_rule": "P has priority 1 and fits its eligible R slot.", "status": "assigned"}],
+    "unallocated_tasks": [],
+    "unresolved_tasks": [],
+    "unused_slots": [],
+    "feasibility_status": "feasible",
+    "verification_notes": ["P retains its one-hour duration.", "The assignment fits the slot and creates no resource overlap.", "The assigned and unallocated lists account for task P."]
+  },
+  "status": "specification; not an executed test"
+}

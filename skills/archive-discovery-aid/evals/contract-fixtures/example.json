@@ -1,0 +1,40 @@
+{
+  "entries": [
+    {
+      "identifier": "C1",
+      "kind": "folder",
+      "label": "Letters",
+      "parent_identifier": null,
+      "scope_description": "Incoming letters",
+      "date_span": "2020-04-02",
+      "access_notes": "Open",
+      "certainty": "supported"
+    },
+    {
+      "identifier": "L1",
+      "kind": "item",
+      "label": "L1",
+      "parent_identifier": "C1",
+      "scope_description": "Letter acknowledging receipt",
+      "date_span": "2020-04-02",
+      "access_notes": "Open",
+      "certainty": "supported"
+    }
+  ],
+  "unclassified": [],
+  "coverage": {
+    "supplied_identifiers": [
+      "C1",
+      "L1"
+    ],
+    "represented_identifiers": [
+      "C1",
+      "L1"
+    ],
+    "duplicates": []
+  },
+  "unresolved_questions": [],
+  "scope_limits": [
+    "The finding aid does not rename, move, merge, delete, or enrich archive material."
+  ]
+}

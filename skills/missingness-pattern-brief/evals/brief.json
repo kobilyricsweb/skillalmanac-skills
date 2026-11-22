@@ -1,0 +1,11 @@
+{
+  "slug": "missingness-pattern-brief",
+  "category": "data",
+  "user_problem": "A small supplied dataset contains blanks whose patterns matter, but their causes cannot be assumed.",
+  "unique_output": "A missingness brief by field and declared subgroup, including counts, co-occurrence patterns, and interpretation limits.",
+  "required_input": "Tabular records, explicit blank markers, optional subgroup fields, and a declared analysis scope.",
+  "critical_rule": "Describe observed absence only; never infer why values are missing or silently equate blank, zero, and unknown.",
+  "nearest_existing_and_difference": "Nearest is dataset-field-profiler; this examines missingness patterns rather than inventorying observed field types.",
+  "tier": "free",
+  "acceptance_scenario": "Input has three rows: A{x:1,y:null}, A{x:null,y:null}, B{x:0,y:2}; null is missing. Output reports x missing once, y twice, both co-missing once, and preserves zero as observed."
+}

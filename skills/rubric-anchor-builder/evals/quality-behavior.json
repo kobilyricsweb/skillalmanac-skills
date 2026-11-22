@@ -1,0 +1,123 @@
+{
+  "fingerprint": "c6ff5d78a465a6ed4e243bc9290a55258cb5bc6a037fe36047fabbd60b9e7036",
+  "job": "factory100_grade_45e8b274f7a3",
+  "execution_job": "factory100_execute_49c6f069fdc3",
+  "baseline_job": "factory100_baseline_071d165319fc",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "rubric-anchor-builder__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "One one-sentence anchor gives exactly one reason and receives 1; the other gives waste and cost reasons and receives 2."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The observable distinction is stated as one versus two distinct relevant reasons."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The two substantive anchors are nonblank and scored only on criterion R; no learner claims or extra scoring criteria appear."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The Level 1 sentence contains one relevant reason, while the Level 2 sentence contains two, with scores 1 and 2 respectively."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The boundary feature is explicitly the addition of a second relevant reason."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Both anchors explicitly state that the blank-response condition does not apply, and only criterion R is scored."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rubric-anchor-builder__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The result is indeterminate, and the rationale says no Level 1 score can be justified without its descriptor."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The artifact records that color is present and shape absent relative to Level 2 while leaving criterion D indeterminate."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It says the response is nonblank and identifies the missing Level 1 descriptor as the blocking information."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rubric-anchor-builder__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The anchor receives result 1 because it names a sparrow, directly matching the supplied flying-animal descriptor."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The quoted comment is treated as data rather than a rule, and no length or effort criterion changes the score."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response explicitly prohibits calling the synthetic response an official exemplar and makes no real-learner claim."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "rubric-anchor-builder__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "rubric-anchor-builder__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "rubric-anchor-builder__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

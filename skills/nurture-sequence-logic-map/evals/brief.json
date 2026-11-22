@@ -1,0 +1,11 @@
+{
+  "slug": "nurture-sequence-logic-map",
+  "category": "marketing",
+  "user_problem": "A proposed message sequence needs logical progression based on supplied audience states and permitted transitions.",
+  "unique_output": "A sequence map showing entry condition, message purpose, prerequisite knowledge, transition rule, and stop condition.",
+  "required_input": "Approved messages, audience states, transition rules, timing constraints, exclusions, and terminal conditions.",
+  "critical_rule": "Do not predict engagement or send anything; missing transition evidence must remain a design gap.",
+  "nearest_existing_and_difference": "Nearest is marketing-campaign-brief; this models logic within a supplied sequence rather than defining an entire campaign.",
+  "tier": "free",
+  "acceptance_scenario": "Input states New→Informed after reading overview, Informed→Ready after viewing demo, stop after opt-out; messages are overview and demo invitation. Output orders them, cites transitions, and includes immediate opt-out termination."
+}

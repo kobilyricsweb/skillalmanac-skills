@@ -1,0 +1,49 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "terminology-consistency-editor__parent_holdout",
+        "slug": "terminology-consistency-editor",
+        "prompt": "Preferred glossary: draft means an unpublished saved outline; template means reusable starting structure. Editable prose: \"Save your sketch, then reopen this draft\"; author confirms sketch refers to the same saved unpublished outline. Verbatim customer quote: \"I call mine a sketch\". Code identifier: sketch_id. Separate prose: \"Choose a template\". Return location-specific edits.",
+        "assertions": [
+          "Proposes sketch→draft only for the editable prose referring to the same concept.",
+          "Preserves the verbatim quote, code identifier sketch_id and distinct template meaning.",
+          "Does not claim to have modified source files or invent preferred terms beyond supplied glossary."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "Scope and exclusions: Review the supplied editable prose and separate prose. Preserve the verbatim customer quote and code identifier. The author confirms that “sketch” refers to the same saved unpublished outline as “draft.”\n\nCandidate-term inventory:\n- draft: editable prose; denotes the saved unpublished outline.\n- sketch: editable prose; confirmed alias for draft in this context.\n- sketch: protected customer quote; personal wording, preserve.\n- sketch_id: code identifier; preserve.\n- template: separate prose; denotes a reusable starting structure.\n\nPreferred-terms table:\n- Concept: saved unpublished outline. Preferred term: draft. Observed variants: sketch in editable prose. Scope: editable prose only. Rationale: supplied glossary defines draft and author confirms the meanings match.\n- Concept: reusable starting structure. Preferred term: template. Observed variants: none requiring replacement. Scope: separate prose. Rationale: supplied glossary definition.\n\nReplacement list:\n- Location: Editable prose, sentence 1. Current wording: “Save your sketch, then reopen this draft”. Proposed wording: “Save your draft, then reopen this draft”. Preservation note: Meaning is preserved; the editable occurrence of sketch is replaced because it matches draft. The existing draft remains unchanged.\n- Location: Verbatim customer quote. Current wording: “I call mine a sketch”. Proposed wording: No replacement. Preservation note: Protected verbatim speech; preserve exactly.\n- Location: Code identifier. Current wording: `sketch_id`. Proposed wording: No replacement. Preservation note: Protected code identifier; no rename was authorized.\n- Location: Separate prose. Current wording: “Choose a template”. Proposed wording: No replacement. Preservation note: Already uses the preferred term for a distinct concept.\n\nUnresolved distinctions: None in the supplied content.\n\nVerification report:\n- The ordinary replacement is location-specific, glossary-supported, meaning-preserving, and outside protected text.\n- Quote and code identifier remain unchanged.\n- No global style edit or factual reconciliation was performed.",
+      "grade": {
+        "id": "terminology-consistency-editor__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The replacement list changes only the editable prose occurrence in \"Save your sketch, then reopen this draft\" to \"Save your draft, then reopen this draft,\" based on the confirmed shared meaning."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "The answer specifies no replacement for the verbatim quote, `sketch_id`, and \"Choose a template,\" while preserving template as the distinct reusable-structure concept."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "The answer presents proposed location-specific edits and explicitly says no global style edit was performed; its preferred terms are limited to draft and template from the supplied glossary."
+          }
+        ]
+      },
+      "binding": {
+        "id": "terminology-consistency-editor__parent_holdout",
+        "slug": "terminology-consistency-editor",
+        "skill_sha256": "f4c811608f1e9e4a9ce26be9675d024024c55f9e4d4eb3e999baadbb8f702537",
+        "contract_sha256": "600d826ceb176b14ccdecefe61d749250a50884130daca79d01ef1e896c0cbfa",
+        "assertions_sent_to_executor": false
+      },
+      "round": "initial"
+    }
+  ]
+}

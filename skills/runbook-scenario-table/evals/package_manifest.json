@@ -1,0 +1,13 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "LISTING.md": "c2d91be6128d56182df70ad2ff3250b0bbfffce67279b65ff6b3929322bfa48b",
+    "NOTICE.txt": "31bf859d31bf1182ef86002cecfcd097ad27f39c6d095b11bb2da20f9cc7cb62",
+    "references/input-contract.md": "df6653ef14d9091f56fb5799210fa3025ef6648665da63854a00790d05c13501",
+    "references/worked-example.md": "97d2a050f01b82a684217e7aee38baa1d0702c7732deefa35c65f0939701e6d9",
+    "SKILL.md": "b395a0e0a9b14bf54ef6f0fbc965b07bc4fcd3c7d3c69e63f9c2e73f3dbbf3e0",
+    "VERIFICATION.md": "29022f7427edfd57c0f1adf3c294211bc4016a29aa9a7ca26b776f199271ce30"
+  },
+  "scope": "current draft source/docs; eval evidence excluded"
+}

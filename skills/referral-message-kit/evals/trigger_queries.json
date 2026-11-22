@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Turn these referral program rules into inviter and recipient messages.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a referral message kit that preserves reward conditions and expiry.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write an ineligible-case response for excluded referral participants.",
+    "should_trigger": true
+  },
+  {
+    "query": "Draft a short disclosure for this conditional referral reward.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check that referral copy does not imply an instant or guaranteed reward.",
+    "should_trigger": true
+  },
+  {
+    "query": "Trace each referral message claim to the supplied program rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create accurate referral copy from the approved CTA and eligibility terms.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show the conditions a member must meet before receiving the referral reward.",
+    "should_trigger": true
+  },
+  {
+    "query": "Handle conflicting referral rules without inventing a resolution.",
+    "should_trigger": true
+  },
+  {
+    "query": "Draft referral messages while keeping staff exclusions explicit.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare several prewritten promotion variants for tone.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide whether this individual is eligible for the reward.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send the referral invitations to customers.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create an overall referral campaign strategy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent a larger reward to improve participation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Predict referral conversion or revenue.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write interview questions for referral customers.",
+    "should_trigger": false
+  },
+  {
+    "query": "Refresh the referral landing page as a content update.",
+    "should_trigger": false
+  },
+  {
+    "query": "Authorize payment of a referral reward.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft legal terms for a referral program from scratch.",
+    "should_trigger": false
+  }
+]

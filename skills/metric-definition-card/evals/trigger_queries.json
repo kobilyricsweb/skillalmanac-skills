@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Turn these metric notes into a card with numerator, denominator, population, and window.",
+    "should_trigger": true
+  },
+  {
+    "query": "Standardize this ambiguous KPI definition and expose unresolved choices.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document the formula, exclusions, freshness, and zero-denominator policy for this metric.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a precise operational definition for this rate without calculating it.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate event population, time window, and eligibility for this metric.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a metric card from conflicting product analytics notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Record timezone and boundary questions for this reporting metric.",
+    "should_trigger": true
+  },
+  {
+    "query": "Clarify what numerator and denominator mean in this supplied KPI formula.",
+    "should_trigger": true
+  },
+  {
+    "query": "Produce an implementation-ready metric definition with unresolved policy choices labeled.",
+    "should_trigger": true
+  },
+  {
+    "query": "Define this metric while preserving missing and zero-denominator behavior.",
+    "should_trigger": true
+  },
+  {
+    "query": "Calculate the KPI from the attached data.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit whether this weighted rate is implemented correctly.",
+    "should_trigger": false
+  },
+  {
+    "query": "Recommend financial action based on this metric.",
+    "should_trigger": false
+  },
+  {
+    "query": "Prove that this campaign caused the conversion increase.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a dashboard for weekly metric results.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a PRD for an analytics platform.",
+    "should_trigger": false
+  },
+  {
+    "query": "Analyze spreadsheet formulas and repair broken cells.",
+    "should_trigger": false
+  },
+  {
+    "query": "Forecast next quarter revenue from the rate.",
+    "should_trigger": false
+  },
+  {
+    "query": "Research industry benchmarks for this KPI.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a meeting summary with metric action items.",
+    "should_trigger": false
+  }
+]

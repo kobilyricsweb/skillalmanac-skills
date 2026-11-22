@@ -1,0 +1,152 @@
+{
+  "fingerprint": "efe804b230264b10ed7ab181809ba7ec97adf215aec62f4db489ca705ebcbdf5",
+  "job": "factory100_grade_2d6d90fbe7d9",
+  "execution_job": "factory100_execute_62e2e8197ba1",
+  "baseline_job": "factory100_baseline_4864d4cccc17",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "category-code-crosswalk__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Maps S1→T-A and S2→T-B with approved note N1 as the basis."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Applies jurisdiction J and the 2026-01-01 through 2026-12-31 interval to both rows."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "States that every source and target code is accounted for and that the crosswalk does not authorize recoding."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Records both required supported relationships and cites approved note N1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Includes jurisdiction J and the full effective interval in each relationship’s constraints."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Accounts for all four codes, provides an empty unresolved list, and disclaims recoding authority."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "category-code-crosswalk__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Maps S1→T1 as supported by N1 in Region R during 2026."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Marks S2 blocked because approved evidence is absent and explicitly rejects label similarity as sufficient evidence."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Accounts for S1, S2, and T1 and identifies an approved mapping note or other authorized evidence as needed for S2."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "category-code-crosswalk__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Records A1→B1 as a qualified relationship supported by N1 rather than full equivalence."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Preserves indoor-repair, Site X, and 2026 constraints; the disclaimer against full equivalence addresses B1’s broader scope."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Treats mapping outside the supplied scope as unresolved and explicitly states that no record recoding is authorized."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "category-code-crosswalk__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Records U1→V1 and U2→V1 as supported by N1 with District D and the supplied service-date interval."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Records U3→V2 as supported by N2 in District D and explicitly retains the absence of effective dates without inventing dates."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Accounts for all five codes and disclaims both recoding authority and extensions beyond supplied constraints."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "category-code-crosswalk__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "category-code-crosswalk__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "category-code-crosswalk__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "category-code-crosswalk__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

@@ -1,0 +1,48 @@
+{
+  "synthetic": true,
+  "input": "Complete article. Audience: members. Task: download a receipt. Headings: Overview—receipt downloads are covered. Download—select Receipt, then Download. Constraint: Overview and Download must remain together. Owner: Support. No URL or redirect convention supplied.",
+  "expected_artifact": {
+    "units": [
+      {
+        "name": "Download a receipt",
+        "purpose": "Guide members through downloading a receipt",
+        "audiences": [
+          "members"
+        ],
+        "retained_sections": [
+          "Overview",
+          "Download"
+        ],
+        "moved_sections": [],
+        "prerequisite_treatment": "No separate prerequisite is supplied",
+        "boundary_rationale": "One declared task is present, and the hard constraint keeps both sections together"
+      }
+    ],
+    "shared_context": [],
+    "section_mapping": [
+      {
+        "section": "Overview",
+        "destination": "Download a receipt",
+        "status": "assigned"
+      },
+      {
+        "section": "Download",
+        "destination": "Download a receipt",
+        "status": "assigned"
+      }
+    ],
+    "duplicate_risks": [],
+    "migration_checklist": [
+      "Have Support review the proposed unit",
+      "Decide URL and redirect handling before migration"
+    ],
+    "verification": [
+      "Every supplied section is assigned",
+      "Overview and Download remain together"
+    ],
+    "open_decisions": [
+      "URL and redirect convention are not supplied"
+    ]
+  },
+  "status": "specification; not an executed test"
+}

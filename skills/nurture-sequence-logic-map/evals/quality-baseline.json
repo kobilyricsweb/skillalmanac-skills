@@ -1,0 +1,13 @@
+{
+  "fingerprint": "5f929ac6fec707021eb03485c41263670ba485e770e2989e0a798d167569cb02",
+  "job": "factory100_baseline_435913612be4",
+  "results": [
+    {
+      "id": "nurture-sequence-logic-map__q100_ordinary",
+      "answer": "Entry: new audience → S0 (new).\n\nS0 — R1: when M1 (welcome) is completed, transition to S1 (welcomed). M1 has no prerequisite and may occur immediately.\n\nS1 — R2: when M2 (explain setup) is completed, transition to S2 (setup explained). M2 requires “M1 sent” and must occur at least one day after M1.\n\nFrom any state: opt-out → terminal; no later messages are received.\n\nS2: terminal completion; the sequence ends upon reaching S2. Documentary scope only: this map specifies rules and states, not scheduling or sending."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

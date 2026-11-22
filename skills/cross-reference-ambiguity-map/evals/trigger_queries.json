@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Map every “above” and “this section” reference to explicit section IDs where the excerpts support it.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find duplicate headings that make cross-references ambiguous.",
+    "should_trigger": true
+  },
+  {
+    "query": "List all candidate targets for each reference occurrence without guessing the nearest one.",
+    "should_trigger": true
+  },
+  {
+    "query": "Resolve references only when the supplied text contains an explicit target identity.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an ambiguity report for these document navigation references.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check that every selected cross-reference target exists in the section inventory.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark external references unresolved when their target IDs are absent.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map “see Setup” occurrences across both documents and preserve all candidates.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate resolved, ambiguous, and broken textual references.",
+    "should_trigger": true
+  },
+  {
+    "query": "Report when a reference excerpt is too short to determine its target.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check whether two documents make contradictory factual claims.",
+    "should_trigger": false
+  },
+  {
+    "query": "Edit this document to use the preferred glossary terms.",
+    "should_trigger": false
+  },
+  {
+    "query": "Route these questions to the correct source documents.",
+    "should_trigger": false
+  },
+  {
+    "query": "Cluster notes that repeat the same research observation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a provenance labeling policy for these notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write an outline from the supplied source notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose the most likely heading based only on which one is closest.",
+    "should_trigger": false
+  },
+  {
+    "query": "Open the links and repair the website’s navigation automatically.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write JavaScript that scans every file in the repository.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify that all references comply with a documentation standard.",
+    "should_trigger": false
+  }
+]

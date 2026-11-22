@@ -1,0 +1,16 @@
+{
+  "fingerprint": "ec005ee1969cfb322790c42bf27af5d3bf85ece252e5c9ef78d5b32d03d7e34e",
+  "job": "factory100_base_medium_97c4c0486474",
+  "results": [
+    {
+      "id": "table-footnote-scope-map__q100_ordinary",
+      "answer": "Authorized targets:\n- Marker ‡ is placed in heading H2, “Email‡”.\n- The legend states that a marker in a column heading applies to every data cell in that column.\n- Therefore ‡ authorizes R1C1 (Starter–Email) and R2C1 (Plus–Email).\n- Definition for both authorized cells: business days only.\n\nUnsupported inheritance:\n- No authorization extends to H1, “Tier”; H3, “Phone”; row labels R1L or R2L; R1C2 or R2C2; or the table title “Support options.”\n- The marker does not authorize applying “business days only” to the Phone column or to headings themselves.\n\nOutside a scope map:\n- Creating new definitions, markers, or scope rules.\n- Inferring that Phone shares Email’s qualifier.\n- Applying the qualifier to row labels, the whole table, or cells not in the marked column.\n- Assessing whether the Yes/No values are correct."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "executor_model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "method_note": "Both arms use the same model and effort; old low-effort failures retained, sources and valid tests unchanged by this profile selection.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

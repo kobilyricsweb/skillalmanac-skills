@@ -1,0 +1,70 @@
+{
+  "synthetic": true,
+  "input": "Items: A1, tagged fundamentals. Prerequisites: none. Sessions: 2. Capacity: 2 slots per session. A1 must be introduced in session 1 and reviewed exactly 1 session later. Intervals count sessions. No mixing preference applies.",
+  "expected_artifact": {
+    "schedule_status": "feasible",
+    "sessions": [
+      {
+        "session": 1,
+        "capacity": 2,
+        "placements": [
+          {
+            "slot": 1,
+            "item_id": "A1",
+            "skill_tag": "fundamentals",
+            "labels": [
+              "new"
+            ],
+            "reason": "The fixed placement introduces A1 in session 1.",
+            "review_of_session": null
+          }
+        ],
+        "unused_capacity": 1,
+        "over_capacity": 0
+      },
+      {
+        "session": 2,
+        "capacity": 2,
+        "placements": [
+          {
+            "slot": 1,
+            "item_id": "A1",
+            "skill_tag": "fundamentals",
+            "labels": [
+              "retrieval_review"
+            ],
+            "reason": "This is the required review exactly one session after introduction.",
+            "review_of_session": 1
+          }
+        ],
+        "unused_capacity": 1,
+        "over_capacity": 0
+      }
+    ],
+    "deferred_items": [],
+    "unused_capacity_report": {
+      "total_unused": 2,
+      "by_session": [
+        {
+          "session": 1,
+          "unused": 1
+        },
+        {
+          "session": 2,
+          "unused": 1
+        }
+      ]
+    },
+    "constraint_audit": {
+      "prerequisites": "not_applicable",
+      "capacities": "satisfied",
+      "review_intervals": "satisfied",
+      "conflicts": [],
+      "unresolved_constraints": []
+    },
+    "assumptions": [
+      "Each capacity unit is one slot, as stated in the input."
+    ]
+  },
+  "status": "specification; not an executed test"
+}

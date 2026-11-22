@@ -1,0 +1,49 @@
+{
+  "fields": [
+    {
+      "field_name": "item_id",
+      "source_wording": "Inventory identifier.",
+      "normalized_definition": "Identifier for an inventory item.",
+      "expected_type": "string",
+      "allowed_values": null,
+      "allowed_values_exhaustive": null,
+      "null_semantics": null,
+      "blank_semantics": null,
+      "sample_observations": [
+        "Sample value: I-1"
+      ],
+      "provenance": [
+        "field schema",
+        "item_id note",
+        "sample"
+      ],
+      "status": "supported"
+    },
+    {
+      "field_name": "condition",
+      "source_wording": "Recorded condition; must be new or used, and the list is exhaustive.",
+      "normalized_definition": "Recorded condition of the inventory item.",
+      "expected_type": "string",
+      "allowed_values": [
+        "new",
+        "used"
+      ],
+      "allowed_values_exhaustive": true,
+      "null_semantics": null,
+      "blank_semantics": null,
+      "sample_observations": [
+        "Sample value: used"
+      ],
+      "provenance": [
+        "field schema",
+        "condition note",
+        "sample"
+      ],
+      "status": "supported"
+    }
+  ],
+  "unresolved_questions": [
+    "What do null and blank values mean for item_id and condition?"
+  ],
+  "__unexpected_fixture_property__": 0
+}

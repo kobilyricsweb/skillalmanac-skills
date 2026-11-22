@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Package the conflict between these two supplied retention policies for the named resolver.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a decision dossier comparing contradictory statements, authority, dates, and affected articles.",
+    "should_trigger": true
+  },
+  {
+    "query": "Determine whether supplied precedence resolves this documentation contradiction and list downstream reviews.",
+    "should_trigger": true
+  },
+  {
+    "query": "Prepare a focused packet for an authorized owner to resolve conflicting handbook guidance.",
+    "should_trigger": true
+  },
+  {
+    "query": "Trace these competing claims to exact excerpts and formulate decision questions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare two versions of a knowledge rule without editing either source.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify whether these statements conflict in scope or merely differ by condition.",
+    "should_trigger": true
+  },
+  {
+    "query": "List artifacts that depend on each side of this supplied contradiction.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a resolver-ready dossier from these conflicting knowledge excerpts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use the supplied precedence rule to report the controlling statement, if conclusive.",
+    "should_trigger": true
+  },
+  {
+    "query": "Refresh this article with new evidence and rewrite its claims.",
+    "should_trigger": false
+  },
+  {
+    "query": "Check every page in the knowledge base for consistency.",
+    "should_trigger": false
+  },
+  {
+    "query": "Split this long article into maintainable task pages.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a hierarchical finding aid for these archive folders.",
+    "should_trigger": false
+  },
+  {
+    "query": "Disambiguate each occurrence of AR using the approved glossary.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a review queue for evidence nearing its stated expiry.",
+    "should_trigger": false
+  },
+  {
+    "query": "Normalize all occurrences to the preferred terminology.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose the legally correct policy without supplied authority rules.",
+    "should_trigger": false
+  },
+  {
+    "query": "Publish the corrected policy to the website.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify that the winning source is authoritative under an external standard.",
+    "should_trigger": false
+  }
+]

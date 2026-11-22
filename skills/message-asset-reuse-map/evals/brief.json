@@ -1,0 +1,10 @@
+{
+  "slug": "message-asset-reuse-map",
+  "category": "marketing",
+  "user_problem": "Teams have approved messages and existing assets but cannot see which messages each asset can support without inventing new proof.",
+  "unique_output": "A message-to-asset reuse matrix with exact supplied locations, allowed audience/context, unsupported placements and concrete adaptation requests; no new claims, campaign plan or variant validation.",
+  "free_or_pack_candidate": "free",
+  "test_case": "Map three approved messages to four supplied asset summaries, preserving one audience restriction and one message with no supporting asset.",
+  "overlap_to_check": "claim-evidence-map tests factual support; this output maps approved message use across assets, not evidence truth or promotion-variant-check.",
+  "specific_guardrail": "Use supplied evidence and explicit constraints only; missing authority and unknown facts stay unresolved."
+}

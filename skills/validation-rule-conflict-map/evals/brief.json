@@ -1,0 +1,11 @@
+{
+  "slug": "validation-rule-conflict-map",
+  "category": "software",
+  "user_problem": "Validation requirements from different notes overlap or contradict each other in ways implementers cannot safely resolve.",
+  "unique_output": "A field-level conflict map showing rule intersections, contradictions, precedence statements, and undecidable cases.",
+  "required_input": "Labeled validation rules, their scopes, source IDs, and any explicit precedence or exception clauses.",
+  "critical_rule": "Apply precedence only when supplied; never resolve conflicting limits by preference or apparent strictness.",
+  "nearest_existing_and_difference": "Nearest is decision-evidence-ledger; this analyzes operational rule compatibility rather than separating decisions, proposals, and assumptions.",
+  "tier": "free",
+  "acceptance_scenario": "Input R1 says username length 4–20 globally; R2 says partner usernames 3–20; no precedence. Output flags the partner minimum conflict, preserves both sources, and marks resolution required."
+}

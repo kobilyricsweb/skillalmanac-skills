@@ -1,0 +1,13 @@
+{
+  "fingerprint": "88c1ad5884e25133ca23c275db9257f4a477d452158bbf95eaacac92f0aab624",
+  "job": "factory100_baseline_e5e484949fb4",
+  "results": [
+    {
+      "id": "api-error-example-builder__q100_ordinary",
+      "answer": "{\"endpoint\":\"POST /cards\",\"errors\":[{\"code\":\"E_COLOR\",\"trigger\":\"color is outside red or blue\",\"status\":422,\"body\":{\"code\":\"E_COLOR\",\"field\":\"color\"},\"client_action\":\"Retain title and ask for red or blue.\"},{\"code\":\"E_TITLE\",\"trigger\":\"title is empty\",\"status\":400,\"body\":{\"code\":\"E_TITLE\"},\"client_action\":\"Ask for a nonempty title.\"}],\"missing_guidance\":[\"No fallback policy is supplied.\",\"No retry policy is supplied.\",\"No guidance is supplied for missing color, malformed requests, other status codes, or simultaneous title and color errors.\"],\"outside_scope\":[\"Designing fallback behavior.\",\"Defining retry rules.\",\"Adding undocumented validation or error codes.\",\"Selecting behavior for unspecified error combinations.\"]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

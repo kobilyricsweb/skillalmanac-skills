@@ -1,0 +1,31 @@
+{
+  "confirmed_change": "Workspace owners in selected Team-plan workspaces can export a member list as CSV.",
+  "audience_impact": "The documented change applies to workspace owners on the Team plan whose workspaces have beta access.",
+  "release_status": "limited beta",
+  "limitation": "Exports contain only names and email addresses, and access is limited to selected workspaces.",
+  "migration_note": "No action is required.",
+  "cta": "Read the beta guide.",
+  "unresolved_items": [],
+  "fact_trace": [
+    {
+      "statement": "Workspace owners can export a member list as CSV.",
+      "evidence_references": [
+        "CN1",
+        "DOC1"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "statement": "Access is limited to selected Team workspaces.",
+      "evidence_references": [
+        "DOC1"
+      ],
+      "status": "confirmed"
+    }
+  ],
+  "outside_scope": [
+    "Product authorization",
+    "Deployment",
+    "User notification"
+  ]
+}

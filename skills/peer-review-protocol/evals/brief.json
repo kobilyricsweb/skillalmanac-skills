@@ -1,0 +1,11 @@
+{
+  "slug": "peer-review-protocol",
+  "category": "education",
+  "user_problem": "Peer review needs a bounded sequence that produces useful evidence without asking students to judge personal qualities.",
+  "unique_output": "A timed protocol with artifact checks, evidence stems, author questions, revision choice, and disagreement handling.",
+  "required_input": "Assignment prompt, rubric, review duration, allowed feedback scope, and submission format.",
+  "critical_rule": "Confine feedback to the artifact and supplied criteria; reviewers must distinguish observations from suggestions.",
+  "nearest_existing_and_difference": "Nearest is reviewing-code-changes; this designs learner-to-learner artifact review rather than technical code review.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input is a 200-word explanation assessed for claim and two examples, with ten review minutes. Output allocates checks for claim and examples, supplies evidence stems, and ends with the author selecting one revision."
+}

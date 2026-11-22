@@ -1,0 +1,66 @@
+{
+  "synthetic": true,
+  "input": "steps: [{id: S1, text: \"Save the supplied word blue as color.txt.\"}, {id: S2, text: \"Read color.txt and copy its word into result.txt.\"}]\nenvironment: A writable practice folder is already open.\ninputs_artifacts: The word blue is supplied.\nlearner_assumptions: The learner can create and read text files.\nverification: S1: color.txt contains blue. S2: result.txt contains blue.",
+  "expected_artifact": {
+    "scope_assumptions": {
+      "environment": "A writable practice folder is already open.",
+      "learner_assumptions": [
+        "The learner can create and read text files."
+      ],
+      "unknowns": []
+    },
+    "step_map": [
+      {
+        "step_id": "S1",
+        "action": "Save the supplied word in color.txt.",
+        "required_knowledge": [
+          "How to create a text file."
+        ],
+        "required_state": [
+          "Writable practice folder is open."
+        ],
+        "required_inputs": [
+          "Supplied word blue."
+        ],
+        "produced_artifact": "color.txt containing blue",
+        "later_consumers": [
+          "S2"
+        ],
+        "verification_cue": "Observe that color.txt contains blue.",
+        "dependency_status": "supplied"
+      },
+      {
+        "step_id": "S2",
+        "action": "Copy the word from color.txt into result.txt.",
+        "required_knowledge": [
+          "How to read and create text files."
+        ],
+        "required_state": [
+          "Writable practice folder is open."
+        ],
+        "required_inputs": [
+          "color.txt from S1"
+        ],
+        "produced_artifact": "result.txt containing blue",
+        "later_consumers": [],
+        "verification_cue": "Observe that result.txt contains blue.",
+        "dependency_status": "supplied"
+      }
+    ],
+    "dependency_edges": [
+      {
+        "from_step": "S1",
+        "to_step": "S2",
+        "artifact_or_state": "color.txt containing blue"
+      }
+    ],
+    "gaps": [],
+    "planning_status": "planning_complete",
+    "verification": {
+      "all_steps_have_status": true,
+      "all_consumed_artifacts_traced": true,
+      "actions_executed": false
+    }
+  },
+  "status": "specification; not an executed test"
+}

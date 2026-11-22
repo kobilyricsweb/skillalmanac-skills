@@ -1,0 +1,66 @@
+{
+  "scope": {
+    "locations": [
+      "P1",
+      "Q1"
+    ],
+    "protected_text": [
+      "Q1 quoted speech"
+    ],
+    "rules": [
+      "Apply the glossary only where the phrase denotes the account website."
+    ]
+  },
+  "candidate_terms": [
+    {
+      "location": "P1 sentence 1",
+      "term": "client portal",
+      "concept": "account website",
+      "status": "preferred"
+    },
+    {
+      "location": "P1 sentence 2",
+      "term": "customer portal",
+      "concept": "account website",
+      "status": "replaceable_variant"
+    },
+    {
+      "location": "Q1 quoted speech",
+      "term": "customer portal",
+      "concept": "account website",
+      "status": "protected"
+    }
+  ],
+  "preferred_terms": [
+    {
+      "concept": "account website",
+      "preferred_term": "client portal",
+      "permitted_variants": [],
+      "basis": "Supplied glossary."
+    }
+  ],
+  "replacements": [
+    {
+      "location": "P1 sentence 2",
+      "current_text": "customer portal",
+      "proposed_text": "client portal",
+      "status": "proposed",
+      "preservation_note": "The local meaning is the account website and the text is not protected."
+    },
+    {
+      "location": "Q1 quoted speech",
+      "current_text": "customer portal",
+      "proposed_text": null,
+      "status": "excluded",
+      "preservation_note": "Verbatim quoted speech is protected."
+    }
+  ],
+  "unresolved_distinctions": [],
+  "verification": {
+    "ordinary_replacements_glossary_supported": true,
+    "protected_text_changed": false,
+    "code_changes_executed": false,
+    "unknowns": []
+  },
+  "__unexpected_fixture_property__": 0
+}

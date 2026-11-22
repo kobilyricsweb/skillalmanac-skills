@@ -1,0 +1,5 @@
+Copyright 2026 Global Media Holdings (skillalmanac.com)
+
+Licensed under the Apache License, Version 2.0.
+Project modifications: bounded draft corrections and verification work, November2026.
+Existing scientific/source attributions in scripts and references are retained.

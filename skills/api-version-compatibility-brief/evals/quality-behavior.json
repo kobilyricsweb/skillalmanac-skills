@@ -1,0 +1,123 @@
+{
+  "fingerprint": "12763391883b596844aa9df341b4b2bb7a38f2111a41813b77c32fded6637457",
+  "job": "factory100_grade_b8441524a301",
+  "execution_job": "factory100_execute_d688a11ec810",
+  "baseline_job": "factory100_baseline_7aef657bdc1f",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "api-version-compatibility-brief__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The path and method for GET /pets/{id}, plus required name:string, are classified unchanged."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Age is classified changed from optional to required, while color and status 410 are classified added."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The brief marks behavior uncertain, limits itself to documents, and says runtime compatibility and migration readiness are not established."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "GET /pets/{id} and required name:string are described as unchanged."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The response identifies age's requiredness change and the additions of optional color and documented 410."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It does not assign runtime semantics to 410 or claim readiness; runtime behavior and response meanings are explicitly unresolved."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "api-version-compatibility-brief__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Path, method, title, and 201 are unchanged; priority and 400 are classified added."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Missing response documentation and behavior notes are classified behaviorally_uncertain, and both gaps are listed as unresolved."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The scope is explicitly documentary and partial, with no fabricated response schema, error meaning, endpoint testing, or readiness claim."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "api-version-compatibility-brief__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The /users/{id} path, GET method, and status 404 are each classified unchanged."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "full_name is classified removed and display_name added, while their semantic relationship is left behaviorally uncertain rather than asserted as a rename."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response says client compatibility is not certified, limits the work to documentary comparison, and explicitly notes that no live testing occurred."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "api-version-compatibility-brief__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "api-version-compatibility-brief__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "api-version-compatibility-brief__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

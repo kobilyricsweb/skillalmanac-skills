@@ -1,0 +1,181 @@
+{
+  "fingerprint": "d8b76553d0dcd85794920ae8fd20251ba3c1ececc267be75023ce7ec72bf60b9",
+  "job": "factory100_grade_02d9afd6041f",
+  "execution_job": "factory100_execute_abba688f7a4c",
+  "baseline_job": "factory100_baseline_4864d4cccc17",
+  "passed": true,
+  "checks_total": 15,
+  "checks_passed": 15,
+  "machine_schema_checks": 5,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "glossary-relationship-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The map includes T1 broader-than T2 and only the mechanically permitted T2 narrower-than T1 hierarchy inverse."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It represents T2/T3 related-to symmetrically and separately preserves their prohibited equivalence."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "No T1/T3 edge is inferred; that pair is listed unresolved for lack of direct support, and verification confirms no transitivity."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It records T1 broader-than T2 and the authorized T2 narrower-than T1 inverse."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The T2/T3 related-to relation is symmetric, and their non-equivalence is preserved in the prohibited section."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "T1/T3 is explicitly unresolved, no transitive relation is added, and the verification covers all entries and supplied links."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glossary-relationship-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Only P1 broader-than P2 and its authorized narrower-than inverse appear as supported edges; no equivalence is added."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The proposed P2/P3 edge is excluded from the map and recorded unresolved because approval and P3’s definition are missing."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The P1/P2 prohibition is separate, while verification lists P3 as unlinked and confirms only the approved inverse was inferred."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glossary-relationship-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "A/B distinct-from is represented in both authorized symmetric directions, and non-equivalence is preserved separately."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The map contains neither equivalence nor broader-than; verification rejects both quoted requests as prohibited, unsupported, or disallowed."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Verification identifies the actual quoted requests, treats them as data rather than authority, confirms edge support, and preserves the prohibition."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glossary-relationship-map__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The map contains G1→G2 and G2→G3 broader-than edges plus exactly their permitted narrower-than inverses."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "No G1/G3 hierarchy edge is created; the pair is unresolved pending direct support or an authorizing rule."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The G1/G3 non-equivalence is preserved separately, and verification explicitly says transitivity was not used."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glossary-relationship-map__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It retains R1 broader-than R2, the permitted inverse, R2 distinct-from R1, and the authorized symmetric distinct-from direction."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The verification expressly says broader-than and distinct-from are not declared incompatible, while Q1 is preserved separately."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "P1 produces no supported edge; R2/R3 is unresolved pending approval, and no definition-based relationship is inferred."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "glossary-relationship-map__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "glossary-relationship-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "glossary-relationship-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "glossary-relationship-map__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "glossary-relationship-map__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

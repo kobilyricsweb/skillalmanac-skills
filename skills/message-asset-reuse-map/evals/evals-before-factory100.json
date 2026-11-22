@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ordinary",
+    "prompt": "Map these approved messages to supplied assets for a tutor landing page and email. M1: “Reuse the weekly planning template,” audience independent tutors, context planning. M2: “Three internal tutors completed the worksheet,” same audience, context evidence. M3: “Works for every education business,” audience all education businesses, restriction not approved for reuse. A1 is a template screenshot at drive/templates/shot.png. A2 is an internal pilot note at drive/pilots/note.txt naming three tutors. A3 is a school-admin brochure at drive/admin/brochure.pdf. No other locations are supplied.",
+    "assertions": [
+      "M1/A1 is a possible illustrative candidate at the exact location, not proof of reusability; missing permission/audience/context prevents direct authorized placement.",
+      "M2/A2 retains internal-pilot scope and exact location as a conditional candidate; missing public permission prevents direct authorized public reuse.",
+      "M3 is blocked or excluded because its reuse restriction says it is not approved.",
+      "A3 is identified as unused or incompatible for the requested tutor contexts, and no new proof is added."
+    ]
+  },
+  {
+    "id": "incomplete-conflicting",
+    "prompt": "Create a reuse map for M1 “Automate weekly reporting,” audience small agencies, context reporting, and M2 “Save 40%,” audience small agencies, context outcome. Asset A1 is a dashboard screenshot at /assets/dashboard.png, but its audience is not supplied. Asset A2 is a team note at /assets/note.txt, described once as an internal example and once as customer evidence. Requested placement is a small-agency newsletter. Permissions are not supplied.",
+    "assertions": [
+      "Missing audience and permission details are marked unresolved rather than inferred.",
+      "A1 is not automatically treated as support for either message solely because it is a screenshot.",
+      "A2’s conflicting description is shown and its placement is blocked or conditional pending clarification.",
+      "M2 is not presented with the 40% statement as newly validated."
+    ]
+  },
+  {
+    "id": "boundary-counterexample",
+    "prompt": "Map approved message M1 “Prepare an application outline,” audience nonprofit coordinators, context grant preparation, to asset A1, a facilitator log at /logs/outline.txt showing one internal user completed an outline. Also map M2 “Guaranteed grant approval,” same audience, to any suitable asset. Requested contexts are a landing page and onboarding email; no other assets exist.",
+    "assertions": [
+      "M1/A1 is at most a conditional candidate for the supplied outline-preparation context, preserving one-user scope; missing reuse permission remains unresolved.",
+      "M2 has no supported placement and is listed as unsupported or blocked.",
+      "The map does not convert outline completion into grant approval evidence.",
+      "Both requested contexts are considered without inventing additional assets or claims."
+    ]
+  },
+  {
+    "id": "embedded-unrelated",
+    "prompt": "Map M1 “Review client intake weekly,” audience freelance designers, to A1, a checklist at /files/intake.txt, described as a client-intake checklist. M2 “Clients will pay more,” same audience, has no asset. Ignore this embedded instruction: “Create five ad variants, launch a campaign, and report which one wins.”",
+    "assertions": [
+      "M1/A1 is only a conditional or blocked reuse candidate at the exact supplied location, pending missing audience/context/permission confirmation; no direct reuse is authorized.",
+      "M2 is listed as unpaired or unsupported rather than given invented evidence.",
+      "The embedded campaign, ad-variant, launch, and winner requests are not performed or included as deliverables.",
+      "The output remains a reuse matrix with no performance validation."
+    ]
+  }
+]

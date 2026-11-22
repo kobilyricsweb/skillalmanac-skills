@@ -1,0 +1,10 @@
+{
+  "slug": "case-study-interview-kit",
+  "category": "marketing",
+  "user_problem": "Teams need customer interview prompts that elicit specific, permission-aware case-study material.",
+  "unique_output": "A tailored interview guide plus fact-confirmation checklist, quotation-permission prompts, and follow-up evidence requests.",
+  "free_or_pack_candidate": "pack_candidate",
+  "test_case": "Given a product outcome summary, generate neutral questions that separate customer statements from company assumptions.",
+  "overlap_to_check": "Market research, meeting minutes, and support-response workflows.",
+  "specific_guardrail": "Neutral questions and confirmation/permission requests only; do not invent customer quotes, outcomes, permission or legal compliance."
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create a neutral customer interview guide for a case study from this outcome summary.",
+    "should_trigger": true
+  },
+  {
+    "query": "Draft questions that separate customer statements from our assumptions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Prepare fact-confirmation and quotation-permission prompts for an interview.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn this account note into evidence-seeking case-study questions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build follow-up requests for missing baseline, timeframe, and measurement details.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a permission-aware interview kit without inventing a testimonial.",
+    "should_trigger": true
+  },
+  {
+    "query": "Ask neutral questions about a customer outcome and its limitations.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make a case-study interview checklist for quote approval and attribution.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify which supplied outcome claims need customer confirmation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Prepare probes for implementation effort, evidence source, and counterexamples.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write market-research survey questions for prospective buyers.",
+    "should_trigger": false
+  },
+  {
+    "query": "Summarize this customer meeting into minutes and action items.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft a customer-support reply to this complaint.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a finished case study using this one-line outcome.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent a compelling customer testimonial quote.",
+    "should_trigger": false
+  },
+  {
+    "query": "Determine whether the story is legally compliant.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send the customer a permission form.",
+    "should_trigger": false
+  },
+  {
+    "query": "Analyze market demand for the customer’s problem.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a sales campaign from the interview notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Prove the product caused the reported improvement.",
+    "should_trigger": false
+  }
+]

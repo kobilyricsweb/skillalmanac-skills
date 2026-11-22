@@ -1,0 +1,12 @@
+{
+  "fingerprint": "b4622e7113ed2ccc7abc7faa4defe108bd82bd9638c5661385d176c18486fe10",
+  "job": "factory100_baseline_6daebfe4a242",
+  "results": [
+    {
+      "id": "metric-definition-card__q100_ordinary",
+      "answer": "Metric: Weekly activation rate\n\nPurpose: Track onboarding completion.\n\nDefinition: Accounts with an activation event during the Monday–Sunday UTC window divided by eligible accounts created during that same UTC window.\n\nActivation event: event_name=activated.\n\nEligibility: Exclude accounts where test_account=true.\n\nGrain: Account.\n\nReporting cadence and freshness: Available by 09:00 UTC each Monday.\n\nZero-denominator policy: Report undefined.\n\nResult: Not calculated."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

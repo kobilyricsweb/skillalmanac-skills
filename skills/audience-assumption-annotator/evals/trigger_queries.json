@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Annotate this draft for assumptions a first-time audience may not satisfy.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find passages that presume readers have access not listed in the audience profile.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify silent knowledge assumptions and propose bounded clarifications.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review whether this guide assumes prior familiarity with the named interface.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag context the supplied audience profile does not provide.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare this draft's assumed resources with the audience's available resources.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark exact sentences that may block readers with browser-only access.",
+    "should_trigger": true
+  },
+  {
+    "query": "Annotate motivation assumptions evidenced by this copy and profile.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an audience-assumption annotation list without rewriting the draft.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show consequences of unsupported audience assumptions and bounded fixes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map prerequisites to each procedural step in this tutorial.",
+    "should_trigger": false
+  },
+  {
+    "query": "Reorder these instructions around their dependencies.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design a dashboard caption for this chart.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit whether the publication is ready for handoff.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a dependency map for report sections.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft an abstract from this supplied report.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite the tutorial for beginners.",
+    "should_trigger": false
+  },
+  {
+    "query": "Infer the audience's likely motivation from job titles.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create an onboarding checklist with new actions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Evaluate whether the audience will buy this product.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,173 @@
+[
+  {
+    "id": "good",
+    "input": {
+      "required_keys": [
+        "PORT",
+        "HOST"
+      ],
+      "optional_keys": [
+        "DEBUG"
+      ],
+      "configurations": [
+        {
+          "name": "prod",
+          "keys": [
+            "PORT",
+            "HOST"
+          ]
+        },
+        {
+          "name": "dev",
+          "keys": [
+            "PORT",
+            "HOST",
+            "DEBUG"
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "ok": true,
+      "configuration_count": 2,
+      "findings": []
+    },
+    "expected_codes": []
+  },
+  {
+    "id": "domain-defect",
+    "input": {
+      "required_keys": [
+        "PORT",
+        "HOST"
+      ],
+      "optional_keys": [
+        "DEBUG"
+      ],
+      "configurations": [
+        {
+          "name": "prod",
+          "keys": [
+            "PORT",
+            "PORT",
+            "DEBUG"
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "ok": false,
+      "configuration_count": 1,
+      "findings": [
+        {
+          "configuration": "prod",
+          "code": "DUPLICATE_CONFIG_KEY",
+          "keys": [
+            "PORT"
+          ]
+        },
+        {
+          "configuration": "prod",
+          "code": "MISSING_REQUIRED_KEY",
+          "keys": [
+            "HOST"
+          ]
+        }
+      ]
+    },
+    "expected_codes": [
+      "DUPLICATE_CONFIG_KEY",
+      "MISSING_REQUIRED_KEY"
+    ]
+  },
+  {
+    "id": "malformed",
+    "input": {
+      "required_keys": [
+        "PORT",
+        "PORT"
+      ],
+      "optional_keys": [],
+      "configurations": [
+        {
+          "name": "prod",
+          "keys": [
+            "PORT"
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "input_error": true
+    },
+    "expected_codes": [
+      "DUPLICATE_DECLARED_KEY"
+    ]
+  },
+  {
+    "id": "boundary",
+    "input": {
+      "required_keys": [
+        "A"
+      ],
+      "optional_keys": [],
+      "configurations": [
+        {
+          "name": "prod",
+          "keys": [
+            "A"
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "ok": true,
+      "configuration_count": 1,
+      "findings": []
+    },
+    "expected_codes": []
+  },
+  {
+    "id": "extra-not-used",
+    "input": {
+      "required_keys": [
+        "A"
+      ],
+      "optional_keys": [],
+      "configurations": [
+        {
+          "name": "prod",
+          "keys": [
+            "A",
+            "Z"
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "ok": false,
+      "findings": [
+        {
+          "configuration": "prod",
+          "code": "UNEXPECTED_KEY",
+          "keys": [
+            "Z"
+          ]
+        }
+      ]
+    },
+    "expected_codes": [
+      "UNEXPECTED_KEY"
+    ]
+  },
+  {
+    "id": "numeric_token_bound",
+    "input": {
+      "ignored": 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    },
+    "expected": {
+      "input_error": true
+    },
+    "exit": 2
+  }
+]

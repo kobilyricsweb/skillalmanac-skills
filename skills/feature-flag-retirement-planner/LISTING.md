@@ -1,0 +1,25 @@
+# feature-flag-retirement-planner
+
+Unpublished original; editorial tier: paid-candidate. No public score or release approval.
+
+## What and when
+
+Use when producing an offline retirement plan from supplied feature-flag state, references, dependencies, policy, and rollback evidence. Do not use to edit repositories or configuration, remove flags, deploy releases, inspect live systems, or certify that every consumer is safe.
+
+## Task boundary
+
+dependency-upgrade-impact-map analyzes upgrade exposure and configuration-drift-explainer compares supplied changes; this traces a flag retirement plan, cleanup dependencies and closure evidence.
+
+## Try the independent synthetic example
+
+Plan retirement of synthetic flag checkout_v2. Supplied facts: owner=Payments; state=enabled for all users. References: app src/checkout.ts is confirmed; config flags.yml is supplied-but-unverified; test checkout_flag.test is confirmed; doc runbook.md is confirmed. Policy: owner approval is required before cleanup. Dependencies: config cleanup follows application cleanup; documentation follows config cleanup. Rollback: restore the prior config entry before deployment. Produce an offline plan only.
+
+Observed inline supplied-skill output (tools unavailable; not native discovery), job `factory100_execute_e6e095d16910`:
+
+```text
+{"scope":{"flag":"checkout_v2","owner":"Payments","state":"enabled for all users","execution_boundary":"offline_planning_only"},"evidence_ledger":[{"reference":"src/checkout.ts","category":"application","evidence_status":"confirmed","state_or_usage":"usage_evidence"},{"reference":"flags.yml","category":"configuration","evidence_status":"supplied_unverified","state_or_usage":"usage_evidence"},{"reference":"checkout_flag.test","category":"test","evidence_status":"confirmed","state_or_usage":"usage_evidence"},{"reference":"runbook.md","category":"documentation","evidence_status":"confirmed","state_or_usage":"usage_evidence"},{"reference":"Payments approval required before cleanup","category":"policy","evidence_status":"confirmed","state_or_usage":"policy_evidence"}],"dependency_order":[{"step":"Obtain Payments owner approval before cleanup assessment.","basis":"supplied"},{"step":"Assess application usage and determine whether removal is appropriate.","basis":"proposed"},{"step":"Plan application cleanup.","basis":"proposed"},{"step":"Plan configuration cleanup after application cleanup.","basis":"supplied"},{"step":"Plan documentation update after configuration cleanup.","basis":"supplied"}],"checklist":[{"target":"checkout_v2 retirement decision","prerequisites":[],"future_action":"Obtain and record Payments approval; verify enabled state separately from usage evidence.","closure_evidence":"Recorded approval and state/usage assessment","rollback_boundary":null,"unresolved_risk":"Enabled state does not establish safe removal."},{"target":"src/checkout.ts","prerequisites":["Recorded Payments approval"],"future_action":"Review supplied application reference and plan cleanup if usage evidence supports it.","closure_evidence":"Reference-specific review record","rollback_boundary":"Restore the prior application release or change; method not supplied.","unresolved_risk":"No complete consumer inventory is supplied."},{"target":"flags.yml","prerequisites":["Application cleanup planned"],"future_action":"Verify configuration activity and plan entry cleanup only after application cleanup.","closure_evidence":"Configuration review record","rollback_boundary":"Restore the prior config entry before deployment.","unresolved_risk":"Reference is supplied but unverified."},{"target":"checkout_flag.test","prerequisites":["Application cleanup decision"],"future_action":"Assess whether the confirmed test reference requires planned updates.","closure_evidence":"Test-impact assessment","rollback_boundary":null,"unresolved_risk":"Test coverage does not prove production usage."},{"target":"runbook.md","prerequisites":["Configuration cleanup planned"],"future_action":"Plan documentation update after configuration cleanup.","closure_evidence":"Documentation-impact assessment","rollback_boundary":null,"unresolved_risk":"Required documentation changes are unknown."}],"rollback_boundary":"Restore the prior config entry before deployment.","unresolved":["Application rollback method is not supplied.","Configuration reference activity is unverified.","Safe deletion and complete consumer coverage are unresolved."],"acceptance_checks":["Approval is recorded before cleanup planning proceeds.","State and usage evidence remain separate.","All supplied references and statuses are preserved.","No repository edit, removal, deployment, or completion claim is made."]}
+```
+
+## Verify locally
+
+Run `python evals/run_fixtures.py` from this package directory. See [verification](VERIFICATION.md) for actual results and outstanding gates.

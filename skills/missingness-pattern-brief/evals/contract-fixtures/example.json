@@ -1,0 +1,52 @@
+{
+  "status": "complete",
+  "scope": "Rows r1-r2; fields x and y.",
+  "missing_markers": [
+    null,
+    ""
+  ],
+  "field_summaries": [
+    {
+      "field": "x",
+      "total_records": 2,
+      "missing_count": 1,
+      "missing_proportion": 0.5
+    },
+    {
+      "field": "y",
+      "total_records": 2,
+      "missing_count": 1,
+      "missing_proportion": 0.5
+    }
+  ],
+  "subgroup_summaries": [
+    {
+      "subgroup": "A",
+      "size": 2,
+      "field": "x",
+      "missing_count": 1,
+      "missing_proportion": 0.5
+    },
+    {
+      "subgroup": "A",
+      "size": 2,
+      "field": "y",
+      "missing_count": 1,
+      "missing_proportion": 0.5
+    }
+  ],
+  "co_missing_patterns": [
+    {
+      "fields": [
+        "x",
+        "y"
+      ],
+      "record_ids": [],
+      "count": 0
+    }
+  ],
+  "excluded_or_unresolved": [],
+  "interpretation_limits": [
+    "The counts describe only the declared rows and fields and do not explain why values are missing."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "fingerprint": "e883af934086da03d2231af39175501208bea1c9a8274f2e1fc19edad698e79f",
+  "job": "factory100_baseline_962e614a16d0",
+  "results": [
+    {
+      "id": "terminology-consistency-editor__q100_ordinary",
+      "answer": "P1: “The client portal shows invoices. Open the client portal to download one.”\nP2: “A customer is a person who buys a service.”"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

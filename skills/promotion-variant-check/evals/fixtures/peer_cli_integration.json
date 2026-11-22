@@ -1,0 +1,23 @@
+{
+  "baseline": {
+    "headline": "Plan",
+    "body": "Details"
+  },
+  "changed_field": "headline",
+  "variants": [
+    {
+      "id": "same",
+      "fields": {
+        "headline": "Plan",
+        "body": "Details"
+      }
+    },
+    {
+      "id": "declared-plus-other",
+      "fields": {
+        "headline": "New plan",
+        "body": "New details"
+      }
+    }
+  ]
+}

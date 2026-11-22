@@ -1,0 +1,7 @@
+{
+  "conflicts": [],
+  "unresolved_items": [
+    "Runtime behavior and migration readiness are not established."
+  ],
+  "scope": "Documentary comparison only; no endpoints were tested."
+}

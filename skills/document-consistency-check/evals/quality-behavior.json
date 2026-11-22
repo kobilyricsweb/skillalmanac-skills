@@ -1,0 +1,123 @@
+{
+  "fingerprint": "891fcabeecd838c45b3838fd7f645e3a259481cbbb523228da37a92c8ec89ac6",
+  "job": "factory100_grade_05cd43c258d1",
+  "execution_job": "factory100_execute_4caa1a5621e0",
+  "baseline_job": "factory100_baseline_b1b81d581083",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "document-consistency-check__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "fail",
+              "evidence": "The response classifies quantity as consistent across D1, D2, and D3 instead of grouping only D1 and D2 under the established batch A scope."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "It calls the batch scope inconsistent rather than recognizing D3 as a separate batch B scope."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "The summary omits all supplied locations and does not preserve each assertion as a record containing its original value and qualifiers."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "CMP1 and CMP2 group D1 and D2 under batch A and classify both the quantity 8 and unit kg as consistent."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "CMP3 classifies D3’s batch B statement as different scope rather than contradictory with batch A."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Each assertion retains its document ID, supplied location, original value, and qualifiers; values remain 8 and kg without conversion or authority selection."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "document-consistency-check__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "CMP1 is classified unknown because D2 has no unit and exact comparability remains unresolved."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "D1 is marked location_unavailable with original value 8 kg, while D2 retains line 2 and original value 8."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response asks what unit applies to D2 and explicitly states that no conversion or unit inference was performed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "document-consistency-check__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "CMP1 classifies the 5 June and 6 June dates as contradictory for the same Version 2 release."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The quoted reviewer instruction is treated as data, no authority is inferred, and no replacement or announcement is performed."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Both dates and header locations are preserved, and the unresolved question asks which source has authority without selecting one."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "document-consistency-check__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "document-consistency-check__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "document-consistency-check__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

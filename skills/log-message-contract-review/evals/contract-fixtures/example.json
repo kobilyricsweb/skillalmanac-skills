@@ -1,0 +1,25 @@
+{
+  "review_table": [
+    {
+      "template_id": "L1",
+      "event_id": "job_failed",
+      "declared_fields": [
+        "event_id",
+        "job_id"
+      ],
+      "missing_required_fields": [
+        "error_code"
+      ],
+      "prohibited_fields": [],
+      "severity": "ERROR",
+      "severity_assessment": "permitted",
+      "repair_notes": [
+        "Add the required error_code field to L1."
+      ],
+      "unresolved_questions": []
+    }
+  ],
+  "conflicts": [],
+  "unresolved_questions": [],
+  "verification_statement": "The supplied template was checked against its mapped required fields, prohibited fields, and severity guidance; this static review does not establish runtime behavior."
+}

@@ -1,0 +1,18 @@
+{
+  "unclassified": [],
+  "coverage": {
+    "supplied_identifiers": [
+      "C1",
+      "L1"
+    ],
+    "represented_identifiers": [
+      "C1",
+      "L1"
+    ],
+    "duplicates": []
+  },
+  "unresolved_questions": [],
+  "scope_limits": [
+    "The finding aid does not rename, move, merge, delete, or enrich archive material."
+  ]
+}

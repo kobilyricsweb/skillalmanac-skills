@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create a rule table assigning synthetic records to cohorts from these inclusion and exclusion rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Classify users by signup month, staff exclusion, and the supplied missing-value policy.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which sample records are included, excluded, or indeterminate under these cohort rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Resolve cohort membership using the stated precedence and date boundaries.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn this population specification into deterministic record-level cohort decisions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document overlapping cohort rules and classify the supplied examples.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a cohort assignment matrix from these fields and exclusions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify records whose cohort status cannot be assigned because required values are missing.",
+    "should_trigger": true
+  },
+  {
+    "query": "Apply these January and staff-status rules to the synthetic records.",
+    "should_trigger": true
+  },
+  {
+    "query": "Produce an auditable included/excluded/indeterminate cohort table.",
+    "should_trigger": true
+  },
+  {
+    "query": "Define the denominator for a conversion metric and its eligible population.",
+    "should_trigger": false
+  },
+  {
+    "query": "Profile the observed JSON types and null rates in this dataset.",
+    "should_trigger": false
+  },
+  {
+    "query": "Trace revenue fields through each pipeline stage.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare null, empty, zero, and sentinel meanings across sources.",
+    "should_trigger": false
+  },
+  {
+    "query": "Check whether summing order totals after an item join double-counts.",
+    "should_trigger": false
+  },
+  {
+    "query": "Assess whether this sampling frame represents the target population.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find gaps in the product taxonomy assignments.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a metric-definition card with numerator and denominator.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit join cardinality between customers and transactions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a dashboard chart from these cohort results.",
+    "should_trigger": false
+  }
+]

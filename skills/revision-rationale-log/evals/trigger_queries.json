@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Log why each substantive before-and-after change was made.",
+    "should_trigger": true
+  },
+  {
+    "query": "Link revised wording to the supplied evidence or style rule.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a revision rationale table for these passages.",
+    "should_trigger": true
+  },
+  {
+    "query": "Record changes in scope, precision, structure, and qualification.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check that protected quotations were not altered.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate observable editorial changes from inferred author intent.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show unresolved impact where a rationale was not supplied.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare these paragraphs and document the evidence behind each revision.",
+    "should_trigger": true
+  },
+  {
+    "query": "Explain why “all users” became “six of eight participants.”",
+    "should_trigger": true
+  },
+  {
+    "query": "Produce a compact audit trail for substantive edits.",
+    "should_trigger": true
+  },
+  {
+    "query": "Replace every inconsistent term using this glossary.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build reusable FAQ entries from approved policy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map requirements to evidence in the completed document.",
+    "should_trigger": false
+  },
+  {
+    "query": "Reconstruct the order of events from these notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Check whether headings cover their promised topics.",
+    "should_trigger": false
+  },
+  {
+    "query": "Plan which sections should be refreshed next quarter.",
+    "should_trigger": false
+  },
+  {
+    "query": "Infer what the author intended by changing this sentence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite the protected quotation for clarity.",
+    "should_trigger": false
+  },
+  {
+    "query": "Approve the legal significance of this revision.",
+    "should_trigger": false
+  },
+  {
+    "query": "Verify the market impact of the editorial change.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "synthetic": true,
+  "input": "Metric name: Daily completion rate. Purpose: monitor batch completion. Formula: completed batches during a UTC day / batches started during that UTC day. Population: production batches. Exclude test batches. Grain: batch. Window: 00:00–23:59 UTC. Freshness: by 02:00 UTC next day. Zero-denominator policy: undefined. Do not calculate a result.",
+  "expected_artifact": {
+    "metric_name": "Daily completion rate",
+    "purpose": "monitor batch completion",
+    "formula": "completed batches during a UTC day / batches started during that UTC day",
+    "metric_class": "rate",
+    "numerator": "Production batches completed during the UTC day",
+    "denominator": "Production batches started during the same UTC day",
+    "population": "production batches",
+    "window": "00:00–23:59 each day",
+    "timezone": "UTC",
+    "exclusions": [
+      "test batches"
+    ],
+    "grain": "batch",
+    "freshness": "by 02:00 UTC the next day",
+    "zero_policy": "undefined when no production batches started",
+    "source_notes": [
+      "All definition fields come from the supplied metric note."
+    ],
+    "unresolved_choices": [],
+    "implementation_questions": []
+  },
+  "status": "specification; not an executed test"
+}

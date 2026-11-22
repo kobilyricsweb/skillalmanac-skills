@@ -1,0 +1,13 @@
+{
+  "fingerprint": "972903c1dba2f80aee8e3bf42abd5005533f45ce77740feadc08ec1dfc3d76b9",
+  "job": "factory100_baseline_7aef657bdc1f",
+  "results": [
+    {
+      "id": "aggregation-grain-check__q100_ordinary",
+      "answer": "Worksheet: Orders grain=one row per order_id; measure=Orders.amount; Items grain=one row per item_id; relationship=one order to many items; filter=Items.category='book'; grouping=Orders.region; aggregation=sum(Orders.amount). Sequence: join Orders to filtered Items, group by region, sum Orders.amount. Risk: orders with multiple book items produce repeated Orders.amount values, overstating totals. No approved deduplication rule exists. Measure status: unsupported as proposed because the join changes the order grain before summation. Supported alternative: first derive distinct order_id values from filtered book Items, then join those IDs to Orders and sum each Orders.amount once by region. Verification: compare qualifying distinct order counts with joined rows; confirm each qualifying order contributes exactly one amount; reconcile regional totals to the sum of qualifying Orders.amount values."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

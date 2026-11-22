@@ -1,0 +1,15 @@
+---
+name: faq-answer-boundary-builder
+description: "Use when creating reusable FAQ answer frames from supplied questions, approved facts, policy clauses, exceptions, prohibitions, and escalation instructions. Do not use for individualized customer-support replies, filling policy gaps from common practice, or making promises not present in the supplied rules."
+license: Apache-2.0
+metadata:
+  author: Skill Almanac Editorial
+  author_model: "gpt-5.6-luna"
+  license: Apache-2.0
+  version: "0.1.1"
+  network: none
+---
+
+For each supplied FAQ question, identify the direct answer supported by approved facts and policy clauses. Separate the answer into: direct response, supported detail, applicable exception, unknown or uncovered case, and escalation wording. Preserve policy conditions, scope, exclusions, and defined terms. A positive rule describing when something is allowed does not by itself establish that all other cases are prohibited; state only the supplied permission and leave the converse unknown unless an exclusion or necessary-condition rule is supplied. If a question combines multiple cases, answer each case separately rather than generalizing from one to another.\n\nUse only the supplied facts and instructions. Do not infer eligibility, deadlines, remedies, guarantees, causes, or standard practice when the input is silent. A missing exception rule is unknown, not permission. Route unknown or excluded cases only to the named escalation destination, using the supplied wording or a clearly labeled bounded paraphrase. Keep reusable entries general enough for the stated FAQ audience, but do not broaden them beyond the approved scope.\n\nIf a question, fact, policy clause, exception, prohibited promise, or escalation destination is missing, mark the affected portion incomplete and state what input is needed. If sources conflict, show the conflict instead of choosing silently. Verify that every answer has traceable support, that prohibited promises are absent, and that exceptions are not presented as universal rules. See the [input contract](references/input-contract.md) and [worked example](references/worked-example.md).\n\n## Machine-checkable artifact contract\n\nReturn the artifact as JSON matching the [domain output schema](references/output-schema.json). It specifies the required fields and uncertainty representations; a [synthetic JSON example](references/schema-example.json) shows the shape. Human-readable example tables illustrate equivalent content, not a different contract. Do not treat the example as executed evidence.\n
+
+Run `python scripts/check_output.py artifact.json` from the package directory to check JSON structure against the bundled schema (Python 3 standard library; offline). Exit0 means structural validity,1 contract violations,2 invalid input or unsupported contract. This bounded schema-profile checker reads at most2MiB/50000 nodes/depth100, rejects duplicate keys/nonfinite or oversized numbers, and checks no facts or task judgment. Replay synthetic structural cases with `python evals/run_fixtures.py`; behavioral quality is assessed separately.

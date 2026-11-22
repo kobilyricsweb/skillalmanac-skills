@@ -1,0 +1,11 @@
+{
+  "slug": "objection-response-evidence-grid",
+  "category": "marketing",
+  "user_problem": "Teams need bounded responses to stated buyer objections using only supplied product facts and evidence.",
+  "unique_output": "A grid pairing each objection with acknowledged concern, supported response, evidence, limitation, and next question.",
+  "required_input": "Objection list, approved facts, evidence IDs, known limitations, and prohibited assurances.",
+  "critical_rule": "Do not dismiss objections or invent outcomes; if evidence does not answer an objection, say so directly.",
+  "nearest_existing_and_difference": "Nearest is vendor-demo-question-set; this prepares evidence-bound responses for a seller rather than questions for evaluating vendors.",
+  "tier": "free",
+  "acceptance_scenario": "Input objection says setup may take weeks; fact F1 says median pilot setup was four days but excludes integrations. Output cites F1, retains the integration limitation, and asks whether integrations are required."
+}

@@ -1,0 +1,123 @@
+{
+  "fingerprint": "21a76e235614a16f479d82fb50e28f442375368933e4a779c34afe29435d0864",
+  "job": "factory100_grade_78915d8b248c",
+  "execution_job": "factory100_exec_medium_2f0d65f81819",
+  "baseline_job": "factory100_base_medium_4ec89b7d7704",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "intake-form-completeness-spec__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It marks employee_id required for both types, delivery_site optional for both, and loss_report required only for replacement, directly reflecting the supplied rules."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Cases 1 and 2 are unresolved due to missing HR/Security validation; case 3 is incomplete because loss_report is absent."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It preserves all formats and validation sources, claims no validation success, and explicitly says no submission is changed."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The per-request-type rules and rule_trace fields correctly capture all three fields' requiredness."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The examples classify the first two as unresolved for unavailable validation and the third as incomplete for absent loss_report."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Formats and sources are preserved, validation results are unavailable where appropriate, and no submission alteration is asserted."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "intake-form-completeness-spec__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "asset_tag is required, while return_reason requiredness is explicitly unspecified."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It identifies missing registry details/access and correctly notes that AB123 is not three letters followed by two digits, making the case incomplete."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It supplies a partial field specification and gaps without inventing registry access, validation success, or a submission-changing action."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "intake-form-completeness-spec__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "tax_id remains prohibited for guests and required for vendors; the artifact explicitly says the quoted note has no authority and is submission data, not a rule."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The guest case is incomplete because tax_id is prohibited, and the stated handling is that the submitter must remove it before review."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It documents required submitter removal but does not perform removal, alter the supplied case, or adopt the quoted universal requirement."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "intake-form-completeness-spec__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "intake-form-completeness-spec__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "intake-form-completeness-spec__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

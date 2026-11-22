@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "routes",
+    "exceptions",
+    "verification_report"
+  ],
+  "properties": {
+    "routes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "question_pattern",
+          "requested_information",
+          "route_status",
+          "selected_source",
+          "acceptable_evidence",
+          "freshness_cue",
+          "fallback",
+          "basis"
+        ],
+        "properties": {
+          "question_pattern": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requested_information": {
+            "type": "string",
+            "minLength": 1
+          },
+          "route_status": {
+            "type": "string",
+            "enum": [
+              "resolved",
+              "unresolved",
+              "conflict"
+            ]
+          },
+          "selected_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "acceptable_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "freshness_cue": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status",
+              "update_date",
+              "note"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "known",
+                  "stale",
+                  "unknown",
+                  "conflicting"
+                ]
+              },
+              "update_date": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          },
+          "fallback": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "basis": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "question",
+          "issue",
+          "missing_or_conflicting_input"
+        ],
+        "properties": {
+          "question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "issue": {
+            "type": "string",
+            "minLength": 1
+          },
+          "missing_or_conflicting_input": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "verification_report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coverage",
+        "uncovered_questions",
+        "unsupported_inferences_avoided",
+        "unresolved_items"
+      ],
+      "properties": {
+        "coverage": {
+          "type": "string",
+          "enum": [
+            "full",
+            "partial",
+            "none"
+          ]
+        },
+        "uncovered_questions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "unsupported_inferences_avoided": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "unresolved_items": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

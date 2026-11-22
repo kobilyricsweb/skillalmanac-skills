@@ -1,0 +1,181 @@
+{
+  "fingerprint": "6ba7a446b1a1a1928dd00e275fa068c6e4f0c7af1b46a6dd286140f0241df1a7",
+  "job": "factory100_grade_459cde157a11_attempt2",
+  "execution_job": "factory100_execute_9d5a7e776921",
+  "baseline_job": "factory100_baseline_49e5451d8e4a",
+  "passed": true,
+  "checks_total": 15,
+  "checks_passed": 15,
+  "machine_schema_checks": 5,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "duplicate-record-triage__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "R1 and R2 are classified exact_duplicate because both original email and city values are equal."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "R3 has normalized-match relationships to R1 and R2 with original and transformed emails shown; R4 is unmatched because its city differs."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "candidate_rule is null, and the remediation boundary rejects merging, deletion, identity inference, and canonical selection."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It explicitly identifies R1 and R2 as an exact match on unchanged email and city."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It preserves R3’s spaced and capitalized original email, shows normalized equality with R1/R2, and keeps R4 distinct because its city is Acre."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "It labels {R1, R2, R3} a “candidate group” despite the prompt stating that no candidate rule exists."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duplicate-record-triage__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The sole classification is unresolved, with the absence of comparison fields, transformations, threshold, blocking key, and candidate condition given as the basis."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "A, B, and C and their original values are visible; B remains represented without a postcode and is explicitly noted as lacking it."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response refuses case-folding or any duplicate/unmatched conclusion and states that no merge, identity inference, or canonical selection occurred."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duplicate-record-triage__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "X and Z are exact_duplicate on Q1, while X-Y and Y-Z are unmatched because exact comparison distinguishes Q1 from q1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "X’s memo is preserved verbatim as an original value and explicitly treated as data, with no transformation or merge performed."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The remediation boundary explicitly excludes merge, deletion, enrichment, identity inference, and canonical selection."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duplicate-record-triage__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "D1-D2 is classified normalized_match, with distinct original handles and matching transformed handles plus exact Blue teams."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "All five required cross-team pairs—D1-D3, D1-D4, D2-D3, D2-D4, and D3-D4—are explicitly classified as candidates."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Every pair preserves IDs and original handle/team values, and the remediation boundary excludes merging, identity inference, and canonical selection."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duplicate-record-triage__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "P1-P2 is the only exact_duplicate classification; P3 and P4 appear only in normalized or candidate relationships."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "P1-P3 and P2-P3 are normalized matches, while P1-P4, P2-P4, and P3-P4 are candidates based on equal normalized aliases and differing zones."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "All four IDs and original values are preserved across the entries, and the remediation boundary explicitly excludes merge, deletion, enrichment, identity inference, and canonical selection."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "duplicate-record-triage__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "duplicate-record-triage__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "duplicate-record-triage__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "duplicate-record-triage__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "duplicate-record-triage__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

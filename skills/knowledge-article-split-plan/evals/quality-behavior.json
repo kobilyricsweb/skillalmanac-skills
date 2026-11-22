@@ -1,0 +1,239 @@
+{
+  "fingerprint": "5641e0523a0e04a55a9c5822321ed19af436a101ece75a86e547acd4714e3bcf",
+  "job": "factory100_grade_92d947c42d98",
+  "execution_job": "aggregate_isolated_0bf9a6446ca83037",
+  "baseline_job": "aggregate_isolated_22cd0745003a3bc5",
+  "passed": true,
+  "checks_total": 21,
+  "checks_passed": 21,
+  "machine_schema_checks": 7,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "knowledge-article-split-plan__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Defines separate “Connect to Wi-Fi” and “Reset a Wi-Fi password” units, with both “Reset and verify” and “Warning” mapped to the reset unit."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Maps all four headings, retains Overview at /wifi as shared context, and explicitly identifies the risk of repeating CorpNet connection instructions."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The checklist proposes drafting, links, redirects, and IT Support review while repeatedly stating that source instructions are not rewritten and no migration is claimed."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Proposes distinct connection and reset task articles and keeps “Reset and verify” with “Warning” in the reset article."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "All headings and the shared overview are assigned, but the response does not note the duplicate risk created if connection or reconnection instructions are repeated across the two task articles."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Navigation and redirect handling are explicitly plans for later implementation, IT Support owns each article, and the scope note says no content is rewritten or migrated."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "knowledge-article-split-plan__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Labels the unit and map provisional and lists “Required gap: declared audience is missing.”"
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Creates only the declared export task, keeps Start as its prerequisite, keeps Export and Caution together, and leaves audiences empty."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Lists ownership, URL, redirect, localization, and review as unresolved and explicitly says no migration is executed or publication claimed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "knowledge-article-split-plan__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Separates analyst submission from approver review and retains sign-in as canonical shared context cross-linked from both units."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Maps Submit to the submission unit and keeps the complete “Review and decision warning,” including the quoted deletion words, in one review unit."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Ownership and redirect convention are open decisions, and verification states that no edit, publication, deletion, or redirect execution is claimed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "knowledge-article-split-plan__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Creates separate employee enrollment and help-desk revocation units while retaining Overview at /security-keys as shared context."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Both “Revoke” and “Identity check” are assigned to “Revoke a lost security key,” with no proposed exception."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The checklist preserves “security key” in every task-unit link label, assigns every proposed unit to Identity Team review, and leaves migration/publication unexecuted."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "knowledge-article-split-plan__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Defines distinct Client R installation and troubleshooting units and assigns both Troubleshoot and Escalation warning to the latter."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The duplicate-risk entry explicitly identifies “Restart Client R” in both task units as an operational action."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Retains /client-r as the linking overview, requires Workplace Systems review of every proposed unit, and states drafting occurs without publication or migration."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "knowledge-article-split-plan__q100_fresh_3",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Creates separate print and void units and maps “Void a label” and “Void confirmation” together."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Names “Scan the package ID” as repeated in both task units while explicitly classifying Access/sign-in as canonical shared context rather than duplication."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Preserves “Parcel Desk” unchanged, describes only drafting and pre-publication review, and claims no migration, publication, or redirect change."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "knowledge-article-split-plan__q100_fresh_4",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "“Access Meter K” appears only in shared_context and section_mapping as retained, not in either unit’s retained_sections or moved_sections."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The calibration unit contains only Calibrate; the replacement unit contains both Replace the probe and Replacement warning."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Duplicate risks separately identify “restart Meter K” and “confirm Ready” in both task units, while sign-in is treated as canonical shared access."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "knowledge-article-split-plan__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "knowledge-article-split-plan__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "knowledge-article-split-plan__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "knowledge-article-split-plan__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "knowledge-article-split-plan__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "knowledge-article-split-plan__q100_fresh_3": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "knowledge-article-split-plan__q100_fresh_4": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

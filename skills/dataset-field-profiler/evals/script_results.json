@@ -1,0 +1,296 @@
+{
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "script_sha256": "90651dc00a53a8b58045a57c740441ad3c9ef15c906501bb6f2497bfc8a70078",
+  "fixtures": [
+    {
+      "id": "good_mixed_fields",
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "output": {
+        "errors": [],
+        "field_count": 5,
+        "fields": [
+          {
+            "array": 0,
+            "boolean": 0,
+            "integer": 0,
+            "missing": 1,
+            "name": "extra",
+            "null": 0,
+            "number": 0,
+            "object": 1,
+            "present": 1,
+            "string": 0
+          },
+          {
+            "array": 0,
+            "boolean": 1,
+            "integer": 0,
+            "missing": 1,
+            "name": "live",
+            "null": 0,
+            "number": 0,
+            "object": 0,
+            "present": 1,
+            "string": 0
+          },
+          {
+            "array": 1,
+            "boolean": 0,
+            "integer": 0,
+            "missing": 1,
+            "name": "tags",
+            "null": 0,
+            "number": 0,
+            "object": 0,
+            "present": 1,
+            "string": 0
+          },
+          {
+            "array": 0,
+            "boolean": 0,
+            "integer": 0,
+            "missing": 0,
+            "name": "title",
+            "null": 1,
+            "number": 0,
+            "object": 0,
+            "present": 2,
+            "string": 1
+          },
+          {
+            "array": 0,
+            "boolean": 0,
+            "integer": 1,
+            "missing": 0,
+            "name": "year",
+            "null": 0,
+            "number": 1,
+            "object": 0,
+            "present": 2,
+            "string": 0
+          }
+        ],
+        "ok": true,
+        "row_count": 2
+      }
+    },
+    {
+      "id": "heterogeneous_observation",
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "output": {
+        "errors": [],
+        "field_count": 1,
+        "fields": [
+          {
+            "array": 0,
+            "boolean": 1,
+            "integer": 0,
+            "missing": 0,
+            "name": "status",
+            "null": 1,
+            "number": 0,
+            "object": 1,
+            "present": 4,
+            "string": 1
+          }
+        ],
+        "ok": true,
+        "row_count": 4
+      }
+    },
+    {
+      "id": "malformed_non_object_record",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "ok": false,
+        "input_error": true,
+        "message": "every record must be an object",
+        "errors": []
+      }
+    },
+    {
+      "id": "empty_records_boundary",
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "output": {
+        "errors": [],
+        "field_count": 0,
+        "fields": [],
+        "ok": true,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "numeric_token_bound",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "ok": false,
+        "input_error": true,
+        "message": "number exceeds coefficient-digit or exponent limit (1000)",
+        "errors": []
+      }
+    },
+    {
+      "id": "nested_numeric_token_bound",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "ok": false,
+        "input_error": true,
+        "message": "number exceeds coefficient-digit or exponent limit (1000)",
+        "errors": []
+      }
+    },
+    {
+      "id": "value_types_and_missing",
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "output": {
+        "errors": [],
+        "field_count": 1,
+        "fields": [
+          {
+            "array": 0,
+            "boolean": 1,
+            "integer": 2,
+            "missing": 1,
+            "name": "x",
+            "null": 1,
+            "number": 1,
+            "object": 0,
+            "present": 5,
+            "string": 0
+          }
+        ],
+        "ok": true,
+        "row_count": 6
+      }
+    },
+    {
+      "id": "nested_values_not_exposed",
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "output": {
+        "errors": [],
+        "field_count": 1,
+        "fields": [
+          {
+            "array": 1,
+            "boolean": 0,
+            "integer": 0,
+            "missing": 0,
+            "name": "x",
+            "null": 0,
+            "number": 0,
+            "object": 1,
+            "present": 2,
+            "string": 0
+          }
+        ],
+        "ok": true,
+        "row_count": 2
+      }
+    },
+    {
+      "id": "duplicate_json_key",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "ok": false,
+        "input_error": true,
+        "message": "duplicate JSON object key",
+        "errors": []
+      }
+    },
+    {
+      "id": "nonfinite",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "ok": false,
+        "input_error": true,
+        "message": "non-finite JSON number",
+        "errors": []
+      }
+    },
+    {
+      "id": "truncated",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "ok": false,
+        "input_error": true,
+        "message": "Expecting value: line 1 column 6 (char 5)",
+        "errors": []
+      }
+    },
+    {
+      "id": "missing_file",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "ok": false,
+        "input_error": true,
+        "message": "[WinError 2] The system cannot find the file specified: '<local-path>'",
+        "errors": []
+      }
+    },
+    {
+      "id": "peer_cli_integration",
+      "exit": 0,
+      "output": {
+        "errors": [],
+        "field_count": 2,
+        "fields": [
+          {
+            "array": 0,
+            "boolean": 1,
+            "integer": 1,
+            "missing": 1,
+            "name": "n",
+            "null": 0,
+            "number": 1,
+            "object": 0,
+            "present": 3,
+            "string": 0
+          },
+          {
+            "array": 0,
+            "boolean": 0,
+            "integer": 0,
+            "missing": 3,
+            "name": "tag",
+            "null": 1,
+            "number": 0,
+            "object": 0,
+            "present": 1,
+            "string": 0
+          }
+        ],
+        "ok": true,
+        "row_count": 4
+      }
+    }
+  ],
+  "fixtures_passed": 12,
+  "fixtures_total": 12,
+  "lint_fail": 0,
+  "lint_warn": 0
+}

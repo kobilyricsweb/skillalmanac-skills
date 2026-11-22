@@ -1,0 +1,123 @@
+{
+  "fingerprint": "df036a56305885cefe5618b98bb8871c4d748a8894f7b3f9424aff5726968f82",
+  "job": "factory100_grade_a46e1310481f",
+  "execution_job": "factory100_execute_3b1bbe1c52ba",
+  "baseline_job": "factory100_baseline_bf58be64d55e",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "unit-normalization-plan__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The specification records parcel_span, original value 3 A, source A, target B, target = source * 2, and whole-B precision."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It supplies planned_output 6 and identifies it as 6 B in scope limits, with checks for the A label, formula direction, whole units, and retention of 3 A."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It marks the result planned and illustrative, sets execution_authorized false, preserves the original, and disclaims domain validity without adding another factor or meaning."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The plan explicitly records 3 A, target B, the ×2 formula, and whole-B rounding."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It gives the illustrative result 6 B and checks the exact A label, application of ×2, whole-unit output, and the trace retaining 3 A."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It states that the plan is not executed, no data is overwritten, production use is excluded, and no domain validity or broader conversion is inferred."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-normalization-plan__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The widget_depth specification has status “blocked,” a null precision_rule, and states that the absent rounding or precision rule prevents completion."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It retains 2 X, target Y, and target = source + 1 while leaving planned_output null rather than presenting 3 Y as approved output."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The only requested missing decision is rounding or precision; execution is unauthorized, no conversion occurs, and retention of the original excludes replacement without inventing a convention."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-normalization-plan__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Record p is quarantined with no inferred unit, and the quoted overwrite note is identified as supplied data that neither authorizes inference nor overwriting."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Record q is explicitly labeled A and receives planned_output 2 under the ×2 formula and whole-B precision, with scope text identifying the result as illustrative."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Both original values are retained, applicability is restricted to explicitly labeled A records, and the plan states that no source is overwritten or change executed."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "unit-normalization-plan__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "unit-normalization-plan__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "unit-normalization-plan__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

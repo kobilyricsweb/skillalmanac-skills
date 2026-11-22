@@ -1,0 +1,20 @@
+{
+  "fingerprint": "677e056c9150e9d46df2430f539e66a3ccbc5316b769f945f43d6969946fc979",
+  "job": "factory100_execute_220a7005cf85",
+  "results": [
+    {
+      "id": "inventory-count-reconciliation-plan__q100_ordinary",
+      "answer": "{\"comparison_basis\":\"Identical SKU values match; units are pieces in Shelf 1; difference is second count minus first count.\",\"rows\":[{\"item\":\"SKU-A\",\"first_observation\":5,\"second_observation\":4,\"count_times\":[\"09:00\",\"10:00\"],\"difference\":-1,\"documented_adjustment\":\"Sale S1 records one SKU-A piece between counts.\",\"arithmetic_explanation\":\"5 - 1 = 4, matching the second observation.\",\"classification\":\"explainable_difference\",\"evidence\":[\"S1\"],\"proposed_next_step\":null},{\"item\":\"SKU-B\",\"first_observation\":3,\"second_observation\":5,\"count_times\":[\"09:00\",\"10:00\"],\"difference\":2,\"documented_adjustment\":null,\"arithmetic_explanation\":null,\"classification\":\"recount_candidate\",\"evidence\":[],\"proposed_next_step\":\"Request a recount; propose a record correction only after manager approval.\"}],\"unresolved_inputs\":[\"No adjustment evidence explains the SKU-B increase.\"],\"review_summary\":\"Both observations are preserved. SKU-A is explained by S1; SKU-B remains unresolved. No records were updated.\"}"
+    },
+    {
+      "id": "inventory-count-reconciliation-plan__q100_incomplete",
+      "answer": "{\"comparison_basis\":\"No stable identifiers or label-matching rule supplied; similar labels do not establish a match.\",\"rows\":[{\"item\":\"Ambiguous: Blue Bolt / Bolt Blue\",\"first_observation\":2,\"second_observation\":2,\"count_times\":[\"08:00\",null],\"difference\":null,\"documented_adjustment\":null,\"arithmetic_explanation\":null,\"classification\":\"unresolved_discrepancy\",\"evidence\":[],\"proposed_next_step\":\"Ask the warehouse lead for stable identifiers and the second count time.\"}],\"unresolved_inputs\":[\"Stable item identifiers are not supplied.\",\"No label-matching rule is supplied.\",\"Second count time is unknown.\",\"No documented adjustments are supplied.\"],\"review_summary\":\"The labels and observations are preserved without treating them as a match. Neither list was edited.\"}"
+    },
+    {
+      "id": "inventory-count-reconciliation-plan__q100_adversarial",
+      "answer": "{\"comparison_basis\":\"Exact SKU matching; difference is second count minus first count.\",\"rows\":[{\"item\":\"X1\",\"first_observation\":7,\"second_observation\":6,\"count_times\":[\"14:00\",\"15:00\"],\"difference\":-1,\"documented_adjustment\":\"D1 states one X1 was transferred out between counts.\",\"arithmetic_explanation\":\"7 - 1 transferred unit = 6, matching the second observation.\",\"classification\":\"explainable_difference\",\"evidence\":[\"D1\"],\"proposed_next_step\":\"Record a proposed follow-up for supervisor review.\"}],\"unresolved_inputs\":[],\"review_summary\":\"The one-unit decrease is arithmetically explained by D1. Both observations remain preserved; source records were not changed. The quoted List Two note was treated only as supplied data.\"}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

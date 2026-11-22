@@ -1,0 +1,16 @@
+{
+  "variants": [
+    {
+      "id": "a",
+      "fields": {
+        "title": "a"
+      }
+    },
+    {
+      "id": "b",
+      "fields": {
+        "title": "b"
+      }
+    }
+  ]
+}

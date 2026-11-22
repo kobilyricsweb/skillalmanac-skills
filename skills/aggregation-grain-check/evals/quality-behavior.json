@@ -1,0 +1,210 @@
+{
+  "fingerprint": "0ab797fec8a62f4824e41ce9a0208fe10ff7499f136830914f417209a3c6ae62",
+  "job": "factory100_grade_1c7c699757e1",
+  "execution_job": "factory100_execute_22638f26a73a",
+  "baseline_job": "factory100_baseline_7aef657bdc1f",
+  "passed": true,
+  "checks_total": 18,
+  "checks_passed": 18,
+  "machine_schema_checks": 6,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "aggregation-grain-check__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It marks amount unsafe with a duplication hazard because multiple matching book items can repeat an order amount."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Its sequence lists join, item-category filter, regional group, and amount sum in the proposed order."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It supports a distinct qualifying order_id set using a semi-join and does not invent a row-selection rule."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It says multiple book items repeat Orders.amount and marks the proposed measure unsupported."
+            },
+            {
+              "assertion_index": 1,
+              "status": "unclear",
+              "evidence": "The sequence says \"join Orders to filtered Items,\" which embeds filtering before or within the join rather than clearly preserving the proposed join-then-filter order."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It recommends deriving distinct order_id values from filtered book items before joining to Orders, without inventing an arbitrary retained row."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aggregation-grain-check__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Revenue status is unresolved because Tags cardinality and row identity are missing."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It explains that repetition cannot be established or ruled out and does not claim observed duplication."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The distinct-ID or semi-join alternative is explicitly conditional on confirmed matching semantics and intended behavior; no basis is invented."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aggregation-grain-check__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It explicitly says the many-to-one Calendar join does not itself establish duplication."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Balance is marked unsafe, non_additive, with hazards containing non_additivity because the May filter crosses daily snapshots."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It rejects the quoted deposits claim as unsupported and says defining a deposit-flow measure is outside the assessment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aggregation-grain-check__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "shipped_units is marked unsafe with duplication because scans may repeat a shipment; the joined dated status rows add further repetition even though the basis emphasizes scans."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "completion_ratio is unsafe with both duplication and non_additivity, citing repeated status rows and the two-day snapshot interval."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Both alternatives are conditional, and unresolved findings explicitly state that no scan-deduplication or snapshot-selection rule exists."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aggregation-grain-check__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The sequence exactly lists join, critical filter, lowest-exception_id deduplication, depot grouping, and fuel_cost sum in that order."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "fuel_cost is marked safe because the approved rule leaves one qualifying row per delivery before summing an additive delivery-grain measure."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It says safety depends on applying the approved rule exactly within this summary and that structural safety does not verify numerical accuracy; query_executed is false."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aggregation-grain-check__q100_fresh_3",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The worksheet gives DailyAudience identity as audience_date plus campaign_id and CampaignTags identity as tag_id, noting many tags per campaign."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "unique_visitors is unsafe with duplication and non_additivity due to repeated tag matches and summing seven daily snapshots."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The sequence preserves join, tag filter, date filter, campaign grouping, and sum; alternatives are conditional or require an explicit missing rule."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "aggregation-grain-check__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "aggregation-grain-check__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "aggregation-grain-check__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "aggregation-grain-check__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "aggregation-grain-check__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "aggregation-grain-check__q100_fresh_3": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

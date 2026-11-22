@@ -1,0 +1,181 @@
+{
+  "fingerprint": "34af3feda0fafc9d5625edc0cad66fc09d6a938abc13744f2d7b8e9e0722a0f1",
+  "job": "factory100_grade_fca9eafd49ab",
+  "execution_job": "aggregate_isolated_096b9e70ab26d779",
+  "baseline_job": "aggregate_isolated_701b2712b8caabf7",
+  "passed": true,
+  "checks_total": 15,
+  "checks_passed": 15,
+  "machine_schema_checks": 5,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "assessment-accommodation-translation__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It calculates 50% of 20 as 10 additional minutes and a 30-minute total."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It maps 09:00-09:30 to R2 and the proctor conditionally, requires confirmation that R2 is low-distraction, and preserves 10 items, written responses, and word-meaning scoring."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "The response limits authorization to the two approved changes and makes no diagnosis or eligibility inference, but it never records construct fidelity as unverified or notes that no distinct construct was supplied."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "calculated_timing explicitly gives 10 additional minutes and 30 total from 20 × 0.50."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "R2 availability and one proctor are recorded, low-distraction status remains unresolved, and the items, written response demand, and word-meaning scoring target are preserved."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The construct is null and traceability marks construct_status unverified; only the exact timing and room accommodations are implementable, with no eligibility or diagnosis inference."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment-accommodation-translation__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The calculation states 24 × 0.25 = 6 additional minutes and 30 minutes total."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Paper format, pencil, and booklet are preserved, while construct fidelity and missing item, response-demand, and scoring baselines are separately marked unresolved."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "No learning goal is invented, and the only operational change is the approved additional time; room, format, materials, and staffing remain as supplied."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment-accommodation-translation__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It calculates 30 additional minutes, 60 total through 14:00, and a 25-minute shortfall against the 35-minute session."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The take-home essay proposal is expressly rejected as unapproved and as altering the oral format and live response demand."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Scheduling remains unresolved pending a compatible authorized session with room and examiner; the unapproved format change is not implemented."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment-accommodation-translation__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The baseline contains the 16-minute computer-based locked-browser format, 12 multiple-choice items, one school laptop, no reference materials, and the stated ecosystem-relationship scoring target."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Text-to-speech is traced to the exact approval but marked conflicting because the laptop lacks the software and installation during the session is prohibited; no substitute is selected."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The protected items, response format, construct, and scoring are preserved, and the unresolved record requires authorized assessment/accommodation and operational confirmation of a compatible setup."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment-accommodation-translation__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "calculated_timing gives 36 working minutes plus a 10-minute break, totaling 46 elapsed minutes."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The implementation is marked conflicting, with a four-minute shortfall against the 42-minute session."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It preserves all 36 working minutes and the full break and requires authorization of a compatible session through at least 14:46 rather than shortening either."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "assessment-accommodation-translation__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "assessment-accommodation-translation__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "assessment-accommodation-translation__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "assessment-accommodation-translation__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "assessment-accommodation-translation__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Map these glossary terms into broader, narrower, related, and distinct relationships using only the supplied statements.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a directional concept map and include the definition text supporting each edge.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which terms are children of Vehicle without inferring parents from similar names.",
+    "should_trigger": true
+  },
+  {
+    "query": "Record explicit distinctions in this glossary and leave unsupported links unresolved.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check whether the proposed hierarchy follows the supplied transitivity rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a relationship map from these definitions and prohibited equivalences.",
+    "should_trigger": true
+  },
+  {
+    "query": "Keep Scooter distinct from Bicycle and do not invent Scooter’s parent.",
+    "should_trigger": true
+  },
+  {
+    "query": "List glossary pairs whose relationship statements conflict.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document the direction and evidence for each approved glossary relationship.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve every supplied prohibited equivalence in a separate output field.",
+    "should_trigger": true
+  },
+  {
+    "query": "Replace every nonpreferred term in this article with the glossary’s preferred term.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite this paragraph for terminology consistency.",
+    "should_trigger": false
+  },
+  {
+    "query": "Route each customer question to its authoritative source document.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find ambiguous references to the heading Overview in this document.",
+    "should_trigger": false
+  },
+  {
+    "query": "Cluster research notes that repeat the same observation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Assign provenance labels to these mixed-content notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent a complete ontology for transportation from general knowledge.",
+    "should_trigger": false
+  },
+  {
+    "query": "Search the web for the accepted definition of Scooter.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify that this taxonomy meets an industry standard.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write executable code that imports this glossary into a database.",
+    "should_trigger": false
+  }
+]

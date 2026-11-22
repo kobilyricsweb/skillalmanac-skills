@@ -1,0 +1,14 @@
+{
+  "slug": "approval-path-mapper",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "APM-05",
+      "severity": "major",
+      "location": "worked example: explanatory paragraph",
+      "evidence": "The supplied rules say that Security Reviewer may reject or pass and that a rejected request returns to Request Owner. They do not assign the act of returning the request to Security Reviewer or state that the return is specifically `for correction`. The expected artifact nevertheless says `Security Reviewer may return it for correction`.",
+      "consequence": "The example converts a decision right into an additional handoff authority and purpose, contrary to the requirement to use only supplied authority rules.",
+      "correction": "State that a rejection results in routing to Request Owner. Leave the actor responsible for that routing and the required response unresolved unless those rules are supplied."
+    }
+  ]
+}

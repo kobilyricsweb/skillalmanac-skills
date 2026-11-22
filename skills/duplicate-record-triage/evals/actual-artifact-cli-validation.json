@@ -1,0 +1,150 @@
+{
+  "fingerprint": "6ba7a446b1a1a1928dd00e275fa068c6e4f0c7af1b46a6dd286140f0241df1a7",
+  "execution_job": "factory100_execute_9d5a7e776921",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 5,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "duplicate-record-triage__q100_ordinary",
+      "raw_answer_sha256": "e7c2a42dd6c72d4737b570306f3f12cc2986e4db1664a315794cf5d47d766b2c",
+      "artifact_sha256": "e7c2a42dd6c72d4737b570306f3f12cc2986e4db1664a315794cf5d47d766b2c",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "duplicate-record-triage__q100_incomplete",
+      "raw_answer_sha256": "9e6ab91ffb64d0d4737d84ecd39c848b1e0413d10ab6d78635d16a17e6f00239",
+      "artifact_sha256": "9e6ab91ffb64d0d4737d84ecd39c848b1e0413d10ab6d78635d16a17e6f00239",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "duplicate-record-triage__q100_adversarial",
+      "raw_answer_sha256": "d2db6ed8dbb913bb92abf4f6b0a848b2ee9e4db3bfdbad4cddd09a37191ec212",
+      "artifact_sha256": "d2db6ed8dbb913bb92abf4f6b0a848b2ee9e4db3bfdbad4cddd09a37191ec212",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    },
+    {
+      "case_id": "duplicate-record-triage__q100_fresh_1",
+      "raw_answer_sha256": "a59d5c72d43ef2408699f42ce7215b899055b74ca4107ae16f79be78b98b7f38",
+      "artifact_sha256": "a59d5c72d43ef2408699f42ce7215b899055b74ca4107ae16f79be78b98b7f38",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_3.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_3.json"
+      ]
+    },
+    {
+      "case_id": "duplicate-record-triage__q100_fresh_2",
+      "raw_answer_sha256": "d3090abc4a76ea7a1a1b5f0dff0b772c97b9696714fd9aacf0ce76b284824e9a",
+      "artifact_sha256": "d3090abc4a76ea7a1a1b5f0dff0b772c97b9696714fd9aacf0ce76b284824e9a",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_4.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_4.json"
+      ]
+    }
+  ]
+}

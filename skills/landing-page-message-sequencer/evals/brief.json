@@ -1,0 +1,10 @@
+{
+  "slug": "landing-page-message-sequencer",
+  "category": "marketing",
+  "user_problem": "Teams have approved messages but lack a coherent order for a focused landing page.",
+  "unique_output": "A section-by-section message sequence linking visitor question, approved claim, evidence asset, and call to action.",
+  "free_or_pack_candidate": "pack_candidate",
+  "test_case": "Sequence eight supplied messages for one audience while rejecting two claims that exceed the evidence provided.",
+  "overlap_to_check": "General frontend design, campaign briefs, and claim-evidence mapping.",
+  "specific_guardrail": "Produce content sequence only, no HTML/UI/SEO performance prediction. Retain supplied evidence restrictions and CTA authority; unsupported promise is a gap, not rewritten as fact."
+}

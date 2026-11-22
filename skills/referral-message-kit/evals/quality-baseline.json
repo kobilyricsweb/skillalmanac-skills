@@ -1,0 +1,13 @@
+{
+  "fingerprint": "68e5ada3e4813547c9848996c678911a4dd6d04d150a4d4c1b2bd144a75c4f02",
+  "job": "factory100_baseline_b40a8387a71b",
+  "results": [
+    {
+      "id": "referral-message-kit__q100_ordinary",
+      "answer": "{\"inviter_text\":\"Invite one first-time member to North Gym. If they register and pay the $4 trial fee by 8 May, you receive one guest pass at the front desk within three days after payment clears. Register by 8 May.\",\"recipient_text\":\"A current North Gym member can invite you as a first-time member. Register and pay the $4 trial fee by 8 May. The inviter may receive one guest pass after payment clears; you receive no reward. Register by 8 May.\",\"short_disclosure\":\"Eligibility and reward timing apply: the inviter must be a current member and not a coach; the recipient must be a first-time member. The recipient must register and pay by 8 May.\",\"ineligible_case_response\":\"This referral is unavailable because the inviter is not a current non-coach member or the recipient is not a first-time member.\",\"fact_trace\":[\"North Gym member may invite one first-time member\",\"Coaches excluded\",\"$4 trial fee\",\"Deadline: 8 May\",\"Guest pass within three days after payment clears\",\"Recipient receives no reward\"],\"assumptions_or_conflicts\":\"No conflicts supplied. No additional assumptions made.\",\"operational_scope_boundary\":\"This kit covers eligibility, referral wording, payment deadline, reward conditions, expiration, and front-desk fulfillment only.\"}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

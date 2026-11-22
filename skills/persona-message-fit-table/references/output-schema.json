@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["artifact_status", "missing_required_fields", "fit_rows", "unmatched_messages", "uncovered_needs", "gaps"],
+  "properties": {
+    "artifact_status": {"type": "string", "enum": ["complete", "provisional"]},
+    "missing_required_fields": {"type": "array", "items": {"type": "string"}},
+    "fit_rows": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["profile_id", "need_id", "message_id", "match_status", "rationale", "evidence_references", "disqualifier", "permitted_cta", "unresolved_gap"], "properties": {"profile_id": {"type": "string"}, "need_id": {"type": "string"}, "message_id": {"type": "string"}, "match_status": {"type": "string", "enum": ["matched", "unmatched", "blocked", "unresolved"]}, "rationale": {"type": "string"}, "evidence_references": {"type": "array", "items": {"type": "string"}}, "disqualifier": {"type": ["string", "null"]}, "permitted_cta": {"type": ["string", "null"]}, "unresolved_gap": {"type": ["string", "null"]}}}},
+    "unmatched_messages": {"type": "array", "items": {"type": "string"}},
+    "uncovered_needs": {"type": "array", "items": {"type": "string"}},
+    "gaps": {"type": "array", "items": {"type": "string"}}
+  }
+}

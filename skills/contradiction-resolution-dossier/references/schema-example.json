@@ -1,0 +1,17 @@
+{
+  "synthetic": true,
+  "input": "Source R1, Room Rules v1 dated 2026-02-01: ‘Reserve Room A for groups of up to 4.’ Source R2, Events Guide v3 dated 2026-03-01: ‘Reserve Room A for groups of up to 6.’ Both address all Room A bookings. Supplied precedence: Room Rules controls room capacity over the Events Guide. Affected artifact: booking form help text says ‘up to 6.’ Named resolver: Facilities Owner.",
+  "expected_artifact": {
+    "conflict_summary": "R1 and R2 give different maximum group sizes for the same Room A booking scope.",
+    "statements": [{"source_id": "R1", "statement": "Reserve Room A for groups of up to 4.", "scope": "All Room A bookings", "metadata": {"version": "v1", "date": "2026-02-01"}}, {"source_id": "R2", "statement": "Reserve Room A for groups of up to 6.", "scope": "All Room A bookings", "metadata": {"version": "v3", "date": "2026-03-01"}}],
+    "scope_comparison": "The supplied scopes overlap fully for Room A bookings.",
+    "authority_analysis": "The supplied rule gives Room Rules precedence over the Events Guide for room capacity.",
+    "resolver": {"identity": "Facilities Owner", "status": "supplied", "gap": null},
+    "precedence_status": {"status": "resolved", "controlling_source": "R1", "basis": "Room Rules controls room capacity over the Events Guide."},
+    "affected_artifacts": ["Booking form help text currently says ‘up to 6.’"],
+    "decision_questions": ["Should the Facilities Owner confirm implementation of the controlling Room Rules limit in the booking form?"],
+    "post_decision_actions": ["After authorization, update the booking form help text to reflect the confirmed limit."],
+    "verification_notes": ["Both conflicting claims are traceable to supplied excerpts.", "The precedence conclusion uses only the supplied rule.", "No artifact was changed by this dossier."]
+  },
+  "status": "specification; not an executed test"
+}

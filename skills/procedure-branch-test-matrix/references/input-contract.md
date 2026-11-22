@@ -1,0 +1,3 @@
+Required inputs are the procedure’s conditions, actions, input domains, boundary values, precedence rules, and explicit missing-value behavior. Include any supplied time budget and case-priority rule. Missing actions, ordering, domains, or null behavior must be reported as unresolved; do not invent a default branch.
+
+Return fields for each synthetic case: case identifier, inputs, condition evaluation, expected path, expected action, supporting rule, boundary rationale, and coverage status. Include uncovered, unknown, unreachable, and conflicting branches separately, plus a coverage summary. The artifact is a design matrix only: it does not execute code or verify runtime behavior. If a budget applies, show allocations that sum within it or state infeasibility.

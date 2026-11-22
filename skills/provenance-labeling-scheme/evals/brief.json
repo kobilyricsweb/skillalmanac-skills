@@ -1,0 +1,11 @@
+{
+  "slug": "provenance-labeling-scheme",
+  "category": "knowledge",
+  "user_problem": "A knowledge collection needs consistent labels separating quotation, paraphrase, observation, assumption, and synthesis.",
+  "unique_output": "A labeling specification with definitions, required metadata, decision rules, edge cases, and labeled synthetic examples.",
+  "required_input": "Allowed label set, source metadata requirements, supplied edge cases, and rules for mixed-content notes.",
+  "critical_rule": "A label describes provenance form, not truth; mixed notes must be split or explicitly carry multiple labels.",
+  "nearest_existing_and_difference": "Nearest is decision-evidence-ledger; this standardizes provenance labels across knowledge notes rather than classifying decision records.",
+  "tier": "free",
+  "acceptance_scenario": "Input labels Quote, Paraphrase, Observation, Assumption; note contains a copied sentence plus analyst inference. Output splits it into Quote with source and Assumption with author, without marking either verified."
+}

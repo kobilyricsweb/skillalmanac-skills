@@ -1,0 +1,22 @@
+{
+  "fingerprint": "7687114a2a0d4099794fe371647177d74d76155dea859b48daa31b39b35cdd7e",
+  "job": "aggregate_isolated_b820a134d10feb77",
+  "results": [
+    {
+      "id": "testimonial-use-readiness__q100_ordinary",
+      "answer": "Readiness record\n- Status: Ready for the specified use.\n- Testimonial source words: “Setup took one day, and support answered twice.”\n- Proposed excerpt: “support answered twice.”\n- Placement/audience: Public homepage testimonial block for prospective customers.\n- Proposed use date: November 21, 2026.\n- Authorized period: November 1, 2026 through January 31, 2027; the proposed date is within this period.\n- Authorized form: Exact excerpts, with no wording edits.\n- Required attribution: “Ana Ruiz, Pico Labs.” The proposed attribution preference matches exactly.\n- Excerpt integrity: The proposed excerpt appears verbatim and contiguously within the source. Its lowercase “support” matches the source, where the word follows “and”; therefore, no capitalization edit is present. Capitalizing it as “Support answered twice.” would be an edit and is not covered by the supplied permission.\n\nBlockers\n- None for the placement, date, excerpt, and attribution supplied.\n- Any wording, punctuation, or capitalization change would require separate permission because the terms allow no edits.\n\nDecision summary\nThe excerpt may be used on the public homepage on November 21, 2026, attributed exactly as “Ana Ruiz, Pico Labs,” provided the excerpt remains exactly “support answered twice.” and the use stays within the authorized period.\n\nFact trace\n- Exact source text → supplied testimonial_text.\n- Excerpt authorization, homepage scope, dates, attribution, and no-edit condition → supplied permission_terms.\n- Attribution match → supplied attribution_preference compared with permission_terms.\n- Placement and date fit → supplied proposed_placement compared with permission_terms.\n- Verbatim/lowercase finding → direct comparison of intended_excerpt with testimonial_text.\n\nOutside this readiness review\n- Whether the statement is true, substantiated, representative, legally compliant beyond the supplied permission, or effective as marketing.\n- Uses on other channels, outside the authorized dates, with different attribution, or with edited wording.",
+      "individual_job": "factory100_base_isolated_b29c16b75a0a"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill_isolated_cases",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "case_context_isolated": true,
+  "answer_word_budget": 600,
+  "individual_worker_jobs": [
+    "factory100_base_isolated_b29c16b75a0a"
+  ],
+  "method_note": "Every case uses its own fresh context. Both arms use identical model/effort/budget; raw responses unchanged, original prompts/assertions preserved, prior failures retained. Aggregate is a provenance index, not a model call.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

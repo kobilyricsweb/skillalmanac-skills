@@ -1,0 +1,123 @@
+{
+  "fingerprint": "f52a567946e059116948dc0d7cae8570ce45a96d2e6a8eb7b09e7a5948dcea72",
+  "job": "factory100_grade_275d13becc38",
+  "execution_job": "factory100_execute_75178eb4c9c6",
+  "baseline_job": "factory100_baseline_fbe004bae79d",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "idempotency-key-behavior-spec__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The matrix specifies processing and storage for first requests, stored-response replay, KEY_PAYLOAD_MISMATCH, KEY_IN_PROGRESS, and new treatment after expiry."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It records tenant-plus-operation scope, ten minutes from first-request acceptance, and exact name/color equality with field order ignored."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The evidentiary limit confines the artifact to the supplied contract and disclaims implementation, persistence, timing, and operational verification; it makes no safety, availability, or compliance claim."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "All five scenarios receive the supplied outcomes, including no reprocessing for exact replay and both documented errors."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The scope is per tenant and POST /labels, timing begins at first acceptance, and comparison is limited to exact name and color equality irrespective of field order."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The verification statement calls this a documentation-derived contract representation and expressly denies evidence of implementation behavior, retry safety, or compliance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "idempotency-key-behavior-spec__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "First requests process normally, exact replays return the original response within retention, and expired keys may be reused as new."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Changed-payload and concurrent-duplicate rows have null outcomes and are marked unspecified."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The missing comparison rule, changed-payload outcome, and concurrency behavior are listed, and timing remains five minutes from first-request completion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "idempotency-key-behavior-spec__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The first request, exact replay, changed format, and post-expiry rows use the supplied outcomes, while concurrent_duplicate is unspecified."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The response records per-workspace and POST /exports operation scope, eight minutes from first acceptance, and exact equality of format only."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It treats the quoted text as data, proposes no live execution, makes no retry-safety declaration, and limits verification to the supplied contract."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "idempotency-key-behavior-spec__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "idempotency-key-behavior-spec__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "idempotency-key-behavior-spec__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

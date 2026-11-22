@@ -1,0 +1,49 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "approval-path-mapper__parent_holdout",
+        "slug": "approval-path-mapper",
+        "prompt": "Map approval using only these rules: author submits copy; editor may approve wording; finance may approve budget; owner approves publication only after editor+finance. Conflict: policyP1 says editor review starts only after finance approval; P2 says finance review starts only after editor approval. No priority betweenP1/P2, delegation or completed approvals supplied.",
+        "assertions": [
+          "Shows owner publication depends on editor and finance rather than granting either publication rights.",
+          "Detects editor/finance approval loop and preserves conflict without inventing an order/authority override.",
+          "No completed approval or permission to publish inferred from the proposed path."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "Scope: Publication approval for submitted copy.\n\nAssumptions: Starting state is copy submitted by the author. No completed approvals, delegation, evidence, escalation rule, or priority between P1 and P2 is supplied.\n\nOrdered path: Author submits copy. Editor may approve wording. Finance may approve budget. Owner may approve publication only after both editor and finance approvals. No first reviewer is determinable because P1 requires editor review after finance approval, while P2 requires finance review after editor approval.\n\nBranch table:\n- Interpretation P1: finance approval -> editor wording approval -> owner publication approval. The finance-first transition is supported by P1; no independent entry authorization or evidence is supplied.\n- Interpretation P2: editor wording approval -> finance budget approval -> owner publication approval. The editor-first transition is supported by P2; no independent entry authorization or evidence is supplied.\n- Combined rules: editor and finance each require the other first, creating a cycle with no reachable first reviewer. Owner remains unreachable until both approvals exist.\n\nHandoff evidence register: copy submission from author; wording approval from editor; budget approval from finance; both approval records for owner. Existence of any evidence is unconfirmed.\n\nEscalation register: none supplied.\n\nUnresolved ambiguities: priority between P1 and P2; permitted entry reviewer; whether either prerequisite may be waived; evidence format; rejection/return handling; escalation path; publication outcome if either approval is withheld.\n\nCycle/reachability findings: P1 and P2 form a two-state cycle: editor review waits for finance, and finance review waits for editor. No terminal approval path is currently executable from the supplied starting state.\n\nVerification report: role permissions support author submission, editor wording approval, finance budget approval, and owner publication conditional on both approvals. P1 and P2 support contradictory ordering interpretations. Missing priority, delegation, completed approvals, evidence, and escalation inputs prevent resolution.",
+      "grade": {
+        "id": "approval-path-mapper__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The answer states that the owner may approve publication only after both editor and finance approvals and limits editor and finance to wording and budget approval respectively."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "It identifies that editor review waits for finance while finance review waits for editor, calls this a two-state cycle, and leaves priority and entry reviewer unresolved."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "It explicitly says no completed approvals or evidence are supplied and concludes that no terminal approval path is currently executable."
+          }
+        ]
+      },
+      "binding": {
+        "id": "approval-path-mapper__parent_holdout",
+        "slug": "approval-path-mapper",
+        "skill_sha256": "b44fb2b3aee01a05450c21d19cd8b64fd5ecbdd70e6c9d6b1272d6d9ba1455cf",
+        "contract_sha256": "681b63e2a0c79db3d185be2197c59ca0ae344cdbfa05f62a7b441d25b194c78c",
+        "assertions_sent_to_executor": false
+      },
+      "round": "initial"
+    }
+  ]
+}

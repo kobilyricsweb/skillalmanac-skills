@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "scope",
+    "candidate_terms",
+    "preferred_terms",
+    "replacements",
+    "unresolved_distinctions",
+    "verification"
+  ],
+  "properties": {
+    "scope": {
+      "type": "object",
+      "required": [
+        "locations",
+        "protected_text",
+        "rules"
+      ],
+      "properties": {
+        "locations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "protected_text": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "candidate_terms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "location",
+          "term",
+          "concept",
+          "status"
+        ],
+        "properties": {
+          "location": {
+            "type": "string"
+          },
+          "term": {
+            "type": "string"
+          },
+          "concept": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "preferred",
+              "replaceable_variant",
+              "distinct_meaning",
+              "protected",
+              "ambiguous"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "preferred_terms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "concept",
+          "preferred_term",
+          "permitted_variants",
+          "basis"
+        ],
+        "properties": {
+          "concept": {
+            "type": "string"
+          },
+          "preferred_term": {
+            "type": "string"
+          },
+          "permitted_variants": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "basis": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "replacements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "location",
+          "current_text",
+          "proposed_text",
+          "status",
+          "preservation_note"
+        ],
+        "properties": {
+          "location": {
+            "type": "string"
+          },
+          "current_text": {
+            "type": "string"
+          },
+          "proposed_text": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "unresolved",
+              "excluded"
+            ]
+          },
+          "preservation_note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "unresolved_distinctions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "location",
+          "issue",
+          "needed_decision"
+        ],
+        "properties": {
+          "location": {
+            "type": "string"
+          },
+          "issue": {
+            "type": "string"
+          },
+          "needed_decision": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "ordinary_replacements_glossary_supported",
+        "protected_text_changed",
+        "code_changes_executed",
+        "unknowns"
+      ],
+      "properties": {
+        "ordinary_replacements_glossary_supported": {
+          "type": "boolean"
+        },
+        "protected_text_changed": {
+          "type": "boolean"
+        },
+        "code_changes_executed": {
+          "type": "boolean"
+        },
+        "unknowns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

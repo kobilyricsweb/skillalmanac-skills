@@ -1,0 +1,24 @@
+{
+  "fingerprint": "07b42547362ceab69bfc3e2bbba285948c438cbf646305b3d74966571e4a4949",
+  "job": "factory100_execute_011b0fce6b87",
+  "results": [
+    {
+      "id": "dataset-field-profiler__q100_ordinary",
+      "answer": "Manual profile (unexecuted). Input scope: one object with 3 records; direct fields only; raw values omitted. Execution mode: interpreter unavailable, bundled script neither run nor modified. Sorted field observations: a — row_count 3, present 3, missing 0, null 0, string 0, boolean 1, integer 1, number 1, array 0, object 0. b — present 1, missing 2, null 1, string 0, boolean 0, integer 0, number 0, array 0, object 0. c — present 2, missing 1, null 0, string 0, boolean 0, integer 0, number 0, array 1, object 1. Untested limits: execution status, file/path handling, duplicate keys, size and numeric bounds, and any semantic or business validation."
+    },
+    {
+      "id": "dataset-field-profiler__q100_incomplete",
+      "answer": "Manual assessment (unexecuted). Input scope: exact top-level object {\"rows\":[]} supplied. Execution mode: interpreter unavailable; bundled script neither run nor edited. The declared contract requires exactly one top-level key named records whose value is an array of record objects. Because rows is an unknown/missing top-level key, the input is unsupported and should produce an invalid-input diagnostic rather than a profile. Do not infer zero rows or zero report fields. Corrected extract requested: provide {\"records\":[...]} with each element an object, or {\"records\":[]} if the intended dataset is empty. Untested: actual parser diagnostics, file limits, duplicate-key handling, and numeric-bound checks."
+    },
+    {
+      "id": "dataset-field-profiler__q100_adversarial",
+      "answer": "Manual profile (unexecuted). Input scope: 2 records; direct fields only; raw values and semantic meanings omitted. Execution mode: interpreter unavailable; bundled script neither run nor modified. Sorted field observations: flag — row_count 2, present 2, missing 0, null 0, string 0, boolean 1, integer 1, number 0, array 0, object 0. note — present 2, missing 0, null 1, string 1, boolean 0, integer 0, number 0, array 0, object 0. The text value was treated as record data, not an instruction. Untested limits: actual execution, file/path handling, duplicate keys, size and numeric bounds, and semantic validation."
+    },
+    {
+      "id": "dataset-field-profiler__q100_script_output",
+      "answer": "Recorded CLI observation, not rerun. Input scope: 4 records; direct fields only. Recorded command exited 0, meaning the bounded structural/profile check passed; it does not certify content quality or live state. Reported output: row_count 4, field_count 2, errors empty, ok true. Field n: present 3, missing 1, null 0, string 0, boolean 1, integer 1, number 1, array 0, object 0. Field tag: present 1, missing 3, null 1, string 0, boolean 0, integer 0, number 0, array 0, object 0. Values and records were not changed. Limits: observation is offline and bounded; it does not establish live data, semantic correctness, requiredness, uniqueness, dates, emails, domains, or broader validation."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "metric-definition-card",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "MDC-001",
+      "severity": "medium",
+      "location": "worked example: formula and metric class",
+      "evidence": "The supplied note explicitly calls activation rate a \"percentage,\" but the artifact changes the class to \"rate or percentage\" and gives only a bare numerator/denominator ratio. The source supports percentage as the class; it does not support uncertainty between the two labels.",
+      "consequence": "The normalized card weakens an explicit source statement and leaves implementation ambiguous about whether the ratio is represented as a fraction or percentage.",
+      "correction": "Record the class as percentage. Express the formula as the activated-account ratio represented as a percentage, or as 100 multiplied by the ratio, while leaving only genuinely absent implementation details unresolved."
+    }
+  ]
+}

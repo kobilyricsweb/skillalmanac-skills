@@ -1,0 +1,13 @@
+{
+  "fingerprint": "eb9a4819e9232f54746981a50344ba59d40ac1a29a87b1e86889cf7b1ef2b128",
+  "job": "factory100_baseline_ba1585b9d322",
+  "results": [
+    {
+      "id": "validation-rule-conflict-map__q100_ordinary",
+      "answer": "Field-level conflict map\n\nField: `seats`\n\nOriginal rules:\n- R1: For all basic plans, `seats` must be at most 3, inclusive; unit: seats.\n- R2: For all basic plans, `seats` must be at least 4, inclusive; unit: seats.\n\nExact constraints:\n- R1: seats ≤ 3.\n- R2: seats ≥ 4.\n\nScope intersection: Both rules apply to all basic plans, so their scope fully intersects for that plan category.\n\nClassification: Direct unsatisfiable conflict over the shared scope. No value can satisfy both inclusive bounds simultaneously.\n\nPrecedence evidence: None supplied. Neither rule is identified as higher priority, newer, more specific, or an exception.\n\nResolution status: Unresolved. No winner is selected.\n\nUnresolved questions: Which rule should take precedence? Is there an intended plan subset, transition period, override, or exception? Should the valid boundary be revised or should scope differ between rules?\n\nAssumptions: “All basic plans” denotes the same population in both rules; `seats` is comparable using ordinary numeric ordering; “inclusive” applies to the stated boundary.\n\nLimits: This map does not infer business intent, select a rule, define behavior outside basic plans, or provide validation code."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

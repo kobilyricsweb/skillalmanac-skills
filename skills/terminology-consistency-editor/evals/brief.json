@@ -1,0 +1,10 @@
+{
+  "slug": "terminology-consistency-editor",
+  "category": "content",
+  "user_problem": "Multi-author content uses inconsistent names for the same concept, confusing readers.",
+  "unique_output": "A preferred-terms table and location-specific replacement list that preserves intentionally distinct meanings.",
+  "free_or_pack_candidate": "free",
+  "test_case": "Analyze a passage using three names for one feature and a similar term with a different meaning; change only true inconsistencies.",
+  "overlap_to_check": "Document-consistency checks and editorial style tools.",
+  "specific_guardrail": "Use an explicit supplied preferred glossary and context; do not change verbatim quotations, code identifiers or intentionally distinct meanings. Document-consistency-check owns factual cross-document conflicts."
+}

@@ -1,0 +1,17 @@
+{
+  "blockers": [],
+  "decision_summary": "The proposed exact excerpt and attribution are covered for the named homepage placement on November 21, 2026, within the supplied permission period.",
+  "fact_trace": [
+    {
+      "conclusion": "The excerpt is covered.",
+      "supplied_evidence": "Permission expressly covers exact excerpts, and the intended excerpt matches the supplied testimonial."
+    },
+    {
+      "conclusion": "The placement, attribution, and proposed use date are covered.",
+      "supplied_evidence": "Permission names the public product homepage, attribution as Mira Cole, North Studio, and a period from November 1, 2026 through April 30, 2027; the proposed use date is November 21, 2026."
+    }
+  ],
+  "limits": [
+    "This record does not assess legal validity, authenticity, typicality, truth, or performance."
+  ]
+}

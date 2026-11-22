@@ -1,0 +1,123 @@
+{
+  "fingerprint": "8774946767e1f1795158e9eb84c66aca6ef715b33ccab1367852ff1bd21ba2a8",
+  "job": "factory100_grade_4a92d1ce8b78",
+  "execution_job": "factory100_execute_90443213829f",
+  "baseline_job": "factory100_baseline_d46002e2c27a",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "peer-review-protocol__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The consecutive intervals run from 0:00 through 6:00 with no overlap or excess, and include checks, an author question, revision selection, disagreement handling, and completion."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The content checks address the paragraph’s choice, an accurate supplied park fact, and a sentence connecting that fact to the choice; reviewers are directed to identify or quote the relevant paragraph wording."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "The protocol includes the author question, revision choice, rubric-based disagreement process, and completion check, but it never explicitly separates reviewer observations from suggestions."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The timed sequence is continuous from minute 0 to minute 6 and allocates time to every required activity."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The three artifact checks are Clear choice, One accurate supplied fact, and Connection, each with a paragraph evidence location."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It explicitly calls for an observation and a suggestion, supplies an author question, includes author revision selection, uses the disputed rubric criterion for disagreement, and ends with a completion check."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "peer-review-protocol__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The protocol_status is provisional and missing_inputs explicitly says no rubric or assessment criteria were supplied."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The sequence runs from minute 0 through minute 4, and substantive feedback is confined to observable clarity and internal consistency in the submitted text."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It invents no machine-domain criteria or author traits; anonymity and roles are listed as unspecified rather than imposed as rules."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "peer-review-protocol__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The artifact checks are limited to naming Event Z, stating day 3, and confirming that rain caused the delay and the delay produced the shorter program."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The disagreement procedure explicitly rejects the quoted laziness and creativity additions as outside scope, and neither appears as an assessment criterion."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The sequence runs from 0 to 5 minutes, supplies evidence locations, includes rubric-based disagreement handling, and gives the author one revision-selection step."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "peer-review-protocol__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "peer-review-protocol__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "peer-review-protocol__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Check whether every supplied deployment-config key array has the required key names.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare config key lists for missing and unexpected names.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit configuration-key drift across prod and staging arrays.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find duplicate keys in supplied configuration records.",
+    "should_trigger": true
+  },
+  {
+    "query": "Validate required versus optional key declarations.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check duplicate or malformed names in supplied configuration records.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare declared keys without reading secret values.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check named configuration arrays against an approved key contract.",
+    "should_trigger": true
+  },
+  {
+    "query": "Detect missing required settings by key name only.",
+    "should_trigger": true
+  },
+  {
+    "query": "Report unexpected configuration keys in a static extract.",
+    "should_trigger": true
+  },
+  {
+    "query": "Read my .env files and print their secrets.",
+    "should_trigger": false
+  },
+  {
+    "query": "Check whether these environment values are valid at runtime.",
+    "should_trigger": false
+  },
+  {
+    "query": "Prove two services are semantically compatible.",
+    "should_trigger": false
+  },
+  {
+    "query": "Change the production Cloudflare settings.",
+    "should_trigger": false
+  },
+  {
+    "query": "Deploy the application after editing its config.",
+    "should_trigger": false
+  },
+  {
+    "query": "Generate secret values for missing keys.",
+    "should_trigger": false
+  },
+  {
+    "query": "Research best practices for environment variables.",
+    "should_trigger": false
+  },
+  {
+    "query": "Measure market demand for a configuration tool.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run a live health check against the API.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite the supplied configuration files.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Synthetic test spec: compare these labeled validation rules for overlap and contradiction.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: build a field-level map of conflicting limits and scopes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: identify where two validation requirements apply to the same user group.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: preserve both rules when no precedence clause resolves their conflict.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: classify compatible, contradictory, and undecidable validation rule intersections.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: analyze boundary and unit differences in the supplied validation notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: show which rule pairs require an explicit policy decision.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: compare global and scoped validation rules without choosing the stricter one.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: produce an evidence-linked validation conflict map by field.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: report unresolved exceptions and precedence questions in these rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: separate decisions, proposals, and assumptions in a project evidence ledger.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: map application permissions by role, resource, and operation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: resolve locale keys through declared fallback chains.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: compare documented API version contracts.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: model allowed and unspecified state transitions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: choose the stricter validation limit and implement it.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: write executable validation code for the rules.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: decide company policy when the notes conflict.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: test the validator against production traffic.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: infer precedence from which document appears newer.",
+    "should_trigger": false
+  }
+]

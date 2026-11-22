@@ -1,0 +1,30 @@
+{
+  "resolutions": [
+    {
+      "requested_locale": "pt-BR",
+      "key": "ok",
+      "status": "local",
+      "source_locale": "pt-BR",
+      "fallback_path": [
+        "pt-BR"
+      ],
+      "value": "Certo",
+      "notes": "The requested locale supplies the key."
+    },
+    {
+      "requested_locale": "pt-BR",
+      "key": "cancel",
+      "status": "inherited",
+      "source_locale": "pt",
+      "fallback_path": [
+        "pt-BR",
+        "pt"
+      ],
+      "value": "Cancelar",
+      "notes": "The value is found through the declared fallback edge."
+    }
+  ],
+  "missing_inputs": [],
+  "rule_conflicts": [],
+  "scope_note": "This map analyzes supplied inventories and rules; it does not modify resources or establish observed runtime behavior."
+}

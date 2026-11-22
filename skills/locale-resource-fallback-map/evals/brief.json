@@ -1,0 +1,11 @@
+{
+  "slug": "locale-resource-fallback-map",
+  "category": "software",
+  "user_problem": "Localized resource inventories hide missing keys and ambiguous fallback chains.",
+  "unique_output": "Per-locale key resolution map with supplied fallback path, missing keys and cycle/ambiguity questions; no application changes.",
+  "required_input": "Locale key inventories, explicit fallback chains and terminal missing-key policy.",
+  "critical_rule": "Follow only supplied fallback edges; missing chain or conflicting rules is unknown, not permission to use arbitrary English text.",
+  "nearest_existing_and_difference": "configuration-key-drift-check validates config names; this resolves locale resource keys through explicitly declared fallback chains.",
+  "tier": "free",
+  "acceptance_scenario": "en has title; fr has none and fallback en; es has none with no chain. title resolves from en for fr, while es remains unresolved."
+}

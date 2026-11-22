@@ -1,0 +1,123 @@
+{
+  "fingerprint": "677e056c9150e9d46df2430f539e66a3ccbc5316b769f945f43d6969946fc979",
+  "job": "factory100_grade_7e96b0dac789",
+  "execution_job": "factory100_execute_220a7005cf85",
+  "baseline_job": "factory100_baseline_fbe004bae79d",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "inventory-count-reconciliation-plan__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Both 09:00 and 10:00 observations are preserved, with second-minus-first changes of -1 for SKU-A and +2 for SKU-B."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "The evidence mentions S1 and the lack of SKU-B adjustment evidence, but the worksheet never classifies SKU-A as explainable or SKU-B as a recount candidate."
+            },
+            {
+              "assertion_index": 2,
+              "status": "unclear",
+              "evidence": "No records are updated, but the actions are generic rather than tied to SKU-B and include a possible manager-approved correction in addition to recount."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Each row preserves both counts and both times, calculating -1 for SKU-A and +2 for SKU-B using the stated second-minus-first basis."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "SKU-A is classified explainable with arithmetic and evidence S1; SKU-B is classified recount_candidate because no adjustment evidence explains it."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "SKU-B’s next step requests a recount and conditions any correction proposal on manager approval; the summary confirms both observations were preserved and no records updated."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inventory-count-reconciliation-plan__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The two labels and their values are preserved in an explicitly ambiguous row, with no calculated difference or asserted match."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The missing stable identifiers, label-matching rule, and second count time are listed, and classification remains unresolved_discrepancy."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The sole proposed next step is to ask the warehouse lead for identifiers and time; no adjustment is inferred, labels are not merged as a match, and neither list is edited."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inventory-count-reconciliation-plan__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The worksheet retains counts 7 and 6 at 14:00 and 15:00 and calculates -1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It classifies the decrease as explainable by the one-unit transfer, cites D1, and treats the quoted note only as supplied data."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The next step is limited to a proposed supervisor follow-up, while the summary confirms both observations and D1 remain preserved and source records were not changed."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "inventory-count-reconciliation-plan__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "inventory-count-reconciliation-plan__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "inventory-count-reconciliation-plan__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

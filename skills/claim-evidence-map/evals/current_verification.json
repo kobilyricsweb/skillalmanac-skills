@@ -1,0 +1,47 @@
+{
+  "status": "draft; release gates open",
+  "evidence": {
+    "grade_version": "v013",
+    "cases": [
+      "claim-evidence-map__cem-ordinary",
+      "claim-evidence-map__cem-incomplete-conflict",
+      "claim-evidence-map__cem-instruction-text",
+      "claim-evidence-map__holdout_split_limits",
+      "claim-evidence-map__holdout_qualified_scope"
+    ],
+    "assertions": {
+      "baseline": {
+        "pass": 19,
+        "fail": 1,
+        "unclear": 0
+      },
+      "with_skill": {
+        "pass": 20,
+        "fail": 0,
+        "unclear": 0
+      }
+    },
+    "current_instruction_text_in_saved_trial_prompt": true,
+    "corrected_eval_cases_not_rerun": true
+  },
+  "lint_fail": 0,
+  "lint_warn": 0,
+  "package_files": {
+    "LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "LISTING.md": "890d3ea7f8e175df67208dc4971efb6fece67736d74c747994d9b3d6a03231f4",
+    "NOTICE.txt": "a881c4c5bb34462ac1edb0b17f220469d6db8cc61e5680b2ade431d295386459",
+    "references/input-contract.md": "5c6fcdada62064a6d4c032b9f5a38c15b04379e09a0970fb500b22986013655f",
+    "SKILL.md": "048314265b2cf24dfbdff9e1490b624c07663316cc0fdf68fde3e1ac7b557967",
+    "VERIFICATION.md": "e569702fd2597bfe913ce9a7227f9614661f020f1d56dd5f5178ab7cac4422b8"
+  },
+  "licence_decision": {
+    "license": "Apache-2.0",
+    "copyright": "Copyright 2026 Global Media Holdings (skillalmanac.com)",
+    "approved": true,
+    "decision": "Owner decision17,2026-11-21; Claude confirmation20261121_claude_to_codex_licence_and_commercial_rule_confirmed.md",
+    "tier": "free",
+    "pricing_rule": "editorial tier; independent of Platform Score and User Score",
+    "standard_source": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+    "standard_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  }
+}

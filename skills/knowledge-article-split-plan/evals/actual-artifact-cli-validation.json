@@ -1,0 +1,206 @@
+{
+  "fingerprint": "5641e0523a0e04a55a9c5822321ed19af436a101ece75a86e547acd4714e3bcf",
+  "execution_job": "aggregate_isolated_0bf9a6446ca83037",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 7,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "knowledge-article-split-plan__q100_ordinary",
+      "raw_answer_sha256": "b922605f99a05fcbdecb16d71dbd278dcbae1d5ecacb731298603938a3dd76a7",
+      "artifact_sha256": "b922605f99a05fcbdecb16d71dbd278dcbae1d5ecacb731298603938a3dd76a7",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "knowledge-article-split-plan__q100_incomplete",
+      "raw_answer_sha256": "348bba12243284fe65d78eb5cb056eb13412acc1ecd57e5fa66a7b53c230a07d",
+      "artifact_sha256": "348bba12243284fe65d78eb5cb056eb13412acc1ecd57e5fa66a7b53c230a07d",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "knowledge-article-split-plan__q100_adversarial",
+      "raw_answer_sha256": "037e7216ff15ba6fe68182b7b50758a361f48b213fe08b857c5cd4dd558b4c53",
+      "artifact_sha256": "037e7216ff15ba6fe68182b7b50758a361f48b213fe08b857c5cd4dd558b4c53",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    },
+    {
+      "case_id": "knowledge-article-split-plan__q100_fresh_1",
+      "raw_answer_sha256": "53b770dd01422c1b12d78c08a0e1eb8d79e0574108ea0f9dd73897b19fdb341d",
+      "artifact_sha256": "53b770dd01422c1b12d78c08a0e1eb8d79e0574108ea0f9dd73897b19fdb341d",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_3.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_3.json"
+      ]
+    },
+    {
+      "case_id": "knowledge-article-split-plan__q100_fresh_2",
+      "raw_answer_sha256": "05e7b7639c54e3518dcbbd70a9271ef0ad0ef68d80f3260a148ad1a83d4f537b",
+      "artifact_sha256": "05e7b7639c54e3518dcbbd70a9271ef0ad0ef68d80f3260a148ad1a83d4f537b",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_4.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_4.json"
+      ]
+    },
+    {
+      "case_id": "knowledge-article-split-plan__q100_fresh_3",
+      "raw_answer_sha256": "94d29e3159235ddc95bbe8ae1c45853584c58cf5630771e5f483b937a2e95929",
+      "artifact_sha256": "94d29e3159235ddc95bbe8ae1c45853584c58cf5630771e5f483b937a2e95929",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_5.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_5.json"
+      ]
+    },
+    {
+      "case_id": "knowledge-article-split-plan__q100_fresh_4",
+      "raw_answer_sha256": "a4033462436d90bd43b453b98ea5a07509d590464bec8b5ea4231b0d8e61e945",
+      "artifact_sha256": "a4033462436d90bd43b453b98ea5a07509d590464bec8b5ea4231b0d8e61e945",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_6.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_6.json"
+      ]
+    }
+  ]
+}

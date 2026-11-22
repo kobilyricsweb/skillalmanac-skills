@@ -1,0 +1,11 @@
+{
+  "slug": "serialization-roundtrip-casebook",
+  "category": "software",
+  "user_problem": "A serialization contract needs examples that expose normalization, omission, and information-loss boundaries offline.",
+  "unique_output": "A casebook pairing source values, serialized forms, reconstructed values, expected equality, and ambiguity notes.",
+  "required_input": "Type rules, serialization format, omission defaults, normalization rules, and representative synthetic values.",
+  "critical_rule": "Use only documented transformations and distinguish semantic equality from byte-for-byte equality.",
+  "nearest_existing_and_difference": "Nearest is cli-help-example-designer; this creates data roundtrip cases rather than command-line usage examples.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input says missing nickname is omitted, empty nickname is preserved, and dates normalize to UTC. Output includes separate missing and empty cases plus 2026-01-01T02:00+02:00 reconstructing as 2026-01-01T00:00Z semantically equal."
+}

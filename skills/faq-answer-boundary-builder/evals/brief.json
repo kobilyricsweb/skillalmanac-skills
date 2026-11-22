@@ -1,0 +1,11 @@
+{
+  "slug": "faq-answer-boundary-builder",
+  "category": "content",
+  "user_problem": "FAQ answers need to be useful while staying inside supplied policy, product, and exception boundaries.",
+  "unique_output": "A set of answer frames with direct response, supported detail, exception, unknown case, and escalation wording.",
+  "required_input": "Questions, approved facts, policy clauses, exceptions, prohibited promises, and named escalation destination.",
+  "critical_rule": "Never fill policy gaps with common practice; unknown cases must be stated and routed using supplied instructions.",
+  "nearest_existing_and_difference": "Nearest is customer-support-replies; this builds reusable bounded FAQ entries rather than responding to individual customers.",
+  "tier": "free",
+  "acceptance_scenario": "Input says returns allowed within 30 days for unused goods; opened software excluded; damaged-item rule absent; contact is Support Desk. Output answers the standard and software cases and routes damaged items without inventing eligibility."
+}

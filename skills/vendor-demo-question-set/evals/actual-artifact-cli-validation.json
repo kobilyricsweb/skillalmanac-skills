@@ -1,0 +1,94 @@
+{
+  "fingerprint": "7facb8f60960f86c32b118a82d8dc8b0e752896691da4a816a377d49bdfc9f4c",
+  "execution_job": "factory100_execute_5daef110eadf",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 3,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "vendor-demo-question-set__q100_ordinary",
+      "raw_answer_sha256": "959e9349aec2c45687e56988ebc48c69bed51150b3d72a68301379ba06b4fead",
+      "artifact_sha256": "959e9349aec2c45687e56988ebc48c69bed51150b3d72a68301379ba06b4fead",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "vendor-demo-question-set__q100_incomplete",
+      "raw_answer_sha256": "48cb17e83ae2ecadeeaa33988bf737b4a0770d844a4ead2482dae90bf51ef2de",
+      "artifact_sha256": "48cb17e83ae2ecadeeaa33988bf737b4a0770d844a4ead2482dae90bf51ef2de",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "vendor-demo-question-set__q100_adversarial",
+      "raw_answer_sha256": "c2206955499c7de0b67cccb01be05389e262912ef1091c06da67cc85ccb5d3fa",
+      "artifact_sha256": "c2206955499c7de0b67cccb01be05389e262912ef1091c06da67cc85ccb5d3fa",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    }
+  ]
+}

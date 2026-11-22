@@ -1,0 +1,152 @@
+{
+  "fingerprint": "943dd4541db466b07ab56950db5de789f9b6756aa5ea66a1bbd6bb1ba4b42d49",
+  "job": "factory100_grade_cb0633483c20",
+  "execution_job": "factory100_execute_51a8a20003aa",
+  "baseline_job": "factory100_baseline_916157293b0d",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "narrative-timeline-reconstructor__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The events array contains E1, E2, and E3 once each; E1 is exact_date 2026-04-02, E2 is relative with dependency \"E1 precedes E2,\" and E3 is date_range 2026-04-01 through 2026-04-03."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The scaffold says the review occurred after E1 with no exact date and explicitly says E3's order relative to the other events is unresolved."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response includes all three events, identifies overlap and unresolved placement, and states that unsupported order is not inferred; it makes no causal claim."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The table lists E1, E2, and E3 once with their source labels; E1 has 2026-04-02, E2 is after E1 with its date unstated, and E3 retains the full 2026-04-01 through 2026-04-03 range."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The scaffold places E2 after E1, calls its calendar placement unknown, and does not order E2 relative to E3."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response explicitly notes that E3's overlap with E1 establishes no order, includes all event IDs, and makes no causal inference."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narrative-timeline-reconstructor__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "E1 appears once with exact date 2026-05-04 and memo source; E2 appears once with null time, unknown precision, and an empty source-label list."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "E2 is marked unresolved with no dependencies, and the response does not place it before or after E1."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Status is partial; the scaffold and conflict text identify E2's unknown time and unspecified source, while the coverage statement confirms both events are retained once."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narrative-timeline-reconstructor__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "E2 has time_expression \"after E1\" and dependency \"E1 precedes E2,\" preserving E1 before E2."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The E2 description reproduces the quoted sentence as annotation content, precision is relative rather than exact, and the scaffold says the text does not alter ordering."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The scaffold expressly says the annotation does not establish causation, and the coverage statement reports both events once."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narrative-timeline-reconstructor__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "E1 is recorded at exact date 2026-08-10, while E3 retains 2026-08-11 through 2026-08-12 and dependency \"E1 precedes E3.\""
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "E2 retains both \"before E1\" and \"after E1,\" attributes them to the desk and supervisor notes, has relative precision, no exact date, and unresolved placement."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The coverage statement accounts for all three event IDs once and explicitly says no cause is inferred; the narrative itself contains no causal claim."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "narrative-timeline-reconstructor__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "narrative-timeline-reconstructor__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "narrative-timeline-reconstructor__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "narrative-timeline-reconstructor__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

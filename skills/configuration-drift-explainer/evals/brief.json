@@ -1,0 +1,10 @@
+{
+  "slug": "configuration-drift-explainer",
+  "category": "development",
+  "user_problem": "Teams can see configuration differences but struggle to explain their likely operational effects.",
+  "unique_output": "An annotated diff grouping supplied changes by behavior, deployment impact, reversibility, and unknowns.",
+  "free_or_pack_candidate": "pack_candidate",
+  "test_case": "Compare two small configuration snapshots and identify an added flag, changed timeout, removed key, and unresolved effect.",
+  "overlap_to_check": "Migration, release, and general code-review skills.",
+  "specific_guardrail": "Only user-supplied redacted before/after values and behavior notes. Separate observed diff from documented consequences; no reading .env, causal inference, secrets or live inspection. configuration-key-drift-check owns required-key validation."
+}

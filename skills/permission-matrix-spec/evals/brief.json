@@ -1,0 +1,11 @@
+{
+  "slug": "permission-matrix-spec",
+  "category": "software",
+  "user_problem": "Role notes describe capabilities inconsistently, leaving unclear which operations are allowed under which conditions.",
+  "unique_output": "A resource-operation matrix with allow, deny, conditional, unspecified, and conflict cells plus cited conditions.",
+  "required_input": "Roles, resources, operations, permission statements, exceptions, and source labels supplied by the user.",
+  "critical_rule": "Absence of an allow statement means unspecified, not denied, unless a supplied default-deny rule applies.",
+  "nearest_existing_and_difference": "Nearest is approval-path-mapper; this specifies application permissions rather than sequencing organizational approvals.",
+  "tier": "free",
+  "acceptance_scenario": "Input says Editors may update articles, Guests may view published articles, and default deny applies. Output allows Editor/update/article, conditionally allows Guest/view/article when published, and denies unmentioned operations under the stated default."
+}

@@ -1,0 +1,13 @@
+{
+  "fingerprint": "25629b9a6827a6e5456365284fa6cd19a604e2f838b7b9ac84d7fa115a4cf5a3",
+  "job": "factory100_baseline_b40a8387a71b",
+  "results": [
+    {
+      "id": "requirement-to-section-coverage-map__q100_ordinary",
+      "answer": "{\"coverage_matrix\":[{\"requirement\":\"R1\",\"status\":\"Covered\",\"section\":\"S1\",\"evidence\":\"Backups run daily and the Operations team owns the process.\",\"reason\":\"S1 states both required frequency and owner; daily is equivalent to each day.\"},{\"requirement\":\"R2\",\"status\":\"Not covered\",\"section\":null,\"evidence\":null,\"reason\":\"S1 mentions CSV export only in S2, and CSV is not equivalent to PDF.\"}],\"verification_report\":\"R1 is fully supported by S1. R2 has no supporting section in the supplied document. No new content or document changes are proposed.\"}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

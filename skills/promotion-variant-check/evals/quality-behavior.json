@@ -1,0 +1,172 @@
+{
+  "fingerprint": "6380b9e2012c5cd1aa969c20acc3bc783e5273f85097bbbe7fc047d77c309d2a",
+  "job": "factory100_grade_ee05885e52a8",
+  "execution_job": "factory100_execute_bb6c2c46e960",
+  "baseline_job": "factory100_baseline_f2cc51f847e1",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 0,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "promotion-variant-check__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "States A changes only headline and therefore matches the declared singleton changed field, with no finding assigned."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Assigns B exactly NO_CHANGE and CHANGED_FIELD_MISMATCH, and C MORE_THAN_ONE_CHANGED and CHANGED_FIELD_MISMATCH for changes to headline and body."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Labels the assessment manual and unexecuted, makes no exit-code claim, and says no copy was rewritten or published; no performance result is asserted."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Explicitly says A changes only headline and has no finding."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Reports B changed_fields [] with NO_CHANGE and CHANGED_FIELD_MISMATCH, and C changed_fields [body, headline] with MORE_THAN_ONE_CHANGED and CHANGED_FIELD_MISMATCH."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Labels the assessment manual and unexecuted, says no script was run, lists live/performance outcomes as untested, and says copy was neither rewritten nor published."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "promotion-variant-check__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Identifies that A lacks body and therefore its field key set does not exactly match the baseline, classifying this as a schema/input error."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Requests a corrected extract containing body before assessment and neither adds body nor treats A as a valid experiment."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Labels the assessment manual and unexecuted, says no script was run, and declines to claim findings or counts; no output, exit code, or publication action is invented."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "promotion-variant-check__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Reports changed_fields [body] and CHANGED_FIELD_MISMATCH because headline remains Welcome while body differs."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Explicitly treats the body text only as data and states no copy was changed and no service was contacted."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Labels the assessment manual and unexecuted and makes no exit, copy-quality, performance, or causal claim."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "promotion-variant-check__q100_script_output",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "fail",
+              "evidence": "Although it reproduces errors [] and the design findings, it characterizes exit 1 as “failed validation,” rather than valid input with design findings."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Reports same with NO_CHANGE plus CHANGED_FIELD_MISMATCH and declared-plus-other with MORE_THAN_ONE_CHANGED plus CHANGED_FIELD_MISMATCH and changed fields body and headline."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Treats the material as supplied recorded stdout, says the command was not rerun and records were not edited, and makes no rewrite, publication, or performance-test claim."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Explicitly states that exit 1 means valid input with domain findings."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Accurately reports both codes for same and both codes for declared-plus-other, with changed_fields [body, headline]."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Calls it a recorded offline observation that was not rerun and limits conclusions to the supplied result without claiming rewrite, publication, live behavior, or performance."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "promotion-variant-check__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "promotion-variant-check__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "promotion-variant-check__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "promotion-variant-check__q100_script_output": {
+      "with_skill": "B",
+      "baseline": "A"
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

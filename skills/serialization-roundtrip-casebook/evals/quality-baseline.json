@@ -1,0 +1,13 @@
+{
+  "fingerprint": "0224edfecf7b739b02a7fb2285c181e8ad24a4801a19b6134f54bbd675de380d",
+  "job": "factory100_baseline_ba1585b9d322",
+  "results": [
+    {
+      "id": "serialization-roundtrip-casebook__q100_ordinary",
+      "answer": "Casebook\n\nType: record with required string field `id` and optional string field `note`. Format: UTF-8 JSON text. Serialization order: `id`, then `note`.\n\nCase A: Source `{id:\"r1\", note absent}` serializes to `{\"id\":\"r1\"}`. Reconstruction yields `id:\"r1\"` with `note` absent. Semantic equality is preserved. Byte equality is applicable only to the exact supplied text and is preserved for this case.\n\nCase B: Source `{id:\"r2\", note:\"\"}` serializes to `{\"id\":\"r2\",\"note\":\"\"}`. Reconstruction yields `id:\"r2\"` with `note` present and equal to the empty string. Semantic equality is preserved. Byte equality is applicable only to the exact supplied text and is preserved for this case.\n\nInformation-loss assessment: None is specified for these cases. Presence of `note` is distinguishable: omission represents absence, while `\"note\":\"\"` represents a present empty string.\n\nAmbiguity notes: No additional ambiguity is supplied. Byte equality is not a general claim beyond the exact serialized texts given.\n\nCoverage: Required-field handling, optional-field omission, present-empty optional value, field order, UTF-8 JSON representation, reconstruction, semantic equality, and scoped byte equality.\n\nVerification statement: This is a rule-based offline assessment of the supplied cases; no serializer was run and no implementation changes are proposed."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

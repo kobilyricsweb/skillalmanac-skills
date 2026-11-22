@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Map each asset’s CTA against audience-stage rules and destination descriptions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find CTA progression mismatches in this supplied asset set.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check whether each current CTA matches the approved wording for its audience state.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit whether the destination description supports the CTA promise.",
+    "should_trigger": true
+  },
+  {
+    "query": "Recommend an approved CTA when an awareness asset asks users to start a trial.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a fact-based CTA consistency table without relying on destination titles.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag prohibited transitions between audience stages and destinations.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show where the supplied CTA path breaks and why.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review missing destination descriptions as unresolved rather than assuming fit.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate stage mismatch from destination mismatch in this CTA audit.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map where one message should be reused across several assets.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a case-study interview kit for the marketing team.",
+    "should_trigger": false
+  },
+  {
+    "query": "Refresh the existing landing page copy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare prewritten CTA variants for tone and conversion.",
+    "should_trigger": false
+  },
+  {
+    "query": "Change the website links and publish the corrected assets.",
+    "should_trigger": false
+  },
+  {
+    "query": "Predict which CTA will convert best.",
+    "should_trigger": false
+  },
+  {
+    "query": "Infer what a destination does from its page title alone.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design an overall campaign funnel and channel strategy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write referral invitations for the campaign.",
+    "should_trigger": false
+  },
+  {
+    "query": "Approve a new audience-stage rule for the product team.",
+    "should_trigger": false
+  }
+]

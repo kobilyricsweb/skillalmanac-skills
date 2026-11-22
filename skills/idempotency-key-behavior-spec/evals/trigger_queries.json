@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Build an idempotency behavior matrix from these supplied API rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Specify exact replay, payload mismatch, concurrency, and expiry cases.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark undocumented idempotency matrix cells as contract questions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map key scope and retention to duplicate-request outcomes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review whether this idempotency documentation covers changed payloads.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create offline cases for first requests and exact replays.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which duplicate behaviors are specified versus missing.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve conflicting idempotency rules without choosing silently.",
+    "should_trigger": true
+  },
+  {
+    "query": "Represent response replay and payload comparison rules in a table.",
+    "should_trigger": true
+  },
+  {
+    "query": "Assess documented idempotency semantics without sending requests.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit retry budgets and backoff limits.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review dependency upgrade exposure from release notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design cache invalidation scenarios for writes and reads.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review logs for prohibited diagnostic fields.",
+    "should_trigger": false
+  },
+  {
+    "query": "Prove payment retries cannot create duplicates in production.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose a live duplicate-charge incident.",
+    "should_trigger": false
+  },
+  {
+    "query": "Explain configuration drift between environments.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create serialization examples for omitted and normalized values.",
+    "should_trigger": false
+  },
+  {
+    "query": "Plan retirement of feature flags.",
+    "should_trigger": false
+  },
+  {
+    "query": "Authorize changing the API's retry policy.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "synthetic": true,
+  "input": "Roles: editor and viewer. Resource: page. Operation: read. P1 from Policy A says editors may read pages. Explicit default rule D1 from Policy A denies unmentioned combinations. Conditions and exceptions: none.",
+  "expected_artifact": {
+    "matrix_status": "complete",
+    "missing_dimensions": [],
+    "cells": [
+      {
+        "role": "editor",
+        "resource": "page",
+        "operation": "read",
+        "status": "allow",
+        "condition": null,
+        "evidence": [
+          "P1, Policy A"
+        ]
+      },
+      {
+        "role": "viewer",
+        "resource": "page",
+        "operation": "read",
+        "status": "deny",
+        "condition": null,
+        "evidence": [
+          "D1, Policy A: default deny for unmentioned combinations"
+        ]
+      }
+    ],
+    "unresolved_conflicts": [],
+    "assumptions": [],
+    "scope_note": "This is a documentary permission model; it does not alter access or establish runtime authorization behavior."
+  },
+  "status": "specification; not an executed test"
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Synthetic test spec: map how each locale resolves the supplied resource keys.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: trace explicit fallback chains for missing locale keys.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: show which locale supplies each resolved translation key.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: identify unresolved keys when a locale has no declared fallback.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: detect cycles and conflicting rules in these locale fallback declarations.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: distinguish local, inherited, missing, and ambiguous resource resolutions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: create a locale-key resolution table without inventing English fallbacks.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: analyze the supplied locale inventories and terminal missing-key policy.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: report the exact fallback path for each requested locale and key.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: preserve an empty supplied value separately from an absent key.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: validate whether configuration key names drift across environments.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: compare two API specifications for compatibility.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: create a state-machine transition table from behavior notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: map conflicting validation requirements by field.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: build a role-resource-operation permission matrix.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: translate missing strings into French and Spanish.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: edit the localization files and commit the changes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: choose a fallback language based on user preference alone.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: test locale resolution in the running application.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: infer that every missing key should use English.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["context", "source_items", "core_questions", "fact_confirmations", "permission_prompts", "evidence_requests", "unresolved", "timed_agenda"],
+  "properties": {
+    "context": {"type": "string"},
+    "source_items": {"type": "array", "items": {"type": "object", "required": ["item", "classification", "status"], "properties": {"item": {"type": "string"}, "classification": {"type": "string", "enum": ["customer-statement", "company-assumption", "supplied-record", "unknown"]}, "status": {"type": "string", "enum": ["supplied", "unverified", "conflicting", "unknown"]}}, "additionalProperties": false}},
+    "core_questions": {"type": "array", "items": {"type": "string"}},
+    "fact_confirmations": {"type": "array", "items": {"type": "string"}},
+    "permission_prompts": {"type": "array", "items": {"type": "string"}},
+    "evidence_requests": {"type": "array", "items": {"type": "object", "required": ["request", "artifact_type"], "properties": {"request": {"type": "string"}, "artifact_type": {"type": "string", "enum": ["customer-statement", "record", "quote-candidate", "follow-up-request"]}}, "additionalProperties": false}},
+    "unresolved": {"type": "array", "items": {"type": "string"}},
+    "timed_agenda": {"type": "object", "required": ["status", "time_cap", "allocations", "optional_outside_core"], "properties": {"status": {"type": "string", "enum": ["not_applicable", "planning_estimate"]}, "time_cap": {"type": ["number", "string"]}, "allocations": {"type": "array", "items": {"type": "object", "required": ["segment", "minutes", "purpose"], "properties": {"segment": {"type": "string"}, "minutes": {"type": "number"}, "purpose": {"type": "string"}}, "additionalProperties": false}}, "optional_outside_core": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": false}
+  }
+}

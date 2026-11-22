@@ -1,0 +1,94 @@
+{
+  "fingerprint": "a89850cf88138554082a189e4253b4db4609bbf3610af4159eaf5fc409a866ea",
+  "execution_job": "factory100_execute_82d63a34fc5b",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 3,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "workspace-retention-label-map__q100_ordinary",
+      "raw_answer_sha256": "1df86f4d13e913d034417ca707ecf3aa81587135b43eb5261f50b42671d01bbd",
+      "artifact_sha256": "1df86f4d13e913d034417ca707ecf3aa81587135b43eb5261f50b42671d01bbd",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "workspace-retention-label-map__q100_incomplete",
+      "raw_answer_sha256": "6c00746b84c7347f32fe30581b137022e4bcd01e96122ecc9db440db1e1d1e96",
+      "artifact_sha256": "6c00746b84c7347f32fe30581b137022e4bcd01e96122ecc9db440db1e1d1e96",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "workspace-retention-label-map__q100_adversarial",
+      "raw_answer_sha256": "3f3aa74fefb9bdf72527d48c0b352aa5ae38678d3b94902189d550457d0b4384",
+      "artifact_sha256": "3f3aa74fefb9bdf72527d48c0b352aa5ae38678d3b94902189d550457d0b4384",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    }
+  ]
+}

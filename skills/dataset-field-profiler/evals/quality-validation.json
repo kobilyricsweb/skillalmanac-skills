@@ -1,0 +1,53 @@
+{
+  "fingerprint": "07b42547362ceab69bfc3e2bbba285948c438cbf646305b3d74966571e4a4949",
+  "passed": true,
+  "lint": {
+    "skill": "dataset-field-profiler",
+    "fail": 0,
+    "warn": 0,
+    "items": [
+      {
+        "level": "PASS",
+        "code": "frontmatter-keys",
+        "message": "only open-spec keys used"
+      },
+      {
+        "level": "PASS",
+        "code": "name-format",
+        "message": "name 'dataset-field-profiler' is valid"
+      },
+      {
+        "level": "PASS",
+        "code": "description-length",
+        "message": "description is 238 chars"
+      },
+      {
+        "level": "PASS",
+        "code": "body-lines",
+        "message": "SKILL.md body has 34 lines"
+      },
+      {
+        "level": "PASS",
+        "code": "body-tokens",
+        "message": "body is about 620 tokens by chars/4"
+      },
+      {
+        "level": "PASS",
+        "code": "package-size",
+        "message": "package is 22941 bytes in 5 files"
+      }
+    ]
+  },
+  "quick_exit": 0,
+  "quick_stdout": "Skill is valid!\n",
+  "quick_stderr": "",
+  "schema_error": null,
+  "fixture_exit": 0,
+  "fixture_stdout": "{\"method\": \"retained observed-output regression replay; missing-file path excluded; not independent truth\", \"passed\": true, \"fixtures\": [{\"id\": \"good_mixed_fields\", \"passed\": true, \"exit\": 0, \"actual\": {\"errors\": [], \"field_count\": 5, \"fields\": [{\"array\": 0, \"boolean\": 0, \"integer\": 0, \"missing\": 1, \"name\": \"extra\", \"null\": 0, \"number\": 0, \"object\": 1, \"present\": 1, \"string\": 0}, {\"array\": 0, \"boolean\": 1, \"integer\": 0, \"missing\": 1, \"name\": \"live\", \"null\": 0, \"number\": 0, \"object\": 0, \"present\": 1, \"string\": 0}, {\"array\": 1, \"boolean\": 0, \"integer\": 0, \"missing\": 1, \"name\": \"tags\", \"null\": 0, \"number\": 0, \"object\": 0, \"present\": 1, \"string\": 0}, {\"array\": 0, \"boolean\": 0, \"integer\": 0, \"missing\": 0, \"name\": \"title\", \"null\": 1, \"number\": 0, \"object\": 0, \"present\": 2, \"string\": 1}, {\"array\": 0, \"boolean\": 0, \"integer\": 1, \"missing\": 0, \"name\": \"year\", \"null\": 0, \"number\": 1, \"object\": 0, \"present\": 2, \"string\": 0}], \"ok\": true, \"row_count\": 2}}, {\"id\": \"heterogeneous_observation\", \"passed\": true, \"exit\": 0, \"actual\": {\"errors\": [], \"field_count\": 1, \"fields\": [{\"array\": 0, \"boolean\": 1, \"integer\": 0, \"missing\": 0, \"name\": \"status\", \"null\": 1, \"number\": 0, \"object\": 1, \"present\": 4, \"string\": 1}], \"ok\": true, \"row_count\": 4}}, {\"id\": \"malformed_non_object_record\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"every record must be an object\", \"errors\": []}}, {\"id\": \"empty_records_boundary\", \"passed\": true, \"exit\": 0, \"actual\": {\"errors\": [], \"field_count\": 0, \"fields\": [], \"ok\": true, \"row_count\": 0}}, {\"id\": \"numeric_token_bound\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"number exceeds coefficient-digit or exponent limit (1000)\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"nested_numeric_token_bound\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"number exceeds coefficient-digit or exponent limit (1000)\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"value_types_and_missing\", \"passed\": true, \"exit\": 0, \"actual\": {\"errors\": [], \"field_count\": 1, \"fields\": [{\"array\": 0, \"boolean\": 1, \"integer\": 2, \"missing\": 1, \"name\": \"x\", \"null\": 1, \"number\": 1, \"object\": 0, \"present\": 5, \"string\": 0}], \"ok\": true, \"row_count\": 6}}, {\"id\": \"nested_values_not_exposed\", \"passed\": true, \"exit\": 0, \"actual\": {\"errors\": [], \"field_count\": 1, \"fields\": [{\"array\": 1, \"boolean\": 0, \"integer\": 0, \"missing\": 0, \"name\": \"x\", \"null\": 0, \"number\": 0, \"object\": 1, \"present\": 2, \"string\": 0}], \"ok\": true, \"row_count\": 2}}, {\"id\": \"duplicate_json_key\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"duplicate JSON object key\", \"errors\": []}}, {\"id\": \"nonfinite\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"non-finite JSON number\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"truncated\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"Expecting value: line 1 column 6 (char 5)\", \"errors\": []}}, {\"id\": \"missing_file\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"[WinError 2] The system cannot find the file specified: '<local-path>'\", \"errors\": []}}, {\"id\": \"peer_cli_integration\", \"passed\": true, \"exit\": 0, \"actual\": {\"errors\": [], \"field_count\": 2, \"fields\": [{\"array\": 0, \"boolean\": 1, \"integer\": 1, \"missing\": 1, \"name\": \"n\", \"null\": 0, \"number\": 1, \"object\": 0, \"present\": 3, \"string\": 0}, {\"array\": 0, \"boolean\": 0, \"integer\": 0, \"missing\": 3, \"name\": \"tag\", \"null\": 1, \"number\": 0, \"object\": 0, \"present\": 1, \"string\": 0}], \"ok\": true, \"row_count\": 4}}]}\n",
+  "fixture_stderr": "",
+  "numeric_regressions": {
+    "exit": 0,
+    "stdout": "{\"method\": \"normative independent input/error and finite-Decimal domain assertions\", \"passed\": true, \"fixtures\": [{\"id\": \"extreme-exponent\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"invalid decimal number\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"finite-large\", \"passed\": true, \"exit\": 0, \"actual\": {\"errors\": [], \"field_count\": 1, \"fields\": [{\"array\": 0, \"boolean\": 0, \"integer\": 1, \"missing\": 0, \"name\": \"n\", \"null\": 0, \"number\": 0, \"object\": 0, \"present\": 1, \"string\": 0}], \"ok\": true, \"row_count\": 1}}, {\"id\": \"finite-negative-large\", \"passed\": true, \"exit\": 0, \"actual\": {\"errors\": [], \"field_count\": 1, \"fields\": [{\"array\": 0, \"boolean\": 0, \"integer\": 1, \"missing\": 0, \"name\": \"n\", \"null\": 0, \"number\": 0, \"object\": 0, \"present\": 1, \"string\": 0}], \"ok\": true, \"row_count\": 1}}, {\"id\": \"infinity\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"non-finite JSON number\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"integer5000\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"number exceeds coefficient-digit or exponent limit (1000)\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"nan\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"non-finite JSON number\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"negative-extreme-exponent\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"invalid decimal number\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"negative-infinity\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"non-finite JSON number\", \"errors\": [], \"code\": \"invalid_number\"}}]}\n",
+    "stderr": ""
+  }
+}

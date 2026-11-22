@@ -1,0 +1,10 @@
+{
+  "slug": "metric-definition-card",
+  "category": "data",
+  "user_problem": "Teams use the same metric name with inconsistent populations, time windows, and exclusions.",
+  "unique_output": "A metric card specifying formula, numerator, denominator, population, window, exclusions, freshness, and unresolved choices.",
+  "free_or_pack_candidate": "pack_candidate",
+  "test_case": "Turn an ambiguous activation-rate note into a card that exposes missing time-window and eligibility definitions.",
+  "overlap_to_check": "Weighted-rate audits, decision ledgers, and spreadsheet calculators.",
+  "specific_guardrail": "Define a supplied product/operational metric without inventing definitions. Preserve missing/zero denominator policy, timezone/window and unknown populations; no financial or causal recommendations."
+}

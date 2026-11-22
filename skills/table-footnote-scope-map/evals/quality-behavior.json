@@ -1,0 +1,123 @@
+{
+  "fingerprint": "be626a63018bdf923107ac60369a43af3729e8dde42b5825c64a654296e93166",
+  "job": "factory100_grade_4bd489650ba2",
+  "execution_job": "factory100_exec_medium_9a30c62606d7",
+  "baseline_job": "factory100_base_medium_97c4c0486474",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "table-footnote-scope-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The response records † in Email H2, preserves its business-days-only definition, and binds it to R1C1 and R2C1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It explicitly denies authorization for R1C2, R2C2, both row labels, other headings, and the table as a whole."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The supplied column-heading rule is distinguished from unsupported broader inheritance, and correctness of the Yes/No values is placed outside scope."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The scope map records H2's † marker, the exact definition reference, and affected cells R1C1 and R2C1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "No other cell or row label appears among affected_cell_ids, and broader scope is explicitly unauthorized."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The rationale relies only on the supplied column rule, while the boundary note refuses to verify Yes/No accuracy or infer broader meaning."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "table-footnote-scope-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The response records ? at R1C1 as orphaned because no definition for ? is supplied."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It records # and “manager approval required” as an unbound definition because no # placement appears."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Inheritance remains unresolved, no qualifier is transferred, and interpreting or validating access claims or applying the unplaced definition is outside scope."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "table-footnote-scope-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Both conflicting § definitions are preserved in definition_reference and the conflict leaves the qualifier meaning unresolved."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The authorized scope and affected cells are limited to R1C1. The response expressly says the separate quoted note does not override the legend or authorize R2C1 or table-wide scope."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "No delivery claim is marked verified; the boundary note rejects verification by the quoted note and authorizes no broader or operational conclusion."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "table-footnote-scope-map__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "table-footnote-scope-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "table-footnote-scope-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

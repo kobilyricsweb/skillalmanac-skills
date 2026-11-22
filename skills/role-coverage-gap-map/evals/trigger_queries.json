@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Synthetic test: partition a required responsibility window into covered and uncovered intervals.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: show a staffing gap between two supplied role availability periods.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: distinguish overlap from adjacent coverage using exact boundaries.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: flag a named backup whose availability is not supplied.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: preserve an unspecified time zone as an unresolved issue.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: assess coverage only where assignment and availability overlap.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: report conflicting assignments without choosing a winner.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: avoid substituting a similar role title without an explicit rule.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: produce a gap and conflict register for a process schedule.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: list decisions requiring authorized review without assigning staff.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: map who has authority to approve each process step.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: route an approval request through a decision hierarchy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: reconcile two inventory counts and preserve observations.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: bind template placeholders to source fields.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: design test cases for procedure branches.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: assign a nearby analyst as backup because the title is similar.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: infer that an employee is available outside the listed interval.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: edit the rota to close every staffing gap.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: decide which manager should receive approval authority.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: certify that the schedule meets labor-law requirements.",
+    "should_trigger": false
+  }
+]

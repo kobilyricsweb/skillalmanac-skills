@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Build an evidence-bound response grid for these buyer objections.",
+    "should_trigger": true
+  },
+  {
+    "query": "Pair each objection with a supported response, limitation, evidence ID, and next question.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which objections are fully answered, partially answered, or unsupported by the supplied facts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Draft seller responses without turning a median result into a guarantee.",
+    "should_trigger": true
+  },
+  {
+    "query": "Retain the integration limitation next to the setup-time response.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify prohibited assurances that would overstate the supplied evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Ask targeted follow-up questions for objections the evidence does not answer.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a traceable objection-to-fact grid from this approved evidence set.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check every response statement against its evidence ID and stated scope.",
+    "should_trigger": true
+  },
+  {
+    "query": "Summarize unresolved buyer concerns without dismissing them.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write a vendor-demo question set for evaluating competing vendors.",
+    "should_trigger": false
+  },
+  {
+    "query": "Match these messages to audience profiles and permitted CTAs.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a nurture sequence with state transitions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Make a tone constraint card from approved brand samples.",
+    "should_trigger": false
+  },
+  {
+    "query": "Adapt this approved claim for several channel formats.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find reusable message assets across our marketing channels.",
+    "should_trigger": false
+  },
+  {
+    "query": "Guarantee that the product will meet every buyer outcome.",
+    "should_trigger": false
+  },
+  {
+    "query": "Infer the buyer's hidden motivation from the objection.",
+    "should_trigger": false
+  },
+  {
+    "query": "Provide legal or investment advice about the objection.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent a market benchmark when our evidence is incomplete.",
+    "should_trigger": false
+  }
+]

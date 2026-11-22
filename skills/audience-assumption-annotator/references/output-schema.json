@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "annotations",
+    "unresolved",
+    "coverage"
+  ],
+  "properties": {
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "passage",
+          "location",
+          "assumption_type",
+          "evidence",
+          "status",
+          "consequence",
+          "bounded_clarification"
+        ],
+        "properties": {
+          "passage": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "assumption_type": {
+            "enum": [
+              "knowledge",
+              "access",
+              "motivation",
+              "context",
+              "explicit_prerequisite"
+            ]
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "mismatch",
+              "unresolved",
+              "conflict"
+            ]
+          },
+          "consequence": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "bounded_clarification": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "issue",
+          "missing_or_conflicting_input"
+        ],
+        "properties": {
+          "issue": {
+            "type": "string"
+          },
+          "missing_or_conflicting_input": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "required": [
+        "reviewed_locations",
+        "unavailable_inputs"
+      ],
+      "properties": {
+        "reviewed_locations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unavailable_inputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

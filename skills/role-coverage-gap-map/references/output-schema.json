@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "time_zone",
+    "intervals",
+    "gap_conflict_register",
+    "review_decisions"
+  ],
+  "properties": {
+    "time_zone": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "intervals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "responsibility",
+          "required_window",
+          "interval",
+          "assigned_role",
+          "availability",
+          "backup",
+          "coverage_status",
+          "overlap_or_gap",
+          "supporting_rule",
+          "unresolved_issue"
+        ],
+        "properties": {
+          "responsibility": {
+            "type": "string"
+          },
+          "required_window": {
+            "type": "string"
+          },
+          "interval": {
+            "type": "string"
+          },
+          "assigned_role": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "backup": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "coverage_status": {
+            "type": "string",
+            "enum": [
+              "covered",
+              "uncovered",
+              "overlap",
+              "unresolved"
+            ]
+          },
+          "overlap_or_gap": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "supporting_rule": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "unresolved_issue": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "gap_conflict_register": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_decisions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

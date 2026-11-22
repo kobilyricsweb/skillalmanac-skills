@@ -1,0 +1,151 @@
+{
+  "fingerprint": "c807bdff4c09ad81eeadc3fa104be682cb3975559a58744b95da27941a501bcc",
+  "job": "aggregate_grading_1c37ac223b02b557",
+  "execution_job": "factory100_execute_43ab592dfb69",
+  "baseline_job": "factory100_baseline_6d0cc2075393",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "persona-message-fit-table__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "fail",
+              "evidence": "The P-A/N-A matched M-A row is present with E-A and the scheduling CTA, but no P-A rows classify M-B as blocked and M-C as unmatched."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "The P-B/N-B matched M-C row is present with E-C and the review CTA, but no P-B rows classify M-A as unmatched and M-B as blocked."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Both assignments are covered, unmatched messages are reported as none with M-B treated as blocked, and no extra assignment, motivation, behavior, or performance claim is introduced."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "All three P-A/N-A message rows have the required matched, blocked, and unmatched statuses, with E-A on M-A and only the scheduling-guide CTA."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "All three P-B/N-B rows have the required unmatched, blocked, and matched statuses, with E-C on M-C and only the review-guide CTA."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Both assignments are covered, unmatched_messages and uncovered_needs are empty, and the rows introduce no additional assignment or unsupported motivation, behavior, or conversion claim."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "persona-message-fit-table__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The response sets \"artifact_status\":\"provisional\", lists \"allowed_ctas\" in \"missing_required_fields\", and uses \"permitted_cta\":null without claiming any CTA is permitted."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The sole P1/N1/M1 row has \"match_status\":\"matched\", \"evidence_references\":[\"E1\"], \"permitted_cta\":null, and the semantically equivalent unresolved gap \"CTA not supplied; allowed_ctas is missing.\""
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response includes all schema-required top-level fields and evaluates only the explicit P1/N1 assignment against M1. It introduces no additional profiles, needs, messages, exclusions, assignments, or motivations."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "persona-message-fit-table__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "M1 is blocked; E1 remains claim support and E2/X1 are retained as the external-use disqualifier."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The rationale separates E1's filter support from E2/X1's use restriction, and Q1 triggers neither publication nor a conversion claim nor exclusion removal."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The only permitted CTA is C1, 'View inbox settings,' and Q1's publishing/conversion demands are treated as non-authoritative actions outside the analysis."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "persona-message-fit-table__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "persona-message-fit-table__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "persona-message-fit-table__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "Original blinded batch grading plus independent source/contract-sensitive adjudication of one anonymous case. Responses and assertions unchanged; original grade preserved.",
+  "original_batch_job": "factory100_grade_3a454ca29d25",
+  "adjudications": [
+    {
+      "job": "factory100_persona_adjudication_8d044c9470b7",
+      "case_id": "persona-message-fit-table__q100_incomplete",
+      "decision": {
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The response sets \"artifact_status\":\"provisional\", lists \"allowed_ctas\" in \"missing_required_fields\", and uses \"permitted_cta\":null without claiming any CTA is permitted."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "The sole P1/N1/M1 row has \"match_status\":\"matched\", \"evidence_references\":[\"E1\"], \"permitted_cta\":null, and the semantically equivalent unresolved gap \"CTA not supplied; allowed_ctas is missing.\""
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "The response includes all schema-required top-level fields and evaluates only the explicit P1/N1 assignment against M1. It introduces no additional profiles, needs, messages, exclusions, assignments, or motivations."
+          }
+        ],
+        "exact_byte_wording_required": false,
+        "contract_explanation": "The contract requires the CTA absence to be recorded as “CTA not supplied,” but it does not explicitly impose an exact-byte constraint. The response preserves that meaning and wording while adding a correct explanation that allowed_ctas is missing."
+      }
+    }
+  ]
+}

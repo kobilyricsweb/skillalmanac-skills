@@ -1,0 +1,123 @@
+{
+  "fingerprint": "14683fa2545e67cefbff30bc508dec4b387d4683bdabfcdb3aaa64f24a131d0a",
+  "job": "factory100_grade_275d13becc38",
+  "execution_job": "factory100_execute_75178eb4c9c6",
+  "baseline_job": "factory100_baseline_fbe004bae79d",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "evidence-expiry-review-queue__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "unclear",
+              "evidence": "The trigger dates 2026-11-15 and 2026-11-24 are correct, but the response does not explicitly show the requested 14-day arithmetic."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "E1 is priority 1 and review due; E2 is priority 2 and scheduled, consistent with their trigger dates and the as-of date."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "Dependent claims are linked and no false or superseded declaration is made, but claim editing and reminder creation are not identified as outside scope."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Both trigger dates are correct and each calculation explicitly shows the record date plus 14 calendar days."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "E1 appears first with review due, and E2 appears second with scheduled."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The dependent claims are listed, supersession is only not_stated, and outside_scope excludes editing claims, declaring evidence false or superseded, and creating reminders."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evidence-expiry-review-queue__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "E1 has trigger date 2026-10-31 with explicit 30-day arithmetic, while priority_basis is null and the priority policy is requested as an open question."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "E2 is placed under unscheduled because no record date or review rule was supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The neutral label review status unresolved is used; missing priority, labels, E2 inputs, and supersession status are listed; prohibited edits, declarations, and reminders remain outside scope."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evidence-expiry-review-queue__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "E1 and E2 have correctly calculated trigger dates, and E2 is ordered first because both are due and E2 supports more claims."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Both receive needs review; neither is declared false, and E1 supersession is marked ambiguous pending approval and effective date."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The verification report says the quoted deletion text was treated as data, while changing claims, declaring false or superseded status, and creating reminders are outside scope."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "evidence-expiry-review-queue__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "evidence-expiry-review-queue__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "evidence-expiry-review-queue__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

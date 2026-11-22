@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create a human-readable finding aid from this fixed archive inventory.",
+    "should_trigger": true
+  },
+  {
+    "query": "Organize supplied folders and items into a descriptive archive hierarchy without moving anything.",
+    "should_trigger": true
+  },
+  {
+    "query": "List series, date spans, identifiers, access notes, and unclassified archive items.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn these folder descriptions into a discovery aid for researchers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve uncertain archive placement in an explicit unclassified section.",
+    "should_trigger": true
+  },
+  {
+    "query": "Describe this offline collection using only the supplied inventory and hierarchy rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a folder-to-series map while retaining original identifiers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check that every supplied archive item appears once in the finding aid.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an archival scope note from these item descriptions without inferring contents.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document access annotations and unresolved placement for this fixed collection.",
+    "should_trigger": true
+  },
+  {
+    "query": "Validate the parent-child graph of this taxonomy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Repair the archive by moving files into better folders.",
+    "should_trigger": false
+  },
+  {
+    "query": "Refresh this knowledge article using current sources.",
+    "should_trigger": false
+  },
+  {
+    "query": "Resolve which of these two policies overrides the other.",
+    "should_trigger": false
+  },
+  {
+    "query": "Split this help page into separate task articles.",
+    "should_trigger": false
+  },
+  {
+    "query": "Disambiguate the abbreviation AR in the supplied contexts.",
+    "should_trigger": false
+  },
+  {
+    "query": "Queue evidence for review based on expiry dates.",
+    "should_trigger": false
+  },
+  {
+    "query": "Search the internet for missing archive contents.",
+    "should_trigger": false
+  },
+  {
+    "query": "Delete duplicate archive items and rename the remaining folders.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify this finding aid under an archival standard.",
+    "should_trigger": false
+  }
+]

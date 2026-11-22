@@ -1,0 +1,24 @@
+{
+  "synthetic": true,
+  "input": "Before, section P1: ‘The pilot serves all branches.’ After, section P1: ‘The pilot serves the north branch.’ Rule R1: avoid claims broader than supplied evidence. Evidence E1: the pilot list names only the north branch. No protected text. The revision is approved.",
+  "expected_artifact": {
+    "entries": [
+      {
+        "location": "P1",
+        "original_text": "The pilot serves all branches.",
+        "revised_text": "The pilot serves the north branch.",
+        "change_type": [
+          "scope"
+        ],
+        "rationale": "The revision limits the claim to the branch named in E1, consistent with R1.",
+        "source": "R1 and E1",
+        "protected_text_result": "not_protected",
+        "decision_status": "approved",
+        "unresolved_impact": null
+      }
+    ],
+    "unresolved_impacts": [],
+    "protected_text_verification": []
+  },
+  "status": "specification; not an executed test"
+}

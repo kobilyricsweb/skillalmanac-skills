@@ -1,0 +1,123 @@
+{
+  "fingerprint": "7d4397953c4f102c2d16e130a1c8cabda0c140d039f49e49753fcb5281d0e9f4",
+  "job": "factory100_grade_78915d8b248c",
+  "execution_job": "factory100_execute_03fe0d916dda",
+  "baseline_job": "factory100_baseline_435913612be4",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "nurture-sequence-logic-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Separate R1 and R2 entries map S0 to S1 and S1 to S2 respectively."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "M2 retains the prerequisite “M1 sent,” R1 separately requires M1 completion, and the one-day minimum is preserved."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Opt-out and S2 completion are explicit terminal paths, and the response states that the map neither schedules nor sends messages."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The two main path rows preserve the required source, destination, and cited-transition fields."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "M2's prerequisite, R1's completion condition, and the minimum one-day timing are recorded separately and accurately."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Separate terminal rows cover opt-out and arrival at S2, including triggers and stop behavior, without any delivery action."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nurture-sequence-logic-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Both initial_state/initial_entry_rule and timing_constraints are listed as missing, with entry and timing left null."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "R1 retains S0, S1, and its ID while entry remains unresolved; M2 is explicitly unplaced for lack of a transition."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "S2 is listed as unreachable, and opt-out has a terminal row with null destination and stop behavior."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nurture-sequence-logic-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The main row maps S0 to S1 under R1 and contains no reverse transition."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "S1 is described only as the destination state; no interest, intent, readiness, engagement, or response likelihood is inferred."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The map preserves “once during day 1” and gives explicit stop rows for X and opt-out without proposing any send or resend."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "nurture-sequence-logic-map__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "nurture-sequence-logic-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "nurture-sequence-logic-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

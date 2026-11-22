@@ -1,0 +1,13 @@
+{
+  "fingerprint": "fd3aea2ce9ca7cbff9df83cfd26db86472e1aba54bb61fb7326f9f5896777a28",
+  "job": "factory100_baseline_7aef657bdc1f",
+  "results": [
+    {
+      "id": "archive-discovery-aid__q100_ordinary",
+      "answer": "Finding aid: F1 — Projects. Description: Project administration. Access: Open. F2 — Orchard, parent F1. Description: Orchard project records. Access: Open. I1, parent F2. Date: 2024-03-01. Description: Approved meeting agenda. Access: Open. I2, parent F2. Date: 2024-03-05. Description: Draft budget. Access: Restricted to finance team. Supported date span for items in F2: 2024-03-01–2024-03-05. Coverage verification: all supplied folders F1 and F2 and items I1 and I2 are represented with their identifiers, stated parents, descriptions, access conditions, and item dates. Scope: fixed inventory only; no dates, hierarchy, descriptions, access terms, or relationships beyond the supplied data are inferred."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

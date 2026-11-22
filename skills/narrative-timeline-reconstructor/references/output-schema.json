@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "events",
+    "narrative_scaffold",
+    "unresolved_placement",
+    "coverage_statement"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "partial",
+        "conflicted"
+      ]
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "event_id",
+          "description",
+          "time_expression",
+          "precision",
+          "dependencies",
+          "source_labels",
+          "conflicts",
+          "placement"
+        ],
+        "properties": {
+          "event_id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "time_expression": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "precision": {
+            "type": "string",
+            "enum": [
+              "exact_date",
+              "date_range",
+              "approximate",
+              "relative",
+              "unknown"
+            ]
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "conflicts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "placement": {
+            "type": "string",
+            "enum": [
+              "ordered",
+              "partially_ordered",
+              "unresolved"
+            ]
+          }
+        }
+      }
+    },
+    "narrative_scaffold": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_placement": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "coverage_statement": {
+      "type": "string"
+    }
+  }
+}

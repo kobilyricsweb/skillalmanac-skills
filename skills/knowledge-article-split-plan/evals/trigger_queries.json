@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Split this account-help article into separate task-focused articles while preserving shared prerequisites.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a maintenance-boundary plan for dividing one long knowledge page into user-task units.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map every heading in this article to proposed replacement articles and identify duplicate context.",
+    "should_trigger": true
+  },
+  {
+    "query": "Plan how to separate setup and recovery instructions into maintainable documentation units.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design cross-links and retained warnings for a proposed knowledge-article split.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn this mixed-audience help article into a reviewed split plan, not a rewrite.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify which prerequisites should be repeated or linked when splitting this documentation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Prepare a migration checklist for restructuring one knowledge article by distinct user task.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find article boundaries that reflect separate maintenance ownership in this supplied document.",
+    "should_trigger": true
+  },
+  {
+    "query": "Propose two or more documentation units from this article and verify no section is lost.",
+    "should_trigger": true
+  },
+  {
+    "query": "Refresh this article using current evidence and propose revised wording.",
+    "should_trigger": false
+  },
+  {
+    "query": "Check the whole documentation set for terminology consistency.",
+    "should_trigger": false
+  },
+  {
+    "query": "Resolve a conflict between two supplied policies for an authorized reviewer.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a finding aid for a fixed archive inventory.",
+    "should_trigger": false
+  },
+  {
+    "query": "Disambiguate the abbreviation AR in these excerpts.",
+    "should_trigger": false
+  },
+  {
+    "query": "Queue evidence records for review dates across a collection.",
+    "should_trigger": false
+  },
+  {
+    "query": "Validate whether this taxonomy has correct parent-child relationships.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite this page for a more engaging tone.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a website and publish the new documentation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify that the split complies with an external documentation standard.",
+    "should_trigger": false
+  }
+]

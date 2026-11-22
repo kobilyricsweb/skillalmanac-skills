@@ -1,0 +1,12 @@
+{
+  "fingerprint": "5fcbe10c89693fb01f47e97936b25a7607947e229d4f03e4127d7133ffea4908",
+  "job": "factory100_baseline_962e614a16d0",
+  "results": [
+    {
+      "id": "source-note-to-outline__q100_ordinary",
+      "answer": "Basis summary: N1 states that Aster exports reports as CSV. N2 states that Aster retains exported files for one day.\n\nOutline:\n1. Export format — Aster exports reports as CSV. Basis: N1.\n2. Retention — Aster keeps exported files for one day. Basis: N2.\n3. Pricing — No supplied note addresses pricing.\n\nGaps: pricing details are missing.\nConflicts: none identified.\nVerification: Confirm the CSV export format, one-day retention period, and pricing with an authoritative source before training use."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

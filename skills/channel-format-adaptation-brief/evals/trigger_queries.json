@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create channel adaptation briefs for this approved message while preserving its qualifier and CTA.",
+    "should_trigger": true
+  },
+  {
+    "query": "Plan email and landing-page versions with retained phrases, word budgets, and allowable compression.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which source elements must survive in each channel format.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify whether these channel limits can fit the protected phrase and required qualifier.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a format-by-format brief without strengthening the approved claim.",
+    "should_trigger": true
+  },
+  {
+    "query": "List deliberate omissions and explain why each is allowed or infeasible.",
+    "should_trigger": true
+  },
+  {
+    "query": "Adapt this approved message plan for social and email constraints.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve the supplied date, scope, number, and CTA across channel briefs.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document format cues and compression rules for these approved messages.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check every channel plan against the source wording and mandatory qualifiers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find existing message assets that can be reused across channels.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a full landing page narrative in awareness-to-conversion order.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a tone constraint card from the brand samples.",
+    "should_trigger": false
+  },
+  {
+    "query": "Match this message to the audience profiles with supporting evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a nurture sequence with state transitions and stop conditions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Answer objections using product facts and evidence IDs.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent a stronger headline claiming universal performance.",
+    "should_trigger": false
+  },
+  {
+    "query": "Publish these adaptations to our social accounts.",
+    "should_trigger": false
+  },
+  {
+    "query": "Predict which channel will convert best.",
+    "should_trigger": false
+  },
+  {
+    "query": "Normalize the wording to our terminology glossary.",
+    "should_trigger": false
+  }
+]

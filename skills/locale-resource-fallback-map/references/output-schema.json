@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "resolutions",
+    "missing_inputs",
+    "rule_conflicts",
+    "scope_note"
+  ],
+  "properties": {
+    "resolutions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "requested_locale",
+          "key",
+          "status",
+          "source_locale",
+          "fallback_path",
+          "value",
+          "notes"
+        ],
+        "properties": {
+          "requested_locale": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "local",
+              "inherited",
+              "missing",
+              "ambiguous",
+              "cyclic",
+              "unresolved"
+            ]
+          },
+          "source_locale": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "fallback_path": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "value": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "missing_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rule_conflicts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scope_note": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "configuration-drift-explainer__parent_holdout",
+    "slug": "configuration-drift-explainer",
+    "prompt": "Explain only these redacted snapshots: before {timeoutSeconds:30,beta:true}, after {timeoutSeconds:10}. Note N1 says timeoutSeconds is a total request deadline; N2 says it is idle time between chunks, with no ordering or authority given. No beta default or removal policy supplied. Values are examples, not live configuration. Do not inspect files.",
+    "assertions": [
+      "Lists timeoutSeconds30 to10 and beta removal accurately.",
+      "Preserves conflicting timeout semantics and unknown beta default rather than asserting an actual operational effect.",
+      "Distinguishes observed changes from hypotheses and claims no file inspection, deployment or runtime verification."
+    ],
+    "origin": "parent-designed fresh forward case; not an observed customer request"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "slug": "requirement-to-section-coverage-map",
+  "category": "content",
+  "user_problem": "Authors need to determine whether a completed document covers every explicitly supplied content requirement and where each requirement is addressed.",
+  "unique_output": "A traceability matrix linking each requirement to section evidence, coverage status, duplication or conflict, and unresolved gaps.",
+  "required_input": "A complete document with section IDs, an explicit requirement list, required-versus-optional labels, and any supplied equivalence rules.",
+  "critical_rule": "Mark a requirement covered only when the supplied section content satisfies its stated meaning; partial or merely related text must remain partial.",
+  "nearest_existing_and_difference": "Nearest is source-note-to-outline; this audits a completed document against explicit content requirements rather than constructing an outline from source notes.",
+  "tier": "free",
+  "acceptance_scenario": "Input requires an accountable owner and a limitations statement. The Methods section names the owner, while no section states limitations. Output marks owner coverage with its location and records the limitations requirement as a gap."
+}

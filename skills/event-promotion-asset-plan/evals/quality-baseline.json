@@ -1,0 +1,12 @@
+{
+  "fingerprint": "922ae8688f53c6e253a1eaac523f17e5819cf1321b309c4a089463a550104f3f",
+  "job": "factory100_baseline_4864d4cccc17",
+  "results": [
+    {
+      "id": "event-promotion-asset-plan__q100_ordinary",
+      "answer": "Plan:\n\n1. Event page detail sheet: Data Basics Webinar; online via the supplied webinar link; 2026-12-10 at 14:00 UTC; benefit: live demonstration of two spreadsheet-cleaning techniques; audience: registered library staff; registration closes 2026-12-08.\n2. Email invitation: audience-limited copy, event details, supplied link, registration deadline, and Ana Ruiz’s name. No likeness or quotes.\n3. Intranet announcement/card: matching details, supplied link, deadline, and Ana Ruiz’s name. No likeness or quotes.\n4. Review checklist: verify date, time zone, link, audience, benefit, deadline, channel rules, and speaker-permission boundaries.\n\nDependencies: finalize event-page details before drafting the email. Use the finalized details for both channels. Email review must finish before 2026-12-08, the registration-closing date. Confirm the supplied webinar link is available before publication.\n\nBoundaries: plan only, not finished assets; use email and intranet only; do not add unconfirmed benefits, attendance claims, speaker quotes, likenesses, or other channels."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

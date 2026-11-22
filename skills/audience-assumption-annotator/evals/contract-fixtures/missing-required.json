@@ -1,0 +1,10 @@
+{
+  "unresolved": [],
+  "coverage": {
+    "reviewed_locations": [
+      "P1 reviewed; its pre-session download instruction conflicts with the supplied resource and is annotated.",
+      "P2 reviewed; no annotation is needed because the supplied prerequisite supports reading the short instruction and the printed worksheet supports circling an answer."
+    ],
+    "unavailable_inputs": []
+  }
+}

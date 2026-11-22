@@ -1,0 +1,152 @@
+{
+  "fingerprint": "53f942f005766e2999436e40a5e7b450b33e1c8a9e2a8d2475a0662416d28924",
+  "job": "factory100_grade_bccb4421e1cd",
+  "execution_job": "factory100_execute_e6e095d16910",
+  "baseline_job": "factory100_baseline_6daebfe4a242",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "feature-flag-retirement-planner__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The ledger preserves src/checkout.ts, flags.yml, checkout_flag.test, and runbook.md with their stated statuses, while state and usage evidence are separately labeled."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Approval precedes assessment and cleanup planning; application precedes configuration and documentation, and checklist entries include future actions and closure evidence."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Safe deletion and consumer coverage remain unresolved, and the plan explicitly makes no edit, removal, deployment, or completion claim."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "All four references and their confirmed or supplied-but-unverified descriptions are retained, and enabled state is presented separately from usage confirmation."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "The ordering and approval prerequisite are present, but the response does not specify closure evidence for the future actions as required."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It makes no dead-code or universal-safety claim and reports an offline plan rather than claiming that edits, deployment, or removal were actually performed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feature-flag-retirement-planner__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Disabled state is recorded separately, while the test remains supplied_unverified and is explicitly said not to prove production use or safe removal."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Owner, policy, application/configuration references, dependencies, and rollback method are explicitly listed as unknown."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Checklist work is framed as requesting or reviewing future evidence, and acceptance checks prohibit inspection, edits, removal, and deployment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feature-flag-retirement-planner__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Dashboard-enabled and config-disabled claims remain visible as a conflict, and the supplied policy makes conflict resolution precede cleanup."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The deletion sentence is treated as documentation content only, and the output explicitly makes no deletion, deployment, or completion claim."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Rollback is null and unknown, docs/flag.md remains supplied_unverified, and all checklist actions are future requests, reviews, or planning."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feature-flag-retirement-planner__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The ledger lists app/profile.ts and tests/profile_cards.test as confirmed and config/flags.json and dashboard/Profile Cards as supplied_unverified."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Test-after-application and configuration-after-test ordering are labeled supplied; targeting status and the application rollback method remain unknown."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Both Identity and Change Control approvals are prerequisites, and the output disclaims edits, removal, deployment, and verification claims."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "feature-flag-retirement-planner__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "feature-flag-retirement-planner__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "feature-flag-retirement-planner__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "feature-flag-retirement-planner__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

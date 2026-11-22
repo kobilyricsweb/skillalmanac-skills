@@ -1,0 +1,123 @@
+{
+  "fingerprint": "c755bad4c71896abf8060a7d011041c4b7bafcdc6afad99fc253f42d7fe89e32",
+  "job": "factory100_grade_4a92d1ce8b78",
+  "execution_job": "factory100_execute_b9d823e93e52",
+  "baseline_job": "factory100_baseline_d46002e2c27a",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "procedure-branch-test-matrix__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The four cases map -1 to REJECT, 0 to HOLD, 1 to ACCEPT, and missing x to REQUEST_VALUE."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Every row cites R1, R2, R3, or the missing-value rule, and the coverage statement says all three conditions and missing-value behavior are represented."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It allocates four cases at one minute each for four total minutes and explicitly states that execution is not performed."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "C1 through C4 contain the required inputs and expected actions: REJECT, HOLD, ACCEPT, and REQUEST_VALUE."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Each case supplies its governing rule, every case is marked covered, and coverage_summary reports all three condition branches plus the missing-value branch covered."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The budget records four supplied and four allocated minutes with within_budget status; the artifact presents only synthetic expected paths and makes no execution or runtime-success claim."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure-branch-test-matrix__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "C1 assigns score 0 to STOP under R1 with lower-boundary/equality rationale, and C2 assigns score 2 to CONTINUE under R2 with upper-boundary rationale."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "C3 has null expected_path and expected_action and is classified unknown because missing-score behavior was not supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "unresolved_rules identifies the absent missing-score rule, and the budget status is not_supplied with null minute values."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedure-branch-test-matrix__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "For n=1, C2 evaluates both R1 and R2 true, leaves path and action null, and classifies the case conflicting due to absent precedence."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "C1 maps n=0 to HOLD under R2, C3 maps n=2 to SEND under R1, and C4 leaves missing n unknown with no expected path or action."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The quoted instruction is identified as test data only; no execution or success is reported, and the artifact contains expected design outcomes only."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "procedure-branch-test-matrix__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "procedure-branch-test-matrix__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "procedure-branch-test-matrix__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

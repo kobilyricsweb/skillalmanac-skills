@@ -1,0 +1,22 @@
+{
+  "fingerprint": "2b2461cd0c4a64ebfedeaeffbb62fb3f5e7deaa4baf1cbb2abd582ee377c6b46",
+  "job": "aggregate_isolated_f62bd1e004ec2de0",
+  "results": [
+    {
+      "id": "handover-readiness-check__q100_ordinary",
+      "answer": "Ready for handoff based on the supplied evidence, without independent execution. C1 is supported by L1, which records environment T, version v1, input 1+2, and output 3. C2 is supported by P1, which gives another engineer a concise reproduction procedure. Ownership and transfer are clear: Jo will provide P1 and L1 to Sam. No blocker is reported. Residual limitation: this is a document-only readiness assessment; Sam has not yet independently reproduced the result. Handoff completion should be recorded after Sam receives both artifacts and confirms the check in T.",
+      "individual_job": "factory100_base_isolated_08d0b2a66dca"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill_isolated_cases",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "case_context_isolated": true,
+  "answer_word_budget": 600,
+  "individual_worker_jobs": [
+    "factory100_base_isolated_08d0b2a66dca"
+  ],
+  "method_note": "Every case uses its own fresh context. Both arms use identical model/effort/budget; raw responses unchanged, original prompts/assertions preserved, prior failures retained. Aggregate is a provenance index, not a model call.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

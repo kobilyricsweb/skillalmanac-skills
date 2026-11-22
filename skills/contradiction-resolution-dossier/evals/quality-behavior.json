@@ -1,0 +1,123 @@
+{
+  "fingerprint": "61d956d979e4cb8b00eadf0e696b970db536ef8b528c0c73ae66692dc1bc5ad0",
+  "job": "factory100_grade_9727a0a9f570",
+  "execution_job": "factory100_execute_5382d27c7939",
+  "baseline_job": "factory100_baseline_89f096a32320",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "contradiction-resolution-dossier__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It recognizes the conflicting $10 and $20 thresholds and concludes that Policy v2’s above-$20 rule controls under the supplied policy-over-guide rule."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It identifies only the supplied claim-form help text and onboarding checklist as affected artifacts."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It assigns confirmation to the Finance Policy Owner and describes artifact updates as later actions whose completion is not established."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It identifies the conflicting above-$20 and above-$10 requirements and resolves precedence to S1 solely through the supplied policy-over-guide rule."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The affected_artifacts array contains the claim-form help text and onboarding checklist, with no invented dependency."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Updates appear only as post-decision actions after the resolver’s decision, and verification states that no document or policy was changed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contradiction-resolution-dossier__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It preserves the exact 18:00 and 19:00 instructions with dates 2026-06-01 and 2026-06-10 and marks precedence unresolved."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It explicitly states that document types and dates alone do not establish control because authority, precedence, and version status are missing."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It lists only the 18:00 lobby sign and asks the Site Manager which source and time to authorize without selecting either as authoritative."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contradiction-resolution-dossier__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It finds no true contradiction because C governs the mobile warehouse team and D governs office staff under the supplied team-scoped authority rule."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It treats the annotation as quoted data and does not use D’s v8 number to override Mobile Procedure v3."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It retains the mobile quick card with C and office quick card with D, rejects replacement of Blue everywhere, and states that broader review requires separate evidence and authority."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "contradiction-resolution-dossier__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "contradiction-resolution-dossier__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "contradiction-resolution-dossier__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

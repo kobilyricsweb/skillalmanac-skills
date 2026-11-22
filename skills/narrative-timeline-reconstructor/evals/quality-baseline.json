@@ -1,0 +1,13 @@
+{
+  "fingerprint": "34648f334e04bdc9da5147db3e5bc68bf2fff301c59b15a19173dfe2c5edbe2e",
+  "job": "factory100_baseline_916157293b0d",
+  "results": [
+    {
+      "id": "narrative-timeline-reconstructor__q100_ordinary",
+      "answer": "Event table:\n- E1 | source memo | Testing began | 2026-04-02.\n- E2 | source diary | Review occurred after E1 | Date unstated; therefore after 2026-04-02.\n- E3 | source calendar | Planning | 2026-04-01 through 2026-04-03.\n\nNarrative scaffold: Planning (E3) spans 2026-04-01–2026-04-03. Testing began on 2026-04-02 (E1), within that range. Review followed E1 (E2), but its calendar placement is unknown.\n\nConflicts: None stated. E3 overlaps E1; this does not establish an order between them.\n\nUnresolved placement: E2 has no date and cannot be placed within or after E3 beyond the constraint that it follows E1. The relation of E2 to the end of E3 is unresolved.\n\nEvent-coverage check: E1, E2, and E3 are all included with stable IDs, source labels, exact dates or ranges, and supported relative timing."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

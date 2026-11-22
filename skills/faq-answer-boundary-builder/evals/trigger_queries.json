@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create reusable FAQ answers from these approved policy facts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write answer frames that state exceptions and route unknown cases.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a returns FAQ without inventing missing eligibility rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate the direct answer, supported detail, and escalation wording.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn these policy clauses into bounded FAQ entries.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make sure prohibited promises are not included in the answers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Handle a missing damaged-item rule as unknown and route it correctly.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create reusable answers for the listed questions and approved facts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve exclusions instead of presenting the policy as universal.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which FAQ cases are unsupported by the supplied policy.",
+    "should_trigger": true
+  },
+  {
+    "query": "Reply to this specific customer’s complaint using a friendly tone.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit whether every document requirement is covered.",
+    "should_trigger": false
+  },
+  {
+    "query": "Reconstruct the chronology of these project events.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find headings whose sections are too narrow.",
+    "should_trigger": false
+  },
+  {
+    "query": "Explain the rationale behind these manuscript revisions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a content-refresh plan from new evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Apply the approved glossary to every occurrence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Determine whether the support agent had authority to approve this case.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide the legal remedy for a damaged item.",
+    "should_trigger": false
+  },
+  {
+    "query": "Promise that every customer will receive a refund.",
+    "should_trigger": false
+  }
+]

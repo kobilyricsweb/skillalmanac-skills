@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Allocate these tasks into the supplied staff time slots and list anything that cannot fit.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a task-to-machine schedule without overlapping any machine.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use the stated priority order to assign jobs to the available rooms.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check whether these work orders fit into the listed finite shifts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a short allocation table from these durations, eligible operators, and slots.",
+    "should_trigger": true
+  },
+  {
+    "query": "Assign the higher-priority task and explain which task remains unallocated.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find resource overlaps in this proposed finite-slot allocation and repair them.",
+    "should_trigger": true
+  },
+  {
+    "query": "Determine whether all supplied tasks can fit without shrinking their durations.",
+    "should_trigger": true
+  },
+  {
+    "query": "Allocate appointments to the eligible rooms and report unused capacity.",
+    "should_trigger": true
+  },
+  {
+    "query": "Produce a feasible partial schedule when the supplied slots are insufficient.",
+    "should_trigger": true
+  },
+  {
+    "query": "Prepare evidence questions for a vendor product demonstration.",
+    "should_trigger": false
+  },
+  {
+    "query": "Turn this procedure into a decision-point table with branch actions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Specify which intake fields are conditionally required for each request type.",
+    "should_trigger": false
+  },
+  {
+    "query": "Route incoming requests to destinations using category and urgency rules.",
+    "should_trigger": false
+  },
+  {
+    "query": "Catalog measurable escalation triggers and their evidence requirements.",
+    "should_trigger": false
+  },
+  {
+    "query": "Optimize staffing levels for next quarter using market demand.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a script that automatically books resources through an external system.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose why a team is underperforming and prescribe interventions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify that this schedule meets an industry planning standard.",
+    "should_trigger": false
+  },
+  {
+    "query": "Approve overtime spending for the unallocated tasks.",
+    "should_trigger": false
+  }
+]

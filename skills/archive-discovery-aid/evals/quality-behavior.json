@@ -1,0 +1,152 @@
+{
+  "fingerprint": "4102106983024715562539019a94e2f3262d2a1c73e98e2a7e9ee129f4a7c81c",
+  "job": "factory100_grade_a0bcd5beef6b",
+  "execution_job": "factory100_execute_af9793f4e8aa",
+  "baseline_job": "factory100_baseline_7aef657bdc1f",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "archive-discovery-aid__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "F2 has parent F1, both items have parent F2, and coverage lists every identifier once with no duplicates."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "F2’s span is 2024-03-01 to 2024-03-05 and both item descriptions reproduce only supplied wording."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "I2 retains the finance restriction, and scope_limits prohibit renaming, moving, merging, deletion, or enrichment."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It places F2 under F1 and I1 and I2 under F2, then verifies coverage of all four supplied identifiers."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It gives only the supported F2 item span and preserves the supplied item descriptions."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "I2 retains the finance restriction, and the fixed-inventory scope disallows unsupported relationships or other inference."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "archive-discovery-aid__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "R1 is placed under S1, while R2 appears once, is marked uncertain_placement, and is listed as unclassified."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "S1’s date span is only 2022; R2’s 2023 date is not incorporated into it."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "R2’s access is null and its missing access annotation is explicitly listed as unresolved."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "archive-discovery-aid__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "M1 and M2 retain their identifiers and B1 parent, and no Events folder is created."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "M2’s scope description retains both “Attendance list” and “Meeting agenda,” with certainty marked conflicting_description and review requested."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The proposed move and identifier disposal are non-operative, while coverage lists B1, M1, and M2 once with no duplicates."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "archive-discovery-aid__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "H2 has parent H1 and a 2020-04-10 span derived from its explicitly placed item D1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "D2 remains unclassified with stated parent H9, and the donor note is explicitly denied authority to change its placement."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "D3 is unclassified with null date and access, and coverage accounts for H1, H2, D1, D2, and D3 without duplicates."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "archive-discovery-aid__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "archive-discovery-aid__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "archive-discovery-aid__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "archive-discovery-aid__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

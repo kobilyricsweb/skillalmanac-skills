@@ -1,0 +1,12 @@
+{
+  "fingerprint": "1f9eedc2029b8174e1d494d8592f59f188852e585d691538035f4acc9f76ef17",
+  "job": "factory100_baseline_fbe004bae79d",
+  "results": [
+    {
+      "id": "idempotency-key-behavior-spec__q100_ordinary",
+      "answer": "{\"endpoint\":\"POST /labels\",\"scope\":\"tenant + operation\",\"retention\":\"10 minutes from acceptance of the first request\",\"payload_comparison\":{\"fields\":[\"name\",\"color\"],\"rule\":\"exact equality; field order irrelevant\"},\"matrix\":[{\"condition\":\"first request\",\"behavior\":\"process and store response\"},{\"condition\":\"exact replay within retention\",\"behavior\":\"return stored response; do not reprocess\"},{\"condition\":\"changed-payload replay within retention\",\"behavior\":\"return error KEY_PAYLOAD_MISMATCH\"},{\"condition\":\"concurrent duplicate while first request is unfinished\",\"behavior\":\"return error KEY_IN_PROGRESS\"},{\"condition\":\"after expiry\",\"behavior\":\"treat key as new\"}],\"evidentiary_limit\":\"This specifies the supplied contract behavior only; it does not establish implementation, persistence, timing, or operational verification.\"}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

@@ -1,0 +1,91 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "taxonomy-gap-finder__parent_holdout",
+        "slug": "taxonomy-gap-finder",
+        "prompt": "Review assignment coverage, not graph structure. Categories: beginner=\"material for first-time users\"; advanced=\"material for advanced users\"; misc=\"miscellaneous things\". Policy: beginner and advanced are exclusive for one asset. Items: I1 assigned beginner+advanced; I2 unassigned; I3 assigned misc. No parent graph, item contents or missing assignments supplied.",
+        "assertions": [
+          "Flags I1 exclusivity conflict and I2 missing assignment.",
+          "Flags vague misc definition without treating I3 as proven misclassified.",
+          "Does not invent item contents/new assignments or claim parent-graph validation."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "Scope and rules: Review covers categories beginner, advanced, misc; items I1, I2, I3; supplied assignments; and the explicit exclusivity rule that beginner and advanced are exclusive for one asset. Parent-graph validation is excluded.\n\nDefinition coverage: beginner = “material for first-time users” and advanced = “material for advanced users” are supplied definitions. misc = “miscellaneous things” is an unbounded catch-all; flag this as a definition-review question, not a confirmed policy violation.\n\nItem assignment coverage:\n- I1: assigned beginner+advanced. This is a confirmed conflicting membership because the supplied rule makes beginner and advanced exclusive for one asset.\n- I2: unassigned because no assignment is supplied.\n- I3: assigned misc; no conflict is established.\n\nUnassigned items: I2.\n\nConflicting memberships: I1, based only on the stated beginner/advanced exclusivity rule.\n\nWeak-definition findings: misc, quoting “miscellaneous things”; review whether the category has a defined scope or inclusion rule. No additional definition defects are confirmed from the supplied evidence.\n\nUnresolved reviewer questions: What assignment, if any, is intended for I2? Does I1 have evidence supporting either category, or should one assignment be removed? What required scope or examples should constrain misc?\n\nNon-findings: No parent graph was supplied or reviewed. No assignments were added. No conclusion is made about item contents or whether I2 belongs in any category.",
+      "grade": {
+        "id": "taxonomy-gap-finder__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The answer identifies I1 as a confirmed conflicting membership under the supplied beginner/advanced exclusivity rule and lists I2 as unassigned."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "It calls misc an unbounded catch-all and a definition-review question while stating that I3's misc assignment establishes no conflict."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "It explicitly says no parent graph was supplied or reviewed, adds no assignments, and makes no conclusion about item contents."
+          }
+        ]
+      },
+      "binding": {
+        "id": "taxonomy-gap-finder__parent_holdout",
+        "slug": "taxonomy-gap-finder",
+        "skill_sha256": "ad3ef4df14d730c4a8e20f6c7fd9882627bd0ee07bc2a223a7c5f1ef93e49e0a",
+        "contract_sha256": "b2e942fe51b9f0b2c61d5a8e77d77c9fd2d1efce6397c28383e23e75fee4a054",
+        "assertions_sent_to_executor": false
+      },
+      "round": "repaired"
+    },
+    {
+      "case": {
+        "id": "taxonomy-gap-finder__fresh_after_repair",
+        "slug": "taxonomy-gap-finder",
+        "prompt": "Review coverage using categories Email=\"email onboarding guides\" and Other=\"other things\". Items: J1 has no assignment; J2 is assigned Other. No item contents, definition-quality standard, exclusivity rule or parent graph is supplied. Produce definition-review questions separately from confirmed policy violations.",
+        "assertions": [
+          "Flags the tautological/catch-all Other wording as a review question, not a proven policy violation.",
+          "Preserves J1 unassigned and J2 assigned Other without inventing contents or new classifications.",
+          "Does not claim parent-graph validation or infer exclusivity."
+        ],
+        "origin": "fresh parent follow-up case; not used in the repair text"
+      },
+      "answer": "Scope and rules: Review covers categories Email and Other; items J1 and J2; and the supplied assignments. No item contents, definition-quality standard, exclusivity rule, or parent graph is supplied. Parent-graph validation is excluded.\n\nDefinition coverage: Email = “email onboarding guides.” Other = “other things.” The wording of Other is an unbounded catch-all, so it merits a definition-review question. This is not a confirmed policy violation or evidence that any item is misclassified.\n\nItem assignment coverage:\n- J1: unassigned because no assignment is supplied.\n- J2: assigned Other; the assignment is recorded without inferring whether it is appropriate.\n\nUnassigned items: J1.\n\nConflicting memberships: None established. No exclusivity or incompatibility rule is supplied.\n\nDefinition-review questions:\n- What inclusion and exclusion criteria should limit Other beyond “other things”?\n- What evidence or examples distinguish Email from Other?\n- Is J2’s assignment to Other intentional, and what item content supports it?\n- What assignment, if any, is intended for J1?\n\nConfirmed policy violations: None. No unsupported assignment was added, and no parent structure was reviewed.",
+      "grade": {
+        "id": "taxonomy-gap-finder__fresh_after_repair",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The answer describes Other as an unbounded catch-all meriting a definition-review question and explicitly says this is not a confirmed policy violation."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "It preserves J1 as unassigned and J2 as assigned Other, without deciding J2's appropriateness or adding an assignment for J1."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "It excludes parent-graph validation and states that no conflicting membership is established because no exclusivity or incompatibility rule was supplied."
+          }
+        ]
+      },
+      "binding": {
+        "id": "taxonomy-gap-finder__fresh_after_repair",
+        "slug": "taxonomy-gap-finder",
+        "skill_sha256": "ad3ef4df14d730c4a8e20f6c7fd9882627bd0ee07bc2a223a7c5f1ef93e49e0a",
+        "contract_sha256": "b2e942fe51b9f0b2c61d5a8e77d77c9fd2d1efce6397c28383e23e75fee4a054",
+        "assertions_sent_to_executor": false
+      },
+      "round": "repaired"
+    }
+  ]
+}

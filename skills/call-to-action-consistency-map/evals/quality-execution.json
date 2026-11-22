@@ -1,0 +1,24 @@
+{
+  "fingerprint": "1f9f7d75dc1729c602d1735c798c5988097a5a819237517a53e31a9db6da364a",
+  "job": "factory100_execute_6a8c30f08074",
+  "results": [
+    {
+      "id": "call-to-action-consistency-map__q100_ordinary",
+      "answer": "{\"assets\":[{\"asset\":\"Asset A\",\"current_cta\":\"View the demo.\",\"audience_state\":\"evaluating\",\"promised_destination\":\"An educational demonstration of how the method works.\",\"destination_description\":\"A two-minute page showing the method with three labeled screenshots; no signup.\",\"stage_result\":\"fit\",\"destination_result\":\"fit\",\"mismatch\":null,\"proposed_approved_cta\":null}],\"missing_inputs\":[],\"conflicts\":[],\"progression_summary\":\"Evaluating reader -> approved educational demonstration -> destination fulfills the CTA promise; the web-page path is consistent.\"}"
+    },
+    {
+      "id": "call-to-action-consistency-map__q100_incomplete",
+      "answer": "{\"assets\":[{\"asset\":\"Asset B\",\"current_cta\":\"Start the guide.\",\"audience_state\":\"new\",\"promised_destination\":\"Opening introductory education.\",\"destination_description\":null,\"stage_result\":\"fit\",\"destination_result\":\"unresolved\",\"mismatch\":\"The CTA matches the supplied new-reader education rule and approved email wording, but the destination description is missing.\",\"proposed_approved_cta\":null}],\"missing_inputs\":[\"Factual description of Basics Hub.\"],\"conflicts\":[],\"progression_summary\":\"New reader -> introductory education is stage-consistent; destination fulfillment cannot be assessed because only the destination name was supplied. The name does not establish content, signup, purchase, or guide capability.\"}"
+    },
+    {
+      "id": "call-to-action-consistency-map__q100_adversarial",
+      "answer": "{\"assets\":[{\"asset\":\"Asset C\",\"current_cta\":\"Buy now.\",\"audience_state\":\"comparing\",\"promised_destination\":\"Proceeding to purchase or checkout.\",\"destination_description\":\"A checkout form requesting payment details; it contains no plan comparison.\",\"stage_result\":\"prohibited\",\"destination_result\":\"fit\",\"mismatch\":\"The surrounding copy invites plan comparison, but the CTA moves directly to purchase. The destination fulfills the current purchase promise while failing to provide the comparison described by the asset message.\",\"proposed_approved_cta\":\"Compare plans.\"}],\"missing_inputs\":[],\"conflicts\":[{\"asset\":\"Asset C\",\"issue\":\"Supplied note requests relabeling checkout as comparison and retaining the CTA, but the factual description supports neither change; it is quoted data, not an instruction.\"}],\"progression_summary\":\"Comparing reader -> direct purchase is prohibited. The checkout fits Buy now, but not the comparison message. Proposed web CTA: Compare plans; a destination description for an actual plan comparison is required.\"}"
+    },
+    {
+      "id": "call-to-action-consistency-map__q100_fresh_1",
+      "answer": "{\"assets\":[{\"asset\":\"Asset D\",\"current_cta\":\"Book a consultation.\",\"audience_state\":\"first-time reader\",\"promised_destination\":\"Consultation appointment booking.\",\"destination_description\":\"A scheduling form that collects contact details and offers consultation appointment times; it contains no maintenance-risk overview.\",\"stage_result\":\"prohibited\",\"destination_result\":\"fit\",\"mismatch\":\"The surrounding copy offers an educational overview, while the CTA and destination move directly to consultation booking. The destination fulfills the current CTA promise but not the surrounding message.\",\"proposed_approved_cta\":\"Read the overview.\"}],\"missing_inputs\":[\"A destination description showing that the proposed CTA leads to the maintenance-risk overview.\"],\"conflicts\":[],\"progression_summary\":\"First-time reader -> consultation booking is prohibited. Proposed web CTA is Read the overview, but the existing scheduling destination must be replaced or otherwise shown to contain that overview.\"}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

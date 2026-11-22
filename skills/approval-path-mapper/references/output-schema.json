@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["scope", "assumptions", "artifact", "starting_state", "path", "branches", "handoffs", "escalations", "unresolved", "reachability_findings", "cycle_findings", "verification"],
+  "properties": {
+    "scope": {"type": "string"},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "artifact": {"type": "string"},
+    "starting_state": {"type": "string"},
+    "path": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["from_state", "actor", "action", "prerequisite", "next_state", "support"], "properties": {"from_state": {"type": "string"}, "actor": {"type": "string"}, "action": {"type": "string"}, "prerequisite": {"type": "string"}, "next_state": {"type": "string"}, "support": {"type": "string"}}}},
+    "branches": {"type": "array", "items": {"type": "object", "required": ["condition", "outcome", "status"], "properties": {"condition": {"type": "string"}, "outcome": {"type": "string"}, "status": {"type": "string", "enum": ["supported", "unresolved", "conflicting", "cyclic"]}}, "additionalProperties": false}},
+    "handoffs": {"type": "array", "items": {"type": "object", "required": ["recipient", "evidence", "existence"], "properties": {"recipient": {"type": "string"}, "evidence": {"type": "array", "items": {"type": "string"}}, "existence": {"type": "string", "enum": ["required-not-confirmed", "supplied", "unknown"]}}, "additionalProperties": false}},
+    "escalations": {"type": "array", "items": {"type": "string"}},
+    "unresolved": {"type": "array", "items": {"type": "string"}},
+    "reachability_findings": {"type": "array", "items": {"type": "string"}},
+    "cycle_findings": {"type": "array", "items": {"type": "string"}},
+    "verification": {"type": "array", "items": {"type": "string"}}
+  }
+}

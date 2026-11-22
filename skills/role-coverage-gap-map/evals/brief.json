@@ -1,0 +1,11 @@
+{
+  "slug": "role-coverage-gap-map",
+  "category": "operations",
+  "user_problem": "A process schedule names required roles and windows but may leave times or responsibilities uncovered.",
+  "unique_output": "A coverage map connecting process responsibility, required window, assigned role, backup, overlap, and uncovered interval.",
+  "required_input": "Responsibilities, required time windows, role assignments, backup rules, and availability intervals.",
+  "critical_rule": "Do not infer availability or substitute roles based on similar titles; show unsupported coverage as a gap.",
+  "nearest_existing_and_difference": "Nearest is approval-path-mapper; this assesses operational staffing coverage rather than decision authority.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input requires Reviewer coverage 09:00–12:00; Ana covers 09:00–10:30 and Bo covers 11:00–12:00 with no backup. Output shows a 10:30–11:00 gap and no overlap."
+}

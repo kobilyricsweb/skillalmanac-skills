@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "fields",
+    "unresolved_questions"
+  ],
+  "properties": {
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "field_name",
+          "source_wording",
+          "normalized_definition",
+          "expected_type",
+          "allowed_values",
+          "allowed_values_exhaustive",
+          "null_semantics",
+          "blank_semantics",
+          "sample_observations",
+          "provenance",
+          "status"
+        ],
+        "properties": {
+          "field_name": {
+            "type": "string"
+          },
+          "source_wording": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "normalized_definition": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "expected_type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "allowed_values": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": [
+                "string",
+                "number",
+                "boolean",
+                "null"
+              ]
+            }
+          },
+          "allowed_values_exhaustive": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "null_semantics": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "blank_semantics": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sample_observations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "provenance": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "enum": [
+              "supported",
+              "not_supplied",
+              "unresolved_conflict"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "unresolved_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

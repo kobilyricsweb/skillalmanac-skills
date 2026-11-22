@@ -1,0 +1,11 @@
+{
+  "slug": "table-footnote-scope-map",
+  "category": "knowledge",
+  "tier": "free",
+  "user_problem": "A report table contains footnote markers whose qualifiers may apply to one cell, a row, a column or the whole table; readers must not silently broaden the qualifier.",
+  "unique_output": "A cell-level qualifier-scope map with exact marker/definition references, explicitly supplied inheritance rules, orphan markers and unresolved scopes.",
+  "required_input": "Labeled table cells and headings, marker placements, supplied footnote definitions and any stated scope legend.",
+  "critical_rule": "Apply only supplied scope rules. A marker location alone does not establish unstated inheritance; no qualifier is interpreted as proof of the underlying claim. Preserve ambiguous scopes and conflicting definitions.",
+  "nearest_existing_and_difference": "reference-list-formatter formats references, pdf-extraction-and-forms extracts source content, document-template-field-map binds placeholders and claim-evidence-map checks entailment; this maps qualifier applicability within an already supplied table.",
+  "acceptance_scenario": "Legend: a cell marker applies only to that cell. R1C1 contains Standard* and R1C2 contains Included. Definition *: delivery excluded. Output binds the exclusion only to R1C1; no supplied exclusion is inferred for R1C2."
+}

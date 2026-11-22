@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Frame this documented product change as a restrained announcement.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create headline options and a CTA from the supplied release notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate confirmed availability, audience impact, limitation, and action.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write an announcement that preserves the beta status and row limit.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify what migration instruction is actually supported by these notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a fact-traced frame for this single product update.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag unsupported benefit claims in this feature announcement.",
+    "should_trigger": true
+  },
+  {
+    "query": "Keep the affected audience narrow in the product update copy.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show unresolved rollout details without inventing them.",
+    "should_trigger": true
+  },
+  {
+    "query": "Draft an announcement frame from release status and evidence references.",
+    "should_trigger": true
+  },
+  {
+    "query": "Plan revisions to refresh the existing product page.",
+    "should_trigger": false
+  },
+  {
+    "query": "Publish the product announcement to customers.",
+    "should_trigger": false
+  },
+  {
+    "query": "Verify that the feature has deployed successfully.",
+    "should_trigger": false
+  },
+  {
+    "query": "Predict adoption or productivity improvement from the update.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a full product launch campaign strategy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a referral message for users who invite teammates.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare multiple prewritten announcement variants.",
+    "should_trigger": false
+  },
+  {
+    "query": "Add performance claims that are not in the release notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft migration steps when the input says none are required.",
+    "should_trigger": false
+  },
+  {
+    "query": "Conduct user research about the new feature.",
+    "should_trigger": false
+  }
+]

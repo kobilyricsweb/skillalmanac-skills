@@ -1,0 +1,11 @@
+{
+  "slug": "product-update-announcement-frame",
+  "category": "marketing",
+  "user_problem": "A documented product change needs an announcement structure that distinguishes availability, benefit, limitation, and action.",
+  "unique_output": "An announcement frame with headline options, confirmed change, audience impact, limitation, migration note, and CTA.",
+  "required_input": "Approved change notes, affected audiences, release status, limitations, required action, and evidence references.",
+  "critical_rule": "Do not call a feature available, improved, or beneficial beyond the exact supplied release status and evidence.",
+  "nearest_existing_and_difference": "Nearest is content-refresh-plan; this frames a single update announcement rather than planning revisions to an existing page.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input says CSV export is beta for workspace admins, limited to 5,000 rows, no action required. Output labels beta and admin scope, states the row limit, and omits migration instructions."
+}

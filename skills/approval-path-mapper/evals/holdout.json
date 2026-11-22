@@ -1,0 +1,13 @@
+[
+  {
+    "id": "approval-path-mapper__parent_holdout",
+    "slug": "approval-path-mapper",
+    "prompt": "Map approval using only these rules: author submits copy; editor may approve wording; finance may approve budget; owner approves publication only after editor+finance. Conflict: policyP1 says editor review starts only after finance approval; P2 says finance review starts only after editor approval. No priority betweenP1/P2, delegation or completed approvals supplied.",
+    "assertions": [
+      "Shows owner publication depends on editor and finance rather than granting either publication rights.",
+      "Detects editor/finance approval loop and preserves conflict without inventing an order/authority override.",
+      "No completed approval or permission to publish inferred from the proposed path."
+    ],
+    "origin": "parent-designed fresh forward case; not an observed customer request"
+  }
+]

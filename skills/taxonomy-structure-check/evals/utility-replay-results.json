@@ -1,0 +1,234 @@
+{
+  "method": "retained observed-output regression replay; missing-file path excluded; not independent truth",
+  "passed": true,
+  "fixtures": [
+    {
+      "id": "good_forest",
+      "passed": true,
+      "exit": 0,
+      "actual": {
+        "cycles": [],
+        "errors": [],
+        "node_count": 3,
+        "ok": true,
+        "orphan_references": [],
+        "roots": [
+          "books",
+          "music"
+        ],
+        "self_parenting": []
+      }
+    },
+    {
+      "id": "orphan_reference",
+      "passed": true,
+      "exit": 1,
+      "actual": {
+        "cycles": [],
+        "errors": [
+          {
+            "code": "ORPHAN_REFERENCE",
+            "count": 1
+          }
+        ],
+        "node_count": 1,
+        "ok": false,
+        "orphan_references": [
+          {
+            "id": "jazz",
+            "parent_id": "music"
+          }
+        ],
+        "roots": [],
+        "self_parenting": []
+      }
+    },
+    {
+      "id": "malformed_duplicate_ids",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "duplicate id",
+        "errors": []
+      }
+    },
+    {
+      "id": "empty_forest_boundary",
+      "passed": true,
+      "exit": 0,
+      "actual": {
+        "cycles": [],
+        "errors": [],
+        "node_count": 0,
+        "ok": true,
+        "orphan_references": [],
+        "roots": [],
+        "self_parenting": []
+      }
+    },
+    {
+      "id": "numeric_token_bound",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "number exceeds coefficient-digit or exponent limit (1000)",
+        "errors": []
+      }
+    },
+    {
+      "id": "self_parent",
+      "passed": true,
+      "exit": 1,
+      "actual": {
+        "cycles": [
+          [
+            "a"
+          ]
+        ],
+        "errors": [
+          {
+            "code": "SELF_PARENTING",
+            "count": 1
+          },
+          {
+            "code": "CYCLE",
+            "count": 1
+          }
+        ],
+        "node_count": 1,
+        "ok": false,
+        "orphan_references": [],
+        "roots": [],
+        "self_parenting": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "multi_node_cycle",
+      "passed": true,
+      "exit": 1,
+      "actual": {
+        "cycles": [
+          [
+            "a",
+            "b",
+            "c"
+          ]
+        ],
+        "errors": [
+          {
+            "code": "CYCLE",
+            "count": 1
+          }
+        ],
+        "node_count": 4,
+        "ok": false,
+        "orphan_references": [],
+        "roots": [
+          "d"
+        ],
+        "self_parenting": []
+      }
+    },
+    {
+      "id": "long_chain_iterative",
+      "passed": true,
+      "exit": 0,
+      "actual": {
+        "cycles": [],
+        "errors": [],
+        "node_count": 10000,
+        "ok": true,
+        "orphan_references": [],
+        "roots": [
+          "n00000"
+        ],
+        "self_parenting": []
+      }
+    },
+    {
+      "id": "duplicate_json_key",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "duplicate JSON object key",
+        "errors": []
+      }
+    },
+    {
+      "id": "nonfinite",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "non-finite JSON number",
+        "errors": []
+      }
+    },
+    {
+      "id": "truncated",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "Expecting value: line 1 column 6 (char 5)",
+        "errors": []
+      }
+    },
+    {
+      "id": "missing_file",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "[WinError 2] The system cannot find the file specified: '<local-path>'",
+        "errors": []
+      }
+    },
+    {
+      "id": "peer_cli_integration",
+      "passed": true,
+      "exit": 1,
+      "actual": {
+        "cycles": [
+          [
+            "a",
+            "b"
+          ]
+        ],
+        "errors": [
+          {
+            "code": "ORPHAN_REFERENCE",
+            "count": 1
+          },
+          {
+            "code": "CYCLE",
+            "count": 1
+          }
+        ],
+        "node_count": 5,
+        "ok": false,
+        "orphan_references": [
+          {
+            "id": "orphan",
+            "parent_id": "missing"
+          }
+        ],
+        "roots": [
+          "r"
+        ],
+        "self_parenting": []
+      }
+    }
+  ]
+}

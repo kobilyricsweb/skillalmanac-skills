@@ -1,0 +1,49 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "example-set-diversifier__parent_holdout",
+        "slug": "example-set-diversifier",
+        "prompt": "Diversify examples for teaching rule: an access code is valid iff it contains exactly four ASCII digits0-9. Current examples1234,5678,9012,3456 all teach the same success. Provide a compact example plan covering success, missing input, length boundary and lookalike non-ASCII digits. Label examples synthetic. Missing input handling is not specified by the rule.",
+        "assertions": [
+          "Preserves exactly-four-ASCII-digit rule; valid example and length counterexample are correctly labeled.",
+          "A four-character non-ASCII numeral example is invalid underASCII rule.",
+          "Missing input is an unresolved handling policy rather than an invented application error behavior."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "Objective-and-rule summary: Teach that an access code is valid if and only if it contains exactly four ASCII digits from 0–9. Existing examples 1234, 5678, 9012, and 3456 all demonstrate the same successful case.\n\nOverlap diagnosis: The examples vary only in digit sequence. They do not cover incomplete input, boundary length, or lookalike non-ASCII digits.\n\nDiversified example plan:\n1. Role: Success baseline. Synthetic example: `4827`. Rule applied: exactly four ASCII digits 0–9. Learner task: classify validity. Expected lesson: Four ASCII digits are valid.\n2. Role: Missing input. Synthetic example: empty input. Rule applied: the supplied rule does not specify missing-input handling. Learner task: identify whether the rule determines a result. Expected lesson: Unknown; clarification is required for empty input.\n3. Role: Length boundary below. Synthetic example: `482`. Rule applied: fewer than four digits fails the exact-length condition. Learner task: classify validity. Expected lesson: Invalid because the length is three.\n4. Role: Length boundary above. Synthetic example: `48271`. Rule applied: more than four digits fails the exact-length condition. Learner task: classify validity. Expected lesson: Invalid because the length is five.\n5. Role: Lookalike non-ASCII digits. Synthetic example: `１２３４` using fullwidth digit characters. Rule applied: the rule requires ASCII digits 0–9. Learner task: classify validity. Expected lesson: Invalid because the characters are not ASCII digits.\n\nPreservation note: Retain at least one ordinary four-ASCII-digit success case; the new examples add meaningful rule boundaries.\n\nVerification report:\n- Examples are explicitly labeled synthetic.\n- Coverage includes success, missing input, both length boundaries, and non-ASCII lookalikes.\n- No customer claims, outcomes, or external evidence were added.\n- Missing-input behavior remains undetermined.",
+      "grade": {
+        "id": "example-set-diversifier__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The answer preserves the exactly-four-ASCII-digits rule, labels `4827` valid, and labels the three- and five-digit boundary examples invalid."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "The synthetic four-character fullwidth example `１２３４` is explicitly labeled invalid because its characters are not ASCII digits."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "For empty input, the answer says the supplied rule does not specify handling and that clarification is required, without inventing error behavior."
+          }
+        ]
+      },
+      "binding": {
+        "id": "example-set-diversifier__parent_holdout",
+        "slug": "example-set-diversifier",
+        "skill_sha256": "140cd72105223a8411130929da25fecd38b5d8a63d0573a222fb1dbae82cda72",
+        "contract_sha256": "2b5ead97402c3e6495e7a8ac2e2b83b3e6e2e74b21dfe1c45a3ddf0a514a08c9",
+        "assertions_sent_to_executor": false
+      },
+      "round": "initial"
+    }
+  ]
+}

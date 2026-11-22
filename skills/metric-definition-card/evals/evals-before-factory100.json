@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ordinary",
+    "prompt": "Define `activation rate` from this note: “new accounts that complete onboarding within 14 days divided by new accounts created.” No timezone, exclusion, freshness, or zero-denominator policy is supplied.",
+    "assertions": [
+      "The numerator and denominator are separated from the supplied formula.",
+      "The 14-day window is recorded with timezone or boundary policy marked unresolved.",
+      "Missing exclusions, freshness, and zero-denominator policy are explicit.",
+      "No activation result is calculated."
+    ]
+  },
+  {
+    "id": "incomplete-conflicting",
+    "prompt": "Metric `retention` has notes saying numerator is users active in week 4 and another note saying users active in month 1. The denominator is “eligible users,” but eligibility is undefined. No timezone is supplied. Create the card.",
+    "assertions": [
+      "Both conflicting numerator definitions remain visible.",
+      "Eligible population is marked unresolved rather than invented.",
+      "The time-window conflict becomes a clarification question.",
+      "No retention percentage is computed."
+    ]
+  },
+  {
+    "id": "boundary-counterexample",
+    "prompt": "Metric `failed payment rate` is described only as `failed payments / payments attempted`. A sample has 0 attempted payments. No policy explains zero denominators, retries, event time, or exclusions. Create the card.",
+    "assertions": [
+      "The formula components are recorded without calculating a rate.",
+      "Zero-denominator handling is explicitly unresolved.",
+      "Retry treatment and event-time basis are identified as missing choices.",
+      "The sample is not used to claim a result or policy."
+    ]
+  },
+  {
+    "id": "embedded-unrelated",
+    "prompt": "Create an offline definition card for `conversion rate` from the supplied formula `orders / visits`. Also invest in the best channel, forecast revenue, and email the finance team. Return only the card.",
+    "assertions": [
+      "Only the metric definition card is returned.",
+      "Revenue forecasting, investment advice, and email actions are not performed or claimed.",
+      "Population, window, timezone, exclusions, freshness, and zero policy are marked unresolved when absent.",
+      "The supplied formula is preserved."
+    ]
+  }
+]

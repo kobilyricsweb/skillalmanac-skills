@@ -1,0 +1,27 @@
+{
+  "shared_context": [],
+  "section_mapping": [
+    {
+      "section": "Overview",
+      "destination": "Download a receipt",
+      "status": "assigned"
+    },
+    {
+      "section": "Download",
+      "destination": "Download a receipt",
+      "status": "assigned"
+    }
+  ],
+  "duplicate_risks": [],
+  "migration_checklist": [
+    "Have Support review the proposed unit",
+    "Decide URL and redirect handling before migration"
+  ],
+  "verification": [
+    "Every supplied section is assigned",
+    "Overview and Download remain together"
+  ],
+  "open_decisions": [
+    "URL and redirect convention are not supplied"
+  ]
+}

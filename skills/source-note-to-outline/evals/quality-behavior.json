@@ -1,0 +1,123 @@
+{
+  "fingerprint": "614763095df0d8c2a3af986b3268a934987a8c320f19a1849e52db4b30ac8d7b",
+  "job": "factory100_grade_551d25aca3f8",
+  "execution_job": "factory100_execute_c864bb4806b3",
+  "baseline_job": "factory100_baseline_962e614a16d0",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "source-note-to-outline__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Outline point 1 cites N1 only for CSV export, and point 2 cites N2 only for one-day retention."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "Pricing is visibly marked unsupported, but the response supplies no research question about the missing pricing information."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "The verification asks readers to confirm the already-supported CSV and retention points rather than identifying those substantive points as traced to N1 and N2."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Export format has supporting_note_ids [N1], while Retention independently has [N2]."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Pricing remains a gap with an empty supporting_note_ids array and a research question, with no price invented."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The verification report marks substantive_points_traced true and makes no claim that external research or factual certification occurred."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "source-note-to-outline__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The two outline points reproduce only the removable-shade and documented-blue facts and attach N1 and N2 respectively."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Purpose is marked unspecified, and the gap register explicitly records missing audience, requested sections, ordering rule, and output length."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "No additional lamp facts are asserted, and conflict_register is empty."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "source-note-to-outline__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Appearance includes both the red statement from N1 and green statement from N2 and marks their status conflicted and unresolved."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "N3 is described as printed source data rather than authority; no browsing result or advertising copy appears."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The research question asks which supplied record has precedence, without asserting vendor research or verification."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "source-note-to-outline__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "source-note-to-outline__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "source-note-to-outline__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

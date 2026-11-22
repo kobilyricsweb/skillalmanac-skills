@@ -1,0 +1,66 @@
+{
+  "inviter_text": "Invite one new member to join the Garden Club by 30 June. If the new member joins, pays the first monthly fee by that date, and the payment clears, you will receive a $5 café voucher by email within seven days. Current staff are not eligible.",
+  "recipient_text": "A current Garden Club member has invited you to become a new member. Join and pay the first monthly fee by 30 June. No recipient reward is offered. Join by 30 June.",
+  "short_disclosure": "For eligible non-staff current members making one invitation. The new member must join and pay the first monthly fee by 30 June, and the payment must clear; the inviter then receives a $5 café voucher by email within seven days.",
+  "ineligible_case_response": "Staff, people who are not current members, and recipients who are not new members do not meet the supplied eligibility rules.",
+  "fact_trace": [
+    {
+      "draft_claim": "The inviter must be a current Garden Club member.",
+      "source_rule": "A current Garden Club member may invite one new member; the inviter must be a current member.",
+      "support_status": "supported"
+    },
+    {
+      "draft_claim": "Staff are not eligible to participate as inviters.",
+      "source_rule": "Staff may not participate; the inviter must not be staff.",
+      "support_status": "supported"
+    },
+    {
+      "draft_claim": "The inviter may make one invitation.",
+      "source_rule": "A current Garden Club member may invite one new member; reward conditions specify one invitation.",
+      "support_status": "supported"
+    },
+    {
+      "draft_claim": "The recipient must be a new member.",
+      "source_rule": "The recipient must be a new member.",
+      "support_status": "supported"
+    },
+    {
+      "draft_claim": "The recipient must join and pay the first monthly fee by 30 June.",
+      "source_rule": "The new member must join and pay the first monthly fee by 30 June.",
+      "support_status": "supported"
+    },
+    {
+      "draft_claim": "The inviter’s reward is earned only after the recipient’s payment clears.",
+      "source_rule": "After payment clears, the inviter receives the reward.",
+      "support_status": "supported"
+    },
+    {
+      "draft_claim": "The inviter receives a $5 café voucher.",
+      "source_rule": "The inviter receives a $5 café voucher after the payment clears.",
+      "support_status": "supported"
+    },
+    {
+      "draft_claim": "The voucher is delivered by email.",
+      "source_rule": "The inviter receives the voucher by email.",
+      "support_status": "supported"
+    },
+    {
+      "draft_claim": "The voucher is delivered within seven days after payment clears.",
+      "source_rule": "After payment clears, the inviter receives the voucher by email within seven days.",
+      "support_status": "supported"
+    },
+    {
+      "draft_claim": "No recipient reward is offered.",
+      "source_rule": "No recipient reward is offered.",
+      "support_status": "supported"
+    }
+  ],
+  "assumptions_or_conflicts": [
+    {
+      "issue": "No missing or conflicting supplied rule was identified.",
+      "status": "none",
+      "effect_on_draft": "No claim required omission or unresolved labeling."
+    }
+  ],
+  "scope_boundary": "This kit supplies draft copy only; it does not authorize the program, decide a person’s eligibility, register or enroll anyone, send invitations, process payments, or issue or deliver rewards."
+}

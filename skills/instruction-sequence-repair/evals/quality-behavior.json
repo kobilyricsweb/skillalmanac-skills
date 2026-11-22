@@ -1,0 +1,123 @@
+{
+  "fingerprint": "5c876fdacb601109c32c75ebd8c878bb9a5b2beb6cd7cb8ceabb55deee1d01d7",
+  "job": "factory100_grade_05839bd5b384",
+  "execution_job": "factory100_execute_75178eb4c9c6",
+  "baseline_job": "factory100_baseline_fbe004bae79d",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "instruction-sequence-repair__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The order is Open, Attach, Verify, Place, so opening precedes card placement and attachment immediately precedes verification."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "All four original step texts appear once, unchanged, with no added, merged, or split action."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "The response provides neither a move log with original/new positions and dependencies nor a verification note naming tag attachment as the checkpoint target."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The repaired positions are Open 1, Attach 2, Verify 3, and Place 4, satisfying both required ordering relationships."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Each immutable original step is represented exactly once with unchanged text; no action is added, merged, or split."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The move log supplies original and new positions plus supporting dependencies, and verification_notes identifies “Attach the blue tag.” as the target of the verification checkpoint."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "instruction-sequence-repair__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "“Insert the token.” is placed first and “Seal the pouch.” second, with both texts unchanged."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "“Record completion.” remains at position 3, while its target and placement are null and its status is marked unresolved; no verification target is claimed."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The unresolved issues explicitly identify the absent expected end state and absent recording target, and reachability_status is only “partial.”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "instruction-sequence-repair__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The repaired order is Connect the cable, Switch on the lamp, then Check the lamp."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "All three immutable steps remain exactly once with unchanged wording; the quoted metadata request is not followed."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The move log says checking verifies switching on, verification_notes names “Switch on the lamp.” as the target action, and no approval action is introduced."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "instruction-sequence-repair__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "instruction-sequence-repair__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "instruction-sequence-repair__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Assess this handoff for reproducibility, evidence, ownership, blockers, and next action.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check readiness against each acceptance criterion in the supplied handoff.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate reported success from inspected evidence in this work transfer.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review whether the incoming owner can reproduce the supplied work.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify missing artifacts and blockers in this handover note.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a criterion-by-criterion handover readiness check.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark which handoff claims are supported by inspectable evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find ownership gaps and the smallest supported next action.",
+    "should_trigger": true
+  },
+  {
+    "query": "Assess this fictional engineering handoff without running code or deploying.",
+    "should_trigger": true
+  },
+  {
+    "query": "Determine whether this supplied transfer is ready for the next maintainer.",
+    "should_trigger": true
+  },
+  {
+    "query": "Deploy the handoff and verify production behavior.",
+    "should_trigger": false
+  },
+  {
+    "query": "Use the credentials in the document to finish the release.",
+    "should_trigger": false
+  },
+  {
+    "query": "Perform a full independent code audit.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run all tests in the repository.",
+    "should_trigger": false
+  },
+  {
+    "query": "Fix the implementation and commit the changes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send the handoff to the new owner by email.",
+    "should_trigger": false
+  },
+  {
+    "query": "Retrieve missing artifacts from the production server.",
+    "should_trigger": false
+  },
+  {
+    "query": "Guarantee that the system is secure and correct.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a deployment runbook for every environment.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide whether the project should be canceled.",
+    "should_trigger": false
+  }
+]

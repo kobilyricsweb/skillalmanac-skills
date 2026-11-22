@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Route these pricing and setup questions to the approved sources using the stated precedence rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a source routing table for these recurring questions and report missing fallbacks.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map each support question to its authoritative document from this inventory.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use the supplied update dates to add freshness cues to this question-to-source guide.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify which source wins when the supplied authority rules show a conflict.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create routes for these questions without assuming a PDF is authoritative because of its format.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark question patterns unresolved when no supplied authority rule covers them.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn this source inventory and precedence policy into a routing guide.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit coverage of question examples against the declared source rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document the fallback for each question when its preferred source is absent.",
+    "should_trigger": true
+  },
+  {
+    "query": "Rewrite these notes into a polished explanatory outline.",
+    "should_trigger": false
+  },
+  {
+    "query": "Edit this terminology so preferred names are used consistently.",
+    "should_trigger": false
+  },
+  {
+    "query": "Resolve two references to the heading Setup in this document.",
+    "should_trigger": false
+  },
+  {
+    "query": "Cluster repeated research notes by source and contradiction.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design labels for quotations, assumptions, and observations.",
+    "should_trigger": false
+  },
+  {
+    "query": "Extract a narrative summary from these source notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide whether this operational record is a duplicate.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write an answer to the customer using general knowledge only.",
+    "should_trigger": false
+  },
+  {
+    "query": "Change the organization’s Cloudflare settings to allow automated traffic.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a script that fetches the approved price sheet from the web.",
+    "should_trigger": false
+  }
+]

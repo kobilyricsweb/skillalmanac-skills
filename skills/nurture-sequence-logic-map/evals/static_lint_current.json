@@ -1,0 +1,42 @@
+{
+  "skill": "nurture-sequence-logic-map",
+  "fail": 0,
+  "warn": 1,
+  "items": [
+    {
+      "level": "PASS",
+      "code": "frontmatter-keys",
+      "message": "only open-spec keys used"
+    },
+    {
+      "level": "PASS",
+      "code": "name-format",
+      "message": "name 'nurture-sequence-logic-map' is valid"
+    },
+    {
+      "level": "PASS",
+      "code": "description-length",
+      "message": "description is 302 chars"
+    },
+    {
+      "level": "PASS",
+      "code": "body-lines",
+      "message": "SKILL.md body has 6 lines"
+    },
+    {
+      "level": "PASS",
+      "code": "body-tokens",
+      "message": "body is about 330 tokens by chars/4"
+    },
+    {
+      "level": "PASS",
+      "code": "package-size",
+      "message": "package is 15251 bytes in 5 files"
+    },
+    {
+      "level": "WARN",
+      "code": "evals-task",
+      "message": "evals/evals.json is missing"
+    }
+  ]
+}

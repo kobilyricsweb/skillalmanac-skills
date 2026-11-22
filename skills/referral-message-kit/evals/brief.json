@@ -1,0 +1,11 @@
+{
+  "slug": "referral-message-kit",
+  "category": "marketing",
+  "user_problem": "A supplied referral program needs consistent invitation language that accurately states eligibility, reward, and limitations.",
+  "unique_output": "A message kit with inviter text, recipient text, short disclosure, ineligible-case response, and fact trace.",
+  "required_input": "Program rules, eligibility, reward conditions, expiration, prohibited wording, and approved CTA.",
+  "critical_rule": "Do not imply guaranteed rewards or eligibility; preserve every condition material to receiving the reward.",
+  "nearest_existing_and_difference": "Nearest is promotion-variant-check; this creates rule-bound referral messages rather than comparing prewritten promotion variants.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input says existing members receive $10 after a new member's first paid month, expires July 31, staff excluded. Output states the condition and expiry, includes a staff-ineligible response, and avoids 'instant $10.'"
+}

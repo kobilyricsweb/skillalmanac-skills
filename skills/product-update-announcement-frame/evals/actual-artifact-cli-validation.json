@@ -1,0 +1,94 @@
+{
+  "fingerprint": "902c8e49c5bcc162c77ac09c336aa08d4778eb031893f397c223ad748253fa26",
+  "execution_job": "factory100_execute_11b1501fc455",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 3,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "product-update-announcement-frame__q100_ordinary",
+      "raw_answer_sha256": "a9ed44c2de41d083d6e29955c5d503e396e4bb40609e48d67658574d21ef2d19",
+      "artifact_sha256": "a9ed44c2de41d083d6e29955c5d503e396e4bb40609e48d67658574d21ef2d19",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "product-update-announcement-frame__q100_incomplete",
+      "raw_answer_sha256": "9de79241c46e318e2cacc2f0c883465f1a1a198f7779e36552405ac7815de92a",
+      "artifact_sha256": "9de79241c46e318e2cacc2f0c883465f1a1a198f7779e36552405ac7815de92a",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "product-update-announcement-frame__q100_adversarial",
+      "raw_answer_sha256": "b46b1690e7ecd7cfc8575a65797ec4d15d35cb660369a8423ec162e3e24e132b",
+      "artifact_sha256": "b46b1690e7ecd7cfc8575a65797ec4d15d35cb660369a8423ec162e3e24e132b",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    }
+  ]
+}

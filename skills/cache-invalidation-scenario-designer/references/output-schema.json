@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scenario_table",
+    "affected_keys",
+    "readers",
+    "invalidation_timing",
+    "allowed_staleness",
+    "evidence",
+    "unresolved_relationships",
+    "conflicts",
+    "verification_statement"
+  ],
+  "properties": {
+    "scenario_table": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "mutation",
+          "affected_key",
+          "reader",
+          "relationship_status",
+          "invalidation_timing",
+          "allowed_staleness",
+          "evidence"
+        ],
+        "properties": {
+          "mutation": {
+            "type": "string"
+          },
+          "affected_key": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reader": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "relationship_status": {
+            "type": "string",
+            "enum": [
+              "specified",
+              "unresolved",
+              "conflicted"
+            ]
+          },
+          "invalidation_timing": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "allowed_staleness": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "affected_keys": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "readers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "invalidation_timing": {
+      "type": "string",
+      "enum": [
+        "fully_specified",
+        "partially_specified",
+        "unspecified",
+        "conflicted"
+      ]
+    },
+    "allowed_staleness": {
+      "type": "string",
+      "enum": [
+        "fully_specified",
+        "partially_specified",
+        "unspecified",
+        "conflicted"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "mutation",
+          "key_or_reader",
+          "question"
+        ],
+        "properties": {
+          "mutation": {
+            "type": "string"
+          },
+          "key_or_reader": {
+            "type": "string"
+          },
+          "question": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scenario",
+          "rules",
+          "status"
+        ],
+        "properties": {
+          "scenario": {
+            "type": "string"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "unresolved",
+              "resolved_by_supplied_precedence"
+            ]
+          }
+        }
+      }
+    },
+    "verification_statement": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "assets",
+    "dependency_summary",
+    "blocked_items",
+    "open_questions",
+    "outside_scope"
+  ],
+  "properties": {
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "artifact_name",
+          "channel",
+          "purpose",
+          "audience",
+          "required_facts",
+          "dependencies",
+          "deadline_relation",
+          "permitted_references",
+          "content_boundary",
+          "status"
+        ],
+        "properties": {
+          "artifact_name": {
+            "type": "string"
+          },
+          "channel": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "audience": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "required_facts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "deadline_relation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "permitted_references": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "content_boundary": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "planned",
+              "blocked",
+              "placeholder",
+              "conditional"
+            ]
+          }
+        }
+      }
+    },
+    "dependency_summary": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blocked_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outside_scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

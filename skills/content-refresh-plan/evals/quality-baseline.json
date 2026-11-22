@@ -1,0 +1,12 @@
+{
+  "fingerprint": "24ec7a66a4fa52657819b76da1f925107656ad8215f3127196c872b31645c343",
+  "job": "factory100_baseline_44caf2c8dad0",
+  "results": [
+    {
+      "id": "content-refresh-plan__q100_ordinary",
+      "answer": "Priority 1 — Section A [pricing]: E1 supersedes the existing statement. The included capacity changed from 2 to 3 projects; schedule a high-priority refresh review and replacement-copy update. Priority 2 — Section B [support]: E2 confirms that email support remains available, so no substantive content change is indicated; record as low priority and retain pending routine review. Scope: offline planning only. No replacement copy or page edit performed."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

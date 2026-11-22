@@ -1,0 +1,12 @@
+{
+  "fingerprint": "64172f6efe4b2b855ebb95fad23bebd318d6dedfd068eba3e0d2557f9c4b3cec",
+  "job": "factory100_baseline_49e5451d8e4a",
+  "results": [
+    {
+      "id": "approval-path-mapper__q100_ordinary",
+      "answer": "Artifact: release note. Starting state: drafted.\n\nBranch 1 — no pricing mention:\n1. Writer attaches a change list and sends drafted → reviewed.\n2. Reviewer records a decision and sends reviewed → ready.\n3. Publisher approves ready.\nEvidence status: required change list and Reviewer decision are specified requirements; no evidence that either exists.\n\nBranch 2 — pricing mentioned:\n1. Writer attaches a change list and sends drafted → reviewed.\n2. Finance approves pricing before Reviewer sends reviewed → ready.\n3. Reviewer records a decision and sends reviewed → ready.\n4. Publisher approves ready.\nEvidence status: Finance approval, change list, and Reviewer decision are required but not supplied.\n\nUnresolved items: whether the note mentions pricing; the actual change list; Reviewer decision; Finance approval if applicable; Publisher approval. No escalation route or deadlines are supplied.\n\nOutside scope: inventing evidence, assigning missing approvals, defining deadlines, adding escalation rules, or changing role permissions."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

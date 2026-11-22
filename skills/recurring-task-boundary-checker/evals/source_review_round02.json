@@ -1,0 +1,14 @@
+{
+  "slug": "recurring-task-boundary-checker",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "RTB-05",
+      "severity": "major",
+      "location": "skill steps 2 and 4 versus input-contract decision rules",
+      "evidence": "Step 2 directs the skill to `define the minimum condition for a run to begin`, and step 4 directs it to `define what counts as completion and what record would evidence it`. The contract separately requires missing inputs or completion evidence to remain contract gaps, and the incomplete-conflicting eval expects missing inputs and evidence to be listed rather than supplied by the skill.",
+      "consequence": "When the request omits start or completion criteria, these drafting commands can cause the skill to invent operative prerequisites or success evidence and present an incomplete recurrence as bounded.",
+      "correction": "Direct the skill to record supplied start and completion criteria. When either is absent, list it as unresolved; any candidate criterion may be shown only as a clearly labeled, non-operative proposal requiring owner approval."
+    }
+  ]
+}

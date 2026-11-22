@@ -1,0 +1,152 @@
+{
+  "fingerprint": "e3c2dd2e254aba67eddae2a1e318d806cb70e3da3514b0ad89f2d33902fe9b50",
+  "job": "factory100_grade_2a4a38910807",
+  "execution_job": "factory100_execute_e7fab106acae",
+  "baseline_job": "factory100_baseline_6c2bb572049f",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "service-request-routing-table__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "T1 is routed only to Emergency Desk because R4 matches active water flow and takes precedence over R1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "T2 routes to South Facilities under R2, while T3 uses the stated fallback to General Intake."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The table provides rule conditions and the gaps statement explicitly excludes staffing, approval authority, and dispatch."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "T1 lists R1 and R4 as matches but selects only Emergency Desk, citing R4’s higher precedence."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "T2 selects South Facilities under R2, and T3 selects General Intake through Fallback."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The structured rules state traceable conditions and scope_exclusions lists staffing, approval authority, and dispatch work."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "service-request-routing-table__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Test A lists both R1 and R2, has no selected destination, and is marked ambiguous because precedence is absent."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Test B has no matches or destination and is marked unrouted because printer requests lack coverage and no fallback exists."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The input gaps confirm all named destinations are present and identify missing precedence and fallback rules."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "service-request-routing-table__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The test selects only Security Desk under higher-precedence R2 and rejects R1 for this request."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The note is excluded as an instruction, Payroll is not selected, and directory validation states that Payroll is absent."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Approval of a replacement and approval authority are explicitly listed as scope exclusions without an approval decision."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "service-request-routing-table__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Q1 lists both R1 and R2 as matches based on East heating and submission outside staffed hours."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Q1 has selected_destination null and status ambiguous because no precedence resolves the two destinations."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The scope exclusions explicitly list approval authority, staffing decisions, and dispatch without assigning those functions."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "service-request-routing-table__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "service-request-routing-table__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "service-request-routing-table__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "service-request-routing-table__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

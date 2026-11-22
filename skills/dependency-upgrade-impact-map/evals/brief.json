@@ -1,0 +1,11 @@
+{
+  "slug": "dependency-upgrade-impact-map",
+  "category": "software",
+  "user_problem": "Supplied release notes and usage references need translating into a bounded upgrade review without executing code.",
+  "unique_output": "An impact map connecting documented changes to named usage sites, required reviews, and unverified exposure.",
+  "required_input": "Old and new dependency notes, supplied usage references, supported environment constraints, and project assumptions.",
+  "critical_rule": "A textual match indicates possible exposure only; do not claim breakage, safety, or complete usage coverage.",
+  "nearest_existing_and_difference": "Nearest is feature-flag-retirement-planner; this assesses supplied dependency changes rather than retiring conditional behavior.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input notes remove parseLegacy(), and usage list names importer calling parseLegacy() plus exporter calling parse(). Output marks importer directly exposed, exporter unaffected by that note, and completeness dependent on the supplied usage list."
+}

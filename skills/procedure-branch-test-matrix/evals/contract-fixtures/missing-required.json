@@ -1,0 +1,16 @@
+{
+  "uncovered_branches": [],
+  "unknown_branches": [],
+  "unreachable_branches": [],
+  "conflicting_branches": [],
+  "coverage_summary": "All two condition branches and the explicit missing-value branch are represented by synthetic cases.",
+  "unresolved_rules": [],
+  "boundary_notes": [
+    "Level 0 tests equality and the lower boundary; level 2 tests the upper boundary."
+  ],
+  "budget": {
+    "supplied_minutes": 3,
+    "allocated_minutes": 3,
+    "status": "within_budget"
+  }
+}

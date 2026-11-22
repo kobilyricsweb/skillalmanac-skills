@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Map each output field back through the supplied pipeline stages.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a field-level lineage table showing transformations and filters.",
+    "should_trigger": true
+  },
+  {
+    "query": "Trace raw fields into the report fields using only these explicit mappings.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show every named input to a derived field and mark undocumented origins.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document where each aggregate field gets its inputs and filters.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a stage-by-stage data provenance map from these pipeline notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify broken lineage segments and fields with unknown origin.",
+    "should_trigger": true
+  },
+  {
+    "query": "Represent these field mappings as directed lineage hops.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare competing provenance notes without choosing an unsupported winner.",
+    "should_trigger": true
+  },
+  {
+    "query": "Produce a compact lineage report for this supplied transformation flow.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find documentary excerpts supporting each claim in this report.",
+    "should_trigger": false
+  },
+  {
+    "query": "Assign cohorts using the supplied inclusion and exclusion rules.",
+    "should_trigger": false
+  },
+  {
+    "query": "Profile field types, null rates, and distinct counts in this dataset.",
+    "should_trigger": false
+  },
+  {
+    "query": "Normalize null and sentinel values between these sources.",
+    "should_trigger": false
+  },
+  {
+    "query": "Check whether an order total is duplicated after joining item rows.",
+    "should_trigger": false
+  },
+  {
+    "query": "Describe which members of the target population are missing from the frame.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find missing categories in this taxonomy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Define the numerator and denominator for this metric.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit the cardinality of this customer-to-order join.",
+    "should_trigger": false
+  },
+  {
+    "query": "Deploy a pipeline that writes lineage metadata to the warehouse.",
+    "should_trigger": false
+  }
+]

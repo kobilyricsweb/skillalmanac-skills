@@ -1,0 +1,123 @@
+{
+  "fingerprint": "902c8e49c5bcc162c77ac09c336aa08d4778eb031893f397c223ad748253fa26",
+  "job": "factory100_grade_554df9ec5268",
+  "execution_job": "factory100_execute_11b1501fc455",
+  "baseline_job": "factory100_baseline_916157293b0d",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "product-update-announcement-frame__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The release status remains 'limited beta for selected workspaces,' and audience impact is scoped to Standard-plan project owners in selected workspaces."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It states that attachments are not copied and cross-project duplication is unavailable, says no action is required, and uses exactly the permitted CTA."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The trace cites E1 for the confirmed change and both limitations, while Product authorization, Deployment, and User notification are listed outside scope."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The audience statement limits availability to selected workspaces, Standard-plan project owners, and a limited beta."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Both supplied limitations, the no-action migration note, and only the supplied CTA are present."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "Although the fact trace correctly connects CN1 and E1 to the change and limitations, the outside-scope section says only 'None required' and does not identify deployment, authorization, or notification as outside scope."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-update-announcement-frame__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "release_status is null, and unresolved_items explicitly says rollout and availability are not stated; no rollout state is asserted."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The confirmed change is only saved-view renaming, the documented audience is Basic-plan workspace admins, and the trace cites CN1 and E1 for the change."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It preserves existing filters as the limitation, states no action is required, uses the supplied CTA, and adds no benefit, timing, or compatibility claim."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-update-announcement-frame__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The headlines, change, audience, and status retain beta and selected Enterprise workspace scope, and the mobile unavailability limitation is explicit."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "No faster-performance, general-availability, or universal-benefit claim is made; faster claims and general availability are instead listed outside scope."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The migration note gives the supplied admin enablement action and no member action, the CTA is exact, and Customer notification plus Deployment or authorization are outside scope."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "product-update-announcement-frame__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "product-update-announcement-frame__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "product-update-announcement-frame__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

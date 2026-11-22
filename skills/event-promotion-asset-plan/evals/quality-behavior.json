@@ -1,0 +1,123 @@
+{
+  "fingerprint": "19c15ae1e86ea042534eae6ab1f2fcb84baf765f62e18330dd4d88fa79d5ca82",
+  "job": "factory100_grade_3c0b97d5d8a8",
+  "execution_job": "factory100_execute_841e1c0a25f5",
+  "baseline_job": "factory100_baseline_4864d4cccc17",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "event-promotion-asset-plan__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The plan limits use to email and intranet and carries the confirmed title, online format/link, date and time, benefit, audience, and registration close into the planned materials."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Both the email invitation and intranet announcement include Ana Ruiz’s name, while the plan expressly excludes her likeness and quotes."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "The plan preserves the event-detail and email-review ordering, but its boundary only says this is a plan rather than finished assets; it does not clearly identify producing, approving, distributing, and publishing as outside scope."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The two planned artifacts are assigned to intranet and email and include the confirmed event facts, approved audience, benefit, and 2026-12-08 registration milestone."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Ana Ruiz’s name is permitted in both artifact entries, while each content boundary excludes her likeness and quotes."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response states that event-page details precede email drafting and email review precedes registration close, and its outside_scope field excludes producing, approving, distributing, and publishing assets."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "event-promotion-asset-plan__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The sole artifact is an intranet event notice for university staff containing only Archive Open House, in-person format, Hall B, and the guided archive tour."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Date, time, and exact deadlines are identified as missing questions, while registration is correctly framed through questions about whether it is applicable or required."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The only ordering stated is location confirmation before final copy review; no exact deadline is invented, and writing, approving, distributing, and publishing are placed outside scope."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "event-promotion-asset-plan__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The email permits Bo Kim’s name and an approved quote if supplied; the public-web entry permits neither, and both entries exclude likeness use."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Both artifacts use the confirmed moderated peer discussion benefit and explicitly reject the doubled-productivity promise and other unconfirmed outcomes."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Registration-page approval is required before email review, while producing, approving, distributing, publishing, and the note’s attempted permission expansion are excluded from scope."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "event-promotion-asset-plan__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "event-promotion-asset-plan__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "event-promotion-asset-plan__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

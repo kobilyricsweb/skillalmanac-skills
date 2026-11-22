@@ -1,0 +1,42 @@
+{
+  "skill": "product-update-announcement-frame",
+  "fail": 0,
+  "warn": 1,
+  "items": [
+    {
+      "level": "PASS",
+      "code": "frontmatter-keys",
+      "message": "only open-spec keys used"
+    },
+    {
+      "level": "PASS",
+      "code": "name-format",
+      "message": "name 'product-update-announcement-frame' is valid"
+    },
+    {
+      "level": "PASS",
+      "code": "description-length",
+      "message": "description is 242 chars"
+    },
+    {
+      "level": "PASS",
+      "code": "body-lines",
+      "message": "SKILL.md body has 4 lines"
+    },
+    {
+      "level": "PASS",
+      "code": "body-tokens",
+      "message": "body is about 319 tokens by chars/4"
+    },
+    {
+      "level": "PASS",
+      "code": "package-size",
+      "message": "package is 14916 bytes in 5 files"
+    },
+    {
+      "level": "WARN",
+      "code": "evals-task",
+      "message": "evals/evals.json is missing"
+    }
+  ]
+}

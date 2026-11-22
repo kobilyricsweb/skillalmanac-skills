@@ -1,0 +1,181 @@
+{
+  "fingerprint": "eeb8226828a83a4cda688bef564124053cfc34780709e0b00b38524833e77520",
+  "job": "factory100_grade_92d947c42d98",
+  "execution_job": "aggregate_isolated_c4c67f2814b7db9d",
+  "baseline_job": "aggregate_isolated_b800023f6386d0fb",
+  "passed": true,
+  "checks_total": 15,
+  "checks_passed": 15,
+  "machine_schema_checks": 5,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "misconception-diagnostic-set__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Provides two distinct three-choice items in the requested format, targeting M1 and M2 respectively."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Both keys retain the common denominator and add numerators; each targeted distractor is cautiously described as “may be consistent with” the supplied misconception."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Each item lists alternative errors and explicitly states that a single response cannot establish a learner misconception."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Provides two materially distinct three-choice probes, with Item 1 targeting M1 and Item 2 targeting M2."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The correct responses apply the supplied rule, and distractor interpretations are tentative and tied to M1 or M2 rather than asserted as diagnoses."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Both items give alternative explanations and state that one response is insufficient for a stable conclusion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misconception-diagnostic-set__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Explicitly identifies the governing correct rule as a required missing input."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Delivers zero items with an empty items array and asserts no answer key or correct response."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Makes no prevalence or learner diagnosis and says clarification of the governing rule is needed before construction and interpretation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misconception-diagnostic-set__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Compares -8 and -3 and correctly selects -3 using their relative positions on the number line."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The distractor reasoning references the supplied absolute-value misconception, while alternatives include reversal, terminology confusion, and sign/transcription errors."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Explicitly treats the classroom note as data, refuses labeling or grading, and limits inference from one response."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misconception-diagnostic-set__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Identifies the conflict specifically as incompatible authoritative Source A and Source B rules, not merely M1 disagreeing with Source A."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Delivers zero items and provides no correct response or distractor interpretation because the sources yield incompatible keys."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Requests clarification of controlling authority or precedence and states that responses are evidence to investigate, not diagnoses."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misconception-diagnostic-set__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Reports requested_count and delivered_count as 2, has no shortfall, and uses AXX and XA exactly once each."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Keys AXX as accepted and XA as not accepted, with opposite M1-consistent errors described for the two strings."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Interpretation limits reject diagnosis from a response, and all distractor language remains tentative and non-grading."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "misconception-diagnostic-set__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "misconception-diagnostic-set__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "misconception-diagnostic-set__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "misconception-diagnostic-set__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "misconception-diagnostic-set__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "entries",
+    "unresolved_impacts",
+    "protected_text_verification"
+  ],
+  "properties": {
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "location",
+          "original_text",
+          "revised_text",
+          "change_type",
+          "rationale",
+          "source",
+          "protected_text_result",
+          "decision_status",
+          "unresolved_impact"
+        ],
+        "properties": {
+          "location": {
+            "type": "string"
+          },
+          "original_text": {
+            "type": "string"
+          },
+          "revised_text": {
+            "type": "string"
+          },
+          "change_type": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "precision",
+                "scope",
+                "evidence_alignment",
+                "structure",
+                "clarity",
+                "qualification",
+                "unclassified"
+              ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "protected_text_result": {
+            "type": "string",
+            "enum": [
+              "unchanged",
+              "alteration_flagged",
+              "not_protected",
+              "unresolved"
+            ]
+          },
+          "decision_status": {
+            "type": "string",
+            "enum": [
+              "approved",
+              "proposed",
+              "unresolved"
+            ]
+          },
+          "unresolved_impact": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "unresolved_impacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "protected_text_verification": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "location",
+          "protected_text",
+          "result",
+          "note"
+        ],
+        "properties": {
+          "location": {
+            "type": "string"
+          },
+          "protected_text": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string",
+            "enum": [
+              "unchanged",
+              "alteration_flagged",
+              "unresolved"
+            ]
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

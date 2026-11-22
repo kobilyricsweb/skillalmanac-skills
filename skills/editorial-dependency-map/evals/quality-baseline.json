@@ -1,0 +1,12 @@
+{
+  "fingerprint": "220cf6a9f76a60b77e463390d25947ca6fe8d6c3afe0c72d92f031c70604b15f",
+  "job": "factory100_baseline_0ce543878b0c",
+  "results": [
+    {
+      "id": "editorial-dependency-map__q100_ordinary",
+      "answer": "Overview — Owner: Nia. Requires approved S1; S1 is approved. Section dependency: independent. Status: may proceed.\n\nMethods — Owner: Lei. Requires available or approved P1; P1 is available. Section dependency: none. Status: may proceed.\n\nResults — Owner: Omar. Requires available or approved D1 and C1, plus completion of Methods. D1 is available, C1 is pending, and Methods is an unresolved prerequisite until its completion is explicitly supplied. Status: blocked; no fallback authorized."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

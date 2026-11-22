@@ -1,0 +1,16 @@
+{
+  "fingerprint": "61d3d0ff2269f45ad78c48cafb88eea9d9f92c8b7caec49f163ede0a880cf8ba",
+  "job": "factory100_base_medium_d36f6bf114c8",
+  "results": [
+    {
+      "id": "taxonomy-gap-finder__q100_ordinary",
+      "answer": "Review scope: P1–P3 and C1–C2. P1 has one assignment, P1→C1, and no supplied conflict. P2 has one assignment, P2→C2, and no supplied conflict. P3 has two assignments, P3→C1 and P3→C2; this violates the mutual-exclusivity constraint because C1 and C2 cannot both apply to the same item. Every item has at least one assignment, so there is no unassigned-item gap. Gap type: assignment conflict for P3. No new classification is created."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "executor_model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "method_note": "Both arms use the same model and effort; old low-effort failures retained, sources and valid tests unchanged by this profile selection.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

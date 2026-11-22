@@ -1,0 +1,10 @@
+{
+  "synthetic": true,
+  "input": "Draft: ‘Managers recommend extending the pilot.’ Source S3, with no location marker: ‘Managers recommend extending the pilot.’",
+  "expected_artifact": {
+    "claims": [{"claim_id": "C1", "statement": "Managers recommend extending the pilot.", "statement_type": "factual", "status": "supported", "matches": [{"source_id": "S3", "location_state": "location_unavailable", "location_value": null, "fragment": "Managers recommend extending the pilot", "relation": "supports"}], "reason": "The supplied source entails the factual attribution that managers made the recommendation; its merits are not assessed.", "open_questions": []}],
+    "open_questions": [],
+    "limits": ["Assessment is limited to the supplied draft and source."]
+  },
+  "status": "specification; not an executed test"
+}

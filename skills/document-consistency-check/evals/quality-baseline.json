@@ -1,0 +1,12 @@
+{
+  "fingerprint": "7ebc6fbac03b3968f670ef2c1c5a0a2323553d82cd5264c99e243aa910781cff",
+  "job": "factory100_baseline_b1b81d581083",
+  "results": [
+    {
+      "id": "document-consistency-check__q100_ordinary",
+      "answer": "Quantity: consistent across D1, D2, and D3 at 8. Unit: consistent across all documents at kg. Batch scope: D1 and D2 state batch A; D3 states batch B. The batch scope is inconsistent."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

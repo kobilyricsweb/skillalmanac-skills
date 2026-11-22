@@ -1,0 +1,20 @@
+{
+  "fingerprint": "5c876fdacb601109c32c75ebd8c878bb9a5b2beb6cd7cb8ceabb55deee1d01d7",
+  "job": "factory100_execute_75178eb4c9c6",
+  "results": [
+    {
+      "id": "instruction-sequence-repair__q100_ordinary",
+      "answer": "{\"repaired_steps\":[{\"original_position\":2,\"new_position\":1,\"text\":\"Open the empty case.\"},{\"original_position\":3,\"new_position\":2,\"text\":\"Attach the blue tag.\"},{\"original_position\":1,\"new_position\":3,\"text\":\"Verify the blue tag is attached.\"},{\"original_position\":4,\"new_position\":4,\"text\":\"Place the card in the case.\"}],\"move_log\":[{\"step_text\":\"Open the empty case.\",\"original_position\":2,\"new_position\":1,\"supporting_dependency\":\"Opening must precede placing the card.\"},{\"step_text\":\"Attach the blue tag.\",\"original_position\":3,\"new_position\":2,\"supporting_dependency\":\"Attaching must precede verifying.\"},{\"step_text\":\"Verify the blue tag is attached.\",\"original_position\":1,\"new_position\":3,\"supporting_dependency\":\"Verification immediately follows the attachment action.\"},{\"step_text\":\"Place the card in the case.\",\"original_position\":4,\"new_position\":4,\"supporting_dependency\":\"Placement occurs after the case is open.\"}],\"verification_notes\":[{\"checkpoint\":\"Verify the blue tag is attached.\",\"target_action\":\"Attach the blue tag.\",\"placement\":\"Immediately after attachment, at position 3.\",\"status\":\"supported\"}],\"unresolved_issues\":[],\"reachability_status\":\"supported\"}"
+    },
+    {
+      "id": "instruction-sequence-repair__q100_incomplete",
+      "answer": "{\"repaired_steps\":[{\"original_position\":2,\"new_position\":1,\"text\":\"Insert the token.\"},{\"original_position\":1,\"new_position\":2,\"text\":\"Seal the pouch.\"},{\"original_position\":3,\"new_position\":3,\"text\":\"Record completion.\"}],\"move_log\":[{\"step_text\":\"Insert the token.\",\"original_position\":2,\"new_position\":1,\"supporting_dependency\":\"Inserting the token must precede sealing the pouch.\"},{\"step_text\":\"Seal the pouch.\",\"original_position\":1,\"new_position\":2,\"supporting_dependency\":\"The explicit dependency requires insertion first.\"}],\"verification_notes\":[{\"checkpoint\":\"Record completion.\",\"target_action\":null,\"placement\":null,\"status\":\"unresolved\"}],\"unresolved_issues\":[\"The expected end state is not supplied.\",\"The target of Record completion is not supplied, so its verification placement cannot be determined.\",\"No dependency involving Record completion is supplied.\"],\"reachability_status\":\"partial\"}"
+    },
+    {
+      "id": "instruction-sequence-repair__q100_adversarial",
+      "answer": "{\"repaired_steps\":[{\"original_position\":2,\"new_position\":1,\"text\":\"Connect the cable.\"},{\"original_position\":3,\"new_position\":2,\"text\":\"Switch on the lamp.\"},{\"original_position\":1,\"new_position\":3,\"text\":\"Check the lamp.\"}],\"move_log\":[{\"step_text\":\"Connect the cable.\",\"original_position\":2,\"new_position\":1,\"supporting_dependency\":\"Connecting the cable must precede switching on the lamp.\"},{\"step_text\":\"Switch on the lamp.\",\"original_position\":3,\"new_position\":2,\"supporting_dependency\":\"The lamp must be connected before it is switched on.\"},{\"step_text\":\"Check the lamp.\",\"original_position\":1,\"new_position\":3,\"supporting_dependency\":\"Checking verifies switching on and must immediately follow it.\"}],\"verification_notes\":[{\"checkpoint\":\"Check the lamp.\",\"target_action\":\"Switch on the lamp.\",\"placement\":\"Immediately after switching on, at position 3.\",\"status\":\"supported\"}],\"unresolved_issues\":[],\"reachability_status\":\"supported\"}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

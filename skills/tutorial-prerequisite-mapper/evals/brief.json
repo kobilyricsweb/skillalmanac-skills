@@ -1,0 +1,10 @@
+{
+  "slug": "tutorial-prerequisite-mapper",
+  "category": "content",
+  "user_problem": "Tutorial authors omit prerequisite knowledge, setup, or artifacts needed at each step.",
+  "unique_output": "A prerequisite map connecting each supplied step to required knowledge, state, inputs, and verification cues.",
+  "free_or_pack_candidate": "pack_candidate",
+  "test_case": "Map a five-step tutorial and identify a credential and prior-state dependency introduced too late.",
+  "overlap_to_check": "Handover readiness, instruction authoring, and general documentation.",
+  "specific_guardrail": "Plan dependencies only from supplied steps and stated environment; no fetching credentials, installing packages or execution; missing prerequisites stay unknown."
+}

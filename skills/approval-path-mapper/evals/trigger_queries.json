@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Map our supplied roles and authority rules into an approval sequence with evidence at each handoff.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify conditional approvers, escalation points, and approval loops in this governance workflow.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a role-based path from submission to final decision using only these rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which reviewer acts first and what evidence each downstream approver needs.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit this proposed approval chain for unreachable stages and contradictory decision rights.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn these state transitions and authority constraints into a branch-aware approval map.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag whether this review process contains a cyclic handoff or missing terminal outcome.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document who may reject, return, approve, or escalate this supplied artifact.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare two supplied interpretations of the approval order and preserve unresolved ambiguity.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an approval-path artifact for a conditional compliance review.",
+    "should_trigger": true
+  },
+  {
+    "query": "Rewrite our scope-change brief into a project decision memo.",
+    "should_trigger": false
+  },
+  {
+    "query": "Summarize a meeting and assign follow-up owners.",
+    "should_trigger": false
+  },
+  {
+    "query": "Check whether a handover package is ready for the next team.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide who should approve even though no authority rules were supplied.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send the artifact to the approver and wait for a response.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a generic RACI chart for our department.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft a customer-support reply to an approval request.",
+    "should_trigger": false
+  },
+  {
+    "query": "Schedule recurring approval meetings for this workflow.",
+    "should_trigger": false
+  },
+  {
+    "query": "Change Cloudflare or access settings so approvals cannot be blocked.",
+    "should_trigger": false
+  },
+  {
+    "query": "Score vendors using market research and procurement criteria.",
+    "should_trigger": false
+  }
+]

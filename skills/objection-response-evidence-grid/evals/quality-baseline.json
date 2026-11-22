@@ -1,0 +1,13 @@
+{
+  "fingerprint": "c98f49761aa8f857ea04c7c056a147a6ed96f53a88a3f4527065851a540ede52",
+  "job": "factory100_baseline_4864d4cccc17",
+  "results": [
+    {
+      "id": "objection-response-evidence-grid__q100_ordinary",
+      "answer": "| Objection | Evidence-supported response | Evidence | Limitation / unresolved point | Next question |\n|---|---|---|---|---|\n| O1: Will this work for our two-person support team? | A supplied pilot note reports that one two-person support team completed the checklist without outside help. | E1, pilot note | This is one team, not a general success rate or guarantee. | What characteristics of your team, workflow, and checklist access should be compared with the pilot team? |\n| O2: Can you guarantee setup by Friday? | Setup time varies with data access, so a completion date cannot be guaranteed from the supplied facts. | E2, implementation note supporting F2 | No Friday schedule evidence is supplied. | What is the intended Friday date, and when will the required data access be available? |\n\nProhibited assurances: do not promise guaranteed outcomes or guaranteed completion dates."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

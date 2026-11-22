@@ -1,0 +1,12 @@
+{
+  "fingerprint": "9e56ae752f4131f36e915e8aebc190dd4b4730f56d88f34d4dcd9b6b5837465c",
+  "job": "factory100_baseline_7aef657bdc1f",
+  "results": [
+    {
+      "id": "api-version-compatibility-brief__q100_ordinary",
+      "answer": "Element comparison: GET /pets/{id} is unchanged in the documents. v1 response 200 requires name:string and optionally allows age:integer; v2 requires name:string and age:integer and optionally allows color:string. v1 documents 404; v2 documents 404 and 410. Classifications: name is unchanged and required; age changes from optional to required; color is newly optional in v2; 404 remains documented; 410 is newly documented. Document-limited impacts: clients relying on a missing age being valid may be incompatible with v2; clients may encounter color; v2 documents an additional 410 response. Unresolved items: runtime behavior, meanings of 404 and 410, field nullability, unknown-field handling, and whether v1 remains supported are unspecified. Scope limits: comparison covers only the supplied documentary specifications; it does not establish implementation behavior, deployment policy, or semantic compatibility beyond these stated elements."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

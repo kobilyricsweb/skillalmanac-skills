@@ -1,0 +1,12 @@
+{
+  "fingerprint": "04a180daf627000e8a0e7f6d506081e9289ca49a827a1f2b3c67bb9c6dfffbcb",
+  "job": "factory100_baseline_916157293b0d",
+  "results": [
+    {
+      "id": "product-update-announcement-frame__q100_ordinary",
+      "answer": "Headline options:\n- Duplicate checklists in your project\n- Limited beta: checklist duplication for Standard plan owners\n\nConfirmed change: Project owners can duplicate an existing checklist within the same project.\n\nScoped audience impact: Available in limited beta to selected workspaces for project owners on the Standard plan.\n\nLimitation: File attachments are not copied, and cross-project duplication is unavailable.\n\nMigration note: None required; no action is needed.\n\nCTA: “Read the beta notes.”\n\nUnresolved items: Beta availability beyond selected workspaces, broader release timing, and any additional behavior are unspecified.\n\nFact trace: CN1 supports the confirmed change; E1 supports CN1 and both limitations.\n\nActions outside announcement framing: None required."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["conflict_summary", "statements", "scope_comparison", "authority_analysis", "resolver", "precedence_status", "affected_artifacts", "decision_questions", "post_decision_actions", "verification_notes"],
+  "properties": {
+    "conflict_summary": {"type": "string"},
+    "statements": {"type": "array", "items": {"type": "object", "required": ["source_id", "statement", "scope", "metadata"], "properties": {"source_id": {"type": "string"}, "statement": {"type": "string"}, "scope": {"type": ["string", "null"]}, "metadata": {"type": "object"}}}},
+    "scope_comparison": {"type": "string"},
+    "authority_analysis": {"type": "string"},
+    "resolver": {"type": "object", "required": ["identity", "status", "gap"], "properties": {"identity": {"type": ["string", "null"]}, "status": {"enum": ["supplied", "missing"]}, "gap": {"type": ["string", "null"]}}},
+    "precedence_status": {"type": "object", "required": ["status", "controlling_source", "basis"], "properties": {"status": {"enum": ["resolved", "unresolved", "not_a_conflict"]}, "controlling_source": {"type": ["string", "null"]}, "basis": {"type": "string"}}},
+    "affected_artifacts": {"type": "array", "items": {"type": "string"}},
+    "decision_questions": {"type": "array", "items": {"type": "string"}},
+    "post_decision_actions": {"type": "array", "items": {"type": "string"}},
+    "verification_notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

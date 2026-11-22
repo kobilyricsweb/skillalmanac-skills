@@ -1,0 +1,181 @@
+{
+  "fingerprint": "2e2f09239abe2d2a5a89dd5e3ac7e2bd70fbd05f28360ef4110098c4f61c462a",
+  "job": "factory100_grade_3a454ca29d25",
+  "execution_job": "factory100_execute_2421b1f7d582",
+  "baseline_job": "factory100_baseline_b40a8387a71b",
+  "passed": true,
+  "checks_total": 15,
+  "checks_passed": 15,
+  "machine_schema_checks": 5,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "referral-message-kit__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The inviter copy includes registration, the $4 fee, 8 May, payment clearance, and one front-desk guest pass within three days."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The recipient copy uses 'Register by 8 May,' states no recipient reward, and avoids all prohibited wording."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The ineligible response covers non-current members, coaches, and non-first-time recipients; the boundary excludes eligibility decisions, registration, and reward issuance or delivery."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The inviter copy preserves the $4 payment and deadline, payment clearance, and one front-desk guest pass within three days."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The recipient copy uses the approved CTA, states the recipient receives no reward, and contains none of the prohibited terms."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "The ineligible response covers all three eligibility failures, but the operational scope boundary does not say the kit refrains from deciding eligibility, registering anyone, or delivering the pass."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "referral-message-kit__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Missing inviter reward form and delivery conditions are explicitly unresolved in the copy, fact trace, and conflicts."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The drafts retain current non-staff inviter, new recipient, first payment, and 12 July conditions without inventing reward specifics."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The ineligible response covers non-current and staff inviters plus non-new recipients, and the scope boundary excludes eligibility decisions and reward issuance or delivery."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "referral-message-kit__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The drafts retain 1 September, reject the lower-authority note, and use neither 'guaranteed' nor 'no deadline.'"
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The inviter text conditions the $6 emailed voucher within five days on a new recipient joining, paying $3 by 1 September, and payment clearing."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The ineligible response covers inactive inviters, volunteers, and non-new recipients; the note is recorded as rejected lower-authority data inconsistent with the controlling deadline and conditional reward."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "referral-message-kit__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Both inviter and disclosure copy condition the two-hour account credit on starting by 30 November, completing the $7 first payment, and that payment settling."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The recipient copy states no recipient reward and uses the approved CTA verbatim."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The ineligible response covers inactive subscribers, contractors, and prior subscribers; the scope boundary denies named-person eligibility decisions and enrollment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "referral-message-kit__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The standalone disclosure contains enrollment, the $9 first payment, 14 February, settlement, the three-visit pass, account delivery, and six-day timing."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The copy preserves the employee exclusion and never-member condition, states no recipient reward, uses the approved CTA, and avoids prohibited wording."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The ineligible response states conditions without deciding a named person's status, and the boundary identifies the artifact as copy guidance excluding enrollment, payment processing, and reward delivery."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "referral-message-kit__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "referral-message-kit__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "referral-message-kit__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "referral-message-kit__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "referral-message-kit__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

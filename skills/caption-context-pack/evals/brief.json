@@ -1,0 +1,11 @@
+{
+  "slug": "caption-context-pack",
+  "category": "content",
+  "user_problem": "Charts or images need captions that communicate supplied context, limitations, and reading guidance without overclaiming.",
+  "unique_output": "A caption pack containing short caption, extended context, key, limitation, and source-note placeholder.",
+  "required_input": "Artifact description, displayed labels, intended takeaway, supplied limitations, and internal source identifier.",
+  "critical_rule": "Describe only visible or supplied information; never infer causes, identities, or trends beyond the artifact scope.",
+  "nearest_existing_and_difference": "Nearest is dashboard-design; this creates bounded explanatory text for an existing visual rather than designing a dashboard.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input bar chart shows A=12 and B=18 for one week, values are support tickets, no causal data, source S1. Output names the week and counts, notes B is higher, and forbids a cause claim."
+}

@@ -1,0 +1,25 @@
+# peer-review-protocol
+
+Unpublished original; editorial tier: paid-candidate. No public score or release approval.
+
+## What and when
+
+Use when students need a bounded peer-review sequence for a supplied assignment, rubric, duration, feedback scope, and submission format, including a timed disagreement path. Do not use for code review, personal judgments, or criteria invented beyond the assignment and rubric.
+
+## Task boundary
+
+Nearest is reviewing-code-changes; this designs learner-to-learner artifact review rather than technical code review.
+
+## Try the independent synthetic example
+
+Design a six-minute peer-review protocol. Assignment: submit one paragraph arguing which of two fictional park designs is better, using one fact from this prompt: Park A has two benches; Park B has one bench and one fountain. Submission format: plain-text paragraph. Rubric: a clear choice, one accurate supplied fact, and one sentence connecting that fact to the choice. Allowed feedback scope: paragraph content and rubric alignment only. Include artifact checks, evidence locations, an author question, one revision choice, disagreement handling, and a completion check. Keep all timing within six minutes and assess no personal qualities.
+
+Observed inline supplied-skill output (tools unavailable; not native discovery), job `factory100_execute_90443213829f`:
+
+```text
+{"protocol_status":"complete","missing_inputs":[],"total_minutes":6,"timed_sequence":[{"start_minute":0,"end_minute":1,"action":"Read the paragraph and confirm it is plain text and one paragraph.","artifact_evidence":"Point to the paragraph and format."},{"start_minute":1,"end_minute":3,"action":"Check for a clear choice and one accurate supplied fact about Park A or Park B.","artifact_evidence":"Identify the choice and quote the supplied fact."},{"start_minute":3,"end_minute":4,"action":"Check that one sentence connects the fact to the choice; record an observation and a suggestion only within the rubric.","artifact_evidence":"Identify the connecting sentence."},{"start_minute":4,"end_minute":4.5,"action":"Author answers one clarification question about the evidence.","artifact_evidence":"Record the referenced words."},{"start_minute":4.5,"end_minute":5,"action":"If disagreement occurs, quote the rubric criterion and record both readings for author or instructor resolution; otherwise recheck evidence.","artifact_evidence":"Identify the disputed wording or confirm no dispute."},{"start_minute":5,"end_minute":6,"action":"Author selects one rubric-aligned revision, or records that no revision is needed, then complete the check.","artifact_evidence":"Record the selected change or no-change decision."}],"artifact_checks":[{"criterion":"Clear choice","check":"Confirm the paragraph clearly chooses Park A or Park B.","evidence_location":"Choice statement in the paragraph"},{"criterion":"One accurate supplied fact","check":"Confirm one fact matches the prompt: Park A has two benches, or Park B has one bench and one fountain.","evidence_location":"Fact sentence or phrase"},{"criterion":"Connection","check":"Confirm one sentence explains how the fact supports the choice.","evidence_location":"Connecting sentence"}],"author_questions":["Which words show your choice, and which supplied fact supports it?"],"revision_choice":"Select one change that improves rubric alignment, or record that all three checks are met.","disagreement_procedure":"Quote the disputed rubric criterion, state the competing readings, and ask the author or instructor to decide; do not assess personal qualities.","completion_check":"Confirm format, choice, fact, connection, evidence locations, and any selected revision are recorded.","infeasibility_note":null}
+```
+
+## Verify locally
+
+Run `python evals/run_fixtures.py` from this package directory. See [verification](VERIFICATION.md) for actual results and outstanding gates.

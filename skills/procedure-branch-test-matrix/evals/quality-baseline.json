@@ -1,0 +1,12 @@
+{
+  "fingerprint": "7a32fe081876b4ffbc6aa9621e1cf7dc3c484df65a76edb6af8f745e2c72e22c",
+  "job": "factory100_baseline_d46002e2c27a",
+  "results": [
+    {
+      "id": "procedure-branch-test-matrix__q100_ordinary",
+      "answer": "Synthetic branch-test matrix\n\n| Case | Input | Condition evaluations | Expected path | Supporting rule | Coverage | Boundary note |\n|---|---:|---|---|---|---|---|\n| 1 | -1 | x<0 true; x=0 false; x>0 false | REJECT | R1 | Planned | Lower boundary |\n| 2 | 0 | x<0 false; x=0 true; x>0 false | HOLD | R2 | Planned | Central boundary |\n| 3 | 1 | x<0 false; x=0 false; x>0 true | ACCEPT | R3 | Planned | Upper boundary |\n| 4 | missing | Conditions cannot be evaluated | REQUEST_VALUE | Missing-value rule | Planned | Missing behavior |\n\nCoverage status: all three mutually exclusive conditions, all three boundary values, and missing-value behavior are represented; execution is not performed.\n\nBudget allocation: 4 minutes total, 1 minute per case. Priority order: -1, 0, 1, then missing x. No precedence testing is needed."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

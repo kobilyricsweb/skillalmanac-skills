@@ -1,0 +1,11 @@
+{
+  "slug": "abbreviation-disambiguation-guide",
+  "category": "knowledge",
+  "user_problem": "The same abbreviation expands differently across supplied contexts.",
+  "unique_output": "Occurrence-to-possible-expansion guide with local evidence and unresolved ambiguity; no preferred-term replacement.",
+  "required_input": "Abbreviation occurrences, context excerpts and an approved expansion glossary.",
+  "critical_rule": "Context can narrow supplied options but cannot authorize an expansion absent from the glossary.",
+  "nearest_existing_and_difference": "terminology-consistency-editor normalizes preferred terms; this disambiguates multiple allowed expansions without editing wording.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "AR allows accounts receivable or augmented reality; a headset context narrows to augmented reality, an unqualified AR note remains ambiguous."
+}

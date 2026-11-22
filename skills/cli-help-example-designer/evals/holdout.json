@@ -1,0 +1,13 @@
+[
+  {
+    "id": "cli-help-example-designer__parent_holdout",
+    "slug": "cli-help-example-designer",
+    "prompt": "Design command examples from this complete grammar only: tool export --format FORMAT (--stdout | --output PATH). FORMAT is csv or json and required; exactly one output selector is required. Request one CSV export to a file literally named quarter report.csv, plus an invalid example showing both selectors. No target shell supplied. No extra options exist.",
+    "assertions": [
+      "Valid example selects csv and exactly --output, preserving quarter report.csv as one argument.",
+      "Uses a token array or explicitly shell-unspecified representation, without asserting universal shell quoting.",
+      "Invalid example includes both --stdout and --output and explains the conflict; no execution claimed."
+    ],
+    "origin": "parent-designed fresh forward case; not an observed customer request"
+  }
+]

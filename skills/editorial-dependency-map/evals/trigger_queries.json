@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Map dependencies among the sections of this publication.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which report sections are blocked by missing evidence or assets.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a section-node map with prerequisites and fallback scope.",
+    "should_trigger": true
+  },
+  {
+    "query": "Trace the blocking path from a missing table to dependent sections.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify ownership gaps without inferring owners from job titles.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark which sections can proceed in reduced scope under the supplied permission.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve pending, missing, approved, and unknown statuses in a publication map.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find cycles or conflicting dependencies in this content package.",
+    "should_trigger": true
+  },
+  {
+    "query": "Determine whether a missing dependency remains blocking under these rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an editorial dependency map, not a handoff audit.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit whether this entire handoff is ready for delivery.",
+    "should_trigger": false
+  },
+  {
+    "query": "Repair the order of the publication's writing instructions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Annotate assumptions made by the article's audience.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create captions for the report's charts.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft an abstract from the report.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map prerequisites to each step in this tutorial.",
+    "should_trigger": false
+  },
+  {
+    "query": "Assign owners and send them tasks.",
+    "should_trigger": false
+  },
+  {
+    "query": "Approve the missing table for publication.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write the missing Results section from likely facts.",
+    "should_trigger": false
+  },
+  {
+    "query": "Verify the assets against external repositories.",
+    "should_trigger": false
+  }
+]

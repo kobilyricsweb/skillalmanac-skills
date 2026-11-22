@@ -1,0 +1,13 @@
+[
+  {
+    "id": "terminology-consistency-editor__parent_holdout",
+    "slug": "terminology-consistency-editor",
+    "prompt": "Preferred glossary: draft means an unpublished saved outline; template means reusable starting structure. Editable prose: \"Save your sketch, then reopen this draft\"; author confirms sketch refers to the same saved unpublished outline. Verbatim customer quote: \"I call mine a sketch\". Code identifier: sketch_id. Separate prose: \"Choose a template\". Return location-specific edits.",
+    "assertions": [
+      "Proposes sketch→draft only for the editable prose referring to the same concept.",
+      "Preserves the verbatim quote, code identifier sketch_id and distinct template meaning.",
+      "Does not claim to have modified source files or invent preferred terms beyond supplied glossary."
+    ],
+    "origin": "parent-designed fresh forward case; not an observed customer request"
+  }
+]

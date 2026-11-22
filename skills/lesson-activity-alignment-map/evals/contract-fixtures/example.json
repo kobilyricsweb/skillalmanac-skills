@@ -1,0 +1,22 @@
+{
+  "connections": [
+    {
+      "objective": "Circle the larger of 2 and 5",
+      "activity": "Circle one number on a card and submit it",
+      "learner_action": "Circle one of the two numbers",
+      "evidence": "Submitted card",
+      "criterion_connection": "The card shows 5 circled",
+      "classification": "direct_evidence",
+      "time_minutes": 1,
+      "uncertainty": []
+    }
+  ],
+  "time_accounting": {
+    "stated_limit_minutes": 1,
+    "known_mapped_minutes": 1,
+    "status": "feasible"
+  },
+  "uncovered_objectives": [],
+  "conflicts": [],
+  "proposals": []
+}

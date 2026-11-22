@@ -1,0 +1,11 @@
+{
+  "slug": "idempotency-key-behavior-spec",
+  "category": "software",
+  "user_problem": "Retry documentation mentions idempotency keys but leaves duplicate, mismatch, expiry, and concurrency behavior unclear.",
+  "unique_output": "A behavior matrix for first requests, exact replays, payload mismatches, concurrent duplicates, and expired keys.",
+  "required_input": "Key scope, retention duration, response-replay rule, payload comparison rule, and documented error outcomes.",
+  "critical_rule": "Never assume retries are safe; any undocumented matrix cell must remain an explicit contract question.",
+  "nearest_existing_and_difference": "Nearest is retry-budget-audit; this specifies duplicate-request semantics rather than evaluating retry limits.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input keys are scoped per account for 24 hours; exact replay returns original response; changed payload returns 409. Output fills those cases and marks concurrent duplicate handling and post-expiry behavior unspecified."
+}

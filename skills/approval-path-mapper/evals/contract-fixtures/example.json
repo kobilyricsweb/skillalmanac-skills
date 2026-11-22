@@ -1,0 +1,43 @@
+{
+  "scope": "Offline map of supplied approval rules.",
+  "assumptions": [
+    "No approval was granted."
+  ],
+  "artifact": "poster proof",
+  "starting_state": "drafted",
+  "path": [
+    {
+      "from_state": "drafted",
+      "actor": "Editor",
+      "action": "review and send",
+      "prerequisite": "proof is drafted",
+      "next_state": "reviewed",
+      "support": "Supplied Editor rule."
+    },
+    {
+      "from_state": "reviewed",
+      "actor": "Publisher",
+      "action": "approve",
+      "prerequisite": "proof is reviewed",
+      "next_state": "approved",
+      "support": "Supplied Publisher rule."
+    }
+  ],
+  "branches": [],
+  "handoffs": [
+    {
+      "recipient": "Publisher",
+      "evidence": [
+        "editor note"
+      ],
+      "existence": "required-not-confirmed"
+    }
+  ],
+  "escalations": [],
+  "unresolved": [],
+  "reachability_findings": [],
+  "cycle_findings": [],
+  "verification": [
+    "Each path segment cites a supplied rule."
+  ]
+}

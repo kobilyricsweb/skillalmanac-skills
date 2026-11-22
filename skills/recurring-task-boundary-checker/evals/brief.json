@@ -1,0 +1,10 @@
+{
+  "slug": "recurring-task-boundary-checker",
+  "category": "operations",
+  "user_problem": "Owners struggle to define what a recurring task should do, skip, escalate, and record.",
+  "unique_output": "A recurrence contract specifying trigger, inputs, allowed actions, exclusions, completion evidence, escalation, and stop conditions.",
+  "free_or_pack_candidate": "free",
+  "test_case": "Turn a vague weekly cleanup request into a bounded contract and identify an action requiring separate authorization.",
+  "overlap_to_check": "Instruction authoring, support workflows, and content-refresh planning.",
+  "specific_guardrail": "Write a proposed recurrence contract only; do not schedule automation, infer authorization or execute cleanup. Distinguish requested action, authorized action and unresolved scope."
+}

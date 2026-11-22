@@ -1,0 +1,13 @@
+{
+  "fingerprint": "b82ea5368c37a1f110ad3c9921134d1abf9eb221ac8102fa61ea47b1c3a511a0",
+  "job": "factory100_baseline_49e5451d8e4a",
+  "results": [
+    {
+      "id": "duplicate-record-triage__q100_ordinary",
+      "answer": "Original records and IDs preserved; no merges or winner selected.\n\nExact comparison (email and city unchanged):\n- R1 and R2 match exactly: email `a@example.test`, city `Haifa`.\n- R1/R2 do not exactly match R3 because R3 preserves email spacing and uppercase `A`.\n- R4 does not exactly match R1, R2, or R3 because city is `Acre`.\n\nNormalized comparison (email trimmed and case-folded; city exact):\n- R1, R2, and R3 are equal: normalized email `a@example.test`, city `Haifa`.\n- R4 remains distinct because its city is `Acre`.\n\nTriage result: candidate group under normalized equality: {R1, R2, R3}; distinct record: R4. No candidate rule beyond the stated comparisons was applied."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

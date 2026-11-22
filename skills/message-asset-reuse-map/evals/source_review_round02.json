@@ -1,0 +1,22 @@
+{
+  "slug": "message-asset-reuse-map",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "MARM-03",
+      "severity": "medium",
+      "location": "Embedded-unrelated eval, prompt and assertion 1 versus missing-input and matching rules",
+      "evidence": "A1 is supplied only as `a checklist at /files/intake.txt, described as a client-intake checklist`; no asset audience, context, permission, limitation, or authorized use is supplied. The assertion merely requires that `M1 is mapped to A1 with its exact location and supplied checklist description`, without requiring a conditional or blocked status. The skill says absent audience, permission, or context is `not supplied`, compatibility must not be inferred, and a match is allowed only when audience/context are compatible and the asset description permits the proposed use.",
+      "consequence": "An implementation can satisfy the eval by presenting an authorized reuse placement despite lacking the metadata required by the contract. This leaves the corrected authority guardrail untested in one canonical case.",
+      "correction": "Require M1/A1 to be recorded only as a conditional candidate or blocked placement pending audience, context, and reuse-permission confirmation. Retain the exact location and checklist description, but do not authorize direct reuse from those facts alone."
+    },
+    {
+      "id": "MARM-04",
+      "severity": "medium",
+      "location": "Positive trigger queries versus the boundary with claim-evidence mapping",
+      "evidence": "Positive queries include `Map these approved messages to the existing assets that can support them` and `Identify messages with no supporting asset`, while the skill expressly does not determine claim truth and the nearest excluded capability is claim-evidence mapping. The word `support` ordinarily asks whether an asset evidences a claim, not merely whether its reuse is authorized for an audience, channel, and placement. The negative query excludes only a claim-evidence map `for the entire report`, leaving narrower claim-support requests colliding with this skill's positive triggers.",
+      "consequence": "Requests to evaluate factual evidentiary support for approved marketing claims can incorrectly trigger a reuse-authority mapper, producing placement compatibility decisions where claim validation was requested.",
+      "correction": "Rewrite positive triggers around `reuse-compatible`, `authorized placement`, or `pair for the supplied audience and context`. Add a negative query for a narrow request such as `Determine whether these assets factually support these approved claims`, routing that request to claim-evidence mapping regardless of whether it covers a whole report."
+    }
+  ]
+}

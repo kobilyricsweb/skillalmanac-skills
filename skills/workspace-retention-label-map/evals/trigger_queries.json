@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Synthetic test: map a signed charter description to a supplied Permanent label under an explicit rule.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: flag a document for manual review when signed or draft status is missing.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: preserve exclusions supplied by the workspace label policy.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: report a conflict when two supplied mapping rules apply.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: verify every assigned label exists in the approved label list.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: distinguish a proposal from authorization to change files.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: keep document cues separate from inferred legal meaning.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: report an unresolved description when no supplied label applies.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: produce a manual-review queue for ambiguous synthetic file descriptions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: map draft descriptions only when draft status is supplied or defined.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: find missing categories in a document taxonomy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: infer the legally required retention period for a contract.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: inspect a shared drive and classify every real file.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: move files into retention folders after labeling them.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: delete files whose retention period has expired.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: reconcile two inventory count lists without changing records.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: define dataset fields and their canonical meanings.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: map template placeholders to source data fields.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: assess staffing coverage for a process schedule.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: execute a procedure branch matrix against production data.",
+    "should_trigger": false
+  }
+]

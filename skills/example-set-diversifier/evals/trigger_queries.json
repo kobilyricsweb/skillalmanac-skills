@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Redesign my repetitive teaching examples to cover normal, missing-input, conflict, and boundary cases.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a synthetic example coverage plan from this learning objective and its rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Vary examples by context and difficulty while preserving the exact lesson.",
+    "should_trigger": true
+  },
+  {
+    "query": "My instructional examples all show the happy path; diversify them without inventing customer stories.",
+    "should_trigger": true
+  },
+  {
+    "query": "Plan edge-case examples for this supplied decision rule and label them synthetic.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare these examples for repetition and propose meaningful teaching variation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make a normal, incomplete, conflicting, and boundary example set from these rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show what each redesigned example teaches and how it differs from the others.",
+    "should_trigger": true
+  },
+  {
+    "query": "Diversify this practice set without claiming unsupported answers or outcomes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn my existing examples into a varied instructional coverage plan.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit this lesson for WCAG compliance and screen-reader accessibility.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a complete course module with objectives, lecture text, quizzes, and grading.",
+    "should_trigger": false
+  },
+  {
+    "query": "Edit my prose for grammar while preserving its current examples.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create fictional customer success stories that make the training persuasive.",
+    "should_trigger": false
+  },
+  {
+    "query": "Research real-world cases and add citations to these examples.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build an onboarding handover checklist for the next team.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare two documents for factual consistency across versions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Generate a generic set of examples for any topic without supplied rules.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design a visual design system and component library for the lesson.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run the examples through the production system and report actual outputs.",
+    "should_trigger": false
+  }
+]

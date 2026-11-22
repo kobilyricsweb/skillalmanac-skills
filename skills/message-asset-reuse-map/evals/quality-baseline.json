@@ -1,0 +1,12 @@
+{
+  "fingerprint": "f2cf0417740ceb3bf7cc9066747a177e19d595daa4073af0289e079bd22f7a36",
+  "job": "factory100_baseline_6daebfe4a242",
+  "results": [
+    {
+      "id": "message-asset-reuse-map__q100_ordinary",
+      "answer": "Message: M1 — “Setup takes ten minutes.”\n\nApproved reuse:\n- A1 — /help/setup#start\n  - Audience: existing administrators — matches.\n  - Context: onboarding — matches.\n  - Permission: help-center reuse — matches.\n  - Restriction: no sales material — respected.\n  - Status: eligible for reuse in the help-center onboarding page.\n\nRejected reuse:\n- A2 — /sales/deck#4\n  - Audience: prospects — conflicts with existing administrators.\n  - Context and permission are not aligned with the authorized help-center-only use.\n  - Restriction explicitly prohibits sales material.\n  - Status: not eligible.\n\nRequested placement outcome: A1 approved; A2 not approved. No truth assessment or message variants included."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

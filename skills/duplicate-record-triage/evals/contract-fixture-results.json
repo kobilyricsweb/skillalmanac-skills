@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "fixtures": [
+    {
+      "id": "example",
+      "passed": true,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "missing-required",
+      "passed": true,
+      "valid": false,
+      "errors": [
+        {
+          "path": "$",
+          "code": "required",
+          "message": "Missing comparison_rules"
+        }
+      ]
+    },
+    {
+      "id": "wrong-root",
+      "passed": true,
+      "valid": false,
+      "errors": [
+        {
+          "path": "$",
+          "code": "type",
+          "message": "Expected object"
+        }
+      ]
+    },
+    {
+      "id": "unexpected-property",
+      "passed": true,
+      "valid": false,
+      "errors": [
+        {
+          "path": "$",
+          "code": "additionalProperties",
+          "message": "Unexpected property __unexpected_fixture_property__"
+        }
+      ]
+    }
+  ]
+}

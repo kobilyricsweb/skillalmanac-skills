@@ -1,0 +1,12 @@
+{
+  "fingerprint": "2a52dec77f68da6a9879ad318c1436009059b69aefaac38e17738c49644dde07",
+  "job": "factory100_baseline_6daebfe4a242",
+  "results": [
+    {
+      "id": "feature-flag-retirement-planner__q100_ordinary",
+      "answer": "Offline retirement plan for checkout_v2:\n1. Obtain Payments owner approval before cleanup.\n2. Confirm application usage in app src/checkout.ts and identify the enabled-for-all-users path.\n3. Remove application handling for checkout_v2 and update the confirmed test checkout_flag.test accordingly.\n4. Verify the application change offline using the confirmed test reference.\n5. After application cleanup, remove the flag entry from the supplied-but-unverified config flags.yml.\n6. After config cleanup, update the confirmed runbook.md to document the retired flag and any operational considerations.\n7. Before deployment, retain the prior config entry as the rollback source. If rollback is needed, restore that entry before deployment.\nNo cleanup or deployment is authorized until Payments approval is recorded."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

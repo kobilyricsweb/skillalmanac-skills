@@ -1,0 +1,123 @@
+{
+  "fingerprint": "c7a04891c2bea4c75472f1f4eb6b9f295dcd4e10d96534fe1e1ebdbea25f8344",
+  "job": "factory100_grade_b8441524a301",
+  "execution_job": "factory100_execute_d688a11ec810",
+  "baseline_job": "factory100_baseline_962e614a16d0",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "tutorial-prerequisite-mapper__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "S1 lists the writable practice folder and supplied word sun as required state/input and identifies source.txt containing sun as the produced artifact."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The dependency_edges entry connects S1 to S2 through source.txt containing sun, and S1 lists S2 under later_consumers."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Both verification cues directly inspect the stated file contents, and verification.actions_executed is false."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "fail",
+              "evidence": "The response lists the folder and sun as general prerequisites but does not identify source.txt as S1's produced artifact."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "It states that S2 depends on S1 and readable contents, but does not provide the reciprocal artifact-consumer record that source.txt has S2 as a later consumer."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The S1 and S2 verification statements inspect source.txt and result.txt respectively, and the response explicitly says no execution is performed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tutorial-prerequisite-mapper__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "S1 records the platform, sign-in access, account, and credentials as unknown and includes corresponding gaps rather than assuming them."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "S2 lists sample.csv containing one row labeled A as its input while leaving destination and permission unresolved in required_state and gaps."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "S1 and S2 have null verification cues, the gaps explicitly note their absent checks, S3 preserves the supplied dashboard cue, and planning_status is blocked_by_missing_context."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tutorial-prerequisite-mapper__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "S2 is represented only as a mapped tutorial action; verification.actions_executed is false and no executable command syntax is issued."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "S3 states that note.txt must remain available while S2 may remove it, and the gaps identify that S2 deletes the artifact S3 needs."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The operating system/interpreter and command semantics remain unknown, while separate inadequate-verification gaps are recorded for S2 and S3."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "tutorial-prerequisite-mapper__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "tutorial-prerequisite-mapper__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "tutorial-prerequisite-mapper__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

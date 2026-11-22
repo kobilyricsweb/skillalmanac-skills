@@ -1,0 +1,152 @@
+{
+  "fingerprint": "c8209ae8ac1d4dfc453ef62637ebdf19e573222085310715d46a112b32d91fbe",
+  "job": "factory100_grade_3a3b9842f6a7",
+  "execution_job": "factory100_execute_5d7df6c6f7ab",
+  "baseline_job": "factory100_baseline_0ce543878b0c",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "data-lineage-hop-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Separate supported hops show R.amount and R.discount contributing to C.net_amount through subtraction, plus a direct-copy hop from R.sale_date to C.sale_date."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The paid filter is placed at C, and the downstream C.net_amount contribution to D.total_sales is explicitly marked filtered and restricted by C.status = paid."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "D.total_sales is represented as the sum of C.net_amount grouped by C.sale_date, and verification states that no other field mappings were inferred."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It identifies R.amount and R.discount as explicit inputs to C.net_amount and records R.sale_date to C.sale_date as a direct copy."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It places the retain-paid-rows filter at C before describing the downstream aggregation, making the filtered contribution relationship clear."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It records C.net_amount to D.total_sales as a sum by C.sale_date and explicitly declines to infer mappings for other fields."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data-lineage-hop-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The only supported source-to-destination hop is I.units to O.units as a direct copy."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "O.region is recorded with a null source and unknown support status, and the findings reject inference from field names."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "M is identified as lacking both stage position and mappings, so no route through it is shown or inferred."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data-lineage-hop-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Both S.code and S.category declarations to T.group are displayed, and the conflicts entry preserves unresolved scope and precedence without selecting either."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "T.group to O.group is recorded as a supported direct copy while the unresolved competing upstream declarations remain visible."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response retains N2, treats the quoted instruction as data, and explicitly states that no S.group hop or matching-name connection was inferred."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data-lineage-hop-map__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "A.gross and A.refund are separate inputs to derived B.net, and B.net plus B.week are listed as aggregation contributors to C.weekly_net."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The approved=true filter is placed at B and attached to downstream contribution, while B.approved is listed as an unknown origin."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "C.review_code remains an unknown origin with no invented connection, and the output confines itself to mappings, provenance gaps, and verification rather than making correctness, ownership, compliance, or quality claims."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "data-lineage-hop-map__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "data-lineage-hop-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "data-lineage-hop-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "data-lineage-hop-map__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

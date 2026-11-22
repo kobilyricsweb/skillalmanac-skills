@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "changes",
+    "open_questions",
+    "exclusions"
+  ],
+  "properties": {
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "change_id",
+          "location",
+          "location_type",
+          "current_summary",
+          "action",
+          "evidence_references",
+          "user_impact",
+          "priority",
+          "readiness",
+          "verification_gap",
+          "notes"
+        ],
+        "properties": {
+          "change_id": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "location_type": {
+            "enum": [
+              "supplied",
+              "reviewer_created",
+              "new_content",
+              "mapping_blocked"
+            ]
+          },
+          "current_summary": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "action": {
+            "enum": [
+              "retain",
+              "update",
+              "remove_pending_confirmation",
+              "remove_confirmed",
+              "verification_gap",
+              "new_section"
+            ]
+          },
+          "evidence_references": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "user_impact": {
+            "type": "string"
+          },
+          "priority": {
+            "enum": [
+              "high",
+              "medium",
+              "low",
+              "unknown"
+            ]
+          },
+          "readiness": {
+            "enum": [
+              "proposed",
+              "blocked"
+            ]
+          },
+          "verification_gap": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "exclusions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

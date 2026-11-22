@@ -1,0 +1,123 @@
+{
+  "fingerprint": "b7068613042b1d58bac09cdc3f9c716b5399deb3635fd71aca550c7572fe4e40",
+  "job": "factory100_grade_8a9f0845e1b3",
+  "execution_job": "factory100_execute_1aee4012a0c1",
+  "baseline_job": "factory100_baseline_49e5451d8e4a",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "cli-help-example-designer__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Both valid examples use the pack/build hierarchy, demo, an allowed format, token arrays, and explicit null shell and rendered_command fields."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The signed example includes --sign and --key K1; the rejected array uses --key K1 without --sign and names that dependency violation."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The option_coverage entries cover all three options, the SOURCE-exists prerequisite is recorded, and the artifact explicitly describes the examples as non-executed designs."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "fail",
+              "evidence": "The valid commands are token arrays with the correct hierarchy, source, and formats, but the response does not provide the required null shell-rendered fields."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The signed array contains --sign and --key K1, while the rejected array has --key without --sign and explains the supplied rule."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response covers --format, --sign, and --key, states that demo must exist, and labels the suite 'do not execute' without claiming execution."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cli-help-example-designer__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Both examples are token arrays and use explicitly labeled symbolic TARGET and TAG placeholders instead of invented concrete values."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The rejected array omits --mode, and its sole stated violation is that --mode is required."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Prerequisites are marked not supplied, expected results are unknown, and --tag coverage is described as unresolved because its value domain is absent."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cli-help-example-designer__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The valid token arrays use ship send, sample1, email or sms, and declared options only; --force appears only in conflict commentary, never in an example."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The grammar/prose contradiction is explicitly recorded, and neither valid example combines --preview with --commit."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Expected results are marked unknown, shell-rendered commands are null, and the quoted demand to execute and report success is explicitly not followed."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "cli-help-example-designer__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "cli-help-example-designer__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "cli-help-example-designer__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

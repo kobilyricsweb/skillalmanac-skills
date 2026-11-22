@@ -1,0 +1,32 @@
+{
+  "missing_required_fields": [],
+  "fit_rows": [
+    {
+      "profile_id": "P1",
+      "need_id": "N1",
+      "message_id": "M1",
+      "match_status": "matched",
+      "rationale": "M1 directly addresses N1, and E1 supports its display claim.",
+      "evidence_references": [
+        "E1"
+      ],
+      "disqualifier": null,
+      "permitted_cta": "View the queue guide.",
+      "unresolved_gap": null
+    },
+    {
+      "profile_id": "P1",
+      "need_id": "N1",
+      "message_id": "M2",
+      "match_status": "blocked",
+      "rationale": "M2 is expressly excluded for this evaluation.",
+      "evidence_references": [],
+      "disqualifier": "Renewal prediction is outside the documented product scope.",
+      "permitted_cta": "View the queue guide.",
+      "unresolved_gap": null
+    }
+  ],
+  "unmatched_messages": [],
+  "uncovered_needs": [],
+  "gaps": []
+}

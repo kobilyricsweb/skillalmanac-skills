@@ -1,0 +1,6 @@
+Synthetic input: Prompt: state a claim about school uniforms and support it with facts. Criterion: evidence. Level 3 descriptor: claim plus two relevant facts. Level 2 descriptor: claim plus one relevant fact. Scoring rule: award the level whose descriptor is met. No non-scorable condition supplied.
+
+Concrete artifact:
+Anchor A: “School uniforms can reduce clothing-based distractions. A consistent uniform reduces visible differences in what students wear.” Evidence score: Level 2. Rationale: it contains the claim and one distinct relevant supporting fact that directly supports the claim, matching the supplied Level 2 descriptor.
+
+Anchor B: “School uniforms can reduce clothing-based distractions. A consistent uniform reduces visible differences in what students wear. Fewer visible clothing differences can reduce attention directed toward comparing outfits.” Evidence score: Level 3. Rationale: it contains the same claim and two distinct relevant supporting facts that directly support it, matching the supplied Level 3 descriptor. Boundary feature: the second relevant supporting fact is the only changed observable feature. These are synthetic anchors, not real learner responses or proof of rubric quality. No other criterion is scored because none was supplied.

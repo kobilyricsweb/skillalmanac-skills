@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "matrix_status",
+    "missing_dimensions",
+    "cells",
+    "unresolved_conflicts",
+    "assumptions",
+    "scope_note"
+  ],
+  "properties": {
+    "matrix_status": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "partial",
+        "conflicted"
+      ]
+    },
+    "missing_dimensions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cells": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "resource",
+          "operation",
+          "status",
+          "condition",
+          "evidence"
+        ],
+        "properties": {
+          "role": {
+            "type": "string"
+          },
+          "resource": {
+            "type": "string"
+          },
+          "operation": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "allow",
+              "deny",
+              "conditional",
+              "unspecified",
+              "conflict"
+            ]
+          },
+          "condition": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "unresolved_conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "resource",
+          "operation",
+          "sources"
+        ],
+        "properties": {
+          "role": {
+            "type": "string"
+          },
+          "resource": {
+            "type": "string"
+          },
+          "operation": {
+            "type": "string"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 2
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scope_note": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

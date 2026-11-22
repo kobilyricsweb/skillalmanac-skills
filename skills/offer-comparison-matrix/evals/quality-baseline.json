@@ -1,0 +1,12 @@
+{
+  "fingerprint": "20f6c35d062531123a8602559e5b34d5d93d80155b432203178abba42cac907f",
+  "job": "factory100_baseline_6daebfe4a242",
+  "results": [
+    {
+      "id": "offer-comparison-matrix__q100_ordinary",
+      "answer": "| Dimension | Focus Session | Starter Notes |\n|---|---|---|\n| Audience eligibility | Managers with approved projects; restricted to approved projects | Any employee; no constraint supplied |\n| Promise | Produce a reviewed project outline | Provide prompts for drafting an outline |\n| Promise coverage | Worksheet plus review call support a reviewed outline | Prompt sheet supports drafting prompts, not review |\n| Assets | Worksheet and review call | Prompt sheet |\n| Proof | One internal record that the worksheet was completed; Program Office; 2026-10-02 | Prompt sheet itself; Enablement; date not supplied |\n| Friction | Scheduling | Independent drafting |\n\nKnown unknown: whether the Focus Session review call has ever been completed. No winner or pricing recommendation."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

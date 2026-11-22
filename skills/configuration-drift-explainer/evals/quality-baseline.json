@@ -1,0 +1,13 @@
+{
+  "fingerprint": "778e1d86fade40f3096ed1ba824300ef6d2dda191aa7bcec0f6872be181b3f86",
+  "job": "factory100_baseline_435913612be4",
+  "results": [
+    {
+      "id": "configuration-drift-explainer__q100_ordinary",
+      "answer": "Observations: TIMEOUT changed from 2 to 3 (traffic); LOG stayed \"brief\"; LEGACY was removed (release); CACHE was added as false (storage). Documented consequences: TIMEOUT is the request wait limit, and changing it requires a restart. The documented rollback is restoring TIMEOUT to 2 and restarting. CACHE=false disables the local cache. No behavior note exists for LEGACY, and no rollback information exists for CACHE or LEGACY. These records describe configuration differences and documented effects only; they do not establish incident causality."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

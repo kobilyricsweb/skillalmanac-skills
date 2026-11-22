@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Check whether this proposed join and sum can duplicate order totals.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a grain worksheet for these tables, measures, and grouping keys.",
+    "should_trigger": true
+  },
+  {
+    "query": "Assess whether each measure is additive at the requested summary grain.",
+    "should_trigger": true
+  },
+  {
+    "query": "Trace the proposed aggregation order and flag duplication risks.",
+    "should_trigger": true
+  },
+  {
+    "query": "Determine whether a sum is safe given these supplied keys and joins.",
+    "should_trigger": true
+  },
+  {
+    "query": "Suggest an aggregation-before-join or semi-join alternative supported by the table grains.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review this summary design for mismatched measure and grouping grain.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark aggregation safety unresolved where uniqueness is not evidenced.",
+    "should_trigger": true
+  },
+  {
+    "query": "Explain how a one-to-many relationship or snapshot measure affects the proposed totals.",
+    "should_trigger": true
+  },
+  {
+    "query": "Produce a provisional measure-grain and duplication-risk report.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit the complete cardinality of every join in this database.",
+    "should_trigger": false
+  },
+  {
+    "query": "Assign records to cohorts from date and exclusion rules.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare null and sentinel semantics across data sources.",
+    "should_trigger": false
+  },
+  {
+    "query": "Trace field provenance through raw, clean, and report stages.",
+    "should_trigger": false
+  },
+  {
+    "query": "Describe coverage gaps in a sampling frame.",
+    "should_trigger": false
+  },
+  {
+    "query": "Profile distinct values and null percentages for every field.",
+    "should_trigger": false
+  },
+  {
+    "query": "Define the numerator and denominator of a metric.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find missing taxonomy categories.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run a query to calculate the exact overcount amount.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite the production warehouse model and deploy it.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "time_accounting": {
+    "stated_limit_minutes": 1,
+    "known_mapped_minutes": 1,
+    "status": "feasible"
+  },
+  "uncovered_objectives": [],
+  "conflicts": [],
+  "proposals": []
+}

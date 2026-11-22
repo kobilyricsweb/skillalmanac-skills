@@ -1,0 +1,11 @@
+{
+  "slug": "brand-tone-constraint-card",
+  "category": "marketing",
+  "user_problem": "Writers have approved brand samples but lack precise tone boundaries for new copy.",
+  "unique_output": "A tone constraint card with supplied positive/negative anchors, context limits and wording tests; no factual claim validation.",
+  "required_input": "Approved sample excerpts, explicit voice preferences and prohibited tone patterns.",
+  "critical_rule": "Distinguish observed sample patterns from owner-approved rules; never infer factual brand promises from tone.",
+  "nearest_existing_and_difference": "terminology-consistency-editor changes glossary terms; this defines tone constraints without normalizing terms or evaluating claim evidence.",
+  "tier": "free",
+  "acceptance_scenario": "Preference calm and literal, ban hype, sample says Plan the week. Card flags revolutionary as a hype counterexample without claiming a performance benefit."
+}

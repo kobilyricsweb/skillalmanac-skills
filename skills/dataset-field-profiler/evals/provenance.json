@@ -1,0 +1,8 @@
+{
+  "author_job": "utility_profile_taxonomy",
+  "original": true,
+  "external_skill_sources": [],
+  "common_reader": "technical_batch_02_revision/record-contract-audit/scripts/audit.py",
+  "review_job": "utility_source_review",
+  "review_fixes": "typed key/name/ID validation; domain findings separated from input errors"
+}

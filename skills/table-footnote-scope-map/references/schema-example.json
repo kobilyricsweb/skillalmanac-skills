@@ -1,0 +1,34 @@
+{
+  "synthetic": true,
+  "input": "Table: Equipment plan. Headings: H1 = Plan, H2 = April, H3 = May. Row label R1L = Basic†. R1C1 = On. R1C2 = Off. Row label R2L = Premium. R2C1 = On. R2C2 = On. Legend: a marker in a row label applies to every data cell in that row; a marker in a data cell applies only to that cell. Definition † = seasonal only. No other markers, definitions, or scope rules are supplied.",
+  "expected_artifact": {
+    "scope_map": [
+      {
+        "cell_id": "R1L",
+        "visible_value": "Basic",
+        "marker": "†",
+        "definition_reference": "† = seasonal only.",
+        "authorized_scope": "All data cells in row R1",
+        "affected_cell_ids": [
+          "R1C1",
+          "R1C2"
+        ],
+        "status": "resolved",
+        "rationale": "The supplied legend expressly extends a marker in a row label to every data cell in that row."
+      }
+    ],
+    "orphan_markers": [],
+    "unbound_definitions": [],
+    "unresolved_issues": [],
+    "boundary_note": {
+      "explicitly_supplied_scopes": [
+        "The † qualifier applies to R1C1 and R1C2 through the row-label rule."
+      ],
+      "unresolved_scopes": [],
+      "outside_scope": [
+        "The qualifier does not establish whether any equipment-plan value is accurate."
+      ]
+    }
+  },
+  "status": "specification; not an executed test"
+}

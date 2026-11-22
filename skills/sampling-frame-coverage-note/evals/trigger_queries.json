@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Write a bounded coverage note for this target population and sampling frame.",
+    "should_trigger": true
+  },
+  {
+    "query": "List frame inclusions, exclusions, time bounds, and unknown coverage.",
+    "should_trigger": true
+  },
+  {
+    "query": "Describe whether walk-ins are covered by the supplied attendee frame.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document duplicate risks caused by changed email addresses.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate observable frame rules from representativeness claims.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a coverage table for this dated population frame.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify which subgroups are excluded by construction and which are unknown.",
+    "should_trigger": true
+  },
+  {
+    "query": "Report frame limitations without estimating bias or population size.",
+    "should_trigger": true
+  },
+  {
+    "query": "Summarize the target population and the actual frame rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Produce a provisional sampling-frame coverage artifact from these notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find missing categories in the product taxonomy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Assign records to cohorts using supplied membership rules.",
+    "should_trigger": false
+  },
+  {
+    "query": "Trace fields through a transformation pipeline.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare null, empty, zero, and sentinel semantics.",
+    "should_trigger": false
+  },
+  {
+    "query": "Check whether a measure is duplicated after a one-to-many join.",
+    "should_trigger": false
+  },
+  {
+    "query": "Define the denominator and eligible population for a metric.",
+    "should_trigger": false
+  },
+  {
+    "query": "Profile observed JSON types and distinct values.",
+    "should_trigger": false
+  },
+  {
+    "query": "Calculate the sampling weights and confidence interval.",
+    "should_trigger": false
+  },
+  {
+    "query": "Claim whether this frame is statistically representative.",
+    "should_trigger": false
+  },
+  {
+    "query": "Collect additional attendees from an external registration system.",
+    "should_trigger": false
+  }
+]

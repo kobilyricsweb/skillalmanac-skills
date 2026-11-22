@@ -1,0 +1,67 @@
+{
+  "comparison_rules": [
+    {
+      "field": "code",
+      "comparison": "trim"
+    },
+    {
+      "field": "region",
+      "comparison": "exact"
+    }
+  ],
+  "candidate_rule": null,
+  "classifications": [
+    {
+      "record_ids": [
+        "A",
+        "B"
+      ],
+      "classification": "normalized_match",
+      "rule_basis": "code is equal after trimming and region is exactly equal",
+      "original_values": {
+        "A": {
+          "code": "X",
+          "region": "N"
+        },
+        "B": {
+          "code": " X ",
+          "region": "N"
+        }
+      },
+      "transformed_values": {
+        "A": {
+          "code": "X",
+          "region": "N"
+        },
+        "B": {
+          "code": "X",
+          "region": "N"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "record_ids": [
+        "C"
+      ],
+      "classification": "unmatched",
+      "rule_basis": "region differs from the A/B group under the evaluated rule",
+      "original_values": {
+        "C": {
+          "code": "X",
+          "region": "S"
+        }
+      },
+      "transformed_values": {
+        "C": {
+          "code": "X",
+          "region": "S"
+        }
+      },
+      "conflicts": []
+    }
+  ],
+  "unresolved_cases": [],
+  "remediation_boundary": "No records were merged, deleted, enriched, used for identity inference, or selected as canonical.",
+  "__unexpected_fixture_property__": 0
+}

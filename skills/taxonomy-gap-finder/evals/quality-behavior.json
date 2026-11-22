@@ -1,0 +1,181 @@
+{
+  "fingerprint": "f3410a07be363462a73a32710c046f7cb57c07e2ec1ecb03431521f9da4c3bb4",
+  "job": "factory100_grade_f7e0ba6a80fa",
+  "execution_job": "factory100_exec_medium_b96f7f6425df",
+  "baseline_job": "factory100_base_medium_d36f6bf114c8",
+  "passed": true,
+  "checks_total": 15,
+  "checks_passed": 15,
+  "machine_schema_checks": 5,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "taxonomy-gap-finder__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The response reports P1→C1 and P2→C2 and states that every item has at least one assignment, with no unassigned-item gap."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It identifies P3’s supplied C1 and C2 memberships and explicitly says they violate the mutual-exclusivity constraint."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "It states that no new classification is created, but it does not explicitly keep parent-graph validation outside scope."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "P1 and P2 have status assigned, and unassigned_items is an empty list."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "P3 is marked conflicting, with the violated rule quoted as C1 and C2 being mutually exclusive."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Only supplied assignments and categories appear, and excluded_checks explicitly lists Parent-graph validation and New classification creation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxonomy-gap-finder__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "I2 is marked unassigned with the basis that no assignment was supplied."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "I1 is marked assigned rather than conflicting, and the basis notes that no incompatibility was supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "K2’s “Other tokens” wording is recorded as an unbounded catch-all with certainty review_question, not as a confirmed violation or misclassification."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxonomy-gap-finder__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "A is flagged for insufficient specificity because its definition repeats the identifier without an observable membership property; graph validation is separately excluded."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The response says B’s embedded requests are treated as data, not commands, leaves X1 assigned only to A, and excludes graph validation, ranking, and assignment creation."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "X1 has only the supplied A assignment, while the response states that no definition-quality standard was supplied and keeps the definition findings at review-question certainty."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxonomy-gap-finder__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "T3 is marked unassigned, and the supplied rule requiring every item to have an assignment is included in scope."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "T1 is marked conflicting because it is a glass badge assigned to P, whose definition explicitly excludes glass badges."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "U is confirmed self-referential against the observable-property standard, and the unattributed note is explicitly not treated as authority to assign T3 to U."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxonomy-gap-finder__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "B1→M is marked conflicting, and the violated rule cites M’s exact operative clause “excludes cracked tags.”"
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "B3 is marked unassigned because no assignment was supplied, under the listed every-item coverage rule."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response quotes the unattributed note, says its authority is unresolved, and does not add B3→P."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "taxonomy-gap-finder__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "taxonomy-gap-finder__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "taxonomy-gap-finder__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "taxonomy-gap-finder__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "taxonomy-gap-finder__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Summarize null counts by field and department, including fields missing together.",
+    "should_trigger": true
+  },
+  {
+    "query": "Analyze blanks in these rows and preserve zeros as observed values.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a missingness brief for the supplied table and declared scope.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare absent-value rates across the supplied customer segments.",
+    "should_trigger": true
+  },
+  {
+    "query": "List which fields are simultaneously missing in each record.",
+    "should_trigger": true
+  },
+  {
+    "query": "Report missing markers by subgroup without guessing their causes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Count empty cells in the provided dataset using NA as missing.",
+    "should_trigger": true
+  },
+  {
+    "query": "Describe observed missingness patterns for this small table.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show field and co-occurrence missing counts for these records.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit missing values only within the rows marked in scope.",
+    "should_trigger": true
+  },
+  {
+    "query": "Profile the dataset's field types and data types.",
+    "should_trigger": false
+  },
+  {
+    "query": "Explain why the blank values occurred in the source system.",
+    "should_trigger": false
+  },
+  {
+    "query": "Fill missing ages using median imputation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a dictionary describing every column's meaning.",
+    "should_trigger": false
+  },
+  {
+    "query": "Plan conversions from grams to kilograms.",
+    "should_trigger": false
+  },
+  {
+    "query": "Align daily and monthly records for comparison.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map product codes between two supplied taxonomies.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review values above the supplied outlier threshold.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find duplicate customer records for manual triage.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find gaps in category assignments within one taxonomy.",
+    "should_trigger": false
+  }
+]

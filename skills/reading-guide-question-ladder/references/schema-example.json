@@ -1,0 +1,43 @@
+{
+  "synthetic": true,
+  "input": "Passage:\nParagraph 1: The school placed two labeled bins beside the cafeteria door.\nParagraph 2: The passage states that the location may help students notice the bins as they leave.\nLearning goal: Distinguish an observed action from a qualified explanation.\nPermitted moves: locating, explaining, evaluating.\nExpected response length: one sentence per answer.\nReflection questions: not allowed.",
+  "expected_artifact": {
+    "learning_goal": "Distinguish an observed action from a qualified explanation.",
+    "question_ladder": [
+      {
+        "question": "Where did the school place the two labeled bins?",
+        "passage_location": "Paragraph 1",
+        "cognitive_move": "locating",
+        "expected_evidence": "The bins were beside the cafeteria door.",
+        "expected_response_length": "One sentence",
+        "answerability": "supported",
+        "limits_or_reflection": null
+      },
+      {
+        "question": "How does the passage qualify its explanation of why the location could matter?",
+        "passage_location": "Paragraph 2",
+        "cognitive_move": "explaining",
+        "expected_evidence": "The word “may” presents helping students notice the bins as a possibility.",
+        "expected_response_length": "One sentence",
+        "answerability": "supported",
+        "limits_or_reflection": null
+      },
+      {
+        "question": "Does the passage establish that the bin location caused students to use the bins?",
+        "passage_location": "Paragraph 2",
+        "cognitive_move": "evaluating",
+        "expected_evidence": "The passage offers only a qualified possibility and supplies no result showing actual use.",
+        "expected_response_length": "One sentence",
+        "answerability": "supported",
+        "limits_or_reflection": "The answer should identify what the passage leaves unproven rather than introduce outside evidence."
+      }
+    ],
+    "teacher_note": {
+      "status": "complete",
+      "unresolved_limits": [
+        "The passage does not report whether students noticed or used the bins."
+      ]
+    }
+  },
+  "status": "specification; not an executed test"
+}

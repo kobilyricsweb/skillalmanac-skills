@@ -1,0 +1,152 @@
+{
+  "fingerprint": "3be62f03756645003e81d5017660c2b9a77ac1b5438bd013b03d72da49e37233",
+  "job": "factory100_grade_02d9afd6041f",
+  "execution_job": "factory100_exec_medium_2f0d65f81819",
+  "baseline_job": "factory100_base_medium_c8deb81fd455",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "concept-contrast-table__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It classifies the awaiting-review memo as draft and the approved staff email as published using change openness and formal release."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It rejects formatting polish as a classification cue and explicitly avoids concluding that every unpublished item is a draft."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "Although it rejects a forced exhaustive binary, it says 'A sequential discriminating question is supported' rather than setting discriminating_question to null and keeping the two checks non-discriminating."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The boundary cases classify the review-pending memo as draft and the approved staff email as published on the supplied facts."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Formatting is treated as non-defining, and unresolved ambiguities expressly preserve possible overlap and non-exhaustiveness."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "discriminating_question is null, with separate recognition cues and an explanation that exclusivity and exhaustiveness are not established."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "concept-contrast-table__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Reserved stock is defined only by assignment to a named order and not-yet-shipped status, with both supplied cases represented."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Available stock has empty defining and non-feature lists and unsupported status; the unassigned units are not reclassified as available."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The partial comparison is actionable and states that unshipped status alone cannot establish available stock."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "concept-contrast-table__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Both incompatible urgent definitions are retained with conflicting status and no precedence; the quoted note is not followed."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The failed-alarm case is classified only as urgent under record 1 and its evidence remains tied to that record."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Routine is defined by absence of an action deadline, while red marking alone is explicitly rejected as evidence of urgency."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "concept-contrast-table__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The defining features correctly separate a container bearing its sample ID from an ID recorded in the intake register."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "V7 is classified as both labeled and logged; V8 is classified as logged only because its label is blank."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "discriminating_question is null, and the response explains that V7 proves the concepts are not mutually exclusive."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "concept-contrast-table__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "concept-contrast-table__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "concept-contrast-table__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "concept-contrast-table__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

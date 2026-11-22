@@ -1,0 +1,34 @@
+{
+  "lineage_hops": [
+    {
+      "source_field": "A.label",
+      "destination_field": "B.clean_label",
+      "mapping_type": "derived",
+      "transformation": "trim spaces",
+      "support_status": "supported"
+    },
+    {
+      "source_field": null,
+      "destination_field": "B.owner",
+      "mapping_type": "unknown",
+      "transformation": null,
+      "support_status": "unknown"
+    }
+  ],
+  "filters": [
+    {
+      "stage": "B",
+      "condition": "B.active = true"
+    }
+  ],
+  "aggregations": [],
+  "unknown_origins": [
+    "B.owner"
+  ],
+  "conflicts": [],
+  "verification_findings": [
+    "The A.label to B.clean_label hop is supported by an explicit mapping.",
+    "The filter is recorded at stage B.",
+    "B.owner remains unknown because no mapping was supplied."
+  ]
+}

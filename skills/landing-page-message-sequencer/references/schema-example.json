@@ -1,0 +1,13 @@
+{
+  "synthetic": true,
+  "input": "Audience: community theater managers. Objective: view the schedule guide. Approved message M1: “Organize rehearsal dates.” Evidence E1: “Guide explains rehearsal-date organization,” location /guide. Authorized CTA C1: “View the guide,” destination /guide, for this audience. Visitor questions: What does it help organize? Where can I learn how?",
+  "expected_artifact": {
+    "audience": "community theater managers",
+    "objective": "view the schedule guide",
+    "sections": [{"order": 1, "visitor_question": "What does it help organize?", "message_ids": ["M1"], "approved_claim": "Organize rehearsal dates.", "evidence": {"asset_id": "E1", "description": "Guide explains rehearsal-date organization.", "location": "/guide", "support_status": "direct"}, "cta": null, "cta_status": "not_applicable", "restrictions": [], "gaps": []}, {"order": 2, "visitor_question": "Where can I learn how?", "message_ids": ["C1"], "approved_claim": "View the guide.", "evidence": {"asset_id": "E1", "description": "Guide explains rehearsal-date organization.", "location": "/guide", "support_status": "direct"}, "cta": {"wording": "View the guide.", "destination": "/guide", "audience": "community theater managers", "authority_status": "authorized", "prerequisites": []}, "cta_status": "authorized", "restrictions": ["CTA is authorized for community theater managers."], "gaps": []}],
+    "sequence_rationale": "The approved capability answers the orientation question before the authorized guide action answers the next-step question.",
+    "rejection_log": [],
+    "unresolved_gaps": []
+  },
+  "status": "specification; not an executed test"
+}

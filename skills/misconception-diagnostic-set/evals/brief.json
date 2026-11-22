@@ -1,0 +1,11 @@
+{
+  "slug": "misconception-diagnostic-set",
+  "category": "education",
+  "user_problem": "An instructor needs short items that distinguish named misconceptions from ordinary calculation mistakes.",
+  "unique_output": "A diagnostic set pairing each item with targeted misconception, expected distractor reasoning, and interpretation limits.",
+  "required_input": "Learning objective, explicitly named misconceptions, correct rule, response format, and desired item count.",
+  "critical_rule": "Do not infer a learner belief from one response; label results as evidence to investigate, not diagnosis.",
+  "nearest_existing_and_difference": "Nearest is classroom-quiz-builder; this targets discrimination among supplied misconceptions rather than producing a general quiz.",
+  "tier": "free",
+  "acceptance_scenario": "Input objective compares fractions; misconception says larger denominator means larger value. Output includes choosing between 1/4 and 1/3, identifies 1/4 as the targeted distractor, and requires a second probe before interpretation."
+}

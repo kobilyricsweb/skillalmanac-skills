@@ -1,0 +1,23 @@
+{
+  "placements": [
+    {
+      "message_id": "M10",
+      "exact_message": "A transcript is included.",
+      "audience": "registered attendees",
+      "context": "post-event resources",
+      "asset_id": "A10",
+      "location": "/events/10/resources#transcript",
+      "status": "direct reuse",
+      "allowed_placement": "attendee resource page",
+      "restriction": "attendee resource page only",
+      "adaptation_request": null
+    }
+  ],
+  "unpaired_messages": [],
+  "unused_assets": [],
+  "blocked_placements": [],
+  "unresolved_authority": [],
+  "scope_limits": [
+    "No claim-truth assessment, campaign planning, promotional validation, or new claim creation."
+  ]
+}

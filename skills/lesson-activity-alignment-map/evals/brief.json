@@ -1,0 +1,11 @@
+{
+  "slug": "lesson-activity-alignment-map",
+  "category": "education",
+  "user_problem": "Lesson activities may consume time without producing evidence for the stated learning objectives.",
+  "unique_output": "A map connecting each objective to practice activity, learner action, evidence produced, and uncovered objective.",
+  "required_input": "Objectives, activity descriptions, expected learner products, time limits, and assessment criteria.",
+  "critical_rule": "Do not infer alignment from topic similarity; require an observable learner action that demonstrates the objective.",
+  "nearest_existing_and_difference": "Nearest is tutorial-prerequisite-mapper; this checks objective-to-activity evidence rather than prerequisites for procedural steps.",
+  "tier": "free",
+  "acceptance_scenario": "Input objective 'compare two arguments'; activities are lecture, individual summary, paired comparison chart. Output links only the chart directly to comparison evidence, labels summary partial, and lecture as exposure rather than evidence."
+}

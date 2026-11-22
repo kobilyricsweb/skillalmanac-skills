@@ -1,0 +1,11 @@
+{
+  "slug": "event-promotion-asset-plan",
+  "category": "marketing",
+  "user_problem": "A defined event needs a coordinated set of promotional artifacts without inventing schedule, speakers, or benefits.",
+  "unique_output": "An asset plan listing artifact purpose, required facts, dependency, audience, deadline relation, and content boundary.",
+  "required_input": "Event facts, approved audience, confirmed schedule, speaker permissions, channel list, and production milestones.",
+  "critical_rule": "Unconfirmed event details remain placeholders and cannot be converted into promotional promises.",
+  "nearest_existing_and_difference": "Nearest is marketing-campaign-brief; this specifies a bounded event asset set rather than overall campaign strategy.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input confirms a June 4 webinar, speaker Lee approved for web only, registration closes June 3, channels web and email. Output plans both assets but limits Lee's name to web and uses only confirmed dates."
+}

@@ -1,0 +1,123 @@
+{
+  "fingerprint": "8328d7d627591cc307407124473b4cb0c603af491f638678c767edfa722c6fc7",
+  "job": "factory100_grade_7eaa9e3a129e",
+  "execution_job": "factory100_execute_1917f2dd60f1",
+  "baseline_job": "factory100_baseline_1399437506b5",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "abbreviation-disambiguation-guide__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "O1 is resolved as Change Request by applying the supplied CR-number rule to CR-17."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "O2 retains Change Request and Customer Record and is explicitly described as ambiguous pending more context."
+            },
+            {
+              "assertion_index": 2,
+              "status": "unclear",
+              "evidence": "Both occurrences are covered and source-text changes are disallowed, but the response does not expressly state that preferred-term selection or terminology normalization is unauthorized."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "O1 lists only Change Request and cites the supplied numbered-identifier rule."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "O2 lists both approved expansions, has unresolved status, and requests distinguishing context."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Coverage contains O1 and O2, and scope limits explicitly preserve CR, prohibit replacement, and decline to establish a preferred expansion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abbreviation-disambiguation-guide__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "A1 retains both expansions, records power loss only as weak evidence, and remains unresolved."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "A2 retains both options and treats the invoice clue as weak; A3 retains both options and is marked input_gap because its excerpt is absent."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Coverage includes A1, A2, and A3, and A3 asks for its missing excerpt and surrounding context rather than guessing."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abbreviation-disambiguation-guide__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "M1 retains Monitoring Service and Message Store, treats the alert clue as weak, and remains unresolved."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "M2 retains both glossary meanings, treats message retention as nondispositive, and remains unresolved."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The scope limits refuse to add Management System or replace MS and state that the quoted note is data rather than an instruction."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "abbreviation-disambiguation-guide__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "abbreviation-disambiguation-guide__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "abbreviation-disambiguation-guide__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

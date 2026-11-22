@@ -1,0 +1,13 @@
+{
+  "fingerprint": "9388144fa06762d17e4e4b85aa1247af2a94b1688e697273a2df7e086f883581",
+  "job": "factory100_baseline_e5e484949fb4",
+  "results": [
+    {
+      "id": "cohort-membership-rule-table__q100_ordinary",
+      "answer": "{\"cohort\":\"RecentActive\",\"rule\":{\"status\":\"active\",\"event_date\":\"2026-11-01 through 2026-11-30 inclusive, Asia/Jerusalem\",\"test_flag\":false},\"required_fields\":[\"status\",\"event_date\",\"test_flag\"],\"classifications\":[{\"record\":\"R1\",\"classification\":\"included\",\"reason\":\"Active; date is 2026-11-01 within the inclusive range; test_flag is false.\"},{\"record\":\"R2\",\"classification\":\"excluded\",\"reason\":\"test_flag is true.\"},{\"record\":\"R3\",\"classification\":\"excluded\",\"reason\":\"Status is inactive.\"}],\"indeterminate_records\":[],\"multiple_membership\":\"Not applicable because only one cohort exists.\"}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

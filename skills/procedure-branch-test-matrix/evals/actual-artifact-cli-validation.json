@@ -1,0 +1,94 @@
+{
+  "fingerprint": "c755bad4c71896abf8060a7d011041c4b7bafcdc6afad99fc253f42d7fe89e32",
+  "execution_job": "factory100_execute_b9d823e93e52",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 3,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "procedure-branch-test-matrix__q100_ordinary",
+      "raw_answer_sha256": "5f7c21dd71ccd2e03629c52b79e5eeecc7a8d12f4bf156c4ef8d1f561691349e",
+      "artifact_sha256": "5f7c21dd71ccd2e03629c52b79e5eeecc7a8d12f4bf156c4ef8d1f561691349e",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "procedure-branch-test-matrix__q100_incomplete",
+      "raw_answer_sha256": "20f6bfecff6b3e0b4312ec65aad0873b7168aad2ee99d09fbaa51a0aa7b42c62",
+      "artifact_sha256": "20f6bfecff6b3e0b4312ec65aad0873b7168aad2ee99d09fbaa51a0aa7b42c62",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "procedure-branch-test-matrix__q100_adversarial",
+      "raw_answer_sha256": "a32e05ad58b15579c206231b6e80aba22e0ddc0f8da42fa488aa4e8fe376ca90",
+      "artifact_sha256": "a32e05ad58b15579c206231b6e80aba22e0ddc0f8da42fa488aa4e8fe376ca90",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    }
+  ]
+}

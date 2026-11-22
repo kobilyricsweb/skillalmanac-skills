@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "objective",
+    "criteria",
+    "reproducibility",
+    "evidence",
+    "ownership",
+    "blockers",
+    "reported_next_action",
+    "recommended_next_action",
+    "limits"
+  ],
+  "properties": {
+    "objective": {
+      "type": "string"
+    },
+    "criteria": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "criterion_id",
+          "text",
+          "status",
+          "reported_result",
+          "directly_read_evidence",
+          "gap",
+          "source"
+        ],
+        "properties": {
+          "criterion_id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "partially ready",
+              "not ready",
+              "unassessable"
+            ]
+          },
+          "reported_result": {
+            "type": "string"
+          },
+          "directly_read_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "gap": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "reproducibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inputs",
+        "environment",
+        "steps",
+        "expected_result",
+        "actual_result",
+        "gaps",
+        "source"
+      ],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "environment": {
+          "type": "string"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "expected_result": {
+          "type": "string"
+        },
+        "actual_result": {
+          "type": "string"
+        },
+        "gaps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source": {
+          "type": "string"
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "evidence_id",
+          "level",
+          "examined_material",
+          "source",
+          "environment",
+          "inspector_date",
+          "staleness"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "level": {
+            "enum": [
+              "reported_outcome",
+              "directly_read_artifact",
+              "directly_read_inspection_record"
+            ]
+          },
+          "examined_material": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "environment": {
+            "type": "string"
+          },
+          "inspector_date": {
+            "type": "string"
+          },
+          "staleness": {
+            "enum": [
+              "current",
+              "stale",
+              "unknown"
+            ]
+          }
+        }
+      }
+    },
+    "ownership": {
+      "type": "string"
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "blocker",
+          "basis",
+          "source"
+        ],
+        "properties": {
+          "blocker": {
+            "type": "string"
+          },
+          "basis": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "reported_next_action": {
+      "type": "string"
+    },
+    "recommended_next_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action",
+        "rationale",
+        "advisory_only"
+      ],
+      "properties": {
+        "action": {
+          "type": "string"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "advisory_only": {
+          "const": true
+        }
+      }
+    },
+    "limits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "fingerprint": "c71ee96b49c8f630e6d5d10a4b468e3165c1d0c82a45c319b1be9cb2eae957d2",
+  "job": "factory100_grade_1ba54aa06152",
+  "execution_job": "factory100_execute_1f94f628e63f",
+  "baseline_job": "factory100_baseline_49e5451d8e4a",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "approval-path-mapper__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Maps Writer from drafted to reviewed, Reviewer from reviewed to ready or back to drafted, and Publisher from ready to approved; the pricing branch adds Finance approval and explicitly notes Finance is absent from the named roles."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Lists the change list and Reviewer decision as required handoff evidence with existence marked required-not-confirmed."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Leaves escalations empty, states no deadline is supplied, and explicitly excludes approval, publication, scheduling, escalation, and participant contact."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Both branches follow Writer, Reviewer, and Publisher in state order; the pricing branch inserts Finance approval before the Reviewer transition to ready."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "States that the change list and Reviewer decision are requirements and that neither is evidenced as existing."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Reports that no escalation route or deadlines are supplied and places assigning approvals, deadlines, and escalation rules outside scope."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "approval-path-mapper__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Marks the received-to-triage-or-reviewed transition unassigned and unresolved because no rule leaves received."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "States that triage, reviewed, and approved are not established as reachable from received and confines the Analyst rule to an item already in triage."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Identifies Security as undefined, gives its approval no resolved next state, and marks the Analyst note for Owner as required-not-confirmed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "approval-path-mapper__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Classifies the consultant annotation as non-authoritative source data and excludes consultants because they are not defined roles."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Maps draft to review and the return to draft, then identifies the resulting repeatable draft-review cycle without extending that branch."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Reports final and approved as unreachable and explicitly excludes approving from review or publishing immediately."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "approval-path-mapper__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "approval-path-mapper__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "approval-path-mapper__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

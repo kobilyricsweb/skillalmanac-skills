@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "entries",
+    "conflicts",
+    "open_questions",
+    "verification"
+  ],
+  "properties": {
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "constraint",
+          "type",
+          "source",
+          "scope",
+          "writer_test",
+          "counterexample",
+          "status"
+        ],
+        "properties": {
+          "constraint": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "positive_anchor",
+              "negative_anchor",
+              "observation",
+              "prohibition"
+            ]
+          },
+          "source": {
+            "enum": [
+              "approved_sample",
+              "explicit_preference",
+              "prohibited_pattern"
+            ]
+          },
+          "scope": {
+            "type": "string"
+          },
+          "writer_test": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "counterexample": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "approved_constraint",
+              "observed_only",
+              "unresolved",
+              "conflicting"
+            ]
+          }
+        }
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "sources",
+          "issue",
+          "resolution_needed"
+        ],
+        "properties": {
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "issue": {
+            "type": "string"
+          },
+          "resolution_needed": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "all_constraints_sourced",
+        "tests_wording_only",
+        "factual_claims_approved"
+      ],
+      "properties": {
+        "all_constraints_sourced": {
+          "type": "boolean"
+        },
+        "tests_wording_only": {
+          "type": "boolean"
+        },
+        "factual_claims_approved": {
+          "const": false
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

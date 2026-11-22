@@ -1,0 +1,13 @@
+[
+  {
+    "id": "message-asset-reuse-map__parent_holdout",
+    "slug": "message-asset-reuse-map",
+    "prompt": "Map approved messages to supplied assets: M1=\"offline planning\", M2=\"shared team editing\", M3=\"no account needed\". Assets: A1 slide2 shows offline outline; A2 page1 is a single-user screenshot only; A3 paragraph4 shows shared editing, allowed internal audience only. Intended placements: public homepage and internal training. No asset addresses accounts. Do not create new proof.",
+    "assertions": [
+      "Maps M1/A1slide2 and M2/A3paragraph4 with internal-only restriction.",
+      "Does not treat A2 single-user screenshot as evidence of shared editing or authorize public reuse ofA3.",
+      "Leaves M3 unsupported by supplied assets and requests an adaptation/evidence gap rather than inventing proof."
+    ],
+    "origin": "parent-designed fresh forward case; not an observed customer request"
+  }
+]

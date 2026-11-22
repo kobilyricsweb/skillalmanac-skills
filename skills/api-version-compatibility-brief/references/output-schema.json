@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["comparisons", "conflicts", "unresolved_items", "scope"],
+  "properties": {
+    "comparisons": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["area", "element", "version_1", "version_2", "classification", "impact"], "properties": {"area": {"type": "string", "enum": ["path", "method", "request_field", "response_field", "status_code", "behavior"]}, "element": {"type": "string"}, "version_1": {"type": ["string", "null"]}, "version_2": {"type": ["string", "null"]}, "classification": {"type": "string", "enum": ["unchanged", "added", "removed", "renamed", "changed", "behaviorally_uncertain"]}, "impact": {"type": "string"}}}},
+    "conflicts": {"type": "array", "items": {"type": "string"}},
+    "unresolved_items": {"type": "array", "items": {"type": "string"}},
+    "scope": {"type": "string"}
+  }
+}

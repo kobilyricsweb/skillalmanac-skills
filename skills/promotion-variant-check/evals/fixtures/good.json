@@ -1,0 +1,1 @@
+{"baseline": {"headline": "Save", "body": "Today"}, "changed_field": "headline", "variants": [{"id": "A", "fields": {"headline": "Save now", "body": "Today"}}, {"id": "B", "fields": {"headline": "Save more", "body": "Today"}}]}

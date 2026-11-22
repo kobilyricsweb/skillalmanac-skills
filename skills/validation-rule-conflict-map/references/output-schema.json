@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["conflict_map", "unresolved_questions", "assumptions", "limits"],
+  "properties": {
+    "conflict_map": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["source_ids", "field", "original_rules", "scope_intersection", "exact_constraints", "classification", "precedence_evidence", "resolution_needed", "unresolved_reason"], "properties": {"source_ids": {"type": "array", "minItems": 2, "items": {"type": "string"}}, "field": {"type": "string"}, "original_rules": {"type": "array", "items": {"type": "string"}}, "scope_intersection": {"type": ["string", "null"]}, "exact_constraints": {"type": "array", "items": {"type": "string"}}, "classification": {"enum": ["compatible", "redundant", "contradictory", "conditional", "undecidable"]}, "precedence_evidence": {"type": ["string", "null"]}, "resolution_needed": {"type": "boolean"}, "unresolved_reason": {"type": ["string", "null"]}}}},
+    "unresolved_questions": {"type": "array", "items": {"type": "string"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "limits": {"type": "array", "items": {"type": "string"}}
+  }
+}

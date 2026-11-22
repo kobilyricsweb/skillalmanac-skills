@@ -1,0 +1,5 @@
+{
+  "conflicts": [],
+  "unresolved_questions": [],
+  "verification_statement": "The supplied template was checked against its mapped required fields, prohibited fields, and severity guidance; this static review does not establish runtime behavior."
+}

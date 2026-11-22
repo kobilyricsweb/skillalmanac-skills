@@ -1,0 +1,11 @@
+{
+  "slug": "narrative-timeline-reconstructor",
+  "category": "content",
+  "user_problem": "Notes present events out of order and mix exact dates, ranges, and uncertain sequencing.",
+  "unique_output": "A chronological narrative scaffold with event IDs, time precision, dependencies, conflicts, and unresolved placement.",
+  "required_input": "Event notes, source labels, stated dates or relative order, and rules for handling uncertainty.",
+  "critical_rule": "Never convert relative or uncertain timing into an exact date; preserve conflicting sequences side by side.",
+  "nearest_existing_and_difference": "Nearest is decision-evidence-ledger; this reconstructs event order rather than classifying decision status and authority.",
+  "tier": "free",
+  "acceptance_scenario": "Input says E1 occurred March 3, E2 after E1, and one note places E3 before E2 while another says after. Output fixes E1 then E2 relation and marks E3 placement conflicted."
+}

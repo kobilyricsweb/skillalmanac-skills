@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "events": [
+    {
+      "event_id": "E1",
+      "description": "Kickoff occurred.",
+      "time_expression": "2026-03-01",
+      "precision": "exact_date",
+      "dependencies": [],
+      "source_labels": [
+        "memo"
+      ],
+      "conflicts": [],
+      "placement": "ordered"
+    },
+    {
+      "event_id": "E2",
+      "description": "Review occurred.",
+      "time_expression": "after E1",
+      "precision": "relative",
+      "dependencies": [
+        "E1 precedes E2"
+      ],
+      "source_labels": [
+        "notes"
+      ],
+      "conflicts": [],
+      "placement": "partially_ordered"
+    }
+  ],
+  "narrative_scaffold": [
+    "On 2026-03-01, kickoff occurred.",
+    "At an unspecified later time, the review occurred after kickoff."
+  ],
+  "unresolved_placement": [
+    "E2 has no exact date."
+  ],
+  "coverage_statement": "Both supplied events appear once, and the ordering uses only the exact date and stated after relation.",
+  "__unexpected_fixture_property__": 0
+}

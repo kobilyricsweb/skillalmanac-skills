@@ -1,0 +1,9 @@
+{
+  "short_caption": "Calls on 5 May 2026: East 2 and West 4.",
+  "extended_context": "The chart displays 4 calls for West and 2 for East on 5 May 2026, so West has the higher displayed value.",
+  "reading_guidance": "Compare the labeled bar values using the y-axis unit of calls.",
+  "limitation": "Only East, West, and the single displayed date are covered.",
+  "source_note_placeholder": "Source: internal identifier CALL-5.",
+  "uncertainty": [],
+  "__unexpected_fixture_property__": 0
+}

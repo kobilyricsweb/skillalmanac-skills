@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Synthetic test: reconcile morning and evening count lists while preserving both values and flagging unsupported differences.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: explain an item difference using a supplied sale adjustment and calculate the arithmetic.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: mark an unexplained inventory discrepancy for recount without changing either count.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: produce a worksheet grouped into exact matches, explained differences, recounts, and unresolved rows.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: compare two timed warehouse observations with documented transfer evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: retain both observations when item identifiers are ambiguous.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: report missing adjustment evidence instead of assuming shrinkage.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: summarize permitted next steps without executing record corrections.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: verify every explained difference has supplied evidence and arithmetic.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: create a partial reconciliation when one count list lacks required fields.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: classify whether two customer records are duplicates.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: cluster similar records and recommend a canonical customer entry.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: find duplicate invoices by name and address similarity.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: define a dataset field dictionary for inventory columns.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: map template placeholders to source fields.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: assess whether reviewer staffing covers a schedule.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: design cases for every branch of a procedure.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: assign retention labels to document descriptions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: estimate warehouse shrinkage from historical counts.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: update the inventory system with corrected quantities.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,2687 @@
+{
+  "repo": "kobilyricsweb/skillalmanac-skills",
+  "count": 383,
+  "skills": [
+    {
+      "slug": "3d-scene-scripting",
+      "name": "3d-scene-scripting",
+      "one_line": "Helps an agent script Blender or three.js scenes that render right the first time, with a scene validator.",
+      "category": "video-media",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/3d-scene-scripting"
+    },
+    {
+      "slug": "abbreviation-disambiguation-guide",
+      "name": "abbreviation-disambiguation-guide",
+      "one_line": "Use when repeated abbreviations have multiple approved expansions in supplied contexts and reviewers need occurrence-level possibilities with evidence.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/abbreviation-disambiguation-guide"
+    },
+    {
+      "slug": "academic-paper-workflow",
+      "name": "academic-paper-workflow",
+      "one_line": "Structures a paper, maps claims to your sources and checks the manuscript against your bibliography, never inventing a citation.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/academic-paper-workflow"
+    },
+    {
+      "slug": "accessibility-audit",
+      "name": "accessibility-audit",
+      "one_line": "Audit a page or component against WCAG 2.2 A and AA with a static checker plus a fixed manual pass, and fix what is found.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/accessibility-audit"
+    },
+    {
+      "slug": "action-title-rewriter",
+      "name": "action-title-rewriter",
+      "one_line": "Rewrites topic-style slide titles such as Q3 Results into full-sentence claim titles that the slide body supports, and flags slides whose body states no single claim.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/action-title-rewriter"
+    },
+    {
+      "slug": "ad-copy-length-checker",
+      "name": "ad-copy-length-checker",
+      "one_line": "Checks ad headlines, descriptions and paths against character limits you supply, and flags duplicate headlines, all-caps text, forbidden trailing characters and excess exclamation marks.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/ad-copy-length-checker"
+    },
+    {
+      "slug": "agency-client-onboarding-checklist",
+      "name": "agency-client-onboarding-checklist",
+      "one_line": "Builds a client onboarding checklist for an agency project, with an access and asset list that gives each item one owner and a due day, a 45-minute kickoff agenda, an approval path with turnaround in…",
+      "category": "business-finance-legal",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/agency-client-onboarding-checklist"
+    },
+    {
+      "slug": "agent-hooks-authoring",
+      "name": "agent-hooks-authoring",
+      "one_line": "Write, install, test and debug coding-agent hooks that are proven by firing them with sample input.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/agent-hooks-authoring"
+    },
+    {
+      "slug": "agent-instruction-files",
+      "name": "agent-instruction-files",
+      "one_line": "Instruction files where every line is project-specific, verified against the repo, and worth loading on every session.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/agent-instruction-files"
+    },
+    {
+      "slug": "agent-session-cost-review",
+      "name": "agent-session-cost-review",
+      "one_line": "Finds where a coding-agent session spent its tokens, by parsing the saved session transcript (JSONL or a plain marker log) with a script that reports spend by phase, by tool and by costliest turn, pl…",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/agent-session-cost-review"
+    },
+    {
+      "slug": "aggregation-grain-check",
+      "name": "aggregation-grain-check",
+      "one_line": "Use when checking a proposed summary against supplied table keys, measure grain, joins, filters, grouping keys, and aggregation rules for duplication and non-additivity hazards.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/aggregation-grain-check"
+    },
+    {
+      "slug": "ai-crawler-readiness",
+      "name": "ai-crawler-readiness",
+      "one_line": "Set an explicit AI-crawler policy, write a conformant llms.txt and make pages quotable, with facts read from the operators' own documentation.",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/ai-crawler-readiness"
+    },
+    {
+      "slug": "alt-text-writer",
+      "name": "alt-text-writer",
+      "one_line": "Writes and checks image alt text and long descriptions in HTML and Markdown, per image function.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/alt-text-writer"
+    },
+    {
+      "slug": "android-practices",
+      "name": "android-practices",
+      "one_line": "Native Android (Kotlin, Compose) rules plus a scanner that help an agent write idiomatic, leak-free app code.",
+      "category": "mobile",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/android-practices"
+    },
+    {
+      "slug": "api-error-example-builder",
+      "name": "api-error-example-builder",
+      "one_line": "Use when converting supplied API error documentation into bounded request/response scenarios, client actions, fallback gaps, status conflicts, and recovery findings.",
+      "category": "backend-apis",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/api-error-example-builder"
+    },
+    {
+      "slug": "api-reference-from-source",
+      "name": "api-reference-from-source",
+      "one_line": "Writes an API reference page for each endpoint in supplied route handlers or JSON response samples, using only what the code and samples show.",
+      "category": "backend-apis",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/api-reference-from-source"
+    },
+    {
+      "slug": "api-version-compatibility-brief",
+      "name": "api-version-compatibility-brief",
+      "one_line": "Use when two supplied API specifications must be compared for documented contract changes across paths, methods, fields, status codes, and behavior.",
+      "category": "backend-apis",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/api-version-compatibility-brief"
+    },
+    {
+      "slug": "approval-path-mapper",
+      "name": "approval-path-mapper",
+      "one_line": "Use when mapping supplied roles, authority rules, states, evidence, branches, cycles, and reachability into an approval path.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/approval-path-mapper"
+    },
+    {
+      "slug": "architecture-decision-records",
+      "name": "architecture-decision-records",
+      "one_line": "Writes and audits ADRs that a stranger can act on, and scans the adr folder for broken numbering, links and missing sections.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/architecture-decision-records"
+    },
+    {
+      "slug": "architecture-diagrams",
+      "name": "architecture-diagrams",
+      "one_line": "Writes Mermaid system and sequence diagrams that stay readable, and checks them for size and structure.",
+      "category": "devops-cloud",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/architecture-diagrams"
+    },
+    {
+      "slug": "archive-discovery-aid",
+      "name": "archive-discovery-aid",
+      "one_line": "Use when a fixed offline archive inventory must become a human-readable finding aid without changing the archive or inventing contents.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/archive-discovery-aid"
+    },
+    {
+      "slug": "assessment-accommodation-translation",
+      "name": "assessment-accommodation-translation",
+      "one_line": "Use when an exact approved accommodation statement must become concrete assessment logistics while preserving supplied construct, item content, response demand, scoring, format, and constraints, incl…",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/assessment-accommodation-translation"
+    },
+    {
+      "slug": "audience-assumption-annotator",
+      "name": "audience-assumption-annotator",
+      "one_line": "Use when reviewing a complete draft against a declared audience profile to identify evidenced assumptions about knowledge, access, motivation, or context and propose bounded clarifications.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/audience-assumption-annotator"
+    },
+    {
+      "slug": "backend-as-a-service-setup",
+      "name": "backend-as-a-service-setup",
+      "one_line": "Sets up or audits a hosted-backend project's auth, rules, storage, keys and environments, with a read-only audit script.",
+      "category": "backend-apis",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/backend-as-a-service-setup"
+    },
+    {
+      "slug": "bank-statement-reconcile",
+      "name": "bank-statement-reconcile",
+      "one_line": "Matches a bank CSV against a ledger CSV row by row and lists every unmatched item with the net difference.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/bank-statement-reconcile"
+    },
+    {
+      "slug": "blameless-postmortem-writer",
+      "name": "blameless-postmortem-writer",
+      "one_line": "Writes a blameless incident postmortem from raw responder notes and a UTC timeline, using fixed headings, contributing factors described by system and process, and action items that each carry an own…",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/blameless-postmortem-writer"
+    },
+    {
+      "slug": "blog-article-writer",
+      "name": "blog-article-writer",
+      "one_line": "Writes a new blog article from a sourced brief and audits it with numeric rules before you publish.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/blog-article-writer"
+    },
+    {
+      "slug": "brand-guidelines-kit",
+      "name": "brand-guidelines-kit",
+      "one_line": "Writes a usable brand guidelines document for founders and marketers, and checks the palette and type scale with a script.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/brand-guidelines-kit"
+    },
+    {
+      "slug": "brand-name-shortlist",
+      "name": "brand-name-shortlist",
+      "one_line": "Generates candidate names and screens them by spelling, sound and collisions into a shortlist of 5.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/brand-name-shortlist"
+    },
+    {
+      "slug": "brand-tone-constraint-card",
+      "name": "brand-tone-constraint-card",
+      "one_line": "Use when approved brand samples, explicit voice preferences, and prohibited tone patterns must become a concise tone constraint card for new copy.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/brand-tone-constraint-card"
+    },
+    {
+      "slug": "browser-e2e-testing",
+      "name": "browser-e2e-testing",
+      "one_line": "Helps an agent write reliable browser end-to-end tests and audits spec files for flakiness patterns.",
+      "category": "testing-debugging",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/browser-e2e-testing"
+    },
+    {
+      "slug": "business-plan-outline",
+      "name": "business-plan-outline",
+      "one_line": "Writes a one-page business plan outline from founder-supplied inputs, tagging every number as GIVEN or ASSUMPTION and naming the five assumptions that most change the outcome, each with a test.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/business-plan-outline"
+    },
+    {
+      "slug": "business-proposal-writer",
+      "name": "business-proposal-writer",
+      "one_line": "Writes a client business proposal from a brief, a scope and a price, using a fixed section order, a deliverables table, scope-boundary clauses and TO-CONFIRM markers for every missing input.",
+      "category": "business-finance-legal",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/business-proposal-writer"
+    },
+    {
+      "slug": "cache-invalidation-scenario-designer",
+      "name": "cache-invalidation-scenario-designer",
+      "one_line": "Use when turning supplied cache keys, read paths, mutations, invalidation rules, and staleness allowances into explicit offline cache scenarios.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/cache-invalidation-scenario-designer"
+    },
+    {
+      "slug": "call-to-action-consistency-map",
+      "name": "call-to-action-consistency-map",
+      "one_line": "Use when auditing supplied assets for CTA fit against audience stage, approved wording, asset message, and a factual destination description.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/call-to-action-consistency-map"
+    },
+    {
+      "slug": "candidate-scorecard-builder",
+      "name": "candidate-scorecard-builder",
+      "one_line": "Builds a weighted candidate scorecard from interview notes.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/candidate-scorecard-builder"
+    },
+    {
+      "slug": "canvas-poster-design",
+      "name": "canvas-poster-design",
+      "one_line": "Designs a poster, flyer or social graphic as one SVG with fixed layout and type rules, then audits it with a script.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/canvas-poster-design"
+    },
+    {
+      "slug": "capacity-slot-allocation-table",
+      "name": "capacity-slot-allocation-table",
+      "one_line": "Use when allocating supplied tasks into finite resource slots while preserving durations, eligibility, priorities, blackouts, fixed assignments, and non-overlap constraints.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/capacity-slot-allocation-table"
+    },
+    {
+      "slug": "caption-context-pack",
+      "name": "caption-context-pack",
+      "one_line": "Use when an existing chart or image needs bounded explanatory text covering visible labels, supplied context, reading guidance, limitations, and a source-note placeholder.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/caption-context-pack"
+    },
+    {
+      "slug": "case-study-interview-kit",
+      "name": "case-study-interview-kit",
+      "one_line": "Use when preparing neutral customer-interview questions, fact-confirmation requests, evidence requests, quotation-permission prompts, and optionally a timed agenda from supplied case-study material.",
+      "category": "education-learning",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/case-study-interview-kit"
+    },
+    {
+      "slug": "category-code-crosswalk",
+      "name": "category-code-crosswalk",
+      "one_line": "Use when two supplied coding systems require a traceable mapping that may include one-to-many, many-to-one, scoped, dated, or unresolved relationships.",
+      "category": "product-project",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/category-code-crosswalk"
+    },
+    {
+      "slug": "channel-format-adaptation-brief",
+      "name": "channel-format-adaptation-brief",
+      "one_line": "Use when one approved source message must be planned for multiple channels with supplied limits, protected phrases, qualifiers, format cues, and CTA rules.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/channel-format-adaptation-brief"
+    },
+    {
+      "slug": "chart-readability-review",
+      "name": "chart-readability-review",
+      "one_line": "Reviews a described chart or chart spec for readability and misleading design choices, such as truncated bar axes, dual y-axes, 3D effects, colour-only encoding, too many series, unsorted bars and mi…",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/chart-readability-review"
+    },
+    {
+      "slug": "chatbot-conversation-flow-design",
+      "name": "chatbot-conversation-flow-design",
+      "one_line": "Writes a support chatbot conversation flow for up to five customer intents, with a step table per intent, a two-miss fallback, a human handoff payload and reply length limits.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/chatbot-conversation-flow-design"
+    },
+    {
+      "slug": "cited-deep-research",
+      "name": "cited-deep-research",
+      "one_line": "Runs research as an auditable procedure so every claim traces to a logged source and quote, then checks it by script.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/cited-deep-research"
+    },
+    {
+      "slug": "claim-evidence-map",
+      "name": "claim-evidence-map",
+      "one_line": "Use when tracing factual propositions in supplied draft text to supplied excerpts, source IDs, and available locations while separating factual attributions from recommendations or opinions.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/claim-evidence-map"
+    },
+    {
+      "slug": "classroom-quiz-builder",
+      "name": "classroom-quiz-builder",
+      "one_line": "Make a multiple-choice quiz from your own reading or briefing, with a key where every answer points to the exact line that proves it.",
+      "category": "education-learning",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/classroom-quiz-builder"
+    },
+    {
+      "slug": "cli-help-example-designer",
+      "name": "cli-help-example-designer",
+      "one_line": "Use when designing valid and invalid command examples from a supplied CLI grammar and target-shell constraints, including token and rendered command forms.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/cli-help-example-designer"
+    },
+    {
+      "slug": "code-risky-pattern-scan",
+      "name": "code-risky-pattern-scan",
+      "one_line": "Scans a source-code folder read-only for nine risky code patterns (eval or exec, shell=True, string-built SQL, hard-coded keys or passwords, disabled TLS verification, pickle loads, weak hashes) and…",
+      "category": "security",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/code-risky-pattern-scan"
+    },
+    {
+      "slug": "coding-agent-guardrails",
+      "name": "coding-agent-guardrails",
+      "one_line": "A pre-action checklist for coding agents plus a read-only audit of a repo's guardrail setup.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/coding-agent-guardrails"
+    },
+    {
+      "slug": "cohort-membership-rule-table",
+      "name": "cohort-membership-rule-table",
+      "one_line": "Use when an analyst needs deterministic assignment of supplied records to one or more cohorts using inclusion, exclusion, precedence, date, and missing-value rules, including unresolved overlaps.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/cohort-membership-rule-table"
+    },
+    {
+      "slug": "color-contrast-palette-checker",
+      "name": "color-contrast-palette-checker",
+      "one_line": "Checks foreground and background colour pairs against WCAG 2.x contrast thresholds and suggests the nearest passing foreground for each failing pair.",
+      "category": "ai-ml-engineering",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/color-contrast-palette-checker"
+    },
+    {
+      "slug": "commit-message-linter",
+      "name": "commit-message-linter",
+      "one_line": "Checks commit messages saved in a text file against Conventional Commits rules and reports each failure as JSON and as a table.",
+      "category": "code-review-quality",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/commit-message-linter"
+    },
+    {
+      "slug": "compose-to-kubernetes-mapping",
+      "name": "compose-to-kubernetes-mapping",
+      "one_line": "Maps the services of a Docker Compose file to Kubernetes Deployment, Service and PersistentVolumeClaim skeletons, with one row per Compose key and a gap list for every key that does not translate.",
+      "category": "devops-cloud",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/compose-to-kubernetes-mapping"
+    },
+    {
+      "slug": "concept-contrast-table",
+      "name": "concept-contrast-table",
+      "one_line": "Use when supplied definitions, examples, nonexamples, and learner confusions must become a focused comparison with evidence-backed boundaries.",
+      "category": "education-learning",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/concept-contrast-table"
+    },
+    {
+      "slug": "conclusion-paragraph-writer",
+      "name": "conclusion-paragraph-writer",
+      "one_line": "Writes a 70-110 word concluding paragraph from a supplied essay body and its thesis.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/conclusion-paragraph-writer"
+    },
+    {
+      "slug": "config-file-validator",
+      "name": "config-file-validator",
+      "one_line": "Checks one JSON, TOML, INI or .env config file (and simple YAML) for syntax, types, keys, ports, placeholders and secrets.",
+      "category": "devops-cloud",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/config-file-validator"
+    },
+    {
+      "slug": "configuration-drift-explainer",
+      "name": "configuration-drift-explainer",
+      "one_line": "Use when explaining differences between supplied redacted before-and-after configuration snapshots with supplied behavior, deployment, rollback, and alignment notes.",
+      "category": "devops-cloud",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/configuration-drift-explainer"
+    },
+    {
+      "slug": "configuration-key-drift-check",
+      "name": "configuration-key-drift-check",
+      "one_line": "Use when comparing supplied required and optional configuration key-name declarations against named configuration key arrays.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/configuration-key-drift-check"
+    },
+    {
+      "slug": "consulting-style-analysis",
+      "name": "consulting-style-analysis",
+      "one_line": "Structures a business question into an issue tree, hypotheses, sourced evidence and an answer-first memo, with a checker.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/consulting-style-analysis"
+    },
+    {
+      "slug": "content-calendar-builder",
+      "name": "content-calendar-builder",
+      "one_line": "Builds a dated content calendar CSV from a topics file, posting weekdays, a weekly cap and holiday dates.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/content-calendar-builder"
+    },
+    {
+      "slug": "content-refresh-plan",
+      "name": "content-refresh-plan",
+      "one_line": "Use when planning bounded offline updates to a supplied existing page from supplied evidence, with section-level actions, impact, locations, and verification gaps.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/content-refresh-plan"
+    },
+    {
+      "slug": "context-window-packer",
+      "name": "context-window-packer",
+      "one_line": "Chooses which files fit one prompt's token budget and records what was kept, shrunk or dropped, and why.",
+      "category": "ai-ml-engineering",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/context-window-packer"
+    },
+    {
+      "slug": "contradiction-resolution-dossier",
+      "name": "contradiction-resolution-dossier",
+      "one_line": "Use when supplied sources make a consequential claim that conflicts and a named resolver needs a focused decision packet.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/contradiction-resolution-dossier"
+    },
+    {
+      "slug": "control-flow-mermaid-from-code",
+      "name": "control-flow-mermaid-from-code",
+      "one_line": "Draws the control flow of one supplied function as a Mermaid flowchart (TD) with numbered nodes, Yes and No decision edges, and a coverage table that maps each source line to its node.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/control-flow-mermaid-from-code"
+    },
+    {
+      "slug": "copywriting-landing-pages",
+      "name": "copywriting-landing-pages",
+      "one_line": "Writes and audits landing-page copy: five fixed sections, every number sourced, no hype.",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/copywriting-landing-pages"
+    },
+    {
+      "slug": "critical-path-planner",
+      "name": "critical-path-planner",
+      "one_line": "Computes critical path, slack, cycles and owner overload from a task list with durations and dependencies.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/critical-path-planner"
+    },
+    {
+      "slug": "cron-expression-explainer",
+      "name": "cron-expression-explainer",
+      "one_line": "Explains a five-field cron expression in plain English and lists its next run times in UTC, using a stdlib-only Python script.",
+      "category": "automation-integrations",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/cron-expression-explainer"
+    },
+    {
+      "slug": "cross-reference-ambiguity-map",
+      "name": "cross-reference-ambiguity-map",
+      "one_line": "Use when bounded document excerpts contain references such as above, this section, or duplicate headings and the possible target locations must be mapped explicitly.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/cross-reference-ambiguity-map"
+    },
+    {
+      "slug": "csv-delimiter-converter",
+      "name": "csv-delimiter-converter",
+      "one_line": "Converts delimited text between comma, tab, semicolon and pipe while keeping quoted cells intact.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/csv-delimiter-converter"
+    },
+    {
+      "slug": "csv-merge-files",
+      "name": "csv-merge-files",
+      "one_line": "Merges several CSV files into one new CSV, either by stacking them under a unified header or by joining them on a key column, and reports per-file row counts, duplicate keys and dropped rows.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/csv-merge-files"
+    },
+    {
+      "slug": "csv-split-by-rows",
+      "name": "csv-split-by-rows",
+      "one_line": "Splits a CSV file into numbered part files of a fixed data-row count, repeating the header row in each part.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/csv-split-by-rows"
+    },
+    {
+      "slug": "csv-structure-validator",
+      "name": "csv-structure-validator",
+      "one_line": "Checks a CSV file for ragged rows, blank or duplicate headers, and per-column rule failures such as bad ISO dates, duplicate IDs, and out-of-range numbers, reporting each finding with its row and col…",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/csv-structure-validator"
+    },
+    {
+      "slug": "csv-to-json-records",
+      "name": "csv-to-json-records",
+      "one_line": "Converts a CSV file with a header row into a JSON array of records keyed by the header, infers integer, float and boolean columns, and prints a column type table.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/csv-to-json-records"
+    },
+    {
+      "slug": "csv-version-diff",
+      "name": "csv-version-diff",
+      "one_line": "Compares two versions of a CSV by key and lists added, removed and changed rows, cell by cell.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/csv-version-diff"
+    },
+    {
+      "slug": "curl-to-python-requests",
+      "name": "curl-to-python-requests",
+      "one_line": "Converts a copied curl command into an equivalent Python requests snippet by splitting it with shlex, without running it or sending any request.",
+      "category": "backend-apis",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/curl-to-python-requests"
+    },
+    {
+      "slug": "customer-support-replies",
+      "name": "customer-support-replies",
+      "one_line": "Draft the reply to a customer from your own policy document: every question answered, nothing promised that the policy does not say, and a note of what needs a person's approval.",
+      "category": "sales-support",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/customer-support-replies"
+    },
+    {
+      "slug": "daily-plan-timeboxer",
+      "name": "daily-plan-timeboxer",
+      "one_line": "Plans one working day by placing prioritised tasks with minute estimates into the free time around fixed meetings, adding a buffer, inserting breaks, and listing the tasks that do not fit.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/daily-plan-timeboxer"
+    },
+    {
+      "slug": "data-analysis-eda",
+      "name": "data-analysis-eda",
+      "one_line": "A fixed exploratory-analysis procedure and CSV profiler that keeps findings descriptive, evidenced and caveated.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/data-analysis-eda"
+    },
+    {
+      "slug": "data-lineage-hop-map",
+      "name": "data-lineage-hop-map",
+      "one_line": "Use when supplied pipeline notes must be converted into a field-level lineage map across named stages, transformations, filters, aggregates, and undocumented origins.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/data-lineage-hop-map"
+    },
+    {
+      "slug": "dataset-field-dictionary-builder",
+      "name": "dataset-field-dictionary-builder",
+      "one_line": "Use when building a field dictionary from supplied schemas, definitions, constraints, notes, and labeled samples while separating source meaning from observations.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/dataset-field-dictionary-builder"
+    },
+    {
+      "slug": "dataset-field-profiler",
+      "name": "dataset-field-profiler",
+      "one_line": "Use when you need a descriptive inventory of top-level fields and observed JSON value types across supplied records.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/dataset-field-profiler"
+    },
+    {
+      "slug": "decision-council",
+      "name": "decision-council",
+      "one_line": "Runs a hard choice past five fixed roles, scores it in a weighted matrix and writes a recommendation with kill criteria.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/decision-council"
+    },
+    {
+      "slug": "decision-evidence-ledger",
+      "name": "decision-evidence-ledger",
+      "one_line": "Use when supplied decision records mix final decisions, proposals, assumptions, evidence, unresolved authority, or genuinely incompatible accounts that need a traceable ledger.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/decision-evidence-ledger"
+    },
+    {
+      "slug": "dependency-license-inventory",
+      "name": "dependency-license-inventory",
+      "one_line": "Builds an inventory of the licences that installed dependencies declare, reading only local files (node_modules package.json, site-packages dist-info METADATA, package-lock.json, go.sum, poetry.lock,…",
+      "category": "business-finance-legal",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/dependency-license-inventory"
+    },
+    {
+      "slug": "dependency-upgrade-impact-map",
+      "name": "dependency-upgrade-impact-map",
+      "one_line": "Use when translating supplied old and new dependency notes plus named usage references into a bounded, offline upgrade impact map.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/dependency-upgrade-impact-map"
+    },
+    {
+      "slug": "design-to-code-handoff",
+      "name": "design-to-code-handoff",
+      "one_line": "Implement a design export as front-end code that matches the spec value by value and reuses the project's tokens and components.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/design-to-code-handoff"
+    },
+    {
+      "slug": "design-token-naming-lint",
+      "name": "design-token-naming-lint",
+      "one_line": "Checks a design-token JSON file for naming pattern breaks, duplicate raw values, raw hex inside semantic or alias tokens, dangling references and circular references, and prints a JSON report.",
+      "category": "code-review-quality",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/design-token-naming-lint"
+    },
+    {
+      "slug": "designing-web-interfaces",
+      "name": "designing-web-interfaces",
+      "one_line": "Gives an agent concrete design rules and a script that audits HTML, CSS or tokens JSON, so UIs stop looking machine-made.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/designing-web-interfaces"
+    },
+    {
+      "slug": "dockerfile-from-project",
+      "name": "dockerfile-from-project",
+      "one_line": "Drafts a Dockerfile and .dockerignore from project files the user supplies, with every assumption listed in a table.",
+      "category": "devops-cloud",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/dockerfile-from-project"
+    },
+    {
+      "slug": "document-consistency-check",
+      "name": "document-consistency-check",
+      "one_line": "Compares named entities, quantities, units, dates, and version assertions across supplied peer documents, distinguishing contradictions, established scope differences, and unknowns.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/document-consistency-check"
+    },
+    {
+      "slug": "document-template-field-map",
+      "name": "document-template-field-map",
+      "one_line": "Use when supplied template placeholders must be bound to candidate source fields under explicit mapping and transformation policies, with conflicts and unknowns exposed.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/document-template-field-map"
+    },
+    {
+      "slug": "docx-paragraph-diff",
+      "name": "docx-paragraph-diff",
+      "one_line": "Compares two Word .docx files paragraph by paragraph and table cell by table cell, then lists each changed, added, or removed text with its old and new value.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/docx-paragraph-diff"
+    },
+    {
+      "slug": "docx-structure-inspector",
+      "name": "docx-structure-inspector",
+      "one_line": "Inspects a Word .docx file for structure problems: heading outline, heading level skips, empty paragraphs, tables, images, comments, tracked insertions and deletions, and the authors behind them.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/docx-structure-inspector"
+    },
+    {
+      "slug": "docx-text-table-extractor",
+      "name": "docx-text-table-extractor",
+      "one_line": "Extracts paragraphs with their style names and every top-level table from a .docx file into a text file and one CSV per table, then prints a JSON summary of headings, tables and rows.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/docx-text-table-extractor"
+    },
+    {
+      "slug": "duplicate-passage-finder",
+      "name": "duplicate-passage-finder",
+      "one_line": "Finds exact and near-duplicate paragraphs across a folder of .txt and .md files and reports each group with its file and line number.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/duplicate-passage-finder"
+    },
+    {
+      "slug": "duplicate-record-triage",
+      "name": "duplicate-record-triage",
+      "one_line": "Use when classifying supplied records under explicit exact, normalization, or candidate rules while preserving IDs, originals, conflicts, uncertainty, and every qualifying relationship.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/duplicate-record-triage"
+    },
+    {
+      "slug": "editorial-dependency-map",
+      "name": "editorial-dependency-map",
+      "one_line": "Use when a multi-part publication must be mapped against supplied evidence, assets, approvals, section dependencies, and explicit fallback permissions.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/editorial-dependency-map"
+    },
+    {
+      "slug": "email-address-extractor-validator",
+      "name": "email-address-extractor-validator",
+      "one_line": "Extracts email addresses from a plain text file or pasted contact list, checks each one for syntax errors, flags repeated addresses, and writes a de-duplicated list to a new file.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/email-address-extractor-validator"
+    },
+    {
+      "slug": "email-marketing-sequences",
+      "name": "email-marketing-sequences",
+      "one_line": "Plans onboarding, nurture and win-back email sequences as checked JSON that a small business can load into its sending tool.",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/email-marketing-sequences"
+    },
+    {
+      "slug": "email-signature-builder",
+      "name": "email-signature-builder",
+      "one_line": "Builds a plain HTML email signature and a matching plain-text copy from a JSON file of contact fields, after checking each field and the text color contrast.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/email-signature-builder"
+    },
+    {
+      "slug": "email-writing-and-triage",
+      "name": "email-writing-and-triage",
+      "one_line": "Triages an exported inbox with deadline and phishing flags, then drafts replies that never send and never invent figures.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/email-writing-and-triage"
+    },
+    {
+      "slug": "env-file-exposure-check",
+      "name": "env-file-exposure-check",
+      "one_line": "Checks a project folder for committed environment files and secret-shaped values, reporting file, line and a masked value without printing full secrets.",
+      "category": "devops-cloud",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/env-file-exposure-check"
+    },
+    {
+      "slug": "escalation-trigger-catalog",
+      "name": "escalation-trigger-catalog",
+      "one_line": "Use when an operational policy must be converted into observable escalation triggers with thresholds, evidence, destinations, timing, and explicit non-triggers.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/escalation-trigger-catalog"
+    },
+    {
+      "slug": "essay-outline-builder",
+      "name": "essay-outline-builder",
+      "one_line": "Builds a thesis-first essay outline from a writing prompt, a target word count and the writer's own points.",
+      "category": "ai-ml-engineering",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/essay-outline-builder"
+    },
+    {
+      "slug": "event-invitation-text-kit",
+      "name": "event-invitation-text-kit",
+      "one_line": "Writes invitation text and a two-message reminder sequence for a club meetup, party, workshop, or similar event, after checking a required-facts list.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/event-invitation-text-kit"
+    },
+    {
+      "slug": "event-promotion-asset-plan",
+      "name": "event-promotion-asset-plan",
+      "one_line": "Use when turning confirmed event facts, channels, permissions, and milestones into a bounded promotional asset plan.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/event-promotion-asset-plan"
+    },
+    {
+      "slug": "evidence-expiry-review-queue",
+      "name": "evidence-expiry-review-queue",
+      "one_line": "Use when supplied evidence records have review periods or supersession rules and a collection needs an orderly attention queue.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/evidence-expiry-review-queue"
+    },
+    {
+      "slug": "example-set-diversifier",
+      "name": "example-set-diversifier",
+      "one_line": "Use when repetitive teaching examples must be redesigned around a supplied learning objective and explicit decision rules, including normal, counter, missing, conflicting, or requested undetermined c…",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/example-set-diversifier"
+    },
+    {
+      "slug": "excel-formula-debugger",
+      "name": "excel-formula-debugger",
+      "one_line": "Finds why spreadsheet formulas break or give wrong numbers, by auditing an .xlsx for error values traced to their root cell, broken or empty references, circular references, volatile functions, deep…",
+      "category": "testing-debugging",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/excel-formula-debugger"
+    },
+    {
+      "slug": "expense-categorizer-rules",
+      "name": "expense-categorizer-rules",
+      "one_line": "Categorizes a bank transactions CSV with ordered keyword rules, first match wins, and reports totals per category plus the uncategorized rows.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/expense-categorizer-rules"
+    },
+    {
+      "slug": "faithful-summary-writer",
+      "name": "faithful-summary-writer",
+      "one_line": "Summarizes one document so every sentence traces to the source, then checks the summary for invented or altered facts.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/faithful-summary-writer"
+    },
+    {
+      "slug": "faq-answer-boundary-builder",
+      "name": "faq-answer-boundary-builder",
+      "one_line": "Use when creating reusable FAQ answer frames from supplied questions, approved facts, policy clauses, exceptions, prohibitions, and escalation instructions.",
+      "category": "sales-support",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/faq-answer-boundary-builder"
+    },
+    {
+      "slug": "faq-page-builder",
+      "name": "faq-page-builder",
+      "one_line": "Builds an FAQ page from supplied customer questions and facts.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/faq-page-builder"
+    },
+    {
+      "slug": "feature-flag-retirement-planner",
+      "name": "feature-flag-retirement-planner",
+      "one_line": "Use when producing an offline retirement plan from supplied feature-flag state, references, dependencies, policy, and rollback evidence.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/feature-flag-retirement-planner"
+    },
+    {
+      "slug": "feedback-comment-bank",
+      "name": "feedback-comment-bank",
+      "one_line": "Use when evaluators need concise formative comments tied to supplied rubric criteria and observable response patterns.",
+      "category": "sales-support",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/feedback-comment-bank"
+    },
+    {
+      "slug": "figma-to-code-handoff",
+      "name": "figma-to-code-handoff",
+      "one_line": "Validates a Figma-exported tokens file and turns tokens, auto layout, component properties and asset names into code decisions.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/figma-to-code-handoff"
+    },
+    {
+      "slug": "file-naming-audit",
+      "name": "file-naming-audit",
+      "one_line": "Audits file and folder names against a naming convention and hands you a collision-checked rename plan; it never renames.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/file-naming-audit"
+    },
+    {
+      "slug": "flaky-test-triage",
+      "name": "flaky-test-triage",
+      "one_line": "Classifies a failing automated test as flaky or genuinely broken from five or more run results, names the cause class from observable evidence, and prescribes one isolation experiment with quarantine…",
+      "category": "testing-debugging",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/flaky-test-triage"
+    },
+    {
+      "slug": "flashcard-set-builder",
+      "name": "flashcard-set-builder",
+      "one_line": "Builds a deduplicated flashcard CSV from term and definition lines and flags cards that need editing.",
+      "category": "education-learning",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/flashcard-set-builder"
+    },
+    {
+      "slug": "floor-plan-clearance-check",
+      "name": "floor-plan-clearance-check",
+      "one_line": "Checks a furniture layout in a rectangular room against working-value walkway clearances, door swing zones and item overlaps.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/floor-plan-clearance-check"
+    },
+    {
+      "slug": "flutter-practices",
+      "name": "flutter-practices",
+      "one_line": "Flutter and Dart rules plus a scanner that help an agent write idiomatic, performant app code.",
+      "category": "mobile",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/flutter-practices"
+    },
+    {
+      "slug": "formal-letter-writer",
+      "name": "formal-letter-writer",
+      "one_line": "Drafts a formal letter for a complaint, request or notice, using a fixed structure, a three-level tone ladder and only facts the user supplies.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/formal-letter-writer"
+    },
+    {
+      "slug": "founder-operating-kit",
+      "name": "founder-operating-kit",
+      "one_line": "Gives an agent a weekly operating cadence for early-stage founders, with burn and runway arithmetic and a review checker.",
+      "category": "business-finance-legal",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/founder-operating-kit"
+    },
+    {
+      "slug": "game-design-docs",
+      "name": "game-design-docs",
+      "one_line": "Writes a game design document a small team can build from, then checks it and its economy table with a script.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/game-design-docs"
+    },
+    {
+      "slug": "garden-bed-planting-plan",
+      "name": "garden-bed-planting-plan",
+      "one_line": "Plans a garden bed layout from bed size, sun hours and a plant list.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/garden-bed-planting-plan"
+    },
+    {
+      "slug": "git-worktree-and-pr-flow",
+      "name": "git-worktree-and-pr-flow",
+      "one_line": "Runs parallel agent tasks in isolated git worktrees with clean branches, small PRs and a safe merge flow.",
+      "category": "devops-cloud",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/git-worktree-and-pr-flow"
+    },
+    {
+      "slug": "glossary-relationship-map",
+      "name": "glossary-relationship-map",
+      "one_line": "Use when supplied glossary definitions and approved relationship statements must be modeled as broader, narrower, related, or explicitly distinct concepts.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/glossary-relationship-map"
+    },
+    {
+      "slug": "go-and-rust-practices",
+      "name": "go-and-rust-practices",
+      "one_line": "Idiomatic Go and Rust contracts for errors, concurrency, layout and tests, with a line-numbered anti-pattern scanner.",
+      "category": "code-review-quality",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/go-and-rust-practices"
+    },
+    {
+      "slug": "gradebook-weight-check",
+      "name": "gradebook-weight-check",
+      "one_line": "Recomputes weighted final grades from a CSV and a stated scheme, and shows where policy choices change the result.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/gradebook-weight-check"
+    },
+    {
+      "slug": "grant-proposal-outline",
+      "name": "grant-proposal-outline",
+      "one_line": "Outlines a nonprofit grant proposal against a funder's stated criteria by mapping each criterion to a section, splitting the word limit into budgets that sum to the limit, and drafting need, outcomes…",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/grant-proposal-outline"
+    },
+    {
+      "slug": "habit-log-review",
+      "name": "habit-log-review",
+      "one_line": "Computes streaks, adherence, weekday pattern and trend from your own habit log, then suggests one small change.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/habit-log-review"
+    },
+    {
+      "slug": "handover-readiness-check",
+      "name": "handover-readiness-check",
+      "one_line": "Use when a supplied handoff must be assessed criterion by criterion for evidence, reproducibility information, ownership, blockers, and continuation readiness.",
+      "category": "testing-debugging",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/handover-readiness-check"
+    },
+    {
+      "slug": "headline-variant-scorecard",
+      "name": "headline-variant-scorecard",
+      "one_line": "Writes ten headline variants for an article summary, two each from five named formulas (number, how-to, question, contrast, specific benefit), counts characters and words, scores each variant 0-2 on…",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/headline-variant-scorecard"
+    },
+    {
+      "slug": "html-table-extractor",
+      "name": "html-table-extractor",
+      "one_line": "Extracts tables from one local HTML file into JSON or CSV files, expanding rowspan and colspan and reporting every merged cell, ragged row, and missing header as a finding.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/html-table-extractor"
+    },
+    {
+      "slug": "html-to-markdown",
+      "name": "html-to-markdown",
+      "one_line": "Converts an HTML fragment or page to Markdown offline, keeping headings, links, lists, code, blockquotes and simple tables while dropping script, style and navigation, and reports every tag it droppe…",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/html-to-markdown"
+    },
+    {
+      "slug": "http-security-headers-review",
+      "name": "http-security-headers-review",
+      "one_line": "Checks a pasted HTTP response header block for missing or weak security headers, covering Strict-Transport-Security, Content-Security-Policy, X-Content-Type-Options, Referrer-Policy, Permissions-Poli…",
+      "category": "security",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/http-security-headers-review"
+    },
+    {
+      "slug": "idea-scoring-matrix",
+      "name": "idea-scoring-matrix",
+      "one_line": "Ranks a list of brainstormed ideas with a weighted scoring matrix and tests whether the top idea survives a plus or minus 25 percent change in any single criterion weight.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/idea-scoring-matrix"
+    },
+    {
+      "slug": "idempotency-key-behavior-spec",
+      "name": "idempotency-key-behavior-spec",
+      "one_line": "Use when converting supplied idempotency-key scope, retention, replay, payload comparison, and error rules into a bounded behavior matrix.",
+      "category": "backend-apis",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/idempotency-key-behavior-spec"
+    },
+    {
+      "slug": "image-prompt-direction",
+      "name": "image-prompt-direction",
+      "one_line": "Writes image prompts like an art director and lints them for gaps, contradictions and rights problems.",
+      "category": "ai-ml-engineering",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/image-prompt-direction"
+    },
+    {
+      "slug": "image-spec-check",
+      "name": "image-spec-check",
+      "one_line": "Checks exported images against your own spec table and says exactly what to resize, crop, re-export or replace.",
+      "category": "video-media",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/image-spec-check"
+    },
+    {
+      "slug": "infrastructure-as-code-review",
+      "name": "infrastructure-as-code-review",
+      "one_line": "Reviews Terraform, CloudFormation and Kubernetes files and plans for outage and bill risks, with a read-only JSON scanner.",
+      "category": "code-review-quality",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/infrastructure-as-code-review"
+    },
+    {
+      "slug": "instruction-sequence-repair",
+      "name": "instruction-sequence-repair",
+      "one_line": "Use when a complete set of written instructions has explicit dependencies, hidden prerequisites, forward references, or late verification steps and needs a dependency-supported reordering.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/instruction-sequence-repair"
+    },
+    {
+      "slug": "intake-form-completeness-spec",
+      "name": "intake-form-completeness-spec",
+      "one_line": "Use when an intake workflow needs field-level requirements that vary by request type and must be tied to supplied routing, format, validation, and incomplete-case rules.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/intake-form-completeness-spec"
+    },
+    {
+      "slug": "internal-link-orphan-finder",
+      "name": "internal-link-orphan-finder",
+      "one_line": "Finds orphan pages, unreachable pages, deep pages and broken internal links in a folder of HTML or Markdown files by building the internal link graph from relative links.",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/internal-link-orphan-finder"
+    },
+    {
+      "slug": "interview-question-bank",
+      "name": "interview-question-bank",
+      "one_line": "Builds one fixed interview question set for one role, with four or five competencies taken from the role's outcomes, two past-behavior questions per competency, one follow-up probe per question, and…",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/interview-question-bank"
+    },
+    {
+      "slug": "inventory-count-reconciliation-plan",
+      "name": "inventory-count-reconciliation-plan",
+      "one_line": "Use when two supplied inventory observations disagree and you need a controlled worksheet that preserves both counts, explains documented arithmetic differences, and identifies recounts.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/inventory-count-reconciliation-plan"
+    },
+    {
+      "slug": "invoice-arithmetic-check",
+      "name": "invoice-arithmetic-check",
+      "one_line": "Checks invoice and bill arithmetic to the last cent with exact decimals, never tax or legal advice.",
+      "category": "business-finance-legal",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/invoice-arithmetic-check"
+    },
+    {
+      "slug": "invoice-text-field-extractor",
+      "name": "invoice-text-field-extractor",
+      "one_line": "Extracts the invoice number, issue and due dates, currency symbols, subtotal, tax, total and line items from extracted invoice text, reports each field's source line and a found, ambiguous or missing…",
+      "category": "business-finance-legal",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/invoice-text-field-extractor"
+    },
+    {
+      "slug": "ios-swift-practices",
+      "name": "ios-swift-practices",
+      "one_line": "Makes an agent write current SwiftUI and check Swift files for six known anti-patterns.",
+      "category": "mobile",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/ios-swift-practices"
+    },
+    {
+      "slug": "job-search-and-interview-prep",
+      "name": "job-search-and-interview-prep",
+      "one_line": "Runs a structured job search: a validated tracker, weekly plan, honest outreach, STAR stories and interview prep.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/job-search-and-interview-prep"
+    },
+    {
+      "slug": "jobs-to-be-done-interview",
+      "name": "jobs-to-be-done-interview",
+      "one_line": "Plans, scripts and analyses switch interviews, and checks transcripts and job statements for leading questions and gaps.",
+      "category": "video-media",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/jobs-to-be-done-interview"
+    },
+    {
+      "slug": "json-records-to-csv",
+      "name": "json-records-to-csv",
+      "one_line": "Converts a JSON array of objects into a CSV file with a header row, flattening nested objects into dot-named columns and joining arrays with a separator or expanding them into rows.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/json-records-to-csv"
+    },
+    {
+      "slug": "json-schema-from-sample",
+      "name": "json-schema-from-sample",
+      "one_line": "Infers a JSON Schema from one or more sample JSON files with a Python standard-library script.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/json-schema-from-sample"
+    },
+    {
+      "slug": "json-to-typescript-types",
+      "name": "json-to-typescript-types",
+      "one_line": "Infers exported TypeScript interfaces from a JSON sample that is one object or an array of objects.",
+      "category": "web-frameworks",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/json-to-typescript-types"
+    },
+    {
+      "slug": "json-to-yaml",
+      "name": "json-to-yaml",
+      "one_line": "Converts a JSON object or array into block-style YAML with safe quoting.",
+      "category": "backend-apis",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/json-to-yaml"
+    },
+    {
+      "slug": "json-validate-format-repair",
+      "name": "json-validate-format-repair",
+      "one_line": "Validates JSON text, reports the line and column of the first syntax error, pretty-prints valid JSON with two-space indentation, and repairs six listed mistakes while logging each repair.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/json-validate-format-repair"
+    },
+    {
+      "slug": "keyword-demand-research",
+      "name": "keyword-demand-research",
+      "one_line": "Turn a keyword export into a de-duplicated demand figure with intent labels and an honest trend reading.",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/keyword-demand-research"
+    },
+    {
+      "slug": "keyword-density-count",
+      "name": "keyword-density-count",
+      "one_line": "Counts how often each keyword or phrase appears in plain page text and reports case-insensitive, whole-word counts and density percentages, plus the top 15 non-stopword terms and bigrams.",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/keyword-density-count"
+    },
+    {
+      "slug": "kitchen-layout-brief",
+      "name": "kitchen-layout-brief",
+      "one_line": "Writes a kitchen layout brief from measured room sizes and fixed sink, cooktop, and refrigerator positions, computing work triangle legs, zone checks, a walkway check, and open questions for the inst…",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/kitchen-layout-brief"
+    },
+    {
+      "slug": "knowledge-article-split-plan",
+      "name": "knowledge-article-split-plan",
+      "one_line": "Use when a complete knowledge article must be divided into maintainable units according to distinct user tasks, audiences, and content boundaries.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/knowledge-article-split-plan"
+    },
+    {
+      "slug": "landing-page-message-sequencer",
+      "name": "landing-page-message-sequencer",
+      "one_line": "Use when ordering approved page messages by visitor question, supplied evidence and permitted call to action.",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/landing-page-message-sequencer"
+    },
+    {
+      "slug": "landing-page-wireframe-brief",
+      "name": "landing-page-wireframe-brief",
+      "one_line": "Writes a section-by-section wireframe brief for one landing page, covering the goal, one primary action, six ordered sections with purpose, content, word budget and element type, mobile order notes,…",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/landing-page-wireframe-brief"
+    },
+    {
+      "slug": "lesson-activity-alignment-map",
+      "name": "lesson-activity-alignment-map",
+      "one_line": "Use when a lesson plan must show which supplied activities produce observable evidence for each stated learning objective and assessment criterion.",
+      "category": "education-learning",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/lesson-activity-alignment-map"
+    },
+    {
+      "slug": "library-docs-lookup",
+      "name": "library-docs-lookup",
+      "one_line": "Makes an agent answer library questions from the installed package's own files, with file and line cited.",
+      "category": "backend-apis",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/library-docs-lookup"
+    },
+    {
+      "slug": "linkedin-export-to-resume",
+      "name": "linkedin-export-to-resume",
+      "one_line": "Drafts a reverse-chronological resume from LinkedIn profile export text that the user pastes, using only the facts in that text.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/linkedin-export-to-resume"
+    },
+    {
+      "slug": "list-fuzzy-matcher",
+      "name": "list-fuzzy-matcher",
+      "one_line": "Matches each item in a left CSV list to its closest item in a right CSV list and flags weak, tied, and unmatched pairs.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/list-fuzzy-matcher"
+    },
+    {
+      "slug": "llm-cost-estimator",
+      "name": "llm-cost-estimator",
+      "one_line": "Turns a usage profile and your own price table into a monthly LLM cost range with cache, batch and subscription effects.",
+      "category": "ai-ml-engineering",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/llm-cost-estimator"
+    },
+    {
+      "slug": "llm-eval-test-sets",
+      "name": "llm-eval-test-sets",
+      "one_line": "Builds and validates an eval dataset for any LLM feature, with a checker for duplicates, missing graders, imbalance and leakage.",
+      "category": "ai-ml-engineering",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/llm-eval-test-sets"
+    },
+    {
+      "slug": "llm-json-output-validator",
+      "name": "llm-json-output-validator",
+      "one_line": "Validates LLM replies against a JSON Schema subset and tallies failures by class and field.",
+      "category": "ai-ml-engineering",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/llm-json-output-validator"
+    },
+    {
+      "slug": "local-model-sizing",
+      "name": "local-model-sizing",
+      "one_line": "Works out whether an open-weight language model will run on a given GPU, Mac or PC, with a script that computes weight, KV-cache and overhead memory per quantization (FP16 down to Q2_K), a fit verdic…",
+      "category": "ai-ml-engineering",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/local-model-sizing"
+    },
+    {
+      "slug": "locale-resource-fallback-map",
+      "name": "locale-resource-fallback-map",
+      "one_line": "Use when supplied locale inventories and explicit fallback chains must be mapped to determine how resource keys resolve.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/locale-resource-fallback-map"
+    },
+    {
+      "slug": "log-error-clustering",
+      "name": "log-error-clustering",
+      "one_line": "Turns a huge log into a ranked table of distinct error signatures, with counts, timing and a triage order.",
+      "category": "testing-debugging",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/log-error-clustering"
+    },
+    {
+      "slug": "log-file-field-parser",
+      "name": "log-file-field-parser",
+      "one_line": "Parses a text or JSON-lines log file into timestamp, level and message fields, then reports counts per level, unparsed lines, the top 10 repeating messages and a first-occurrence timeline, with an op…",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/log-file-field-parser"
+    },
+    {
+      "slug": "log-message-contract-review",
+      "name": "log-message-contract-review",
+      "one_line": "Use when reviewing proposed log templates against declared event fields, redaction rules, required diagnostic context, and severity guidance.",
+      "category": "business-finance-legal",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/log-message-contract-review"
+    },
+    {
+      "slug": "logo-and-mark-design",
+      "name": "logo-and-mark-design",
+      "one_line": "Designs a logo or mark as clean SVG for founders, and audits it for small sizes, print and one-colour use.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/logo-and-mark-design"
+    },
+    {
+      "slug": "lyric-and-poem-craft",
+      "name": "lyric-and-poem-craft",
+      "one_line": "Audits your own lyrics or poem for syllables, rhyme, hooks and clichés, then guides the revision.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/lyric-and-poem-craft"
+    },
+    {
+      "slug": "markdown-frontmatter-lint",
+      "name": "markdown-frontmatter-lint",
+      "one_line": "Lints the YAML front matter of a folder of Markdown notes and reports each problem with its file and line number.",
+      "category": "code-review-quality",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/markdown-frontmatter-lint"
+    },
+    {
+      "slug": "markdown-to-docx",
+      "name": "markdown-to-docx",
+      "one_line": "Converts a Markdown file into a new Word .docx file using a standard-library Python script, then re-opens the new file and counts headings, paragraphs, list items and tables.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/markdown-to-docx"
+    },
+    {
+      "slug": "marketing-campaign-brief",
+      "name": "marketing-campaign-brief",
+      "one_line": "Write or review a one-page campaign brief whose objective is measurable, whose budget adds up and whose every figure is tagged given, assumed or calculated.",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/marketing-campaign-brief"
+    },
+    {
+      "slug": "marketing-claim-substantiation-log",
+      "name": "marketing-claim-substantiation-log",
+      "one_line": "Builds a claim log for marketing copy, listing each quantitative, comparative, superlative, testimonial, guarantee or absence-of-risk claim with its evidence and a status.",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/marketing-claim-substantiation-log"
+    },
+    {
+      "slug": "math-step-checker",
+      "name": "math-step-checker",
+      "one_line": "Checks a learner's own worked arithmetic or algebra line by line with a script that re-evaluates every step exactly, finds the first step that breaks, names the likely slip (sign when moving a term,…",
+      "category": "education-learning",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/math-step-checker"
+    },
+    {
+      "slug": "mcp-server-builder",
+      "name": "mcp-server-builder",
+      "one_line": "Helps an agent design a Model Context Protocol server correctly and validates its tool manifest.",
+      "category": "backend-apis",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/mcp-server-builder"
+    },
+    {
+      "slug": "meal-plan-grocery-list",
+      "name": "meal-plan-grocery-list",
+      "one_line": "Builds a dinner plan and a merged grocery list for a household within a user-set budget.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/meal-plan-grocery-list"
+    },
+    {
+      "slug": "meeting-agenda-timebox-check",
+      "name": "meeting-agenda-timebox-check",
+      "one_line": "Checks a meeting agenda against its time slot and flags items with no owner, outcome or decision question.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/meeting-agenda-timebox-check"
+    },
+    {
+      "slug": "meeting-notes-and-actions",
+      "name": "meeting-notes-and-actions",
+      "one_line": "Turn a meeting transcript into notes nobody will dispute: what was decided, who owes what by when, and what is still open.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/meeting-notes-and-actions"
+    },
+    {
+      "slug": "merge-conflict-resolution-guide",
+      "name": "merge-conflict-resolution-guide",
+      "one_line": "Resolves a git merge conflict hunk by hunk by classifying each conflict block, applying a fixed decision table per class, and running post-resolution checks before handing back.",
+      "category": "devops-cloud",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/merge-conflict-resolution-guide"
+    },
+    {
+      "slug": "mermaid-syntax-checker",
+      "name": "mermaid-syntax-checker",
+      "one_line": "Checks Mermaid diagram text in Markdown or .mmd files for common syntax errors before rendering, using a stdlib Python heuristic that prints line-level findings as JSON.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/mermaid-syntax-checker"
+    },
+    {
+      "slug": "message-asset-reuse-map",
+      "name": "message-asset-reuse-map",
+      "one_line": "Use when mapping approved messages to exact locations in supplied assets with audience and reuse restrictions.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/message-asset-reuse-map"
+    },
+    {
+      "slug": "metric-definition-card",
+      "name": "metric-definition-card",
+      "one_line": "Use when turning supplied product or operational metric notes into a definition card that exposes population, window, denominator, exclusion, freshness, and zero-policy gaps.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/metric-definition-card"
+    },
+    {
+      "slug": "misconception-diagnostic-set",
+      "name": "misconception-diagnostic-set",
+      "one_line": "Use when an instructor needs short probes that discriminate among explicitly supplied misconceptions and ordinary mistakes under a supplied governing rule.",
+      "category": "education-learning",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/misconception-diagnostic-set"
+    },
+    {
+      "slug": "missingness-pattern-brief",
+      "name": "missingness-pattern-brief",
+      "one_line": "Use when a supplied table needs an evidence-bounded summary of blank values by field, subgroup, or co-occurrence pattern.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/missingness-pattern-brief"
+    },
+    {
+      "slug": "mock-record-generator",
+      "name": "mock-record-generator",
+      "one_line": "Generates seeded mock records as CSV or JSON from a JSON field list or a simple TypeScript interface.",
+      "category": "web-frameworks",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/mock-record-generator"
+    },
+    {
+      "slug": "narrative-timeline-reconstructor",
+      "name": "narrative-timeline-reconstructor",
+      "one_line": "Use when unordered notes must become a chronological narrative while preserving exact dates, ranges, relative order, dependencies, overlap, and uncertainty.",
+      "category": "ai-ml-engineering",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/narrative-timeline-reconstructor"
+    },
+    {
+      "slug": "natural-prose-editor",
+      "name": "natural-prose-editor",
+      "one_line": "Edits text to read like a careful person wrote it, keeping every number, name and claim.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/natural-prose-editor"
+    },
+    {
+      "slug": "newsletter-issue-planner",
+      "name": "newsletter-issue-planner",
+      "one_line": "Plans one marketing newsletter issue with an angle, a section blueprint with word budgets, five subject lines with preview text, a link audit and a pre-send checklist.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/newsletter-issue-planner"
+    },
+    {
+      "slug": "nextjs-practices",
+      "name": "nextjs-practices",
+      "one_line": "Reviews Next.js App Router code with version-tagged decisions and a scanner for structural mistakes.",
+      "category": "web-frameworks",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/nextjs-practices"
+    },
+    {
+      "slug": "notes-to-prose-paragraph",
+      "name": "notes-to-prose-paragraph",
+      "one_line": "Turns bulleted notes or loose sentences into one to three prose paragraphs, numbers every bullet, and returns a coverage table that maps each bullet to its sentence without adding any fact, cause or…",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/notes-to-prose-paragraph"
+    },
+    {
+      "slug": "notes-vault-organizer",
+      "name": "notes-vault-organizer",
+      "one_line": "Audits a Markdown notes vault and proposes a safe, logged move plan. It never deletes.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/notes-vault-organizer"
+    },
+    {
+      "slug": "null-semantics-comparison",
+      "name": "null-semantics-comparison",
+      "one_line": "Use when multiple supplied sources represent unknown, absent, empty, zero, sentinel, or invalid values differently and an integration needs a declared semantics matrix.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/null-semantics-comparison"
+    },
+    {
+      "slug": "nurture-sequence-logic-map",
+      "name": "nurture-sequence-logic-map",
+      "one_line": "Use when approved messages, audience states, permitted transitions, timing constraints, exclusions, and terminal conditions must be organized into an auditable logic map.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/nurture-sequence-logic-map"
+    },
+    {
+      "slug": "objection-response-evidence-grid",
+      "name": "objection-response-evidence-grid",
+      "one_line": "Use when stated buyer objections must be paired with bounded responses, evidence IDs, limitations, explicit rejection of conflicting supplied claims, prohibited assurances, and useful next questions.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/objection-response-evidence-grid"
+    },
+    {
+      "slug": "ocr-text-repair",
+      "name": "ocr-text-repair",
+      "one_line": "Repairs broken OCR text with a change log, fixing a misread only when the document itself proves the correct word.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/ocr-text-repair"
+    },
+    {
+      "slug": "offer-comparison-matrix",
+      "name": "offer-comparison-matrix",
+      "one_line": "Use when comparing supplied internal offers by aligned audience, promise, assets, friction, evidence, and unresolved distinctions.",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/offer-comparison-matrix"
+    },
+    {
+      "slug": "okr-writer",
+      "name": "okr-writer",
+      "one_line": "Rewrites draft OKRs for one period into measurable objectives and key results, flagging tasks, output counts, vanity totals and sandbagged targets, and leaving unknown baselines as TO-CONFIRM.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/okr-writer"
+    },
+    {
+      "slug": "onboarding-checklist-builder",
+      "name": "onboarding-checklist-builder",
+      "one_line": "Builds a role-specific onboarding checklist with owners, due dates, done-evidence, an access and equipment list, and day-30, day-60 and day-90 outcomes that the manager must confirm.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/onboarding-checklist-builder"
+    },
+    {
+      "slug": "openapi-json-to-markdown-reference",
+      "name": "openapi-json-to-markdown-reference",
+      "one_line": "Renders an OpenAPI 3 JSON file as a Markdown API reference.",
+      "category": "backend-apis",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/openapi-json-to-markdown-reference"
+    },
+    {
+      "slug": "openapi-spec-from-endpoints",
+      "name": "openapi-spec-from-endpoints",
+      "one_line": "Drafts an OpenAPI 3.0 YAML spec from route code or sample requests and responses the user supplies, and marks every guessed type or status code in a GUESSED table.",
+      "category": "backend-apis",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/openapi-spec-from-endpoints"
+    },
+    {
+      "slug": "outlier-review-packet",
+      "name": "outlier-review-packet",
+      "one_line": "Use when supplied records have explicit unusual-value flags or thresholds and reviewers need a consistent packet for human disposition.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/outlier-review-packet"
+    },
+    {
+      "slug": "page-title-meta-checker",
+      "name": "page-title-meta-checker",
+      "one_line": "Checks page titles and meta descriptions in a CSV of url, title and description for empty tags, length limits, a pixel-width proxy, duplicates across URLs and titles that repeat their description.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/page-title-meta-checker"
+    },
+    {
+      "slug": "paid-ads-builder",
+      "name": "paid-ads-builder",
+      "one_line": "Builds a search or social ad campaign plan as checkable JSON, then validates copy, negatives, UTMs and budget arithmetic.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/paid-ads-builder"
+    },
+    {
+      "slug": "paint-quantity-calculator",
+      "name": "paint-quantity-calculator",
+      "one_line": "Estimates how many gallons of wall paint a room needs from its length, width, height, door and window counts, coat count and coverage per gallon, and prints the arithmetic step by step.",
+      "category": "product-project",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/paint-quantity-calculator"
+    },
+    {
+      "slug": "palette-from-seed-color",
+      "name": "palette-from-seed-color",
+      "one_line": "Builds a seven-color palette from one hex seed color, keeping the seed hue and saturation across five lightness steps plus a complement and an analogous color, and reports WCAG contrast of each color…",
+      "category": "ai-ml-engineering",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/palette-from-seed-color"
+    },
+    {
+      "slug": "paragraph-meaning-preserving-rewrite",
+      "name": "paragraph-meaning-preserving-rewrite",
+      "one_line": "Rewrites a supplied paragraph in new wording while keeping every claim, number, name and date, then reports a claim-by-claim table and before-and-after counts.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/paragraph-meaning-preserving-rewrite"
+    },
+    {
+      "slug": "parent-teacher-email-writer",
+      "name": "parent-teacher-email-writer",
+      "one_line": "Writes a short, factual email from a teacher to a parent about one dated student situation, such as praise, attendance, missed work, a behavior concern, or a schedule change.",
+      "category": "education-learning",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/parent-teacher-email-writer"
+    },
+    {
+      "slug": "pdf-extraction-and-forms",
+      "name": "pdf-extraction-and-forms",
+      "one_line": "Gets text, tables and form fields in and out of PDFs with a triage script, a route table and read-back checks.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/pdf-extraction-and-forms"
+    },
+    {
+      "slug": "pdf-metadata-privacy-check",
+      "name": "pdf-metadata-privacy-check",
+      "one_line": "Checks a PDF file's document metadata for personal names, e-mail addresses and local file paths before the file is shared.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/pdf-metadata-privacy-check"
+    },
+    {
+      "slug": "peer-review-protocol",
+      "name": "peer-review-protocol",
+      "one_line": "Use when students need a bounded peer-review sequence for a supplied assignment, rubric, duration, feedback scope, and submission format, including a timed disagreement path.",
+      "category": "code-review-quality",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/peer-review-protocol"
+    },
+    {
+      "slug": "permission-matrix-spec",
+      "name": "permission-matrix-spec",
+      "one_line": "Use when supplied role, resource, operation, condition, exception, and default-rule notes must be organized into an application permission matrix.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/permission-matrix-spec"
+    },
+    {
+      "slug": "persona-message-fit-table",
+      "name": "persona-message-fit-table",
+      "one_line": "Use when explicitly assigned audience-profile needs must be compared with approved message options, evidence notes, exclusions, and permitted CTAs in a traceable fit table.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/persona-message-fit-table"
+    },
+    {
+      "slug": "phone-greeting-faq-script",
+      "name": "phone-greeting-faq-script",
+      "one_line": "Writes a phone greeting, a routing menu of up to four options, an after-hours message, eight FAQ answers and three escalation rules for a small business receptionist, using only facts the owner suppl…",
+      "category": "business-finance-legal",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/phone-greeting-faq-script"
+    },
+    {
+      "slug": "plain-language-readability",
+      "name": "plain-language-readability",
+      "one_line": "Rewrites public and customer text to a target reading level, measuring the change and checking that numbers and links survive.",
+      "category": "code-review-quality",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/plain-language-readability"
+    },
+    {
+      "slug": "plain-text-columns-to-csv",
+      "name": "plain-text-columns-to-csv",
+      "one_line": "Converts aligned plain-text tables into CSV.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/plain-text-columns-to-csv"
+    },
+    {
+      "slug": "plan-stress-test",
+      "name": "plan-stress-test",
+      "one_line": "Attacks a written plan before execution and returns a ranked, validated risk register.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/plan-stress-test"
+    },
+    {
+      "slug": "podcast-episode-outline",
+      "name": "podcast-episode-outline",
+      "one_line": "Outlines a podcast episode before recording.",
+      "category": "video-media",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/podcast-episode-outline"
+    },
+    {
+      "slug": "pptx-slide-density-audit",
+      "name": "pptx-slide-density-audit",
+      "one_line": "Audits a .pptx deck for text-heavy slides, missing title placeholders and missing speaker notes, reporting per-slide word and bullet counts as JSON.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/pptx-slide-density-audit"
+    },
+    {
+      "slug": "pptx-text-extractor",
+      "name": "pptx-text-extractor",
+      "one_line": "Extracts slide titles, body text, table cells and speaker notes from a .pptx file in presentation order, with slide counts and empty-slide detection.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/pptx-text-extractor"
+    },
+    {
+      "slug": "pr-size-risk-scorer",
+      "name": "pr-size-risk-scorer",
+      "one_line": "Scores a pull request's size and risk from git diff --numstat text by totaling changed lines, assigning a size band, flagging lockfiles, migrations, CI config, generated files and untested source, an…",
+      "category": "code-review-quality",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/pr-size-risk-scorer"
+    },
+    {
+      "slug": "practice-spacing-schedule",
+      "name": "practice-spacing-schedule",
+      "one_line": "Use when a fixed item set must be distributed across bounded sessions using supplied prerequisites, capacities, review obligations, permitted intervals, and fixed placements; partial scheduling is su…",
+      "category": "automation-integrations",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/practice-spacing-schedule"
+    },
+    {
+      "slug": "prd-writer",
+      "name": "prd-writer",
+      "one_line": "Turn a pile of chat threads and meeting notes into a requirements document that shows what is decided, what is not, and how each requirement will be tested.",
+      "category": "product-project",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/prd-writer"
+    },
+    {
+      "slug": "pricing-page-copy-check",
+      "name": "pricing-page-copy-check",
+      "one_line": "Checks pricing page copy for clarity, hidden costs and unanswered buyer questions by scoring 20 buyer questions as answered, partial or missing and flagging vague terms such as unlimited.",
+      "category": "business-finance-legal",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/pricing-page-copy-check"
+    },
+    {
+      "slug": "procedure-branch-test-matrix",
+      "name": "procedure-branch-test-matrix",
+      "one_line": "Use when supplied procedure conditions, actions, boundaries, and precedence rules need synthetic cases that expose covered, unknown, unreachable, and missing branches.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/procedure-branch-test-matrix"
+    },
+    {
+      "slug": "procedure-to-flowchart",
+      "name": "procedure-to-flowchart",
+      "one_line": "Converts a written step-by-step procedure into one Mermaid flowchart in which every decision shows all of its stated exits, every path ends, and any gap is listed rather than filled.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/procedure-to-flowchart"
+    },
+    {
+      "slug": "product-description-writer",
+      "name": "product-description-writer",
+      "one_line": "Writes an 80 to 120 word product description from a supplied spec sheet, tying each benefit line to a given fact and marking missing facts TO-CONFIRM.",
+      "category": "product-project",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/product-description-writer"
+    },
+    {
+      "slug": "product-update-announcement-frame",
+      "name": "product-update-announcement-frame",
+      "one_line": "Use when framing one documented product change with confirmed availability, audience impact, limitations, required action, permitted CTA, and evidence references.",
+      "category": "product-project",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/product-update-announcement-frame"
+    },
+    {
+      "slug": "profile-headline-about-rewrite",
+      "name": "profile-headline-about-rewrite",
+      "one_line": "Rewrites a professional profile headline and About section from facts the user supplies, using a fixed intake form, headline and About formulas, a keyword placement rule and a trace table that ties e…",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/profile-headline-about-rewrite"
+    },
+    {
+      "slug": "programmatic-video",
+      "name": "programmatic-video",
+      "one_line": "Plan, validate and QC videos rendered from code or data, with a timeline checker that fails before the slow render.",
+      "category": "video-media",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/programmatic-video"
+    },
+    {
+      "slug": "project-decision-log",
+      "name": "project-decision-log",
+      "one_line": "Keeps a durable DECISIONS.md log of project decisions with stable ids, context, options, reasons, consequences, revisit conditions and status, and supersedes old entries instead of rewriting them.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/project-decision-log"
+    },
+    {
+      "slug": "project-tickets-writer",
+      "name": "project-tickets-writer",
+      "one_line": "Turns feature descriptions or meeting notes into engineer-ready tickets and validates them with a script.",
+      "category": "product-project",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/project-tickets-writer"
+    },
+    {
+      "slug": "promotion-variant-check",
+      "name": "promotion-variant-check",
+      "one_line": "Use when comparing approved baseline message-field values with static promotion variants under a one-field experiment design.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/promotion-variant-check"
+    },
+    {
+      "slug": "prompt-writing",
+      "name": "prompt-writing",
+      "one_line": "Writes and lints LLM prompts with a fixed structure, injection rules and a numeric test plan.",
+      "category": "ai-ml-engineering",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/prompt-writing"
+    },
+    {
+      "slug": "property-listing-description",
+      "name": "property-listing-description",
+      "one_line": "Writes an accurate property listing description from verified intake facts (bedrooms, bathrooms, square feet, year built, features and dated upgrades) in 120 to 180 words, with unknown facts marked T…",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/property-listing-description"
+    },
+    {
+      "slug": "provenance-labeling-scheme",
+      "name": "provenance-labeling-scheme",
+      "one_line": "Use when a knowledge collection needs consistent labels for quotation, paraphrase, observation, assumption, or synthesis, including explicit handling of mixed-content segments and provenance metadata.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/provenance-labeling-scheme"
+    },
+    {
+      "slug": "pseudo-localization-tester",
+      "name": "pseudo-localization-tester",
+      "one_line": "Builds a pseudo-locale from a resource file and reports truncation, fragment and hard-coded-text risks before translation.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/pseudo-localization-tester"
+    },
+    {
+      "slug": "punctuation-capitalization-fixer",
+      "name": "punctuation-capitalization-fixer",
+      "one_line": "Fixes spacing, punctuation and sentence capitalization in a plain text file and lists every change with its line number.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/punctuation-capitalization-fixer"
+    },
+    {
+      "slug": "python-class-diagram-mermaid",
+      "name": "python-class-diagram-mermaid",
+      "one_line": "Generates a Mermaid classDiagram from Python source files.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/python-class-diagram-mermaid"
+    },
+    {
+      "slug": "python-dead-code-finder",
+      "name": "python-dead-code-finder",
+      "one_line": "Lists Python functions, classes, methods and modules that no other file in a project folder references, using an ast scan that never runs the code.",
+      "category": "backend-apis",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/python-dead-code-finder"
+    },
+    {
+      "slug": "python-practices",
+      "name": "python-practices",
+      "one_line": "Holds Python 3.11+ code to a senior reviewer's standard and audits it with a stdlib ast script.",
+      "category": "code-review-quality",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/python-practices"
+    },
+    {
+      "slug": "python-unused-import-finder",
+      "name": "python-unused-import-finder",
+      "one_line": "Finds unused, duplicate, star and shadowed imports in Python files by parsing them with ast, with no linter install and no code execution.",
+      "category": "code-review-quality",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/python-unused-import-finder"
+    },
+    {
+      "slug": "python2-pattern-scan",
+      "name": "python2-pattern-scan",
+      "one_line": "Scans one .py file for Python 2 only constructs and lists each with its line and Python 3 replacement.",
+      "category": "code-review-quality",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/python2-pattern-scan"
+    },
+    {
+      "slug": "question-to-source-routing-guide",
+      "name": "question-to-source-routing-guide",
+      "one_line": "Use when routing recurring questions to a supplied source inventory under explicit authority, precedence, evidence, freshness, and fallback rules.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/question-to-source-routing-guide"
+    },
+    {
+      "slug": "quote-estimate-builder",
+      "name": "quote-estimate-builder",
+      "one_line": "Builds an itemized quote from a CSV of line items, with per-line discounts, half-up rounding, tax on the net subtotal at a user-supplied rate, and flags for bad rows.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/quote-estimate-builder"
+    },
+    {
+      "slug": "rag-chunking-planner",
+      "name": "rag-chunking-planner",
+      "one_line": "Chunks your docs by three strategies and measures defects and offline recall, so chunk settings are chosen with numbers.",
+      "category": "ai-ml-engineering",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/rag-chunking-planner"
+    },
+    {
+      "slug": "react-best-practices",
+      "name": "react-best-practices",
+      "one_line": "Review, fix and write React components and hooks for correctness first, with a pattern scanner and a fixed review order.",
+      "category": "web-frameworks",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/react-best-practices"
+    },
+    {
+      "slug": "react-native-practices",
+      "name": "react-native-practices",
+      "one_line": "Mobile-specific rules and a scanner that help an agent avoid common React Native and Expo mistakes.",
+      "category": "web-frameworks",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/react-native-practices"
+    },
+    {
+      "slug": "reading-guide-question-ladder",
+      "name": "reading-guide-question-ladder",
+      "one_line": "Use when turning a complete supplied passage and learning goal into an evidence-grounded ladder of locating, explaining, interpreting, and evaluating questions.",
+      "category": "education-learning",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/reading-guide-question-ladder"
+    },
+    {
+      "slug": "real-estate-deal-notes",
+      "name": "real-estate-deal-notes",
+      "one_line": "Organises a property deal file for small investors and agents.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/real-estate-deal-notes"
+    },
+    {
+      "slug": "recipe-scale-converter",
+      "name": "recipe-scale-converter",
+      "one_line": "Scale a recipe by servings, factor or pan size and convert between cups, grams and ounces, with warnings where linear scaling misleads.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/recipe-scale-converter"
+    },
+    {
+      "slug": "records-to-sql-inserts",
+      "name": "records-to-sql-inserts",
+      "one_line": "Generates SQL CREATE TABLE and INSERT statements from a CSV or JSON records file, inferring column types and escaping text values.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/records-to-sql-inserts"
+    },
+    {
+      "slug": "recurring-task-boundary-checker",
+      "name": "recurring-task-boundary-checker",
+      "one_line": "Use when drafting a proposed recurrence contract from supplied scope, action-specific authorization, completion evidence, exceptions, and stopping requirements.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/recurring-task-boundary-checker"
+    },
+    {
+      "slug": "reference-list-formatter",
+      "name": "reference-list-formatter",
+      "one_line": "Formats references in APA, MLA, Chicago or IEEE from BibTeX or CSL-JSON and flags missing fields without inventing any.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/reference-list-formatter"
+    },
+    {
+      "slug": "referral-message-kit",
+      "name": "referral-message-kit",
+      "one_line": "Use when converting supplied referral rules into accurate inviter, recipient, disclosure, and ineligible-case copy with claim-level traceability.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/referral-message-kit"
+    },
+    {
+      "slug": "regex-case-tester",
+      "name": "regex-case-tester",
+      "one_line": "Builds a regex from a table of must-match and must-not-match strings and proves it, including backtracking risk.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/regex-case-tester"
+    },
+    {
+      "slug": "regex-from-labeled-examples",
+      "name": "regex-from-labeled-examples",
+      "one_line": "Proposes a Python regular expression from labeled match and non-match strings, then proves it against every supplied example in a row-by-row table.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/regex-from-labeled-examples"
+    },
+    {
+      "slug": "release-notes-writer",
+      "name": "release-notes-writer",
+      "one_line": "Turns a commit log or CHANGELOG draft into user-facing release notes and a proposed version bump, without inventing changes.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/release-notes-writer"
+    },
+    {
+      "slug": "reorder-point-calculator",
+      "name": "reorder-point-calculator",
+      "one_line": "Turns a sales CSV, lead times and stock levels into reorder points, quantities and stockout flags as strict JSON.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/reorder-point-calculator"
+    },
+    {
+      "slug": "reproducibility-package-checklist",
+      "name": "reproducibility-package-checklist",
+      "one_line": "Checks whether a research project folder holds what a stranger needs to rerun an analysis: data provenance and licence, pinned software versions, random seeds, run order, entry command, expected outp…",
+      "category": "testing-debugging",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/reproducibility-package-checklist"
+    },
+    {
+      "slug": "requirement-to-section-coverage-map",
+      "name": "requirement-to-section-coverage-map",
+      "one_line": "Use when assessing a complete or explicitly incomplete document against an explicit required-and-optional requirement list using stable section evidence.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/requirement-to-section-coverage-map"
+    },
+    {
+      "slug": "requirements-to-user-stories",
+      "name": "requirements-to-user-stories",
+      "one_line": "Turns a requirements document into user stories with Given/When/Then acceptance criteria, a traceability table, and an uncovered list for vague requirements.",
+      "category": "product-project",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/requirements-to-user-stories"
+    },
+    {
+      "slug": "research-note-deduplication-plan",
+      "name": "research-note-deduplication-plan",
+      "one_line": "Use when labeled research notes must be clustered by exact wording, proposition-level equivalence, provenance, relatedness, or contradiction while preserving independent evidence.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/research-note-deduplication-plan"
+    },
+    {
+      "slug": "research-question-refiner",
+      "name": "research-question-refiner",
+      "one_line": "Refines a vague research topic into three scoped, answerable research questions, ranks them, and matches each one to a design the data can support.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/research-question-refiner"
+    },
+    {
+      "slug": "responsive-breakpoint-test-plan",
+      "name": "responsive-breakpoint-test-plan",
+      "one_line": "Plans responsive layout tests from CSS breakpoints.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/responsive-breakpoint-test-plan"
+    },
+    {
+      "slug": "resume-ats-format-check",
+      "name": "resume-ats-format-check",
+      "one_line": "Checks a plain-text or Markdown resume for layout and wording patterns that applicant tracking systems commonly misparse.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/resume-ats-format-check"
+    },
+    {
+      "slug": "resume-plain-text-restructure",
+      "name": "resume-plain-text-restructure",
+      "one_line": "Restructures a pasted resume into plain text with the standard headings Summary, Experience, Education and Skills, single-column bullets and one date format.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/resume-plain-text-restructure"
+    },
+    {
+      "slug": "resume-tailoring",
+      "name": "resume-tailoring",
+      "one_line": "Fit the resume you already have to one job posting, without adding a single thing you cannot back up in an interview.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/resume-tailoring"
+    },
+    {
+      "slug": "retro-meeting-facilitator",
+      "name": "retro-meeting-facilitator",
+      "one_line": "Builds a timed team retrospective agenda, picks a format (start-stop-continue, 4Ls or timeline) from a fixed table, groups pasted sticky notes, runs dot-voting, and turns the top three themes into ow…",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/retro-meeting-facilitator"
+    },
+    {
+      "slug": "review-reply-writer",
+      "name": "review-reply-writer",
+      "one_line": "Writes one calm public reply to a customer review for a business owner, after classifying the review and checking every fact the reply will state.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/review-reply-writer"
+    },
+    {
+      "slug": "reviewing-code-changes",
+      "name": "reviewing-code-changes",
+      "one_line": "Code review that leaves the diff, proves its findings, and fits in two minutes of reading.",
+      "category": "security",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/reviewing-code-changes"
+    },
+    {
+      "slug": "revision-rationale-log",
+      "name": "revision-rationale-log",
+      "one_line": "Use when documenting observable substantive changes between supplied before-and-after passages and linking each change to supplied style or evidence rules, including verification of protected text.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/revision-rationale-log"
+    },
+    {
+      "slug": "rfp-response-outline",
+      "name": "rfp-response-outline",
+      "one_line": "Builds a requirement-by-requirement response outline from an RFP excerpt, with must, should and may classes, response-section and owner-role mapping, COMPLIANT, PARTIAL and GAP statuses drawn only fr…",
+      "category": "business-finance-legal",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/rfp-response-outline"
+    },
+    {
+      "slug": "role-coverage-gap-map",
+      "name": "role-coverage-gap-map",
+      "one_line": "Use when a supplied process schedule must be checked for role coverage across required windows, assignments, backups, overlaps, and uncovered intervals.",
+      "category": "automation-integrations",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/role-coverage-gap-map"
+    },
+    {
+      "slug": "room-redesign-brief",
+      "name": "room-redesign-brief",
+      "one_line": "Writes a room redesign brief, three image-tool prompts and a measure-before-you-buy checklist from measured dimensions, window and door positions, fixed items, budget, light and style words.",
+      "category": "ai-ml-engineering",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/room-redesign-brief"
+    },
+    {
+      "slug": "rows-to-html-table",
+      "name": "rows-to-html-table",
+      "one_line": "Renders CSV or JSON rows as an accessible HTML table fragment with a caption, scoped column headers, thead and tbody, and escaped cell text.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/rows-to-html-table"
+    },
+    {
+      "slug": "rubric-anchor-builder",
+      "name": "rubric-anchor-builder",
+      "one_line": "Use when a supplied rubric needs synthetic response anchors that make boundaries between performance levels observable.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/rubric-anchor-builder"
+    },
+    {
+      "slug": "rubric-feedback-writer",
+      "name": "rubric-feedback-writer",
+      "one_line": "Writes criterion-by-criterion feedback on one student answer from a supplied rubric.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/rubric-feedback-writer"
+    },
+    {
+      "slug": "rules-to-skills-migration",
+      "name": "rules-to-skills-migration",
+      "one_line": "Move editor rule files to AGENTS.md plus portable skills without losing how each rule was switched on.",
+      "category": "skill-authoring",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/rules-to-skills-migration"
+    },
+    {
+      "slug": "runbook-scenario-table",
+      "name": "runbook-scenario-table",
+      "one_line": "Use when mapping supplied incident observations to procedure conditions, exclusions, prerequisites, overlaps, and escalation triggers while preserving quoted record material separately.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/runbook-scenario-table"
+    },
+    {
+      "slug": "sales-call-prep-and-followup",
+      "name": "sales-call-prep-and-followup",
+      "one_line": "Preps a seller's discovery call from supplied notes and writes the follow-up email after it.",
+      "category": "sales-support",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/sales-call-prep-and-followup"
+    },
+    {
+      "slug": "sample-size-calculator",
+      "name": "sample-size-calculator",
+      "one_line": "Computes the minimum number of subjects per group for a planned comparison of two proportions, two means, or one mean, using the normal approximation in a stdlib Python script.",
+      "category": "testing-debugging",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/sample-size-calculator"
+    },
+    {
+      "slug": "sampling-frame-coverage-note",
+      "name": "sampling-frame-coverage-note",
+      "one_line": "Use when a supplied sampling frame needs a bounded description of included and excluded populations, duplicate risks, time limits, and unknown coverage.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/sampling-frame-coverage-note"
+    },
+    {
+      "slug": "schedule-conflict-check",
+      "name": "schedule-conflict-check",
+      "one_line": "Finds clashes, buffer and rest-gap breaches and unassigned slots in a booking list, roster or .ics file, and proposes the nearest free slot.",
+      "category": "automation-integrations",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/schedule-conflict-check"
+    },
+    {
+      "slug": "scope-change-brief",
+      "name": "scope-change-brief",
+      "one_line": "Use when a supplied baseline and requested scope change must be compared through field-level deltas, impacts, criteria, approval scope, and unresolved decisions.",
+      "category": "product-project",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/scope-change-brief"
+    },
+    {
+      "slug": "section-heading-coverage-check",
+      "name": "section-heading-coverage-check",
+      "one_line": "Use when auditing whether each heading’s promise and each required topic are supported by directly assigned document content, while tracking descendant coverage separately.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/section-heading-coverage-check"
+    },
+    {
+      "slug": "self-assessment-writer",
+      "name": "self-assessment-writer",
+      "one_line": "Writes a performance self-assessment from the employee's own accomplishments.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/self-assessment-writer"
+    },
+    {
+      "slug": "sensitive-data-redaction",
+      "name": "sensitive-data-redaction",
+      "one_line": "Replaces emails, phones, cards, IBANs, keys, IPs and listed names in a file with consistent placeholders before you share it.",
+      "category": "backend-apis",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/sensitive-data-redaction"
+    },
+    {
+      "slug": "serialization-roundtrip-casebook",
+      "name": "serialization-roundtrip-casebook",
+      "one_line": "Use when creating offline serialization roundtrip cases from supplied type rules, format, omission defaults, normalization rules, equality semantics, and synthetic representative values.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/serialization-roundtrip-casebook"
+    },
+    {
+      "slug": "service-package-description",
+      "name": "service-package-description",
+      "one_line": "Writes a fixed-scope service package description with a package name, outcome, quantified deliverables, exclusions, client responsibilities, working-day timeline, revision count, acceptance criteria…",
+      "category": "business-finance-legal",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/service-package-description"
+    },
+    {
+      "slug": "service-request-routing-table",
+      "name": "service-request-routing-table",
+      "one_line": "Use when incoming service requests must be assigned deterministically from supplied category, urgency, location, exception, precedence, role-directory, and fallback rules.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/service-request-routing-table"
+    },
+    {
+      "slug": "session-handoff-notes",
+      "name": "session-handoff-notes",
+      "one_line": "A handoff note the next coding-agent session can act on, checked for evidence, paths and vague items.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/session-handoff-notes"
+    },
+    {
+      "slug": "shot-list-from-script",
+      "name": "shot-list-from-script",
+      "one_line": "Turns a finished narration or video script into a numbered shot list with timing at 150 words per minute, visual type, on-screen text, asset sourcing and transitions.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/shot-list-from-script"
+    },
+    {
+      "slug": "simplify-and-refactor",
+      "name": "simplify-and-refactor",
+      "one_line": "Makes agent cleanups behaviour-preserving: tests first, one named change per commit, and a script that catches API drift.",
+      "category": "code-review-quality",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/simplify-and-refactor"
+    },
+    {
+      "slug": "sitemap-index-builder",
+      "name": "sitemap-index-builder",
+      "one_line": "Builds a sitemap index XML file that references sitemap shard files, starting from a list of shard URLs.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/sitemap-index-builder"
+    },
+    {
+      "slug": "sitemap-xml-builder",
+      "name": "sitemap-xml-builder",
+      "one_line": "Builds a valid sitemap.xml from a plain list of page URLs and reports every entry that breaks the sitemap protocol.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/sitemap-xml-builder"
+    },
+    {
+      "slug": "skill-authoring-and-evals",
+      "name": "skill-authoring-and-evals",
+      "one_line": "Write a SKILL.md from what a plain agent gets wrong, then prove it works with trigger and with-versus-without evals.",
+      "category": "skill-authoring",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/skill-authoring-and-evals"
+    },
+    {
+      "slug": "skill-safety-audit",
+      "name": "skill-safety-audit",
+      "one_line": "Scans a third-party agent skill folder and returns a JSON risk table with evidence lines before you install it.",
+      "category": "skill-authoring",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/skill-safety-audit"
+    },
+    {
+      "slug": "slide-deck-builder",
+      "name": "slide-deck-builder",
+      "one_line": "Plans, writes and checks presentation decks, with speaker notes and a validator for outlines and .pptx files.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/slide-deck-builder"
+    },
+    {
+      "slug": "slide-speaker-notes-writer",
+      "name": "slide-speaker-notes-writer",
+      "one_line": "Writes short speaker notes for each slide in a deck, restating only the text printed on that slide.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/slide-speaker-notes-writer"
+    },
+    {
+      "slug": "social-content-kit",
+      "name": "social-content-kit",
+      "one_line": "Turns one article, release or talk into platform-specific posts and a calendar that a script has checked.",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/social-content-kit"
+    },
+    {
+      "slug": "social-flyer-design-brief",
+      "name": "social-flyer-design-brief",
+      "one_line": "Writes a short design brief for a social post, flyer or slide before any design tool is opened.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/social-flyer-design-brief"
+    },
+    {
+      "slug": "sop-decision-point-extractor",
+      "name": "sop-decision-point-extractor",
+      "one_line": "Use when a complete standard operating procedure must be converted into documented decision branches with observable conditions and rejoin points.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/sop-decision-point-extractor"
+    },
+    {
+      "slug": "source-note-to-outline",
+      "name": "source-note-to-outline",
+      "one_line": "Use when turning labeled source notes into a traceable content outline with unsupported sections left as research gaps.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/source-note-to-outline"
+    },
+    {
+      "slug": "sourced-market-research",
+      "name": "sourced-market-research",
+      "one_line": "Competitor and market research in which every figure traces to a source marked opened, snippet or unverified.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/sourced-market-research"
+    },
+    {
+      "slug": "speaker-notes-timing-planner",
+      "name": "speaker-notes-timing-planner",
+      "one_line": "Estimates speaking time for each slide from its speaker notes and checks whether the whole talk fits its time slot, then lists the words to cut when it does not.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/speaker-notes-timing-planner"
+    },
+    {
+      "slug": "spec-driven-build",
+      "name": "spec-driven-build",
+      "one_line": "Builds a feature from an agreed spec, one numbered requirement at a time, and proves each one with a test.",
+      "category": "product-project",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/spec-driven-build"
+    },
+    {
+      "slug": "split-leakage-check",
+      "name": "split-leakage-check",
+      "one_line": "Checks train, validation and test files for duplicates, shared groups, time and label leakage; prints JSON.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/split-leakage-check"
+    },
+    {
+      "slug": "spreadsheet-analysis",
+      "name": "spreadsheet-analysis",
+      "one_line": "Get totals from a spreadsheet that you can repeat in a meeting, with a list of what was wrong in the file.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/spreadsheet-analysis"
+    },
+    {
+      "slug": "sql-and-database-helper",
+      "name": "sql-and-database-helper",
+      "one_line": "Safe SQL and schema changes for PostgreSQL, MySQL and SQLite: read-only by default, with a static checker.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/sql-and-database-helper"
+    },
+    {
+      "slug": "state-machine-transition-table",
+      "name": "state-machine-transition-table",
+      "one_line": "Use when plain-text behavior notes define states, events, guards, and effects but leave permitted transitions unclear.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/state-machine-transition-table"
+    },
+    {
+      "slug": "statistical-test-selector",
+      "name": "statistical-test-selector",
+      "one_line": "Chooses a statistical test for a described study design using a decision table on outcome type, group count, pairing, distribution shape and sample size, then lists assumptions, a fallback test, the…",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/statistical-test-selector"
+    },
+    {
+      "slug": "stock-phrase-scanner",
+      "name": "stock-phrase-scanner",
+      "one_line": "Scans a plain-text draft for stock filler phrases, hedges and repeated sentence openers, reporting each hit with its line numbers and the phrase density per 1,000 words.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/stock-phrase-scanner"
+    },
+    {
+      "slug": "story-structure-planner",
+      "name": "story-structure-planner",
+      "one_line": "Plans a story as scaled beats and scene cards, then checks the outline for holes.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/story-structure-planner"
+    },
+    {
+      "slug": "structured-data-jsonld",
+      "name": "structured-data-jsonld",
+      "one_line": "Write and check JSON-LD that matches the visible page, and say honestly which types still earn a rich result.",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/structured-data-jsonld"
+    },
+    {
+      "slug": "study-and-teaching-kit",
+      "name": "study-and-teaching-kit",
+      "one_line": "Turns your notes into validated flashcards, a spaced review calendar and a lesson outline with live checks.",
+      "category": "education-learning",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/study-and-teaching-kit"
+    },
+    {
+      "slug": "subagent-design",
+      "name": "subagent-design",
+      "one_line": "Decide what to delegate, then write subagent definitions and briefs that work without the conversation.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/subagent-design"
+    },
+    {
+      "slug": "subtitle-format-converter",
+      "name": "subtitle-format-converter",
+      "one_line": "Converts caption files between WebVTT and SRT, or strips one to a plain transcript, and reports cue counts and any cue whose end time falls before its start.",
+      "category": "video-media",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/subtitle-format-converter"
+    },
+    {
+      "slug": "subtitle-srt-fixer",
+      "name": "subtitle-srt-fixer",
+      "one_line": "Checks SRT subtitle files for out-of-order or overlapping cues, cues shorter than 1 s or longer than 7 s, reading speed above 20 characters per second, lines over 42 characters and more than two line…",
+      "category": "video-media",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/subtitle-srt-fixer"
+    },
+    {
+      "slug": "subtitle-translation-roundtrip",
+      "name": "subtitle-translation-roundtrip",
+      "one_line": "Prepares SRT subtitle files for translation and rebuilds them on the original timings, checking cue count, cue numbering, empty cues, line count, line length and reading speed.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/subtitle-translation-roundtrip"
+    },
+    {
+      "slug": "survey-question-bias-review",
+      "name": "survey-question-bias-review",
+      "one_line": "Reviews draft survey questions for leading, loaded, double-barrelled, absolute, ambiguous and jargon wording, recall burden, unbalanced scales and missing opt-out options, then proposes rewrites, sca…",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/survey-question-bias-review"
+    },
+    {
+      "slug": "systematic-debugging",
+      "name": "systematic-debugging",
+      "one_line": "Makes an agent debug by evidence, with a ledger that a script checks before any bug is called fixed.",
+      "category": "testing-debugging",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/systematic-debugging"
+    },
+    {
+      "slug": "table-footnote-scope-map",
+      "name": "table-footnote-scope-map",
+      "one_line": "Use when a supplied report table contains footnote markers and definitions whose applicability may be cell-, row-, column-, or table-level, and you need an auditable scope map.",
+      "category": "product-project",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/table-footnote-scope-map"
+    },
+    {
+      "slug": "table-to-markdown",
+      "name": "table-to-markdown",
+      "one_line": "Converts CSV, TSV or the first HTML table in a text file into an aligned Markdown table, escaping pipe characters and flagging ragged rows and empty header cells.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/table-to-markdown"
+    },
+    {
+      "slug": "tabular-to-xlsx",
+      "name": "tabular-to-xlsx",
+      "one_line": "Writes a new Excel .xlsx workbook from a CSV or JSON record file using only the Python standard library, so Excel does not need to be installed.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/tabular-to-xlsx"
+    },
+    {
+      "slug": "task-breakdown-coach",
+      "name": "task-breakdown-coach",
+      "one_line": "Turns a goal you cannot start into a first physical action and a checked 15 to 45 minute step plan.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/task-breakdown-coach"
+    },
+    {
+      "slug": "taxonomy-gap-finder",
+      "name": "taxonomy-gap-finder",
+      "one_line": "Use when reviewing assignment coverage, explicit membership conflicts, and definition-quality gaps in a supplied taxonomy snapshot, including incompatibilities stated inside category definitions.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/taxonomy-gap-finder"
+    },
+    {
+      "slug": "taxonomy-structure-check",
+      "name": "taxonomy-structure-check",
+      "one_line": "Use when you need to check whether supplied id and parent_id records form a structurally sound rooted forest.",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/taxonomy-structure-check"
+    },
+    {
+      "slug": "technical-docs-writer",
+      "name": "technical-docs-writer",
+      "one_line": "Writes README, API reference, how-to and runbook pages by type, with run-before-paste code and a script that audits a docs folder.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/technical-docs-writer"
+    },
+    {
+      "slug": "technical-seo-audit",
+      "name": "technical-seo-audit",
+      "one_line": "Audit pages and small sites for technical SEO against measurable thresholds, with documented rules kept apart from tool conventions.",
+      "category": "marketing-seo",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/technical-seo-audit"
+    },
+    {
+      "slug": "temporal-granularity-alignment",
+      "name": "temporal-granularity-alignment",
+      "one_line": "Use when supplied sources report observations at different time grains and a comparison or join needs explicit temporal alignment.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/temporal-granularity-alignment"
+    },
+    {
+      "slug": "terminology-consistency-editor",
+      "name": "terminology-consistency-editor",
+      "one_line": "Use when applying a supplied preferred glossary to editable prose with location-specific term changes.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/terminology-consistency-editor"
+    },
+    {
+      "slug": "terraform-module-docs",
+      "name": "terraform-module-docs",
+      "one_line": "Generates Markdown docs for a Terraform module's variables, outputs, required providers and resource counts from its .tf files.",
+      "category": "devops-cloud",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/terraform-module-docs"
+    },
+    {
+      "slug": "terraform-resource-diagram",
+      "name": "terraform-resource-diagram",
+      "one_line": "Draws a Mermaid graph LR diagram of Terraform resource and data blocks and the type.name references between them, listing unresolved references and cycles.",
+      "category": "devops-cloud",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/terraform-resource-diagram"
+    },
+    {
+      "slug": "terse-output-mode",
+      "name": "terse-output-mode",
+      "one_line": "Short replies that keep every command, number, error message and safety warning intact.",
+      "category": "ai-ml-engineering",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/terse-output-mode"
+    },
+    {
+      "slug": "test-cases-from-acceptance-criteria",
+      "name": "test-cases-from-acceptance-criteria",
+      "one_line": "Derives numbered test cases from acceptance criteria, one criterion per case, with expected results and a coverage table.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/test-cases-from-acceptance-criteria"
+    },
+    {
+      "slug": "test-first-development",
+      "name": "test-first-development",
+      "one_line": "A strict red-green-refactor loop for agents, plus a script that catches tests that cannot fail.",
+      "category": "testing-debugging",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/test-first-development"
+    },
+    {
+      "slug": "testimonial-use-readiness",
+      "name": "testimonial-use-readiness",
+      "one_line": "Use when reviewing supplied testimonial material for attribution, permission, excerpt scope, edits, duration, and placement readiness.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/testimonial-use-readiness"
+    },
+    {
+      "slug": "text-entity-extractor",
+      "name": "text-entity-extractor",
+      "one_line": "Extracts URLs, hashtags, @mentions and ISO or numeric dates from one plain UTF-8 text file, reporting counts, first line and every line number.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/text-entity-extractor"
+    },
+    {
+      "slug": "text-redline-diff",
+      "name": "text-redline-diff",
+      "one_line": "Redlines two plain-text or Markdown versions of a document by paragraph, then by word, marking changed words as [-deleted-] and [+inserted+] and counting moved paragraphs.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/text-redline-diff"
+    },
+    {
+      "slug": "threat-model-stride-worksheet",
+      "name": "threat-model-stride-worksheet",
+      "one_line": "Walks a feature through a STRIDE threat-modelling worksheet: takes assets, actors, trust boundaries and data flows from the user, checks each flow against the six STRIDE categories, and records threa…",
+      "category": "security",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/threat-model-stride-worksheet"
+    },
+    {
+      "slug": "tile-quantity-estimator",
+      "name": "tile-quantity-estimator",
+      "one_line": "Estimates floor tile count, order count, box count and leftover tiles from room length and width, tile size, grout gap, layout and waste percent.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/tile-quantity-estimator"
+    },
+    {
+      "slug": "timezone-overlap-planner",
+      "name": "timezone-overlap-planner",
+      "one_line": "Finds meeting times across time zones.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/timezone-overlap-planner"
+    },
+    {
+      "slug": "transcript-cleanup",
+      "name": "transcript-cleanup",
+      "one_line": "Cleans a raw SRT, VTT or plain transcript into a readable verbatim one, logging every edit, never summarising.",
+      "category": "video-media",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/transcript-cleanup"
+    },
+    {
+      "slug": "translation-and-localization",
+      "name": "translation-and-localization",
+      "one_line": "Translates and QA-checks UI strings and docs with protected placeholders, glossary and length checks.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/translation-and-localization"
+    },
+    {
+      "slug": "translation-glossary-consistency-check",
+      "name": "translation-glossary-consistency-check",
+      "one_line": "Checks that a translation uses the agreed glossary target term on each line, pairing source and translated text by line number and flagging missing terms and known wrong variants.",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/translation-glossary-consistency-check"
+    },
+    {
+      "slug": "travel-planner",
+      "name": "travel-planner",
+      "one_line": "Builds a paced, budgeted trip itinerary and lists every hour, price and visa fact still to verify before booking.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/travel-planner"
+    },
+    {
+      "slug": "tutorial-prerequisite-mapper",
+      "name": "tutorial-prerequisite-mapper",
+      "one_line": "Use when mapping supplied tutorial steps to prior knowledge, state, inputs and verification cues.",
+      "category": "education-learning",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/tutorial-prerequisite-mapper"
+    },
+    {
+      "slug": "typescript-practices",
+      "name": "typescript-practices",
+      "one_line": "Helps an agent write and review strict TypeScript, with a scanner that lists unsafe patterns by line.",
+      "category": "web-frameworks",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/typescript-practices"
+    },
+    {
+      "slug": "typography-scale-generator",
+      "name": "typography-scale-generator",
+      "one_line": "Generates a modular type scale as CSS custom properties from a base size and a ratio, with rem values and line-height suggestions for each step.",
+      "category": "design-ui",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/typography-scale-generator"
+    },
+    {
+      "slug": "ui-animation-timing-spec",
+      "name": "ui-animation-timing-spec",
+      "one_line": "Writes a UI animation timing and easing spec for a set of interface transitions.",
+      "category": "video-media",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/ui-animation-timing-spec"
+    },
+    {
+      "slug": "unit-conversion-calculator",
+      "name": "unit-conversion-calculator",
+      "one_line": "Converts values between common units of length, mass, volume, temperature, area, speed and data size using exact arithmetic, and shows the factor used.",
+      "category": "product-project",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/unit-conversion-calculator"
+    },
+    {
+      "slug": "unit-normalization-plan",
+      "name": "unit-normalization-plan",
+      "one_line": "Use when supplied measurements use mixed or potentially ambiguous units and need a controlled conversion specification before transformation.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/unit-normalization-plan"
+    },
+    {
+      "slug": "user-research-synthesis",
+      "name": "user-research-synthesis",
+      "one_line": "Turns many interview notes into themes where every claim cites verbatim quotes by participant id.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/user-research-synthesis"
+    },
+    {
+      "slug": "user-story-splitter",
+      "name": "user-story-splitter",
+      "one_line": "Splits one large user story into three to six thin, testable slices, each with Given/When/Then acceptance criteria, an S or M size label, and a first slice that delivers one complete outcome.",
+      "category": "product-project",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/user-story-splitter"
+    },
+    {
+      "slug": "username-candidate-screen",
+      "name": "username-candidate-screen",
+      "one_line": "Screens a list of username candidates for length, allowed characters, edge separators, digit runs, confusable characters, repeated characters and near-duplicate pairs, then ranks them by number of fi…",
+      "category": "business-finance-legal",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/username-candidate-screen"
+    },
+    {
+      "slug": "utm-link-audit",
+      "name": "utm-link-audit",
+      "one_line": "Audits a file of campaign links for UTM parameter consistency and reports each problem with its line number.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/utm-link-audit"
+    },
+    {
+      "slug": "validation-rule-conflict-map",
+      "name": "validation-rule-conflict-map",
+      "one_line": "Use when labeled validation rules from multiple notes overlap or contradict and implementers need a field-level compatibility analysis.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/validation-rule-conflict-map"
+    },
+    {
+      "slug": "vcard-to-csv",
+      "name": "vcard-to-csv",
+      "one_line": "Converts vCard (.vcf) contact files in versions 2.1, 3.0 and 4.0 into one CSV row per contact with name, organization, emails, phones, address and note columns.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/vcard-to-csv"
+    },
+    {
+      "slug": "vendor-demo-question-set",
+      "name": "vendor-demo-question-set",
+      "one_line": "Use when turning supplied requirements, participants, evidence needs, and time limits into a proposed vendor demonstration script with explicit timing uncertainty.",
+      "category": "research-science",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/vendor-demo-question-set"
+    },
+    {
+      "slug": "verified-skill-finder",
+      "name": "verified-skill-finder",
+      "one_line": "Finds and compares agent skills from local folders and your own sources, scores them, and says which to trust and what is unverified.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/verified-skill-finder"
+    },
+    {
+      "slug": "voice-profile-extractor",
+      "name": "voice-profile-extractor",
+      "one_line": "Builds a reusable voice profile from the user's own writing samples by measuring sentence length, paragraph length, contractions, person use, question and exclamation rates and favorite connectors, t…",
+      "category": "business-finance-legal",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/voice-profile-extractor"
+    },
+    {
+      "slug": "voiceover-script-prep",
+      "name": "voiceover-script-prep",
+      "one_line": "Turns a written script into spoken form, chunks it under your tool's limit and estimates its length.",
+      "category": "video-media",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/voiceover-script-prep"
+    },
+    {
+      "slug": "volunteer-hours-ledger",
+      "name": "volunteer-hours-ledger",
+      "one_line": "Totals a volunteer hour log and flags the rows a coordinator must check, with strict JSON output.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/volunteer-hours-ledger"
+    },
+    {
+      "slug": "word-document-builder",
+      "name": "word-document-builder",
+      "one_line": "Builds a structured .docx report, memo or proposal from notes, then checks the saved file against a style contract.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/word-document-builder"
+    },
+    {
+      "slug": "word-search-solver",
+      "name": "word-search-solver",
+      "one_line": "Solves a letter-grid word search from typed text.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/word-search-solver"
+    },
+    {
+      "slug": "worked-example-fading-plan",
+      "name": "worked-example-fading-plan",
+      "one_line": "Use when an educator needs a staged progression from demonstration to independent performance for one supplied procedure, including explicit handling of missing inputs and retained prompts.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/worked-example-fading-plan"
+    },
+    {
+      "slug": "workflow-automation-builder",
+      "name": "workflow-automation-builder",
+      "one_line": "Designs a no-code automation that does not fail silently, and checks the design file with a validator.",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/workflow-automation-builder"
+    },
+    {
+      "slug": "workspace-database-schema-planner",
+      "name": "workspace-database-schema-planner",
+      "one_line": "Designs a relational schema for a workspace of linked databases covering entities, property types, relations, rollups and role-based views, and renders it as tables plus a Mermaid diagram.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/workspace-database-schema-planner"
+    },
+    {
+      "slug": "workspace-retention-label-map",
+      "name": "workspace-retention-label-map",
+      "one_line": "Use when supplied document-type definitions, approved labels, mapping rules, exclusions, and synthetic file descriptions must become a draft retention-label map with manual-review cases.",
+      "category": "business-finance-legal",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/workspace-retention-label-map"
+    },
+    {
+      "slug": "workspace-wiki-organizer",
+      "name": "workspace-wiki-organizer",
+      "one_line": "Audits an exported team wiki (Notion, Confluence or similar, as Markdown or HTML files) for pages with no owner, stale pages, near-duplicate titles across spaces, orphan pages and broken internal lin…",
+      "category": "agent-workflow",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/workspace-wiki-organizer"
+    },
+    {
+      "slug": "xlsx-cell-diff",
+      "name": "xlsx-cell-diff",
+      "one_line": "Compares two .xlsx workbooks sheet by sheet and lists every cell whose value or formula differs, plus sheets added or removed, using a stdlib-only script that writes a JSON report.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/xlsx-cell-diff"
+    },
+    {
+      "slug": "xlsx-hidden-risk-scan",
+      "name": "xlsx-hidden-risk-scan",
+      "one_line": "Scans an .xlsx workbook for hidden risk: hidden and very hidden sheets, defined names, external link parts, error-valued cells such as #DIV/0!, and formulas that embed large literal numbers.",
+      "category": "documents-office",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/xlsx-hidden-risk-scan"
+    },
+    {
+      "slug": "xlsx-to-csv-export",
+      "name": "xlsx-to-csv-export",
+      "one_line": "Exports each worksheet of an .xlsx workbook to its own CSV file with the Python standard library only, copying stored numbers digit for digit and listing formula and error cells.",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/xlsx-to-csv-export"
+    },
+    {
+      "slug": "xml-json-converter",
+      "name": "xml-json-converter",
+      "one_line": "Converts XML to JSON and JSON back to XML under one stated mapping, with attributes as @keys, mixed text as",
+      "category": "writing-content",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/xml-json-converter"
+    },
+    {
+      "slug": "youtube-content-kit",
+      "name": "youtube-content-kit",
+      "one_line": "Turns a video idea into a script outline with a 15-second hook, a chapter list, title, description, tags, a thumbnail brief and a publishing checklist, then validates the package with a script (hook…",
+      "category": "data-analytics",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/youtube-content-kit"
+    }
+  ]
+}

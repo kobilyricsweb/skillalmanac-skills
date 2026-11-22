@@ -1,0 +1,12 @@
+{
+  "fingerprint": "5663c6516d94742d7c55329deb226d6f4fdb18514beea49fcb7a1848d69e1eec",
+  "job": "factory100_baseline_d46002e2c27a",
+  "results": [
+    {
+      "id": "outlier-review-packet__q100_ordinary",
+      "answer": "Human review packet\n\nTriggered records under R1 (temperature ≥ 10 C):\n- Record B — observed temperature: 10 C; note: \"none\"\n\nEvidence gaps:\n- No source or measurement timestamp supplied.\n- No instrument, calibration, or collection-context details supplied.\n- No additional context fields are allowed beyond note.\n\nPermitted dispositions: retain; correct-with-source; exclude-with-reason.\n\nFinal disposition: not selected."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

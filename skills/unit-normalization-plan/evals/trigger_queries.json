@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Plan conversion of the supplied weights from grams and kilograms to kilograms.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a unit-normalization specification with formulas and rounding.",
+    "should_trigger": true
+  },
+  {
+    "query": "Quarantine measurements whose units are missing or ambiguous.",
+    "should_trigger": true
+  },
+  {
+    "query": "Specify target units and precision for these supplied measurements.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document how to convert the listed distances using the approved factors.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review mixed-unit fields before any values are transformed.",
+    "should_trigger": true
+  },
+  {
+    "query": "Produce a transparent conversion plan for temperatures using the provided formula.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which values are blocked because their source unit is unclear.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check the arithmetic and rounding in this supplied normalization proposal.",
+    "should_trigger": true
+  },
+  {
+    "query": "Draft a field-by-field plan for converting the supplied quantities.",
+    "should_trigger": true
+  },
+  {
+    "query": "Describe the meaning and business definition of each dataset column.",
+    "should_trigger": false
+  },
+  {
+    "query": "Summarize which fields contain blanks by subgroup.",
+    "should_trigger": false
+  },
+  {
+    "query": "Join daily observations to monthly targets without expanding values.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map these source category codes to the target taxonomy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review records flagged as unusually high.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find duplicate rows that may represent the same entity.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent a conversion factor for an unlabeled measurement.",
+    "should_trigger": false
+  },
+  {
+    "query": "Automatically overwrite the source table with normalized values.",
+    "should_trigger": false
+  },
+  {
+    "query": "Recommend an investment based on these unit conversions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify that the converted measurements meet an external standard.",
+    "should_trigger": false
+  }
+]

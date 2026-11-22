@@ -1,0 +1,56 @@
+{
+  "comparison_basis": "Exact equality of label.",
+  "timing": "Three minutes from first-request acceptance.",
+  "scenario_matrix": [
+    {
+      "scenario": "first_request",
+      "comparison_basis": "Exact equality of label.",
+      "outcome": "Process the request and store its response.",
+      "response_behavior": "Return the processed response.",
+      "timing_condition": "On first acceptance.",
+      "evidence": "Supplied first-request rule.",
+      "contract_status": "specified"
+    },
+    {
+      "scenario": "exact_replay",
+      "comparison_basis": "Exact equality of label.",
+      "outcome": "Do not reprocess.",
+      "response_behavior": "Return the stored response.",
+      "timing_condition": "Within retention.",
+      "evidence": "Supplied replay rule.",
+      "contract_status": "specified"
+    },
+    {
+      "scenario": "changed_payload",
+      "comparison_basis": "Exact equality of label.",
+      "outcome": "LABEL_MISMATCH.",
+      "response_behavior": "Return the documented mismatch error.",
+      "timing_condition": "Within retention.",
+      "evidence": "Supplied changed-label rule.",
+      "contract_status": "specified"
+    },
+    {
+      "scenario": "concurrent_duplicate",
+      "comparison_basis": null,
+      "outcome": null,
+      "response_behavior": null,
+      "timing_condition": "While the first request is unfinished.",
+      "evidence": null,
+      "contract_status": "unspecified"
+    },
+    {
+      "scenario": "after_expiry",
+      "comparison_basis": "Exact equality of label.",
+      "outcome": "Treat the key as new.",
+      "response_behavior": "Process under the first-request rule.",
+      "timing_condition": "After three minutes from first acceptance.",
+      "evidence": "Supplied expiry rule.",
+      "contract_status": "specified"
+    }
+  ],
+  "unspecified_questions": [
+    "What happens to a concurrent duplicate while the first request is unfinished?"
+  ],
+  "conflicts": [],
+  "verification_statement": "This matrix represents the supplied contract and is not evidence of implementation behavior or retry safety."
+}

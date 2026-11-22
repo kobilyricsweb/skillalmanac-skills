@@ -1,0 +1,5 @@
+Synthetic policy: “Escalate to Lead when backlog exceeds 25 for two consecutive checks.” No timing interval or evidence source is supplied.
+
+Artifact: trigger—backlog >25 at check 1 and check 2; destination Lead; timing `null`; evidence `null`. The policy does not specify an evidence source. The two consecutive checks belong solely to the observable condition and repetition requirement; they are not recast as an evidence requirement. Example evaluation 1: 27 then 24 does not trigger because only the first check exceeds 25. Example evaluation 2: 26 then 27 triggers because both consecutive checks exceed 25. Example evaluation 3: 25 then 26 does not trigger under the word “exceeds,” because the first value is not greater than 25.
+
+Verification report: separate checks confirm preservation of the strict `>` operator, threshold 25, and two-consecutive-check requirement. Destination is marked preserved. Timing interval and evidence source are marked unresolved and listed as issues. No check claims preservation for a value absent from the policy, and no severity or alternate threshold is invented.

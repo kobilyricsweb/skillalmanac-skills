@@ -1,0 +1,22 @@
+{
+  "fingerprint": "b0f134d6972fbd1519d606dce62347308d96c3577097e6b20baa8c4efab1f2aa",
+  "job": "aggregate_isolated_0b3af181e7d66012",
+  "results": [
+    {
+      "id": "example-set-diversifier__q100_ordinary",
+      "answer": "Diversified synthetic example plan\n\nAudience: New support agents learning to classify shipping eligibility without guessing.\n\nRoles\n- Customer: supplies order details, sometimes incompletely.\n- Support agent: applies the rule and records eligible, not eligible, or undetermined.\n- Order system: displays paid and item_count fields.\n\nRule applied\n- Eligible only if paid=true AND item_count>=1.\n- Not eligible when both inputs are present and either paid is not true or item_count<1.\n- Undetermined when either input is missing, even if the known input would otherwise fail.\n\nScenarios\n1. Standard eligible: paid=true, item_count=2. Learner task: classify and cite both conditions. Expected lesson: both requirements are satisfied. Meaningful difference: baseline positive case.\n2. Minimum boundary: paid=true, item_count=1. Task: classify. Lesson: “at least 1” includes exactly 1. Difference: tests the inclusive boundary.\n3. Unpaid order: paid=false, item_count=3. Task: classify and identify the failed condition. Lesson: item quantity cannot compensate for nonpayment. Difference: varies paid while retaining a positive count.\n4. Empty order: paid=true, item_count=0. Task: classify. Lesson: payment alone is insufficient. Difference: tests the count threshold just below the boundary.\n5. Both conditions fail: paid=false, item_count=0. Task: classify and name all failures. Lesson: multiple failures still produce not eligible. Difference: combined negative case.\n6. Missing payment: paid missing, item_count=2. Task: classify and request the needed fact. Lesson: missing input makes the result undetermined. Difference: incomplete Boolean input.\n7. Missing count: paid=true, item_count missing. Task: classify and request the needed fact. Lesson: a known payment status does not resolve missing quantity. Difference: incomplete numeric input.\n8. Missing count despite unpaid status: paid=false, item_count missing. Task: classify strictly under the stated rule. Lesson: missing either input requires undetermined; agents must not infer. Difference: exposes tension between a known failing value and the explicit missing-input rule.\n9. Both missing: paid missing, item_count missing. Task: classify and list both required facts. Lesson: collect complete data before deciding. Difference: maximally incomplete case.\n\nOverlap diagnosis\nE1 and E2 are near-duplicates: both are ordinary eligible cases, differing only in a non-boundary count (2 versus 3). They do not teach failure paths, missing-data handling, or the minimum threshold.\n\nPreservation note\nRetain E1 as the standard eligible anchor. E2 may remain for continuity but adds little instructional coverage; replace or supplement it with the boundary and exception scenarios above. Existing examples are not altered.\n\nVerification report\nCoverage includes: ordinary eligible, exact lower boundary, each condition failing independently, both failing, each input missing independently, both missing, and the explicit missing-input precedence case. Every scenario uses synthetic values and maps directly to one stated rule outcome; no unstated business rules are introduced.",
+      "individual_job": "factory100_base_isolated_a70edee551d3"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill_isolated_cases",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "case_context_isolated": true,
+  "answer_word_budget": 600,
+  "individual_worker_jobs": [
+    "factory100_base_isolated_a70edee551d3"
+  ],
+  "method_note": "Every case uses its own fresh context. Both arms use identical model/effort/budget; raw responses unchanged, original prompts/assertions preserved, prior failures retained. Aggregate is a provenance index, not a model call.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

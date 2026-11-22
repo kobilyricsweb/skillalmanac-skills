@@ -1,0 +1,41 @@
+{
+  "implementations": [
+    {
+      "approval_text": "25% additional time.",
+      "operational_change": "Add 3 minutes to the assessment duration, for a total of 15 minutes.",
+      "status": "implementable",
+      "source": "exact approved accommodation"
+    }
+  ],
+  "calculated_timing": {
+    "standard_minutes": 12,
+    "additional_minutes": 3,
+    "total_minutes": 15,
+    "calculation": "12 × 0.25 = 3; 12 + 3 = 15"
+  },
+  "preserved_elements": [
+    "6 spelling-word items",
+    "written response demand",
+    "paper format",
+    "spelling-accuracy scoring",
+    "pencil and printed sheet"
+  ],
+  "unresolved": [
+    {
+      "issue": "Assessment instructions were not supplied.",
+      "needed_decision": "Supply the standard instructions before claiming they are preserved or evaluating their effect on construct fidelity."
+    },
+    {
+      "issue": "Equipment requirements were not supplied.",
+      "needed_decision": "Confirm whether any standard equipment is required before completing construct-fidelity review."
+    }
+  ],
+  "assumptions": [],
+  "traceability": [
+    {
+      "change": "3 additional minutes",
+      "approval_source": "25% additional time.",
+      "construct_status": "unverified"
+    }
+  ]
+}

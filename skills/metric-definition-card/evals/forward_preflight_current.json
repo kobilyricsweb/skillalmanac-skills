@@ -1,0 +1,49 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "metric-definition-card__parent_holdout",
+        "slug": "metric-definition-card",
+        "prompt": "Draft a definition card for product activation rate from these notes: numerator=accounts completing setup; denominator=eligible signups. Eligibility, time window, timezone, exclusions and zero-denominator behavior are unspecified. NoteN1 says account creation date anchors the window; N2 says first login date, with no authority ordering. No measurements supplied.",
+        "assertions": [
+          "Separates numerator and denominator without inventing a numeric rate.",
+          "Marks eligibility/window/timezone/exclusions/zero-denominator policy as unresolved.",
+          "Preserves conflicting window anchors and does not silently choose the latest-looking note."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "Metric definition card\n\nMetric name: Product activation rate\nPurpose: not supplied.\n\nFormula: activation rate = accounts completing setup / eligible signups.\n\nMetric class: rate or ratio; percentage representation is not supplied.\n\nNumerator: accounts completing setup.\n\nDenominator: eligible signups.\n\nPopulation: unresolved. The eligibility criteria for signups are unspecified.\n\nObservation window and anchor: unresolved. NoteN1 states that account creation date anchors the window. NoteN2 states that first login date anchors the window. No authority ordering is supplied, so the notes conflict and both positions remain visible.\n\nTimezone: unresolved.\n\nWindow boundaries: unresolved.\n\nExclusions: unresolved; none supplied.\n\nEvent grain: unresolved. The source does not specify whether the measure is account-level, signup-level, or another grain beyond the numerator and denominator wording.\n\nFreshness or latency expectation: unresolved.\n\nMissing/zero policy: unresolved. Zero-denominator behavior is unspecified. Missing-data handling is also unspecified.\n\nSource notes: numerator and denominator supplied in the brief; anchor alternatives supplied by NoteN1 and NoteN2.\n\nUnresolved choices and implementation questions\n\n- What makes a signup eligible?\n- Does the observation window begin at account creation date or first login date?\n- What timezone and exact start/end boundaries apply?\n- Are any exclusions required?\n- What is the event grain and freshness requirement?\n- How should missing values and a zero denominator be handled?\n\nNo measurement was supplied or calculated.",
+      "grade": {
+        "id": "metric-definition-card__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The card separately identifies the numerator as accounts completing setup and the denominator as eligible signups, and says no measurement was supplied or calculated."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "Eligibility, observation window, timezone, exclusions, and zero-denominator behavior are each explicitly marked unresolved or unspecified."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "It preserves N1's account-creation anchor and N2's first-login anchor, states that no authority ordering is supplied, and leaves both positions visible."
+          }
+        ]
+      },
+      "binding": {
+        "id": "metric-definition-card__parent_holdout",
+        "slug": "metric-definition-card",
+        "skill_sha256": "8389d0b21af0c7215e3ccbf0ca6a6399a8799332fe2529856c690cbb5994d499",
+        "contract_sha256": "d307051443f06af3289fce036833ef5e8b4e7fe83c5808bb9c1337df5c8c77a2",
+        "assertions_sent_to_executor": false
+      },
+      "round": "initial"
+    }
+  ]
+}

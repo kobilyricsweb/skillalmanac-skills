@@ -1,0 +1,11 @@
+{
+  "slug": "knowledge-article-split-plan",
+  "category": "knowledge",
+  "user_problem": "A long knowledge article serves several tasks and audiences, making answers hard to locate and maintain.",
+  "unique_output": "A split plan defining article boundaries, retained shared context, cross-links, duplicate-risk, and migration checklist.",
+  "required_input": "Complete article, declared audiences, task list, heading structure, and content that must remain together.",
+  "critical_rule": "Split by distinct user task and maintenance boundary, not arbitrary length; preserve shared prerequisites visibly.",
+  "nearest_existing_and_difference": "Nearest is content-refresh-plan; this restructures one article into maintainable units rather than planning evidence-driven updates.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input article covers account creation and password recovery; both require identity-email prerequisite, and security warning must stay with recovery. Output proposes two articles, repeats or links the prerequisite, and keeps the warning with recovery."
+}

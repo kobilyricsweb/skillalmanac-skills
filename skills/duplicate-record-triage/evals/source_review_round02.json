@@ -1,0 +1,14 @@
+{
+  "slug": "duplicate-record-triage",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "DRT-003",
+      "severity": "medium",
+      "location": "worked example: classification of record D",
+      "evidence": "The example labels D \"Unresolved/non-match\" because no candidate rule exists. Candidate rules are optional under the contract, and D determinately fails the supplied exact and normalized comparisons because code Y9 differs from X7. The contract defines such a result as unmatched under the evaluated rule.",
+      "consequence": "The artifact conflates a reproducible non-match with an unresolved classification and implies that omitting an optional candidate rule makes ordinary rule failures unresolved.",
+      "correction": "Classify D as a non-match under the evaluated exact and normalized rules. Separately state that no candidate assessment can be made because no candidate rule was supplied; reserve unresolved classification for missing or conflicting rules needed for the attempted classification."
+    }
+  ]
+}

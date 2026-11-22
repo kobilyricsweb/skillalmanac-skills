@@ -1,0 +1,128 @@
+{
+  "status": "partial",
+  "semantics_matrix": [
+    {
+      "source": "A",
+      "field": "seats",
+      "representation": "null",
+      "meaning": "unknown",
+      "scope": "seats only",
+      "certainty": "declared"
+    },
+    {
+      "source": "A",
+      "field": "seats",
+      "representation": "absent",
+      "meaning": "not collected",
+      "scope": "seats only",
+      "certainty": "declared"
+    },
+    {
+      "source": "A",
+      "field": "seats",
+      "representation": "0",
+      "meaning": "known count of none",
+      "scope": "seats only",
+      "certainty": "declared"
+    },
+    {
+      "source": "A",
+      "field": "seats",
+      "representation": "empty string",
+      "meaning": "invalid",
+      "scope": "seats only",
+      "certainty": "declared"
+    },
+    {
+      "source": "A",
+      "field": "seats",
+      "representation": "sentinel convention",
+      "meaning": "not declared",
+      "scope": "seats only",
+      "certainty": "unknown"
+    },
+    {
+      "source": "A",
+      "field": "seats",
+      "representation": "negative number",
+      "meaning": "invalid",
+      "scope": "seats only",
+      "certainty": "declared"
+    },
+    {
+      "source": "B",
+      "field": "seats",
+      "representation": "\"UNK\"",
+      "meaning": "unknown sentinel",
+      "scope": "seats only",
+      "certainty": "declared"
+    },
+    {
+      "source": "B",
+      "field": "seats",
+      "representation": "null",
+      "meaning": "not declared",
+      "scope": "seats only",
+      "certainty": "unknown"
+    },
+    {
+      "source": "B",
+      "field": "seats",
+      "representation": "absent",
+      "meaning": "not provided",
+      "scope": "seats only",
+      "certainty": "declared"
+    },
+    {
+      "source": "B",
+      "field": "seats",
+      "representation": "0",
+      "meaning": "known count of none",
+      "scope": "seats only",
+      "certainty": "declared"
+    },
+    {
+      "source": "B",
+      "field": "seats",
+      "representation": "empty string",
+      "meaning": "invalid",
+      "scope": "seats only",
+      "certainty": "declared"
+    },
+    {
+      "source": "B",
+      "field": "seats",
+      "representation": "negative number",
+      "meaning": "invalid",
+      "scope": "seats only",
+      "certainty": "declared"
+    }
+  ],
+  "allowed_mappings": [
+    {
+      "from_source": "A",
+      "from_representation": "null",
+      "to_source": "B",
+      "to_representation": "\"UNK\"",
+      "field_scope": "seats only",
+      "direction": "one-way",
+      "rule_kind": "transformation",
+      "rule_basis": "The supplied rule permits mapping A null to B \"UNK\" for seats only."
+    }
+  ],
+  "preserved_distinctions": [
+    "Zero remains a known count rather than a missing value.",
+    "Absent remains distinct from null and \"UNK\" because no equivalence rule maps it."
+  ],
+  "invalid_value_handling": [
+    "Reject empty-string and negative seats values in both sources."
+  ],
+  "downstream_treatment": [
+    "Apply the declared one-way transformation only when transferring the seats field from A to B."
+  ],
+  "unresolved_conflicts": [
+    "Source A has no declared sentinel convention.",
+    "Source B has no declared meaning for a literal null representation."
+  ],
+  "__unexpected_fixture_property__": 0
+}

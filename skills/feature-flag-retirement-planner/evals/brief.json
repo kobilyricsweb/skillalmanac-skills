@@ -1,0 +1,10 @@
+{
+  "slug": "feature-flag-retirement-planner",
+  "category": "development",
+  "user_problem": "Teams leave obsolete feature flags in place because removal dependencies are unclear.",
+  "unique_output": "A retirement checklist mapping supplied flag states to references, cleanup order, rollback boundary, and evidence gaps.",
+  "free_or_pack_candidate": "pack_candidate",
+  "test_case": "Given one flag referenced by application code, configuration, and tests, produce an ordered cleanup plan without performing removal.",
+  "overlap_to_check": "Release, migration, scope-change, and handover workflows.",
+  "specific_guardrail": "No flag removal or live rollout advice without supplied state and policy. List unresolved usage references and proposed dependency order, never prove universal safe deletion."
+}

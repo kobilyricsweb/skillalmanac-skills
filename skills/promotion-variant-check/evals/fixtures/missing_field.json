@@ -1,0 +1,1 @@
+{"baseline": {"headline": "A", "body": "B"}, "changed_field": "headline", "variants": [{"id": "v", "fields": {"headline": "C"}}]}

@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "synthetic": true,
+  "input": "Rule R1; field: item_count; scope: every order; constraint: item_count must be less than or equal to 5, inclusive; unit: items.\nRule R2; field: item_count; scope: every order; constraint: item_count may not exceed 5, inclusive; unit: items.\nNo precedence or exceptions are supplied.",
+  "expected_artifact": {"conflict_map": [{"source_ids": ["R1", "R2"], "field": "item_count", "original_rules": ["item_count must be less than or equal to 5, inclusive", "item_count may not exceed 5, inclusive"], "scope_intersection": "Every order", "exact_constraints": ["item_count <= 5 items, inclusive", "item_count <= 5 items, inclusive"], "classification": "redundant", "precedence_evidence": null, "resolution_needed": false, "unresolved_reason": null}], "unresolved_questions": [], "assumptions": [], "limits": ["The map analyzes compatibility only and does not implement a validator or create policy."]},
+  "status": "specification; not an executed test"
+}

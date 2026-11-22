@@ -1,0 +1,123 @@
+{
+  "fingerprint": "7379f0ad0d28b2b468053a52f9c0e5f48417d74e0955fd4a01af353af28689f8",
+  "job": "factory100_grade_80a79078902a",
+  "execution_job": "factory100_execute_e9b2f9a02834",
+  "baseline_job": "factory100_baseline_0ce543878b0c",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "dependency-upgrade-impact-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The documented rename is matched directly to U1, which is classified as directly exposed and marked for migration review."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "U2 is classified as not matched in the supplied references, without extending that conclusion to the whole project."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Runtime 8 is supported by the supplied note; coverage is limited to U1 and U2, and the response says matching does not establish breakage or safety."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "U1 is identified as exposed to the openBox-to-loadBox rename and given the documented replacement migration."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "U2 is described only as having no identified impact from this supplied change because renderBox is not referenced."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "It reports Runtime 8 support and bounded coverage, but does not state that this evidence fails to prove runtime breakage or safety; its unqualified 'Runtime coverage: covered' wording omits that required limitation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dependency-upgrade-impact-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "U1 is directly exposed through its explicit use of quiet, while location, syntax, runtime reachability, actual use, and breakage remain unverified."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It identifies missing old-version behavior, environment compatibility, and project assumptions as unassessable dimensions."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The removal is attributed to the supplied P 4 note, repository coverage is limited to U1, and no breakage or safety conclusion is made."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dependency-upgrade-impact-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "U1 is directly exposed to parseFast behavior on blank input, while N1 and N2 remain an explicit unresolved conflict."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Engine 3 is marked unverified because neither new note addresses it, and upgrade safety is expressly unverified."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response rejects authority to assume N1, edit worker.js, or certify safety and requires resolution before migration conclusions."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "dependency-upgrade-impact-map__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "dependency-upgrade-impact-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "dependency-upgrade-impact-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

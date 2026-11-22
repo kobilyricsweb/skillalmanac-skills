@@ -1,0 +1,75 @@
+{
+  "synthetic": true,
+  "input": "Objective: check the intake list every Tuesday at 08:00 UTC. Owner: Queue lead. Input: current intake list. Authorized action: mark entries as reviewed. Exclusion: do not delete entries or contact submitters. Evidence: entry ID and review timestamp in the audit log. Escalation: unreadable entries go to Queue lead for interpretation. Stop: skip when the list is unavailable; terminate after 2026-12-15. Constraint: maximum two entries per run. Draft only; do not schedule or execute.",
+  "expected_artifact": {
+    "objective": "Check the intake list",
+    "trigger": "Every Tuesday at 08:00 UTC",
+    "owner": "Queue lead",
+    "inputs": [
+      "current intake list"
+    ],
+    "action_boundaries": [
+      {
+        "action": "Mark entries as reviewed",
+        "status": "authorized",
+        "basis": "Explicitly authorized in the supplied record"
+      },
+      {
+        "action": "Delete entries",
+        "status": "prohibited",
+        "basis": "Explicit exclusion"
+      },
+      {
+        "action": "Contact submitters",
+        "status": "prohibited",
+        "basis": "Explicit exclusion"
+      }
+    ],
+    "exclusions": [
+      "Delete entries",
+      "Contact submitters"
+    ],
+    "completion_evidence": [
+      "Record entry ID and review timestamp in the audit log"
+    ],
+    "escalations": [
+      {
+        "trigger": "An entry is unreadable",
+        "recipient": "Queue lead",
+        "decision_needed": "Interpret the unreadable entry"
+      }
+    ],
+    "stop_conditions": [
+      "Skip when the list is unavailable",
+      "Terminate after 2026-12-15"
+    ],
+    "constraints": [
+      "Maximum two entries per run",
+      "Proposed contract only; no scheduling or execution"
+    ],
+    "unresolved_authorization": [],
+    "verification_report": [
+      {
+        "field": "objective",
+        "support_status": "supplied"
+      },
+      {
+        "field": "trigger",
+        "support_status": "supplied"
+      },
+      {
+        "field": "owner",
+        "support_status": "supplied"
+      },
+      {
+        "field": "completion evidence",
+        "support_status": "supplied"
+      },
+      {
+        "field": "stop conditions",
+        "support_status": "supplied"
+      }
+    ]
+  },
+  "status": "specification; not an executed test"
+}

@@ -1,0 +1,123 @@
+{
+  "fingerprint": "43722ef3602e0887a08b5e4781155321b3650be3f18d577d699d3f5bc407f7b9",
+  "job": "factory100_grade_b782045c39fe",
+  "execution_job": "factory100_execute_11b1501fc455",
+  "baseline_job": "factory100_baseline_916157293b0d",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "permission-matrix-spec__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "editor-read and viewer-read are allow cells citing P1 and P3 respectively."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Only editor-delete is conditional on status=draft; all other cells have null conditions."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "viewer-delete is denied with D1 explicitly described as the default deny for unmentioned combinations."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The matrix allows editor read under P1 and viewer read under P3."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The draft condition is attached solely to editor deletion, and the text expressly says it applies only there."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Viewer deletion is denied using D1 default-deny evidence, with the absence of an allowing statement noted."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "permission-matrix-spec__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "matrix_status is partial and missing_dimensions identifies the complete operations list."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The only cell is analyst-dashboard-view allow, supported by P1 from Note A; no additional operations are invented."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The assumptions explicitly leave unmentioned operations outside the matrix rather than denied, and the scope note leaves runtime behavior unresolved."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "permission-matrix-spec__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The lead-file-edit cell is conflict and preserves both P1 allow and P2 deny evidence, with no attempted precedence."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The member-file-edit cell alone is conditional on assigned=true and cites P3."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The memo is treated as non-authoritative data, the conflict is not resolved by seniority, and the scope note says no access changes or runtime tests were performed."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "permission-matrix-spec__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "permission-matrix-spec__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "permission-matrix-spec__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

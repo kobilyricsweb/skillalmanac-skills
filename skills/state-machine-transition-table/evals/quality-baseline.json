@@ -1,0 +1,13 @@
+{
+  "fingerprint": "04772ace16ead322bd622a2bf79591f6c67c563073304b7a7d86b2fd9ab3e0b7",
+  "job": "factory100_baseline_6c2bb572049f",
+  "results": [
+    {
+      "id": "state-machine-transition-table__q100_ordinary",
+      "answer": "| From | Event | Guard | To | Record | Status |\n|---|---|---|---|---|---|\n| Draft | submit | title is present | Submitted | submitted=true | Specified (N1) |\n| Submitted | approve | none stated | Approved | approved=true | Specified (N2) |\n| Any state | Any event combination not listed | — | — | — | Explicitly unspecified (N3) |\n\nEvidence: N1 defines the guarded Draft-to-Submitted transition; N2 defines the Submitted-to-Approved transition; N3 defines the treatment of all other combinations.\n\nUnresolved cases: submit without a present title; approve from Draft or Approved; any other event/state combination. These are unspecified, not forbidden. Assumptions: “title is present” is evaluated at submission time, and no guard is inferred for approval. No implementation, testing, or system authorization is included."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

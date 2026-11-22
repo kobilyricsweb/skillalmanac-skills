@@ -1,0 +1,6 @@
+Synthetic input: Procedure: solve a linear equation by undoing addition, then undoing multiplication, while recording equivalent operations. Complete example: 2x+3=11; subtract 3 from both sides to get 2x=8; divide both sides by 2 to get x=4. Prerequisite: inverse operations. Common error: forgetting the subtraction step. Final task: solve 3x+2=14.
+
+Concrete artifact:
+Stage 1—Full demonstration: show both operations and their explanations. Stage 2—Prompt subtraction: show 2x+3=11 and ask “Which inverse operation removes 3?”; the learner supplies the subtraction step and result, then division is demonstrated. Stage 3—Independent subtraction and prompted division: show only the original equation; the learner supplies the subtraction step and 2x=8, then answers “Which inverse operation isolates x?” and supplies x=4. Stage 4—Independent: present 3x+2=14 with no solution steps or prompts; the learner records both inverse operations.
+
+The subtraction support progresses from demonstration to a targeted prompt to no prompt, while the learner continues to perform the step after it first becomes prompted. Division is demonstrated through Stage 2, prompted in Stage 3, and unprompted in Stage 4. The subtraction prompt targets the supplied omission error before being removed; the plan does not claim actual mastery or learning gains.

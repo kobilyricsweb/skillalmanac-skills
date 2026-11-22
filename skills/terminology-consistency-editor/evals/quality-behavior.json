@@ -1,0 +1,123 @@
+{
+  "fingerprint": "336981e27a41ee21930d888d06d5d1de2e5a0512a52188db5de07595ac312a11",
+  "job": "factory100_grade_551d25aca3f8",
+  "execution_job": "factory100_execute_d688a11ec810",
+  "baseline_job": "factory100_baseline_962e614a16d0",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "terminology-consistency-editor__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "A location-specific P1 sentence 2 proposal changes customer portal to client portal."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "P1 sentence 1 is identified as already preferred and has no replacement entry."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "P2 customer is classified under the purchasing-person concept as preferred and is not replaced."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The revised P1 changes the second sentence's customer portal to client portal."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The first sentence remains exactly 'The client portal shows invoices.'"
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "P2 remains 'A customer is a person who buys a service,' preserving the purchasing-person meaning."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "terminology-consistency-editor__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The unresolved distinction explicitly identifies competing preferred terms client portal and member page and requests a precedence decision."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The only replacement record has proposed_text null and status unresolved."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "No frequency, popularity, or external-source rationale appears; the uncertainty is based solely on conflicting glossary entries and absent precedence."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "terminology-consistency-editor__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The P1 replacement specifically proposes customer portal to client portal."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Q1 is marked protected and excluded, with the preservation note citing protected quoted speech and absent rename authorization."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "C1 client_id has proposed_text null and excluded status, while verification states code_changes_executed false and claims no factual reconciliation."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "terminology-consistency-editor__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "terminology-consistency-editor__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "terminology-consistency-editor__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

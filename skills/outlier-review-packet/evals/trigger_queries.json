@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create a review packet for values flagged above the supplied threshold.",
+    "should_trigger": true
+  },
+  {
+    "query": "List each flagged record with its triggering rule and allowed dispositions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve unusual values and identify evidence gaps for human review.",
+    "should_trigger": true
+  },
+  {
+    "query": "Package these outlier flags without correcting or deleting records.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which supplied records exceed the explicit review rule.",
+    "should_trigger": true
+  },
+  {
+    "query": "Prepare retain, correct-with-source, and exclude-with-reason options for flagged rows.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review unusual measurements using only the supplied threshold and context.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate observed outlier flags from conclusions that values are errors.",
+    "should_trigger": true
+  },
+  {
+    "query": "Report unresolved outlier items when the rule or identifier is incomplete.",
+    "should_trigger": true
+  },
+  {
+    "query": "Draft a consistent human-review packet for the supplied flagged records.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find likely duplicate records and recommend merge candidates.",
+    "should_trigger": false
+  },
+  {
+    "query": "Summarize missingness by field and subgroup.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a conversion plan for mixed measurement units.",
+    "should_trigger": false
+  },
+  {
+    "query": "Align daily and monthly data for comparison.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a crosswalk between two category-code systems.",
+    "should_trigger": false
+  },
+  {
+    "query": "Assess assignment coverage within one taxonomy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Automatically delete every value above the threshold.",
+    "should_trigger": false
+  },
+  {
+    "query": "Explain the business cause of each unusual value without evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose the medical meaning of these extreme measurements.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify that the outlier process meets an external standard.",
+    "should_trigger": false
+  }
+]

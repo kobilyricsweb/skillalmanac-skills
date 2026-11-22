@@ -1,0 +1,21 @@
+{
+  "baseline": {
+    "title": "old"
+  },
+  "changed_field": "title",
+  "variants": [
+    {
+      "id": "a",
+      "fields": {
+        "title": "a"
+      }
+    },
+    {
+      "id": "b",
+      "fields": {
+        "title": "b"
+      }
+    }
+  ],
+  "extra": true
+}

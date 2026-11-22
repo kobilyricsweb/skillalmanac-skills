@@ -1,0 +1,11 @@
+{
+  "slug": "feedback-comment-bank",
+  "category": "education",
+  "user_problem": "Evaluators need consistent, actionable comments tied to a supplied rubric without pretending to observe absent work.",
+  "unique_output": "A comment bank organized by criterion, evidence pattern, next action, and prohibited overclaim.",
+  "required_input": "Rubric, common observable response patterns, tone guidance, revision opportunities, and comment length limits.",
+  "critical_rule": "Comments must reference an observable pattern and avoid trait judgments, grades, or evidence not present.",
+  "nearest_existing_and_difference": "Nearest is customer-support-replies; this creates rubric-grounded formative feedback rather than service responses.",
+  "tier": "free",
+  "acceptance_scenario": "Input rubric values explicit evidence; pattern says claim present but evidence absent; revision allowed. Output comment states the claim is identifiable, asks for one supporting detail, and does not assign a score."
+}

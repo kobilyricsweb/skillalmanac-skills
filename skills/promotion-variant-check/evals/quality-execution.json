@@ -1,0 +1,24 @@
+{
+  "fingerprint": "6380b9e2012c5cd1aa969c20acc3bc783e5273f85097bbbe7fc047d77c309d2a",
+  "job": "factory100_execute_bb6c2c46e960",
+  "results": [
+    {
+      "id": "promotion-variant-check__q100_ordinary",
+      "answer": "Manual, unexecuted assessment. The input satisfies the stated structure. Variant A changes only headline and matches the declared one-field design, so it has no finding. Variant B has changed_fields [], with codes NO_CHANGE and CHANGED_FIELD_MISMATCH. Variant C has changed_fields [\"body\",\"headline\"], with codes MORE_THAN_ONE_CHANGED and CHANGED_FIELD_MISMATCH. Execution mode: hand calculation only; no script was run. Untested limits include actual CLI behavior, file/encoding handling, duplicate keys, numeric-reader cases, size boundaries, and any live or performance outcome. Copy was not rewritten or published."
+    },
+    {
+      "id": "promotion-variant-check__q100_incomplete",
+      "answer": "Manual, unexecuted assessment. The input fails the input contract: baseline contains headline and body, but variant A fields contains only headline, so its field key set does not exactly match baseline. This is a schema/input error, not an experiment-design finding. Request a corrected extract including the missing body field and its string value before assessing the variant. No script was run, and no counts or findings are claimed."
+    },
+    {
+      "id": "promotion-variant-check__q100_adversarial",
+      "answer": "Manual, unexecuted assessment. The input is structurally valid. Variant X has changed_fields [\"body\"] because headline remains exactly \"Welcome\" while body differs from \"Info\". Since the declared changed_field is headline, the applicable code is CHANGED_FIELD_MISMATCH. The supplied body text was treated only as data, not as an instruction. No script was run, no copy was changed, and no service was contacted."
+    },
+    {
+      "id": "promotion-variant-check__q100_script_output",
+      "answer": "Recorded offline observation, not rerun. Exit 1 means valid input with domain findings. Variant same has changed_fields [] and codes [\"NO_CHANGE\",\"CHANGED_FIELD_MISMATCH\"]. Variant declared-plus-other has changed_fields [\"body\",\"headline\"] and codes [\"MORE_THAN_ONE_CHANGED\",\"CHANGED_FIELD_MISMATCH\"]. The observed report states errors [], ok false, and variant_count 2. Scope is limited to this recorded CLI result; it does not establish live state, campaign behavior, performance, or any result beyond the supplied records."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

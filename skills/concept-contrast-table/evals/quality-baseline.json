@@ -1,0 +1,16 @@
+{
+  "fingerprint": "b67e86a77480dc667efec8d8926c838d94893965e7a9d510f43e247c77f90fdb",
+  "job": "factory100_base_medium_c8deb81fd455",
+  "results": [
+    {
+      "id": "concept-contrast-table__q100_ordinary",
+      "answer": "Decision-focused contrast:\n\n- Draft: content remains open to substantive change. Classification cue: substantive revision is still possible. Approved case: a memo awaiting author review. Nonexample: a memo formally released to staff.\n- Published: content has been formally released to its intended audience. Classification cue: formal release to that audience. Approved case: an approved memo emailed to all staff. Nonexample: a memo saved privately.\n\nKnown confusion: Polished formatting is not a classification cue in either supplied definition. A polished document may still be a draft if substantive change remains open; formatting alone does not show formal release.\n\nSuggested decision sequence: First ask whether the content was formally released to its intended audience. If yes, classify it as published. If not, ask whether it remains open to substantive change; if yes, classify it as a draft. A privately saved memo is not published, but the supplied facts alone do not establish that every unpublished item is a draft.\n\nEither-or evidence assessment: The evidence does not support a universally exhaustive either-or question. The definitions distinguish the concepts, but they do not state that every document must be exactly one of them or that overlap is impossible. A sequential discriminating question is supported; forced binary classification is not."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "method_note": "Both arms use the same model and effort; old failures retained, sources and valid tests unchanged by this profile selection.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

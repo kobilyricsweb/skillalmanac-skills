@@ -1,0 +1,10 @@
+{
+  "slug": "offer-comparison-matrix",
+  "category": "marketing",
+  "user_problem": "Marketers need to compare their own proposed offers without unsupported competitor or demand claims.",
+  "unique_output": "An internal comparison matrix covering audience, promise, included assets, proof available, friction, and testable distinctions.",
+  "free_or_pack_candidate": "free",
+  "test_case": "Compare three supplied offers and flag a promise that lacks supporting proof.",
+  "overlap_to_check": "Market research, campaign briefs, and pricing research.",
+  "specific_guardrail": "Use supplied evidence and explicit constraints only; missing authority and unknown facts stay unresolved."
+}

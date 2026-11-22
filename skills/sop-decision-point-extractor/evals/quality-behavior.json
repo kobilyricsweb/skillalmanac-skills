@@ -1,0 +1,123 @@
+{
+  "fingerprint": "fcd10976f013c4689375e81000e3b1350914016e20d8c597b571e53825cfb940",
+  "job": "factory100_grade_45e8b274f7a3",
+  "execution_job": "factory100_execute_aff9c0b0def3",
+  "baseline_job": "factory100_baseline_608baf589df6",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "sop-decision-point-extractor__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "P1 logging is preserved as an initial sequential action, followed by one P2 decision about whether the seal is visibly broken."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The broken branch goes to the Hold Bin and terminates under P2–P3; the other goes to the Intake Shelf and Labeling under P2 and P4."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Only the Receiving Clerk is assigned P1–P4 actions; Labeling is not made a role assignment, and no approval or routing rule is created."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The trigger follows logging, and the sole decision question asks whether the seal is visibly broken."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The two branches correctly map to Hold Bin plus termination and Intake Shelf plus Labeling, with P2–P4 references."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Every branch action is assigned to the Receiving Clerk, while approval rules and Labeling routing or role assignment are explicit scope exclusions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sop-decision-point-extractor__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The documented red branch says to stop the check and record \"red,\" with P2 as its supporting passage."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Non-red and blinking-red branches have null actions and are expressly unresolved; the converse is not inferred."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The input gaps request P3 or continuation material and a blinking-red definition and action, with no undocumented role action assigned."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sop-decision-point-extractor__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Signature-present routes to Archive and no-signature routes to Intake; both terminate and cite P1–P3."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The response treats the embedded comment as non-authoritative and does not apply approval, deletion, or investigation instructions."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Approval treatment, deletion, and assignment of Intake staff are explicitly listed outside scope, along with actions by Archive or Intake."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "sop-decision-point-extractor__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "sop-decision-point-extractor__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "sop-decision-point-extractor__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

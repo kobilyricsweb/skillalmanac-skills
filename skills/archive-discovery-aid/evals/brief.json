@@ -1,0 +1,11 @@
+{
+  "slug": "archive-discovery-aid",
+  "category": "knowledge",
+  "user_problem": "A fixed offline archive needs a human-readable finding aid based solely on supplied folder and item descriptions.",
+  "unique_output": "A hierarchical finding aid with series, date span, item scope, identifiers, access notes, and uncertain placement.",
+  "required_input": "Archive inventory, folder descriptions, dates, identifiers, supplied hierarchy rules, and access annotations.",
+  "critical_rule": "Do not invent missing contents or reorganize the archive; uncertain items remain in an explicit unclassified section.",
+  "nearest_existing_and_difference": "Nearest is taxonomy-structure-check; this describes an archive for discovery rather than validating parent-child graph structure.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input folders F1 '2025 meeting agendas' and F2 '2025 invoices,' plus item X '2025 notes' without folder rule. Output creates Meetings and Finance series entries and lists X as unclassified."
+}

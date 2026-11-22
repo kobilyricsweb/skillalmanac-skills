@@ -1,0 +1,123 @@
+{
+  "fingerprint": "aa4810cab1fbe93b84bd43df2a227547c9f6252825e6eae5ee31f1e8c6a58126",
+  "job": "factory100_grade_034c7209115d",
+  "execution_job": "factory100_execute_756a9df11187",
+  "baseline_job": "factory100_baseline_071d165319fc",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "dataset-field-dictionary-builder__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Each of the three fields appears once with its supplied type, definition, exhaustive active/closed values, and closed_at null meaning."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "C-1, active, and null are expressly labeled sample observations, while the non-null closed_at format and blank semantics remain unresolved."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The artifact is limited to field entries and unresolved questions, with no profiling, record validation, or remediation."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "fail",
+              "evidence": "All fields and basic meanings appear, but the response does not preserve the supplied fact that active and closed form an exhaustive status list."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "The supplied samples are omitted rather than represented and labeled as observations."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It performs no profiling or record validation and proposes no remediation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dataset-field-dictionary-builder__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "All three fields appear, and nickname and score have null definitions with status \"not_supplied\", not conflicting."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Nickname null_semantics and blank_semantics are separate null fields, and the empty string is recorded only as a sample observation."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "No nickname or score meaning, allowed values, or completeness statistics are inferred from the samples."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dataset-field-dictionary-builder__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Both \"Processing mode\" and \"Billing mode\" are preserved, normalized_definition is null, and status is \"unresolved_conflict\"."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "A and B are listed with exhaustiveness unspecified; C is only mentioned in an unresolved question and is not added as allowed."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The quoted note is retained solely as a sample observation, while null and blank semantics remain null and are raised as unresolved."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "dataset-field-dictionary-builder__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "dataset-field-dictionary-builder__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "dataset-field-dictionary-builder__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Build a table mapping these incident descriptions to the supplied runbook sections.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify which procedure applies from the observable signals and list exclusions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Leave scenarios without a qualifying runbook as escalation gaps.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare overlapping runbooks and flag conflicts when no precedence rule exists.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an operator decision aid from these procedures without executing them.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show the evidence and prerequisites needed before selecting each runbook.",
+    "should_trigger": true
+  },
+  {
+    "query": "Classify these reports as applicable, excluded, unmatched, indeterminate, or blocked.",
+    "should_trigger": true
+  },
+  {
+    "query": "Trace each scenario to the exact supplied procedure and applicability rule.",
+    "should_trigger": true
+  },
+  {
+    "query": "Detect a boundary case where a reported signal barely meets a runbook condition.",
+    "should_trigger": true
+  },
+  {
+    "query": "Produce a scenario-to-procedure matrix for our operations team.",
+    "should_trigger": true
+  },
+  {
+    "query": "Execute the incident runbook and restart the affected service.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft a friendly support response to the customer report.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit our retry budget and backoff configuration.",
+    "should_trigger": false
+  },
+  {
+    "query": "Open and manage a security incident in the incident platform.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide the incident severity using general industry practice.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a new runbook for a procedure we have not supplied.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send an escalation message to the on-call engineer.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose the root cause from logs that were not provided.",
+    "should_trigger": false
+  },
+  {
+    "query": "Calculate whether a webhook retry policy is sufficient.",
+    "should_trigger": false
+  },
+  {
+    "query": "Summarize the incident meeting and assign action items.",
+    "should_trigger": false
+  }
+]

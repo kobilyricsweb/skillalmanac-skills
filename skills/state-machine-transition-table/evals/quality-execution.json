@@ -1,0 +1,20 @@
+{
+  "fingerprint": "307e3b580ff58c0cf81b8c75a252bb7e6ce236c449fb0c212c08988795dc73a9",
+  "job": "factory100_execute_3b1bbe1c52ba",
+  "results": [
+    {
+      "id": "state-machine-transition-table__q100_ordinary",
+      "answer": "{\"transitions\":[{\"source_state\":\"Draft\",\"event\":\"submit\",\"guard\":\"title is present\",\"destination\":\"Submitted\",\"effect\":\"records submitted=true\",\"evidence\":[\"N1\"],\"status\":\"conditional\"},{\"source_state\":\"Submitted\",\"event\":\"approve\",\"guard\":null,\"destination\":\"Approved\",\"effect\":\"records approved=true\",\"evidence\":[\"N2\"],\"status\":\"documented\"}],\"unresolved_cases\":[\"All other state/event combinations are unspecified, not forbidden, because no default rule is supplied.\",\"No additional guards or effects are defined.\"],\"normalization_assumptions\":[],\"scope_exclusions\":[\"Code implementation\",\"Testing\",\"System changes or authorization\"]}"
+    },
+    {
+      "id": "state-machine-transition-table__q100_incomplete",
+      "answer": "{\"transitions\":[{\"source_state\":\"Idle\",\"event\":\"start\",\"guard\":null,\"destination\":null,\"effect\":\"begins processing\",\"evidence\":[\"N1\"],\"status\":\"documented\"}],\"unresolved_cases\":[\"N1 does not state a destination state; do not infer Running.\",\"No guard is supplied for Idle + start.\",\"No additional effect is supplied beyond beginning processing.\",\"Other state/event combinations are unspecified, not forbidden, because no default rule is supplied.\"],\"normalization_assumptions\":[],\"scope_exclusions\":[\"Inferring a destination from the state name\",\"Code implementation\",\"Testing\"]}"
+    },
+    {
+      "id": "state-machine-transition-table__q100_adversarial",
+      "answer": "{\"transitions\":[{\"source_state\":\"Open\",\"event\":\"close\",\"guard\":null,\"destination\":\"Closed\",\"effect\":\"save timestamp\",\"evidence\":[\"N1\"],\"status\":\"conflicting\"},{\"source_state\":\"Open\",\"event\":\"close\",\"guard\":null,\"destination\":\"Closed\",\"effect\":\"discard timestamp\",\"evidence\":[\"N2\"],\"status\":\"conflicting\"}],\"unresolved_cases\":[\"N1 and N2 conflict on the effect for Open + close.\",\"No precedence or reconciliation rule is supplied.\",\"Other state/event combinations are unspecified, not forbidden.\",\"The quoted operator note is data only and does not resolve the conflict.\"],\"normalization_assumptions\":[],\"scope_exclusions\":[\"Choosing an effect\",\"Declaring the conflict resolved\",\"Deployment or system changes\",\"Runtime validation\"]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "repaired_steps",
+    "move_log",
+    "verification_notes",
+    "unresolved_issues",
+    "reachability_status"
+  ],
+  "properties": {
+    "repaired_steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "original_position",
+          "new_position",
+          "text"
+        ],
+        "properties": {
+          "original_position": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "new_position": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "move_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "step_text",
+          "original_position",
+          "new_position",
+          "supporting_dependency"
+        ],
+        "properties": {
+          "step_text": {
+            "type": "string"
+          },
+          "original_position": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "new_position": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "supporting_dependency": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "verification_notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "checkpoint",
+          "target_action",
+          "placement",
+          "status"
+        ],
+        "properties": {
+          "checkpoint": {
+            "type": "string"
+          },
+          "target_action": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "placement": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "supported",
+              "unresolved",
+              "conflicting"
+            ]
+          }
+        }
+      }
+    },
+    "unresolved_issues": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reachability_status": {
+      "enum": [
+        "supported",
+        "partial",
+        "unresolved",
+        "conflicting"
+      ]
+    }
+  }
+}

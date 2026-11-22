@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["target_definition", "frame_form", "time_bounds", "coverage_entries", "duplicate_risks", "unknown_coverage", "conflicts", "verification_findings"],
+  "properties": {
+    "target_definition": {"type": "string"},
+    "frame_form": {"type": "string", "enum": ["snapshot", "rolling_period", "other", "unresolved"]},
+    "time_bounds": {"type": ["string", "null"]},
+    "coverage_entries": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["unit_or_channel", "status", "supporting_rule", "limitation"], "properties": {"unit_or_channel": {"type": "string"}, "status": {"type": "string", "enum": ["included", "excluded", "unknown", "conflicting"]}, "supporting_rule": {"type": ["string", "null"]}, "limitation": {"type": ["string", "null"]}}}},
+    "duplicate_risks": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["mechanism", "consequence", "occurrence_status"], "properties": {"mechanism": {"type": "string"}, "consequence": {"type": "string"}, "occurrence_status": {"type": "string", "enum": ["possible", "observed", "unresolved"]}}}},
+    "unknown_coverage": {"type": "array", "items": {"type": "string"}},
+    "conflicts": {"type": "array", "items": {"type": "string"}},
+    "verification_findings": {"type": "array", "items": {"type": "string"}}
+  }
+}

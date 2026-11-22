@@ -1,0 +1,10 @@
+{
+  "slug": "cli-help-example-designer",
+  "category": "development",
+  "user_problem": "CLI maintainers need realistic examples that match declared commands, options, and constraints.",
+  "unique_output": "A command-example suite with prerequisites, expected result, invalid-use example, and option-coverage table.",
+  "free_or_pack_candidate": "free",
+  "test_case": "Given a command schema with required and conflicting options, create valid examples and one correctly rejected combination.",
+  "overlap_to_check": "General documentation and instruction-authoring tools.",
+  "specific_guardrail": "Derive commands solely from supplied grammar; quote for a supplied shell only, otherwise provide token arrays. Mutually exclusive/required flags must be respected; no execution."
+}

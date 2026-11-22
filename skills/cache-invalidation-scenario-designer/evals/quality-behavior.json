@@ -1,0 +1,123 @@
+{
+  "fingerprint": "3bfaad58bb92d512dab4be55c0b93ccae57df289423cc440ee6f50979d37e9d7",
+  "job": "factory100_grade_9727a0a9f570",
+  "execution_job": "factory100_execute_0a09fdfb2847",
+  "baseline_job": "factory100_baseline_89f096a32320",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "cache-invalidation-scenario-designer__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The scenario row links M1 rename-item to affected_key item:{id} and reader R1, and cites K1, R1, M1, I1, and A1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It states invalidation occurs before the mutation response is returned and allows no stale item name after that response."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The verification statement explicitly limits the artifact to specified behavior and says it does not prove runtime cache behavior."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The scenario matches rename-item for the same item with K1 item:{id} and the R1 item-page read, incorporating the supplied mutation, rule, and allowance."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It requires matching-key invalidation before the response and no exposure of the old name after the response."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It says runtime proof is not established and would require an observed execution or test result."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cache-invalidation-scenario-designer__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The scenario row sets affected_key and reader to null and relationship_status to unresolved for M1 versus K1/R1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Both invalidation_timing and allowed_staleness are explicitly reported as unspecified, with no consistency model assumed."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It asks whether M1 affects the alias key or reader and confines verification to supplied specification relationships; it does not recommend runtime inspection."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cache-invalidation-scenario-designer__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The scenario connects M1 to card:{id} and R1 while recording immediate versus two-seconds-later invalidation as an unresolved conflict."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It records zero allowed stale time alongside the specification conflict and characterizes the output as specification-only, without alleging an implementation defect."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The operator comment is treated as quoted data, and the verification statement says no production inspection, deletion, or runtime proof occurred."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "cache-invalidation-scenario-designer__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "cache-invalidation-scenario-designer__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "cache-invalidation-scenario-designer__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

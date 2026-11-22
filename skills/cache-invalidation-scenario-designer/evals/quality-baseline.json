@@ -1,0 +1,12 @@
+{
+  "fingerprint": "88ac8d954eaa1604d98a6da3be7f8ca69c2faafa976e50297e0d061a186c1324",
+  "job": "factory100_baseline_89f096a32320",
+  "results": [
+    {
+      "id": "cache-invalidation-scenario-designer__q100_ordinary",
+      "answer": "Offline scenario: seed item {id} with an initial name; confirm the item page reads K1 = item:{id}; invoke rename-item for that same item; require M1 to invalidate the matching K1 before returning the mutation response; after the response, read R1 and check that it does not expose the old item name. Specified behavior: matching-key invalidation precedes the response, and R1 permits no stale name after it. Runtime proof is not established by this design; it would require an observed execution or test result."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

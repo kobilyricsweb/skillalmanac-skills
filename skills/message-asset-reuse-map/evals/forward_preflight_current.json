@@ -1,0 +1,49 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "message-asset-reuse-map__parent_holdout",
+        "slug": "message-asset-reuse-map",
+        "prompt": "Map approved messages to supplied assets: M1=\"offline planning\", M2=\"shared team editing\", M3=\"no account needed\". Assets: A1 slide2 shows offline outline; A2 page1 is a single-user screenshot only; A3 paragraph4 shows shared editing, allowed internal audience only. Intended placements: public homepage and internal training. No asset addresses accounts. Do not create new proof.",
+        "assertions": [
+          "Maps M1/A1slide2 and M2/A3paragraph4 with internal-only restriction.",
+          "Does not treat A2 single-user screenshot as evidence of shared editing or authorize public reuse ofA3.",
+          "Leaves M3 unsupported by supplied assets and requests an adaptation/evidence gap rather than inventing proof."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "{\"matrix\":[{\"message_id\":\"M1\",\"exact_message\":\"offline planning\",\"audience\":\"not supplied\",\"context\":\"not supplied\",\"matched_asset_id\":\"A1\",\"exact_location\":\"slide2\",\"reuse_status\":\"direct reuse\",\"allowed_placement\":\"internal training; public homepage placement not confirmed by supplied audience/context\",\"restriction\":\"Do not extend beyond A1's supplied description\",\"adaptation_request\":\"Confirm public-homepage audience and permission if public reuse is intended\"},{\"message_id\":\"M2\",\"exact_message\":\"shared team editing\",\"audience\":\"not supplied\",\"context\":\"not supplied\",\"matched_asset_id\":\"A3\",\"exact_location\":\"paragraph4\",\"reuse_status\":\"conditional reuse\",\"allowed_placement\":\"internal training only\",\"restriction\":\"A3 is allowed for internal audience only; public homepage is blocked\",\"adaptation_request\":\"Request a public-use asset or permission; do not create new proof\"},{\"message_id\":\"M3\",\"exact_message\":\"no account needed\",\"audience\":\"not supplied\",\"context\":\"not supplied\",\"matched_asset_id\":\"none\",\"exact_location\":\"not supplied\",\"reuse_status\":\"unsupported placement\",\"allowed_placement\":\"none\",\"restriction\":\"No supplied asset addresses accounts\",\"adaptation_request\":\"Request source material directly addressing the claim and its permitted audience\"}],\"unpaired_messages\":[\"M3\"],\"unused_assets\":[\"A2 — page1, single-user screenshot only; no supplied compatibility with M1, M2, or M3\"],\"blocked_placements\":[\"M2 on public homepage: A3 is restricted to internal audience only\",\"M3 in all requested placements: no supporting asset supplied\"],\"unresolved_authority\":[\"Message audiences, contexts, permissions, and authorized uses are not supplied\",\"Public-homepage reuse authority for A1 is not supplied\"]}",
+      "grade": {
+        "id": "message-asset-reuse-map__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The matrix maps M1 to A1 slide2 and M2 to A3 paragraph4, with A3 restricted to internal training only."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "A2 is listed as unused because it is a single-user screenshot with no supplied compatibility, while M2's public-homepage placement is explicitly blocked due to A3's internal-only restriction."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "M3 is marked unsupported with no matched asset or allowed placement, and the adaptation_request asks for source material addressing the claim instead of creating proof."
+          }
+        ]
+      },
+      "binding": {
+        "id": "message-asset-reuse-map__parent_holdout",
+        "slug": "message-asset-reuse-map",
+        "skill_sha256": "045102af4653df6d823bf6db4ab22b622aac8dbfbbf8408febb04dea66be8a54",
+        "contract_sha256": "0a90748c95c98b97dbbbadc1af887bbeca4c8ab5c313de67c68b3080863bdd71",
+        "assertions_sent_to_executor": false
+      },
+      "round": "initial"
+    }
+  ]
+}

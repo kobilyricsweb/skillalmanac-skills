@@ -1,0 +1,123 @@
+{
+  "fingerprint": "4421a236c63ab58aa576da7fd0d8d7c464723ebe2270d75029faa280ad9ad620",
+  "job": "factory100_grade_9727a0a9f570",
+  "execution_job": "factory100_execute_5382d27c7939",
+  "baseline_job": "factory100_baseline_89f096a32320",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "caption-context-pack__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It states 5 Access tickets versus 3 Billing tickets and limits the statement to 4 Nov 2026."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It directs the reader to compare bar heights or labels and makes no causal or trend claim."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It includes the two-queue, one-date limitation and preserves OPS-17 as an internal source identifier without inventing a citation."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The caption and context give Billing 3 and Access 5 on 4 Nov 2026."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Reading guidance instructs comparison of labeled bar values using the Tickets axis, without inferring cause or trend."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The limitation confines coverage to the two queues and date, and the source placeholder retains internal identifier OPS-17."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caption-context-pack__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The short caption describes the North and South labels without asserting a quantitative size difference."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It marks quantitative superiority unsupported because the schematic is not to scale and lacks values, units, scale, and measurement method."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The source placeholder contains DIAG-2, while the guidance and uncertainty entries identify values, units, and timeframe as unavailable."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caption-context-pack__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It reports 4 requests in Week 1 and 6 in Week 2 and states that the displayed value is higher in Week 2."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Separate uncertainty entries mark both campaign causation and another future increase as unsupported."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It includes line-reading guidance, the two-observation limitation, and a source placeholder containing IMG-9."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "caption-context-pack__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "caption-context-pack__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "caption-context-pack__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

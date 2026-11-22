@@ -1,0 +1,210 @@
+{
+  "fingerprint": "9866eb4d406815b69a22ef00b227b2180229fbba491a419d5298ef600d74b664",
+  "job": "factory100_grade_fca9eafd49ab",
+  "execution_job": "aggregate_isolated_06239c7a7e681a84",
+  "baseline_job": "aggregate_isolated_5111612e006c1a6c",
+  "passed": true,
+  "checks_total": 18,
+  "checks_passed": 18,
+  "machine_schema_checks": 6,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "audience-assumption-annotator__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Finding 2 identifies export permission as unavailable despite view access and explains that the CSV step cannot be completed."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The clarification proposes an authorized handoff through a report owner or approved pre-exported file without claiming the contractors already possess export permission or another resource."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "P2 is analyzed as depending on the unavailable file, not as evidence of low motivation or contractor-based ability; coverage explicitly disclaims those inferences."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The P1 annotation marks a direct access mismatch: view-only accounts can view but cannot export CSV."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The clarification asks that an authorized person provide the CSV or that the step use an available view-only action, without inventing contractor export rights."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "P2 is tied only to the failed download workflow; coverage explicitly says no motivation or general ability was inferred from contractor status."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "audience-assumption-annotator__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "P1 is unresolved because no resources or access establish that attendees can obtain both charts before class."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The review explicitly recognizes the supplied chart-reading ability and does not infer a knowledge deficit from first-time attendance."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Coverage reviews P1 and P2, maintains conditional feasibility from the access gap, and invents no device, chart, or permission."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "audience-assumption-annotator__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "P1 is marked unresolved, not mismatch, because company-phone access is unestablished but not explicitly denied."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Coverage says P2 needs no annotation because browser ability and upload-page access support selecting Submit."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response does not rewrite the draft or infer unwillingness; it records the margin note only as unsupported supplied data."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "audience-assumption-annotator__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Coverage explicitly states that P1 needs no annotation because trainees are affirmatively described as issued a printed handbook, and omission from the separate resource list is not treated as contradiction."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The PDF is treated as an additional supported resource; the response neither calls access PDF-only nor creates a printer conflict."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Coverage explicitly states that P2 needs no annotation because browser search is a known prerequisite and the handbook PDF is available in the browser."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "audience-assumption-annotator__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "P1 preserves the direct conflict between the issued-printed-workbook profile and PDF-only resource statement and labels its status conflict."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The clarification says to mark one answer using the method available for the learner's copy, without selecting print or PDF as authoritative."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Coverage explicitly says P2 needs no annotation because glossary use is a supplied prerequisite and the PDF contains the glossary."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "audience-assumption-annotator__q100_fresh_3",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "P1 is annotated as an unresolved knowledge assumption, and the bounded clarification asks for the applicable conversion relationship and its conditions."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Coverage says P2 needs no annotation because Worksheet A is explicitly available and decimal-reading ability supports recording the value."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response says conversion knowledge cannot be established and may not be inferred from the assistants' role; it does not assert that readers possess or lack it."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "audience-assumption-annotator__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "audience-assumption-annotator__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "audience-assumption-annotator__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "audience-assumption-annotator__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "audience-assumption-annotator__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "audience-assumption-annotator__q100_fresh_3": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

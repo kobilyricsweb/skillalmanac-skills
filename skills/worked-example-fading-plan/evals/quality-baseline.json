@@ -1,0 +1,13 @@
+{
+  "fingerprint": "7f8e293e1de2cd00d781d04f2947844430e584420ef737e07ae9a8dbb25dba20",
+  "job": "factory100_baseline_bf58be64d55e",
+  "results": [
+    {
+      "id": "worked-example-fading-plan__q100_ordinary",
+      "answer": "Stages: 1) Full model: read both numbers, compare values, write the symbol; use the example 2 < 3. 2) Guided practice: learner reads new pairs while the instructor prompts comparison and symbol selection. 3) Reduced support: retain only a brief cue such as “read, compare, symbol,” then fade it after accurate responses. 4) Independent practice: present varied pairs without procedural prompts. Support changes: move from modeled language and explicit symbol explanation to brief cues, then no cues. Retained prompts and basis: temporarily retain “Which number is greater?” and a visual reminder that the open side faces the greater number, because symbol meanings are not yet secure and reversal is a known error; remove after stable, accurate use across varied pairs. Independence evidence: accurate completion of multiple unprompted comparisons, including both symbol directions and equality, with no reversal. Final task treatment: present exactly, “Compare 4 and 1 using >, <, or =.” Do not provide a symbol cue; record the learner’s response and whether reading, comparison, and symbol selection were independent. Assumptions: digits 0–5 are readable; symbol meanings can be taught during fading. Conflicts: none supplied. Limits: no mastery criterion, trial count, baseline, or evidence is provided, so readiness and success cannot be claimed."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

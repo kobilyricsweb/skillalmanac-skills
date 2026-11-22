@@ -1,0 +1,11 @@
+{
+  "slug": "call-to-action-consistency-map",
+  "category": "marketing",
+  "user_problem": "Multiple supplied assets use calls to action that may conflict with approved audience stage or destination.",
+  "unique_output": "A map of asset, audience state, CTA text, promised destination, actual supplied destination label, and mismatch.",
+  "required_input": "Asset copy, audience-stage rules, approved CTAs, destination descriptions, and prohibited transitions.",
+  "critical_rule": "Do not assume a destination fulfills a promise from its title alone; rely on the supplied description.",
+  "nearest_existing_and_difference": "Nearest is message-asset-reuse-map; this audits CTA progression and destination fit rather than message reuse locations.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input awareness asset says 'Start trial,' rules allow only 'Learn more,' and destination is a feature overview. Output flags both stage and destination mismatch and selects the approved CTA."
+}

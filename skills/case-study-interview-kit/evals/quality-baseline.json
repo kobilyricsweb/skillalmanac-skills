@@ -1,0 +1,12 @@
+{
+  "fingerprint": "41e61855fd892566e7ceee05166d26df6beba70a80f59be87a421d428d3127d6",
+  "job": "factory100_baseline_49e5451d8e4a",
+  "results": [
+    {
+      "id": "case-study-interview-kit__q100_ordinary",
+      "answer": "Interview kit — CloudCart returns workflow\n\nInterviewee: shop manager. Audience: small-shop operators.\n\nOpening: Explain that this is a factual interview about the approved topics. Ask permission to record notes, if relevant.\n\nNeutral questions:\n1. How were returns handled before June, step by step?\n2. What changed in the June workflow?\n3. What made the process seem faster, if it did?\n4. Can you confirm that the June log lists four returns?\n5. Is there a May log, other baseline, or duration record we can review?\n6. What setup work was required to use CloudCart?\n7. Who performed the setup, and how long did it take, if documented?\n8. What limitations or difficult cases have you encountered?\n9. Which details can you verify with logs, records, or screenshots?\n10. May the shop be named in the case study?\n11. May any proposed quotation be published? Written approval is required before publication; who can provide it?\n\nFact-confirmation checklist: verify the four June entries, workflow descriptions, setup details, limitations, and any speed claim against available records. Do not state that returns became faster unless a comparison is supplied.\n\nOutside approved topics: pricing, sales, ratings, market comparisons, unrelated product features, customer identities, and unsupported performance claims."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

@@ -1,0 +1,66 @@
+{
+  "objective": "Teach application of the supplied heavy-label threshold.",
+  "rule_summary": [
+    "Weight greater than 5 kg is heavy.",
+    "Weight exactly 5 kg is not heavy."
+  ],
+  "overlap_diagnosis": [
+    "The supplied 6 kg and 7 kg examples have the same above-threshold signature and teach the same decision."
+  ],
+  "examples": [
+    {
+      "role": "normal above-threshold case",
+      "provenance": "supplied",
+      "synthetic": false,
+      "scenario": "A box weighs 6 kg.",
+      "coverage_signature": {
+        "predicates": [
+          {
+            "predicate": "weight is greater than 5 kg",
+            "state": "true"
+          }
+        ],
+        "learner_decision": "Decide whether to apply the heavy label.",
+        "rule_outcome": "determined"
+      },
+      "rule_applied": "6 is greater than 5.",
+      "learner_task": "Decide whether to apply the heavy label.",
+      "expected_lesson": "Apply the heavy label.",
+      "determination": "determined",
+      "meaningful_difference": "Retains one supplied normal case while consolidating the repetitive 7 kg case.",
+      "newly_covered_decision": "Retained baseline decision: a value above the threshold receives the label."
+    },
+    {
+      "role": "boundary case",
+      "provenance": "created",
+      "synthetic": true,
+      "scenario": "A box weighs exactly 5 kg.",
+      "coverage_signature": {
+        "predicates": [
+          {
+            "predicate": "weight is greater than 5 kg",
+            "state": "false"
+          },
+          {
+            "predicate": "weight is exactly 5 kg",
+            "state": "true"
+          }
+        ],
+        "learner_decision": "Decide whether to apply the heavy label.",
+        "rule_outcome": "determined"
+      },
+      "rule_applied": "The supplied rule explicitly excludes exactly 5 kg.",
+      "learner_task": "Decide whether to apply the heavy label.",
+      "expected_lesson": "Do not apply the heavy label.",
+      "determination": "determined",
+      "meaningful_difference": "Changes only the supplied weight value from above the threshold to the exact boundary.",
+      "newly_covered_decision": "Adds the explicit decision for the threshold itself."
+    }
+  ],
+  "preservation_note": "The supplied above-threshold lesson is retained while a synthetic boundary decision is added.",
+  "verification": {
+    "unsupported_claims": [],
+    "missing_information": []
+  },
+  "__unexpected_fixture_property__": 0
+}

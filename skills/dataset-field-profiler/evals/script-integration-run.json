@@ -1,0 +1,17 @@
+{
+  "command": [
+    "<local-path>",
+    "-B",
+    "<local-path>",
+    "<local-path>"
+  ],
+  "exit": 0,
+  "stdout": "{\"errors\": [], \"field_count\": 2, \"fields\": [{\"array\": 0, \"boolean\": 1, \"integer\": 1, \"missing\": 1, \"name\": \"n\", \"null\": 0, \"number\": 1, \"object\": 0, \"present\": 3, \"string\": 0}, {\"array\": 0, \"boolean\": 0, \"integer\": 0, \"missing\": 3, \"name\": \"tag\", \"null\": 1, \"number\": 0, \"object\": 0, \"present\": 1, \"string\": 0}], \"ok\": true, \"row_count\": 4}\n",
+  "stderr": "",
+  "expected_observations_independently_asserted": [
+    "The interpretation preserves4rows, sorted fields n then tag, and n counts present3/missing1/integer1/number1/boolean1.",
+    "It preserves tag counts present1/missing3/null1 and explains exit0 as a bounded sample profile, not a schema or validity certification.",
+    "The answer identifies a recorded CLI observation, emits no record sample values, and makes no new execution, semantic-definition or live-data claim."
+  ],
+  "scope": "actual local CLI run; not native agent tool use"
+}

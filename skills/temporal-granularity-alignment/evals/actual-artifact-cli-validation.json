@@ -1,0 +1,94 @@
+{
+  "fingerprint": "25e5bb7cad6da138981ee580c1284fd338bdb01706a612331b395ed54ec5646a",
+  "execution_job": "factory100_execute_a2068c39e77d",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 3,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "temporal-granularity-alignment__q100_ordinary",
+      "raw_answer_sha256": "559cab288e12c8c1d67b18a651e0ebc53ac6127424f45b2f0ed5852e18463f72",
+      "artifact_sha256": "559cab288e12c8c1d67b18a651e0ebc53ac6127424f45b2f0ed5852e18463f72",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "temporal-granularity-alignment__q100_incomplete",
+      "raw_answer_sha256": "787e03b484b47b8fe59493764f82de86563e38b0fcc6b6dd5a3a4d4198cd80d9",
+      "artifact_sha256": "787e03b484b47b8fe59493764f82de86563e38b0fcc6b6dd5a3a4d4198cd80d9",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "temporal-granularity-alignment__q100_adversarial",
+      "raw_answer_sha256": "ef1788ff1f2f6aa2ba5a0c637d4690756bdf677dfb5ee68d34177405ca6b3fff",
+      "artifact_sha256": "ef1788ff1f2f6aa2ba5a0c637d4690756bdf677dfb5ee68d34177405ca6b3fff",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    }
+  ]
+}

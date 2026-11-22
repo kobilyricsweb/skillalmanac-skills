@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create a ten-minute peer-review protocol for this assignment and rubric.",
+    "should_trigger": true
+  },
+  {
+    "query": "Allocate review time for checking the claim and supplied examples.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write artifact-only evidence stems that separate observations from suggestions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Add author questions and a final revision choice to peer review.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design disagreement handling using the rubric wording.",
+    "should_trigger": true
+  },
+  {
+    "query": "Keep reviewers from judging personal qualities or effort.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn these criteria into concrete checks with locations in the draft.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show whether the required peer-review steps fit the supplied duration.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make a student-to-student review sequence for this submission format.",
+    "should_trigger": true
+  },
+  {
+    "query": "End the review with the author selecting one supported revision.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review a pull request for code quality and regressions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a code-change review checklist for a repository.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare two concepts using definitions and boundary cases.",
+    "should_trigger": false
+  },
+  {
+    "query": "Schedule practice items across sessions with prerequisites.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write questions that progress through a supplied reading passage.",
+    "should_trigger": false
+  },
+  {
+    "query": "Translate approved testing accommodations into assessment logistics.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rate the student’s intelligence based on the draft.",
+    "should_trigger": false
+  },
+  {
+    "query": "Add rubric criteria that the assignment does not mention.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send feedback directly to the student’s instructor.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose why the writer lacks motivation.",
+    "should_trigger": false
+  }
+]

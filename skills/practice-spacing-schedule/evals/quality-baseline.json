@@ -1,0 +1,22 @@
+{
+  "fingerprint": "fbf987629b9ad7dd1d778709036596ee2fb0663718b39152a6a16d3c6f494265",
+  "job": "aggregate_isolated_1f353f336636ef7c",
+  "results": [
+    {
+      "id": "practice-spacing-schedule__q100_ordinary",
+      "answer": "Structured schedule\n\nSession 1\n- Slot 1: A — new practice (basics)\n- Slot 2: Unused\n\nSession 2\n- Slot 1: A — retrieval review, exactly 1 session after new practice\n- Slot 2: B — new practice (application)\n- Cumulative mixing: Yes. Earlier-skill work on A occurs in the same session as newer work on B.\n\nSession 3\n- Slot 1: B — retrieval review, exactly 1 session after new practice\n- Slot 2: Unused\n\nConstraint audit\n- Capacity: 3 sessions × 2 slots = 6 slots.\n- Used slots: 4. Unused slots: 2 (Session 1 Slot 2; Session 3 Slot 2).\n- Fixed A placement: satisfied; A is introduced in Session 1.\n- B prerequisite: satisfied; B is introduced in Session 2 after A was practiced in Session 1.\n- Fixed B placement: satisfied; B is introduced in Session 2.\n- A retrieval timing: satisfied; reviewed in Session 2, exactly 1 session later.\n- B retrieval timing: satisfied; reviewed in Session 3, exactly 1 session later.\n- Each new item receives exactly one required retrieval review: satisfied.\n- Cumulative mixing identified: Session 2.\n- No claim is made about an optimal learning effect.",
+      "individual_job": "factory100_base_isolated_0bf43f719abc"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill_isolated_cases",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "case_context_isolated": true,
+  "answer_word_budget": 600,
+  "individual_worker_jobs": [
+    "factory100_base_isolated_0bf43f719abc"
+  ],
+  "method_note": "Every case uses its own fresh context. Both arms use identical model/effort/budget; raw responses unchanged, original prompts/assertions preserved, prior failures retained. Aggregate is a provenance index, not a model call.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

@@ -1,0 +1,12 @@
+{
+  "fingerprint": "811d78fece25924520310d7e8f56a7f8fa53d10b9da493c5640cbdea0999a631",
+  "job": "factory100_baseline_89f096a32320",
+  "results": [
+    {
+      "id": "contradiction-resolution-dossier__q100_ordinary",
+      "answer": "Precedence result: S1, Policy v2 dated 2026-04-01, controls reimbursement requirements under the supplied rule, so receipts are required for claims above $20. Supplied impacts: the claim form help text saying “above $10” conflicts with the controlling policy and should be treated as inconsistent; the onboarding checklist points to Team Guide v5, whose “above $10” threshold is also superseded for this requirement. Resolver: Finance Policy Owner. Decision versus later updates: the resolver must determine or confirm the controlling requirement; afterward, responsible owners may update the claim form help text and onboarding link or guidance. No completion of those updates is established."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

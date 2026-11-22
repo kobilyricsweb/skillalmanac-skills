@@ -1,0 +1,49 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "feature-flag-retirement-planner__parent_holdout",
+        "slug": "feature-flag-retirement-planner",
+        "prompt": "Plan retirement of flag newExporter. Snapshot says web rollout100%; worker rollout unknown. References: app.ts selects new/old exporter; worker.ts reads the flag; tests.ts has old-path tests; a stale support note says rollback uses oldExporter. There is no removal approval, worker-state evidence or retention policy. Return a proposed dependency plan, not a release.",
+        "assertions": [
+          "Retains worker.ts, old-path tests and support/rollback references as unresolved dependencies.",
+          "Does not equate web100% with universal rollout or certify safe flag deletion.",
+          "Plan is conditional/proposed; no removal, approval or deployed change claimed."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "Scope: Proposed offline dependency plan for newExporter. This is planning only; no removal, release, repository inspection, or live verification is performed.\n\nSupplied evidence ledger:\n- Flag: newExporter; web rollout 100%; worker rollout unknown.\n- app.ts: selects new or old exporter; supplied-but-unverified application reference.\n- worker.ts: reads the flag; supplied-but-unverified worker reference.\n- tests.ts: contains old-path tests; supplied-but-unverified test reference.\n- Support note: rollback uses oldExporter; stale status supplied by the user, so policy currency is unresolved.\n- Removal approval: absent.\n- Worker-state evidence: absent.\n- Retention policy: absent.\n- Owner and dependencies: not supplied.\n\nProposed dependency order:\n1. Confirm ownership, removal approval, retention requirements, and whether the support rollback note remains authoritative.\n2. Establish worker rollout/state evidence; keep web’s 100% rollout separate from worker status.\n3. Map app.ts and worker.ts behavior and identify all flag/configuration consumers.\n4. Decide whether oldExporter remains the approved rollback boundary.\n5. Define verification evidence for application, worker, tests, and documentation cleanup.\n6. Only after decisions and evidence are complete, prepare a future cleanup change.\nOrdering is proposed, not supplied.\n\nRetirement checklist:\n- Obtain approval and policy decision; evidence: recorded authorization and retention outcome; risk: absent.\n- Resolve worker rollout/state; evidence: supplied evidence from the owner; risk: unknown worker exposure.\n- Confirm app.ts and worker.ts references and dependencies; evidence: reviewed reference map; risk: references may not be exhaustive.\n- Review tests.ts old-path coverage; evidence: documented test decision; risk: test presence does not prove production usage.\n- Validate rollback note; evidence: current rollback policy; boundary: oldExporter only if confirmed.\n- Prepare, review, and separately approve any cleanup; evidence: acceptance decision; no deletion is currently authorized.\n\nUnresolved decisions: approval, ownership, worker state, retention, reference completeness, and rollback authority. Universal safe deletion is not established.\n\nAcceptance checks: Every supplied reference is preserved; state is separated from usage evidence; ordering is labeled proposed; rollback uncertainty is explicit; no action is presented as completed.",
+      "grade": {
+        "id": "feature-flag-retirement-planner__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The dependency plan retains worker.ts flag usage, tests.ts old-path coverage, and the stale support note about oldExporter rollback as items requiring confirmation or decisions."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "The answer keeps web rollout at 100% separate from unknown worker rollout and explicitly concludes that universal safe deletion is not established."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "The answer labels the work a proposed offline dependency plan, says ordering is proposed, and states that no removal, release, approval, repository inspection, live verification, or completed action is claimed."
+          }
+        ]
+      },
+      "binding": {
+        "id": "feature-flag-retirement-planner__parent_holdout",
+        "slug": "feature-flag-retirement-planner",
+        "skill_sha256": "5e811c116241893ca74577cfb222a2d08cc2bcdf858349aa85eff19c2c00eeed",
+        "contract_sha256": "de5a77ff699fd17c10209fab643a697f6930a3eb249488c7214840f1c91e1f98",
+        "assertions_sent_to_executor": false
+      },
+      "round": "initial"
+    }
+  ]
+}

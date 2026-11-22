@@ -1,0 +1,123 @@
+{
+  "fingerprint": "76b07579c7ae849b72738977fd5cc01310625b6385a34b87ce33955fdc58e911",
+  "job": "factory100_grade_7eaa9e3a129e",
+  "execution_job": "factory100_execute_4505420f67c5",
+  "baseline_job": "factory100_baseline_44caf2c8dad0",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "landing-page-message-sequencer__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The response maps M1, M2, and the CTA to the three visitor questions in order, with the CTA after M2."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "M1 cites E1 at /guide, while M2 is presented without an evidence assignment."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It preserves the audience, objective, approved messages, CTA wording, and /demo destination and adds no HTML, claims, or forecast."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The ordered sections answer product, preparation, and next-action questions with M1, M2, then the CTA."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "M1 has direct E1 support at /guide; M2 has null evidence and an explicit evidence gap."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The structured response retains all supplied wording and authority details without HTML, additional claims, or performance predictions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landing-page-message-sequencer__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "M1 is placed under the learning question and its evidence field is null with a no-evidence-supplied gap."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The proposed CTA has null destination, not-supplied authority, unresolved status, and an unauthorized rejection-log entry."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It records the unanswered joining question and missing CTA inputs without inventing a destination, proof, replacement CTA, design, or campaign advice."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landing-page-message-sequencer__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "M1 is linked directly to E1 at /search-guide and precedes the authorized Request information CTA at /contact."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "P1 appears only in the rejection log as prohibited and is not included in the sequenced sections."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "No perfection claim, invented support, HTML, SEO guidance, campaign plan, or conversion forecast is added."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "landing-page-message-sequencer__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "landing-page-message-sequencer__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "landing-page-message-sequencer__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

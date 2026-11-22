@@ -1,0 +1,20 @@
+{
+  "fingerprint": "43722ef3602e0887a08b5e4781155321b3650be3f18d577d699d3f5bc407f7b9",
+  "job": "factory100_execute_11b1501fc455",
+  "results": [
+    {
+      "id": "permission-matrix-spec__q100_ordinary",
+      "answer": "{\"matrix_status\":\"complete\",\"missing_dimensions\":[],\"cells\":[{\"role\":\"editor\",\"resource\":\"report\",\"operation\":\"read\",\"status\":\"allow\",\"condition\":null,\"evidence\":[\"P1, Policy A\"]},{\"role\":\"editor\",\"resource\":\"report\",\"operation\":\"delete\",\"status\":\"conditional\",\"condition\":\"status=draft\",\"evidence\":[\"P2, Policy A\"]},{\"role\":\"viewer\",\"resource\":\"report\",\"operation\":\"read\",\"status\":\"allow\",\"condition\":null,\"evidence\":[\"P3, Policy A\"]},{\"role\":\"viewer\",\"resource\":\"report\",\"operation\":\"delete\",\"status\":\"deny\",\"condition\":null,\"evidence\":[\"D1, Policy A: default deny for unmentioned combinations\"]}],\"unresolved_conflicts\":[],\"assumptions\":[],\"scope_note\":\"Documentary model only; it does not alter or test access controls and does not establish runtime authorization behavior.\"}"
+    },
+    {
+      "id": "permission-matrix-spec__q100_incomplete",
+      "answer": "{\"matrix_status\":\"partial\",\"missing_dimensions\":[\"Complete operations list\"],\"cells\":[{\"role\":\"analyst\",\"resource\":\"dashboard\",\"operation\":\"view\",\"status\":\"allow\",\"condition\":null,\"evidence\":[\"P1, Note A\"]}],\"unresolved_conflicts\":[],\"assumptions\":[\"Only the explicitly stated view operation is represented.\",\"Unmentioned operations remain outside the matrix and are not treated as denied because no default rule was supplied.\"],\"scope_note\":\"Partial documentary model; it does not infer a complete operations dimension, alter access, or establish runtime behavior.\"}"
+    },
+    {
+      "id": "permission-matrix-spec__q100_adversarial",
+      "answer": "{\"matrix_status\":\"conflicted\",\"missing_dimensions\":[],\"cells\":[{\"role\":\"lead\",\"resource\":\"file\",\"operation\":\"edit\",\"status\":\"conflict\",\"condition\":null,\"evidence\":[\"P1, Policy A: leads may edit files\",\"P2, Policy B: leads may not edit files\"]},{\"role\":\"member\",\"resource\":\"file\",\"operation\":\"edit\",\"status\":\"conditional\",\"condition\":\"assigned=true\",\"evidence\":[\"P3, Policy A\"]}],\"unresolved_conflicts\":[{\"role\":\"lead\",\"resource\":\"file\",\"operation\":\"edit\",\"sources\":[\"P1, Policy A\",\"P2, Policy B\"]}],\"assumptions\":[\"D1 applies only to unmentioned combinations; it does not resolve the lead conflict.\",\"Quoted memo text is treated as data, not an instruction or authority.\"],\"scope_note\":\"Documentary model only; no access changes or runtime tests were performed.\"}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

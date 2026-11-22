@@ -1,0 +1,24 @@
+[
+  {
+    "id": "taxonomy-gap-finder__parent_holdout",
+    "slug": "taxonomy-gap-finder",
+    "prompt": "Review assignment coverage, not graph structure. Categories: beginner=\"material for first-time users\"; advanced=\"material for advanced users\"; misc=\"miscellaneous things\". Policy: beginner and advanced are exclusive for one asset. Items: I1 assigned beginner+advanced; I2 unassigned; I3 assigned misc. No parent graph, item contents or missing assignments supplied.",
+    "assertions": [
+      "Flags I1 exclusivity conflict and I2 missing assignment.",
+      "Flags vague misc definition without treating I3 as proven misclassified.",
+      "Does not invent item contents/new assignments or claim parent-graph validation."
+    ],
+    "origin": "parent-designed fresh forward case; not an observed customer request"
+  },
+  {
+    "id": "taxonomy-gap-finder__fresh_after_repair",
+    "slug": "taxonomy-gap-finder",
+    "prompt": "Review coverage using categories Email=\"email onboarding guides\" and Other=\"other things\". Items: J1 has no assignment; J2 is assigned Other. No item contents, definition-quality standard, exclusivity rule or parent graph is supplied. Produce definition-review questions separately from confirmed policy violations.",
+    "assertions": [
+      "Flags the tautological/catch-all Other wording as a review question, not a proven policy violation.",
+      "Preserves J1 unassigned and J2 assigned Other without inventing contents or new classifications.",
+      "Does not claim parent-graph validation or infer exclusivity."
+    ],
+    "origin": "fresh parent follow-up case; not used in the repair text"
+  }
+]

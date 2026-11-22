@@ -1,0 +1,49 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "tutorial-prerequisite-mapper__parent_holdout",
+        "slug": "tutorial-prerequisite-mapper",
+        "prompt": "Map prerequisites in this fictional tutorial: S1 open dashboard; S2 choose saved workspace; S3 run export; S4 enterAPI token; S5 inspect output. Supplied rule says export atS3 requires API token beforehand, but no token value is supplied. Required workspace creation steps and output success criterion are absent. Produce a dependency map only, no execution or credential request.",
+        "assertions": [
+          "Flags token prerequisite introduced too late forS3, without requesting a real token value.",
+          "Preserves missing workspace-creation prerequisite and output success criterion.",
+          "Suggests ordering/clarification only; no installations, exports, credentials fetched or execution claimed."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "Scope assumptions: The supplied steps and rule are the complete source. No platform, permissions, token value, workspace-creation procedure, input data, or output success criterion is supplied. No step was executed and no credential was requested.\n\nStep-by-step map:\n- S1 — Action: open dashboard. Knowledge: dashboard navigation unknown. State: dashboard access required but not supplied. Inputs: none stated. Artifact: open dashboard state. Verification cue: none supplied. Status: required but omitted.\n- S2 — Action: choose saved workspace. Knowledge: workspace selection unknown. State: a saved workspace must exist; creation steps are absent. Inputs: saved workspace, origin unknown. Artifact: selected workspace state. Verification cue: none supplied. Status: required but omitted.\n- S4 — Action: enter API token. Knowledge: token-entry location and format unknown. State: valid API token required; token value and acquisition are absent. Inputs: API token, origin unknown. Artifact: token-configured session. Verification cue: none supplied. Status: required but omitted.\n- S3 — Action: run export. Knowledge: export operation unknown. State: selected workspace and API-token state required. Inputs: export data or parameters unknown. Artifact: export output, format and destination unknown. Verification cue: none supplied. Status: blocked by omitted prerequisites.\n- S5 — Action: inspect output. Knowledge: inspection method unknown. State: export output must exist. Inputs: S3 output. Artifact: inspection result unspecified. Verification cue: output success criterion absent. Status: blocked by missing verification context.\n\nDependency edges:\n- S1 → S2: dashboard state enables workspace selection.\n- S2 → S3: selected workspace is required for export.\n- S4 → S3: supplied rule states the API token must exist beforehand.\n- S3 → S5: inspection consumes export output.\n\nGap and late-introduction register:\n- Workspace creation steps are missing before S2.\n- API token is needed at S3 but introduced as S4; this is a late introduction in the ordered tutorial.\n- Token value, permissions, export inputs, and output success criterion are unknown.\n\nVerification report: Every step has a status; consumed artifacts have an origin or unknown marker; no action was executed. The map is not planning-complete because setup, credentials, and verification details are missing.",
+      "grade": {
+        "id": "tutorial-prerequisite-mapper__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The dependency map places S4 before S3, records S4 → S3, flags the token as introduced too late in the original order, and states that no credential was requested."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "The answer explicitly records that workspace creation steps are absent before S2 and that the output success criterion is absent for S5."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "The answer confines itself to dependency edges, statuses, and gaps, and explicitly states that no step was executed and no credential was requested."
+          }
+        ]
+      },
+      "binding": {
+        "id": "tutorial-prerequisite-mapper__parent_holdout",
+        "slug": "tutorial-prerequisite-mapper",
+        "skill_sha256": "895e4758caa504addfbcd3065604ef9c415acfd5267bb312eb0c0ca8969b74c9",
+        "contract_sha256": "1ab39c362053386fdb7f7b4a829f343636c860a96aa83c75c77ec168f7056bae",
+        "assertions_sent_to_executor": false
+      },
+      "round": "initial"
+    }
+  ]
+}

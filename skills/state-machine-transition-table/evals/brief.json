@@ -1,0 +1,11 @@
+{
+  "slug": "state-machine-transition-table",
+  "category": "software",
+  "user_problem": "Behavior notes describe states and events, but permitted and forbidden transitions remain ambiguous.",
+  "unique_output": "A transition table listing source state, event, guard, destination, effect, and unresolved cases.",
+  "required_input": "Named states, event definitions, guard notes, and documented effects supplied as plain text.",
+  "critical_rule": "Never invent a transition; mark combinations absent from the notes as unspecified rather than forbidden.",
+  "nearest_existing_and_difference": "Nearest is document-consistency-check; this constructs an executable-style behavioral model instead of comparing assertions across documents.",
+  "tier": "free",
+  "acceptance_scenario": "Input states Draft and Published, event publish allowed only from Draft, effect timestamp set. Output includes Draft+publish→Published with the guard and effect, while Published+publish is unspecified."
+}

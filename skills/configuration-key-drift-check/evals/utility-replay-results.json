@@ -1,0 +1,239 @@
+{
+  "method": "retained observed-output regression replay; missing-file path excluded; not independent truth",
+  "passed": true,
+  "fixtures": [
+    {
+      "id": "good",
+      "passed": true,
+      "exit": 0,
+      "actual": {
+        "configuration_count": 2,
+        "errors": [],
+        "findings": [],
+        "ok": true
+      }
+    },
+    {
+      "id": "domain-defect",
+      "passed": true,
+      "exit": 1,
+      "actual": {
+        "configuration_count": 1,
+        "errors": [],
+        "findings": [
+          {
+            "code": "DUPLICATE_CONFIG_KEY",
+            "configuration": "prod",
+            "keys": [
+              "PORT"
+            ]
+          },
+          {
+            "code": "MISSING_REQUIRED_KEY",
+            "configuration": "prod",
+            "keys": [
+              "HOST"
+            ]
+          }
+        ],
+        "ok": false
+      }
+    },
+    {
+      "id": "malformed",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "configuration_count": 1,
+        "errors": [
+          {
+            "code": "DUPLICATE_DECLARED_KEY",
+            "message": "required_keys contains a duplicate key"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false
+      }
+    },
+    {
+      "id": "boundary",
+      "passed": true,
+      "exit": 0,
+      "actual": {
+        "configuration_count": 1,
+        "errors": [],
+        "findings": [],
+        "ok": true
+      }
+    },
+    {
+      "id": "extra-not-used",
+      "passed": true,
+      "exit": 1,
+      "actual": {
+        "configuration_count": 1,
+        "errors": [],
+        "findings": [
+          {
+            "code": "UNEXPECTED_KEY",
+            "configuration": "prod",
+            "keys": [
+              "Z"
+            ]
+          }
+        ],
+        "ok": false
+      }
+    },
+    {
+      "id": "numeric_token_bound",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "number exceeds coefficient-digit or exponent limit (1000)",
+        "errors": []
+      }
+    },
+    {
+      "id": "nonstring_config_key",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "configuration_count": 1,
+        "errors": [
+          {
+            "code": "CONFIGURATION_KEY_TYPE",
+            "message": "configuration keys must be nonempty strings of at most 200 characters"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false
+      }
+    },
+    {
+      "id": "unhashable_declared_key",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "configuration_count": 1,
+        "errors": [
+          {
+            "code": "KEY_TYPE",
+            "message": "required_keys contains an invalid key"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false
+      }
+    },
+    {
+      "id": "unhashable_config_name",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "configuration_count": 1,
+        "errors": [
+          {
+            "code": "CONFIGURATION_NAME",
+            "message": "configuration names must be unique nonempty strings"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false
+      }
+    },
+    {
+      "id": "overlapping_declarations",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "configuration_count": 1,
+        "errors": [
+          {
+            "code": "REQUIRED_OPTIONAL_OVERLAP",
+            "message": "required and optional keys overlap"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false
+      }
+    },
+    {
+      "id": "case_sensitive_keys",
+      "passed": true,
+      "exit": 1,
+      "actual": {
+        "configuration_count": 1,
+        "errors": [],
+        "findings": [
+          {
+            "code": "MISSING_REQUIRED_KEY",
+            "configuration": "prod",
+            "keys": [
+              "A"
+            ]
+          },
+          {
+            "code": "UNEXPECTED_KEY",
+            "configuration": "prod",
+            "keys": [
+              "a"
+            ]
+          }
+        ],
+        "ok": false
+      }
+    },
+    {
+      "id": "duplicate_json_key",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "duplicate JSON object key",
+        "errors": []
+      }
+    },
+    {
+      "id": "nonfinite",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "non-finite JSON number",
+        "errors": []
+      }
+    },
+    {
+      "id": "truncated",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "Expecting value: line 1 column 6 (char 5)",
+        "errors": []
+      }
+    },
+    {
+      "id": "missing_file",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "[WinError 2] The system cannot find the file specified: '<local-path>'",
+        "errors": []
+      }
+    }
+  ]
+}

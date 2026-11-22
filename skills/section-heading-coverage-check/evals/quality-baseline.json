@@ -1,0 +1,22 @@
+{
+  "fingerprint": "56bbaeb7d2b32fb797183a3f169a43b3abd43f7af0ca8f664864adbcdd26e08e",
+  "job": "aggregate_isolated_b56f7f8c320f63b7",
+  "results": [
+    {
+      "id": "section-heading-coverage-check__q100_ordinary",
+      "answer": "Heading 1 — “Setup and Storage” (level 1)\nPromise: Covers both product setup and storage guidance.\nSupporting content: “Connect the cable before use.” This supports one setup step. The nested section supplies storage-temperature guidance: “Store the unit between 10°C and 20°C.”\nCoverage status: Partially covered. The required topic, storage temperature, is covered by the protected subsection. The broader setup-and-storage promise is not fully supported.\nMissing elements: Additional setup information implied by “Setup,” such as where or how to connect the cable; general storage guidance implied by “Storage,” if broader guidance is intended.\nOverbreadth: Yes. The heading promises two broad subjects, while the document provides only one connection instruction and one temperature constraint.\nProtection: Not protected.\nBounded repair options: (1) Narrow it to “Cable Connection and Storage Temperature”; (2) split it into separate setup and storage sections; or (3) retain it and add only the setup and storage instructions necessary to fulfill its scope. Do not invent missing procedures or conditions.\n\nHeading 1.1 — “Storage Temperature” (level 2)\nPromise: States the permitted or recommended temperature range for storage.\nSupporting content: “Store the unit between 10°C and 20°C.”\nCoverage status: Fully covered for the required topic. The content directly supplies a storage-temperature range.\nMissing elements: None required by the stated topic. Units and lower and upper bounds are present. Whether endpoints are inclusive is not explicitly stated; “between” may be ambiguous if exact boundary treatment matters.\nOverbreadth: None. The heading is narrower than and accurately matched by the content.\nProtection: Protected; preserve exactly as “Storage Temperature.”\nBounded repair options: Keep the heading unchanged. Optionally clarify endpoint inclusivity in the content if authoritative information exists, for example by replacing “between” with approved inclusive/exclusive wording. Do not alter the protected heading or invent tolerances, humidity limits, durations, or operating-temperature requirements.",
+      "individual_job": "factory100_base_isolated_56814cf9d29c"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill_isolated_cases",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "case_context_isolated": true,
+  "answer_word_budget": 600,
+  "individual_worker_jobs": [
+    "factory100_base_isolated_56814cf9d29c"
+  ],
+  "method_note": "Every case uses its own fresh context. Both arms use identical model/effort/budget; raw responses unchanged, original prompts/assertions preserved, prior failures retained. Aggregate is a provenance index, not a model call.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "scope",
+    "evidence_ledger",
+    "dependency_order",
+    "checklist",
+    "rollback_boundary",
+    "unresolved",
+    "acceptance_checks"
+  ],
+  "properties": {
+    "scope": {
+      "type": "object",
+      "required": [
+        "flag",
+        "owner",
+        "state",
+        "execution_boundary"
+      ],
+      "properties": {
+        "flag": {
+          "type": "string"
+        },
+        "owner": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "execution_boundary": {
+          "const": "offline_planning_only"
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence_ledger": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "reference",
+          "category",
+          "evidence_status",
+          "state_or_usage"
+        ],
+        "properties": {
+          "reference": {
+            "type": "string"
+          },
+          "category": {
+            "enum": [
+              "application",
+              "configuration",
+              "test",
+              "documentation",
+              "dashboard",
+              "policy",
+              "other"
+            ]
+          },
+          "evidence_status": {
+            "enum": [
+              "confirmed",
+              "supplied_unverified",
+              "conflicting",
+              "unknown"
+            ]
+          },
+          "state_or_usage": {
+            "enum": [
+              "state_evidence",
+              "usage_evidence",
+              "policy_evidence"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "dependency_order": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "step",
+          "basis"
+        ],
+        "properties": {
+          "step": {
+            "type": "string"
+          },
+          "basis": {
+            "enum": [
+              "supplied",
+              "proposed"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "checklist": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "target",
+          "prerequisites",
+          "future_action",
+          "closure_evidence",
+          "rollback_boundary",
+          "unresolved_risk"
+        ],
+        "properties": {
+          "target": {
+            "type": "string"
+          },
+          "prerequisites": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "future_action": {
+            "type": "string"
+          },
+          "closure_evidence": {
+            "type": "string"
+          },
+          "rollback_boundary": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "unresolved_risk": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "rollback_boundary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "acceptance_checks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

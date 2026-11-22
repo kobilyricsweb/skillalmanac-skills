@@ -1,0 +1,10 @@
+{
+  "slug": "duplicate-record-triage",
+  "category": "data",
+  "user_problem": "Data teams need to distinguish exact duplicates from probable matches before choosing remediation.",
+  "unique_output": "A duplicate triage report separating exact, normalized, candidate, and non-match groups with stated comparison rules.",
+  "free_or_pack_candidate": "pack_candidate",
+  "test_case": "Classify a fixture containing exact copies, case differences, shared names with different IDs, and incomplete rows.",
+  "overlap_to_check": "Entity resolution products and join-cardinality audits.",
+  "specific_guardrail": "Explicit user comparison rules only. Preserve record IDs and conflicts; do not auto-merge, identify people, choose winners or treat normalization as identity proof."
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "api-error-example-builder",
+  "category": "development",
+  "user_problem": "Developers need consistent examples showing how clients should react to an API's documented error cases.",
+  "unique_output": "A scenario matrix pairing each supplied error with a minimal request, response, client action, and safe fallback.",
+  "free_or_pack_candidate": "free",
+  "test_case": "Given three documented errors, produce three distinct scenarios and flag an error lacking a recovery instruction.",
+  "overlap_to_check": "API documentation generators, generic code review, and retry-budget audits.",
+  "specific_guardrail": "Use only documented request fields, status/body examples and client policies. Label absent recovery guidance unknown; never invent retry safety or a working endpoint."
+}

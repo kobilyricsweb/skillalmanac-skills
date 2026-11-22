@@ -1,0 +1,20 @@
+{
+  "fingerprint": "fcd10976f013c4689375e81000e3b1350914016e20d8c597b571e53825cfb940",
+  "job": "factory100_execute_aff9c0b0def3",
+  "results": [
+    {
+      "id": "sop-decision-point-extractor__q100_ordinary",
+      "answer": "{\"decisions\":[{\"decision_id\":\"D1\",\"trigger\":\"After the clerk logs every parcel.\",\"decision_question\":\"Is the parcel's seal visibly broken?\",\"branches\":[{\"observable_condition\":\"Seal is visibly broken.\",\"branch_action\":\"Place the parcel in the Hold Bin.\",\"role\":\"Receiving Clerk\",\"rejoin_or_termination\":\"Procedure terminates.\",\"supporting_passages\":[\"P2-P3\"],\"missing_or_ambiguous\":null},{\"observable_condition\":\"Seal is not visibly broken.\",\"branch_action\":\"Place the parcel on the Intake Shelf and proceed to Labeling.\",\"role\":\"Receiving Clerk\",\"rejoin_or_termination\":\"Continues to named downstream stage Labeling; no rejoin point is stated.\",\"supporting_passages\":[\"P2\",\"P4\"],\"missing_or_ambiguous\":null}],\"supporting_passages\":[\"P1-P4\"],\"status\":\"documented\"}],\"input_gaps\":[],\"scope_exclusions\":[\"Approval rules\",\"Routing or role assignment for Labeling\",\"Actions after termination\"]}"
+    },
+    {
+      "id": "sop-decision-point-extractor__q100_incomplete",
+      "answer": "{\"decisions\":[{\"decision_id\":\"D1\",\"trigger\":\"After the Operator starts the device check.\",\"decision_question\":\"Is the status light red?\",\"branches\":[{\"observable_condition\":\"Status light is red.\",\"branch_action\":\"Stop the check and record \\\"red\\\".\",\"role\":\"Operator\",\"rejoin_or_termination\":\"No continuation or termination point is stated.\",\"supporting_passages\":[\"P2\"],\"missing_or_ambiguous\":\"The fragment does not state what follows.\"},{\"observable_condition\":\"Status light is not red, including any possible non-red state.\",\"branch_action\":null,\"role\":null,\"rejoin_or_termination\":null,\"supporting_passages\":[\"P2\",\"P3 missing\"],\"missing_or_ambiguous\":\"No action, owner beyond the stated role boundary, or continuation is documented. The converse must not be inferred.\"},{\"observable_condition\":\"Status light is blinking red.\",\"branch_action\":null,\"role\":null,\"rejoin_or_termination\":null,\"supporting_passages\":[\"P3 missing\"],\"missing_or_ambiguous\":\"The fragment does not define whether blinking red satisfies the red condition or what action applies.\"}],\"supporting_passages\":[\"P1-P2\",\"P3 missing\"],\"status\":\"partial\"}],\"input_gaps\":[\"Provide P3 or the missing continuation passage for non-red states.\",\"Define whether blinking red is red for this decision and specify its action.\"],\"scope_exclusions\":[\"Safe defaults\",\"Inferred converse conditions\",\"Actions not stated in the fragment\"]}"
+    },
+    {
+      "id": "sop-decision-point-extractor__q100_adversarial",
+      "answer": "{\"decisions\":[{\"decision_id\":\"D1\",\"trigger\":\"After the Reviewer checks whether the form has a signature.\",\"decision_question\":\"Does the form have a signature?\",\"branches\":[{\"observable_condition\":\"A signature is present.\",\"branch_action\":\"Send the form to Archive.\",\"role\":\"Reviewer\",\"rejoin_or_termination\":\"Procedure terminates.\",\"supporting_passages\":[\"P1-P2\"],\"missing_or_ambiguous\":null},{\"observable_condition\":\"No signature is present.\",\"branch_action\":\"Return the form to Intake.\",\"role\":\"Reviewer\",\"rejoin_or_termination\":\"Procedure terminates.\",\"supporting_passages\":[\"P1\",\"P3\"],\"missing_or_ambiguous\":null}],\"supporting_passages\":[\"P1-P3\"],\"status\":\"documented\"}],\"input_gaps\":[],\"scope_exclusions\":[\"The embedded comment is quoted data, not SOP authority: approval treatment, deletion of unsigned forms, and assigning Intake staff to investigate are outside scope.\",\"Actions by Archive or Intake\"]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

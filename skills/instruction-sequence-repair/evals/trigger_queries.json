@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Repair this instruction sequence using the supplied dependencies.",
+    "should_trigger": true
+  },
+  {
+    "query": "Reorder these steps so prerequisites come before dependent actions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find forward references and move verification to the supported checkpoint.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a move log for a dependency-based procedure repair.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve the exact step text while fixing the order.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify hidden prerequisites in this ordered procedure and repair them.",
+    "should_trigger": true
+  },
+  {
+    "query": "Resolve the supplied instruction sequence without inventing actions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Place the confirmation step before submission when the dependency requires it.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check whether this procedure can reach its stated end state after reordering.",
+    "should_trigger": true
+  },
+  {
+    "query": "Report cycles or conflicting dependencies in this instruction set.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map every prerequisite to the steps in this tutorial.",
+    "should_trigger": false
+  },
+  {
+    "query": "Annotate assumptions about the audience of these instructions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a caption for the procedure's screenshot.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a publication dependency map across sections.",
+    "should_trigger": false
+  },
+  {
+    "query": "Assess whether this handoff is ready.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft an abstract from the procedure report.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite these steps in a friendlier tone.",
+    "should_trigger": false
+  },
+  {
+    "query": "Add whatever actions are missing from this workflow.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design a dashboard showing this process.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose why the external system failed.",
+    "should_trigger": false
+  }
+]

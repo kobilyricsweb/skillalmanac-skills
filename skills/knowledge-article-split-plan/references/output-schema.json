@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "units",
+    "shared_context",
+    "section_mapping",
+    "duplicate_risks",
+    "migration_checklist",
+    "verification",
+    "open_decisions"
+  ],
+  "properties": {
+    "units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "purpose",
+          "audiences",
+          "retained_sections",
+          "moved_sections",
+          "prerequisite_treatment",
+          "boundary_rationale"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "audiences": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "retained_sections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "moved_sections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "prerequisite_treatment": {
+            "type": "string"
+          },
+          "boundary_rationale": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "shared_context": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "section_mapping": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "section",
+          "destination",
+          "status"
+        ],
+        "properties": {
+          "section": {
+            "type": "string"
+          },
+          "destination": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "assigned",
+              "retained",
+              "decision_needed"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "duplicate_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "migration_checklist": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verification": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "open_decisions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

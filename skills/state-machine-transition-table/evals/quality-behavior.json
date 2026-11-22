@@ -1,0 +1,123 @@
+{
+  "fingerprint": "307e3b580ff58c0cf81b8c75a252bb7e6ce236c449fb0c212c08988795dc73a9",
+  "job": "factory100_grade_fd6cc29bafc8",
+  "execution_job": "factory100_execute_3b1bbe1c52ba",
+  "baseline_job": "factory100_baseline_6c2bb572049f",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "state-machine-transition-table__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The N1 row records Draft, submit, title-present guard, Submitted destination, and submitted=true."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The N2 row records Submitted plus approve moving to Approved with approved=true."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "All unlisted combinations are explicitly unspecified rather than forbidden, and implementation, testing, and system authorization are excluded."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The first transition contains the complete guarded N1 transition and labels its status conditional."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The second transition contains the N2 source, event, destination, effect, and evidence."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Unlisted combinations are described as unspecified, not forbidden, and scope exclusions cover code, testing, and system changes or authorization."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "state-machine-transition-table__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The Idle/start row preserves begins processing while leaving guard and destination null."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The response explicitly says not to infer Running and classifies other combinations as unspecified rather than forbidden."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Missing destination and guard are identified in unresolved cases, while implementation and testing are excluded and no executability claim is made."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "state-machine-transition-table__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Separate N1 and N2 rows preserve save timestamp and discard timestamp, and both are marked conflicting."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The response says no precedence or reconciliation rule exists and treats the operator note as data only without choosing either effect."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Deployment, system changes, and runtime validation are explicitly outside scope."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "state-machine-transition-table__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "state-machine-transition-table__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "state-machine-transition-table__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

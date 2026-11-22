@@ -1,0 +1,94 @@
+{
+  "fingerprint": "7d4397953c4f102c2d16e130a1c8cabda0c140d039f49e49753fcb5281d0e9f4",
+  "execution_job": "factory100_execute_03fe0d916dda",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 3,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "nurture-sequence-logic-map__q100_ordinary",
+      "raw_answer_sha256": "ef691f195c27bfd850a8472f69cb4a5637660f2722aec4da85668fb3d65f1197",
+      "artifact_sha256": "ef691f195c27bfd850a8472f69cb4a5637660f2722aec4da85668fb3d65f1197",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "nurture-sequence-logic-map__q100_incomplete",
+      "raw_answer_sha256": "6c06f9a51ab2a2826aab4399cd4e46f6298e37e404904a214f73172412a3ca46",
+      "artifact_sha256": "6c06f9a51ab2a2826aab4399cd4e46f6298e37e404904a214f73172412a3ca46",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "nurture-sequence-logic-map__q100_adversarial",
+      "raw_answer_sha256": "8d59fa2ed8cc9d2600985500e270b79d3df3e9c17d713b080194d77457da97dc",
+      "artifact_sha256": "8d59fa2ed8cc9d2600985500e270b79d3df3e9c17d713b080194d77457da97dc",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    }
+  ]
+}

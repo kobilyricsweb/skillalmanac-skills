@@ -1,0 +1,11 @@
+{
+  "slug": "rubric-anchor-builder",
+  "category": "education",
+  "user_problem": "A scoring rubric has descriptors but lacks concrete synthetic examples showing boundaries between performance levels.",
+  "unique_output": "A set of short anchor responses with criterion-by-criterion scores and explanations tied to exact rubric language.",
+  "required_input": "Rubric criteria, level descriptors, prompt, scoring rules, and any non-scorable conditions.",
+  "critical_rule": "Every score rationale must cite a supplied descriptor; ambiguous boundaries receive paired anchors, not invented standards.",
+  "nearest_existing_and_difference": "Nearest is example-set-diversifier; this builds scoring anchors rather than diversifying instructional examples.",
+  "tier": "free",
+  "acceptance_scenario": "Input criterion requires a claim plus two relevant facts for level 3 and one fact for level 2. Output provides one synthetic response at each level and identifies the second fact as the observable boundary."
+}

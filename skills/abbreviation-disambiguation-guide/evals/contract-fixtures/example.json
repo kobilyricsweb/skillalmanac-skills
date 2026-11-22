@@ -1,0 +1,29 @@
+{
+  "occurrences": [
+    {
+      "id": "P1",
+      "location": "Memo §2",
+      "excerpt": "The Project X team labeled the folder PX.",
+      "possible_expansions": [
+        "Project X"
+      ],
+      "evidence": [
+        "Project X is written in the same sentence, satisfying the supplied direct-evidence rule."
+      ],
+      "status": "resolved_by_supplied_evidence",
+      "questions": []
+    }
+  ],
+  "coverage": {
+    "supplied_ids": [
+      "P1"
+    ],
+    "covered_ids": [
+      "P1"
+    ],
+    "unsupported_expansions": []
+  },
+  "scope_limits": [
+    "This guide does not edit the memo or establish a preferred term."
+  ]
+}

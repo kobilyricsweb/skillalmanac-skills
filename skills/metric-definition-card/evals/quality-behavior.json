@@ -1,0 +1,152 @@
+{
+  "fingerprint": "bcb9b85b4c1f16523109caf4a536712c068a4db3faa10324c33805610b3c8c4b",
+  "job": "factory100_grade_bccb4421e1cd",
+  "execution_job": "factory100_execute_e6e095d16910",
+  "baseline_job": "factory100_baseline_6daebfe4a242",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "metric-definition-card__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The definition preserves activation-event accounts as the numerator and eligible accounts created in the same window as the denominator."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It records Monday–Sunday UTC, the test-account exclusion, account grain, 09:00 UTC Monday availability, and undefined zero handling."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It explicitly says the result is not calculated and gives no causal or operational recommendation."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The formula, numerator, and denominator preserve the supplied activation-event and eligible-new-account ratio."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The card records the weekly UTC window, exclusion, account grain, freshness deadline, and undefined zero policy."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "No metric value is calculated and no causal or operational recommendation is made."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "metric-definition-card__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The supplied ratio is preserved, all three terms are marked undefined, and clarification questions ask what successful, current, and customer mean."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Timezone, month boundaries, exclusions, grain, freshness, and zero policy are each explicitly unresolved or not supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The sample is identified as illustrative only and no 2/4 result or derived value appears."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "metric-definition-card__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "N1's UTC and N2's local-time rules are retained with provenance, and timezone remains conflicting due to absent precedence."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Job grain is recorded, while exclusions, freshness, and zero-denominator handling remain not supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The quoted 100% and staffing language is retained only as source content; no value or staffing recommendation is adopted."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "metric-definition-card__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The denominator explicitly preserves S1's opened conversations and S3's replied conversations as a conflict with source provenance."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It records conversation grain, resolved_at presence, and UTC, while marking population, exclusions, freshness, exact boundaries, and zero policy unresolved."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The sample values are declared illustrative, no rate is calculated, and the denominator remains unresolved pending a precedence decision."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "metric-definition-card__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "metric-definition-card__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "metric-definition-card__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "metric-definition-card__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

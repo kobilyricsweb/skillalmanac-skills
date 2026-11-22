@@ -1,0 +1,12 @@
+{
+  "fingerprint": "c7e51f950eb8f6b09dd108135a4077b8efaaf165ffe4ffbfd77347085f59d959",
+  "job": "factory100_baseline_071d165319fc",
+  "results": [
+    {
+      "id": "dataset-field-dictionary-builder__q100_ordinary",
+      "answer": "{\"dictionary\":{\"customer_id\":{\"type\":\"string\",\"description\":\"Stable account identifier.\"},\"status\":{\"type\":\"string\",\"description\":\"Account status; one of active or closed.\"},\"closed_at\":{\"type\":\"string|null\",\"description\":\"Closure timestamp; null means the account has not been closed.\"}},\"unresolved_questions\":[]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

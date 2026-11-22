@@ -1,0 +1,11 @@
+{
+  "slug": "cross-reference-ambiguity-map",
+  "category": "knowledge",
+  "user_problem": "References such as above, this section and duplicate headings can target multiple document locations.",
+  "unique_output": "Location-specific reference map with explicit target IDs, multiple candidates and unresolved targets.",
+  "required_input": "Bounded document excerpts, section IDs/headings and reference occurrences.",
+  "critical_rule": "Do not choose the nearest-looking target when explicit identity is absent or ambiguous.",
+  "nearest_existing_and_difference": "document-consistency-check compares factual statements; this resolves textual navigation references without judging facts.",
+  "tier": "free",
+  "acceptance_scenario": "Two sections named Setup and a reference see Setup without anID produce two candidate targets, not a guessed target."
+}

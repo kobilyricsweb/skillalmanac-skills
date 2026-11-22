@@ -1,0 +1,24 @@
+[
+  {
+    "id": "case-study-interview-kit__parent_holdout",
+    "slug": "case-study-interview-kit",
+    "prompt": "Build an interview guide for a fictional customer who adopted a task board. Company hypothesis: it saved five hours/week; no customer statement or measurement confirms this. Customer allowed an internal interview only, no quotation/publication permission. Interview time15minutes. Ask neutral questions, with fact/evidence and permission follow-ups.",
+    "assertions": [
+      "Treats five-hour saving as a hypothesis and asks neutral before/after evidence questions.",
+      "Does not invent customer quotes or confirmed outcomes.",
+      "Preserves internal-only permission, requests separate quote/publication permission and fits or explicitly budgets15minutes."
+    ],
+    "origin": "parent-designed fresh forward case; not an observed customer request"
+  },
+  {
+    "id": "case-study-interview-kit__fresh_after_repair",
+    "slug": "case-study-interview-kit",
+    "prompt": "Prepare an internal-only10-minute customer interview plan for a fictional appointment tool. Company hypothesis is fewer missed appointments, unmeasured and not confirmed by the customer. Approved topics: old workflow, adoption, observed differences, limitations and evidence/permission follow-ups. No quote/publication permission exists. Include a timed core guide and optional extra questions.",
+    "assertions": [
+      "Core agenda allocations total no more than10minutes and extra questions are outside the timed core; allocations are proposals.",
+      "Questions are neutral and the company hypothesis is not a confirmed customer outcome.",
+      "Keeps internal-only scope and asks separate quote/publication permission without inventing consent."
+    ],
+    "origin": "fresh parent follow-up case; not used in the repair text"
+  }
+]

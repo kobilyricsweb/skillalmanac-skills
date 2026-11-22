@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create a deterministic routing table for these incoming service requests.",
+    "should_trigger": true
+  },
+  {
+    "query": "Route urgent site outages using the supplied override rule.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which precedence rule resolves overlapping request destinations.",
+    "should_trigger": true
+  },
+  {
+    "query": "Assign unknown categories only to the approved fallback role.",
+    "should_trigger": true
+  },
+  {
+    "query": "Test these billing, location, and urgency combinations against the routing rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify ambiguous requests where no precedence clause is supplied.",
+    "should_trigger": true
+  },
+  {
+    "query": "Validate that every routing destination exists in the supplied role directory.",
+    "should_trigger": true
+  },
+  {
+    "query": "Normalize these scattered service-desk rules into one routing table.",
+    "should_trigger": true
+  },
+  {
+    "query": "Explain why this request goes to Finance rather than On-call.",
+    "should_trigger": true
+  },
+  {
+    "query": "List unroutable cases when the fallback destination is absent.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map each approval step and authorizer in this purchasing workflow.",
+    "should_trigger": false
+  },
+  {
+    "query": "Extract conditional branches from this operating procedure.",
+    "should_trigger": false
+  },
+  {
+    "query": "Specify required fields for each kind of service request.",
+    "should_trigger": false
+  },
+  {
+    "query": "Allocate service tickets across finite agent shifts.",
+    "should_trigger": false
+  },
+  {
+    "query": "Define escalation triggers for unresolved service tickets.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose the best destination based on current staffing levels not supplied here.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send these requests to the assigned teams through the ticketing system.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose why the service desk has slow response times.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify that this routing policy complies with an external standard.",
+    "should_trigger": false
+  },
+  {
+    "query": "Approve the urgent request on behalf of the On-call role.",
+    "should_trigger": false
+  }
+]

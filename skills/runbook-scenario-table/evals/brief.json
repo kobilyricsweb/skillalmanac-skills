@@ -1,0 +1,10 @@
+{
+  "slug": "runbook-scenario-table",
+  "category": "operations",
+  "user_problem": "Operators have runbooks but cannot quickly see which procedure applies to a reported situation.",
+  "unique_output": "A scenario-to-procedure table with observable signals, applicable runbook section, exclusions, and escalation trigger.",
+  "free_or_pack_candidate": "pack_candidate",
+  "test_case": "Map six incident descriptions to three supplied procedures and leave an unmatched scenario for escalation.",
+  "overlap_to_check": "Support replies, retry audits, and security incident systems.",
+  "specific_guardrail": "Map supplied observations to supplied procedures using explicit applicability rules; unmatched/conflicting scenarios remain escalation gaps. Do not execute runbooks or invent remediation."
+}

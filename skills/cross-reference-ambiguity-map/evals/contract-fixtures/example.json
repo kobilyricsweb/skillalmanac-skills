@@ -1,0 +1,24 @@
+{
+  "reference_map": [
+    {
+      "occurrence_id": "K1",
+      "source_location": "M/M2",
+      "reference_text": "section M1",
+      "candidate_targets": [
+        "M1"
+      ],
+      "selected_target": "M1",
+      "status": "resolved",
+      "basis": "The occurrence explicitly supplies stable target ID M1, which exists in document M."
+    }
+  ],
+  "ambiguity_report": [],
+  "verification_report": {
+    "all_occurrences_have_status": true,
+    "selected_targets_exist": true,
+    "findings": [
+      "K1 has one resolved status.",
+      "Selected target M1 exists in the supplied inventory."
+    ]
+  }
+}

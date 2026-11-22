@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Disambiguate each occurrence of AR using this approved expansion glossary and its local context.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an occurrence-to-expansion guide without changing the original wording.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which glossary meanings remain possible for this abbreviation in each excerpt.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark abbreviation cases as resolved or ambiguous based only on supplied context.",
+    "should_trigger": true
+  },
+  {
+    "query": "Explain why a supplied rule narrows an abbreviation to one approved expansion.",
+    "should_trigger": true
+  },
+  {
+    "query": "Prepare a reviewer guide for multiple allowed meanings of the same abbreviation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify missing context needed to distinguish these glossary expansions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map every abbreviation occurrence to its possible approved meanings.",
+    "should_trigger": true
+  },
+  {
+    "query": "Keep unresolved abbreviation occurrences unresolved when the excerpt is unqualified.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check that proposed expansions all come from the supplied glossary.",
+    "should_trigger": true
+  },
+  {
+    "query": "Normalize every AR occurrence to the preferred terminology.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite this article to avoid abbreviations.",
+    "should_trigger": false
+  },
+  {
+    "query": "Split this documentation into task-based articles.",
+    "should_trigger": false
+  },
+  {
+    "query": "Resolve a conflict between two supplied retention policies.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a finding aid for an offline archive.",
+    "should_trigger": false
+  },
+  {
+    "query": "Queue evidence items for review by expiry date.",
+    "should_trigger": false
+  },
+  {
+    "query": "Check the entire knowledge base for consistency.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent the most likely meaning of an abbreviation not in the glossary.",
+    "should_trigger": false
+  },
+  {
+    "query": "Publish the edited terminology across the site.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify that the glossary follows an external language standard.",
+    "should_trigger": false
+  }
+]

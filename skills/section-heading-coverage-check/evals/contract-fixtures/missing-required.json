@@ -1,0 +1,21 @@
+{
+  "required_topic_assessments": [
+    {
+      "required_topic": "setup",
+      "status": "covered",
+      "supporting_row_locators": [
+        "heading-1"
+      ],
+      "supporting_section_ids": [],
+      "direct_supporting_content": [
+        "‘Plug in the lamp before use’ supports setup."
+      ],
+      "appropriate_heading_status": "yes",
+      "missing_or_conflicting_evidence": []
+    }
+  ],
+  "input_limitations": [
+    "heading-1 has no supplied section ID; section_id is null."
+  ],
+  "unresolved_ambiguities": []
+}

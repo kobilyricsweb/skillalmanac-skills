@@ -1,0 +1,181 @@
+{
+  "fingerprint": "e47594da3c058a92414a3a7c237fb034b24872eeceaa5305063cb33a0c4ba8d3",
+  "job": "factory100_grade_57c587960cf2",
+  "execution_job": "aggregate_isolated_a0d0c4ef61bf9b9a",
+  "baseline_job": "aggregate_isolated_b56f7f8c320f63b7",
+  "passed": true,
+  "checks_total": 15,
+  "checks_passed": 15,
+  "machine_schema_checks": 5,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "section-heading-coverage-check__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "H1 is marked partially covered: the cable sentence supports setup, while the broader setup/storage promise is not fully supported. Repairs include narrowing, splitting, or adding supported instructions."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "H1.1 is fully covered by the supplied 10°C-to-20°C storage sentence, and the response explicitly says the required storage-temperature topic is covered."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The protected heading is expressly retained as “Storage Temperature,” and the response avoids inventing tolerances, humidity limits, durations, or other requirements."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "H1 is partial because its direct content covers setup but not storage. Repair options narrow the heading, reposition supplied content, or propose adding storage content once supplied."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "H1.1 and the required-topic assessment both mark storage temperature covered using the supplied 10°C-to-20°C sentence."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The heading field preserves the supplied protected heading text, including its supplied punctuation, and no new instructions or evidence are invented."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section-heading-coverage-check__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "S1 is partial: timing is covered by the Monday sentence and costs are absent from S1's complete directly assigned content."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "S1.1 is marked unresolved; the fee sentence is bounded evidence of possible cost, while incomplete content prevents a definitive coverage judgment."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "input_limitations explicitly names incomplete S1.1 content and says omitted material is not treated as evidence of absence."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section-heading-coverage-check__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The benefits element is unresolved because lightweightness is not established as beneficial; risks are absent from the complete content, and aggregate coverage is unresolved."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The protected heading remains “Benefits and Risks.” The proposed rewrite from the margin note is explicitly non-executed and outside scope."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "No battery risk is added as fact. The response says invented content cannot establish coverage and treats both invention and protected-heading alteration as proposals requiring evidence or authority."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section-heading-coverage-check__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "P1's travel-benefit element is unresolved because the direct sentence states lightweightness without identifying it as a travel benefit."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "P1's travel-limitations element is absent from direct content; the loose-strap evidence appears only in descendant_notes and is not transferred into P1's support."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The protected descendant heading is preserved as supplied, and its limitation is covered by the directly assigned catching-and-delay sentence."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section-heading-coverage-check__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Two rows appear in source order with distinct locators heading-1 and heading-2. The descendant section_id is null, and input_limitations records the missing ID."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "AC-1 directly covers access but marks audit logs absent, producing partial aggregate coverage. Its descendant note references heading-2 without treating that sentence as direct support."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The required retention topic is covered by the 30-day sentence under the protected descendant heading, whose supplied text is preserved."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "section-heading-coverage-check__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "section-heading-coverage-check__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "section-heading-coverage-check__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "section-heading-coverage-check__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "section-heading-coverage-check__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

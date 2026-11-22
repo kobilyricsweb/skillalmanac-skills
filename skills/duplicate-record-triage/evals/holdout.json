@@ -1,0 +1,13 @@
+[
+  {
+    "id": "duplicate-record-triage__parent_holdout",
+    "slug": "duplicate-record-triage",
+    "prompt": "Triage these synthetic records using email as the sole comparison field. Exact means byte-identical email; normalized comparison trims outer whitespace and lowercases, but does not prove identity. Rows: r1 email=\"A@example.test\" account=\"u1\"; r2 email=\" a@example.test \" account=\"u2\"; r3 email=\"A@example.test\" account=\"u3\"; r4 email=null account=\"u4\". Do not merge or select a winner.",
+    "assertions": [
+      "Identifies r1/r3 as exact email matches and r2 as joining only the normalized candidate grouping.",
+      "Retains distinct account IDs and the null-email comparison gap.",
+      "Does not declare the same person/account or merge/delete/select canonical records."
+    ],
+    "origin": "parent-designed fresh forward case; not an observed customer request"
+  }
+]

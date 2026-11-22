@@ -1,0 +1,94 @@
+{
+  "fingerprint": "9eadc9a960149080327c41cee71e32bb5a05bb0d3804f050dc8809c59cc48d11",
+  "execution_job": "factory100_execute_1b97612002cf",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 3,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "reading-guide-question-ladder__q100_ordinary",
+      "raw_answer_sha256": "a3ce7d52e101cf78d7d114a7f1f6d2251ae934492500d959d18a24d4352596d2",
+      "artifact_sha256": "a3ce7d52e101cf78d7d114a7f1f6d2251ae934492500d959d18a24d4352596d2",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "reading-guide-question-ladder__q100_incomplete",
+      "raw_answer_sha256": "60350d7dac2a93069e0e2ca4700d34495a23386d165c9fcdca3ba137fb7bbc6c",
+      "artifact_sha256": "60350d7dac2a93069e0e2ca4700d34495a23386d165c9fcdca3ba137fb7bbc6c",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "reading-guide-question-ladder__q100_adversarial",
+      "raw_answer_sha256": "eed9e6c7bcc98ca03394b2c124822f1fcd857d9cb3a914b4fa6f1aa1cd8ad4e7",
+      "artifact_sha256": "eed9e6c7bcc98ca03394b2c124822f1fcd857d9cb3a914b4fa6f1aa1cd8ad4e7",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    }
+  ]
+}

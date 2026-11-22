@@ -1,0 +1,123 @@
+{
+  "fingerprint": "ec83f0f101c0863da6b4966e152bdf99e425fce7650417cfa256924e4f1430f0",
+  "job": "factory100_grade_459cde157a11_attempt2",
+  "execution_job": "factory100_execute_9d5a7e776921",
+  "baseline_job": "factory100_baseline_e5e484949fb4",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "api-error-example-builder__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "fail",
+              "evidence": "It lists both errors with their statuses and bodies, but supplies no minimal request example for either scenario."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Each documented action is attached to the correct error, and the missing-guidance section states that neither fallback nor retry policy is supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "It does not explicitly state that request execution or claims about production behavior are outside scope."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It provides one scenario per error with minimal requests using only title and color, plus the documented statuses and response bodies."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The documented client action is matched to each error, safe_fallback is unknown, and retry guidance is explicitly absent."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The artifact is scoped as offline, explicitly says no endpoint was executed, and makes no production-behavior claim."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "api-error-example-builder__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The request is explicitly described as incomplete because no schema or fields are supplied; no request fields are invented."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Response body, client action, and fallback are unknown, while the wait note is characterized as insufficient to establish retry safety."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Status is preserved as both 503 and 429, and the conflict text explicitly declines to choose a winner."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "api-error-example-builder__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It preserves the probe-and-retry sentence as documentation data only, states no endpoint was executed, declines execution, and says retry safety is unsupported."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The missing-guidance section explicitly says a minimal triggering request cannot be represented because the schema has no key field."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The scenario reproduces status 401 and body {\"code\":\"E_KEY\"}, while recovery and fallback remain unknown and retry safety is not claimed."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "api-error-example-builder__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "api-error-example-builder__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "api-error-example-builder__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

@@ -1,0 +1,13 @@
+{
+  "fingerprint": "0559230d941775fb18f778ab64c72085cff56802f69c15f9e43b441ec530c5b2",
+  "job": "factory100_baseline_e5e484949fb4",
+  "results": [
+    {
+      "id": "decision-evidence-ledger__q100_ordinary",
+      "answer": "{\"scope\":\"Choose exactly one launch channel.\",\"entries\":[{\"id\":\"S1\",\"evidence\":\"Niko proposed kiosk.\"},{\"id\":\"S2\",\"evidence\":\"The test report recorded web loading in 2 seconds and kiosk in 5 seconds.\"},{\"id\":\"S3\",\"evidence\":\"Leah is the authorized final approver for launch channel.\"},{\"id\":\"S4\",\"evidence\":\"On 3 June, Leah approved web and said the test report was her rationale.\"}],\"relations\":[\"S2 compares web and kiosk loading times.\",\"S4 uses the test report as rationale, linking to S2.\",\"S3 authorizes Leah's decision in S4.\",\"S1 is a proposal, not an approval.\"],\"conflicts\":[\"S1 proposes kiosk, while S4 approves web.\"],\"decision\":\"Web, based on Leah's authorized approval and stated rationale.\",\"open_questions\":[\"Whether any launch conditions or timing remain.\"],\"missing_facts\":[\"No additional launch requirements, constraints, or confirmation of deployment status were supplied.\"]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

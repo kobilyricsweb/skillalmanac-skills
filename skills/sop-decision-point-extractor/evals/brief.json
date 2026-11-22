@@ -1,0 +1,11 @@
+{
+  "slug": "sop-decision-point-extractor",
+  "category": "operations",
+  "user_problem": "A prose procedure hides conditional branches, making it difficult to follow consistently.",
+  "unique_output": "A decision table with trigger, question, observable condition, branch action, rejoin point, and missing branch.",
+  "required_input": "Complete SOP text, defined terms, role boundaries, and any stated default or exception rules.",
+  "critical_rule": "Extract only documented branches; never invent a default action for an uncovered condition.",
+  "nearest_existing_and_difference": "Nearest is runbook-scenario-table; this converts one procedure into decision logic rather than matching scenarios to runbook rules.",
+  "tier": "free",
+  "acceptance_scenario": "Input says accept packages with intact seals; damaged seals go to supervisor; wet packages are unaddressed. Output creates intact and damaged branches and marks wet-package handling missing."
+}

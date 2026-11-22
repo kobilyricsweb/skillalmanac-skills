@@ -1,0 +1,11 @@
+{
+  "slug": "workspace-retention-label-map",
+  "category": "operations",
+  "user_problem": "Teams need a draft mapping from supplied document types to existing retention labels without moving or deleting files.",
+  "unique_output": "A label map with document type, defining cues, assigned supplied label, conflict, exclusion, and manual-review case.",
+  "required_input": "Document-type definitions, approved retention labels, mapping rules, exclusions, and synthetic file descriptions.",
+  "critical_rule": "Do not infer legal requirements, inspect files, or delete content; unresolved classifications require manual review.",
+  "nearest_existing_and_difference": "Nearest is taxonomy-gap-finder; this maps operational document types to supplied retention labels rather than finding taxonomy coverage gaps.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input labels Project-3Y and Permanent; rule maps signed charters to Permanent and drafts to Project-3Y. Output classifies 'signed charter v1' as Permanent and flags 'charter notes' because draft status is unstated."
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "landing-page-message-sequencer__parent_holdout",
+    "slug": "landing-page-message-sequencer",
+    "prompt": "Sequence a page for first-time course creators. Approved messages: M1=\"organize lessons in one outline\", backed by assetA1 showing outline editor; M2=\"reuse your own templates\", backed byA2; M3=\"double course sales\", no evidence and not approved. CTA policy allows \"View sample outline\" only. No trial/signup/buy CTA authorized. Output content order, no UI code.",
+    "assertions": [
+      "Uses M1/M2 withA1/A2 and a reasoned visitor-question sequence.",
+      "Withholds or flags unsupported/unapproved M3 rather than publishing sales promise.",
+      "Keeps CTA View sample outline, no invented signup/trial CTA or conversion forecast."
+    ],
+    "origin": "parent-designed fresh forward case; not an observed customer request"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "slug": "revision-rationale-log",
+  "category": "content",
+  "user_problem": "Editors need a compact record explaining why substantive changes were made and what evidence justified them.",
+  "unique_output": "A revision log linking original text, revised text, change type, rationale, source, and unresolved impact.",
+  "required_input": "Before and after passages, supplied style or evidence rules, source labels, and protected text boundaries.",
+  "critical_rule": "Record only observable changes and supplied rationales; do not invent author intent or rewrite protected quotations.",
+  "nearest_existing_and_difference": "Nearest is terminology-consistency-editor; this documents substantive revision reasoning rather than applying glossary replacements.",
+  "tier": "free",
+  "acceptance_scenario": "Input changes 'all users preferred' to 'six of eight participants preferred' based on note N2; quotations are protected. Output records a precision change tied to N2 and confirms no protected text changed."
+}

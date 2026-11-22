@@ -1,0 +1,11 @@
+{
+  "slug": "testimonial-use-readiness",
+  "category": "marketing",
+  "user_problem": "Supplied testimonial material needs an offline readiness review for attribution, scope, edits, and permission gaps.",
+  "unique_output": "A readiness table covering exact words, proposed excerpt, attribution terms, claim scope, edit disclosure, and blockers.",
+  "required_input": "Testimonial text, written permission terms, attribution preference, proposed placement, and intended excerpt.",
+  "critical_rule": "Do not infer consent, authenticity, or typicality; any permission or scope gap blocks a ready designation.",
+  "nearest_existing_and_difference": "Nearest is case-study-interview-kit; this reviews existing testimonial-use conditions rather than preparing an interview.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input quote permits website use with company attribution but proposed placement is a brochure and excerpt removes 'for our small team.' Output blocks brochure use and flags the removed scope qualifier."
+}

@@ -1,0 +1,20 @@
+{
+  "fingerprint": "0fe54f99b782cfc9244261400e191ec7ad30d3e99d7cc6b38b2a730e5f964c06",
+  "job": "factory100_execute_75178eb4c9c6",
+  "results": [
+    {
+      "id": "faq-answer-boundary-builder__q100_ordinary",
+      "answer": "{\"audience\":\"employees\",\"entries\":[{\"question\":\"Can I return an unopened badge holder?\",\"direct_response\":\"An unopened standard badge holder may be returned within 14 calendar days of delivery with a receipt.\",\"supported_detail\":[\"Refunds use the original payment method.\"],\"exceptions\":[\"The supplied exception excludes engraved items from returns.\"],\"unknown_cases\":[\"Any case outside the stated unopened standard-item conditions is not covered by the supplied rules.\"],\"escalation\":\"Ask the Returns Policy Team to review the case.\",\"status\":\"complete\"},{\"question\":\"Can I return an engraved badge holder?\",\"direct_response\":\"No. Engraved items are excluded from returns.\",\"supported_detail\":[],\"exceptions\":[],\"unknown_cases\":[],\"escalation\":\"Ask the Returns Policy Team to review the case.\",\"status\":\"complete\"}],\"missing_inputs\":[],\"conflicts\":[]}"
+    },
+    {
+      "id": "faq-answer-boundary-builder__q100_incomplete",
+      "answer": "{\"audience\":\"members\",\"entries\":[{\"question\":\"Can I pause my plan while traveling?\",\"direct_response\":\"Plans can be paused, and a pause begins on the next billing date.\",\"supported_detail\":[\"The supplied policy does not state a maximum pause length.\"],\"exceptions\":[\"Annual plans follow a separate rule, but that rule is not supplied.\"],\"unknown_cases\":[\"Eligibility details for annual plans and any maximum pause length remain unknown.\",\"Refunds are not promised.\"],\"escalation\":\"Contact the Membership Policy Desk for review.\",\"status\":\"incomplete\"}],\"missing_inputs\":[\"Annual-plan pause rule\",\"Maximum pause length\"],\"conflicts\":[]}"
+    },
+    {
+      "id": "faq-answer-boundary-builder__q100_adversarial",
+      "answer": "{\"audience\":\"building visitors\",\"entries\":[{\"question\":\"May I bring a bicycle inside?\",\"direct_response\":\"Folded bicycles are allowed in the lobby; unfolded bicycles are not allowed in the lobby.\",\"supported_detail\":[\"The supplied rules address the lobby only.\"],\"exceptions\":[],\"unknown_cases\":[\"Other bicycle forms or locations are not covered by the supplied rules.\",\"Storage availability is unknown and is not guaranteed.\"],\"escalation\":\"Ask the Facilities Desk about uncovered cases.\",\"status\":\"complete\"}],\"missing_inputs\":[],\"conflicts\":[]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

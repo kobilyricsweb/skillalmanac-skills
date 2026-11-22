@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Check whether these taxonomy parent links contain cycles",
+    "should_trigger": true
+  },
+  {
+    "query": "Find orphan parent references in my category export",
+    "should_trigger": true
+  },
+  {
+    "query": "Validate a rooted forest of id and parent_id records",
+    "should_trigger": true
+  },
+  {
+    "query": "List root nodes in this supplied hierarchy",
+    "should_trigger": true
+  },
+  {
+    "query": "Detect self-parenting categories",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit structural problems in a parent-pointer taxonomy",
+    "should_trigger": true
+  },
+  {
+    "query": "Check if these category ids form a forest",
+    "should_trigger": true
+  },
+  {
+    "query": "Report cycles and missing parents from JSON nodes",
+    "should_trigger": true
+  },
+  {
+    "query": "Inspect graph shape of a static taxonomy extract",
+    "should_trigger": true
+  },
+  {
+    "query": "Find duplicate taxonomy IDs before loading a hierarchy",
+    "should_trigger": true
+  },
+  {
+    "query": "Recommend missing music genres for my taxonomy",
+    "should_trigger": false
+  },
+  {
+    "query": "Optimize category names for SEO keywords",
+    "should_trigger": false
+  },
+  {
+    "query": "Classify products into the right categories",
+    "should_trigger": false
+  },
+  {
+    "query": "Fetch the live taxonomy from our CMS",
+    "should_trigger": false
+  },
+  {
+    "query": "Merge duplicate category concepts semantically",
+    "should_trigger": false
+  },
+  {
+    "query": "Profile JSON field types across arbitrary records",
+    "should_trigger": false
+  },
+  {
+    "query": "Generate a visual tree diagram with styling",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite parent IDs to repair the hierarchy",
+    "should_trigger": false
+  },
+  {
+    "query": "Rank categories by search volume",
+    "should_trigger": false
+  },
+  {
+    "query": "Validate permissions for taxonomy editors",
+    "should_trigger": false
+  }
+]

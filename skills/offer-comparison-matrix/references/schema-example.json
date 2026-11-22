@@ -1,0 +1,39 @@
+{
+  "synthetic": true,
+  "input": "Compare two internal offers. Quick Start: audience is new staff; promise is \"Complete account setup in one guided session\"; assets are a setup checklist and a 30-minute session; proof is a dated internal walkthrough showing completion of the checklist, source: Operations, 2026-11-01; friction is booking the session; constraint is new staff only. Reference Pack: audience is all staff; promise is \"Answer common setup questions\"; asset is an FAQ; no proof item is supplied; friction is self-service reading; no constraints supplied. Question: distinguish delivery format and supplied proof. Known unknown: FAQ coverage has not been reviewed.",
+  "expected_artifact": {
+    "offers": [
+      {
+        "name": "Quick Start",
+        "audience": "new staff",
+        "promise": "Complete account setup in one guided session",
+        "included_assets": ["setup checklist", "30-minute session"],
+        "proof_items": [{"item": "Internal walkthrough showing completion of the checklist", "source_note": "Operations, 2026-11-01"}],
+        "proof_status": "partial",
+        "friction": ["booking the session"],
+        "testable_distinctions": ["guided session versus self-service FAQ"],
+        "constraints": ["new staff only"],
+        "unresolved_items": ["The supplied proof covers checklist completion but does not establish complete account setup or the one-session condition."]
+      },
+      {
+        "name": "Reference Pack",
+        "audience": "all staff",
+        "promise": "Answer common setup questions",
+        "included_assets": ["FAQ"],
+        "proof_items": [],
+        "proof_status": "not supplied",
+        "friction": ["self-service reading"],
+        "testable_distinctions": ["self-service FAQ versus guided session"],
+        "constraints": ["not supplied"],
+        "unresolved_items": ["FAQ coverage has not been reviewed"]
+      }
+    ],
+    "cross_offer_summary": {
+      "supplied_contrasts": ["Quick Start is guided and restricted to new staff; Reference Pack is self-service and intended for all staff."],
+      "evidence_gaps": ["Quick Start proof does not cover complete account setup or the one-session condition; Reference Pack has no supplied proof and its FAQ coverage has not been reviewed."],
+      "conflicts": []
+    },
+    "outside_scope": ["Selecting a winner, estimating demand, and recommending pricing are outside this comparison."]
+  },
+  "status": "specification; not an executed test"
+}

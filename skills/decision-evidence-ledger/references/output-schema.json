@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "source_scope",
+    "entries",
+    "relations",
+    "conflicts",
+    "open_questions",
+    "coverage_notes"
+  ],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "source_scope": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "classification",
+          "statement",
+          "status_finality",
+          "authority",
+          "time",
+          "source_reference",
+          "classification_basis"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "classification": {
+            "enum": [
+              "decision",
+              "proposal",
+              "assumption",
+              "evidence",
+              "unknown"
+            ]
+          },
+          "statement": {
+            "type": "string"
+          },
+          "status_finality": {
+            "enum": [
+              "final",
+              "reported approval; finality unresolved",
+              "proposed",
+              "assumed",
+              "evidentiary",
+              "unknown",
+              "not stated"
+            ]
+          },
+          "authority": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          },
+          "source_reference": {
+            "type": "string"
+          },
+          "classification_basis": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "target_id",
+          "relation",
+          "basis"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string"
+          },
+          "target_id": {
+            "type": "string"
+          },
+          "relation": {
+            "enum": [
+              "supports",
+              "contradicts",
+              "does_not_establish",
+              "rationale_for",
+              "related_context"
+            ]
+          },
+          "basis": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "related_entry_ids",
+          "dimension",
+          "reason",
+          "source_references"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "related_entry_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dimension": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "source_references": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "text",
+          "source_reference",
+          "related_ids"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "source_reference": {
+            "type": "string"
+          },
+          "related_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "coverage_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

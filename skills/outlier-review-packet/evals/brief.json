@@ -1,0 +1,11 @@
+{
+  "slug": "outlier-review-packet",
+  "category": "data",
+  "user_problem": "Flagged unusual values need consistent human review without automatic deletion or unsupported causal explanations.",
+  "unique_output": "A packet listing each flagged record, triggering supplied rule, relevant context, disposition options, and evidence gaps.",
+  "required_input": "Records, explicit outlier rules, allowed context fields, and permitted review dispositions.",
+  "critical_rule": "An outlier flag is not an error finding; preserve values and avoid attributing causes without evidence.",
+  "nearest_existing_and_difference": "Nearest is duplicate-record-triage; this packages unusual-value review rather than evaluating possible record matches.",
+  "tier": "free",
+  "acceptance_scenario": "Input values 10, 12, 99; rule flags values above 50; dispositions retain, correct-with-source, exclude-with-reason. Output creates one review item for 99, cites the threshold, and makes no correction."
+}

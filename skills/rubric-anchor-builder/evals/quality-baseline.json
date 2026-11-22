@@ -1,0 +1,16 @@
+{
+  "fingerprint": "2691829157856479a46561d81bf5da13c9dc12bb6015686d87fb9b4ce61cbae9",
+  "job": "factory100_baseline_071d165319fc",
+  "results": [
+    {
+      "id": "rubric-anchor-builder__q100_ordinary",
+      "answer": "{\"criterion\":\"R\",\"anchors\":[{\"score\":2,\"response\":\"A reusable cup reduces single-use waste and can save money over time.\",\"descriptor_linked_rationale\":\"Gives two relevant reasons.\",\"observable_boundary_feature\":\"Two distinct relevant reasons are present.\"},{\"score\":1,\"response\":\"A reusable cup reduces single-use waste.\",\"descriptor_linked_rationale\":\"Gives one relevant reason.\",\"observable_boundary_feature\":\"Exactly one relevant reason is present.\"},{\"score\":\"non-scorable\",\"response\":\"\",\"descriptor_linked_rationale\":\"Blank response meets the non-scorable condition.\",\"observable_boundary_feature\":\"No response content.\",\"treatment\":\"Do not assign a criterion R score.\"}]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "raw_response_unchanged": true,
+  "recovered_storage_callback": true,
+  "batch_protocol_complete": true,
+  "request_prompts_exactly_match_current_cases": true
+}

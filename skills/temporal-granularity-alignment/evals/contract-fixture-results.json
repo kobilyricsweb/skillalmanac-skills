@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "fixtures": [
+    {
+      "id": "example",
+      "passed": true,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "missing-required",
+      "passed": true,
+      "valid": false,
+      "errors": [
+        {
+          "path": "$",
+          "code": "required",
+          "message": "Missing target_grain"
+        }
+      ]
+    },
+    {
+      "id": "wrong-root",
+      "passed": true,
+      "valid": false,
+      "errors": [
+        {
+          "path": "$",
+          "code": "type",
+          "message": "Expected object"
+        }
+      ]
+    }
+  ]
+}

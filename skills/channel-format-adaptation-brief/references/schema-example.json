@@ -1,0 +1,38 @@
+{
+  "synthetic": true,
+  "input": "Approved source: \"Office hours run on Friday for Project Q questions only.\" Channel: team chat, maximum 20 words, plain text. Required qualifier: \"Project Q questions only.\" Protected phrase: \"on Friday.\" Permitted CTA: \"Ask a question.\"",
+  "expected_artifact": {
+    "source_scope": "Office hours for Project Q questions only, occurring on Friday.",
+    "channels": [
+      {
+        "channel": "team chat",
+        "budget": "Maximum 20 words",
+        "retained_elements": [
+          "Office hours",
+          "Project Q scope",
+          "Friday timing"
+        ],
+        "allowable_compression": [
+          "Shorten connective wording while preserving scope and timing."
+        ],
+        "format_cues": [
+          "Plain text"
+        ],
+        "protected_phrases": [
+          "on Friday"
+        ],
+        "required_qualifiers": [
+          "Project Q questions only"
+        ],
+        "omissions": [],
+        "cta_status": "authorized",
+        "permitted_cta": "Ask a question.",
+        "feasibility": "feasible",
+        "unresolved_gap": null
+      }
+    ],
+    "unresolved_gaps": [],
+    "rejected_instructions": []
+  },
+  "status": "specification; not an executed test"
+}

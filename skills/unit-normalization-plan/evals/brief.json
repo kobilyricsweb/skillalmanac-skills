@@ -1,0 +1,11 @@
+{
+  "slug": "unit-normalization-plan",
+  "category": "data",
+  "user_problem": "Measurements use mixed units and need a transparent conversion plan before any values are transformed.",
+  "unique_output": "A field-by-field normalization specification with target units, supplied conversion formulas, precision, and blocked cases.",
+  "required_input": "Fields, source units, desired units, approved conversion formulas, rounding rules, and ambiguous-unit examples.",
+  "critical_rule": "Never supply an unstated conversion factor or guess an unlabeled unit; quarantine ambiguous values.",
+  "nearest_existing_and_difference": "Nearest is dataset-field-dictionary-builder; this plans controlled value conversion rather than documenting field meaning.",
+  "tier": "free",
+  "acceptance_scenario": "Input weights 1000 g and 2 kg, target kg, formula g÷1000, two decimals; third value 5 has no unit. Output specifies 1.00 kg and 2.00 kg, while quarantining 5."
+}

@@ -1,0 +1,246 @@
+{
+  "status": "draft; release gates open",
+  "evidence": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "script_sha256": "8b35c9e3252b95a813402202a79f868bc5193e813ef2f34dee15c82c61e6514c",
+    "fixtures": [
+      {
+        "id": "good",
+        "exit": 0,
+        "expected_exit": 0,
+        "passed": true,
+        "output": {
+          "errors": [],
+          "findings": [],
+          "ok": true,
+          "variant_count": 2
+        }
+      },
+      {
+        "id": "domain-defect",
+        "exit": 1,
+        "expected_exit": 1,
+        "passed": true,
+        "output": {
+          "errors": [],
+          "findings": [
+            {
+              "changed_fields": [
+                "body",
+                "headline"
+              ],
+              "codes": [
+                "MORE_THAN_ONE_CHANGED",
+                "CHANGED_FIELD_MISMATCH"
+              ],
+              "variant": "A"
+            }
+          ],
+          "ok": false,
+          "variant_count": 1
+        }
+      },
+      {
+        "id": "malformed",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "errors": [
+            {
+              "code": "VARIANT_ID",
+              "message": "variant IDs must be unique nonempty strings"
+            }
+          ],
+          "findings": [],
+          "input_error": true,
+          "ok": false,
+          "variant_count": 2
+        }
+      },
+      {
+        "id": "boundary",
+        "exit": 1,
+        "expected_exit": 1,
+        "passed": true,
+        "output": {
+          "errors": [],
+          "findings": [
+            {
+              "changed_fields": [],
+              "codes": [
+                "NO_CHANGE",
+                "CHANGED_FIELD_MISMATCH"
+              ],
+              "variant": "A"
+            }
+          ],
+          "ok": false,
+          "variant_count": 1
+        }
+      },
+      {
+        "id": "numeric_token_bound",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "number exceeds coefficient-digit or exponent limit (1000)",
+          "errors": []
+        }
+      },
+      {
+        "id": "unhashable_variant_id",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "errors": [
+            {
+              "code": "VARIANT_ID",
+              "message": "variant IDs must be unique nonempty strings"
+            }
+          ],
+          "findings": [],
+          "input_error": true,
+          "ok": false,
+          "variant_count": 1
+        }
+      },
+      {
+        "id": "wrong_field_only",
+        "exit": 1,
+        "expected_exit": 1,
+        "passed": true,
+        "output": {
+          "errors": [],
+          "findings": [
+            {
+              "changed_fields": [
+                "body"
+              ],
+              "codes": [
+                "CHANGED_FIELD_MISMATCH"
+              ],
+              "variant": "v"
+            }
+          ],
+          "ok": false,
+          "variant_count": 1
+        }
+      },
+      {
+        "id": "boolean_value",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "errors": [
+            {
+              "code": "VARIANT_VALUE_TYPE",
+              "message": "variant field values must be bounded strings"
+            }
+          ],
+          "findings": [],
+          "input_error": true,
+          "ok": false,
+          "variant_count": 1
+        }
+      },
+      {
+        "id": "missing_field",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "errors": [
+            {
+              "code": "FIELD_KEY_SET",
+              "message": "variant fields must exactly match baseline keys"
+            }
+          ],
+          "findings": [],
+          "input_error": true,
+          "ok": false,
+          "variant_count": 1
+        }
+      },
+      {
+        "id": "duplicate_json_key",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "duplicate JSON object key",
+          "errors": []
+        }
+      },
+      {
+        "id": "nonfinite",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "non-finite JSON number",
+          "errors": []
+        }
+      },
+      {
+        "id": "truncated",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "Expecting value: line 1 column 6 (char 5)",
+          "errors": []
+        }
+      },
+      {
+        "id": "missing_file",
+        "exit": 2,
+        "expected_exit": 2,
+        "passed": true,
+        "output": {
+          "ok": false,
+          "input_error": true,
+          "message": "[WinError 2] The system cannot find the file specified: '<local-path>'",
+          "errors": []
+        }
+      }
+    ],
+    "fixtures_passed": 13,
+    "fixtures_total": 13,
+    "lint_fail": 0,
+    "lint_warn": 0
+  },
+  "lint_fail": 0,
+  "lint_warn": 0,
+  "package_files": {
+    "LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "LISTING.md": "fee06bd1538a7c98094c2457c6e415be76297eaee30c15c3fd73892f00de5003",
+    "NOTICE.txt": "a881c4c5bb34462ac1edb0b17f220469d6db8cc61e5680b2ade431d295386459",
+    "references/input-contract.md": "5ba9414b4050362dce7b42bd10a3488402baaa37e5e027d06a1415de28024368",
+    "scripts/audit.py": "8b35c9e3252b95a813402202a79f868bc5193e813ef2f34dee15c82c61e6514c",
+    "SKILL.md": "015f3ed92f0d49e9823aaf4b653736529aa4e6f6e6ecbd6980057f961cc178f2",
+    "VERIFICATION.md": "c0cc57d742a681a9d461255faf5246917f60b0a16c47a9a16dce6ee6a696a902"
+  },
+  "licence_decision": {
+    "license": "Apache-2.0",
+    "copyright": "Copyright 2026 Global Media Holdings (skillalmanac.com)",
+    "approved": true,
+    "decision": "Owner decision17,2026-11-21; Claude confirmation20261121_claude_to_codex_licence_and_commercial_rule_confirmed.md",
+    "tier": "free",
+    "pricing_rule": "editorial tier; independent of Platform Score and User Score",
+    "standard_source": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+    "standard_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  }
+}

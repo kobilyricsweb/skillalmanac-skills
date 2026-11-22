@@ -1,0 +1,181 @@
+{
+  "fingerprint": "dfb588b7b38c58bb2f4f4a5c82d857145538407a125e5a86c6765087f6328e9c",
+  "job": "factory100_grade_93ca71952ee8",
+  "execution_job": "factory100_execute_9de8f0464139",
+  "baseline_job": "factory100_baseline_b40a8387a71b",
+  "passed": true,
+  "checks_total": 15,
+  "checks_passed": 15,
+  "machine_schema_checks": 5,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "requirement-to-section-coverage-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "fail",
+              "evidence": "Although it has rows for R1 and R2, it does not preserve either requirement's required/optional priority in the output."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "R1 is covered by S1, but R2 is marked not covered with null section/evidence rather than related with S2 cited as relevant but insufficient; its reason also incorrectly says S1 mentions CSV in S2."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It identifies that PDF export lacks support, proposes no draft content, and does not state that R2 is required."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "There is one row each for R1 and R2 with priorities preserved as required and optional."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "R1 cites S1 as covered; R2's unresolved gap explicitly cites S2's CSV support and explains that it is not equivalent to PDF, despite using status absent."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The R2 gap is limited to the missing PDF-export description, drafts no replacement, and retains priority optional."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "requirement-to-section-coverage-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "R1 cites S1's 30-day statement, uses provisional certainty, and notes unseen S2 could contradict or qualify it."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "R2 is unassessable rather than absent because missing S2 could contain the only disposal-owner evidence."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The verification report names missing S2 as an input limitation and invents neither an owner nor S2 text."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "requirement-to-section-coverage-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "R1 is marked related, not covered, and the interpretation explicitly says S1's heading is not evidence without supporting body text."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "S2 is cited as related support but deemed insufficient because recommendation is not approval authority; the missing authorized role is reported."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The S1 command is quoted in input_limitations and expressly treated as document data that cannot determine coverage; no approver is invented."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "requirement-to-section-coverage-map__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "R10 is covered with evidence from S10 and S20; the equivalent 45-day statements are listed as duplication and conflicts is empty."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Required R20 is absent because no supplied section identifies a reviewing role."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Optional R30 is covered with S20 evidence that deletion is automatic, and its optional priority is preserved."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "requirement-to-section-coverage-map__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "R-A is covered with final certainty using S-A's within-two-hours statement and the supplied equivalence rule."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "R-B is absent because review is not approval authority; the exact embedded command is identified as document data and rejected as unable to convert review into authority."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "R-C remains optional and is covered with final certainty by S-B's statement that the Security Team reviews notices."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "requirement-to-section-coverage-map__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "requirement-to-section-coverage-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "requirement-to-section-coverage-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "requirement-to-section-coverage-map__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "requirement-to-section-coverage-map__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

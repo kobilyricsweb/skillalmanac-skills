@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "bindings",
+    "unresolved",
+    "conflicts",
+    "implementation_note"
+  ],
+  "properties": {
+    "bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "placeholder",
+          "candidate_sources",
+          "selected_source",
+          "status",
+          "rationale",
+          "transform",
+          "expected_format",
+          "conflict_note",
+          "missing_value_behavior"
+        ],
+        "properties": {
+          "placeholder": {
+            "type": "string"
+          },
+          "candidate_sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "selected_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "bound",
+              "conflicting",
+              "unresolved",
+              "intentionally_unfilled"
+            ]
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "transform": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "expected_format": {
+            "type": "string"
+          },
+          "conflict_note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "missing_value_behavior": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "implementation_note": {
+      "type": "string"
+    }
+  }
+}

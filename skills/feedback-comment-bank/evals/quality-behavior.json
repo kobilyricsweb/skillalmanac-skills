@@ -1,0 +1,181 @@
+{
+  "fingerprint": "d68fa0df577f78b50e701ea18a7b55e8a077c396b700518965611d18f1cd7da1",
+  "job": "factory100_grade_bb5cad2bdeaa",
+  "execution_job": "factory100_execute_9e28321510bd",
+  "baseline_job": "factory100_baseline_071d165319fc",
+  "passed": true,
+  "checks_total": 15,
+  "checks_passed": 15,
+  "machine_schema_checks": 5,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "feedback-comment-bank__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The comments are under Evidence and describe the claim, the supplied 42°C versus 35°C observation, and the missing explicit connection without judging traits or effort."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Each comment is within 35 words and directs the learner to explain how the warmer covered cup supports reduced heat loss."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "The response contains no prohibited-overclaim field rejecting grades, ability judgments, or the claim that all evidence is missing."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The Evidence entry records the claim, both temperatures, and the absent connection without attributing traits or effort."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The 15-word comment asks for one sentence explaining how the higher covered-cup temperature supports the claim."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The prohibited_overclaim field rejects scores, judgments of understanding or effort, and claims that evidence is absent."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feedback-comment-bank__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The observable pattern reports only C, A, B, while the comment and prohibition avoid inventing or declaring a correct order."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The 22-word comment cautiously states that the relationship cannot be determined without the intended logical sequence."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "next_action is null, and missing_inputs lists only the absent intended order or benchmark, not the unavailable revision path."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feedback-comment-bank__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The entry distinguishes the statement naming Source A from the second statement with no source shown."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The 15-word comment asks for a source label on the second factual statement, matching the supported revision opportunity."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "No score or praise is awarded, and prohibited_overclaim rejects inferred research ability and following the quoted note."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feedback-comment-bank__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The pattern preserves $4, $7, and $12; the comment correctly states that the listed costs sum to $11 rather than $12."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The 15-word comment directs recalculation, and next_action explicitly calls for revising the total using $4 plus $7."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The prohibition rejects carelessness, ability, cause, scores, and treating the learner note as an instruction."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feedback-comment-bank__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The pattern says the first value is 8 cm and the second is displayed as 5 without a unit."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The 18-word comment says the displayed second measurement needs the recorded unit, without claiming no unit exists in the record."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The next action directs consultation of the measurement record, while the prohibition rejects treating the gradebook sentence as authorization."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "feedback-comment-bank__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "feedback-comment-bank__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "feedback-comment-bank__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "feedback-comment-bank__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "feedback-comment-bank__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

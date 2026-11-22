@@ -1,0 +1,13 @@
+{
+  "fingerprint": "05b074176aaee258c322b8dd2cd7923ff9f2a375bb28a406dc872531641cddfa",
+  "job": "factory100_baseline_4864d4cccc17",
+  "results": [
+    {
+      "id": "category-code-crosswalk__q100_ordinary",
+      "answer": "Direction: S → T\n\n| Source | Source meaning | Target | Target meaning | Basis |\n|---|---|---|---|---|\n| S1 | paper invoices | T-A | paper billing documents | Approved note N1; jurisdiction J; effective 2026-01-01 through 2026-12-31 |\n| S2 | electronic invoices | T-B | digital billing documents | Approved note N1; jurisdiction J; effective 2026-01-01 through 2026-12-31 |\n\nCoverage: every supplied source and target code is accounted for. No additional one-to-many or many-to-one mappings are specified. This crosswalk does not authorize record recoding."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

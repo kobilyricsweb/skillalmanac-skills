@@ -1,0 +1,22 @@
+{
+  "slug": "tutorial-prerequisite-mapper",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "TPM-2",
+      "severity": "high",
+      "location": "Evaluation “incomplete-conflicting,” prompt and first assertion",
+      "evidence": "The prompt states that credentials are unavailable and gives S1 as the imperative “Log in with the project credential.” S1 requests an action but does not assert that a credential is available. The assertion nevertheless requires a “credential availability conflict at S1.”",
+      "consequence": "The evaluation rewards inventing a contradiction between an unavailable prerequisite and a step that merely depends on it. Under the skill’s status model, S1 is blocked by a known unavailable prerequisite, not supported by conflicting availability claims.",
+      "correction": "Expect S1 to be marked blocked because the required credential is unavailable. If conflict handling is intended, add a separate explicit statement that the credential is available or supplied."
+    },
+    {
+      "id": "TPM-3",
+      "severity": "medium",
+      "location": "Worked example, Expected artifact versus return contract",
+      "evidence": "The skill requires “scope assumptions” and “dependency edges” as returned components. The worked artifact provides the step map, gap and late-introduction registers, and verification report, but has no scope-assumptions section or explicit dependency-edge list; dependencies appear only inside individual step descriptions.",
+      "consequence": "The canonical example can be treated as complete despite omitting two required outputs, especially the consolidated graph relationships that distinguish this skill from an ordinary step annotation.",
+      "correction": "Add scope assumptions and an explicit edge list such as S1 artifact → S2 input and S2 uploaded state → S3 required state."
+    }
+  ]
+}

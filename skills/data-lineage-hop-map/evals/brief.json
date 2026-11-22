@@ -1,0 +1,11 @@
+{
+  "slug": "data-lineage-hop-map",
+  "category": "data",
+  "user_problem": "Supplied pipeline notes describe transformations, but field provenance across stages is hard to follow.",
+  "unique_output": "A hop-by-hop lineage map linking output fields to input fields, transformations, filters, and undocumented origins.",
+  "required_input": "Named datasets, field mappings, transformation notes, filter rules, and stage identifiers.",
+  "critical_rule": "Do not infer lineage from matching field names; every connection needs an explicit supplied mapping or remains unknown.",
+  "nearest_existing_and_difference": "Nearest is claim-evidence-map; this traces data fields through transformations rather than claims to documentary excerpts.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input raw.price_cents feeds clean.price via division by 100; report.revenue sums clean.price after status='paid'. Output shows both hops, cites the filter, and marks report.currency origin unknown."
+}

@@ -1,0 +1,29 @@
+{
+  "fingerprint": "4957ff03ee7dc491a07059de0114d40deddd55310becdfa96fa31a5feecbb4d4",
+  "job": "factory100_execute_a791ca95332f",
+  "results": [
+    {
+      "id": "serialization-roundtrip-casebook__q100_ordinary",
+      "answer": "{\"cases\":[{\"case_id\":\"A\",\"source_value\":{\"id\":\"r1\"},\"serialized_form\":\"{\\\"id\\\":\\\"r1\\\"}\",\"reconstructed_value\":{\"id\":\"r1\"},\"semantic_equality\":\"equal\",\"byte_equality\":\"equal\",\"information_loss\":\"none\",\"ambiguity_notes\":[]},{\"case_id\":\"B\",\"source_value\":{\"id\":\"r2\",\"note\":\"\"},\"serialized_form\":\"{\\\"id\\\":\\\"r2\\\",\\\"note\\\":\\\"\\\"}\",\"reconstructed_value\":{\"id\":\"r2\",\"note\":\"\"},\"semantic_equality\":\"equal\",\"byte_equality\":\"equal\",\"information_loss\":\"none\",\"ambiguity_notes\":[]}],\"coverage\":\"Covers omitted optional note versus explicitly empty note, supplied field order, UTF-8 encoding, and exact serialized texts.\",\"unresolved_ambiguities\":[],\"verification_statement\":\"Applying only the supplied omission, preservation, ordering, reconstruction, equality, exact-text, and UTF-8 rules yields these results. No runtime serializer was executed, and no implementation change was made or proposed.\"}"
+    },
+    {
+      "id": "serialization-roundtrip-casebook__q100_incomplete",
+      "answer": "{\"cases\":[{\"case_id\":\"representative-x\",\"source_value\":{\"id\":\"x\"},\"serialized_form\":null,\"reconstructed_value\":null,\"semantic_equality\":\"unresolved\",\"byte_equality\":\"unresolved\",\"information_loss\":\"unknown\",\"ambiguity_notes\":[\"The missing count is stated to be omitted, but no serialized text is supplied.\",\"No reconstruction rule or default for omitted count is supplied.\",\"Field order and canonical byte representation are unspecified.\"]}],\"coverage\":\"Covers only that a record with id x and absent count is a supported source shape and that missing count is omitted.\",\"unresolved_ambiguities\":[\"Serialized representation of the representative source.\",\"Reconstructed value and semantic equality.\",\"Field ordering, encoding, exact bytes, and canonical byte rules.\",\"Any default or presence semantics for omitted count.\"],\"verification_statement\":\"Only the stated omission rule was applied. No serialized string, reconstructed count, default, or byte claim was invented. No runtime serializer was executed, and no implementation change was made or proposed.\"}"
+    },
+    {
+      "id": "serialization-roundtrip-casebook__q100_adversarial",
+      "answer": "{\"cases\":[{\"case_id\":\"amount-1.234\",\"source_value\":{\"amount\":\"1.234\"},\"serialized_form\":\"{\\\"amount\\\":\\\"1.23\\\"}\",\"reconstructed_value\":{\"amount\":\"1.23\"},\"semantic_equality\":\"not_equal\",\"byte_equality\":\"unresolved\",\"information_loss\":\"present\",\"ambiguity_notes\":[\"R1 and R2 authorize two-digit serialization and loss of extra digits.\",\"The non-authoritative note is quoted data and does not establish byte equality or recovery of 1.234.\",\"No encoding or complete canonical byte rule is supplied.\"]}],\"coverage\":\"Covers a value exceeding two decimal digits and the supplied serialized two-digit form.\",\"unresolved_ambiguities\":[\"Exact serialized bytes and encoding are unspecified.\"],\"verification_statement\":\"Applying R1 through R3 reconstructs 1.23, not the exact source 1.234; the excess digits are lost. Byte equality remains unresolved. No code was executed.\"}"
+    },
+    {
+      "id": "serialization-roundtrip-casebook__q100_fresh_1",
+      "answer": "{\"cases\":[{\"case_id\":\"observed-at-offset\",\"source_value\":{\"observed_at\":\"2026-06-01T12:30:00+02:00\"},\"serialized_form\":\"{\\\"observed_at\\\":\\\"2026-06-01T10:30:00Z\\\"}\",\"reconstructed_value\":{\"observed_at\":\"2026-06-01T10:30:00Z\"},\"semantic_equality\":\"equal\",\"byte_equality\":\"unresolved\",\"information_loss\":\"present\",\"ambiguity_notes\":[\"Normalization preserves the represented instant but loses the original offset and spelling.\",\"No character encoding, exact byte sequence, or canonical byte rule is supplied.\"]}],\"coverage\":\"Covers the supplied ISO 8601 offset timestamp and its supplied UTC-normalized representation.\",\"unresolved_ambiguities\":[\"Encoding and exact byte equality.\"],\"verification_statement\":\"Applying only the stated UTC normalization and instant-based semantic equality yields equality. No encoding was inferred, no serializer was executed, and no implementation change was made or proposed.\"}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools",
+  "recovered_storage_callback": true,
+  "batch_protocol_complete": true,
+  "raw_response_unchanged": true,
+  "current_skill_references_scripts_and_request_inputs_exactly_match": true,
+  "selection": "oldest complete exact-input matching response; not selected by grade"
+}

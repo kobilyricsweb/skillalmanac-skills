@@ -1,0 +1,11 @@
+{
+  "slug": "temporal-granularity-alignment",
+  "category": "data",
+  "user_problem": "Sources report values at different time grains, making joins or comparisons easy to misstate.",
+  "unique_output": "An alignment plan stating source grains, permissible rollups, forbidden expansions, boundary conventions, and gaps.",
+  "required_input": "Timestamp fields, time zones, calendar definitions, aggregation rules, and intended comparison grain.",
+  "critical_rule": "Never expand coarse observations into finer periods unless an explicit allocation rule is supplied.",
+  "nearest_existing_and_difference": "Nearest is weighted-rate-audit; this aligns temporal grains rather than checking weighted calculations.",
+  "tier": "free",
+  "acceptance_scenario": "Input daily sales in UTC, monthly targets by calendar month UTC, desired monthly comparison, and sum rule for sales. Output permits daily-to-monthly summation, retains targets monthly, and states that monthly targets cannot support daily comparison."
+}

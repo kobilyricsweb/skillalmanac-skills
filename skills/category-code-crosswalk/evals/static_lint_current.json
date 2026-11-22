@@ -1,0 +1,42 @@
+{
+  "skill": "category-code-crosswalk",
+  "fail": 0,
+  "warn": 1,
+  "items": [
+    {
+      "level": "PASS",
+      "code": "frontmatter-keys",
+      "message": "only open-spec keys used"
+    },
+    {
+      "level": "PASS",
+      "code": "name-format",
+      "message": "name 'category-code-crosswalk' is valid"
+    },
+    {
+      "level": "PASS",
+      "code": "description-length",
+      "message": "description is 284 chars"
+    },
+    {
+      "level": "PASS",
+      "code": "body-lines",
+      "message": "SKILL.md body has 4 lines"
+    },
+    {
+      "level": "PASS",
+      "code": "body-tokens",
+      "message": "body is about 343 tokens by chars/4"
+    },
+    {
+      "level": "PASS",
+      "code": "package-size",
+      "message": "package is 14678 bytes in 5 files"
+    },
+    {
+      "level": "WARN",
+      "code": "evals-task",
+      "message": "evals/evals.json is missing"
+    }
+  ]
+}

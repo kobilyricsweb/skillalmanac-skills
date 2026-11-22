@@ -1,0 +1,12 @@
+{
+  "fingerprint": "df44983c93745095b22d6056f75687ee02eb9f608401b3e6cf0ad6201a378bd9",
+  "job": "factory100_baseline_6c2bb572049f",
+  "results": [
+    {
+      "id": "reading-guide-question-ladder__q100_ordinary",
+      "answer": "1. What did Mina do to the two trays? Location: Paragraph 1. Move: locating. Evidence: one tray was covered with a clear lid and one was left uncovered. Length: one sentence. Answerability: directly answerable. Limit: report the setup only.\n2. What differences in soil moisture were observed after three days? Location: Paragraph 2. Move: locating. Evidence: covered-tray soil looked damp; uncovered-tray soil looked dry. Length: one sentence. Answerability: directly answerable. Limit: distinguish observations from explanations.\n3. What possible explanation does the passage suggest for the difference? Location: Paragraph 2. Move: explaining. Evidence: the lid may have slowed moisture loss. Length: one sentence. Answerability: answerable with qualified wording. Limit: do not state the explanation as proven.\n4. Does the passage establish that the lid caused the moisture difference? Location: Paragraph 2. Move: evaluating. Evidence: the passage says the lid may have slowed moisture loss, not that it definitely did. Length: one or two sentences. Answerability: answerable from the qualification. Limit: do not add outside evidence.\nTeacher note: Prompt students to label each claim as an observation or a qualified interpretation."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

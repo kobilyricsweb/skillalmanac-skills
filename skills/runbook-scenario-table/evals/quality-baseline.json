@@ -1,0 +1,13 @@
+{
+  "fingerprint": "ecb5e54d7d20d1528c9a364096b52d37c0f5d345da3b6ba75fd7b10d74eadac6",
+  "job": "factory100_baseline_962e614a16d0",
+  "results": [
+    {
+      "id": "runbook-scenario-table__q100_ordinary",
+      "answer": "Applicable procedure: Queue-Q2, section 4. Conditions met: job failed, error code Q2 observed, archive flag off, and read-only job-log access confirmed. Archive Review does not apply because the archive flag is off. The request to rerun the job is recorded as a requested action, not authorization; no rerun is authorized or performed. No severity rule is supplied."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

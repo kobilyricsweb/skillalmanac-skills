@@ -1,0 +1,11 @@
+{
+  "unresolved_cases": [
+    "All unlisted state and event combinations are unspecified because no default rule is supplied."
+  ],
+  "normalization_assumptions": [],
+  "scope_exclusions": [
+    "Code implementation",
+    "Runtime validation",
+    "Authorization to change the system"
+  ]
+}

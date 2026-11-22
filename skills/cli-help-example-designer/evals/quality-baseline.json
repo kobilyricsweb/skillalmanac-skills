@@ -1,0 +1,12 @@
+{
+  "fingerprint": "4cc6ed24713b2883c9346ae85d69cc48434cc7074fe123e5e42eeb5e985c36a7",
+  "job": "factory100_baseline_49e5451d8e4a",
+  "results": [
+    {
+      "id": "cli-help-example-designer__q100_ordinary",
+      "answer": "Command-example suite (token arrays; do not execute)\n\nPrerequisite: SOURCE `demo` exists.\n\nValid path 1: [\"pack\",\"build\",\"demo\",\"--format\",\"zip\"]\nExpected documented result: creates a ZIP package.\n\nValid path 2: [\"pack\",\"build\",\"demo\",\"--format\",\"tar\",\"--sign\",\"--key\",\"K1\"]\nExpected documented result: creates a signed TAR package.\n\nRejected example: [\"pack\",\"build\",\"demo\",\"--format\",\"zip\",\"--key\",\"K1\"]\nReason: `--key` may appear only with `--sign`.\n\nOption coverage: required SOURCE; both accepted format values (`zip`, `tar`); optional `--sign`; required key with signing; supplied key value `K1`.\n\nAcceptance checks:\n- Missing SOURCE is rejected.\n- A nonexistent SOURCE fails the prerequisite.\n- Missing `--format` is rejected.\n- Values other than `zip` or `tar` are rejected.\n- `--sign` without `--key VALUE` is rejected.\n- `--key VALUE` without `--sign` is rejected.\n- Valid arrays produce the selected package format according to the documented result."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

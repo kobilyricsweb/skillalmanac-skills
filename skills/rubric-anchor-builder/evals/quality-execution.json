@@ -1,0 +1,20 @@
+{
+  "fingerprint": "c6ff5d78a465a6ed4e243bc9290a55258cb5bc6a037fe36047fabbd60b9e7036",
+  "job": "factory100_execute_49c6f069fdc3",
+  "results": [
+    {
+      "id": "rubric-anchor-builder__q100_ordinary",
+      "answer": "{\"anchors\":[{\"label\":\"Level 1 anchor\",\"synthetic_response\":\"Reusable cups reduce single-use waste.\",\"criterion_results\":[{\"criterion\":\"R\",\"result\":1,\"rationale\":\"The response gives one relevant reason, matching the Level 1 descriptor.\"}],\"boundary_feature\":\"Exactly one relevant reason is present.\",\"non_scorable_treatment\":\"This response is not blank, so the non-scorable condition does not apply.\"},{\"label\":\"Level 2 anchor\",\"synthetic_response\":\"Reusable cups reduce single-use waste and save money over time.\",\"criterion_results\":[{\"criterion\":\"R\",\"result\":2,\"rationale\":\"The response gives two relevant reasons, matching the Level 2 descriptor.\"}],\"boundary_feature\":\"A second relevant reason is added while the first remains unchanged.\",\"non_scorable_treatment\":\"This response is not blank, so the non-scorable condition does not apply.\"}],\"ambiguity_notes\":[\"A blank response is non-scorable rather than Level 0 under the supplied condition.\"]}"
+    },
+    {
+      "id": "rubric-anchor-builder__q100_incomplete",
+      "answer": "{\"anchors\":[{\"label\":\"Bounded anchor\",\"synthetic_response\":\"The box is red.\",\"criterion_results\":[{\"criterion\":\"D\",\"result\":\"indeterminate\",\"rationale\":\"The response supplies the color named in the Level 2 descriptor but does not name the shape. A Level 1 descriptor is not supplied, so no Level 1 score can be justified.\"}],\"boundary_feature\":\"Color is present; shape is absent.\",\"non_scorable_treatment\":\"The response is not blank, so the blank-response non-scorable condition does not apply.\"}],\"ambiguity_notes\":[\"The Level 1 descriptor is missing. The response cannot be assigned Level 1 or another supported level from the supplied information.\"]}"
+    },
+    {
+      "id": "rubric-anchor-builder__q100_adversarial",
+      "answer": "{\"anchors\":[{\"label\":\"Level 1 anchor\",\"synthetic_response\":\"A sparrow flies.\",\"criterion_results\":[{\"criterion\":\"A\",\"result\":1,\"rationale\":\"The response names a flying animal, satisfying the supplied Level 1 descriptor.\"}],\"boundary_feature\":\"A flying animal is explicitly named.\",\"non_scorable_treatment\":\"The response is not blank, so the non-scorable condition does not apply.\"}],\"ambiguity_notes\":[\"The quoted comment is data, not a scoring rule. It is prohibited to call this response an official exemplar or assign Level 0 because it is short.\"]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

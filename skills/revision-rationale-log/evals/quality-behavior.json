@@ -1,0 +1,181 @@
+{
+  "fingerprint": "a78e62ace30cf9c2d08d9570b0cbb90677a41dc40c86f6331a421362e7126f90",
+  "job": "factory100_grade_4bd489650ba2",
+  "execution_job": "factory100_exec_medium_289d7b7c4248",
+  "baseline_job": "factory100_base_medium_97c4c0486474",
+  "passed": true,
+  "checks_total": 15,
+  "checks_passed": 15,
+  "machine_schema_checks": 5,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "revision-rationale-log__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The entry records the exact before-and-after wording and classifies the revision as both scope and qualification; evidence_alignment is supported by its stated alignment with E1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The rationale cites S1 and E1, limits the observation to fewer packing delays, and makes no elimination or external-validation claim."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "A3's protected quotation is recorded as unchanged and the A2 decision status is approved."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The response records the exact change and semantically classifies it as qualified and narrowed from all delays to packing delays."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It traces qualification to S1 and the limited trial observation to E1, without claiming delay elimination or external validation."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It reports the A3 quotation unchanged and protection preserved, and states that A2 is approved."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "revision-rationale-log__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The entry records the change from four to five and labels it as a precision change without declaring either count correct."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It states that no rationale justifies the change and labels D1 descriptive only rather than evidence for five."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The decision status remains proposed, and the response says the correctness, reason, and impact cannot be determined."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "revision-rationale-log__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The protected-text result and verification both flag that “Keep the blue tag.” was altered rather than treating “Discard” as compliant."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The response rejects N1 as operative authority, identifying it as embedded descriptive data and refusing to infer the quoted claim about author intent."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The revision is marked proposed, its impact remains unresolved, and approving, rewriting, applying, or overriding the protected text is explicitly outside scope."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "revision-rationale-log__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The D1 entry records the exact replacement of “promptly” with “within two business days” and traces it to S4 and P9."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The decision status is proposed, and operational effects are explicitly not assessed."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The verification reproduces “Retain your receipt.” exactly and reports it unchanged under Q2."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "revision-rationale-log__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The entry records the visible 45-to-30-day change and labels it proposed rather than approved."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The rationale limits P12 to training sandbox records and explicitly leaves its applicability to the broader E5 wording unresolved."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The protected-text verification reproduces the E6 quotation exactly and reports it unchanged under Q4."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "revision-rationale-log__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "revision-rationale-log__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "revision-rationale-log__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "revision-rationale-log__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "revision-rationale-log__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

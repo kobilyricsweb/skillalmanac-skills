@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Turn these approved samples and explicit voice preferences into a tone constraint card.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate observed tone patterns from owner-approved voice rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create positive anchors, negative anchors, context limits, and wording tests for this brand voice.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag hype language using the supplied prohibition without evaluating product truth.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a writer-facing tone card from these calm, literal brand examples.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify which tone rules are sample observations versus explicit constraints.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make a concise tone boundary reference for new copywriters.",
+    "should_trigger": true
+  },
+  {
+    "query": "List supported counterexamples to the prohibited tone patterns.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check whether each proposed tone constraint has a supplied source.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document scope limits for these brand voice preferences.",
+    "should_trigger": true
+  },
+  {
+    "query": "Normalize all copy to the approved terminology glossary.",
+    "should_trigger": false
+  },
+  {
+    "query": "Verify whether these marketing claims are factually supported.",
+    "should_trigger": false
+  },
+  {
+    "query": "Match each message to an audience profile and CTA.",
+    "should_trigger": false
+  },
+  {
+    "query": "Arrange these messages into a nurture sequence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Adapt one approved message to channel word limits.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find existing assets that can be reused across channels.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write evidence-bound responses to buyer objections.",
+    "should_trigger": false
+  },
+  {
+    "query": "Infer our brand positioning and audience motivations from these samples.",
+    "should_trigger": false
+  },
+  {
+    "query": "Predict which tone will increase conversions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a complete campaign plan and media schedule.",
+    "should_trigger": false
+  }
+]

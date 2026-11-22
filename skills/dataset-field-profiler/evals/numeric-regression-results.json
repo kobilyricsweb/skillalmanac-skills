@@ -1,0 +1,128 @@
+{
+  "method": "normative independent input/error and finite-Decimal domain assertions",
+  "passed": true,
+  "fixtures": [
+    {
+      "id": "extreme-exponent",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "invalid decimal number",
+        "errors": [],
+        "code": "invalid_number"
+      }
+    },
+    {
+      "id": "finite-large",
+      "passed": true,
+      "exit": 0,
+      "actual": {
+        "errors": [],
+        "field_count": 1,
+        "fields": [
+          {
+            "array": 0,
+            "boolean": 0,
+            "integer": 1,
+            "missing": 0,
+            "name": "n",
+            "null": 0,
+            "number": 0,
+            "object": 0,
+            "present": 1,
+            "string": 0
+          }
+        ],
+        "ok": true,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "finite-negative-large",
+      "passed": true,
+      "exit": 0,
+      "actual": {
+        "errors": [],
+        "field_count": 1,
+        "fields": [
+          {
+            "array": 0,
+            "boolean": 0,
+            "integer": 1,
+            "missing": 0,
+            "name": "n",
+            "null": 0,
+            "number": 0,
+            "object": 0,
+            "present": 1,
+            "string": 0
+          }
+        ],
+        "ok": true,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "infinity",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "non-finite JSON number",
+        "errors": [],
+        "code": "invalid_number"
+      }
+    },
+    {
+      "id": "integer5000",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "number exceeds coefficient-digit or exponent limit (1000)",
+        "errors": [],
+        "code": "invalid_number"
+      }
+    },
+    {
+      "id": "nan",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "non-finite JSON number",
+        "errors": [],
+        "code": "invalid_number"
+      }
+    },
+    {
+      "id": "negative-extreme-exponent",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "invalid decimal number",
+        "errors": [],
+        "code": "invalid_number"
+      }
+    },
+    {
+      "id": "negative-infinity",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "ok": false,
+        "input_error": true,
+        "message": "non-finite JSON number",
+        "errors": [],
+        "code": "invalid_number"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "fingerprint": "70ac43102ed22e0f5c130e6ce8d2ade477f71fc871c949fe9738f8867c02204e",
+  "job": "factory100_baseline_44caf2c8dad0",
+  "results": [
+    {
+      "id": "taxonomy-structure-check__q100_ordinary",
+      "answer": "Manual structural assessment — execution mode: unexecuted; interpreter unavailable. Roots: r is the only root because parent_id is null. Orphan references: b points to missing parent x; this is an orphan reference. Self-parenting: none. Cycles: c and d form a cycle because c points to d and d points to c. Node a is a valid child of r. Untested limits: no script execution, schema or duplicate-ID validation, category-meaning review, reachability analysis beyond the requested checks, or edits."
+    },
+    {
+      "id": "taxonomy-structure-check__q100_script_output",
+      "answer": "Recorded offline result — execution mode: interpreted from supplied CLI output; not rerun. Exit 1 means the structural audit failed: ok=false. Node count is 5. Roots: [r]. Orphan reference: node orphan has parent_id missing, producing ORPHAN_REFERENCE count 1. Cycle: [a,b], because a and b reference each other, producing CYCLE count 1. Self-parenting is empty. The tail node references a and is included in the cycle-connected structure. Limits: findings are limited to the supplied recorded audit; no edits, rerun, semantic category review, duplicate-ID check, or live-state inference was performed."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "concept-contrast-table",
+  "category": "education",
+  "user_problem": "Learners confuse closely related concepts because definitions alone do not reveal decision-relevant distinctions.",
+  "unique_output": "A contrast table covering defining features, non-features, boundary cases, cues, and one discriminating question.",
+  "required_input": "Concept definitions, approved examples and nonexamples, known confusions, and learner level.",
+  "critical_rule": "Use only supplied distinctions; do not create exceptions or simplify away a stated boundary condition.",
+  "nearest_existing_and_difference": "Nearest is terminology-consistency-editor; this teaches distinctions among concepts rather than standardizing preferred wording.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input defines weather as short-term atmospheric conditions and climate as long-term patterns; examples are today's rain and 30-year average. Output contrasts time scale and supplies a boundary question asking whether the statement describes a day or pattern."
+}

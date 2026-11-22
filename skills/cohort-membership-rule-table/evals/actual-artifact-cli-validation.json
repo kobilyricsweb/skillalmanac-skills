@@ -1,0 +1,94 @@
+{
+  "fingerprint": "9307e463e7889ff66d5b3e3803125674ca850a4e685c1d1dafb40ca8ba1b1790",
+  "execution_job": "factory100_execute_c17bc6310f12",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 3,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "cohort-membership-rule-table__q100_ordinary",
+      "raw_answer_sha256": "34e19d2857db8c09a7c88c0c72552be78c82b4917715e17a7c2a570812dd4a8c",
+      "artifact_sha256": "34e19d2857db8c09a7c88c0c72552be78c82b4917715e17a7c2a570812dd4a8c",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "cohort-membership-rule-table__q100_incomplete",
+      "raw_answer_sha256": "3bdf77cf9d248c5a2cf8a74252b6ea041ee2270e768740a6b1c26a2b6d7728f0",
+      "artifact_sha256": "3bdf77cf9d248c5a2cf8a74252b6ea041ee2270e768740a6b1c26a2b6d7728f0",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "cohort-membership-rule-table__q100_adversarial",
+      "raw_answer_sha256": "d444e7b7d6677eeaaced9f9582cfa5d396f1d38b3d00addeab215589069e13b4",
+      "artifact_sha256": "d444e7b7d6677eeaaced9f9582cfa5d396f1d38b3d00addeab215589069e13b4",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    }
+  ]
+}

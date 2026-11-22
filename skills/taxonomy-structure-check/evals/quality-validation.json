@@ -1,0 +1,53 @@
+{
+  "fingerprint": "5e1b64c6782cf7f52542d2b471e8b86dc3264d3d1e9cf37d8b0040304f514bf9",
+  "passed": true,
+  "lint": {
+    "skill": "taxonomy-structure-check",
+    "fail": 0,
+    "warn": 0,
+    "items": [
+      {
+        "level": "PASS",
+        "code": "frontmatter-keys",
+        "message": "only open-spec keys used"
+      },
+      {
+        "level": "PASS",
+        "code": "name-format",
+        "message": "name 'taxonomy-structure-check' is valid"
+      },
+      {
+        "level": "PASS",
+        "code": "description-length",
+        "message": "description is 226 chars"
+      },
+      {
+        "level": "PASS",
+        "code": "body-lines",
+        "message": "SKILL.md body has 33 lines"
+      },
+      {
+        "level": "PASS",
+        "code": "body-tokens",
+        "message": "body is about 578 tokens by chars/4"
+      },
+      {
+        "level": "PASS",
+        "code": "package-size",
+        "message": "package is 22663 bytes in 5 files"
+      }
+    ]
+  },
+  "quick_exit": 0,
+  "quick_stdout": "Skill is valid!\n",
+  "quick_stderr": "",
+  "schema_error": null,
+  "fixture_exit": 0,
+  "fixture_stdout": "{\"method\": \"retained observed-output regression replay; missing-file path excluded; not independent truth\", \"passed\": true, \"fixtures\": [{\"id\": \"good_forest\", \"passed\": true, \"exit\": 0, \"actual\": {\"cycles\": [], \"errors\": [], \"node_count\": 3, \"ok\": true, \"orphan_references\": [], \"roots\": [\"books\", \"music\"], \"self_parenting\": []}}, {\"id\": \"orphan_reference\", \"passed\": true, \"exit\": 1, \"actual\": {\"cycles\": [], \"errors\": [{\"code\": \"ORPHAN_REFERENCE\", \"count\": 1}], \"node_count\": 1, \"ok\": false, \"orphan_references\": [{\"id\": \"jazz\", \"parent_id\": \"music\"}], \"roots\": [], \"self_parenting\": []}}, {\"id\": \"malformed_duplicate_ids\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"duplicate id\", \"errors\": []}}, {\"id\": \"empty_forest_boundary\", \"passed\": true, \"exit\": 0, \"actual\": {\"cycles\": [], \"errors\": [], \"node_count\": 0, \"ok\": true, \"orphan_references\": [], \"roots\": [], \"self_parenting\": []}}, {\"id\": \"numeric_token_bound\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"number exceeds coefficient-digit or exponent limit (1000)\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"self_parent\", \"passed\": true, \"exit\": 1, \"actual\": {\"cycles\": [[\"a\"]], \"errors\": [{\"code\": \"SELF_PARENTING\", \"count\": 1}, {\"code\": \"CYCLE\", \"count\": 1}], \"node_count\": 1, \"ok\": false, \"orphan_references\": [], \"roots\": [], \"self_parenting\": [\"a\"]}}, {\"id\": \"multi_node_cycle\", \"passed\": true, \"exit\": 1, \"actual\": {\"cycles\": [[\"a\", \"b\", \"c\"]], \"errors\": [{\"code\": \"CYCLE\", \"count\": 1}], \"node_count\": 4, \"ok\": false, \"orphan_references\": [], \"roots\": [\"d\"], \"self_parenting\": []}}, {\"id\": \"long_chain_iterative\", \"passed\": true, \"exit\": 0, \"actual\": {\"cycles\": [], \"errors\": [], \"node_count\": 10000, \"ok\": true, \"orphan_references\": [], \"roots\": [\"n00000\"], \"self_parenting\": []}}, {\"id\": \"duplicate_json_key\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"duplicate JSON object key\", \"errors\": []}}, {\"id\": \"nonfinite\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"non-finite JSON number\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"truncated\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"Expecting value: line 1 column 6 (char 5)\", \"errors\": []}}, {\"id\": \"missing_file\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"[WinError 2] The system cannot find the file specified: '<local-path>'\", \"errors\": []}}, {\"id\": \"peer_cli_integration\", \"passed\": true, \"exit\": 1, \"actual\": {\"cycles\": [[\"a\", \"b\"]], \"errors\": [{\"code\": \"ORPHAN_REFERENCE\", \"count\": 1}, {\"code\": \"CYCLE\", \"count\": 1}], \"node_count\": 5, \"ok\": false, \"orphan_references\": [{\"id\": \"orphan\", \"parent_id\": \"missing\"}], \"roots\": [\"r\"], \"self_parenting\": []}}]}\n",
+  "fixture_stderr": "",
+  "numeric_regressions": {
+    "exit": 0,
+    "stdout": "{\"method\": \"normative independent input/error and finite-Decimal domain assertions\", \"passed\": true, \"fixtures\": [{\"id\": \"extreme-exponent\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"invalid decimal number\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"finite-large\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"unknown or missing top-level key\", \"errors\": []}}, {\"id\": \"finite-negative-large\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"unknown or missing top-level key\", \"errors\": []}}, {\"id\": \"infinity\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"non-finite JSON number\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"integer5000\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"number exceeds coefficient-digit or exponent limit (1000)\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"nan\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"non-finite JSON number\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"negative-extreme-exponent\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"invalid decimal number\", \"errors\": [], \"code\": \"invalid_number\"}}, {\"id\": \"negative-infinity\", \"passed\": true, \"exit\": 2, \"actual\": {\"ok\": false, \"input_error\": true, \"message\": \"non-finite JSON number\", \"errors\": [], \"code\": \"invalid_number\"}}]}\n",
+    "stderr": ""
+  }
+}

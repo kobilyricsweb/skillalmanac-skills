@@ -1,0 +1,17 @@
+{
+  "command": [
+    "<local-path>",
+    "-B",
+    "<local-path>",
+    "<local-path>"
+  ],
+  "exit": 1,
+  "stdout": "{\"cycles\": [[\"a\", \"b\"]], \"errors\": [{\"code\": \"ORPHAN_REFERENCE\", \"count\": 1}, {\"code\": \"CYCLE\", \"count\": 1}], \"node_count\": 5, \"ok\": false, \"orphan_references\": [{\"id\": \"orphan\", \"parent_id\": \"missing\"}], \"roots\": [\"r\"], \"self_parenting\": []}\n",
+  "stderr": "",
+  "expected_observations_independently_asserted": [
+    "The recorded report has5nodes and root r, one a–b cycle that excludes tail, and orphan→missing as the absent-parent reference.",
+    "Exit1 is interpreted as valid input with graph findings, rather than input error, complete taxonomy quality or permission to change nodes.",
+    "The answer identifies this as a recorded offline CLI run and makes no new execution or live-state claim."
+  ],
+  "scope": "actual local CLI run; not native agent tool use"
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "api-version-compatibility-brief",
+  "category": "software",
+  "user_problem": "Teams need to understand how two documented API versions differ without testing live endpoints.",
+  "unique_output": "A compatibility brief separating unchanged, added, removed, renamed, and behaviorally uncertain contract elements.",
+  "required_input": "Two supplied version specifications containing paths, fields, status codes, and explicit behavior notes.",
+  "critical_rule": "Treat matching names as compatible only when documented types, requiredness, and semantics also match.",
+  "nearest_existing_and_difference": "Nearest is api-error-example-builder; this compares complete version contracts rather than illustrating documented error handling.",
+  "tier": "free",
+  "acceptance_scenario": "Input v1 requires name:string and returns 200; v2 requires display_name:string and returns 201, with no rename note. Output marks both field and status changes, and labels rename intent unknown."
+}

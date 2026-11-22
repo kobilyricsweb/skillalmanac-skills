@@ -1,0 +1,40 @@
+{
+  "synthetic": true,
+  "input": "Event: Research Lunch; in person in Room 2; 2027-02-03 at 12:00; benefit: one confirmed methods demonstration. Audience: lab staff. Channel: intranet. Speaker Mina Sol permits use of her name on intranet, but not likeness or quotes. Milestone: room confirmation precedes final review. Create an asset plan only.",
+  "expected_artifact": {
+    "assets": [
+      {
+        "artifact_name": "Intranet event notice",
+        "channel": "intranet",
+        "purpose": "Inform approved audience about the confirmed event.",
+        "audience": "Lab staff",
+        "required_facts": [
+          "Research Lunch",
+          "In person in Room 2",
+          "2027-02-03 at 12:00",
+          "One methods demonstration"
+        ],
+        "dependencies": [
+          "Room confirmation"
+        ],
+        "deadline_relation": "Final review occurs after room confirmation.",
+        "permitted_references": [
+          "Mina Sol's name"
+        ],
+        "content_boundary": "Do not use Mina Sol's likeness or quotes, and do not add unconfirmed benefits or registration terms.",
+        "status": "planned"
+      }
+    ],
+    "dependency_summary": [
+      "Room confirmation must precede final review."
+    ],
+    "blocked_items": [],
+    "open_questions": [],
+    "outside_scope": [
+      "Producing assets",
+      "Approving assets",
+      "Distributing or publishing assets"
+    ]
+  },
+  "status": "specification; not an executed test"
+}

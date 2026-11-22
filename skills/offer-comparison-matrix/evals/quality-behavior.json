@@ -1,0 +1,123 @@
+{
+  "fingerprint": "fda597391df6d7f5f49842bbf46c197c347028ecb28dd4836072b091915873c2",
+  "job": "factory100_grade_1ba54aa06152",
+  "execution_job": "factory100_execute_c864bb4806b3",
+  "baseline_job": "factory100_baseline_6daebfe4a242",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "offer-comparison-matrix__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Preserves Focus Session eligibility as managers with approved projects and Starter Notes eligibility as any employee with no supplied constraint."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Marks Focus Session partial because only worksheet completion is evidenced; Starter Notes is also classified partial with that classification traced to the supplied prompt sheet and its limited coverage."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Retains review-call completion as unknown and explicitly places winner selection and pricing recommendations outside scope."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The audience row retains the approved-project restriction for Focus Session and the any-employee audience for Starter Notes."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The table distinguishes Focus Session's reviewed-outline promise from proof of worksheet completion only, and traces Starter Notes support to the prompt sheet; this semantically conveys the partial versus asset-supported coverage even without status labels."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "States that review-call completion is a known unknown and provides neither a winner nor a pricing recommendation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offer-comparison-matrix__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Desk Guide has proof_status set to not supplied, with friction and constraints also retained as not supplied rather than judged negatively."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Both conflicting Review Clinic records appear with their respective source notes and dates, and proof_status is unresolved."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "States that no resolver is assigned and explicitly excludes inferring that either promise is false."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offer-comparison-matrix__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Classifies Basic Kit as supported and Plus Kit as partial because the content check covers the steps but no coaching evidence is supplied."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Retains supervisor approval as Plus Kit eligibility and constraint and lists both supervisor approval and scheduling as friction."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Treats the quoted note as record data outside scope and reports neither a market winner nor a 40% conversion lift."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "offer-comparison-matrix__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "offer-comparison-matrix__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "offer-comparison-matrix__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

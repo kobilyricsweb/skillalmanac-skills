@@ -1,0 +1,5 @@
+Synthetic input: Entry V defines Vehicle. Entry C defines Car. Entry B defines Bicycle. Entry S defines Scooter, but supplies no approved hierarchy statement for it. Approved statement S1 says Vehicle is broader than Car and Bicycle. Approved statement S2 says Scooter is distinct from Bicycle. No rule states that distinct-from is symmetric.
+
+Artifact: Vehicle → Car, relation broader-than, support S1, status supported. Vehicle → Bicycle, relation broader-than, support S1, status supported. Scooter → Bicycle, relation distinct-from, support S2, status supported. Do not add the reverse distinct-from edge because no symmetric rule or reverse statement is supplied. Do not create any Scooter hierarchy edge, but also do not record a silent Scooter hierarchy pair as unresolved: none was proposed, no required definition is missing, no conflict exists, and no qualifying multi-edge path requires evaluation.
+
+Verification report: all three retained edges cite approved relationship statements; no hierarchy was inferred from definition wording; no parent was invented for Scooter; and no equivalence was created from term forms.

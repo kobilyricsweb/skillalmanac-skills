@@ -1,0 +1,11 @@
+{
+  "slug": "procedure-branch-test-matrix",
+  "category": "operations",
+  "user_problem": "Procedure authors need concrete cases showing which conditional branches are covered or unspecified.",
+  "unique_output": "Branch-to-test-input matrix with expected path, unreachable/unknown branches and coverage gaps.",
+  "required_input": "Supplied procedure conditions, actions, boundary values and any precedence rules.",
+  "critical_rule": "Unknown branch actions stay unspecified; do not invent a default or claim executable verification.",
+  "nearest_existing_and_difference": "runbook-scenario-table routes supplied observations; this designs synthetic cases to cover procedure branches.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Rule x>=5 goesA and x<5 goesB yields cases4 and5; missing-value behavior remains uncovered when not supplied."
+}

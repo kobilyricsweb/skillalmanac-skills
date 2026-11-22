@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Map each explicit requirement to the section that satisfies it.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit this completed document for required and optional content.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which requirements are covered, partial, absent, or conflicted.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a traceability matrix using these section IDs.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check whether the document includes an accountable owner and limitations statement.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find duplicated or conflicting coverage across sections.",
+    "should_trigger": true
+  },
+  {
+    "query": "Keep optional requirements separate from mandatory ones.",
+    "should_trigger": true
+  },
+  {
+    "query": "Do not treat related wording as satisfying the exact requirement.",
+    "should_trigger": true
+  },
+  {
+    "query": "Report unresolved gaps for every unmet document requirement.",
+    "should_trigger": true
+  },
+  {
+    "query": "Link each requirement to concrete evidence in the supplied document.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an outline from these source notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Check whether headings promise topics their sections do not cover.",
+    "should_trigger": false
+  },
+  {
+    "query": "Reconstruct the order of these events.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build reusable FAQ answer frames from policy clauses.",
+    "should_trigger": false
+  },
+  {
+    "query": "Record why these substantive edits were made.",
+    "should_trigger": false
+  },
+  {
+    "query": "Refresh this document using newly gathered evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Replace all inconsistent terminology with the approved glossary.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide whether a project decision was authorized.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft a response to this customer’s individual case.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent a limitations statement so the requirement is covered.",
+    "should_trigger": false
+  }
+]

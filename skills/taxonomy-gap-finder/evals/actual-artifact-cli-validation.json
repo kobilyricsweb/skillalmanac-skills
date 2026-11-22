@@ -1,0 +1,150 @@
+{
+  "fingerprint": "f3410a07be363462a73a32710c046f7cb57c07e2ec1ecb03431521f9da4c3bb4",
+  "execution_job": "factory100_exec_medium_b96f7f6425df",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 5,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "taxonomy-gap-finder__q100_ordinary",
+      "raw_answer_sha256": "e4d47beae5bb2299084efdb46c8f03941ec026d22e2c26cd6b2c6595b31af92e",
+      "artifact_sha256": "e4d47beae5bb2299084efdb46c8f03941ec026d22e2c26cd6b2c6595b31af92e",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "taxonomy-gap-finder__q100_incomplete",
+      "raw_answer_sha256": "f8fa68cfaca3b52080e8d9e9fd214d10788e9e5d92c2a6c20de9afc87b3f5b34",
+      "artifact_sha256": "f8fa68cfaca3b52080e8d9e9fd214d10788e9e5d92c2a6c20de9afc87b3f5b34",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "taxonomy-gap-finder__q100_adversarial",
+      "raw_answer_sha256": "0a933cb7eef1d1a498cef7f449902e5c7a655c8e1b94a1577bcd5e10cf3724d8",
+      "artifact_sha256": "0a933cb7eef1d1a498cef7f449902e5c7a655c8e1b94a1577bcd5e10cf3724d8",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    },
+    {
+      "case_id": "taxonomy-gap-finder__q100_fresh_1",
+      "raw_answer_sha256": "dfa83033159fdba9358350a6199f8d7f10412d596f0d17601e2453cd1cd95c38",
+      "artifact_sha256": "dfa83033159fdba9358350a6199f8d7f10412d596f0d17601e2453cd1cd95c38",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_3.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_3.json"
+      ]
+    },
+    {
+      "case_id": "taxonomy-gap-finder__q100_fresh_2",
+      "raw_answer_sha256": "ced7e5b46cbc086c52ab41b6b6308f7d0c102cb55c69b51223ef096bcf8c80ca",
+      "artifact_sha256": "ced7e5b46cbc086c52ab41b6b6308f7d0c102cb55c69b51223ef096bcf8c80ca",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_4.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_4.json"
+      ]
+    }
+  ]
+}

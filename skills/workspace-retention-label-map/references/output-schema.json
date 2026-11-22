@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mappings",
+    "approved_label_check",
+    "unresolved_queue",
+    "rule_register",
+    "exclusion_register",
+    "decision_summary",
+    "operative_authorization"
+  ],
+  "properties": {
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "document_description",
+          "candidate_type",
+          "defining_cues",
+          "assigned_label",
+          "applicable_rule",
+          "conflict",
+          "exclusion",
+          "manual_review"
+        ],
+        "properties": {
+          "document_description": {
+            "type": "string"
+          },
+          "candidate_type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "defining_cues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assigned_label": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "applicable_rule": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "conflict": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "exclusion": {
+            "type": "boolean"
+          },
+          "manual_review": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "approved_label_check": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "approved"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "approved": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "unresolved_queue": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rule_register": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rule_id",
+          "rule"
+        ],
+        "properties": {
+          "rule_id": {
+            "type": "string"
+          },
+          "rule": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "exclusion_register": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "exclusion_id",
+          "exclusion"
+        ],
+        "properties": {
+          "exclusion_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "exclusion": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "decision_summary": {
+      "type": "string"
+    },
+    "operative_authorization": {
+      "type": "boolean",
+      "const": false
+    }
+  }
+}

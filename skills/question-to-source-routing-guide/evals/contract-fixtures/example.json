@@ -1,0 +1,31 @@
+{
+  "routes": [
+    {
+      "question_pattern": "Questions asking where the payroll submission deadline is stated",
+      "requested_information": "Authoritative payroll deadline evidence",
+      "route_status": "resolved",
+      "selected_source": "PAY1",
+      "acceptable_evidence": [
+        "The payroll deadline statement in PAY1"
+      ],
+      "freshness_cue": {
+        "status": "known",
+        "update_date": "2026-11-01",
+        "note": "The supplied update date is available; no maximum-age rule was supplied."
+      },
+      "fallback": "HR1",
+      "basis": [
+        "R1 designates PAY1 as the sole authority for payroll deadlines."
+      ]
+    }
+  ],
+  "exceptions": [],
+  "verification_report": {
+    "coverage": "full",
+    "uncovered_questions": [],
+    "unsupported_inferences_avoided": [
+      "ARC1 was not treated as authoritative merely because it concerns payroll."
+    ],
+    "unresolved_items": []
+  }
+}

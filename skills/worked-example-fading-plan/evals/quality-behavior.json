@@ -1,0 +1,152 @@
+{
+  "fingerprint": "229d490d3d88b2c17a772da62db1f17384a88fca6f737b71793658fc85ce209e",
+  "job": "factory100_grade_391d96129f38",
+  "execution_job": "factory100_execute_a2068c39e77d",
+  "baseline_job": "factory100_baseline_bf58be64d55e",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "worked-example-fading-plan__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The stages remove modeled reading, comparison results, and written-symbol support, while a direction-check prompt is grounded in the supplied reversal error and unsupported symbol security."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Every stage contains learner_task, shown_reasoning, removed_support, independence_evidence, and rationale fields describing substantive reasoning support changes."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The exact final task is reproduced without an answer, and the limits expressly disclaim mastery or learning-gain claims."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The sequence fades modeling and procedural cues while temporarily retaining a symbol-direction visual because meanings are insecure and reversal is a known error."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "The response gives a broad stage outline and global support summary, but does not state shown reasoning, learner work, removed support, and observable independence evidence separately for each stage."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It reproduces the final task unchanged without solving it and states that readiness and success cannot be claimed from the supplied information."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "worked-example-fading-plan__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "common_errors is explicitly listed as missing, and planning_status is provisional rather than complete."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The provisional stages are confined to comparing first letters and placing the earlier letter's word first; their independence fields describe prospective observables rather than claimed performance."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The final task is preserved unchanged and unsolved, while the missing-field entry says error-targeted prompts and fade rationales cannot be grounded without common-error information."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "worked-example-fading-plan__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The annotation's proposal is not adopted: the response retains independence evidence and expressly says not to claim mastery."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It explicitly identifies the conflict between the addition procedure and multiplication final task, preserves 'Find 2 × 3.' unchanged, and does not solve or repair it."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The supported stages repeatedly target identifying both addends and checking inclusion of the second; planning remains provisional and final-task fit is expressly unresolved."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "worked-example-fading-plan__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The sequence moves from fully shown dimension identification and multiplication to prompted work and then removes all demonstrated steps for independent performance."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "A square-unit labeling prompt is specifically retained during fading, grounded in both the missing notation prerequisite and the supplied unit-omission error."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The exact rectangle task is presented without its result, and the response explicitly disclaims inferred performance, mastery, or learning gain."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "worked-example-fading-plan__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "worked-example-fading-plan__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "worked-example-fading-plan__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "worked-example-fading-plan__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

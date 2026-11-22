@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Cluster these research notes into exact duplicates, paraphrases, related notes, and contradictions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve source IDs and distinguish repeated notes from independent corroboration.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify shared-source repetitions without deleting any original wording.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare these labeled notes using the supplied proposition rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Keep conflicting observations visible and report the contradiction.",
+    "should_trigger": true
+  },
+  {
+    "query": "Leave a pair unresolved when source provenance or dates are missing.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a deduplication plan for this bounded research-note collection.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate topical similarity from actual paraphrase equivalence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show the rationale and provenance treatment for every note cluster.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit whether all notes are accounted for without losing independent evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Deduplicate customer records by email, address, and phone number.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite these notes as a concise literature review.",
+    "should_trigger": false
+  },
+  {
+    "query": "Route these questions to approved source documents.",
+    "should_trigger": false
+  },
+  {
+    "query": "Resolve the ambiguous “see above” references in this report.",
+    "should_trigger": false
+  },
+  {
+    "query": "Replace nonpreferred glossary terms throughout the manuscript.",
+    "should_trigger": false
+  },
+  {
+    "query": "Label each sentence as quote, paraphrase, observation, or assumption.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide which source’s delivery time is factually correct.",
+    "should_trigger": false
+  },
+  {
+    "query": "Delete duplicate files from the shared drive.",
+    "should_trigger": false
+  },
+  {
+    "query": "Search online for additional evidence about the conflicting notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a database migration script for note clustering.",
+    "should_trigger": false
+  }
+]

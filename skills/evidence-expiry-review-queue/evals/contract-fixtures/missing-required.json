@@ -1,0 +1,16 @@
+{
+  "unscheduled": [],
+  "open_questions": [
+    "Does any supersession status apply to E1 despite no supersession note being supplied?"
+  ],
+  "verification_report": [
+    "E1 is covered.",
+    "The trigger-date calculation applies the supplied seven-calendar-day rule.",
+    "Review due indicates attention is due, not that E1 or C1 is false."
+  ],
+  "outside_scope": [
+    "Editing dependent claims",
+    "Declaring supersession",
+    "Creating reminders"
+  ]
+}

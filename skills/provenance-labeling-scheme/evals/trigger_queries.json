@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Design provenance labels for quotes, paraphrases, observations, assumptions, and synthesis.",
+    "should_trigger": true
+  },
+  {
+    "query": "Define required metadata for each allowed knowledge-note label.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create rules for splitting a note that contains copied wording and analyst inference.",
+    "should_trigger": true
+  },
+  {
+    "query": "Label this sentence by provenance form without deciding whether it is true.",
+    "should_trigger": true
+  },
+  {
+    "query": "Handle mixed-content notes using the supplied split-or-multiple-label rule.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document edge cases for missing source IDs and missing authors.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a provenance labeling specification from this allowed label set.",
+    "should_trigger": true
+  },
+  {
+    "query": "Give synthetic examples for each supplied provenance category.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check that every allowed label has a definition and metadata requirements.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark provenance unresolved when the supplied rules cannot distinguish quote from paraphrase.",
+    "should_trigger": true
+  },
+  {
+    "query": "Classify these decision records by evidentiary strength.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite the article using consistent terminology.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map glossary concepts into broader and narrower relationships.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find the target of each ambiguous cross-reference.",
+    "should_trigger": false
+  },
+  {
+    "query": "Cluster duplicate research notes and preserve contradictions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Route support questions to authoritative documents.",
+    "should_trigger": false
+  },
+  {
+    "query": "Verify whether the quoted statement is factually correct.",
+    "should_trigger": false
+  },
+  {
+    "query": "Assign a credibility score to each source.",
+    "should_trigger": false
+  },
+  {
+    "query": "Publish these labels into the company knowledge base automatically.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a script that extracts quotations from every website.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "exceptions": [],
+  "verification_report": {
+    "coverage": "full",
+    "uncovered_questions": [],
+    "unsupported_inferences_avoided": [
+      "ARC1 was not treated as authoritative merely because it concerns payroll."
+    ],
+    "unresolved_items": []
+  }
+}

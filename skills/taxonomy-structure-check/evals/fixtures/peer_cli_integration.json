@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {
+      "id": "r",
+      "parent_id": null
+    },
+    {
+      "id": "a",
+      "parent_id": "b"
+    },
+    {
+      "id": "b",
+      "parent_id": "a"
+    },
+    {
+      "id": "tail",
+      "parent_id": "a"
+    },
+    {
+      "id": "orphan",
+      "parent_id": "missing"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "ambiguity_report": [],
+  "verification_report": {
+    "all_occurrences_have_status": true,
+    "selected_targets_exist": true,
+    "findings": [
+      "K1 has one resolved status.",
+      "Selected target M1 exists in the supplied inventory."
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "fingerprint": "50cc13964a40de5ec9ce5835c29be099666801d07d41de7db88513adb1500104",
+  "job": "factory100_baseline_b40a8387a71b",
+  "results": [
+    {
+      "id": "research-note-deduplication-plan__q100_ordinary",
+      "answer": "{\"clusters\":[{\"type\":\"shared-source repetition\",\"notes\":[\"N1\",\"N2\"],\"basis\":\"N1 and N2 express the same proposition in different wording, from source A on 2026-02-01. N1 is a quotation; N2 is a paraphrase.\",\"action\":\"Retain both provenance records; flag as repetition rather than delete or merge irreversibly.\"},{\"type\":\"contradiction\",\"notes\":[\"N1\",\"N2\",\"N3\"],\"basis\":\"N1/N2 report red, while N3 reports green. Incompatible color values remain separate.\",\"action\":\"Keep N3 separate from the red notes and preserve source B, date 2026-02-02, and quotation status.\"}],\"exact_duplicates\":[],\"provenance\":{\"N1\":{\"source\":\"A\",\"date\":\"2026-02-01\",\"form\":\"quotation\"},\"N2\":{\"source\":\"A\",\"date\":\"2026-02-01\",\"form\":\"paraphrase\"},\"N3\":{\"source\":\"B\",\"date\":\"2026-02-02\",\"form\":\"quotation\"}},\"scope_boundary\":\"No notes are deleted, and no determination is made about which color is true. Topical similarity alone is not used for merging.\"}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

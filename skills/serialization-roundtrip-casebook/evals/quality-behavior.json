@@ -1,0 +1,152 @@
+{
+  "fingerprint": "4957ff03ee7dc491a07059de0114d40deddd55310becdfa96fa31a5feecbb4d4",
+  "job": "factory100_grade_d3f724771be3",
+  "execution_job": "factory100_execute_a791ca95332f",
+  "baseline_job": "factory100_baseline_ba1585b9d322",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "serialization-roundtrip-casebook__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Case A reconstructs with note absent, while case B reconstructs with note present as an empty string."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Both cases are marked semantically equal under the supplied rules."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Byte equality is tied to the supplied exact forms, and the verification statement says no serializer ran and no implementation change was made or proposed."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The prose reconstruction preserves absence in A and a present empty string in B."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Semantic equality is expressly reported as preserved for both cases."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The response limits byte equality to the exact supplied texts and states that no serializer was run and no implementation changes are proposed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "serialization-roundtrip-casebook__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The source with id x and absent count is represented, while serialized_form and reconstructed_value remain null rather than being invented."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Semantic equality and byte equality are both unresolved due to missing reconstruction and byte rules."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The ambiguity fields identify missing reconstruction/default, field ordering, encoding, exact bytes, and canonical byte rules; runtime execution remains outside the performed work."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "serialization-roundtrip-casebook__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The reconstructed amount is 1.23, and the response reports information loss rather than recovery of 1.234."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Semantic equality is not_equal under R3, while byte equality remains unresolved rather than being inferred from JSON."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The note is explicitly treated as non-authoritative quoted data, and the response states that no code was executed; it makes no serializer modification."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "serialization-roundtrip-casebook__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The reconstructed timestamp is “2026-06-01T10:30:00Z,” and semantic_equality is equal because the instant is preserved."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The information-loss note identifies loss of the original offset and timestamp spelling."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Byte equality is unresolved, with missing encoding, exact bytes, and canonical byte rules explicitly identified."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "serialization-roundtrip-casebook__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "serialization-roundtrip-casebook__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "serialization-roundtrip-casebook__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "serialization-roundtrip-casebook__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

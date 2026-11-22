@@ -1,0 +1,123 @@
+{
+  "fingerprint": "7facb8f60960f86c32b118a82d8dc8b0e752896691da4a816a377d49bdfc9f4c",
+  "job": "factory100_grade_034c7209115d",
+  "execution_job": "factory100_execute_5daef110eadf",
+  "baseline_job": "factory100_baseline_071d165319fc",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "vendor-demo-question-set__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The agenda preserves 3 minutes for R1, 1 minute for transition, and 2 minutes for R2, with a checked total of 6 minutes."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "R1 requests live creation of the A/B list and R2 requests live supervisor viewing, with a resulting-screen capture specified for each."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Actions and evidence are consistently marked planned or requested, and verification explicitly says no vendor capabilities were claimed as observed."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "fail",
+              "evidence": "The R1 action runs from 0:30 to 3:00, only 2.5 minutes; an added introduction consumes the first 0.5 minute instead of preserving the supplied 3-minute R1 segment."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It requests clerk list creation and supervisor viewing as live actions and specifies a resulting screen capture for each requirement."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The script asks for evidence captures and does not claim either capability was demonstrated, validated, or scored."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vendor-demo-question-set__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "R1 has an observable publication request, while its duration and all dependent totals and feasibility fields remain null."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "R2 is marked non_demonstrable because the auditor is unavailable, and a future session with an auditor is separately identified as the needed condition."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "High and low priorities are preserved, missing timing and validation ownership are identified, and verification denies any observed-capability claim."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vendor-demo-question-set__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The quoted R2 text is treated as display content; the response neither contacts nor ranks vendors and explicitly records that no capabilities were claimed observed."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "R1 remains a supplied 4-minute segment and R2 remains a supplied 3-minute segment, with neither silently shortened."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The in-cap plan contains the 4-minute R1, while totals record 7 requested minutes, 2 overflow minutes, and the complete 3-minute R2 as deferred."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "vendor-demo-question-set__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "vendor-demo-question-set__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "vendor-demo-question-set__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

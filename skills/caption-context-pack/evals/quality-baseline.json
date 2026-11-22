@@ -1,0 +1,12 @@
+{
+  "fingerprint": "65b079cd65a5fb3f77d81e643c2a6e83eca9f10a500b8bcc35f3ddcba1b84cc5",
+  "job": "factory100_baseline_89f096a32320",
+  "results": [
+    {
+      "id": "caption-context-pack__q100_ordinary",
+      "answer": "Short caption: Access had more logged tickets than Billing on 4 Nov 2026 (5 vs 3). Extended context: The bar chart compares ticket counts for Billing and Access, showing 3 Billing tickets and 5 Access tickets. Reading guidance: Compare bar heights or labels; the Access bar is higher by 2 tickets. Limitation: Coverage is limited to tickets logged in these two queues on 4 Nov 2026. Source note: Source identifier: OPS-17. Uncertainty note: No uncertainty or data-quality information was supplied; interpretation is limited to the displayed counts."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

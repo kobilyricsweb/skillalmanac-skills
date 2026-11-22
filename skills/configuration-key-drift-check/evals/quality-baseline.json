@@ -1,0 +1,28 @@
+{
+  "fingerprint": "96f1c0e2cdebf086b64735d5d4397692351b996de05a771cd7f8f04217e5e832",
+  "job": "aggregate_isolated_e8f36b6f6fa7dcdb",
+  "results": [
+    {
+      "id": "configuration-key-drift-check__q100_ordinary",
+      "answer": "Input scope: One configuration named \"prod\" was compared against required keys [\"PORT\", \"DB\"] and optional keys [\"DEBUG\"] using exact, case-sensitive matching. No environment or secret values were inspected.\n\nFindings:\n- Missing required key: \"DB\".\n- Present required key: \"PORT\".\n- Present optional key: \"DEBUG\".\n- Duplicate key entry: \"DEBUG\" appears twice in prod.keys.\n- Unknown/unexpected key: \"EXTRA\" is neither required nor optional.\n\nExecution mode: Manual, unexecuted assessment of the supplied JSON only; the bundled script was neither run nor edited.\n\nUntested limits: Interpreter and script behavior, JSON parsing behavior, duplicate-handling semantics, runtime configuration loading, environment state, secret values, value validity, and any configurations not included in the supplied input were not tested.",
+      "individual_job": "factory100_base_isolated_e1756e030caa"
+    },
+    {
+      "id": "configuration-key-drift-check__q100_script_output",
+      "answer": "The recorded audit evaluated 1 configuration, `preview`, and reported `ok: false` with exit code 1, indicating the recorded audit found configuration drift/failures. Concrete findings: `TRACE` appears more than once (`DUPLICATE_CONFIG_KEY`); required key `PORT` is absent (`MISSING_REQUIRED_KEY`); and `EXTRA` is not among the declared required or optional keys (`UNEXPECTED_KEY`). `HOST` is present, and `TRACE` is declared optional but duplicated. The top-level `errors` array is empty, so the recorded failure reflects findings rather than a reported audit-processing error. This interpretation is limited to the supplied offline input, command, exit code, and exact stdout; the command was not rerun, no records were changed, and no claim can be made about current files, configurations, or live system state.",
+      "individual_job": "factory100_base_isolated_acb797a762c1"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill_isolated_cases",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "case_context_isolated": true,
+  "answer_word_budget": 600,
+  "individual_worker_jobs": [
+    "factory100_base_isolated_e1756e030caa",
+    "factory100_base_isolated_acb797a762c1"
+  ],
+  "method_note": "Every case uses its own fresh context. Both arms use identical model/effort/budget; raw responses unchanged, original prompts/assertions preserved, prior failures retained. Aggregate is a provenance index, not a model call.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

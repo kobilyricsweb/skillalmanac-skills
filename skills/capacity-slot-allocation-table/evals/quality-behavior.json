@@ -1,0 +1,152 @@
+{
+  "fingerprint": "ddd05d5b2cdaf8bc0b0de3fa5f67e819decb31bc01e818e0bf3536148729719e",
+  "job": "factory100_grade_02d9afd6041f",
+  "execution_job": "factory100_exec_medium_de6ad1db77e6",
+  "baseline_job": "factory100_base_medium_c8deb81fd455",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "capacity-slot-allocation-table__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "T2 is assigned 11:00–12:00 for one hour and T1 09:00–11:00 for two hours, with the preservation rule explained."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It reports no unallocated tasks, no unused slots, and feasible status, without claiming global optimality."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Verification states both tasks use eligible R1, stay within availability, retain full durations, and do not overlap."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The allocations place T2 at 11:00–12:00 and T1 at 09:00–11:00 with unchanged durations and rule-based support."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It reports empty unallocated and unused lists and marks the allocation feasible without an optimality claim."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Verification explicitly confirms slot containment, non-overlap, eligibility, and priority compliance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "capacity-slot-allocation-table__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It identifies the missing priority rule but explains that the singleton task has one fitting placement and no competing choice."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "No priority is invented, and T1 is concretely assigned to R1 from 09:00–10:00."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It preserves the one-hour duration and capacity and says competing future choices would require a priority rule."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "capacity-slot-allocation-table__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "A is assigned the entire 09:00–11:00 R1 slot with its two-hour duration preserved because it precedes B."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "B is listed as unallocated for lack of remaining capacity and feasibility_status is 'partially_feasible'; the allocation data show both cannot fit under the constraints."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Verification explicitly rejects compression and overlap as contradicting the supplied rules and makes no optimality or full-completion claim."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "capacity-slot-allocation-table__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The conflict section identifies the 09:30–10:00 overlap between A’s fixed assignment and R1 blackout and notes the absent precedence rule."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "B is assigned to R2 from 09:00–10:00 for one hour, while A is retained in unresolved_tasks."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "feasibility_status is 'undetermined' because A’s governing precedence is unresolved, and no completion or optimality guarantee appears."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "capacity-slot-allocation-table__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "capacity-slot-allocation-table__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "capacity-slot-allocation-table__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "capacity-slot-allocation-table__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

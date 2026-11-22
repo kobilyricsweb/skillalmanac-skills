@@ -1,0 +1,62 @@
+{
+  "missing_inputs": [],
+  "paths": [
+    {
+      "branch_id": "main",
+      "entry_state": "S0",
+      "destination_state": "S1",
+      "entry_condition": "Audience is new, per the supplied initial entry rule.",
+      "message_id": "M1",
+      "purpose": "welcome",
+      "prerequisite": "none",
+      "cited_transition": "R1",
+      "transition_condition": "M1 is completed.",
+      "timing": "immediately",
+      "terminal_behavior": null,
+      "placement_status": "placed",
+      "gap": null
+    },
+    {
+      "branch_id": "stop-opt-out",
+      "entry_state": "any state",
+      "destination_state": null,
+      "entry_condition": "opt-out",
+      "message_id": null,
+      "purpose": null,
+      "prerequisite": null,
+      "cited_transition": null,
+      "transition_condition": null,
+      "timing": null,
+      "terminal_behavior": "Stop the sequence; no later message is permitted.",
+      "placement_status": "terminal",
+      "gap": null
+    },
+    {
+      "branch_id": "stop-complete",
+      "entry_state": "S1",
+      "destination_state": null,
+      "entry_condition": "S1 is reached",
+      "message_id": null,
+      "purpose": null,
+      "prerequisite": null,
+      "cited_transition": null,
+      "transition_condition": null,
+      "timing": null,
+      "terminal_behavior": "The sequence is complete.",
+      "placement_status": "terminal",
+      "gap": null
+    }
+  ],
+  "exclusions": [
+    {
+      "exclusion_text": "Opted-out people receive no later message.",
+      "scope": "opted-out people",
+      "condition": "opt-out",
+      "effect": "No later message is permitted."
+    }
+  ],
+  "unplaced_messages": [],
+  "unreachable_states": [],
+  "conflicts": [],
+  "open_gaps": []
+}

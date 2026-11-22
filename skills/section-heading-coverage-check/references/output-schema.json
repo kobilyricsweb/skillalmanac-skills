@@ -1,0 +1,191 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sections",
+    "required_topic_assessments",
+    "input_limitations",
+    "unresolved_ambiguities"
+  ],
+  "properties": {
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "row_locator",
+          "section_id",
+          "heading",
+          "hierarchy_level",
+          "protected",
+          "promise",
+          "element_assessments",
+          "supporting_content",
+          "coverage_status",
+          "missing_elements",
+          "overbreadth",
+          "descendant_notes",
+          "repair_options"
+        ],
+        "properties": {
+          "row_locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "section_id": {
+            "type": ["string", "null"]
+          },
+          "heading": {
+            "type": "string"
+          },
+          "hierarchy_level": {
+            "type": ["integer", "null"],
+            "minimum": 1
+          },
+          "protected": {
+            "type": "boolean"
+          },
+          "promise": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "element_assessments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "promised_element",
+                "status",
+                "direct_supporting_content",
+                "missing_or_conflicting_evidence"
+              ],
+              "properties": {
+                "promised_element": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": ["covered", "partial", "absent", "contradicted", "unresolved"]
+                },
+                "direct_supporting_content": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "missing_or_conflicting_evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "supporting_content": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "coverage_status": {
+            "type": "string",
+            "enum": ["covered", "partial", "absent", "contradicted", "unresolved"]
+          },
+          "missing_elements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "overbreadth": {
+            "type": ["string", "null"]
+          },
+          "descendant_notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "repair_options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "required_topic_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "required_topic",
+          "status",
+          "supporting_row_locators",
+          "supporting_section_ids",
+          "direct_supporting_content",
+          "appropriate_heading_status",
+          "missing_or_conflicting_evidence"
+        ],
+        "properties": {
+          "required_topic": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["covered", "partial", "absent", "contradicted", "unresolved"]
+          },
+          "supporting_row_locators": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "supporting_section_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "direct_supporting_content": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "appropriate_heading_status": {
+            "type": "string",
+            "enum": ["yes", "no", "unresolved"]
+          },
+          "missing_or_conflicting_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "input_limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_ambiguities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

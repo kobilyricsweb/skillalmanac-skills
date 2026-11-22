@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Use this supplied glossary to find true terminology inconsistencies and list exact replacements. Use the supplied preferred glossary.",
+    "should_trigger": true
+  },
+  {
+    "query": "Normalize names for the same concept while preserving distinct meanings. Use the supplied preferred glossary.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review this passage for glossary-driven term consistency, with locations. Use the supplied preferred glossary.",
+    "should_trigger": true
+  },
+  {
+    "query": "Tell me which variants should change and which are intentionally different. Use the supplied preferred glossary.",
+    "should_trigger": true
+  },
+  {
+    "query": "Keep quotations and API identifiers unchanged while applying my preferred terms. Use the supplied preferred glossary.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a preferred-terms table and replacement list from this content. Use the supplied preferred glossary.",
+    "should_trigger": true
+  },
+  {
+    "query": "Do not infer terminology from frequency; use the explicit glossary I provide. Use the supplied preferred glossary.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find local aliases for the same feature without doing a full copyedit. Use the supplied preferred glossary.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag ambiguous terminology instead of forcing a replacement. Use the supplied preferred glossary.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check this multi-author passage for consistent names using the supplied naming policy. Use the supplied preferred glossary.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare two policy documents and decide which factual statement is correct.",
+    "should_trigger": false
+  },
+  {
+    "query": "Perform a general grammar and style edit on this article.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a brand voice guide and rewrite the entire website.",
+    "should_trigger": false
+  },
+  {
+    "query": "Extract claims and map each one to supporting evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit this document for accessibility and reading level.",
+    "should_trigger": false
+  },
+  {
+    "query": "Research the official product names on the web.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rename every variable and refactor the codebase.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a content refresh plan based on publication age and traffic.",
+    "should_trigger": false
+  },
+  {
+    "query": "Resolve contradictions between versions and issue a final approved policy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Publish the edited document and notify the authors.",
+    "should_trigger": false
+  }
+]

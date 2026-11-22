@@ -1,0 +1,54 @@
+{
+  "cases": [
+    {
+      "case_id": "C1",
+      "inputs": {
+        "level": 0
+      },
+      "condition_evaluation": "R1 true; R2 false.",
+      "expected_path": "R1",
+      "expected_action": "HOLD",
+      "supporting_rule": "R1",
+      "boundary_rationale": "Exercises the lower boundary and equality at zero.",
+      "coverage_status": "covered"
+    },
+    {
+      "case_id": "C2",
+      "inputs": {
+        "level": 2
+      },
+      "condition_evaluation": "R1 false; R2 true.",
+      "expected_path": "R2",
+      "expected_action": "CONTINUE",
+      "supporting_rule": "R2",
+      "boundary_rationale": "Exercises the upper boundary.",
+      "coverage_status": "covered"
+    },
+    {
+      "case_id": "C3",
+      "inputs": {
+        "level": null
+      },
+      "condition_evaluation": "The explicit missing-value rule applies.",
+      "expected_path": "missing-value branch",
+      "expected_action": "REQUEST_VALUE",
+      "supporting_rule": "Missing level has action REQUEST_VALUE.",
+      "boundary_rationale": "Exercises explicitly defined missing input behavior.",
+      "coverage_status": "covered"
+    }
+  ],
+  "uncovered_branches": [],
+  "unknown_branches": [],
+  "unreachable_branches": [],
+  "conflicting_branches": [],
+  "coverage_summary": "All two condition branches and the explicit missing-value branch are represented by synthetic cases.",
+  "unresolved_rules": [],
+  "boundary_notes": [
+    "Level 0 tests equality and the lower boundary; level 2 tests the upper boundary."
+  ],
+  "budget": {
+    "supplied_minutes": 3,
+    "allocated_minutes": 3,
+    "status": "within_budget"
+  }
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Synthetic test: map template placeholders to explicitly authorized source fields and show unresolved values.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: identify a conflict when two candidate fields could populate one placeholder.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: preserve an unknown invoice date when no mapping policy exists.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: record a supplied date-format transform for a bound placeholder.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: create one binding-map entry for every template placeholder.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: distinguish candidate similarity from proven field equivalence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: report a missing source without inventing a default.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: identify a policy conflict with the template’s required format.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: provide implementation notes without filling or sending the document.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: verify every transform is explicitly supplied before listing it.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: define the canonical fields and meanings in a dataset dictionary.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: reconcile two inventory counts and identify recount candidates.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: calculate whether staffing covers a required time window.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: design synthetic procedure cases for conditional branches.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: map document types to retention labels.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: auto-fill the Word template from the customer database.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: invent a default value for a missing invoice date.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: send the completed invoice to the customer.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: convert every timestamp to local time without a supplied rule.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: certify that the generated document is legally compliant.",
+    "should_trigger": false
+  }
+]

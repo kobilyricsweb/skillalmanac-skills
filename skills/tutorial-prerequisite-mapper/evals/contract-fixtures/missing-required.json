@@ -1,0 +1,54 @@
+{
+  "step_map": [
+    {
+      "step_id": "S1",
+      "action": "Save the supplied word in color.txt.",
+      "required_knowledge": [
+        "How to create a text file."
+      ],
+      "required_state": [
+        "Writable practice folder is open."
+      ],
+      "required_inputs": [
+        "Supplied word blue."
+      ],
+      "produced_artifact": "color.txt containing blue",
+      "later_consumers": [
+        "S2"
+      ],
+      "verification_cue": "Observe that color.txt contains blue.",
+      "dependency_status": "supplied"
+    },
+    {
+      "step_id": "S2",
+      "action": "Copy the word from color.txt into result.txt.",
+      "required_knowledge": [
+        "How to read and create text files."
+      ],
+      "required_state": [
+        "Writable practice folder is open."
+      ],
+      "required_inputs": [
+        "color.txt from S1"
+      ],
+      "produced_artifact": "result.txt containing blue",
+      "later_consumers": [],
+      "verification_cue": "Observe that result.txt contains blue.",
+      "dependency_status": "supplied"
+    }
+  ],
+  "dependency_edges": [
+    {
+      "from_step": "S1",
+      "to_step": "S2",
+      "artifact_or_state": "color.txt containing blue"
+    }
+  ],
+  "gaps": [],
+  "planning_status": "planning_complete",
+  "verification": {
+    "all_steps_have_status": true,
+    "all_consumed_artifacts_traced": true,
+    "actions_executed": false
+  }
+}

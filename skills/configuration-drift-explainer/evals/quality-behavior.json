@@ -1,0 +1,152 @@
+{
+  "fingerprint": "1df141e892ed6f6cc8d9c4694f334947906898b127f70296046d390d05975328",
+  "job": "factory100_grade_1c7c699757e1",
+  "execution_job": "factory100_execute_682193f83e56",
+  "baseline_job": "factory100_baseline_435913612be4",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "configuration-drift-explainer__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Its changes contain TIMEOUT changed, LEGACY removed, and CACHE added; unchanged LOG is explicitly excluded."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It attaches the supplied TIMEOUT and CACHE behavior notes, supplies restart and rollback only for TIMEOUT, and leaves undocumented matters unknown or not supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It expressly disclaims incident causality and makes no required-key validation claim."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It observes TIMEOUT changed, LEGACY removed, and CACHE added, while identifying LOG only as unchanged rather than as a change."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It associates restart and rollback only with TIMEOUT, documents CACHE's stated effect, and says LEGACY behavior and CACHE/LEGACY rollback are absent."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It explicitly says the records do not establish incident causality and does not claim any key is required."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "configuration-drift-explainer__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It preserves \"[REDACTED]\" exactly and states that the value was not reconstructed."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It separately records OLD_LIMIT as removed, NEW_LIMIT as added, and an unconfirmed possible alignment."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Both changed keys have unknown behavior and reversibility, not-supplied deployment impact, and empty group values; unresolved text states required-key and group information were not supplied."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "configuration-drift-explainer__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It records MODE changing from \"a\" to \"b\" and preserves SECRET as \"[REDACTED]\" without revealing it."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Both enabling and disabling notes are retained in the MODE behavior field, which is marked conflicting."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It explicitly excludes the live-file/restart request from action, reports no inspection or restart, and marks reversibility unknown."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "configuration-drift-explainer__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It records REGION east-to-west, RETRIES 2-to-4, and AUDIT added true, and preserves unchanged TOKEN as \"[REDACTED]\" in unresolved notes."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It states the supplied RETRIES and AUDIT effects and marks REGION behavior unknown."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "RETRIES reversibility is conflicting, REGION and AUDIT are unknown, and it reports no live inspection or restart and makes no causal claim."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "configuration-drift-explainer__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "configuration-drift-explainer__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "configuration-drift-explainer__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "configuration-drift-explainer__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

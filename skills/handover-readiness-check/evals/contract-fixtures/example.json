@@ -1,0 +1,53 @@
+{
+  "objective": "Hand over greeting tool v1.",
+  "criteria": [
+    {
+      "criterion_id": "C1",
+      "text": "Entering Ada displays Hello Ada in sandbox S.",
+      "status": "ready",
+      "reported_result": "The supplied screenshot displays the required input and output for v1 in S.",
+      "directly_read_evidence": [
+        "Screenshot X1 visibly shows version v1, environment S, input Ada, and output Hello Ada."
+      ],
+      "gap": null,
+      "source": "X1"
+    }
+  ],
+  "reproducibility": {
+    "inputs": [
+      "Ada"
+    ],
+    "environment": "sandbox S, version v1",
+    "steps": [
+      "Open v1 in S.",
+      "Enter Ada.",
+      "View the output."
+    ],
+    "expected_result": "Hello Ada",
+    "actual_result": "Hello Ada is visible in X1.",
+    "gaps": [],
+    "source": "Supplied steps and X1"
+  },
+  "evidence": [
+    {
+      "evidence_id": "EV1",
+      "level": "directly_read_artifact",
+      "examined_material": "Visible version, environment, input, and output in screenshot X1.",
+      "source": "X1",
+      "environment": "sandbox S, version v1",
+      "inspector_date": "not supplied",
+      "staleness": "unknown"
+    }
+  ],
+  "ownership": "Ren",
+  "blockers": [],
+  "reported_next_action": "Ren gives the note and screenshot to Bo.",
+  "recommended_next_action": {
+    "action": "Provide Bo with the supplied procedure and X1.",
+    "rationale": "These materials contain the stated reproduction steps and criterion evidence.",
+    "advisory_only": true
+  },
+  "limits": [
+    "No command, live inspection, transfer, or deployment was performed."
+  ]
+}

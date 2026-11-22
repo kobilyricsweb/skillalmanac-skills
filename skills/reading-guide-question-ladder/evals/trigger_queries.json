@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create a question ladder from this passage from locating details to evaluation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write passage-grounded questions with locations and expected evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make sure every factual question is answerable from the supplied text.",
+    "should_trigger": true
+  },
+  {
+    "query": "Add interpretation and evaluation questions without importing outside facts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design reading prompts for this learning goal and response length.",
+    "should_trigger": true
+  },
+  {
+    "query": "Ask whether the passage proves a stated cause is the sole cause.",
+    "should_trigger": true
+  },
+  {
+    "query": "Label any reflection question that does not require a factual answer.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check the answerability of each question against the complete passage.",
+    "should_trigger": true
+  },
+  {
+    "query": "Progress from what happened to what the text supports and leaves unproven.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a teacher-ready evidence ladder for this short reading.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn my source notes into a structured outline.",
+    "should_trigger": false
+  },
+  {
+    "query": "Summarize the passage into headings and bullet points.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare two terminology definitions in a contrast table.",
+    "should_trigger": false
+  },
+  {
+    "query": "Schedule retrieval practice for these vocabulary items.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design a timed peer-review process for this essay.",
+    "should_trigger": false
+  },
+  {
+    "query": "Translate an approved accommodation into test-day logistics.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find external facts to make the reading questions more challenging.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose the author’s intent from their biography.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write executable code that grades these questions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Prove the passage’s causal claim using outside research.",
+    "should_trigger": false
+  }
+]

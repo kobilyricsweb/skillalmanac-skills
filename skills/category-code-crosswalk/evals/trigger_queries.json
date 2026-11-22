@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create a traceable crosswalk between these two supplied code lists.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve one-to-many mappings in the category-code reconciliation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Leave unsupported source codes unmapped and list the missing evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map the supplied product codes using the approved notes and effective dates.",
+    "should_trigger": true
+  },
+  {
+    "query": "Produce a table with source code, target code, mapping type, and rationale.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review contradictory mapping notes and flag affected relationships.",
+    "should_trigger": true
+  },
+  {
+    "query": "Reconcile these two coding schemes without matching labels by appearance.",
+    "should_trigger": true
+  },
+  {
+    "query": "Account for every supplied code as mapped, unmapped, excluded, or blocked.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document scope constraints for the proposed code crosswalk.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which codes have no supported counterpart in the target list.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find missing assignments within this single taxonomy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Summarize blank values by field and segment.",
+    "should_trigger": false
+  },
+  {
+    "query": "Normalize pounds and kilograms into one target unit.",
+    "should_trigger": false
+  },
+  {
+    "query": "Align monthly targets with daily observations.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review values flagged as outliers without deleting them.",
+    "should_trigger": false
+  },
+  {
+    "query": "Triage possible duplicate customer records.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map codes solely because their labels look similar.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent target codes for every unmatched source category.",
+    "should_trigger": false
+  },
+  {
+    "query": "Change production records to the new codes automatically.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify that this taxonomy is compliant with an external standard.",
+    "should_trigger": false
+  }
+]

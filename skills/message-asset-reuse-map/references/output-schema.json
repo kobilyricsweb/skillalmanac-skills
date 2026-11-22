@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "placements",
+    "unpaired_messages",
+    "unused_assets",
+    "blocked_placements",
+    "unresolved_authority",
+    "scope_limits"
+  ],
+  "properties": {
+    "placements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "message_id",
+          "exact_message",
+          "audience",
+          "context",
+          "asset_id",
+          "location",
+          "status",
+          "allowed_placement",
+          "restriction",
+          "adaptation_request"
+        ],
+        "properties": {
+          "message_id": {
+            "type": "string"
+          },
+          "exact_message": {
+            "type": "string"
+          },
+          "audience": {
+            "type": "string"
+          },
+          "context": {
+            "type": "string"
+          },
+          "asset_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "direct reuse",
+              "conditional reuse",
+              "adaptation request",
+              "unsupported placement",
+              "blocked",
+              "unresolved"
+            ]
+          },
+          "allowed_placement": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "restriction": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "adaptation_request": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "unpaired_messages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unused_assets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blocked_placements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_authority": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scope_limits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

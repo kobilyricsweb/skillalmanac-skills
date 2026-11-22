@@ -1,0 +1,11 @@
+{
+  "slug": "cache-invalidation-scenario-designer",
+  "category": "software",
+  "user_problem": "Cache requirements state keys and mutations but lack concrete invalidation scenarios and stale-read boundaries.",
+  "unique_output": "A scenario table connecting mutations, affected keys, invalidation timing, readers, and explicitly tolerated staleness.",
+  "required_input": "Cache key patterns, read paths, mutation events, invalidation rules, and stated staleness allowances.",
+  "critical_rule": "Do not infer hidden dependencies; identify missing key-to-entity relationships as specification gaps.",
+  "nearest_existing_and_difference": "Nearest is runbook-scenario-table; this designs cache-behavior cases rather than matching incidents to procedures.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input key product:{id}, list key category:{id}, product update invalidates only product key, tolerance zero. Output shows the product key invalidation and flags category list freshness as unresolved because no relationship rule was supplied."
+}

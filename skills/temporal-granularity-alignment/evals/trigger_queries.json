@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Plan a monthly comparison from daily sales and monthly targets in UTC.",
+    "should_trigger": true
+  },
+  {
+    "query": "State which temporal rollups are permitted for these supplied sources.",
+    "should_trigger": true
+  },
+  {
+    "query": "Align weekly and quarterly observations without inventing finer values.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document calendar boundaries and timezone handling for this comparison.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify gaps and incomplete periods before joining the time series.",
+    "should_trigger": true
+  },
+  {
+    "query": "Explain whether daily records can be summed into the requested monthly grain.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a temporal-granularity alignment plan for these tables.",
+    "should_trigger": true
+  },
+  {
+    "query": "List forbidden expansions when one source is monthly and another is daily.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag missing timezone and calendar decisions in the supplied timestamps.",
+    "should_trigger": true
+  },
+  {
+    "query": "Specify how supplied observations should be grouped into comparison periods.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit whether a rate calculation used the correct weights.",
+    "should_trigger": false
+  },
+  {
+    "query": "Convert grams to kilograms using the approved formula.",
+    "should_trigger": false
+  },
+  {
+    "query": "Summarize null patterns by field and subgroup.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map two category code systems with rationale.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review unusual records above a supplied threshold.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find duplicate records for manual investigation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Copy each monthly target into every daily row automatically.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose a fiscal calendar even though none was supplied.",
+    "should_trigger": false
+  },
+  {
+    "query": "Forecast missing future periods from the observed time series.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify the temporal join under an external reporting standard.",
+    "should_trigger": false
+  }
+]

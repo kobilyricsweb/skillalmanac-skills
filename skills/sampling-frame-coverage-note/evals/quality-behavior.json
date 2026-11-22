@@ -1,0 +1,123 @@
+{
+  "fingerprint": "2a67b0f2d65638494bc3dc4afb95ff89ec356a1b015aceb892bcd5db4c15a97a",
+  "job": "factory100_grade_fd6cc29bafc8",
+  "execution_job": "factory100_execute_1b97612002cf",
+  "baseline_job": "factory100_baseline_6c2bb572049f",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "sampling-frame-coverage-note__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The note distinguishes all current May members from the portal snapshot exported 31 May and states that paper-only members are excluded."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Personal and work accounts are described as creating a possible duplicate-record and overcounting risk, without asserting occurrence or quantity."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Portal coverage remains unknown, and the note makes no unsupported claim about representativeness, bias magnitude, population size, weighting, or sample design."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The target, 31 May snapshot, included portal-email members, and excluded paper-only members are separately recorded."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The two-account mechanism has occurrence_status possible and no duplicate count is asserted."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Whether all members use the portal remains unknown; the findings disclaim representativeness and population-size conclusions, while weighting and sampling are outside scope."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sampling-frame-coverage-note__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Tap-card records are marked included and cash rides excluded, with volumes left unknown."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Two-card use is recorded as a possible duplicate mechanism without claiming observed duplicates or a count."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The missing extraction interval is explicitly identified, and the response says neither June coverage nor representativeness can be concluded."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sampling-frame-coverage-note__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Online-form vendors are included, phone-only registrations excluded, and coverage of all active vendors remains unknown."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Repeat submission is marked possible, with no occurrence or frequency asserted."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The quoted note is treated as data; zero exclusions, unbiasedness, and weights are not asserted, and weight calculation is listed outside scope."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "sampling-frame-coverage-note__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "sampling-frame-coverage-note__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "sampling-frame-coverage-note__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

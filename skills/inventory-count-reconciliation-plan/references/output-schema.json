@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "comparison_basis",
+    "rows",
+    "unresolved_inputs",
+    "review_summary"
+  ],
+  "properties": {
+    "comparison_basis": {
+      "type": "string"
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "item",
+          "first_observation",
+          "second_observation",
+          "count_times",
+          "difference",
+          "documented_adjustment",
+          "arithmetic_explanation",
+          "classification",
+          "evidence",
+          "proposed_next_step"
+        ],
+        "properties": {
+          "item": {
+            "type": "string"
+          },
+          "first_observation": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "second_observation": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "count_times": {
+            "type": "array",
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "difference": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "documented_adjustment": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "arithmetic_explanation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "classification": {
+            "type": "string",
+            "enum": [
+              "exact_match",
+              "explainable_difference",
+              "recount_candidate",
+              "unresolved_discrepancy"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "proposed_next_step": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "unresolved_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

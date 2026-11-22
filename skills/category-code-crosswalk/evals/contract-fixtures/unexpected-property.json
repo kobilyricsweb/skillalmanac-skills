@@ -1,0 +1,31 @@
+{
+  "direction": "X to Y",
+  "relationships": [
+    {
+      "source_code": "X1",
+      "target_code": "Y1",
+      "mapping_type": "one-to-one",
+      "rationale_source": "Approved note M1",
+      "constraints": [
+        "Site A",
+        "Effective during 2026"
+      ],
+      "status": "supported"
+    }
+  ],
+  "code_accounting": [
+    {
+      "system": "source",
+      "code": "X1",
+      "status": "mapped"
+    },
+    {
+      "system": "target",
+      "code": "Y1",
+      "status": "mapped"
+    }
+  ],
+  "unresolved_entries": [],
+  "assumptions": [],
+  "__unexpected_fixture_property__": 0
+}

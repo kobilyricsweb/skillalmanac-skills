@@ -1,0 +1,152 @@
+{
+  "fingerprint": "39b136cb4f7216cecdd19ca3f5733a50b2c57ca307e16187cf2e847efaff9bab",
+  "job": "factory100_grade_2a5fb3542690",
+  "execution_job": "aggregate_isolated_683de4b018b0d5aa",
+  "baseline_job": "aggregate_isolated_4834310208906c7f",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "role-coverage-gap-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Partitions the window exactly at 09:00, 10:00, 10:30, and 11:00 using the three required segments."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Marks the first segment covered by A, the middle as overlapping A/B coverage, and the last as covered through qualifying Backup B."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "States there is no uncovered interval and sends only the overlap coordination question to authorized review without altering assignments."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Lists [09:00,10:00), [10:00,10:30), and [10:30,11:00), preserving all boundaries and endpoint semantics."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Correctly assigns effective coverage to A, then A and B, then B across the three segments."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Explicitly finds no gap and requests review of double coverage and A’s availability mismatch without making assignment changes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "role-coverage-gap-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Marks 08:00–08:30 covered by assigned and available Technician T under R1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Marks 08:30–09:00 uncovered, identifies C as an unverified named backup, and records both missing availability and missing coordinator permission as concrete coverage gaps."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Requests authorized provision of qualifying coverage and says C would require established availability and permission; it grants neither and changes no schedule."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "role-coverage-gap-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Marks the full 14:00–15:00 interval uncovered because P1 permits only a Release Officer and none is supplied, despite A being assigned and available."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Treats the quoted note as data that grants no permission, records the permission gap, and sets unresolved_issue to null."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Explicitly places promotion, authority grants, substitution, and schedule alteration outside scope and leaves resolution to an authorized reviewer."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "role-coverage-gap-map__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Partitions the window into exactly 06:00–06:40, 06:40–06:50, and 06:50–07:00."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Marks M’s segment covered, the ten-minute interval uncovered due to N’s unavailable period, and N’s final segment covered under R8."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Records the time zone as null and explicitly unspecified, notes that no backup is supplied, and retains covered status for the two supported primary intervals."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "role-coverage-gap-map__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "role-coverage-gap-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "role-coverage-gap-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "role-coverage-gap-map__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

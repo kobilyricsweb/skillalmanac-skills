@@ -1,0 +1,218 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "label_definitions",
+    "decision_rules",
+    "metadata_requirements",
+    "edge_case_handling",
+    "synthetic_examples",
+    "verification_report"
+  ],
+  "properties": {
+    "label_definitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "definition"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "definition": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "decision_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "condition",
+          "label_result",
+          "uncertainty",
+          "segmentation_action",
+          "handling"
+        ],
+        "properties": {
+          "condition": {
+            "type": "string"
+          },
+          "label_result": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "uncertainty": {
+            "type": "string",
+            "enum": [
+              "resolved",
+              "incomplete",
+              "unresolved",
+              "conflicting"
+            ]
+          },
+          "segmentation_action": {
+            "type": "string",
+            "enum": [
+              "not_applicable",
+              "split_atomic_segments",
+              "retain_note_with_segment_boundaries"
+            ]
+          },
+          "handling": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "metadata_requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "required_fields",
+          "optional_fields",
+          "unknown_fields"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "required_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "optional_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unknown_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "edge_case_handling": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "edge_case",
+          "result",
+          "uncertainty"
+        ],
+        "properties": {
+          "edge_case": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string"
+          },
+          "uncertainty": {
+            "type": "string",
+            "enum": [
+              "resolved",
+              "incomplete",
+              "unresolved",
+              "conflicting"
+            ]
+          }
+        }
+      }
+    },
+    "synthetic_examples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "content",
+          "labels",
+          "metadata",
+          "status"
+        ],
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metadata": {
+            "type": "object"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "complete",
+              "incomplete",
+              "unresolved"
+            ]
+          }
+        }
+      }
+    },
+    "verification_report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "covered_labels",
+        "missing_definitions",
+        "rule_conflicts",
+        "metadata_gaps",
+        "truth_assessment_performed"
+      ],
+      "properties": {
+        "covered_labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_definitions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rule_conflicts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "metadata_gaps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "truth_assessment_performed": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

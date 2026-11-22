@@ -1,0 +1,152 @@
+{
+  "fingerprint": "79f114541e56926900d63ebd43ff1d1dab9754ab982c9823f401147db306d71e",
+  "job": "factory100_grade_a2c7f1e49ee8",
+  "execution_job": "factory100_execute_44caf71014da",
+  "baseline_job": "factory100_baseline_0ce543878b0c",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "escalation-trigger-catalog__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Preserves >3 failures, one 10-minute window, scheduler report, Operations, and the 15-minute deadline."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Classifies E1 as triggering at four failures and E2 as non-triggering at exactly three."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Marks severity undefined and lists incident diagnosis and performing or authorizing escalation as outside scope."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Preserves the strict threshold, window, evidence, destination, and timing."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Correctly treats E1 as triggered and E2 as not triggered at the literal boundary."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "States that severity is undefined but does not state that incident diagnosis and performing an escalation are outside scope."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "escalation-trigger-catalog__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Captures repeated login failures while leaving count and observation window null and explicitly refuses to infer them from E1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Classifies E1 as cannot_determine because neither the required count nor window is defined."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Identifies missing destination and meaning of promptly and places alerting, diagnosis, and operational escalation outside scope."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "escalation-trigger-catalog__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Preserves >=5, two consecutive one-minute checks, timestamped readings, Duty Manager, 20 minutes, and the maintenance exclusion."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "E1 is excluded because both readings are maintenance-tagged; E2 fails because its second reading is below five."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Identifies the quoted data note as non-authoritative and non-altering, while listing sending notifications and performing escalation as outside scope."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "escalation-trigger-catalog__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Rule A retains every supplied operator, threshold, cadence, count, evidence, destination, timing, override, and boundary."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "E1 is a non-trigger because the training reading is excluded; E2 triggers on three consecutive untagged readings above 2%."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Rule B leaves seriousness, threshold, window, destination, promptly timing, and severity unresolved without inventing values."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "escalation-trigger-catalog__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "escalation-trigger-catalog__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "escalation-trigger-catalog__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "escalation-trigger-catalog__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

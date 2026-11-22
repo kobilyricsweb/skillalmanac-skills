@@ -1,0 +1,82 @@
+[
+  {
+    "query": "POSITIVE: Turn this vague weekly cleanup request into a bounded recurrence contract.",
+    "should_trigger": true
+  },
+  {
+    "query": "POSITIVE: Define what a recurring task may do, must skip, escalate, and record.",
+    "should_trigger": true
+  },
+  {
+    "query": "POSITIVE: Separate authorized actions from requested but unresolved actions in this recurring workflow.",
+    "should_trigger": true
+  },
+  {
+    "query": "POSITIVE: Specify trigger, inputs, completion evidence, stop conditions, and exceptions for a repeated task.",
+    "should_trigger": true
+  },
+  {
+    "query": "POSITIVE: Identify the missing boundaries before this recurring operation is automated.",
+    "should_trigger": true
+  },
+  {
+    "query": "POSITIVE: Draft a safe recurrence contract for a monthly review process.",
+    "should_trigger": true
+  },
+  {
+    "query": "POSITIVE: Flag destructive actions that need separate authorization in this repeated task.",
+    "should_trigger": true
+  },
+  {
+    "query": "POSITIVE: Define when the recurring task should pause, skip, escalate, or terminate.",
+    "should_trigger": true
+  },
+  {
+    "query": "POSITIVE: Check whether this repeated request has an unbounded scope or missing completion record.",
+    "should_trigger": true
+  },
+  {
+    "query": "POSITIVE: Convert this recurring owner request into explicit allowed and excluded actions.",
+    "should_trigger": true
+  },
+  {
+    "query": "HARD NEGATIVE: Schedule the recurring job in our automation platform.",
+    "should_trigger": false
+  },
+  {
+    "query": "HARD NEGATIVE: Execute the cleanup and delete the stale records now.",
+    "should_trigger": false
+  },
+  {
+    "query": "HARD NEGATIVE: Write a generic agent instruction file for every workflow.",
+    "should_trigger": false
+  },
+  {
+    "query": "HARD NEGATIVE: Plan a content refresh calendar and assign editorial topics.",
+    "should_trigger": false
+  },
+  {
+    "query": "HARD NEGATIVE: Send the escalation message to the task owner.",
+    "should_trigger": false
+  },
+  {
+    "query": "HARD NEGATIVE: Approve the destructive action because the owner requested it.",
+    "should_trigger": false
+  },
+  {
+    "query": "HARD NEGATIVE: Run a support workflow and reply to all affected customers.",
+    "should_trigger": false
+  },
+  {
+    "query": "HARD NEGATIVE: Create a cron expression and deploy the automation.",
+    "should_trigger": false
+  },
+  {
+    "query": "HARD NEGATIVE: Review our meeting notes and turn them into recurring reminders.",
+    "should_trigger": false
+  },
+  {
+    "query": "HARD NEGATIVE: Modify the database records covered by this recurring request.",
+    "should_trigger": false
+  }
+]

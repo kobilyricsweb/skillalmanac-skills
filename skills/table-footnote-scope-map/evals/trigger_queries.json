@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Map the scope of footnote markers across the cells of this supplied report table.",
+    "should_trigger": true
+  },
+  {
+    "query": "Determine whether each table qualifier applies to a cell, row, column, or whole table using only the supplied legend.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a cell-level map linking table markers to their exact footnote definitions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify orphan markers and definitions that are not bound to a table location.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which qualifiers are explicitly inherited and which scopes remain unresolved in this table.",
+    "should_trigger": true
+  },
+  {
+    "query": "A footnote appears in a column heading; map its applicability without assuming it covers the column.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve conflicting footnote definitions and show their unresolved scope in a table map.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map the supplied exclusion to the marked cell only unless an explicit rule broadens it.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit a table for silent broadening of footnote qualifiers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Produce a qualifier-scope map from labeled cells, markers, definitions, and a scope legend.",
+    "should_trigger": true
+  },
+  {
+    "query": "Extract all tables and footnotes from a scanned PDF.",
+    "should_trigger": false
+  },
+  {
+    "query": "Convert these table references into APA style.",
+    "should_trigger": false
+  },
+  {
+    "query": "Check whether the report's claims are factually true.",
+    "should_trigger": false
+  },
+  {
+    "query": "Infer the missing footnote definitions from context and industry practice.",
+    "should_trigger": false
+  },
+  {
+    "query": "Format this report table as a polished spreadsheet.",
+    "should_trigger": false
+  },
+  {
+    "query": "Calculate totals and percentages from the table cells.",
+    "should_trigger": false
+  },
+  {
+    "query": "Validate whether the exclusion complies with current regulations.",
+    "should_trigger": false
+  },
+  {
+    "query": "Replace ambiguous qualifiers with clearer wording for publication.",
+    "should_trigger": false
+  },
+  {
+    "query": "Search external sources to verify the table's underlying claims.",
+    "should_trigger": false
+  },
+  {
+    "query": "Apply a footnote to every row because it appears near the table heading.",
+    "should_trigger": false
+  }
+]

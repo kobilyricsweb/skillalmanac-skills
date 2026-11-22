@@ -1,0 +1,51 @@
+{
+  "orientation": "Use borrower assignment and assigned-shelf location as separate recognition cues; the supplied information does not establish that the statuses are mutually exclusive.",
+  "concepts": [
+    {
+      "name": "checked out",
+      "defining_features": [
+        "Currently assigned to a borrower"
+      ],
+      "non_features": [
+        "Merely not being on a shelf is not supplied as sufficient"
+      ],
+      "support_status": "supported"
+    },
+    {
+      "name": "on shelf",
+      "defining_features": [
+        "Placed in its assigned shelf location"
+      ],
+      "non_features": [
+        "Borrower assignment alone does not establish assigned-shelf placement"
+      ],
+      "support_status": "supported"
+    }
+  ],
+  "boundary_cases": [
+    {
+      "case": "Book B is on the return cart with no borrower assignment.",
+      "classification": null,
+      "basis": "It is a nonexample of checked out, but the input does not classify it as on shelf."
+    }
+  ],
+  "recognition_cues": [
+    "Look for a current borrower assignment.",
+    "Look for placement at the assigned shelf location."
+  ],
+  "discriminating_question": null,
+  "evidence": [
+    {
+      "claim": "Book A is checked out.",
+      "source_input": "Approved checked-out example: Book A assigned to Mina."
+    },
+    {
+      "claim": "Book C is on shelf.",
+      "source_input": "Approved on-shelf example: Book C at shelf F2."
+    }
+  ],
+  "unresolved_ambiguities": [
+    "The input does not say whether an item can be both assigned to a borrower and placed in its assigned shelf location, so no either-or question is supported.",
+    "The status of items that are neither assigned to a borrower nor at their assigned shelf location is not supplied."
+  ]
+}

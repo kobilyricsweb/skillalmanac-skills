@@ -1,0 +1,14 @@
+{
+  "slug": "offer-comparison-matrix",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "OCM-02",
+      "severity": "medium",
+      "location": "Ordinary eval, assertion 3 versus input-contract proof states",
+      "evidence": "The prompt explicitly says Offer B has `no proof`. The contract assigns the exact state `not supplied` when no proof item is supplied, while `unsupported by supplied record` applies when available items do not address the promise and `unresolved` applies to ambiguous or conflicting provenance or scope. The assertion instead requires B to be marked `unsupported or unresolved because no proof is supplied`.",
+      "consequence": "A contract-compliant output using `not supplied` can fail the eval, while two statuses that contradict the supplied condition can pass. This reintroduces the proof-state ambiguity the revised contract was intended to remove.",
+      "correction": "Change the assertion to require B's proof status to be `not supplied`, with the inquiry outcome remaining unverified. Reserve `unsupported by supplied record` for supplied items that do not address the promise and `unresolved` for ambiguity or conflict."
+    }
+  ]
+}

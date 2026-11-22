@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Specify which intake fields are required for each request type and why.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a conditional form-field contract for Support and Procurement requests.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark each field's format, validation source, and incomplete-case handling.",
+    "should_trigger": true
+  },
+  {
+    "query": "Determine whether this request is incomplete under the supplied intake rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Do not make fields mandatory unless the provided rules require them.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate not-applicable fields from missing fields in this intake specification.",
+    "should_trigger": true
+  },
+  {
+    "query": "Trace each required intake field to a routing or downstream need.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify unresolved conflicts in these request-type field requirements.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a completeness matrix for the listed request categories.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document what happens when a required intake value is absent or invalid.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare these configuration files for added, removed, or renamed keys.",
+    "should_trigger": false
+  },
+  {
+    "query": "Extract decision branches from this procedure and show their rejoin points.",
+    "should_trigger": false
+  },
+  {
+    "query": "Route urgent billing requests to the correct operational destination.",
+    "should_trigger": false
+  },
+  {
+    "query": "Allocate these tasks to the finite shifts without resource overlap.",
+    "should_trigger": false
+  },
+  {
+    "query": "Catalog measurable escalation triggers and their evidence requirements.",
+    "should_trigger": false
+  },
+  {
+    "query": "Redesign the form based on what users usually prefer.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write code that validates submissions and stores them in a database.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose why customers abandon this intake form.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify that these fields satisfy a privacy regulation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send incomplete requests back to customers automatically.",
+    "should_trigger": false
+  }
+]

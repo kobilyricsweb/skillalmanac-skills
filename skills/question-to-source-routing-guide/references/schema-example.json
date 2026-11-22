@@ -1,0 +1,36 @@
+{
+  "synthetic": true,
+  "input": "Question example Q1: \"Where is the payroll submission deadline stated?\" Source inventory: PAY1 is the payroll handbook; ARC1 is an archived payroll note. Authority rule R1: PAY1 is the sole authority for payroll deadlines. Acceptable evidence: the payroll deadline statement in PAY1. Update dates: PAY1 was updated 2026-11-01; ARC1 was updated 2026-10-01. Fallback: HR1 is the supplied payroll contact if PAY1 is unavailable.",
+  "expected_artifact": {
+    "routes": [
+      {
+        "question_pattern": "Questions asking where the payroll submission deadline is stated",
+        "requested_information": "Authoritative payroll deadline evidence",
+        "route_status": "resolved",
+        "selected_source": "PAY1",
+        "acceptable_evidence": [
+          "The payroll deadline statement in PAY1"
+        ],
+        "freshness_cue": {
+          "status": "known",
+          "update_date": "2026-11-01",
+          "note": "The supplied update date is available; no maximum-age rule was supplied."
+        },
+        "fallback": "HR1",
+        "basis": [
+          "R1 designates PAY1 as the sole authority for payroll deadlines."
+        ]
+      }
+    ],
+    "exceptions": [],
+    "verification_report": {
+      "coverage": "full",
+      "uncovered_questions": [],
+      "unsupported_inferences_avoided": [
+        "ARC1 was not treated as authoritative merely because it concerns payroll."
+      ],
+      "unresolved_items": []
+    }
+  },
+  "status": "specification; not an executed test"
+}

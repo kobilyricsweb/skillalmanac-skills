@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Turn these cache keys and mutations into explicit invalidation scenarios.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map each mutation to affected cache keys and readers from the supplied rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify unresolved cache relationships under a zero-staleness requirement.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a cache freshness scenario table without running the system.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show invalidation timing and tolerated staleness for these read paths.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag missing key-to-entity relationships in this cache specification.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare mutation rules with the declared cache key patterns.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve conflicting cache invalidation rules as explicit gaps.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design cases for product updates affecting product and list caches.",
+    "should_trigger": true
+  },
+  {
+    "query": "Report which cache behavior is specified versus unresolved.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write a runbook matching cache incidents to operational procedures.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review dependency release notes against usage sites.",
+    "should_trigger": false
+  },
+  {
+    "query": "Specify idempotency behavior for concurrent duplicate requests.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review log templates for missing diagnostic fields.",
+    "should_trigger": false
+  },
+  {
+    "query": "Test cache freshness in a live environment.",
+    "should_trigger": false
+  },
+  {
+    "query": "Explain configuration drift between deployments.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create roundtrip examples for a serialization format.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit retry budgets and retry limits.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose why a production cache serves stale data.",
+    "should_trigger": false
+  },
+  {
+    "query": "Authorize changing the cache invalidation implementation.",
+    "should_trigger": false
+  }
+]

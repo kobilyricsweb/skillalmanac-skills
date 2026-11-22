@@ -1,0 +1,123 @@
+{
+  "fingerprint": "b03df5b1d57a593a146bda0debb0a59949f666d9747ab920ccd34c034e4a12d7",
+  "job": "factory100_grade_cb0633483c20",
+  "execution_job": "factory100_execute_3d2db961425b",
+  "baseline_job": "factory100_baseline_b40a8387a71b",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "research-note-deduplication-plan__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "N1 and N2 are grouped as shared-source repetition and expressly described as the same proposition in different wording, rather than independent corroboration."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "N3 is kept separate and the red/green contradiction is identified, but the response does not preserve the notes' original wording; it only summarizes that N1/N2 report red and N3 reports green."
+            },
+            {
+              "assertion_index": 2,
+              "status": "fail",
+              "evidence": "The provenance object accounts for IDs, sources, dates, and forms and avoids deciding truth, but it omits every note's original_text, so all required original texts are not preserved."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "N1 and N2 are classified as paraphrases with shared_source_repetition and explicitly treated as non-independent evidence."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "N3 remains separate in contradiction decisions against both red notes, and the preserved_provenance entries retain the original red and green texts."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The inventory retains every ID, source, date, form, and original text, while the pair decisions state that both sides remain and no truth determination is made."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research-note-deduplication-plan__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The N1-N2 comparison is placed in unresolved_comparisons because N2's source ID is missing despite wording that indicates a paraphrase."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "No clusters or pair merges are created; N2's source remains null, and both original texts, dates, and form markers are retained."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The verification report marks all IDs accounted for, lists both as unclustered, and identifies N2's missing source ID as the issue."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research-note-deduplication-plan__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "N1 and N2 are classified as exact_duplicate with evidence_basis shared_source_repetition."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Both IDs retain source A, date 2026-04-01, quotation form, and the complete original imperative text in the inventory and preserved provenance."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The provenance treatment explicitly retains both notes with no deletion or publication, treating the identical wording only as research data to classify."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "research-note-deduplication-plan__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "research-note-deduplication-plan__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "research-note-deduplication-plan__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "<local-path>",
+    "-B",
+    "<local-path>",
+    "<local-path>"
+  ],
+  "exit": 1,
+  "stdout": "{\"errors\": [], \"findings\": [{\"changed_fields\": [], \"codes\": [\"NO_CHANGE\", \"CHANGED_FIELD_MISMATCH\"], \"variant\": \"same\"}, {\"changed_fields\": [\"body\", \"headline\"], \"codes\": [\"MORE_THAN_ONE_CHANGED\", \"CHANGED_FIELD_MISMATCH\"], \"variant\": \"declared-plus-other\"}], \"ok\": false, \"variant_count\": 2}\n",
+  "stderr": "",
+  "expected_observations_independently_asserted": [
+    "The recorded exit1 is interpreted as valid input with design findings, not malformed input or a successful one-field check.",
+    "The same variant has NO_CHANGE plus CHANGED_FIELD_MISMATCH; declared-plus-other has MORE_THAN_ONE_CHANGED plus CHANGED_FIELD_MISMATCH with body and headline.",
+    "The answer accurately identifies this as a recorded CLI observation and performs or claims no new execution, rewrite, publication or performance test."
+  ],
+  "scope": "actual local CLI run; not native agent tool use"
+}

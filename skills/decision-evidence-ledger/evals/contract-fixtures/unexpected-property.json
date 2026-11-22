@@ -1,0 +1,23 @@
+{
+  "title": "Refresh interval decision ledger",
+  "source_scope": "Supplied record W1-W2 concerning the maximum refresh interval",
+  "entries": [
+    {
+      "id": "E1",
+      "classification": "decision",
+      "statement": "The approved maximum refresh interval is 10 minutes.",
+      "status_finality": "final",
+      "authority": "Rina is established as the authorized approver for this scope.",
+      "time": "not stated",
+      "source_reference": "W2",
+      "classification_basis": "W2 reports approval, and W1 establishes scope-specific authority."
+    }
+  ],
+  "relations": [],
+  "conflicts": [],
+  "open_questions": [],
+  "coverage_notes": [
+    "The approval time was not supplied."
+  ],
+  "__unexpected_fixture_property__": 0
+}

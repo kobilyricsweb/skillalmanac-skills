@@ -1,0 +1,13 @@
+[
+  {
+    "id": "metric-definition-card__parent_holdout",
+    "slug": "metric-definition-card",
+    "prompt": "Draft a definition card for product activation rate from these notes: numerator=accounts completing setup; denominator=eligible signups. Eligibility, time window, timezone, exclusions and zero-denominator behavior are unspecified. NoteN1 says account creation date anchors the window; N2 says first login date, with no authority ordering. No measurements supplied.",
+    "assertions": [
+      "Separates numerator and denominator without inventing a numeric rate.",
+      "Marks eligibility/window/timezone/exclusions/zero-denominator policy as unresolved.",
+      "Preserves conflicting window anchors and does not silently choose the latest-looking note."
+    ],
+    "origin": "parent-designed fresh forward case; not an observed customer request"
+  }
+]

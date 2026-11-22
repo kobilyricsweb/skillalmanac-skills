@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["claims", "open_questions", "limits"],
+  "properties": {
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim_id", "statement", "statement_type", "status", "matches", "reason", "open_questions"],
+        "properties": {
+          "claim_id": {"type": "string"},
+          "statement": {"type": "string"},
+          "statement_type": {"enum": ["factual", "recommendation", "prediction", "opinion", "question", "other"]},
+          "status": {"enum": ["supported", "partly supported", "unsupported", "conflicting", "not assessable"]},
+          "matches": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["source_id", "location_state", "location_value", "fragment", "relation"], "properties": {"source_id": {"type": "string"}, "location_state": {"enum": ["available_location", "location_unavailable"]}, "location_value": {"type": ["string", "null"]}, "fragment": {"type": "string"}, "relation": {"enum": ["supports", "partly_supports", "contradicts"]}}}},
+          "reason": {"type": "string"},
+          "open_questions": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "open_questions": {"type": "array", "items": {"type": "string"}},
+    "limits": {"type": "array", "items": {"type": "string"}}
+  }
+}

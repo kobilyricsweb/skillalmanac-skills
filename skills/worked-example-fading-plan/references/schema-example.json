@@ -1,0 +1,66 @@
+{
+  "synthetic": true,
+  "input": "Target procedure: find a total by (1) identify both quantities, (2) write an addition expression, (3) add.\nComplete worked example: Two red counters and one blue counter. Identify 2 and 1; write 2 + 1; calculate 3.\nPrerequisites: learner can add single-digit numbers independently.\nCommon errors: learner sometimes copies only the first quantity into the expression.\nFinal independent task: \"There are 3 green counters and 2 yellow counters. How many counters are there altogether?\"",
+  "expected_artifact": {
+    "planning_status": "complete",
+    "stages": [
+      {
+        "stage": "Demonstration",
+        "learner_task": "Follow the worked example with 2 red and 1 blue counter.",
+        "shown_reasoning": [
+          "Identify both quantities: 2 and 1.",
+          "Write 2 + 1.",
+          "Calculate 3."
+        ],
+        "prompts": [
+          "Check that both quantities appear in the expression."
+        ],
+        "removed_support": [],
+        "independence_evidence": "Learner explains which two quantities form the expression.",
+        "rationale": "The full procedure is initially visible, while the prompt targets the supplied omission error."
+      },
+      {
+        "stage": "Prompted completion",
+        "learner_task": "Solve a new two-quantity total after both quantities are shown.",
+        "shown_reasoning": [
+          "Identify both quantities."
+        ],
+        "prompts": [
+          "Write an addition expression containing both quantities."
+        ],
+        "removed_support": [
+          "The expression and calculation are no longer demonstrated."
+        ],
+        "independence_evidence": "Learner writes an expression with both supplied quantities and calculates it.",
+        "rationale": "Expression construction is faded before arithmetic because the supplied prerequisite says single-digit addition is independent."
+      },
+      {
+        "stage": "Independent task",
+        "learner_task": "There are 3 green counters and 2 yellow counters. How many counters are there altogether?",
+        "shown_reasoning": [],
+        "prompts": [],
+        "removed_support": [
+          "Demonstrated quantity identification",
+          "Expression prompt",
+          "Demonstrated calculation"
+        ],
+        "independence_evidence": "Learner independently identifies 3 and 2, writes an addition expression, and calculates the total.",
+        "rationale": "The exact final task is reserved for independent performance after each procedure step has been faded."
+      }
+    ],
+    "retained_prompts": [
+      {
+        "prompt": "Check that both quantities appear in the expression.",
+        "basis": "The supplied common error is copying only the first quantity."
+      }
+    ],
+    "final_task_treatment": "Use the final independent task exactly as supplied, without adding solution content.",
+    "assumptions": [],
+    "conflicts": [],
+    "limits": [
+      "The plan does not claim learning gains or infer actual learner performance."
+    ],
+    "missing_fields": []
+  },
+  "status": "specification; not an executed test"
+}

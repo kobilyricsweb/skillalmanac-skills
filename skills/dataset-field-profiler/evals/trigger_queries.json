@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Profile which columns appear in these JSON records",
+    "should_trigger": true
+  },
+  {
+    "query": "Count missing top-level fields across exported objects",
+    "should_trigger": true
+  },
+  {
+    "query": "Summarize observed JSON types per record field",
+    "should_trigger": true
+  },
+  {
+    "query": "Inventory fields in a supplied JSON records array without emitting sample values",
+    "should_trigger": true
+  },
+  {
+    "query": "Find field coverage in supplied API response records",
+    "should_trigger": true
+  },
+  {
+    "query": "Report null and missing counts by key",
+    "should_trigger": true
+  },
+  {
+    "query": "Describe whether fields hold arrays objects or numbers",
+    "should_trigger": true
+  },
+  {
+    "query": "Make a non-validating schema observation report",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare exact integer versus fractional number observations",
+    "should_trigger": true
+  },
+  {
+    "query": "List sorted record keys and their presence frequencies",
+    "should_trigger": true
+  },
+  {
+    "query": "Enforce that every record has a required email field",
+    "should_trigger": false
+  },
+  {
+    "query": "Validate this JSON against my declared schema",
+    "should_trigger": false
+  },
+  {
+    "query": "Fix malformed rows in my dataset",
+    "should_trigger": false
+  },
+  {
+    "query": "Infer which fields are dates or URLs",
+    "should_trigger": false
+  },
+  {
+    "query": "Deduplicate customer records by identity",
+    "should_trigger": false
+  },
+  {
+    "query": "Generate SQL migrations from these objects",
+    "should_trigger": false
+  },
+  {
+    "query": "Check taxonomy parent-child cycles",
+    "should_trigger": false
+  },
+  {
+    "query": "Score data quality using business rules",
+    "should_trigger": false
+  },
+  {
+    "query": "Extract email addresses from JSON values",
+    "should_trigger": false
+  },
+  {
+    "query": "Call the API to fetch additional records",
+    "should_trigger": false
+  }
+]

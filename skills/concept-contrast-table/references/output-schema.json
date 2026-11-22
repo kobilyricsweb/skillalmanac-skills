@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["orientation", "concepts", "boundary_cases", "recognition_cues", "discriminating_question", "evidence", "unresolved_ambiguities"],
+  "properties": {
+    "orientation": {"type": "string"},
+    "concepts": {"type": "array", "items": {"type": "object", "required": ["name", "defining_features", "non_features", "support_status"], "properties": {"name": {"type": "string"}, "defining_features": {"type": "array", "items": {"type": "string"}}, "non_features": {"type": "array", "items": {"type": "string"}}, "support_status": {"enum": ["supported", "partial", "conflicting", "unsupported"]}}}},
+    "boundary_cases": {"type": "array", "items": {"type": "object", "required": ["case", "classification", "basis"], "properties": {"case": {"type": "string"}, "classification": {"type": ["string", "null"]}, "basis": {"type": "string"}}}},
+    "recognition_cues": {"type": "array", "items": {"type": "string"}},
+    "discriminating_question": {"type": ["object", "null"], "properties": {"question": {"type": "string"}, "expected_distinction": {"type": "string"}}, "required": ["question", "expected_distinction"]},
+    "evidence": {"type": "array", "items": {"type": "object", "required": ["claim", "source_input"], "properties": {"claim": {"type": "string"}, "source_input": {"type": "string"}}}},
+    "unresolved_ambiguities": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

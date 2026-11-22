@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Plan the promotional assets for this event using only confirmed dates and channels.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a bounded event asset plan with dependencies and deadline relations.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map which speaker references are permitted in each event channel.",
+    "should_trigger": true
+  },
+  {
+    "query": "List the required confirmed facts for the event web page and email.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn these event milestones into a practical promotional artifact set.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag placeholders and blockers in this event promotion plan.",
+    "should_trigger": true
+  },
+  {
+    "query": "Plan assets for a webinar without inventing speakers, benefits, or schedule details.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate web and email content boundaries for this approved event.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an event promotion dependency table from the supplied brief.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which event details are confirmed versus still unresolved.",
+    "should_trigger": true
+  },
+  {
+    "query": "Develop the overall marketing campaign strategy for the event.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write interview questions for the event speaker.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare several existing promotion variants.",
+    "should_trigger": false
+  },
+  {
+    "query": "Publish the event page and send the invitation email.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent a compelling event benefit and keynote schedule.",
+    "should_trigger": false
+  },
+  {
+    "query": "Refresh the event landing page copy as a content update.",
+    "should_trigger": false
+  },
+  {
+    "query": "Predict registrations from this promotional plan.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose paid-media bids and audience targeting for the event.",
+    "should_trigger": false
+  },
+  {
+    "query": "Approve the speaker’s legal permission for all channels.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a referral message for attendees who invite friends.",
+    "should_trigger": false
+  }
+]

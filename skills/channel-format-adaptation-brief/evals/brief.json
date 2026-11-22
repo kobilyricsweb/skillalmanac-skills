@@ -1,0 +1,11 @@
+{
+  "slug": "channel-format-adaptation-brief",
+  "category": "marketing",
+  "user_problem": "One approved message must be adapted across formats while preserving meaning, qualifiers, and CTA constraints.",
+  "unique_output": "A channel-by-channel brief specifying retained elements, length budget, allowable compression, format cues, and omissions.",
+  "required_input": "Approved source message, channel constraints, required qualifiers, permitted CTA, and protected phrases.",
+  "critical_rule": "Compression must not remove material qualification or create a stronger claim than the approved message.",
+  "nearest_existing_and_difference": "Nearest is message-asset-reuse-map; this plans format-specific adaptation rather than locating existing message reuse.",
+  "tier": "free",
+  "acceptance_scenario": "Input message says 'Pilot teams cut setup time by 20% in May,' qualifier must remain, CTA 'Read pilot notes,' limits 60 and 120 words. Output preserves pilot and May in both formats."
+}

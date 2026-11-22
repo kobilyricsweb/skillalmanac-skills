@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Synthetic test spec: turn these state and event notes into a transition table with guards and effects.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: identify every documented source-state and event destination in this behavior brief.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: show which transition combinations are unspecified rather than forbidden.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: map the Draft, Review, and Published lifecycle from the supplied notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: preserve conflicting transition guards and flag unresolved rows.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: extract event effects and destinations without inventing missing rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: build an evidence-linked state transition matrix from this prose.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: list unresolved state-machine cases after modeling the supplied behavior.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: convert these lifecycle notes into an executable-style transition model.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: compare two documents for consistency of their assertions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: illustrate how an API should return a documented validation error.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: check whether configuration keys drift between environments.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: compare the contracts of API version one and version two.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: resolve a locale key through declared fallback chains.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: map contradictory validation rules by field and source.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: decide which role may approve each organizational step.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: generate application code implementing this workflow.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: run tests against the live state machine.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: infer that every unmentioned transition is denied.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: compare explicit denied transitions with unspecified events in these supplied state rules without treating absence as denial.",
+    "should_trigger": true
+  }
+]

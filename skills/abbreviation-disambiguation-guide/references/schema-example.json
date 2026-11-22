@@ -1,0 +1,10 @@
+{
+  "synthetic": true,
+  "input": "Approved glossary: ‘PX’ may mean ‘Project X’ or ‘Proxy Exchange.’ Occurrence P1 at Memo §2 reads: ‘The Project X team labeled the folder PX.’ A supplied rule says an expansion written in the same sentence is direct evidence. Do not edit the memo.",
+  "expected_artifact": {
+    "occurrences": [{"id": "P1", "location": "Memo §2", "excerpt": "The Project X team labeled the folder PX.", "possible_expansions": ["Project X"], "evidence": ["Project X is written in the same sentence, satisfying the supplied direct-evidence rule."], "status": "resolved_by_supplied_evidence", "questions": []}],
+    "coverage": {"supplied_ids": ["P1"], "covered_ids": ["P1"], "unsupported_expansions": []},
+    "scope_limits": ["This guide does not edit the memo or establish a preferred term."]
+  },
+  "status": "specification; not an executed test"
+}

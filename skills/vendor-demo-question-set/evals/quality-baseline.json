@@ -1,0 +1,16 @@
+{
+  "fingerprint": "5cf41e7512000f7c0cc4f34744c4bbbf354993f1c084351f4cd68218993b1a9a",
+  "job": "factory100_baseline_071d165319fc",
+  "results": [
+    {
+      "id": "vendor-demo-question-set__q100_ordinary",
+      "answer": "{\"duration\":\"6 minutes\",\"participants\":[\"clerk\",\"supervisor\",\"vendor presenter\"],\"script\":[{\"time\":\"0:00-0:30\",\"action\":\"Vendor presenter introduces the workflow using only synthetic items A and B.\"},{\"time\":\"0:30-3:00\",\"requirement\":\"R1 (mandatory)\",\"action\":\"Clerk creates a list containing items A and B.\",\"evidence\":\"Capture the resulting list screen.\"},{\"time\":\"3:00-4:00\",\"action\":\"Transition; vendor presenter hands the workflow to the supervisor.\"},{\"time\":\"4:00-6:00\",\"requirement\":\"R2 (optional)\",\"action\":\"Supervisor views the list created by the clerk.\",\"evidence\":\"Capture the resulting list-view screen.\"}]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "raw_response_unchanged": true,
+  "recovered_storage_callback": true,
+  "batch_protocol_complete": true,
+  "request_prompts_exactly_match_current_cases": true
+}

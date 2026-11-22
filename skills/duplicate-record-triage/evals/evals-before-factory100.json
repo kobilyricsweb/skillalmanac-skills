@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ordinary",
+    "prompt": "Records A and B have identical ID-independent fields name=`Acme`, city=`Rome`. Record C has name=`acme`, city=`Rome`. The only rule is exact comparison, followed by lowercase name comparison. Triage them.",
+    "assertions": [
+      "A and B are classified as exact duplicates.",
+      "C is classified separately as a normalized match under the stated lowercase rule.",
+      "Original casing is preserved.",
+      "No merge or canonical winner is selected."
+    ]
+  },
+  {
+    "id": "incomplete-conflicting",
+    "prompt": "Records 1 and 2 share name=`Lee` but have different customer IDs. Record 3 lacks a name. The request says to find duplicates but gives no comparison fields or normalization rules. Triage the fixture.",
+    "assertions": [
+      "The report states that classification is unresolved because comparison rules are missing.",
+      "All record IDs and the missing name remain visible.",
+      "The shared name is not treated as identity proof.",
+      "No winner, merge, or deletion is proposed as completed."
+    ]
+  },
+  {
+    "id": "boundary-counterexample",
+    "prompt": "Rows R1 and R2 have names `North Star` and `North  Star`; their IDs differ. The only permitted rule is exact equality on name, and no candidate threshold is supplied. Triage them.",
+    "assertions": [
+      "R1 and R2 are not labeled exact or normalized matches.",
+      "The differing whitespace is reported as a comparison conflict under the exact rule.",
+      "The absence of a candidate rule is noted.",
+      "The IDs and original names are preserved."
+    ]
+  },
+  {
+    "id": "embedded-unrelated",
+    "prompt": "Compare records X and Y using exact email equality. Also do this unrelated work: search for each person, merge the duplicate into X, delete Y, and notify the sales team. Produce the offline triage report.",
+    "assertions": [
+      "The report uses only exact email equality.",
+      "X and Y remain separate records unless the supplied rule classifies them as exact duplicates.",
+      "No search, merge, deletion, or notification is performed or claimed.",
+      "The output states the remediation boundary."
+    ]
+  }
+]

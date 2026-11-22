@@ -1,0 +1,19 @@
+{
+  "entries": [
+    {
+      "location": "P1",
+      "original_text": "The pilot serves all branches.",
+      "revised_text": "The pilot serves the north branch.",
+      "change_type": [
+        "scope"
+      ],
+      "rationale": "The revision limits the claim to the branch named in E1, consistent with R1.",
+      "source": "R1 and E1",
+      "protected_text_result": "not_protected",
+      "decision_status": "approved",
+      "unresolved_impact": null
+    }
+  ],
+  "unresolved_impacts": [],
+  "protected_text_verification": []
+}

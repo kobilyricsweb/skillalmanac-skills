@@ -1,0 +1,150 @@
+{
+  "fingerprint": "d712f880ef4b16c4407f3e7c8b1601bf0c70d800599fd38f6507f99d485423c5",
+  "execution_job": "factory100_execute_3d2db961425b",
+  "method": "Actual local harness CLI validation of the produced artifact; not native agent tool use. Raw model answers retained unchanged.",
+  "case_count": 5,
+  "passed": true,
+  "source_and_execution_stable": true,
+  "results": [
+    {
+      "case_id": "channel-format-adaptation-brief__q100_ordinary",
+      "raw_answer_sha256": "dd45344cbdf9606e0a91c29f4220f5dce7f9fbbc6c63bfc50ecd3e31c100502c",
+      "artifact_sha256": "dd45344cbdf9606e0a91c29f4220f5dce7f9fbbc6c63bfc50ecd3e31c100502c",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_0.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_0.json"
+      ]
+    },
+    {
+      "case_id": "channel-format-adaptation-brief__q100_incomplete",
+      "raw_answer_sha256": "c26e0de3e8221e1227c5d5b8f197a89796ab9f9ae662dd25c9ed58f94ceb0b3d",
+      "artifact_sha256": "c26e0de3e8221e1227c5d5b8f197a89796ab9f9ae662dd25c9ed58f94ceb0b3d",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_1.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_1.json"
+      ]
+    },
+    {
+      "case_id": "channel-format-adaptation-brief__q100_adversarial",
+      "raw_answer_sha256": "93c5fb09c9dd4d3740c1452da14517736cf3aedc419fae2d2b6d1404f466ff6c",
+      "artifact_sha256": "93c5fb09c9dd4d3740c1452da14517736cf3aedc419fae2d2b6d1404f466ff6c",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_2.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_2.json"
+      ]
+    },
+    {
+      "case_id": "channel-format-adaptation-brief__q100_fresh_1",
+      "raw_answer_sha256": "4afd9d7c0a5f8244f8b6203ae72ef4ce1373f7a1ff7f084893a4051ea832f869",
+      "artifact_sha256": "4afd9d7c0a5f8244f8b6203ae72ef4ce1373f7a1ff7f084893a4051ea832f869",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_3.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_3.json"
+      ]
+    },
+    {
+      "case_id": "channel-format-adaptation-brief__q100_fresh_2",
+      "raw_answer_sha256": "71e1b4b749371887c06e75a115c59f38f58ab9b12aaf30ba440e4fc74bb35259",
+      "artifact_sha256": "71e1b4b749371887c06e75a115c59f38f58ab9b12aaf30ba440e4fc74bb35259",
+      "artifact_file": "<local-path>",
+      "presentation_code_fence_removed": false,
+      "artifact_content_modified": false,
+      "calls": [
+        {
+          "command": [
+            "<local-path>",
+            "-B",
+            "<local-path>",
+            "<local-path>"
+          ],
+          "exit": 0,
+          "stdout": "{\"status\": \"valid\", \"errors\": []}\n",
+          "stderr": "",
+          "script_sha256": "7695732a945966e5b33cb242ecbf5f437181c572e1b238ecd77b3f0dd64d5e7c",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "bundled_artifact": "evals/generated-artifacts/artifact_4.json",
+      "portable_replay_commands": [
+        "python -B scripts/check_output.py evals/generated-artifacts/artifact_4.json"
+      ]
+    }
+  ]
+}

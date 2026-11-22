@@ -1,0 +1,65 @@
+{
+  "sections": [
+    {
+      "row_locator": "heading-1",
+      "section_id": null,
+      "heading": "Setup and Cleanup",
+      "hierarchy_level": 1,
+      "protected": false,
+      "promise": [
+        "setup",
+        "cleanup"
+      ],
+      "element_assessments": [
+        {
+          "promised_element": "setup",
+          "status": "covered",
+          "direct_supporting_content": [
+            "‘Plug in the lamp before use’ supports setup."
+          ],
+          "missing_or_conflicting_evidence": []
+        },
+        {
+          "promised_element": "cleanup",
+          "status": "absent",
+          "direct_supporting_content": [],
+          "missing_or_conflicting_evidence": [
+            "The complete section supplies no cleanup content."
+          ]
+        }
+      ],
+      "supporting_content": [
+        "‘Plug in the lamp before use’ supports setup."
+      ],
+      "coverage_status": "partial",
+      "missing_elements": [
+        "cleanup"
+      ],
+      "overbreadth": "The heading promises cleanup, but the section supplies no cleanup content.",
+      "descendant_notes": [],
+      "repair_options": [
+        "Narrow the heading to setup.",
+        "Propose adding cleanup instructions once supported content is supplied."
+      ]
+    }
+  ],
+  "required_topic_assessments": [
+    {
+      "required_topic": "setup",
+      "status": "covered",
+      "supporting_row_locators": [
+        "heading-1"
+      ],
+      "supporting_section_ids": [],
+      "direct_supporting_content": [
+        "‘Plug in the lamp before use’ supports setup."
+      ],
+      "appropriate_heading_status": "yes",
+      "missing_or_conflicting_evidence": []
+    }
+  ],
+  "input_limitations": [
+    "heading-1 has no supplied section ID; section_id is null."
+  ],
+  "unresolved_ambiguities": []
+}

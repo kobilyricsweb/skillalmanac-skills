@@ -1,0 +1,22 @@
+{
+  "fingerprint": "3480bfd52c85f384c8abbda4ffdfc9c6f6b48ece0876821e3f63473e57b4a839",
+  "job": "aggregate_isolated_c701e876efb7a00a",
+  "results": [
+    {
+      "id": "scope-change-brief__q100_ordinary",
+      "answer": "Scope Change Brief — CR-7\n\nStatus: Proposed; not approved; no implementation authorized.\n\nBaseline record\n- B1: “Export a CSV containing date and title.”\n- Source: specification v1.\n- Acceptance evidence E1: Product Owner Mira’s email dated 2026-11-02 approving B1.\n- Resolution state: approval is recorded, but Mira’s authority to approve this scope is not established by the supplied records. Baseline approval authority remains unresolved.\n\nRequested change\n- R1: Retain the CSV, add artist to it, and add a JSON export containing date, title, and artist.\n- Source: request ticket CR-7.\n- Request owner: Ana.\n- Observed criterion C1: both exports contain date, title, and artist.\n- Resolution state: requested and documented, but not approved.\n\nRecord comparison\n- CSV output remains in scope, changing from date/title to date/title/artist.\n- JSON export is a new deliverable containing date/title/artist.\n- C1 is consistent with R1: “both exports” means the retained CSV and new JSON export, each with all three fields.\n- CR-7 expands both the CSV schema and the number of export formats relative to B1.\n\nMissing or unresolved information\n- Authorized approver for the baseline and change.\n- Formal approval or rejection of CR-7.\n- Dependencies and affected systems or consumers.\n- Delivery estimate and schedule impact.\n- Technical, operational, compatibility, privacy, or other risks.\n- Detailed acceptance evidence, including format rules, field definitions, ordering, encoding, empty-value handling, and validation method.\n\nDecisions needed\n1. Confirm who has authority to approve scope and whether E1 validly establishes B1.\n2. Approve, reject, or revise CR-7.\n3. Confirm C1 as the governing acceptance criterion and clarify export details.\n4. Identify dependencies and assess impacts on existing CSV consumers.\n5. Obtain estimates, schedule impact, and risk assessment before commitment.\n6. If approved, establish the revised baseline and required acceptance evidence.\n\nCurrent disposition: Preserve B1 as the documented baseline subject to unresolved approval authority. Record CR-7 as a pending scope-change request. Do not implement or represent the change as committed until the required decisions are recorded.",
+      "individual_job": "factory100_base_isolated_b9670e4ea8cb"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill_isolated_cases",
+  "executor_model": "gpt-5.6-sol",
+  "reasoning_effort": "high",
+  "case_context_isolated": true,
+  "answer_word_budget": 600,
+  "individual_worker_jobs": [
+    "factory100_base_isolated_b9670e4ea8cb"
+  ],
+  "method_note": "Every case uses its own fresh context. Both arms use identical model/effort/budget; raw responses unchanged, original prompts/assertions preserved, prior failures retained. Aggregate is a provenance index, not a model call.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

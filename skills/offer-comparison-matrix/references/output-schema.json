@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "offers",
+    "cross_offer_summary",
+    "outside_scope"
+  ],
+  "properties": {
+    "offers": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "audience",
+          "promise",
+          "included_assets",
+          "proof_items",
+          "proof_status",
+          "friction",
+          "testable_distinctions",
+          "constraints",
+          "unresolved_items"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "audience": {
+            "type": "string"
+          },
+          "promise": {
+            "type": "string"
+          },
+          "included_assets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "proof_items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "item",
+                "source_note"
+              ],
+              "properties": {
+                "item": {
+                  "type": "string"
+                },
+                "source_note": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "proof_status": {
+            "type": "string",
+            "enum": [
+              "supported",
+              "partial",
+              "not supplied",
+              "unsupported by supplied record",
+              "unresolved"
+            ]
+          },
+          "friction": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "testable_distinctions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "constraints": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unresolved_items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "cross_offer_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "supplied_contrasts",
+        "evidence_gaps",
+        "conflicts"
+      ],
+      "properties": {
+        "supplied_contrasts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_gaps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "conflicts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "outside_scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

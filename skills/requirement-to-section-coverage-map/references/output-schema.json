@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "matrix_rows",
+    "verification_report"
+  ],
+  "properties": {
+    "matrix_rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "requirement_id",
+          "requirement_text",
+          "priority",
+          "section_evidence",
+          "coverage_status",
+          "assessment_certainty",
+          "interpretation",
+          "duplication",
+          "conflicts",
+          "unresolved_gap"
+        ],
+        "properties": {
+          "requirement_id": {
+            "type": "string"
+          },
+          "requirement_text": {
+            "type": "string"
+          },
+          "priority": {
+            "enum": [
+              "required",
+              "optional"
+            ]
+          },
+          "section_evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "section_id",
+                "support"
+              ],
+              "properties": {
+                "section_id": {
+                  "type": "string"
+                },
+                "support": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "coverage_status": {
+            "enum": [
+              "covered",
+              "partial",
+              "related",
+              "absent",
+              "conflicted",
+              "unassessable"
+            ]
+          },
+          "assessment_certainty": {
+            "enum": [
+              "final",
+              "provisional"
+            ]
+          },
+          "interpretation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "duplication": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "conflicts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "section_ids",
+                "description"
+              ],
+              "properties": {
+                "section_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "unresolved_gap": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "verification_report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "all_requirements_accounted_for",
+        "covered_rows_have_section_support",
+        "reported_gaps",
+        "input_limitations"
+      ],
+      "properties": {
+        "all_requirements_accounted_for": {
+          "type": "boolean"
+        },
+        "covered_rows_have_section_support": {
+          "type": "boolean"
+        },
+        "reported_gaps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "input_limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

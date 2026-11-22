@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Synthetic test: design cases for both sides of a supplied threshold condition.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: include equality and boundary cases where the procedure defines them.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: mark missing-value behavior unknown when no rule is supplied.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: identify overlapping conditions with no precedence rule.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: separate covered, unreachable, and unspecified branches.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: create a matrix showing each synthetic input and expected path.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: verify arithmetic and comparison outcomes in boundary cases.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: report a missing action instead of inventing a default.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: fit prioritized synthetic cases within a supplied time budget.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: state infeasibility when required cases exceed the supplied budget.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test: route a live incident through the operational runbook.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: use observed logs to diagnose why a procedure failed.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: reconcile inventory observations and request a recount.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: map a template field to its source column.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: assess whether staff cover a scheduled responsibility.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: execute the procedure against production records.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: invent a fallback action for an unspecified branch.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: certify that the procedure is compliant with a standard.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: optimize the procedure for faster runtime without supplied evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test: publish an incident response decision based on the matrix.",
+    "should_trigger": false
+  }
+]

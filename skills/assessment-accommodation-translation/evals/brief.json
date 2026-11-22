@@ -1,0 +1,11 @@
+{
+  "slug": "assessment-accommodation-translation",
+  "category": "education",
+  "user_problem": "An approved accommodation statement must be translated into concrete assessment logistics without altering the assessed construct.",
+  "unique_output": "An implementation table mapping each approved accommodation to timing, materials, instructions, and unresolved logistics.",
+  "required_input": "Assessment format, assessed construct, exact approved accommodations, standard conditions, and available session constraints.",
+  "critical_rule": "Use only supplied learning goals and format-access preferences; no disability diagnosis, eligibility, private student profiles or legal-compliance judgments. Preserve assessment construct and mark missing approval.",
+  "nearest_existing_and_difference": "Nearest is scope-change-brief; this operationalizes already-approved assessment conditions rather than evaluating a general scope change.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input assessment tests algebra, standard time 40 minutes, approved 50% extra time and quiet room. Output specifies 60 minutes and quiet placement, while preserving identical algebra items and marking room availability unresolved."
+}

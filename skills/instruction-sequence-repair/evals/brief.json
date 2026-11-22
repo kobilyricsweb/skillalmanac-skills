@@ -1,0 +1,11 @@
+{
+  "slug": "instruction-sequence-repair",
+  "category": "content",
+  "user_problem": "Written instructions contain forward references, hidden prerequisites, or verification steps placed too late.",
+  "unique_output": "A reordered step plan preserving original actions while exposing moves, prerequisites, and verification checkpoints.",
+  "required_input": "Complete instruction steps, dependency statements, starting state, expected end state, and immutable step text.",
+  "critical_rule": "Reorder only when dependencies support it; do not invent actions or silently edit immutable instructions.",
+  "nearest_existing_and_difference": "Nearest is tutorial-prerequisite-mapper; this repairs sequence order rather than merely identifying prerequisite relationships.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input steps are submit form, enter email, confirm preview; dependency says preview follows entry and submission follows confirmation. Output orders enter, preview, submit and records both moves without changing step text."
+}

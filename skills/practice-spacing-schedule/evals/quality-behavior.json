@@ -1,0 +1,181 @@
+{
+  "fingerprint": "4d406258a68931c3177b2b5dfaa554b47933f29c61430ebd893f975769dccb64",
+  "job": "factory100_grade_92d947c42d98",
+  "execution_job": "aggregate_isolated_c5d3b049c918c00c",
+  "baseline_job": "aggregate_isolated_1f353f336636ef7c",
+  "passed": true,
+  "checks_total": 15,
+  "checks_passed": 15,
+  "machine_schema_checks": 5,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "practice-spacing-schedule__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Places A new in session 1, A review and B new in session 2, and B review in session 3."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Session 2 labels A as both retrieval_review and cumulative_mixing alongside newer B work."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Reports one unused slot in sessions 1 and 3 and audits prerequisites, capacities, and review intervals as satisfied."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The three-session schedule has the required A introduction/review and B introduction/review sequence."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Explicitly calls A’s session-2 activity a one-session-later retrieval review and cumulative mixing with B."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Identifies the two exact unused slots and marks capacity, prerequisite, fixed placements, and timing requirements satisfied."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice-spacing-schedule__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Uses session 1 for X new practice and session 2 for its exactly-one-session-later review."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Defers Y because its prerequisite information is missing and its placement cannot be checked without guessing."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Marks prerequisites unknown, reports zero unused capacity, and does not assign any prerequisite to Y."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice-spacing-schedule__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Schedules only fixed A, defers B for lack of capacity, and adds no review because none is required."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The assumptions reject the quoted request to ignore capacity, while B’s deferred reason concretely states that the only session has no remaining capacity after fixed A."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The assumptions explicitly reject the quoted request to create recurring calendar invitations and identify external calendar scheduling as outside scope."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice-spacing-schedule__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Retains both A and B as fixed new-practice placements in session 1 with distinct slots 1 and 2; deferred_items is empty."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Reports capacity 1, two placements, unused_capacity 0, and over_capacity 1."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Uses schedule_status “conflict” and audits the one-slot over-capacity conflict without claiming feasibility, optimality, or learning effects."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice-spacing-schedule__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Places C new in session 1, D new in session 2, C review in session 3, and D review in session 4."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Defers E because all existing slots are required and any introduction lacks an available exactly-two-sessions-later review slot."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Uses partial status, reports zero unused slots, notes D follows C’s prior new practice, and audits capacities as satisfied with no outcome claim."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "practice-spacing-schedule__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "practice-spacing-schedule__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "practice-spacing-schedule__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "practice-spacing-schedule__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "practice-spacing-schedule__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

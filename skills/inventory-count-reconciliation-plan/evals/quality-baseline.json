@@ -1,0 +1,12 @@
+{
+  "fingerprint": "96e831a4d7fb19870427f5cb2cd8cdae21e627a28d2c39ec123f89837912e18f",
+  "job": "factory100_baseline_fbe004bae79d",
+  "results": [
+    {
+      "id": "inventory-count-reconciliation-plan__q100_ordinary",
+      "answer": "{\"worksheet\":{\"location\":\"Shelf 1\",\"unit\":\"pieces\",\"observations\":[{\"time\":\"09:00\",\"SKU-A\":5,\"SKU-B\":3},{\"time\":\"10:00\",\"SKU-A\":4,\"SKU-B\":5}],\"changes_second_minus_first\":{\"SKU-A\":-1,\"SKU-B\":2},\"evidence\":{\"SKU-A\":\"Sale S1 records one piece between counts.\",\"SKU-B\":\"No adjustment evidence exists.\"},\"actions\":[\"Request a recount.\",\"Propose a record correction only after manager approval.\"],\"record_updates\":\"none\"}}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

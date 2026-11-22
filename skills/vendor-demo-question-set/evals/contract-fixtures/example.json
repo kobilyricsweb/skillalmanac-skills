@@ -1,0 +1,68 @@
+{
+  "objective": "Request a live demonstration of the supplied coordinator workflow and record observable evidence.",
+  "assumptions": [
+    "The vendor presenter and coordinator are available.",
+    "Synthetic items A and B may be used."
+  ],
+  "timed_script": [
+    {
+      "requirement_ids": [
+        "R1"
+      ],
+      "segment": "Create the checklist",
+      "duration_minutes": 3,
+      "timing_basis": "supplied",
+      "live_action_request": "Have the coordinator create a checklist containing synthetic items A and B.",
+      "observable_result": "A screen state showing one checklist with items A and B.",
+      "status": "planned"
+    },
+    {
+      "requirement_ids": [],
+      "segment": "Transition and evidence capture",
+      "duration_minutes": 1,
+      "timing_basis": "supplied",
+      "live_action_request": "Pause for the team to record the resulting screen state.",
+      "observable_result": "The requested screen-state record is captured for later review.",
+      "status": "planned"
+    }
+  ],
+  "traceability": [
+    {
+      "requirement_id": "R1",
+      "priority": "mandatory",
+      "status": "planned",
+      "script_segments": [
+        "Create the checklist"
+      ]
+    }
+  ],
+  "evidence_requests": [
+    {
+      "requirement_id": "R1",
+      "demo_evidence": "Record the screen state after the checklist is created.",
+      "later_validation_evidence": null
+    }
+  ],
+  "follow_up_questions": [
+    {
+      "requirement_id": "R1",
+      "question": "What later validation, if any, should confirm that the checklist persists after the demonstration?"
+    }
+  ],
+  "non_demonstrable": [],
+  "overflow": {
+    "duration_cap_minutes": 4,
+    "in_cap_planned_minutes": 4,
+    "total_requested_minutes": 4,
+    "arithmetic_overflow_minutes": 0,
+    "deferred_minutes": 0,
+    "full_scope_feasible": true,
+    "in_cap_agenda_feasible": true
+  },
+  "verification": {
+    "all_requirements_have_status": true,
+    "duration_arithmetic_checked": true,
+    "vendor_capabilities_claimed_as_observed": false,
+    "unresolved_validation_owner": true
+  }
+}

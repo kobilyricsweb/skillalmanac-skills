@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Match these supplied audience needs to the approved message library and cite the evidence for each row.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a fit table showing message, evidence, disqualifier, CTA, and unresolved gap for each supplied profile.",
+    "should_trigger": true
+  },
+  {
+    "query": "Which approved messages address the stated offline-export need in profile P1?",
+    "should_trigger": true
+  },
+  {
+    "query": "Map these approved needs to compatible messages without inferring buyer motivation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify uncovered needs and unmatched messages from this profile and message set.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare supplied messages against stated audience attributes using only the included evidence notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a traceable audience-to-message matrix with permitted calls to action.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag messages that lack evidence for the supplied audience need.",
+    "should_trigger": true
+  },
+  {
+    "query": "For each profile, show the strongest supported message match and any unresolved gaps.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn these approved profiles and message options into an evidence-bound fit table.",
+    "should_trigger": true
+  },
+  {
+    "query": "Order these messages into a landing-page narrative from awareness to conversion.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a full campaign brief with goals, channels, budget, and timeline.",
+    "should_trigger": false
+  },
+  {
+    "query": "Infer which audience segment is most likely to convert.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a tone card from these brand samples and ban hype language.",
+    "should_trigger": false
+  },
+  {
+    "query": "Adapt one approved message into email, social, and banner formats.",
+    "should_trigger": false
+  },
+  {
+    "query": "Reuse existing message assets across channels and locate duplicates.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write responses to buyer objections using supplied product facts.",
+    "should_trigger": false
+  },
+  {
+    "query": "Normalize these terms to the approved glossary.",
+    "should_trigger": false
+  },
+  {
+    "query": "Predict market response to each audience profile.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a nurture sequence with entry states and stop conditions.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "signal_register": [
+    {
+      "scenario_id": "S1",
+      "signal": "code E7",
+      "state": "observed"
+    },
+    {
+      "scenario_id": "S1",
+      "signal": "health page green",
+      "state": "observed"
+    },
+    {
+      "scenario_id": "S1",
+      "signal": "read-only log access",
+      "state": "observed"
+    }
+  ],
+  "escalation_register": [],
+  "verification_report": [
+    {
+      "scenario_id": "S1",
+      "rule_trace": "Observed code E7 and a green health page satisfy Login-E7 section 2; confirmed read-only log access satisfies its prerequisite. The quoted resolution instruction is preserved only as record content.",
+      "uncertainty": "none identified"
+    }
+  ],
+  "outside_scope_actions": [
+    "Restarting the service, executing either procedure, and declaring resolution are outside this classification task."
+  ]
+}

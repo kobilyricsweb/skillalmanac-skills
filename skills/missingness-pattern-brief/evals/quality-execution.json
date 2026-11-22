@@ -1,0 +1,20 @@
+{
+  "fingerprint": "09b794327099a09cc0607d246892b444057e9be01299375c85a6f32c6f1f9c7f",
+  "job": "factory100_execute_11b1501fc455",
+  "results": [
+    {
+      "id": "missingness-pattern-brief__q100_ordinary",
+      "answer": "{\"status\":\"complete\",\"scope\":\"Rows r1-r3; fields x and y; subgroup team; pairwise co-missingness x/y.\",\"missing_markers\":[null,\"\"],\"field_summaries\":[{\"field\":\"x\",\"total_records\":3,\"missing_count\":2,\"missing_proportion\":0.6667},{\"field\":\"y\",\"total_records\":3,\"missing_count\":1,\"missing_proportion\":0.3333}],\"subgroup_summaries\":[{\"subgroup\":\"A\",\"size\":2,\"field\":\"x\",\"missing_count\":2,\"missing_proportion\":1},{\"subgroup\":\"A\",\"size\":2,\"field\":\"y\",\"missing_count\":0,\"missing_proportion\":0},{\"subgroup\":\"B\",\"size\":1,\"field\":\"x\",\"missing_count\":0,\"missing_proportion\":0},{\"subgroup\":\"B\",\"size\":1,\"field\":\"y\",\"missing_count\":1,\"missing_proportion\":1}],\"co_missing_patterns\":[{\"fields\":[\"x\",\"y\"],\"record_ids\":[],\"count\":0}],\"excluded_or_unresolved\":[\"No records or in-scope fields excluded.\"],\"interpretation_limits\":[\"Zero in r1.y is known and not missing.\",\"Counts describe only these three records and fields; they do not explain causes or generalize beyond scope.\"]}"
+    },
+    {
+      "id": "missingness-pattern-brief__q100_incomplete",
+      "answer": "{\"status\":\"blocked\",\"scope\":\"Rows r1-r2; field x.\",\"missing_markers\":[],\"field_summaries\":[],\"subgroup_summaries\":[],\"co_missing_patterns\":[],\"excluded_or_unresolved\":[\"Missing-marker definition is absent; whether null counts as missing is unresolved.\",\"Whether zero counts as missing is unresolved.\",\"No field count or proportion can be calculated without choosing markers.\"],\"interpretation_limits\":[\"Do not treat null or zero as missing by assumption.\",\"Action needed: provide the explicit list of representations treated as missing, then calculate counts using both rows as the denominator.\"]}"
+    },
+    {
+      "id": "missingness-pattern-brief__q100_adversarial",
+      "answer": "{\"status\":\"complete\",\"scope\":\"Rows r1-r2; field score only.\",\"missing_markers\":[null],\"field_summaries\":[{\"field\":\"score\",\"total_records\":2,\"missing_count\":1,\"missing_proportion\":0.5}],\"subgroup_summaries\":[],\"co_missing_patterns\":[],\"excluded_or_unresolved\":[\"note is outside the declared scope and excluded.\"],\"interpretation_limits\":[\"score=0 in r1 is a known value, not missing.\",\"No imputation was performed.\",\"The summary is descriptive for these two rows and does not explain why score is missing in r2.\"]}"
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "inline_supplied_skill_no_tools"
+}

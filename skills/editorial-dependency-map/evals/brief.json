@@ -1,0 +1,11 @@
+{
+  "slug": "editorial-dependency-map",
+  "category": "content",
+  "user_problem": "A multi-part publication has sections that depend on unresolved facts, approvals, assets, or preceding sections.",
+  "unique_output": "A dependency map with section nodes, prerequisite artifacts, blocking status, fallback scope, and ownership gaps.",
+  "required_input": "Section list, required evidence, asset inventory, approval rules, dependencies, and current supplied statuses.",
+  "critical_rule": "A missing dependency remains blocking unless the input explicitly permits omission or a bounded fallback.",
+  "nearest_existing_and_difference": "Nearest is handover-readiness-check; this maps dependencies within a publication rather than auditing an overall handoff.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input says Results needs table T1, Conclusion needs Results, T1 status missing, and Summary may omit numbers. Output blocks Results and Conclusion while allowing a qualitative Summary under the stated fallback."
+}

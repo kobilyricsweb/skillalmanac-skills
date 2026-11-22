@@ -1,0 +1,12 @@
+{
+  "fingerprint": "293d6c30d3fa43d0e760ca7551b9e084b5e4da8a36b4524befbee3abf7872c0d",
+  "job": "factory100_baseline_0ce543878b0c",
+  "results": [
+    {
+      "id": "dependency-upgrade-impact-map__q100_ordinary",
+      "answer": "L 1.0 -> L 2.0 impact map:\n- U1 (app/start.js): exposed breaking rename. It calls openBox(\"a\"), which is renamed to loadBox(path). Required migration: replace openBox with loadBox.\n- U2 (app/view.js): no identified impact from the supplied notes; it calls renderBox(data), which is not referenced by the documented change.\n- Runtime coverage: covered. Production assumes Runtime 8, and L 2.0 explicitly supports Runtime 8.\n- Overall exposure: U1 requires code migration; U2 has no documented exposure. Coverage is limited to U1, U2, and Runtime 8."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

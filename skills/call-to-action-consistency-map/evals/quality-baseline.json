@@ -1,0 +1,13 @@
+{
+  "fingerprint": "10c7dcb95a3199d54feff7896c3f20485659484c071a9d7f11436829a2974ea2",
+  "job": "factory100_baseline_89f096a32320",
+  "results": [
+    {
+      "id": "call-to-action-consistency-map__q100_ordinary",
+      "answer": "Stage fit: Fit—evaluating readers may move to an educational demonstration. Destination fit: Fit—D is a two-minute method demonstration with three labeled screenshots and no signup. Mismatch: None for the approved web-page CTA; the prohibited evaluating-to-purchase transition is not used. Recommendation status: Approved as scoped to web pages. Path summary: evaluating audience → “View the demo” → educational demonstration page explaining the method; no direct purchase step."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

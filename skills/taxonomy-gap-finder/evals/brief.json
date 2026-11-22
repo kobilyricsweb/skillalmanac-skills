@@ -1,0 +1,10 @@
+{
+  "slug": "taxonomy-gap-finder",
+  "category": "data",
+  "user_problem": "Maintainers need to find uncategorized, multiply categorized, or weakly defined items in a supplied taxonomy.",
+  "unique_output": "Assignment/definition coverage report for supplied items and allowed category definitions: unassigned items, conflicting memberships, weak definitions and unresolved reviewer questions. Do not validate parent graphs; taxonomy-structure-check owns graph validation.",
+  "free_or_pack_candidate": "free",
+  "test_case": "Given category definitions and item assignments, preserve one unassigned item, one exclusivity conflict and one self-referential definition; do not invent missing assignments.",
+  "overlap_to_check": "Keyword research, content planning, and global ranking tools.",
+  "specific_guardrail": "Use supplied evidence and explicit constraints only; missing authority and unknown facts stay unresolved."
+}

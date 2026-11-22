@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Distribute items A and B, with B requiring prior introduction of A, across3 sessions of2 slots each. Each item requires one review exactly1 session after introduction. No fixed placements; use order A then B.",
+    "should_trigger": true
+  },
+  {
+    "query": "Plan new practice and mixing for A tagged X and B tagged Y. Neither has prerequisites or required reviews. Two sessions have2 slots each. Use input order A then B and alternate skill tags when possible.",
+    "should_trigger": true
+  },
+  {
+    "query": "Fit this fixed item set into3 sessions with2 slots each: A is fixed in session1 and B in session3, no prerequisites and no required reviews. Preserve both fixed placements and report unused capacity.",
+    "should_trigger": true
+  },
+  {
+    "query": "Schedule A, with no prerequisites, fixed introduction in session1 and one mandatory retrieval review exactly1 session later. Sessions1 and2 each have1 slot. Show introduction and review separately.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show deferred items and unused capacity for A then B, no prerequisites or required reviews, one session with1 slot. The supplied priority is A before B; do not enlarge capacity.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit this bounded practice schedule: A introduced in session1 and reviewed in session2, one slot per session, no prerequisites, exactly one mandatory review after1 session. Identify any constraint violations.",
+    "should_trigger": true
+  },
+  {
+    "query": "Place A before B where B requires prior introduction of A. Three sessions have2 slots each. A requires one review1 session later; B requires none. There are no fixed placements; use the supplied A-then-B priority.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make a feasible study schedule without claiming optimality: items A then B, neither with prerequisites or required reviews, two sessions each with1 slot. Use input order A then B as the placement priority.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use capacity1 in session1 and2 in session2. A has no prerequisites, fixed introduction in session1, and one required review in session2. B has no prerequisites or required reviews. Plan with A-then-B priority.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify conflicts for two1-slot sessions: A is fixed for introduction in session1 and must be reviewed exactly1 session later; B is fixed in session2 and requires no review. Neither has prerequisites. Preserve fixed facts and flag the capacity conflict.",
+    "should_trigger": true
+  },
+  {
+    "query": "Define whether this recurring work is authorized to run every Monday.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a recurring task boundary checklist for scheduled operations.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare two concepts with a discriminating question.",
+    "should_trigger": false
+  },
+  {
+    "query": "Organize a passage into source notes and an outline.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write peer feedback instructions for a student essay.",
+    "should_trigger": false
+  },
+  {
+    "query": "Convert approved testing accommodations into assessment logistics.",
+    "should_trigger": false
+  },
+  {
+    "query": "Claim which spacing schedule produces the best learning outcome.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose why this learner is forgetting material.",
+    "should_trigger": false
+  },
+  {
+    "query": "Book calendar events for these study sessions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Generate practice items that are not included in the supplied list.",
+    "should_trigger": false
+  }
+]

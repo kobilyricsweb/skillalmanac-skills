@@ -1,0 +1,12 @@
+{
+  "fingerprint": "ab67167a662841ffdf6ffe8fca672c139a8de067283e17732b739ec445563a38",
+  "job": "factory100_baseline_1399437506b5",
+  "results": [
+    {
+      "id": "abbreviation-disambiguation-guide__q100_ordinary",
+      "answer": "Occurrence-level guide:\n- O1 (§1): “CR-17” denotes “Change Request,” because the supplied rule assigns identifiers of the form CR-number to Change Requests.\n- O2 (§2): “CR” remains ambiguous between “Change Request” and “Customer Record.” The excerpt about correcting an address in the CR does not, by itself, resolve the meaning; retain both glossary candidates unless additional context is supplied.\n\nThe guide preserves the abbreviation and applies the identifier rule only where the required numbered form appears. It does not authorize changing source text, expanding every occurrence uniformly, inferring meanings from unrelated context, or adding glossary entries."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill"
+}

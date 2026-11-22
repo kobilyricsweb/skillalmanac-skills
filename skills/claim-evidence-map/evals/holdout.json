@@ -1,0 +1,32 @@
+[
+  {
+    "id": "holdout_split_limits",
+    "prompt": "Make an evidence map for this fictional draft: [D1] \"The Spruce service handles 300 requests per minute and stores every request for 90 days.\" Supplied source S1 section A: \"Spruce handles 300 requests per minute.\" S2 section B: \"Request logs are retained for 30 days.\" Both sources explicitly describe the same plan and period. Use only the supplied text.",
+    "assertions": [
+      "Separates throughput and retention into independently classified claims.",
+      "Classifies 300 requests/minute as supported by S1 section A.",
+      "Classifies the 90-day retention claim as conflicting with S2 section B, not merely partly supported.",
+      "Does not invent a plan difference to reconcile the retention contradiction."
+    ]
+  },
+  {
+    "id": "holdout_qualified_scope",
+    "prompt": "Map evidence for this fictional draft: \"All Birch users receive offline mode and unlimited exports.\" Supplied source S1 paragraph 2: \"Birch Pro users receive offline mode.\" No other source is supplied. Keep the universal qualifier and identify unsupported material.",
+    "assertions": [
+      "Separates offline-mode and unlimited-export claims.",
+      "Preserves the all-users versus Pro-only scope gap without claiming universal support.",
+      "Classifies unlimited exports as unsupported.",
+      "Does not invent another source or broaden the excerpt."
+    ]
+  },
+  {
+    "id": "ambiguous_period_is_not_trial_duration",
+    "prompt": "draft_text: \"The Aurora trial enrolled 120 volunteers and lasted 14 days.\"\nsources:\n- source_id: S1; document: Trial brief; location: section 2; content: \"The Aurora trial enrolled 120 volunteers.\"\n- source_id: S2; document: Trial brief; location: section 4; content: \"Participants completed a 14-day period.\"",
+    "assertions": [
+      "Enrollment is supported by S1 section 2.",
+      "The duration of the whole Aurora trial is not classified fully supported: S2 establishes only a participant period, with trial identity/whole-duration linkage missing.",
+      "Retains S2 section 4 and explains the missing linkage rather than inventing it.",
+      "Does not broaden the excerpt or invent an external source."
+    ]
+  }
+]

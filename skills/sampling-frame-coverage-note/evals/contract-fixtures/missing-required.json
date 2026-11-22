@@ -1,0 +1,32 @@
+{
+  "frame_form": "snapshot",
+  "time_bounds": "Snapshot exported on 30 April.",
+  "coverage_entries": [
+    {
+      "unit_or_channel": "Members with an active web account",
+      "status": "included",
+      "supporting_rule": "The export contains members with an active web account.",
+      "limitation": "Inclusion does not establish representativeness of all active members."
+    },
+    {
+      "unit_or_channel": "Members recorded only on paper",
+      "status": "excluded",
+      "supporting_rule": "The supplied exclusion removes paper-only records.",
+      "limitation": "The size of the excluded group is not supplied."
+    }
+  ],
+  "duplicate_risks": [
+    {
+      "mechanism": "A member may have separate personal and work web accounts.",
+      "consequence": "The same member could appear through more than one account.",
+      "occurrence_status": "possible"
+    }
+  ],
+  "unknown_coverage": [
+    "Whether every active member has a web account is unknown."
+  ],
+  "conflicts": [],
+  "verification_findings": [
+    "No duplicate count, population coverage rate, representativeness claim, or bias estimate is supported."
+  ]
+}

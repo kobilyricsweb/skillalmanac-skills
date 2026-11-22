@@ -1,0 +1,11 @@
+{
+  "slug": "practice-spacing-schedule",
+  "category": "education",
+  "user_problem": "A fixed set of practice items needs distributing across sessions while respecting supplied prerequisites and review intervals.",
+  "unique_output": "A session schedule showing new practice, retrieval review, cumulative mixing, and deferred items with reasons.",
+  "required_input": "Item list, skill tags, prerequisite order, session count, capacity, and allowed review intervals.",
+  "critical_rule": "Do not claim an optimal learning effect; produce a constraint-satisfying schedule and expose conflicts.",
+  "nearest_existing_and_difference": "Nearest is recurring-task-boundary-checker; this schedules bounded learning practice rather than defining authorization for recurring work.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input skills A before B, items A1,A2,B1, three sessions of two slots, review after one session. Output places A practice before B1, schedules an A retrieval in the next session, and shows unused capacity explicitly."
+}

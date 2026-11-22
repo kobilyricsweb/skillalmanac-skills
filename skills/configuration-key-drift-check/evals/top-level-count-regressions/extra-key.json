@@ -1,0 +1,21 @@
+{
+  "required_keys": [
+    "HOST"
+  ],
+  "optional_keys": [],
+  "configurations": [
+    {
+      "name": "a",
+      "keys": [
+        "HOST"
+      ]
+    },
+    {
+      "name": "b",
+      "keys": [
+        "HOST"
+      ]
+    }
+  ],
+  "extra": true
+}

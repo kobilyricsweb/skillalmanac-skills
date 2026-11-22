@@ -1,0 +1,13 @@
+{
+  "fingerprint": "709ae9085513cd6915cb54142d3bba911d22ec331dc3ac5f4c868d023a8db156",
+  "job": "factory100_baseline_0ce543878b0c",
+  "results": [
+    {
+      "id": "escalation-trigger-catalog__q100_ordinary",
+      "answer": "T1: Escalate to Operations within 15 minutes when failed_jobs > 3 within a single 10-minute window. Required evidence: scheduler window report. Severity: not defined.\n\nE1: Triggered. It records 4 failures in one 10-minute window and includes the required scheduler report. Escalation target: Operations; timing requirement: within 15 minutes.\n\nE2: Not triggered. Exactly 3 failures is an explicit non-trigger boundary, even with a scheduler report."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

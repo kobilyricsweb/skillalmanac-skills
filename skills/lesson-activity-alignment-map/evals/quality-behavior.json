@@ -1,0 +1,123 @@
+{
+  "fingerprint": "3817d24b7599a5083126ecd54b32d0412c4d6a852b65b0e704c999b9a3dc39bb",
+  "job": "factory100_grade_bb5cad2bdeaa",
+  "execution_job": "factory100_execute_51a8a20003aa",
+  "baseline_job": "factory100_baseline_f27aa15eb1b3",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "lesson-activity-alignment-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "A1 is classified Direct for O1 through the two-label learner product and C1."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "A2 is labeled Partial/indirect rather than exposure_only, but its evidence and notes clearly establish that listening yields no learner product and does not demonstrate O2 under C2."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Activity times sum to the stated 5 minutes, and the notes confirm that no activity was changed or added."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "A1 is direct_evidence for O1 through the submitted two-label card and the both-labels-correct criterion."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "A2 is exposure_only with no learner explanation or product, and O2 is listed as uncovered."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The time accounting maps exactly 5 minutes and proposals is empty."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson-activity-alignment-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The teacher-watching activity is classified exposure_only because no learner ordering action or observable performance is supplied."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It identifies absent observable performance and assessment criteria, uses only missing_criterion in uncertainty, and lists the objective as not demonstrated."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It preserves the 2-minute total and leaves proposals empty without inventing an activity, criterion, response, product requirement, or change."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson-activity-alignment-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "O1 is linked to A1 as direct_evidence through the submitted sentence and the criterion requiring because to join a claim and reason."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Attendance is not used as evidence, and the supplied C1 remains unchanged despite the quoted note."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The accounting maps exactly 4 minutes, while empty conflicts and proposals show no lesson or assessment change was made."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "lesson-activity-alignment-map__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "lesson-activity-alignment-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "lesson-activity-alignment-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

@@ -1,0 +1,152 @@
+{
+  "fingerprint": "56df49c4ced8c188da5015581172d7edb750a7927dabc3a93c9739e8a45d83f5",
+  "job": "factory100_grade_d9e92edb06ed",
+  "execution_job": "factory100_execute_555520ad4f3e",
+  "baseline_job": "factory100_baseline_962e614a16d0",
+  "passed": true,
+  "checks_total": 12,
+  "checks_passed": 12,
+  "machine_schema_checks": 4,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "runbook-scenario-table__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "It selects Queue-Q2 section 4 and lists the satisfied failed-state, Q2, archive-off, and read-only-access conditions."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It says Archive Review does not apply because archive is off and introduces no additional symptom or rule."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "It records rerun as a requested action rather than authorization and states that no rerun is authorized or performed."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Queue-Q2 section 4 is marked applicable with prerequisite satisfied and a complete trace of the positive conditions and false exclusion."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Archive Review is classified unmatched solely because the observed archive flag is off; the signal register preserves that observation."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The rerun text is separated into requested_actions, and outside_scope_actions excludes rerunning or executing the procedure."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runbook-scenario-table__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "S1's Paused Sync classification is indeterminate because lock state controls the exclusion and is unknown; operator-console access is separately recorded as an unknown prerequisite gap."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "For S2, Paused Sync is unmatched due to idle state, Idle Lock is indeterminate due to unknown lock and console access, and the scenario remains indeterminate with no unmatched-only escalation entry."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The escalation register is empty, and the outside-scope note expressly declines to invent a recovery step or recipient."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runbook-scenario-table__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Latency Check section A and Cache Check section B are both classified applicable with satisfied prerequisites."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The scenario status is overlap, the absent precedence rule is noted, and the escalation register retains the instruction to request an operator decision."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The quotation is isolated under quoted_record_content, and outside_scope_actions prohibits procedure execution, cache clearing, severity assignment, and resolution claims."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runbook-scenario-table__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Timeout Review section 3 is marked applicable; the trace cites degraded mode, timeout, maintenance off, and confirmed dashboard access."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "Degraded Service Review section 7 is indeterminate because incident-console access is unknown, and the escalation register requests an operator decision for the mixed states."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Restart and close are recorded only as requested actions, while outside_scope_actions forbids executing them or inferring resolution; no severity is assigned."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "runbook-scenario-table__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "runbook-scenario-table__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "runbook-scenario-table__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "runbook-scenario-table__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

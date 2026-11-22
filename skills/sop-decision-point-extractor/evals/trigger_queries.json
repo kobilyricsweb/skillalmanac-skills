@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Extract every documented if-then branch from this SOP into a decision table.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show the trigger, observable condition, action, and rejoin point for this procedure.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify which conditions in this operating procedure have no documented branch.",
+    "should_trigger": true
+  },
+  {
+    "query": "Convert this prose runbook into explicit decision points without inventing defaults.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate ordinary steps from actual choices in this standard operating procedure.",
+    "should_trigger": true
+  },
+  {
+    "query": "Trace each branch in the procedure back to its supporting passage.",
+    "should_trigger": true
+  },
+  {
+    "query": "Mark vague or non-observable conditions in this SOP for clarification.",
+    "should_trigger": true
+  },
+  {
+    "query": "Extract exceptions and stated precedence rules from the supplied procedure.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a decision table for the package inspection procedure below.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show what happens when the procedure encounters an uncovered condition.",
+    "should_trigger": true
+  },
+  {
+    "query": "Route each incoming case to a destination using our category rules.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map who must approve each step in this authorization process.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a finite schedule assigning tasks to the listed time slots.",
+    "should_trigger": false
+  },
+  {
+    "query": "Define required intake fields for Support and Procurement requests.",
+    "should_trigger": false
+  },
+  {
+    "query": "List escalation thresholds for backlog and incident conditions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write executable code that parses SOPs automatically.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide the legally required response to this workplace procedure.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose why operators are failing to follow the SOP.",
+    "should_trigger": false
+  },
+  {
+    "query": "Certify this procedure as compliant with an external standard.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send the revised procedure to all operators by email.",
+    "should_trigger": false
+  }
+]

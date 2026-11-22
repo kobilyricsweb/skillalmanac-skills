@@ -1,0 +1,123 @@
+{
+  "fingerprint": "ebff7a2c1e95c8ca9d5a48dc1b1ea2bff06da426fa8cfb7e6f5dd39af2ca0bc1",
+  "job": "factory100_grade_3c0b97d5d8a8",
+  "execution_job": "factory100_execute_90443213829f",
+  "baseline_job": "factory100_baseline_d46002e2c27a",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "outlier-review-packet__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Only B appears under triggered records, with its 10 C value evaluated against the inclusive temperature threshold."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "B’s 10 C observation, note 'none,' greater-than-or-equal threshold, and all three permitted dispositions are included."
+            },
+            {
+              "assertion_index": 2,
+              "status": "unclear",
+              "evidence": "The response lists evidence gaps, makes no causal claim, and leaves disposition unselected, but it does not explicitly distinguish threshold flagging from a finding that B is erroneous."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "B alone is a flagged review item; A and C are listed only as omitted because their values do not meet the inclusive threshold."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The item preserves 10 C, the inclusive greater-than-or-equal R1 rule, note 'none,' and retain, correct-with-source, and exclude-with-reason."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The packet identifies missing source evidence, leaves reviewer_decision null, makes no causal claim, and explicitly states that the flag is not an error or cause finding."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "outlier-review-packet__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Both A and B have flag_status unresolved, and neither is categorized as flagged or unflagged."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The response requests the exact numeric threshold and uses no assumed threshold to evaluate either count."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Only source_note is discussed as context, only retain and correct-with-source are offered, and both reviewer decisions remain null."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "outlier-review-packet__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "A at 8 is the sole flagged review item under the strictly-greater-than-7 rule, while B at 7 is omitted as not meeting it."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "A’s value and source_note 'manual entry' are preserved, while the packet includes no fraud label, deletion, or causal explanation."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Only retain and correct-with-source are allowed, and the verification notes explicitly reject deletion, fraud labeling, and the unauthorized exclude disposition."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "outlier-review-packet__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "outlier-review-packet__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "outlier-review-packet__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

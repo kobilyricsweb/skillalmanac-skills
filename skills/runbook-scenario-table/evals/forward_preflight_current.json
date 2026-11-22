@@ -1,0 +1,49 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "runbook-scenario-table__parent_holdout",
+        "slug": "runbook-scenario-table",
+        "prompt": "Map scenarios to procedures only. R1 section2 applies when signal=queue_high AND worker_healthy; R2 section4 applies when worker_down; both say request operator review, not auto-restart. Cases: C1 queue_high+worker_healthy; C2 worker_down; C3 signal unknown; C4 worker_healthy and worker_down reported together, timestamps absent. Do not execute procedures.",
+        "assertions": [
+          "Maps C1 toR1section2 and C2 toR2section4 with supplied applicability.",
+          "C3 unmatched and C4 conflicting observations remain unresolved/escalated, not silently forced to a route.",
+          "Preserves operator review; no automatic restart, remediation or incident resolution claimed."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "Scenario-to-procedure table:\n\n| Case | Observed facts | Status | Procedure mapping | Gap |\n| C1 | signal=queue_high; worker_healthy | applicable | R1 section2 | No additional prerequisite or escalation rule supplied. |\n| C2 | worker_down | applicable | R2 section4 | No additional prerequisite or escalation rule supplied. |\n| C3 | signal unknown | unmatched/indeterminate | No procedure supported | Signal needed to evaluate R1; worker state needed to evaluate R2. |\n| C4 | worker_healthy and worker_down both reported; timestamps absent | indeterminate/overlap unresolved | R1 may match worker_healthy if queue_high is also established; R2 may match worker_down | Contradictory worker observations and missing timestamps prevent a determinate mapping. Queue signal for R1 is also absent. |\n\nSignal register: queue_high, worker_healthy, worker_down, and signal unknown are the only supplied observations. Timestamps are absent for C4.\n\nExclusions: none supplied.\n\nPrerequisite gaps: C1 lacks no stated prerequisite beyond its supplied conditions. C2 lacks no stated prerequisite beyond its supplied condition. C3 lacks applicability facts. C4 lacks a method for reconciling contradictory worker states and lacks timestamps.\n\nOverlap/conflict notes: R1 requires queue_high AND worker_healthy. R2 requires worker_down. No precedence rule is supplied. C4 therefore cannot be resolved where both conditions are treated as reported facts; R1 also cannot be confirmed without queue_high.\n\nAction boundary: both supplied procedures say to request operator review. Neither supplies authorization for or instruction to auto-restart. No procedure was executed.\n\nEscalation register: no escalation recipient, trigger, priority, or threshold is supplied.\n\nVerification report: C1 maps directly to R1 section2; C2 maps directly to R2 section4; C3 satisfies neither explicit procedure condition; C4 contains contradictory observations and missing timing evidence, so applicability remains unresolved.",
+      "grade": {
+        "id": "runbook-scenario-table__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The table maps C1 to R1 section2 using queue_high plus worker_healthy and maps C2 to R2 section4 using worker_down."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "C3 is marked unmatched/indeterminate, while C4 is left unresolved because of contradictory worker observations, absent timestamps, and missing queue_high evidence for R1."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "The action boundary says both procedures request operator review, neither authorizes auto-restart, and no procedure was executed."
+          }
+        ]
+      },
+      "binding": {
+        "id": "runbook-scenario-table__parent_holdout",
+        "slug": "runbook-scenario-table",
+        "skill_sha256": "b395a0e0a9b14bf54ef6f0fbc965b07bc4fcd3c7d3c69e63f9c2e73f3dbbf3e0",
+        "contract_sha256": "df6653ef14d9091f56fb5799210fa3025ef6648665da63854a00790d05c13501",
+        "assertions_sent_to_executor": false
+      },
+      "round": "initial"
+    }
+  ]
+}

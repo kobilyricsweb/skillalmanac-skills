@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Triage this fixture into exact, normalized, candidate, and non-match groups using these rules. Use the supplied comparison fields and rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find possible duplicate rows but preserve IDs and show the comparison logic. Use the supplied comparison fields and rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate exact copies from case-normalized matches before any cleanup. Use the supplied comparison fields and rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Classify records under the explicit matching fields and threshold below. Use the supplied comparison fields and rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Report duplicate candidates without merging or choosing a surviving record. Use the supplied comparison fields and rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare these incomplete rows and preserve conflicts and missing values. Use the supplied comparison fields and rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an evidence-based duplicate triage report for this data fixture. Use the supplied comparison fields and rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Distinguish normalization matches from exact duplicates in these records. Use the supplied comparison fields and rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag records that meet the supplied candidate rule and leave others unresolved. Use the supplied comparison fields and rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Analyze duplicate possibilities while making no identity assumptions. Use the supplied comparison fields and rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Merge duplicate customer records and delete the older rows.",
+    "should_trigger": false
+  },
+  {
+    "query": "Resolve people identities using public web searches.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit whether a join creates one-to-many cardinality.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build an entity-resolution model with fuzzy matching.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose the canonical customer record for every group.",
+    "should_trigger": false
+  },
+  {
+    "query": "Deduplicate a spreadsheet and overwrite the source file.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find duplicate website content for an SEO report.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design a database unique constraint.",
+    "should_trigger": false
+  },
+  {
+    "query": "Calculate record-level type distributions and missingness.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a customer-support response about duplicate accounts.",
+    "should_trigger": false
+  }
+]

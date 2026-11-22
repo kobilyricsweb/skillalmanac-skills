@@ -1,0 +1,252 @@
+{
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "script_sha256": "8b35c9e3252b95a813402202a79f868bc5193e813ef2f34dee15c82c61e6514c",
+  "fixtures": [
+    {
+      "id": "good",
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "output": {
+        "errors": [],
+        "findings": [],
+        "ok": true,
+        "variant_count": 2
+      }
+    },
+    {
+      "id": "domain-defect",
+      "exit": 1,
+      "expected_exit": 1,
+      "passed": true,
+      "output": {
+        "errors": [],
+        "findings": [
+          {
+            "changed_fields": [
+              "body",
+              "headline"
+            ],
+            "codes": [
+              "MORE_THAN_ONE_CHANGED",
+              "CHANGED_FIELD_MISMATCH"
+            ],
+            "variant": "A"
+          }
+        ],
+        "ok": false,
+        "variant_count": 1
+      }
+    },
+    {
+      "id": "malformed",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "errors": [
+          {
+            "code": "VARIANT_ID",
+            "message": "variant IDs must be unique nonempty strings"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false,
+        "variant_count": 2
+      }
+    },
+    {
+      "id": "boundary",
+      "exit": 1,
+      "expected_exit": 1,
+      "passed": true,
+      "output": {
+        "errors": [],
+        "findings": [
+          {
+            "changed_fields": [],
+            "codes": [
+              "NO_CHANGE",
+              "CHANGED_FIELD_MISMATCH"
+            ],
+            "variant": "A"
+          }
+        ],
+        "ok": false,
+        "variant_count": 1
+      }
+    },
+    {
+      "id": "numeric_token_bound",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "ok": false,
+        "input_error": true,
+        "message": "number exceeds coefficient-digit or exponent limit (1000)",
+        "errors": []
+      }
+    },
+    {
+      "id": "unhashable_variant_id",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "errors": [
+          {
+            "code": "VARIANT_ID",
+            "message": "variant IDs must be unique nonempty strings"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false,
+        "variant_count": 1
+      }
+    },
+    {
+      "id": "wrong_field_only",
+      "exit": 1,
+      "expected_exit": 1,
+      "passed": true,
+      "output": {
+        "errors": [],
+        "findings": [
+          {
+            "changed_fields": [
+              "body"
+            ],
+            "codes": [
+              "CHANGED_FIELD_MISMATCH"
+            ],
+            "variant": "v"
+          }
+        ],
+        "ok": false,
+        "variant_count": 1
+      }
+    },
+    {
+      "id": "boolean_value",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "errors": [
+          {
+            "code": "VARIANT_VALUE_TYPE",
+            "message": "variant field values must be bounded strings"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false,
+        "variant_count": 1
+      }
+    },
+    {
+      "id": "missing_field",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "errors": [
+          {
+            "code": "FIELD_KEY_SET",
+            "message": "variant fields must exactly match baseline keys"
+          }
+        ],
+        "findings": [],
+        "input_error": true,
+        "ok": false,
+        "variant_count": 1
+      }
+    },
+    {
+      "id": "duplicate_json_key",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "ok": false,
+        "input_error": true,
+        "message": "duplicate JSON object key",
+        "errors": []
+      }
+    },
+    {
+      "id": "nonfinite",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "ok": false,
+        "input_error": true,
+        "message": "non-finite JSON number",
+        "errors": []
+      }
+    },
+    {
+      "id": "truncated",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "ok": false,
+        "input_error": true,
+        "message": "Expecting value: line 1 column 6 (char 5)",
+        "errors": []
+      }
+    },
+    {
+      "id": "missing_file",
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "output": {
+        "ok": false,
+        "input_error": true,
+        "message": "[WinError 2] The system cannot find the file specified: '<local-path>'",
+        "errors": []
+      }
+    },
+    {
+      "id": "peer_cli_integration",
+      "exit": 1,
+      "output": {
+        "errors": [],
+        "findings": [
+          {
+            "changed_fields": [],
+            "codes": [
+              "NO_CHANGE",
+              "CHANGED_FIELD_MISMATCH"
+            ],
+            "variant": "same"
+          },
+          {
+            "changed_fields": [
+              "body",
+              "headline"
+            ],
+            "codes": [
+              "MORE_THAN_ONE_CHANGED",
+              "CHANGED_FIELD_MISMATCH"
+            ],
+            "variant": "declared-plus-other"
+          }
+        ],
+        "ok": false,
+        "variant_count": 2
+      }
+    }
+  ],
+  "fixtures_passed": 13,
+  "fixtures_total": 13,
+  "lint_fail": 0,
+  "lint_warn": 0
+}

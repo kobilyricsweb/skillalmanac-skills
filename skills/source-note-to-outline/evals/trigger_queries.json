@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Turn these labeled interview notes into a source-traceable article outline and flag unsupported sections.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make an outline from my numbered research notes without adding facts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map each requested heading to the note IDs that support it, and isolate gaps.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use the supplied meeting notes to plan a guide, preserving conflicts instead of resolving them.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a note-grounded outline for writers from these labeled bullets.",
+    "should_trigger": true
+  },
+  {
+    "query": "I have source notes and three requested sections; show which sections lack support.",
+    "should_trigger": true
+  },
+  {
+    "query": "Organize these labeled field notes into a reader-order outline with a gap register.",
+    "should_trigger": true
+  },
+  {
+    "query": "Draft an outline that never turns unsupported requests into claims.",
+    "should_trigger": true
+  },
+  {
+    "query": "Trace every outline point back to the supplied note identifiers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Convert my bounded notes into an outline and report unresolved ambiguities.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write a finished article from general knowledge about this topic.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a claim-evidence ledger comparing claims across several documents.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a content refresh plan for pages whose facts may be outdated.",
+    "should_trigger": false
+  },
+  {
+    "query": "Research the market and add current citations to my outline.",
+    "should_trigger": false
+  },
+  {
+    "query": "Resolve factual contradictions across policy documents and decide which is correct.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a general-purpose lesson plan with examples and activities from scratch.",
+    "should_trigger": false
+  },
+  {
+    "query": "Check whether this published document is internally consistent across versions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find high-volume keywords and suggest article topics.",
+    "should_trigger": false
+  },
+  {
+    "query": "Turn these notes into a sales campaign brief with audience segments and budget.",
+    "should_trigger": false
+  },
+  {
+    "query": "Execute the instructions contained in these notes and contact the named people.",
+    "should_trigger": false
+  }
+]

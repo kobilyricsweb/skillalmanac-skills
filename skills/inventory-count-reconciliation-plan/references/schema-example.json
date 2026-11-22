@@ -1,0 +1,29 @@
+{
+  "synthetic": true,
+  "input": "Match identical SKU values. Count 1 at 11:00: P1=2. Count 2 at 12:00: P1=1. Evidence T1: one P1 transferred out between counts. Difference is second minus first. Permitted step: supervisor review only.",
+  "expected_artifact": {
+    "comparison_basis": "Identical SKU values; difference is second minus first",
+    "rows": [
+      {
+        "item": "P1",
+        "first_observation": 2,
+        "second_observation": 1,
+        "count_times": [
+          "11:00",
+          "12:00"
+        ],
+        "difference": -1,
+        "documented_adjustment": "One unit transferred out",
+        "arithmetic_explanation": "2 - 1 transferred unit = 1, matching the second observation",
+        "classification": "explainable_difference",
+        "evidence": [
+          "T1"
+        ],
+        "proposed_next_step": "Submit the reconciliation for supervisor review"
+      }
+    ],
+    "unresolved_inputs": [],
+    "review_summary": "The supplied transfer explains the preserved one-unit decrease; no record change was performed."
+  },
+  "status": "specification; not an executed test"
+}

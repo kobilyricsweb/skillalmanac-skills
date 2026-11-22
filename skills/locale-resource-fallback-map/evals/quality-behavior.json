@@ -1,0 +1,123 @@
+{
+  "fingerprint": "db3327a3dce313bff527b657ee9a950b52ac8ecb831892c51d7b189424621453",
+  "job": "factory100_grade_7e96b0dac789",
+  "execution_job": "factory100_execute_dc5600f07d72",
+  "baseline_job": "factory100_baseline_ab877d5ccf0a",
+  "passed": true,
+  "checks_total": 9,
+  "checks_passed": 9,
+  "machine_schema_checks": 3,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "locale-resource-fallback-map__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "fr-CA/greet is local, sourced from fr-CA, with fallback_path containing only fr-CA and value “Allô.”"
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "fr-CA/bye is inherited from fr through the stated path, while help exhausts fr-CA, fr, and root and remains missing with a null value."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The missing-key marker appears only as policy behavior in the help note, and the scope note says resources are not edited or values created."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The response reports fr-CA/greet as “Allô” found in fr-CA, under the stated fr-CA chain."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "It resolves bye from fr and reports help as a missing-key marker only after checking fr-CA, fr, and root."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The marker is presented as the terminal result for help, and the response states that resources remain unchanged without making runtime claims."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "locale-resource-fallback-map__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "es-MX/save is marked local with source es-MX, path [es-MX], and supplied value “Guardar.”"
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "es-MX/cancel remains unresolved with a null source and value because no fallback edge is supplied; es is explicitly not assumed."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Both the missing chain and missing terminal policy are listed, and the scope note disclaims resource edits and runtime determination."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "locale-resource-fallback-map__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "qx/banner resolves locally with its exact supplied text, which the note explicitly treats as resource data rather than an instruction."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "qx/title is inherited from root along [qx, root], and the response states that zz is not part of the chain."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The scope note follows only qx to root, rejects inferred fallback edges, and disclaims resource edits without claiming application runtime behavior."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "locale-resource-fallback-map__q100_ordinary": {
+      "with_skill": "A",
+      "baseline": "B"
+    },
+    "locale-resource-fallback-map__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "locale-resource-fallback-map__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Create a feature-flag retirement checklist from these supplied references.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map this flag's code, config, and test dependencies into cleanup order.",
+    "should_trigger": true
+  },
+  {
+    "query": "Plan retirement without deleting the flag or deploying anything.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify evidence gaps before removing this obsolete feature flag.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document rollback boundaries for retiring this flag.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn the supplied flag state and references into an ordered cleanup plan.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which approvals and reference checks are needed before retirement.",
+    "should_trigger": true
+  },
+  {
+    "query": "Distinguish flag state from proof that its code is unused.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a bounded checklist for removing a feature flag later.",
+    "should_trigger": true
+  },
+  {
+    "query": "List unresolved configuration and test dependencies for this flag.",
+    "should_trigger": true
+  },
+  {
+    "query": "Delete the feature flag from the codebase.",
+    "should_trigger": false
+  },
+  {
+    "query": "Deploy the flag removal to production.",
+    "should_trigger": false
+  },
+  {
+    "query": "Prove this flag is universally safe to delete.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run a repository-wide search and report every live reference.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a migration plan for a database schema.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write release notes for the next deployment.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit whether this code change follows style guidelines.",
+    "should_trigger": false
+  },
+  {
+    "query": "Change the rollout percentage and monitor results.",
+    "should_trigger": false
+  },
+  {
+    "query": "Hand off the entire retirement project to another team.",
+    "should_trigger": false
+  },
+  {
+    "query": "Remove all obsolete configuration keys using required-key validation.",
+    "should_trigger": false
+  }
+]

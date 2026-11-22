@@ -1,0 +1,42 @@
+{
+  "decisions": [
+    {
+      "decision_id": "D1",
+      "trigger": "Inspector checks the tag.",
+      "decision_question": "Does the tag read READY?",
+      "branches": [
+        {
+          "observable_condition": "Tag reads READY.",
+          "branch_action": "Move the item to Packing.",
+          "role": "Inspector",
+          "rejoin_or_termination": "Procedure terminates.",
+          "missing_or_ambiguous": null,
+          "supporting_passages": [
+            "S2"
+          ]
+        },
+        {
+          "observable_condition": "Tag does not read READY.",
+          "branch_action": "Move the item to Review.",
+          "role": "Inspector",
+          "rejoin_or_termination": "Procedure terminates.",
+          "missing_or_ambiguous": null,
+          "supporting_passages": [
+            "S3"
+          ]
+        }
+      ],
+      "supporting_passages": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "status": "documented"
+    }
+  ],
+  "input_gaps": [],
+  "scope_exclusions": [
+    "Approval authority",
+    "Actions after procedure termination"
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Compare dates, quantities, units, entities, and versions across these documents.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find contradictions in this packet without changing the originals.",
+    "should_trigger": true
+  },
+  {
+    "query": "Tell me whether these numbers refer to the same scope or different scopes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a consistency register from the supplied reports.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare named entities and preserve unknown identity matches.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check whether the version claims agree across these files.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag unit and date inconsistencies using only the text provided.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate contradictions from missing context in these documents.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review these document facts offline and list unresolved questions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Do not pick a winner; show how the supplied records differ.",
+    "should_trigger": true
+  },
+  {
+    "query": "Search online for the correct quantity and update the report.",
+    "should_trigger": false
+  },
+  {
+    "query": "Merge these documents into one corrected master file.",
+    "should_trigger": false
+  },
+  {
+    "query": "Delete duplicate files after comparing them.",
+    "should_trigger": false
+  },
+  {
+    "query": "Publish the latest version to the portal.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose the newest-looking document as authoritative.",
+    "should_trigger": false
+  },
+  {
+    "query": "Convert every unit using current industry standards from the web.",
+    "should_trigger": false
+  },
+  {
+    "query": "Email the contradictions to the project team.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite all documents so they agree.",
+    "should_trigger": false
+  },
+  {
+    "query": "Assess which vendor is most trustworthy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Give legal advice about the conflicting dates.",
+    "should_trigger": false
+  }
+]

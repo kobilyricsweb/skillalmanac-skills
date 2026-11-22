@@ -1,0 +1,49 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "duplicate-record-triage__parent_holdout",
+        "slug": "duplicate-record-triage",
+        "prompt": "Triage these synthetic records using email as the sole comparison field. Exact means byte-identical email; normalized comparison trims outer whitespace and lowercases, but does not prove identity. Rows: r1 email=\"A@example.test\" account=\"u1\"; r2 email=\" a@example.test \" account=\"u2\"; r3 email=\"A@example.test\" account=\"u3\"; r4 email=null account=\"u4\". Do not merge or select a winner.",
+        "assertions": [
+          "Identifies r1/r3 as exact email matches and r2 as joining only the normalized candidate grouping.",
+          "Retains distinct account IDs and the null-email comparison gap.",
+          "Does not declare the same person/account or merge/delete/select canonical records."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "Comparison rules\n\n- Sole comparison field: email.\n- Exact comparison: original email values must be byte-identical.\n- Normalized comparison: trim outer whitespace and lowercase; this is a comparison aid, not proof of identity.\n- No candidate rule supplied.\n- No merge or winner selection performed.\n\nClassifications\n\n- Exact duplicate group: r1 and r3. Original email values are both \"A@example.test\". Account values are preserved but not compared.\n- Normalized match group: r1, r2, and r3. Transformed email for each is \"a@example.test\". r2 differs from r1/r3 in original outer whitespace and case-normalized form; normalization does not establish identity.\n- r4: unresolved for matching against the non-null email group because email is null. It is not classified as a duplicate or non-match on identity grounds.\n\nRecord details\n\n- r1: email=\"A@example.test\", account=\"u1\"; normalized email=\"a@example.test\".\n- r2: email=\" a@example.test \", account=\"u2\"; normalized email=\"a@example.test\".\n- r3: email=\"A@example.test\", account=\"u3\"; normalized email=\"a@example.test\".\n- r4: email=null, account=\"u4\"; normalized email remains null.\n\nConflict and unresolved notes\n\nThe distinct account values are preserved and were not used to select a winner. No identity conclusion, canonical record, merge, deletion, or remediation was performed.",
+      "grade": {
+        "id": "duplicate-record-triage__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "It identifies r1 and r3 as the exact duplicate group and places r1, r2, and r3 in the normalized match group, explaining r2's original differences."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "The record details preserve accounts u1, u2, u3, and u4, while r4 is explicitly unresolved because its email is null."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "It says normalization does not establish identity and explicitly states that no identity conclusion, canonical record, merge, deletion, or remediation was performed."
+          }
+        ]
+      },
+      "binding": {
+        "id": "duplicate-record-triage__parent_holdout",
+        "slug": "duplicate-record-triage",
+        "skill_sha256": "22d2f275446da9d74e0e8de0baea97220e3695a7a0e0e1ee6db904e089f7beaa",
+        "contract_sha256": "f9b12d8db973b767d37a8de7f30d076aef5f114176813e807169ce826ab61f0a",
+        "assertions_sent_to_executor": false
+      },
+      "round": "initial"
+    }
+  ]
+}

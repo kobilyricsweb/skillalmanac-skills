@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Synthetic test spec: build a permission matrix from these roles, resources, operations, and conditions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: show allow, deny, conditional, unspecified, and conflict cells for the supplied access notes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: apply the documented default-deny rule to unmentioned operations.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: preserve conflicting permission statements with their source labels.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: map which roles may perform each operation on each resource.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: distinguish a conditional permission from an unconditional allow.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: identify unresolved access conditions and missing matrix dimensions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: create a documentary authorization matrix without inferring from job titles.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: record exceptions and precedence clauses in the permission cells.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: explain whether unmentioned operations are unspecified or denied under the supplied default.",
+    "should_trigger": true
+  },
+  {
+    "query": "Synthetic test spec: sequence the organizational approvals required for a release.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: compare two API contracts and classify field changes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: map explicit locale fallback chains for resource keys.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: identify contradictions among field validation rules.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: model events and transitions between application states.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: grant access based on a manager’s job title alone.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: edit the production access-control configuration.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: call the authorization service and report live decisions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: certify that the permission design is secure or compliant.",
+    "should_trigger": false
+  },
+  {
+    "query": "Synthetic test spec: infer that every missing permission is denied without a default rule.",
+    "should_trigger": false
+  }
+]

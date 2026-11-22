@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Map approved messages to reuse-compatible assets for the supplied audience and channels.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an authorized-placement matrix from these approved messages and asset permissions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find candidate asset placements while preserving the supplied internal-only restrictions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Pair messages with compatible asset contexts, without evaluating claim truth.",
+    "should_trigger": true
+  },
+  {
+    "query": "List approved messages that lack a reuse-compatible asset for the requested channel.",
+    "should_trigger": true
+  },
+  {
+    "query": "Record exact asset locations and permission gaps for the supplied message placements.",
+    "should_trigger": true
+  },
+  {
+    "query": "Plan message reuse across these authorized training and email contexts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build an audience/context reuse map from approved copy and the supplied asset-use rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Separate direct, conditional and blocked placements using the supplied permissions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify adaptation requests for message placements whose asset context is incompatible.",
+    "should_trigger": true
+  },
+  {
+    "query": "Determine whether these assets factually support these approved claims.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a campaign plan using these assets.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write five ad variants for every message.",
+    "should_trigger": false
+  },
+  {
+    "query": "Validate which promotion variant will win.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a claim-evidence map for the entire report.",
+    "should_trigger": false
+  },
+  {
+    "query": "Invent a testimonial to fill the asset gap.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design the landing-page layout around these images.",
+    "should_trigger": false
+  },
+  {
+    "query": "Research which audience is most likely to buy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write new product claims for unused assets.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run an experiment and report the winning asset.",
+    "should_trigger": false
+  }
+]

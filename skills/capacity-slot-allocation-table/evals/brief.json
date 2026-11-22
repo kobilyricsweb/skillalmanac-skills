@@ -1,0 +1,11 @@
+{
+  "slug": "capacity-slot-allocation-table",
+  "category": "operations",
+  "user_problem": "Teams need a feasible short allocation proposal from finite tasks and explicitly supplied resource slots.",
+  "unique_output": "Task-to-slot allocation table, unmet constraints and unallocated tasks, without an optimality or staffing guarantee.",
+  "required_input": "Task durations, eligible resources, time slots and priority rules.",
+  "critical_rule": "Never overlap a resource or shrink supplied durations; flag infeasibility instead of inventing capacity.",
+  "nearest_existing_and_difference": "vendor-demo-question-set proposes demo evidence; this checks generic finite task/resource slot feasibility.",
+  "tier": "free",
+  "acceptance_scenario": "Two30-minute tasks and one40-minute slot on one resource cannot both fit; allocate one under supplied priority and preserve the other as unallocated."
+}

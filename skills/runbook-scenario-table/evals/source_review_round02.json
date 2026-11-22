@@ -1,0 +1,14 @@
+{
+  "slug": "runbook-scenario-table",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "RST-04",
+      "severity": "major",
+      "location": "ordinary eval: third assertion",
+      "evidence": "The assertion says scenarios with `no qualifying signal` may be marked `unmatched or blocked by a missing prerequisite`. The skill's status rules instead define `unmatched` for known facts satisfying no procedure, `indeterminate` for an unknown or contradictory applicability fact, and `blocked` only when an otherwise-applicable procedure lacks a stated prerequisite.",
+      "consequence": "The eval permits materially different states to be conflated and could accept `blocked` without an established applicability match or reject the required `indeterminate` result for unknown signals.",
+      "correction": "Assert separately that known facts satisfying no procedure are `unmatched`, unknown or contradictory applicability facts are `indeterminate`, and a procedure is `blocked` only after its applicability conditions are met but a stated prerequisite is missing."
+    }
+  ]
+}

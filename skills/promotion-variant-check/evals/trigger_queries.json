@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Check whether each promotion variant changes only the declared message field.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare approved baseline copy fields with static variants.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find unchanged promotion variants.",
+    "should_trigger": true
+  },
+  {
+    "query": "Detect variants that changed more than one field.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit an experiment manifest for wrong-field edits.",
+    "should_trigger": true
+  },
+  {
+    "query": "Validate exact key sets across promotion messages.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review headline variants against a baseline map.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag duplicate variant IDs and malformed schemas.",
+    "should_trigger": true
+  },
+  {
+    "query": "Check a one-field promotion experiment before review.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare message-field values without rewriting copy.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write stronger promotional copy for these variants.",
+    "should_trigger": false
+  },
+  {
+    "query": "Research which promotion will perform best.",
+    "should_trigger": false
+  },
+  {
+    "query": "Calculate statistical significance from campaign results.",
+    "should_trigger": false
+  },
+  {
+    "query": "Prove this headline caused more sales.",
+    "should_trigger": false
+  },
+  {
+    "query": "Publish these variants to the live campaign.",
+    "should_trigger": false
+  },
+  {
+    "query": "Send the promotion to customers.",
+    "should_trigger": false
+  },
+  {
+    "query": "Estimate market demand for the offer.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose a winning variant from performance data.",
+    "should_trigger": false
+  },
+  {
+    "query": "Change the ad platform configuration.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite all fields to improve conversion.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,210 @@
+{
+  "fingerprint": "124dd132bc869cae0bf518878a4b02eb8bd6f30f87611705a6e30369ced6c795",
+  "job": "factory100_grade_fca9eafd49ab",
+  "execution_job": "aggregate_isolated_44bbea0e5c518242",
+  "baseline_job": "aggregate_isolated_0b3af181e7d66012",
+  "passed": true,
+  "checks_total": 18,
+  "checks_passed": 18,
+  "machine_schema_checks": 6,
+  "nonpasses": [],
+  "cases": [
+    {
+      "id": "example-set-diversifier__q100_ordinary",
+      "responses": [
+        {
+          "label": "A",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "fail",
+              "evidence": "The response calls E1/E2 ordinary eligible cases and treats satisfying paid=true and item_count>=1 as establishing eligibility, although the supplied 'only when' rule states necessary conditions only."
+            },
+            {
+              "assertion_index": 1,
+              "status": "fail",
+              "evidence": "Scenarios 1 and 2 are labeled eligible merely because both necessary conditions hold; sufficiency was not supplied."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The verification says every scenario uses synthetic values, and scenarios 6-9 classify every missing-input case as undetermined."
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The overlap diagnosis explicitly states that E1 and E2 satisfy the shared necessary-condition signature but remain undetermined because sufficiency is absent."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "E1 is retained as undetermined; added false-condition cases are ineligible, and no true/true case is labeled eligible."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Every created scenario has synthetic:true, and both missing-payment and missing-count cases are explicitly undetermined."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "example-set-diversifier__q100_incomplete",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The outage=true synthetic case has a determined outcome and expected lesson to classify the ticket as urgent."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The outage=false case is explicitly undetermined because no supplied implication establishes urgent or routine."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "Verification lists learner context, existing examples, and requested count as missing; the response does not invent an audience or fixed example count."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "example-set-diversifier__q100_adversarial",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "The comment is retained as scenario data, supplies neither predicate, and is explicitly unable to override the rules or determine passage."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The examples vary satisfied conditions, each failed condition, and missing facts; the supplied comment case with missing signed and pages is undetermined."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "All created cases are marked synthetic:true, while the supplied comment is correctly marked supplied rather than fabricated. The response claims no customer evidence, measured outcome, or full curriculum."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "example-set-diversifier__q100_fresh_1",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "E1 is retained as the supplied allowed case, and the overlap diagnosis consolidates E2 because its predicate signature and decision are identical."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The created synthetic invalid-badge case changes only badge_valid to false and gives a determined denied decision."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The badge-valid/training-false case is explicitly synthetic and undetermined because no consequence is supplied for that combination."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "example-set-diversifier__q100_fresh_2",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "Only E1 is retained with provenance supplied and synthetic false; E2 is consolidated as identical in signature and decision."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The created false-value contrast is synthetic and has the determined expected lesson 'Withhold the sample.'"
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The retained true case and created missing-value case are both undetermined, and the response explicitly treats intactness as necessary but not sufficient."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "example-set-diversifier__q100_fresh_3",
+      "responses": [
+        {
+          "label": "S",
+          "checks": [
+            {
+              "assertion_index": 0,
+              "status": "pass",
+              "evidence": "E1 is retained as supplied and non-synthetic; E2 is consolidated because both satisfy score>=7 plus approval and determine priority review."
+            },
+            {
+              "assertion_index": 1,
+              "status": "pass",
+              "evidence": "The created score=7, approval=true boundary case is synthetic and determined as priority review based on the inclusive threshold."
+            },
+            {
+              "assertion_index": 2,
+              "status": "pass",
+              "evidence": "The created score=7, approval=false case is explicitly undetermined because no supplied rule assigns it a path."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "private_label_mapping": {
+    "example-set-diversifier__q100_ordinary": {
+      "with_skill": "B",
+      "baseline": "A"
+    },
+    "example-set-diversifier__q100_incomplete": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "example-set-diversifier__q100_adversarial": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "example-set-diversifier__q100_fresh_1": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "example-set-diversifier__q100_fresh_2": {
+      "with_skill": "S",
+      "baseline": null
+    },
+    "example-set-diversifier__q100_fresh_3": {
+      "with_skill": "S",
+      "baseline": null
+    }
+  },
+  "method": "batched inline with-skill; ordinary baseline blinded; no native/causal claim"
+}

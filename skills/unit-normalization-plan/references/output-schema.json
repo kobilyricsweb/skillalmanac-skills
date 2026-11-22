@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "field_specifications",
+    "quarantined_cases",
+    "scope_limits",
+    "execution_authorized"
+  ],
+  "properties": {
+    "field_specifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "field",
+          "original_value",
+          "source_unit",
+          "target_unit",
+          "supplied_formula",
+          "precision_rule",
+          "validation_checks",
+          "status",
+          "planned_output"
+        ],
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "original_value": {
+            "type": [
+              "number",
+              "string",
+              "null"
+            ]
+          },
+          "source_unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "target_unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "supplied_formula": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "precision_rule": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "validation_checks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "enum": [
+              "planned",
+              "blocked",
+              "quarantined"
+            ]
+          },
+          "planned_output": {
+            "type": [
+              "number",
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "quarantined_cases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scope_limits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "execution_authorized": {
+      "type": "boolean",
+      "const": false
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "dataset-field-dictionary-builder",
+  "category": "data",
+  "user_problem": "Analysts inherit tables whose field meanings and constraints are scattered across notes.",
+  "unique_output": "A field dictionary with source wording, normalized definition, type expectation, allowed values, null meaning, and open question.",
+  "free_or_pack_candidate": "free",
+  "test_case": "Given six fields and imperfect notes, preserve known definitions and label two ambiguous null semantics as questions.",
+  "overlap_to_check": "Spreadsheet skills, data catalogs, and record-contract audits.",
+  "specific_guardrail": "Separate supplied definitions from sample-derived observations; unknown business meaning stays unknown. dataset-field-profiler owns observed type counts."
+}

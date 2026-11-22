@@ -1,0 +1,38 @@
+{
+  "entries": [
+    {
+      "constraint": "Use collaborative, calm wording.",
+      "type": "positive_anchor",
+      "source": "explicit_preference",
+      "scope": "support chat",
+      "writer_test": "Does the wording present the next action calmly and collaboratively?",
+      "counterexample": null,
+      "status": "approved_constraint"
+    },
+    {
+      "constraint": "Avoid wording that blames the customer.",
+      "type": "prohibition",
+      "source": "prohibited_pattern",
+      "scope": "support chat",
+      "writer_test": "Does the wording assign fault to the customer?",
+      "counterexample": "You caused this problem.",
+      "status": "approved_constraint"
+    },
+    {
+      "constraint": "The sample uses “together” to signal collaboration.",
+      "type": "observation",
+      "source": "approved_sample",
+      "scope": "support chat",
+      "writer_test": null,
+      "counterexample": null,
+      "status": "observed_only"
+    }
+  ],
+  "conflicts": [],
+  "open_questions": [],
+  "verification": {
+    "all_constraints_sourced": true,
+    "tests_wording_only": true,
+    "factual_claims_approved": false
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["protocol_status", "missing_inputs", "total_minutes", "timed_sequence", "artifact_checks", "author_questions", "revision_choice", "disagreement_procedure", "completion_check"],
+  "properties": {
+    "protocol_status": {"type": "string", "enum": ["complete", "provisional", "infeasible"]},
+    "missing_inputs": {"type": "array", "items": {"type": "string"}},
+    "total_minutes": {"type": "number", "minimum": 0},
+    "timed_sequence": {"type": "array", "items": {"type": "object", "required": ["start_minute", "end_minute", "action", "artifact_evidence"], "properties": {"start_minute": {"type": "number", "minimum": 0}, "end_minute": {"type": "number", "minimum": 0}, "action": {"type": "string"}, "artifact_evidence": {"type": ["string", "null"]}}, "additionalProperties": false}},
+    "artifact_checks": {"type": "array", "items": {"type": "object", "required": ["criterion", "check", "evidence_location"], "properties": {"criterion": {"type": "string"}, "check": {"type": "string"}, "evidence_location": {"type": "string"}}, "additionalProperties": false}},
+    "author_questions": {"type": "array", "items": {"type": "string"}},
+    "revision_choice": {"type": "string"},
+    "disagreement_procedure": {"type": "string"},
+    "completion_check": {"type": "string"},
+    "infeasibility_note": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

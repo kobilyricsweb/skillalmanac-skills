@@ -1,0 +1,11 @@
+{
+  "slug": "sampling-frame-coverage-note",
+  "category": "data",
+  "user_problem": "A supplied sampling frame needs a bounded description of included and excluded populations without claiming representativeness.",
+  "unique_output": "A coverage note listing frame rules, observable exclusions, duplicate risks, time bounds, and unknown coverage.",
+  "required_input": "Target population definition, frame construction rules, dated frame summary, and known exclusion notes.",
+  "critical_rule": "Never claim representativeness or bias magnitude; report only rule-based coverage and supplied limitations.",
+  "nearest_existing_and_difference": "Nearest is taxonomy-gap-finder; this assesses population-frame coverage rather than taxonomy assignment coverage.",
+  "tier": "paid-candidate",
+  "acceptance_scenario": "Input target is all 2026 workshop attendees; frame contains online registrants and excludes walk-ins; duplicates may arise from changed emails. Output states the inclusion, exclusion, duplicate risk, and that total walk-in coverage is unknown."
+}

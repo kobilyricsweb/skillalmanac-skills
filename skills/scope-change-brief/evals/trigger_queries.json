@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Compare this accepted baseline with the requested change and list the scope delta.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a scope-change brief with affected deliverables and dependencies.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show what changed between the baseline and this change request.",
+    "should_trigger": true
+  },
+  {
+    "query": "Trace acceptance criteria and unresolved approval for this proposed scope change.",
+    "should_trigger": true
+  },
+  {
+    "query": "Identify additions, removals, and modifications in this supplied change note.",
+    "should_trigger": true
+  },
+  {
+    "query": "Prepare a bounded change brief without estimating the work.",
+    "should_trigger": true
+  },
+  {
+    "query": "Preserve conflicting approval records while comparing this change to baseline.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map the requested change to deliverables and acceptance criteria from the supplied text.",
+    "should_trigger": true
+  },
+  {
+    "query": "Document what remains unknown in this change request.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare the fictional release baseline with the fictional requested enhancement.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write a complete PRD for the new product.",
+    "should_trigger": false
+  },
+  {
+    "query": "Estimate engineering hours and delivery date for this change.",
+    "should_trigger": false
+  },
+  {
+    "query": "Approve the request on behalf of the product owner.",
+    "should_trigger": false
+  },
+  {
+    "query": "Implement the change in the repository.",
+    "should_trigger": false
+  },
+  {
+    "query": "Deploy the requested change to production.",
+    "should_trigger": false
+  },
+  {
+    "query": "Notify customers that the change is live.",
+    "should_trigger": false
+  },
+  {
+    "query": "Research competitors and add market requirements.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a test plan for every possible feature.",
+    "should_trigger": false
+  },
+  {
+    "query": "Update the project tracker and assign work to the team.",
+    "should_trigger": false
+  },
+  {
+    "query": "Decide which scope option is strategically best.",
+    "should_trigger": false
+  }
+]

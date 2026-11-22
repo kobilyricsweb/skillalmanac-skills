@@ -1,0 +1,57 @@
+{
+  "scope": {
+    "item_ids": [
+      "I1",
+      "I2"
+    ],
+    "category_ids": [
+      "C1",
+      "C2"
+    ],
+    "rules": [
+      "Every item must have at least one assignment.",
+      "Categories are mutually exclusive."
+    ]
+  },
+  "definition_coverage": [
+    {
+      "category_id": "C1",
+      "definition": "Printed books.",
+      "status": "unknown_without_standard"
+    },
+    {
+      "category_id": "C2",
+      "definition": "Audio recordings.",
+      "status": "unknown_without_standard"
+    }
+  ],
+  "item_coverage": [
+    {
+      "item_id": "I1",
+      "assigned_category_ids": [
+        "C1"
+      ],
+      "status": "assigned",
+      "basis": "Supplied assignment I1 to C1."
+    },
+    {
+      "item_id": "I2",
+      "assigned_category_ids": [],
+      "status": "unassigned",
+      "basis": "No assignment was supplied for I2."
+    }
+  ],
+  "unassigned_items": [
+    "I2"
+  ],
+  "conflicting_memberships": [],
+  "weak_definition_findings": [],
+  "unresolved_questions": [
+    "No definition-quality standard was supplied."
+  ],
+  "excluded_checks": [
+    "Parent-graph validation",
+    "New assignment creation"
+  ],
+  "__unexpected_fixture_property__": 0
+}

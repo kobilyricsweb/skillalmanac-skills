@@ -1,0 +1,91 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "case-study-interview-kit__parent_holdout",
+        "slug": "case-study-interview-kit",
+        "prompt": "Build an interview guide for a fictional customer who adopted a task board. Company hypothesis: it saved five hours/week; no customer statement or measurement confirms this. Customer allowed an internal interview only, no quotation/publication permission. Interview time15minutes. Ask neutral questions, with fact/evidence and permission follow-ups.",
+        "assertions": [
+          "Treats five-hour saving as a hypothesis and asks neutral before/after evidence questions.",
+          "Does not invent customer quotes or confirmed outcomes.",
+          "Preserves internal-only permission, requests separate quote/publication permission and fits or explicitly budgets15minutes."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "Opening and framing (1 minute, planning estimate): Explain that this is an internal interview, the task board adoption is being explored, and no outcome or quote is presumed. Ask whether the participant agrees to discuss the approved topics internally.\n\nTimed core agenda (15 minutes, planning estimates):\n- 1 minute: context and consent to interview notes.\n- 4 minutes: prior workflow and baseline.\n- 4 minutes: adoption and observed changes.\n- 3 minutes: evidence, measurement, limitations, and alternative explanations.\n- 3 minutes: fact confirmation and permission boundaries.\n\nNeutral core questions:\n1. How did your team handle this work before adopting the task board?\n2. What prompted adoption, and who used it?\n3. What changed in the workflow after adoption, if anything?\n4. How, if at all, did the change affect time spent? Please describe the method, period, people included, and baseline.\n5. The company hypothesis is five hours saved per week. What, if anything, did you observe that relates to that figure? What record or measurement supports it?\n6. What other changes or conditions could have affected the result?\n7. What did not improve, and what limitations or extra work arose?\n\nFact-confirmation checklist:\n- Which statements are your own observations versus estimates or assumptions?\n- What dates, population, baseline, denominator, and source support each material claim?\n- May we read back proposed wording for correction before any internal use?\n- Are there records, reports, or notes we may inspect internally?\n\nPermission prompts:\n- Is internal use of your comments permitted?\n- May we retain notes, and under what access limits?\n- Are exact quotations, attribution, role, organization, editing, or external publication permitted? Current status: not granted.\n- If permission changes later, what approval process should be followed?\n\nExpected artifacts: customer statement, internal record, quote candidate only if separately approved, or follow-up request. Unresolved: five-hour hypothesis, measurement, causality, source records, and all publication permissions.",
+      "grade": {
+        "id": "case-study-interview-kit__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The answer labels five hours saved per week as the company hypothesis and asks neutral before/after, baseline, measurement-period, source, and alternative-explanation questions."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "It supplies no customer quotation or confirmed outcome and lists the five-hour hypothesis, measurement, and causality as unresolved."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "The proposed agenda totals 15 minutes, frames the interview as internal, records publication permission as not granted, and asks separately about quotation, attribution, and external publication permission."
+          }
+        ]
+      },
+      "binding": {
+        "id": "case-study-interview-kit__parent_holdout",
+        "slug": "case-study-interview-kit",
+        "skill_sha256": "480e27629c2f3daf485e6020b76d82d1b05fae4947a06d84b43906432d50c512",
+        "contract_sha256": "48075e93a87cdea9782cf40d1ed06c934add02ed09863e8ea768b59cd5ca66df",
+        "assertions_sent_to_executor": false
+      },
+      "round": "repaired"
+    },
+    {
+      "case": {
+        "id": "case-study-interview-kit__fresh_after_repair",
+        "slug": "case-study-interview-kit",
+        "prompt": "Prepare an internal-only10-minute customer interview plan for a fictional appointment tool. Company hypothesis is fewer missed appointments, unmeasured and not confirmed by the customer. Approved topics: old workflow, adoption, observed differences, limitations and evidence/permission follow-ups. No quote/publication permission exists. Include a timed core guide and optional extra questions.",
+        "assertions": [
+          "Core agenda allocations total no more than10minutes and extra questions are outside the timed core; allocations are proposals.",
+          "Questions are neutral and the company hypothesis is not a confirmed customer outcome.",
+          "Keeps internal-only scope and asks separate quote/publication permission without inventing consent."
+        ],
+        "origin": "fresh parent follow-up case; not used in the repair text"
+      },
+      "answer": "Opening (1 minute, planning estimate): Explain that this is an internal interview about an appointment tool. The company hypothesis—fewer missed appointments—is unmeasured and unconfirmed. Confirm permission to take internal notes; no quote or publication permission is assumed.\n\nTimed core guide (10 minutes, planning estimates):\n- 1 minute: context and note-taking permission.\n- 2 minutes: old workflow.\n- 2 minutes: adoption and use.\n- 2 minutes: observed differences, without presuming improvement.\n- 1 minute: limitations and alternative explanations.\n- 2 minutes: evidence and permission follow-ups.\n\nCore questions:\n1. How were appointments handled before the tool?\n2. What prompted adoption, who used it, and how was it used?\n3. What differences did you observe after adoption, if any?\n4. Did missed appointments change in any observable way? What period, baseline, count, denominator, and source support your answer?\n5. What other factors could explain any change?\n6. What limitations, workarounds, or negative effects did you encounter?\n7. What records could confirm the account, and may we review them internally?\n8. May we read back factual wording for correction? Are any exact quotations, attribution, or external publication permitted? Current permission status: none supplied.\n\nFact/evidence checklist: distinguish personal observation, estimate, company hypothesis, and record; capture dates, population, baseline, measurement method, source, and uncertainty. Expected artifacts may be a customer statement, internal record, quote candidate only after permission, or follow-up request.\n\nOptional extra questions, outside the 10-minute core: How did adoption vary by team? What implementation effort was required? Were there periods or cases where the tool did not help? What would you change?\n\nUnresolved: outcome measurement, causality, evidence access, interviewee role, attribution, quotation, publication, and approval process.",
+      "grade": {
+        "id": "case-study-interview-kit__fresh_after_repair",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The timed core allocations total exactly 10 minutes, are labeled planning estimates, and the additional questions are explicitly placed outside the 10-minute core."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "It calls fewer missed appointments an unmeasured, unconfirmed company hypothesis and asks what differences occurred, if any, with evidence and alternative-explanation follow-ups."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "It limits note-taking to internal use, assumes no quote or publication permission, asks separately about quotations, attribution, and external publication, and records current permission as none supplied."
+          }
+        ]
+      },
+      "binding": {
+        "id": "case-study-interview-kit__fresh_after_repair",
+        "slug": "case-study-interview-kit",
+        "skill_sha256": "480e27629c2f3daf485e6020b76d82d1b05fae4947a06d84b43906432d50c512",
+        "contract_sha256": "48075e93a87cdea9782cf40d1ed06c934add02ed09863e8ea768b59cd5ca66df",
+        "assertions_sent_to_executor": false
+      },
+      "round": "repaired"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "cross_offer_summary": {
+    "supplied_contrasts": [
+      "Quick Start is guided and restricted to new staff; Reference Pack is self-service and intended for all staff."
+    ],
+    "evidence_gaps": [
+      "Quick Start proof does not cover complete account setup or the one-session condition; Reference Pack has no supplied proof and its FAQ coverage has not been reviewed."
+    ],
+    "conflicts": []
+  },
+  "outside_scope": [
+    "Selecting a winner, estimating demand, and recommending pricing are outside this comparison."
+  ]
+}

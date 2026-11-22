@@ -1,0 +1,13 @@
+{
+  "fingerprint": "5bd52b6095fe0296c8bc7caf76f50e59cd24d2e42ea068624ab5b51d22d9ada8",
+  "job": "factory100_baseline_bf58be64d55e",
+  "results": [
+    {
+      "id": "unit-normalization-plan__q100_ordinary",
+      "answer": "Field: parcel_span. Scope: illustrative planning only for values explicitly labeled A. Preserve original: 3 A. Approved formula: target = source × 2. Planned output: 6 B, rounded to whole B units under the stated precision rule. Validation checks: confirm the field is parcel_span; confirm the source label is exactly A; confirm the value is numeric and parseable; apply ×2; confirm the result is a whole B unit; retain a trace from 3 A to 6 B. Status: planned, not executed. Quarantines: quarantine records with missing, nonnumeric, differently labeled, or ambiguous source values; none are present in the supplied examples. Scope limits: do not apply to unlabeled values, other units, other fields, or production data; do not infer domain validity or convert beyond the approved formula. No data is overwritten. The input is synthetic and not ready for execution."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

@@ -1,0 +1,29 @@
+{
+  "scope_map": [
+    {
+      "cell_id": "R1L",
+      "visible_value": "Basic",
+      "marker": "†",
+      "definition_reference": "† = seasonal only.",
+      "authorized_scope": "All data cells in row R1",
+      "affected_cell_ids": [
+        "R1C1",
+        "R1C2"
+      ],
+      "status": "resolved",
+      "rationale": "The supplied legend expressly extends a marker in a row label to every data cell in that row."
+    }
+  ],
+  "orphan_markers": [],
+  "unbound_definitions": [],
+  "unresolved_issues": [],
+  "boundary_note": {
+    "explicitly_supplied_scopes": [
+      "The † qualifier applies to R1C1 and R1C2 through the row-label rule."
+    ],
+    "unresolved_scopes": [],
+    "outside_scope": [
+      "The qualifier does not establish whether any equipment-plan value is accurate."
+    ]
+  }
+}

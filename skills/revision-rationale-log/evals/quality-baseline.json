@@ -1,0 +1,16 @@
+{
+  "fingerprint": "18c50a7918ab50837b45f1eb63fb4d4ce023fcb91059cd14b60bb093ae71af93",
+  "job": "factory100_base_medium_97c4c0486474",
+  "results": [
+    {
+      "id": "revision-rationale-log__q100_ordinary",
+      "answer": "Location A2: “The kit prevents all delays.” → “The kit may reduce packing delays.”\n\nSmallest meaningful change: the outcome claim is qualified and narrowed from preventing all delays to possibly reducing packing delays.\n\nRationale: Style rule S1 requires qualification of outcomes that are not guaranteed. Evidence note E1 reports fewer packing delays in the trial but did not test other delays. Source: E1.\n\nProtection: the protected quotation at A3, “Pack light.”, is unchanged; protection preserved.\n\nDecision status: approved.\n\nUnresolved impact: the supplied record does not establish effects on delays other than packing delays, so no broader impact is assessed."
+    }
+  ],
+  "assertions_sent_to_executor": false,
+  "mode": "baseline_no_skill",
+  "executor_model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "method_note": "Both arms use the same model and effort; old low-effort failures retained, sources and valid tests unchanged by this profile selection.",
+  "fingerprint_scope": "SHA-256 of Python json.dumps(baseline_cases, sort_keys=True), UTF-8; input-only comparator identity, not package source. Current source and both arm jobs are bound in quality-behavior.json."
+}

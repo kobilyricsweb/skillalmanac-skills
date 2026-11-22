@@ -1,0 +1,10 @@
+{
+  "slug": "approval-path-mapper",
+  "category": "operations",
+  "user_problem": "Teams do not know who must review an artifact or in what sequence approvals should occur.",
+  "unique_output": "A role-based approval path with entry criteria, decision rights, escalation points, and evidence required at each handoff.",
+  "free_or_pack_candidate": "free",
+  "test_case": "Given four roles and two conditional approvals, produce the path and flag an approval loop.",
+  "overlap_to_check": "Scope-change briefs, handover checks, and meeting workflows.",
+  "specific_guardrail": "Only supplied authority rules; explicitly detect ambiguous/cyclic paths without inventing approving roles or granting approval."
+}

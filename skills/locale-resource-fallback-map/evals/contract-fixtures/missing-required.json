@@ -1,0 +1,5 @@
+{
+  "missing_inputs": [],
+  "rule_conflicts": [],
+  "scope_note": "This map analyzes supplied inventories and rules; it does not modify resources or establish observed runtime behavior."
+}

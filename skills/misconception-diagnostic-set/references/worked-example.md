@@ -1,0 +1,4 @@
+Synthetic input: Objective: compare 1/4 and 1/3. Named misconception: “a larger denominator means a larger fraction.” Correct rule: with equal positive numerators, the fraction with the smaller denominator is larger. Response format: choose one and explain. Desired count: 1.
+
+Concrete artifact:
+Item 1: Which fraction is larger, 1/4 or 1/3? Choose one and explain. Correct response: 1/3, because fourths are smaller parts than thirds when the whole and numerator are comparable. Targeted misconception: the supplied larger-denominator rule. Expected distractor reasoning: selecting 1/4 because 4 is larger than 3. Interpretation limit: selecting 1/4 is evidence to investigate this misconception, but could also reflect reading or comparison difficulty; it does not establish a belief. Follow-up probe: ask the learner to place 1/4 and 1/3 on the same number line and explain the placement. The item stays within the supplied objective, rule, misconception, format, and count.

@@ -1,0 +1,49 @@
+{
+  "method": "batched inline supplied-instruction forward case; no baseline/native claim",
+  "executor": "gpt-5.6-luna/low",
+  "grader": "gpt-5.6-sol/low",
+  "current_cases": [
+    {
+      "case": {
+        "id": "cli-help-example-designer__parent_holdout",
+        "slug": "cli-help-example-designer",
+        "prompt": "Design command examples from this complete grammar only: tool export --format FORMAT (--stdout | --output PATH). FORMAT is csv or json and required; exactly one output selector is required. Request one CSV export to a file literally named quarter report.csv, plus an invalid example showing both selectors. No target shell supplied. No extra options exist.",
+        "assertions": [
+          "Valid example selects csv and exactly --output, preserving quarter report.csv as one argument.",
+          "Uses a token array or explicitly shell-unspecified representation, without asserting universal shell quoting.",
+          "Invalid example includes both --stdout and --output and explains the conflict; no execution claimed."
+        ],
+        "origin": "parent-designed fresh forward case; not an observed customer request"
+      },
+      "answer": "Schema interpretation: Command is tool export. Required grammar: --format FORMAT followed by exactly one of --stdout or --output PATH. FORMAT domain is csv or json. No shell is named, so examples use token arrays and avoid shell-specific quoting.\n\nPrerequisites: None supplied beyond the grammar. No execution is performed.\n\nValid example requested:\n[\"tool\",\"export\",\"--format\",\"csv\",\"--output\",\"quarter report.csv\"]\nThe filename is represented as one token containing a space; no shell-specific escaping is implied.\n\nRejected example — violates the supplied exactly-one-output-selector rule:\n[\"tool\",\"export\",\"--format\",\"csv\",\"--stdout\",\"--output\",\"quarter report.csv\"]\nExpected result: Rejected because both mutually exclusive output selectors are present. No exit code or other output is supplied.\n\nOption coverage:\n- --format FORMAT: demonstrated with csv; required and domain-compliant.\n- --stdout: demonstrated in the rejected example.\n- --output PATH: demonstrated in the valid and rejected examples.\n- FORMAT values: csv demonstrated; json not demonstrated because the request asks for one CSV export and no additional example is required.\n\nAssumptions or conflicts: None. The literal filename is treated as a single PATH token. No extra options, flags, side effects, or output behavior are inferred.\n\nAcceptance checks: Valid example follows the command grammar, uses a permitted format, includes exactly one selector, covers the requested filename, and is not executed. The rejected example violates one clearly stated rule. No undocumented options or results are invented.",
+      "grade": {
+        "id": "cli-help-example-designer__parent_holdout",
+        "checks": [
+          {
+            "assertion_index": 0,
+            "status": "pass",
+            "evidence": "The valid token array is [\"tool\",\"export\",\"--format\",\"csv\",\"--output\",\"quarter report.csv\"], using exactly --output and preserving the spaced filename as one argument."
+          },
+          {
+            "assertion_index": 1,
+            "status": "pass",
+            "evidence": "The answer explicitly says no shell is named and uses token arrays, noting that no shell-specific escaping is implied."
+          },
+          {
+            "assertion_index": 2,
+            "status": "pass",
+            "evidence": "The rejected token array includes both --stdout and --output, explains that they violate the exactly-one-selector rule, and states that no execution was performed."
+          }
+        ]
+      },
+      "binding": {
+        "id": "cli-help-example-designer__parent_holdout",
+        "slug": "cli-help-example-designer",
+        "skill_sha256": "940ac13142cdf0a4bf2a70c276e36b29c9a023b039046dbda570157e36bc1493",
+        "contract_sha256": "ee42a66b591c96518a39733e633fe4008cd16ebebd7db93111609fcd071e10e3",
+        "assertions_sent_to_executor": false
+      },
+      "round": "initial"
+    }
+  ]
+}

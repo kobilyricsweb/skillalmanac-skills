@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "direction",
+    "relationships",
+    "code_accounting",
+    "unresolved_entries",
+    "assumptions"
+  ],
+  "properties": {
+    "direction": {
+      "type": "string"
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_code",
+          "target_code",
+          "mapping_type",
+          "rationale_source",
+          "constraints",
+          "status"
+        ],
+        "properties": {
+          "source_code": {
+            "type": "string"
+          },
+          "target_code": {
+            "type": "string"
+          },
+          "mapping_type": {
+            "enum": [
+              "one-to-one",
+              "one-to-many",
+              "many-to-one",
+              "scoped",
+              "qualified"
+            ]
+          },
+          "rationale_source": {
+            "type": "string"
+          },
+          "constraints": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "enum": [
+              "supported",
+              "provisional",
+              "conflicting",
+              "unresolved"
+            ]
+          }
+        }
+      }
+    },
+    "code_accounting": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "system",
+          "code",
+          "status"
+        ],
+        "properties": {
+          "system": {
+            "enum": [
+              "source",
+              "target"
+            ]
+          },
+          "code": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "mapped",
+              "unmapped",
+              "excluded",
+              "not_applicable",
+              "blocked"
+            ]
+          }
+        }
+      }
+    },
+    "unresolved_entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "reason",
+          "needed_evidence"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "needed_evidence": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

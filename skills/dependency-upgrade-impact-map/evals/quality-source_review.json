@@ -1,0 +1,7 @@
+{
+  "fingerprint": "7379f0ad0d28b2b468053a52f9c0e5f48417d74e0955fd4a01af353af28689f8",
+  "job": "factory100_review_70a8d908dbee",
+  "slug": "dependency-upgrade-impact-map",
+  "verdict": "pass",
+  "findings": []
+}

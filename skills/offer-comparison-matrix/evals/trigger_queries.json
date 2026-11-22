@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Compare three proposed service offers by aligned audience, promise, assets, friction, evidence, and unresolved gaps.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make an internal matrix for these product bundles using only the supplied evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Show which promises have complete, partial, missing, or conflicting supplied support.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare two workshop proposals without researching competitors or demand.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map supplied offer differences and testable distinctions while aligning the comparison populations.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit the proof, assets, friction, and constraints across our proposed offers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an evidence-bounded comparison of these internal packages.",
+    "should_trigger": true
+  },
+  {
+    "query": "Put these offers into a decision matrix while preserving audience restrictions and avoiding a winner.",
+    "should_trigger": true
+  },
+  {
+    "query": "Flag promises whose supplied proof covers only a subclaim.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare included assets and unresolved questions for four proposed offers without inventing weights.",
+    "should_trigger": true
+  },
+  {
+    "query": "Research competitor pricing for this offer.",
+    "should_trigger": false
+  },
+  {
+    "query": "Estimate demand for each offer from current market trends.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a campaign brief for the winning offer.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find keyword volume for these promises.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design a landing page for Offer A.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a claim-evidence map for every factual statement in this report.",
+    "should_trigger": false
+  },
+  {
+    "query": "Validate which promotion variant will convert best.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write sales copy for the strongest package.",
+    "should_trigger": false
+  },
+  {
+    "query": "Produce a pricing research report comparing competitors.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft meeting notes and action items from this offer discussion.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "matrix_rows": [
+    {
+      "requirement_id": "R1",
+      "requirement_text": "State the status-report frequency and responsible role.",
+      "priority": "required",
+      "section_evidence": [
+        {
+          "section_id": "A1",
+          "support": "Reports are issued every Friday by the project coordinator."
+        }
+      ],
+      "coverage_status": "covered",
+      "assessment_certainty": "final",
+      "interpretation": null,
+      "duplication": [],
+      "conflicts": [],
+      "unresolved_gap": null
+    },
+    {
+      "requirement_id": "R2",
+      "requirement_text": "Identify the invoice archive owner.",
+      "priority": "optional",
+      "section_evidence": [
+        {
+          "section_id": "A2",
+          "support": "Finance archives invoices."
+        }
+      ],
+      "coverage_status": "covered",
+      "assessment_certainty": "final",
+      "interpretation": null,
+      "duplication": [],
+      "conflicts": [],
+      "unresolved_gap": null
+    }
+  ],
+  "verification_report": {
+    "all_requirements_accounted_for": true,
+    "covered_rows_have_section_support": true,
+    "reported_gaps": [],
+    "input_limitations": []
+  }
+}
