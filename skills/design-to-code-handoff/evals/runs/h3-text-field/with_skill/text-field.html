@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Text field states</title>
+<link rel="stylesheet" href="src/tokens.css">
+<link rel="stylesheet" href="text-field.css">
+<style>
+  body {
+    margin: 0;
+    padding: var(--space-6) var(--space-4);
+    background-color: var(--color-bg-page);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+  }
+  h1 {
+    margin: 0 0 var(--space-6);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .specimens {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    max-width: 360px;
+  }
+  .specimen h2 {
+    margin: 0 0 var(--space-3);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+</style>
+</head>
+<body>
+  <h1>Text field</h1>
+
+  <main class="specimens">
+
+    <section class="specimen">
+      <h2>State=Default</h2>
+      <div class="text-field">
+        <label class="text-field__label" for="email-default">Work email</label>
+        <input class="text-field__input" id="email-default" type="email"
+               placeholder="name@company.com" autocomplete="email"
+               aria-describedby="hint-default">
+        <p class="text-field__hint" id="hint-default">We only use this for sign-in links.</p>
+      </div>
+    </section>
+
+    <section class="specimen">
+      <h2>State=Focus</h2>
+      <div class="text-field">
+        <label class="text-field__label" for="email-focus">Work email</label>
+        <input class="text-field__input is-focus" id="email-focus" type="email"
+               value="dana@northwind.io" autocomplete="email"
+               aria-describedby="hint-focus">
+        <p class="text-field__hint" id="hint-focus">We only use this for sign-in links.</p>
+      </div>
+    </section>
+
+    <section class="specimen">
+      <h2>State=Error</h2>
+      <div class="text-field">
+        <label class="text-field__label" for="email-error">Work email</label>
+        <input class="text-field__input" id="email-error" type="email"
+               value="dana@northwind" autocomplete="email"
+               aria-invalid="true" aria-describedby="message-error">
+        <p class="text-field__message" id="message-error">
+          <svg class="text-field__icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <!-- Placeholder geometry: the export gives only a 10x6 stroked vector at (3,5); its path data is not in the file. -->
+            <path d="M3 6 L8 11 L13 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+          <span class="text-field__message-text">Enter a full email address, for example dana@northwind.io</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="specimen">
+      <h2>State=Disabled</h2>
+      <div class="text-field">
+        <label class="text-field__label" for="email-disabled">Work email</label>
+        <input class="text-field__input" id="email-disabled" type="email"
+               value="dana@northwind.io" autocomplete="email" disabled
+               aria-describedby="hint-disabled">
+        <p class="text-field__hint" id="hint-disabled">We only use this for sign-in links.</p>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "skill_name": "keyword-demand-research",
+  "evals": [
+    {
+      "id": "k1-demand-size",
+      "prompt": "Here is the keyword export for our standing-desk blog (US, monthly Google Ads volumes, Aug 2025 to Oct 2026). How big is the search demand we can actually target with articles, and which 5 topics should we write first? Our store competes with IKEA, Uplift and Flexispot. Put your full answer in reply.md.",
+      "files": [
+        "evals/files/k1_standing_desk_keywords.csv"
+      ],
+      "assertions": [
+        "Close variants are merged: the working total is not the raw sum of all rows (raw 334,477; de-duplicated 175,710)",
+        "Competitor brand searches (ikea, uplift, flexispot) are kept out of the targetable total",
+        "The two off-topic keywords (desk standing fan; tiny desk standing room tickets) are excluded and named",
+        "The Black Friday keyword is recognised as a one-month spike, not a 3,000-a-month topic",
+        "'electric standing desk' is described as falling, with the October rise not called a recovery",
+        "Every trend statement names the periods compared",
+        "The answer states limits of the data (bucketed volumes, rule-based intent, or what was not measured)"
+      ]
+    },
+    {
+      "id": "k2-trend-check",
+      "prompt": "My cofounder says habit-tracker searches 'rebounded 20%+ last month and the AI angle is up thousands of percent year over year', so we should pour content into it now. Here is the export (US, monthly). Is the topic growing? What would you tell him? Put your full answer in reply.md.",
+      "files": [
+        "evals/files/k2_habit_tracker_keywords.csv"
+      ],
+      "assertions": [
+        "States the total is falling in recent direction: Aug-Oct 2026 against May-Jul 2026 (about -24%)",
+        "States the peak (January 2026) and that October 2026 is far below it (about -78%)",
+        "Says the September-to-October rise is one month and not a trend",
+        "Says the year-on-year percentage for 'ai habit tracker' comes from a near-zero base and gives absolute numbers",
+        "Does not double count the plural variants when giving totals",
+        "Mentions that a January peak may be seasonal but only one cycle is visible",
+        "Gives a recommendation tied to the numbers, without converting volume into traffic or revenue as fact"
+      ]
+    },
+    {
+      "id": "k3-collection-plan",
+      "prompt": "I have a keyword-data API account with $40 of credit. Plan the study and outline the script to measure US search demand for 'home battery storage' (I sell residential battery systems). Do not run anything or call any API. Put the plan in reply.md.",
+      "files": [],
+      "assertions": [
+        "Credentials are read from the user's environment or config; no key is embedded or requested in chat",
+        "A spend cap below the available credit is set and enforced before each paid call, with a cost estimate",
+        "Raw responses are saved and re-used; a spend ledger is kept",
+        "Keyword collection runs in rounds with a stated stop rule",
+        "Close variants are de-duplicated before totals; raw and de-duplicated sums are both reported",
+        "Other meanings of the phrase and brand-navigational searches are separated by rules plus a manual read",
+        "The plan lists limits or a not-obtained section and invents no volumes"
+      ]
+    }
+  ]
+}

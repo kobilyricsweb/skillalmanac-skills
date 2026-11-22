@@ -1,0 +1,21 @@
+{
+  "keywords": 36,
+  "design_clusters": 24,
+  "raw_sum_avg12": 334476.7,
+  "dedup_sum_avg12": 175710.0,
+  "brand_navigational_avg12": 42400.0,
+  "off_topic_avg12": 2900.0,
+  "counted_avg12_after_removing_brand_and_offtopic": 130410.0,
+  "counted_minus_bare_head_standing_desk": 69910.0,
+  "traps": [
+    "12 keywords are close variants of another keyword (same monthly series): a raw sum double counts 158767",
+    "ikea / uplift / flexispot keywords are competitor brand-navigational searches",
+    "'desk standing fan' and 'tiny desk standing room tickets' are other meanings",
+    "'standing desk black friday' average is inflated by one month (33,100 in 2025-11); without it the level is about 480-610",
+    "'electric standing desk' fell from 27,100 (2025-12) to 5,400 (2026-09) and rose to 6,600 in 2026-10: one month, not a recovery",
+    "'standing desk for vr' is new (zero a year ago): a percentage growth figure is meaningless",
+    "'walking pad for standing desk' is the real riser: 590 -> 5,400",
+    "'standing desk diy plans' and 'standing desk cable tray' share a flat 170 series by chance and must stay separate",
+    "'standing desk height calculator' is a tool-seeking search, not article demand"
+  ]
+}

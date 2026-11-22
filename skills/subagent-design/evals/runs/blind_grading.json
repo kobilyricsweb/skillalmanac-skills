@@ -1,0 +1,172 @@
+{
+ "grader": "sub-agent, 'sonnet' model alias, 2026-11-20",
+ "ab_key": {
+  "a1-create-reviewer": "A=baseline",
+  "a2-delegation-brief": "A=with_skill",
+  "a3-fix-bad-agent": "A=with_skill"
+ },
+ "grading": {
+  "a1-create-reviewer": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Definition does not assume agent sees main conversation and tells it what to read to find the change",
+      "passed": false,
+      "evidence": "Says 'use git diff --name-only / git status against the base branch if available, otherwise the files the user named' - tells it where to look but implicitly assumes it knows what the user named; never states it has no conversation access."
+     },
+     {
+      "text": "Report format: verdict plus findings with file and line",
+      "passed": true,
+      "evidence": "'Start with a verdict: APPROVE, APPROVE WITH NITS, or BLOCK. Then list findings ... each with file:line, the rule broken, and a concrete fix.'"
+     }
+    ],
+    "score": 7
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Definition does not assume agent sees main conversation and tells it what to read to find the change",
+      "passed": true,
+      "evidence": "'You do not see the conversation that called you... Otherwise run git status --short ledger-service/db/migrations and git diff --name-only HEAD ...'"
+     },
+     {
+      "text": "Report format: verdict plus findings with file and line",
+      "passed": true,
+      "evidence": "'VERDICT: <PASS | BLOCK | NEEDS-INFO> ... - <file>:<line> - <rule number and short name> - <quoted line>'"
+     }
+    ],
+    "score": 9
+   },
+   "preference": "B",
+   "reason": "B explicitly states the subagent lacks the conversation and gives concrete commands to find the change, plus a strict capped report template with NOT CHECKED and ASSUMPTIONS. A is sound but its report is looser and it leans on 'files the user named'."
+  },
+  "a2-delegation-brief": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Decides per piece whether to delegate, with reason",
+      "passed": true,
+      "evidence": "Table: 'Delegate (agent A) | Search-heavy...', 'Delegate (agent B) | Independent of A...', 'Keep with me ... It is the synthesis.'"
+     },
+     {
+      "text": "Removal plan stays with main agent",
+      "passed": true,
+      "evidence": "'Removal plan | Keep with me, written after A and B return'; 'No third agent for the plan.'"
+     },
+     {
+      "text": "Each brief self-contained: goal, scope, done criteria",
+      "passed": true,
+      "evidence": "Both prompts have 'Goal:', 'Scope: look in storefront/...', 'Done when:' and no reference to the conversation."
+     },
+     {
+      "text": "Each brief fixes return format and asks for evidence file:line",
+      "passed": true,
+      "evidence": "'Return exactly: RESULT... EVIDENCE: - <file>:<line> - <quoted line>... At most 40 lines. No narrative.'"
+     },
+     {
+      "text": "Flag-search brief warns about indirect reads",
+      "passed": true,
+      "evidence": "'name built from string pieces (for example 'LEGACY_' + 'BILLING'), bracket access flags[key]... Writers... tests... deploy values... Docs'"
+     },
+     {
+      "text": "Briefs say agents must not change files",
+      "passed": true,
+      "evidence": "'Constraints: read-only; do not create, edit or delete files.'"
+     },
+     {
+      "text": "Says how results will be checked before relied on",
+      "passed": true,
+      "evidence": "Section 4: 'Open three of A's cited locations... Run one independent search myself... git status shows no changes'."
+     }
+    ],
+    "score": 9
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Decides per piece whether to delegate, with reason",
+      "passed": true,
+      "evidence": "'Agent C (removal plan) needs A's findings, so it would run after A.' A and B 'independent and read-only'; reasons thin but present."
+     },
+     {
+      "text": "Removal plan stays with main agent",
+      "passed": false,
+      "evidence": "'Prompt C: plan to remove the flag (Plan agent, run after A finishes)' - the synthesis is delegated."
+     },
+     {
+      "text": "Each brief self-contained: goal, scope, done criteria",
+      "passed": false,
+      "evidence": "Goal and scope present, but no explicit done criteria, and Prompt C says 'paste it here' for findings and assumes a decision ('the legacy processor path is retired') not given."
+     },
+     {
+      "text": "Each brief fixes return format and asks for evidence file:line",
+      "passed": false,
+      "evidence": "A asks for 'file path, line number, the exact line' but format is loose with narrative ('say what behaviour changes'); B has a table; C has no fixed format ('Keep it short and numbered')."
+     },
+     {
+      "text": "Flag-search brief warns about indirect reads",
+      "passed": true,
+      "evidence": "'string concatenation or template literals building the key, computed property access such as flags[key]... deploy values, test setup'"
+     },
+     {
+      "text": "Briefs say agents must not change files",
+      "passed": true,
+      "evidence": "'Read-only: do not edit, create or run anything.'; C: 'Do not edit code; produce a plan only.' (though summary says C writes a plan file)"
+     },
+     {
+      "text": "Says how returned results will be checked",
+      "passed": false,
+      "evidence": "'What I would hand back after running' lists deliverables only; no verification step."
+     }
+    ],
+    "score": 4
+   },
+   "preference": "A",
+   "reason": "A keeps the synthesis with the main agent, fixes strict return formats with evidence, and includes a concrete verification plan. B delegates the plan, has loose formats and no result checking."
+  },
+  "a3-fix-bad-agent": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Explains each symptom with cause: vague description, inherited tools, missing output contract",
+      "passed": true,
+      "evidence": "'description was \"Helps with code.\"', 'no tools field, so it inherited every tool including Write and Edit', 'no report format ... Explain everything you looked at in detail'."
+     },
+     {
+      "text": "Notes subagent starts without conversation so brief must carry the question",
+      "passed": true,
+      "evidence": "'\"Continue from what we discussed above\", but a subagent cannot see the conversation. It now says how to find its input (the caller's message names the symbol).'"
+     },
+     {
+      "text": "Model choice addressed with reason",
+      "passed": true,
+      "evidence": "'The model was opus for a search job; it is now haiku.'"
+     }
+    ],
+    "score": 9
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Explains each symptom with cause",
+      "passed": true,
+      "evidence": "'description was \"Helps with code.\" which is too vague', 'no tools field meant it inherited every tool', 'Explain everything you looked at in detail. Replaced with ... 15 lines'."
+     },
+     {
+      "text": "Notes subagent starts without conversation so brief must carry the question",
+      "passed": true,
+      "evidence": "'\"Continue from what we discussed above\" is meaningless because a subagent starts with a fresh context... it works from the task it is given.' (does not explicitly tell caller the brief must carry the question)"
+     },
+     {
+      "text": "Model choice addressed with reason",
+      "passed": true,
+      "evidence": "'opus was overkill for grep-style lookups; switched to haiku'"
+     }
+    ],
+    "score": 8
+   },
+   "preference": "A",
+   "reason": "Both fix all three symptoms and the model; A adds a stronger definition (file:line quoted-line report, input-finding section, NEEDS-INFO) and explicit conversation-blindness reasoning. A's rename to code-locator is a small risk, but it flags it, while B's compact fix is also fine."
+  }
+ }
+}

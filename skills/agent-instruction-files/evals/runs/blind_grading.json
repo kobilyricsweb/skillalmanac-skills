@@ -1,0 +1,132 @@
+{
+ "grader": "sub-agent, 'sonnet' model alias, 2026-11-20",
+ "ab_key": {
+  "i1-audit-bloated": "A=baseline",
+  "i2-write-from-scratch": "A=baseline",
+  "i3-share-across-tools": "A=with_skill"
+ },
+ "grading": {
+  "i1-audit-bloated": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Flags committed staging key as secret to rotate",
+      "passed": true,
+      "evidence": "\"Treat that key as exposed: rotate it, and check git history.\""
+     },
+     {
+      "text": "Settles indentation contradiction from .prettierrc",
+      "passed": true,
+      "evidence": "\".prettierrc says useTabs: false, tabWidth: 2, so spaces are correct.\" (matches .prettierrc)"
+     },
+     {
+      "text": "Lists removals and why; nothing invented",
+      "passed": true,
+      "evidence": "Section 'Noise burying the real rules' lists removed items with reasons. Minor addition 'ask a teammate for the value' in new CLAUDE.md is not from the repo; legacy/admin rule dropped without a TODO."
+     }
+    ],
+    "score": 7
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Flags committed staging key as secret to rotate",
+      "passed": true,
+      "evidence": "\"SECRET: the file contained a staging API key (line 21, starts stg_k3y_). It is in version history, so rotate it.\""
+     },
+     {
+      "text": "Settles indentation contradiction from .prettierrc",
+      "passed": true,
+      "evidence": "\"2 spaces, because .prettierrc has useTabs: false, tabWidth: 2.\""
+     },
+     {
+      "text": "Lists removals and why; nothing invented",
+      "passed": true,
+      "evidence": "'Removed:' section itemises persona, marketing, General section, eslint-enforced rules; unverifiable claims and missing openapi.yaml are flagged as TODO(owner) rather than invented."
+     }
+    ],
+    "score": 8
+   },
+   "preference": "B",
+   "reason": "Both meet all three assertions and fix the same wrong paths and commands. B is slightly better because it keeps unverifiable facts as explicit TODOs (legacy dir, missing openapi spec, CI claim) and gives an itemised removed list, while A silently drops the legacy rule and adds a small unsourced 'ask a teammate' line."
+  },
+  "i2-write-from-scratch": {
+   "A": {
+    "assertions": [
+     {
+      "text": "States DB container must be up before tests and connection error means that",
+      "passed": true,
+      "evidence": "\"make dev-db ... Run this before tests.\" and \"If every test fails with ConnectionRefusedError, the database is not running... it is not a code bug.\""
+     },
+     {
+      "text": "No generic advice and does not repeat README overview",
+      "passed": false,
+      "evidence": "Opening paragraph restates the README overview (\"load municipal boundary files... normalise... publish tiles. Runs nightly\") and a Layout section lists directories that are obvious from the tree."
+     },
+     {
+      "text": "Nothing invented",
+      "passed": true,
+      "evidence": "Versions pytest 8.3.3 / ruff 0.7.4, port 54329, line length 100 all match pyproject.toml, Makefile and conftest docstring."
+     }
+    ],
+    "score": 7
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "States DB container must be up before tests and connection error means that",
+      "passed": true,
+      "evidence": "\"Run it before make test: tests connect to port 54329, and without the container every test fails with ConnectionRefusedError, which is not a code bug.\""
+     },
+     {
+      "text": "No generic advice and does not repeat README overview",
+      "passed": true,
+      "evidence": "Only a one-line summary pointing to README (\"see README.md for the overview\"); the rest is commands, generated-code ban, coordinate order."
+     },
+     {
+      "text": "Nothing invented",
+      "passed": true,
+      "evidence": "All statements trace to Makefile, ci.yml, pyproject.toml, conftest.py and loader docstring (e.g. \"line length 100, set in pyproject.toml\")."
+     }
+    ],
+    "score": 8
+   },
+   "preference": "B",
+   "reason": "Both capture the DB trap, the generated-code rule and the lon/lat rule accurately. B is tighter and avoids restating the README and layout, which A does."
+  },
+  "i3-share-across-tools": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Reports version drift and settles it from go.mod",
+      "passed": true,
+      "evidence": "\"CLAUDE.md said 1.22 and the Cursor rule said 1.21. go.mod says go 1.22, so 1.22 wins.\""
+     },
+     {
+      "text": "Explains correctly how each of the three tools finds the shared file",
+      "passed": false,
+      "evidence": "Covers all three, but says \"Claude Code only falls back to AGENTS.md when no CLAUDE.md exists\", which is an incorrect claim (Claude Code does not read AGENTS.md); the Codex/Cursor/import explanations are otherwise right."
+     }
+    ],
+    "score": 7
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Reports version drift and settles it from go.mod",
+      "passed": true,
+      "evidence": "\"CLAUDE.md said Go 1.22 and the Cursor rule said Go 1.21. go.mod declares go 1.22, so I used 1.22.\""
+     },
+     {
+      "text": "Explains correctly how each of the three tools finds the shared file",
+      "passed": true,
+      "evidence": "\"Codex and Cursor read AGENTS.md natively... Claude Code does not read AGENTS.md by itself, so this one-line import (@AGENTS.md) is the bridge.\""
+     }
+    ],
+    "score": 8
+   },
+   "preference": "B",
+   "reason": "Both produce identical file setups and settle the Go version from go.mod. B states Claude Code's behaviour correctly and flags the new logging rule for confirmation, whereas A makes an incorrect fallback claim and adds an unsourced test-hint line."
+  }
+ }
+}

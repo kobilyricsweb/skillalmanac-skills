@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workspace settings | Tallybird</title>
+<style>
+  body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #1d1d1f; background: #f6f6f4; }
+  main { max-width: 640px; margin: 0 auto; padding: 32px 16px; }
+  .card { background: #fff; border: 1px solid #dcdcd8; border-radius: 10px; padding: 24px; margin-bottom: 16px; }
+  .row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
+  :focus-visible { outline: 2px solid #1558d6; outline-offset: 2px; }
+  .link { color: #1558d6; cursor: pointer; text-decoration: underline; background: none; border: 0; padding: 0; font: inherit; }
+  .switch { flex-shrink: 0; box-sizing: border-box; border: 0; padding: 0; width: 44px; height: 24px; border-radius: 12px; background: #b9b9b4; position: relative; cursor: pointer; }
+  .switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: left .15s; }
+  .switch.on { background: #1558d6; }
+  .switch.on::after { left: 22px; }
+  .theme-select { width: 200px; box-sizing: border-box; padding: 8px 12px; border: 1px solid #8a8a85; border-radius: 6px; background: #fff; color: #1d1d1f; font: inherit; }
+  .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); }
+  .overlay.open { display: block; }
+  .modal { background: #fff; border-radius: 10px; max-width: 420px; margin: 15vh auto 0; padding: 24px; position: relative; }
+  .modal-title { font-size: 20px; font-weight: 700; margin: 0 0 8px; }
+  .close { position: absolute; top: 7px; right: 7px; width: 32px; height: 32px; padding: 0; border: 0; background: none; color: inherit; font-size: 22px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .btn { border: 0; border-radius: 6px; padding: 10px 16px; font-size: 16px; cursor: pointer; }
+  .btn-danger { background: #b3261e; color: #fff; }
+  .btn-plain { background: #e9e9e5; color: #1d1d1f; }
+  .field-label { display: block; margin: 12px 0 0; font-weight: 600; }
+  .field { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #8a8a85; border-radius: 6px; font-size: 16px; margin: 6px 0 12px; }
+  .error { color: #b3261e; font-size: 14px; margin: 0 0 8px; }
+  .error:empty { margin: 0; }
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #1d1d1f; color: #fff; padding: 10px 16px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<main id="main">
+  <h1>Workspace settings</h1>
+
+  <div class="card">
+    <h2>Notifications</h2>
+    <div class="row">
+      <span id="weekly-label">Email me a weekly summary</span>
+      <button type="button" class="switch on" id="weekly" role="switch" aria-checked="true" aria-labelledby="weekly-label" onclick="toggleSwitch(this)"></button>
+    </div>
+    <div class="row">
+      <label for="theme-select">Theme</label>
+      <select class="theme-select" id="theme-select" onchange="pickTheme(this.value)">
+        <option>System</option>
+        <option>Light</option>
+        <option>Dark</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Danger zone</h2>
+    <p>Deleting the workspace removes all 14 projects and cannot be undone.</p>
+    <button type="button" class="link" id="delete-open" onclick="openModal()">Delete this workspace</button>
+  </div>
+</main>
+
+<div class="overlay" id="overlay">
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="confirm-help">
+    <button type="button" class="close" aria-label="Close" onclick="closeModal()">&times;</button>
+    <h2 class="modal-title" id="modal-title">Delete workspace?</h2>
+    <p id="confirm-help">Type the workspace name <b>tallybird-hq</b> to confirm.</p>
+    <label class="field-label" for="confirm-name">Workspace name</label>
+    <input class="field" id="confirm-name" type="text" aria-describedby="confirm-help confirm-error">
+    <p class="error" id="confirm-error" role="alert"></p>
+    <button type="button" class="btn btn-danger" onclick="doDelete()">Delete workspace</button>
+    <button type="button" class="btn btn-plain" onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<div id="toasts" role="status" aria-live="polite"></div>
+
+<script>
+  var main = document.getElementById('main');
+  var overlay = document.getElementById('overlay');
+  var modal = document.getElementById('modal');
+  var confirmInput = document.getElementById('confirm-name');
+  var confirmError = document.getElementById('confirm-error');
+  var opener = null;
+
+  function toggleSwitch(el) {
+    el.classList.toggle('on');
+    el.setAttribute('aria-checked', el.classList.contains('on') ? 'true' : 'false');
+    toast('Saved');
+  }
+  function pickTheme(v) { toast('Theme set to ' + v); }
+
+  function isModalOpen() { return overlay.classList.contains('open'); }
+
+  function openModal() {
+    opener = document.activeElement;
+    overlay.classList.add('open');
+    main.inert = true;
+    confirmInput.focus();
+  }
+  function closeModal() {
+    overlay.classList.remove('open');
+    main.inert = false;
+    confirmInput.removeAttribute('aria-invalid');
+    confirmInput.style.borderColor = '';
+    confirmError.textContent = '';
+    if (opener && typeof opener.focus === 'function') opener.focus();
+    opener = null;
+  }
+  function doDelete() {
+    if (confirmInput.value !== 'tallybird-hq') {
+      confirmInput.style.borderColor = '#b3261e';
+      confirmInput.setAttribute('aria-invalid', 'true');
+      confirmError.textContent = 'The name does not match. Type tallybird-hq to confirm.';
+      confirmInput.focus();
+      return;
+    }
+    closeModal();
+    toast('Workspace scheduled for deletion');
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (!isModalOpen()) return;
+    if (e.key === 'Escape') { e.preventDefault(); closeModal(); return; }
+    if (e.key === 'Tab') {
+      var items = modal.querySelectorAll('button:not([disabled]), input:not([disabled])');
+      var first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  function toast(msg) {
+    var t = document.createElement('div'); t.className = 'toast'; t.textContent = msg;
+    document.getElementById('toasts').appendChild(t);
+    setTimeout(function () { t.remove(); }, 2500);
+  }
+</script>
+</body>
+</html>

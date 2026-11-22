@@ -1,0 +1,57 @@
+{
+  "skill_name": "agent-instruction-files",
+  "note": "Scripted assertions are run by ../_tools/check_runs.py, an independent checker (not the skill's audit script).",
+  "evals": [
+    {
+      "id": "i1-audit-bloated",
+      "prompt": "The CLAUDE.md in web-dashboard/ has grown and the agent keeps ignoring parts of it. Audit it and replace it with a fixed version. Write reply.md in the working folder with what you found and what you changed.",
+      "files": [
+        "evals/files/i1-audit-bloated/web-dashboard/"
+      ],
+      "assertions": [
+        "[script] The fixed file no longer names commands or paths that do not exist (test:unit, src/utils/helpers.ts, legacy/admin, npm install)",
+        "[script] The staging key is gone from the file",
+        "[script] The fixed file is at most 50 percent of the original line count",
+        "[script] The four project-specific rules survive: src/generated with gen:api, db:migrate after schema changes, formatDate for timestamps, the commit format",
+        "[script] The tabs-versus-spaces contradiction is gone",
+        "[judge] The reply flags the committed staging key as a secret that must be rotated, not only deleted",
+        "[judge] The reply settles the indentation contradiction from evidence in the repo (.prettierrc) rather than by guessing",
+        "[judge] The reply lists what was removed and why, and nothing in the new file is invented"
+      ]
+    },
+    {
+      "id": "i2-write-from-scratch",
+      "prompt": "Write an AGENTS.md for the repo in geo-pipeline/. Write a short reply.md in the working folder saying what you based it on.",
+      "files": [
+        "evals/files/i2-write-from-scratch/geo-pipeline/"
+      ],
+      "assertions": [
+        "[script] AGENTS.md exists at the repo root and is at most 80 lines",
+        "[script] It gives the real commands: make test, make lint, make dev-db, make gen",
+        "[script] Every make target it names exists in the Makefile",
+        "[script] It says the generated schema file is not edited by hand",
+        "[script] It states the (lon, lat) coordinate order",
+        "[judge] It says the database container must be up before tests and that a connection error means that, not a code bug",
+        "[judge] It contains no generic advice an agent already follows and does not repeat the README overview",
+        "[judge] Nothing in it is invented: every statement can be traced to a file in the repo"
+      ]
+    },
+    {
+      "id": "i3-share-across-tools",
+      "prompt": "In mobile-backend/, half the team uses Claude Code and the rest use Cursor and Codex. I'm tired of keeping the instructions in sync. Set it up so there is one source of truth. Write reply.md in the working folder explaining the setup.",
+      "files": [
+        "evals/files/i3-share-across-tools/mobile-backend/"
+      ],
+      "assertions": [
+        "[script] AGENTS.md exists and holds the shared rules (make test, sqlc, internal/, cents)",
+        "[script] CLAUDE.md imports it with @AGENTS.md and is at most 20 lines",
+        "[script] The Claude-only notes (db-reviewer) are still in CLAUDE.md",
+        "[script] The rule that existed only in the Cursor file (never log request bodies) is in AGENTS.md",
+        "[script] The Go version drift is resolved to 1.22 and 1.21 appears nowhere",
+        "[script] The Cursor rule file no longer duplicates the shared rules (removed or reduced to a pointer)",
+        "[judge] The reply reports the version drift and settles it from go.mod",
+        "[judge] The reply explains correctly how each of the three tools finds the shared file"
+      ]
+    }
+  ]
+}

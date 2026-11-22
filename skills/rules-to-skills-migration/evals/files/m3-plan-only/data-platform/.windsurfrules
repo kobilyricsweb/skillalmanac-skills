@@ -1,0 +1,2 @@
+Use polars not pandas.
+Keep DAGs idempotent: a rerun for the same date must give the same output.

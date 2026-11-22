@@ -1,0 +1,315 @@
+{
+ "ab_key": {
+  "c1-from-notes": {
+   "A": "with_skill",
+   "B": "baseline"
+  },
+  "c2-review-brief": {
+   "A": "with_skill",
+   "B": "baseline"
+  },
+  "c3-thin-input": {
+   "A": "with_skill",
+   "B": "baseline"
+  }
+ },
+ "grader": "sub-agent, sonnet alias, 2026-11-20; saw outputs as A/B with ground truth",
+ "grading": {
+  "c1-from-notes": {
+   "A": {
+    "assertions": [
+     {
+      "text": "SCRIPTED: channel budgets in brief.md add up to the stated total",
+      "passed": true,
+      "evidence": "16,200+0+1,800 = 18,000 (computed; no scripted file)"
+     },
+     {
+      "text": "One primary objective in trial signups with the 310 baseline, a target and a deadline inside the 6-week window",
+      "passed": true,
+      "evidence": "baseline 430 (from 310/mo), target 711 by 17 Mar 2027"
+     },
+     {
+      "text": "The $18k versus $20k contradiction is surfaced, not silently resolved",
+      "passed": true,
+      "evidence": "'notes conflict and only $18,000 is used'; open question 2"
+     },
+     {
+      "text": "The target is marked as an assumption or open question (none was given), not presented as a given",
+      "passed": true,
+      "evidence": "'target of 711 is derived from the funnel, not from Sam's goal'; open question 'What is Sam's goal number?'"
+     },
+     {
+      "text": "'Get paid 2x faster' is not used as a claim, and is flagged",
+      "passed": true,
+      "evidence": "'get paid 2x faster is NOT to be used'"
+     },
+     {
+      "text": "No benchmark appears as fact that is not in the notes; the given CPC $3.10 and 5.2% are used where search is planned",
+      "passed": true,
+      "evidence": "uses $3.10 and 5.2%; 2% email click and thresholds tagged [assumption]"
+     },
+     {
+      "text": "TikTok or creator work is framed as a test with assumed numbers, not as the main driver",
+      "passed": false,
+      "evidence": "No TikTok test; plan excludes it, misreads 'never run' as a policy and asks 'who decided'"
+     },
+     {
+      "text": "Lists assumptions and open questions for the owner",
+      "passed": true,
+      "evidence": "Assumptions and open questions section with 7 questions"
+     }
+    ],
+    "defects": [
+     "Misreads 'Never run TikTok' (no history) as a prohibition; no capped TikTok test offered",
+     "Very dense bracket-tag formatting; 90/10 split and 10% reserve arbitrary but flagged"
+    ],
+    "score": 8
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "SCRIPTED: channel budgets in brief.md add up to the stated total",
+      "passed": false,
+      "evidence": "No per-channel dollar budgets, only a qualitative split"
+     },
+     {
+      "text": "One primary objective in trial signups with the 310 baseline, a target and a deadline inside the 6-week window",
+      "passed": false,
+      "evidence": "Primary objective trial signups with ~430 baseline, but no target and no deadline date (only 'Week 6 ends about Mar 16')"
+     },
+     {
+      "text": "The $18k versus $20k contradiction is surfaced, not silently resolved",
+      "passed": true,
+      "evidence": "'OPEN - budget may be $20,000 ... Plan on $18,000'"
+     },
+     {
+      "text": "The target is marked as an assumption or open question (none was given), not presented as a given",
+      "passed": true,
+      "evidence": "'OPEN - headline target'; set after one week of data"
+     },
+     {
+      "text": "'Get paid 2x faster' is not used as a claim, and is flagged",
+      "passed": true,
+      "evidence": "'Do not say get paid 2x faster'"
+     },
+     {
+      "text": "No benchmark appears as fact that is not in the notes; the given CPC $3.10 and 5.2% are used where search is planned",
+      "passed": true,
+      "evidence": "uses 3.10 and 5.2%; only soft 'usually higher as competition rises'"
+     },
+     {
+      "text": "TikTok or creator work is framed as a test with assumed numbers, not as the main driver",
+      "passed": true,
+      "evidence": "'small capped test with a fixed budget and a clear stop rule' or skip"
+     },
+     {
+      "text": "Lists assumptions and open questions for the owner",
+      "passed": true,
+      "evidence": "Section 11 Open items, 8 entries"
+     }
+    ],
+    "defects": [
+     "No allocation of budget by channel, so the plan is not executable",
+     "No target or measurement decision rules"
+    ],
+    "score": 6
+   },
+   "preference": "A",
+   "reason": "A gives a complete funnel-derived plan with budgets that sum, a target, deadline and decision rules; B is sound on traps but leaves budget split and target undefined."
+  },
+  "c2-review-brief": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Finds that the channel budgets add up to $30,500, not the stated $28,000",
+      "passed": true,
+      "evidence": "$12,000 + $8,000 + $6,500 + $4,000 = $30,500 vs $28,000"
+     },
+     {
+      "text": "Shows by the brief's own numbers that paid search cannot reach 300 leads ($12,000 / $4 x 2% = 60)",
+      "passed": true,
+      "evidence": "3,000 clicks x 2% = 60 leads"
+     },
+     {
+      "text": "Flags the objective: two goals, no baseline, no metric for awareness",
+      "passed": true,
+      "evidence": "'Two primary goals... awareness has no metric, no baseline'"
+     },
+     {
+      "text": "Flags the podcast line with no KPI or target",
+      "passed": true,
+      "evidence": "'Podcast line ... no KPI and no target'"
+     },
+     {
+      "text": "Flags 'Guaranteed 3x ROAS' and the '#1' / 'cuts no-shows in half' claims",
+      "passed": true,
+      "evidence": "flags #1, cuts no-shows in half, Guaranteed 3x ROAS"
+     },
+     {
+      "text": "Flags the 4.5% CTR, 2% conversion and $4 CPC as unsupported assumptions",
+      "passed": true,
+      "evidence": "4.5% 'no source'; CPC and conversion 'inputs are untagged'; asks real CPC and conversion"
+     },
+     {
+      "text": "Does not introduce new benchmarks as fact",
+      "passed": true,
+      "evidence": "No external benchmarks introduced"
+     },
+     {
+      "text": "Leads with the most serious problems",
+      "passed": true,
+      "evidence": "Budget sum and unreachable target are sections 1 and 2"
+     }
+    ],
+    "defects": [
+     "Refers repeatedly to 'the skill' and a check script, which is internal jargon unhelpful to the user"
+    ],
+    "score": 9
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Finds that the channel budgets add up to $30,500, not the stated $28,000",
+      "passed": true,
+      "evidence": "$30,500 vs $28,000"
+     },
+     {
+      "text": "Shows by the brief's own numbers that paid search cannot reach 300 leads ($12,000 / $4 x 2% = 60)",
+      "passed": true,
+      "evidence": "$12,000/$200 = 60 leads"
+     },
+     {
+      "text": "Flags the objective: two goals, no baseline, no metric for awareness",
+      "passed": true,
+      "evidence": "'objective is brand awareness and 500 leads, so one of the two goals has no metric'; no baseline noted"
+     },
+     {
+      "text": "Flags the podcast line with no KPI or target",
+      "passed": true,
+      "evidence": "'Podcast sponsorship has no KPI, no target'"
+     },
+     {
+      "text": "Flags 'Guaranteed 3x ROAS' and the '#1' / 'cuts no-shows in half' claims",
+      "passed": true,
+      "evidence": "flags all three claims"
+     },
+     {
+      "text": "Flags the 4.5% CTR, 2% conversion and $4 CPC as unsupported assumptions",
+      "passed": true,
+      "evidence": "'No source for any benchmark'; CPC and CTR critiqued"
+     },
+     {
+      "text": "Does not introduce new benchmarks as fact",
+      "passed": false,
+      "evidence": "Introduces LinkedIn CTR 'well below 1%', CPC 'well above search', 4.5% 'plausible search benchmark' (caveated as own knowledge)"
+     },
+     {
+      "text": "Leads with the most serious problems",
+      "passed": true,
+      "evidence": "Arithmetic errors first"
+     }
+    ],
+    "defects": [
+     "Adds unsourced LinkedIn CTR/CPC claims and FTC/ASA references from memory",
+     "Suggests brand search lift as podcast KPI (fine) but longer and padded"
+    ],
+    "score": 8
+   },
+   "preference": "A",
+   "reason": "Both catch the seeded problems, but B adds outside benchmark claims while A stays strictly within the brief's numbers."
+  },
+  "c3-thin-input": {
+   "A": {
+    "assertions": [
+     {
+      "text": "SCRIPTED: channel budgets in brief.md add up to $1,500",
+      "passed": true,
+      "evidence": "800+500+0+200 = 1,500"
+     },
+     {
+      "text": "Delivers a draft, not only questions",
+      "passed": true,
+      "evidence": "Full brief delivered"
+     },
+     {
+      "text": "Every supplied figure other than the $1,500 is visibly marked as an assumption or placeholder",
+      "passed": true,
+      "evidence": "Almost every figure tagged [assumption]"
+     },
+     {
+      "text": "No invented baseline or benchmark is stated as fact",
+      "passed": true,
+      "evidence": "CPC and click-to-order rates tagged as assumptions/placeholders; baseline 0 marked assumption"
+     },
+     {
+      "text": "The objective has a metric, a target and a deadline, and says the baseline is unknown",
+      "passed": true,
+      "evidence": "60 orders by 2027-05-31; 'No baseline was supplied'"
+     },
+     {
+      "text": "Ends with a short, specific list of what is needed from the owner",
+      "passed": true,
+      "evidence": "5 specific numbered asks in reply.md"
+     },
+     {
+      "text": "No outcome promises",
+      "passed": true,
+      "evidence": "No promises; targets labeled assumption"
+     }
+    ],
+    "defects": [
+     "Modelled 100 orders vs target 60 may read as optimistic though flagged",
+     "Brief invents specific offer (10%) and dates, flagged as assumption"
+    ],
+    "score": 9
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "SCRIPTED: channel budgets in brief.md add up to $1,500",
+      "passed": true,
+      "evidence": "600+300+100+350+150 = 1,500"
+     },
+     {
+      "text": "Delivers a draft, not only questions",
+      "passed": true,
+      "evidence": "Full brief delivered"
+     },
+     {
+      "text": "Every supplied figure other than the $1,500 is visibly marked as an assumption or placeholder",
+      "passed": true,
+      "evidence": "Split marked [ASSUMPTION]; offer, timing, radius assumption/TBD"
+     },
+     {
+      "text": "No invented baseline or benchmark is stated as fact",
+      "passed": true,
+      "evidence": "No baselines or benchmarks invented"
+     },
+     {
+      "text": "The objective has a metric, a target and a deadline, and says the baseline is unknown",
+      "passed": false,
+      "evidence": "Target is 'X extra transactions or $Y' [TBD], no deadline date, baseline not stated as unknown"
+     },
+     {
+      "text": "Ends with a short, specific list of what is needed from the owner",
+      "passed": false,
+      "evidence": "Nine-item list in reply.md, not short"
+     },
+     {
+      "text": "No outcome promises",
+      "passed": true,
+      "evidence": "No outcome promises"
+     }
+    ],
+    "defects": [
+     "No measurable target, so not an actionable objective",
+     "Reply asks 9 questions for a user in a rush",
+     "Copy line 'Fresh... made today' asserts product facts"
+    ],
+    "score": 6
+   },
+   "preference": "A",
+   "reason": "A has a measurable objective with target and deadline marked as assumptions and a short ask list; B leaves the target undefined and asks too much."
+  }
+ }
+}

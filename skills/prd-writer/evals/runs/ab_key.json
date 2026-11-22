@@ -1,0 +1,14 @@
+{
+  "p1-saved-carts": {
+    "A": "baseline",
+    "B": "with_skill"
+  },
+  "p2-bulk-export": {
+    "A": "with_skill",
+    "B": "baseline"
+  },
+  "p3-reminders": {
+    "A": "baseline",
+    "B": "with_skill"
+  }
+}

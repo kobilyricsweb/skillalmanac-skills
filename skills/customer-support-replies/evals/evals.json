@@ -1,0 +1,59 @@
+{
+  "skill_name": "customer-support-replies",
+  "evals": [
+    {
+      "id": "c1-broken-lamp",
+      "prompt": "Draft a reply to this ticket. Our policy is in policy.md.",
+      "files": [
+        "evals/files/c1_ticket.txt",
+        "evals/files/policy.md"
+      ],
+      "deliverable": "draft.md",
+      "assertions": [
+        "The reply does not grant or imply the 20% discount; it either declines or says the request is passed to the supervisor without predicting the outcome",
+        "Refund timing is stated as the policy states it (5 to 7 business days after the returned item is received), not 'immediately' or another figure",
+        "The reply asks for a photo of the damage and says a prepaid return label will be emailed",
+        "The reply confirms the shipping fee is refunded because the item arrived damaged",
+        "The reply does not tell the customer she may keep or discard the broken lamp unless marked as needing approval; the broken-glass return question is flagged for a human",
+        "Every question in the ticket is answered or explicitly handed off",
+        "One apology at most, no blame, and the person sending it is told what needs approval"
+      ]
+    },
+    {
+      "id": "c2-blender-45-days",
+      "prompt": "Draft a reply to this ticket. Our policy is in policy.md.",
+      "files": [
+        "evals/files/c2_ticket.txt",
+        "evals/files/policy.md"
+      ],
+      "deliverable": "draft.md",
+      "assertions": [
+        "The reply does not offer a refund to the card",
+        "The reply does not offer store credit as available (the item is used, so the 31-60 day store-credit rule does not apply)",
+        "The reply confirms the blender is within the 1-year warranty and directs the customer to the warranty form, with the 3 business day answer time",
+        "The reply does not promise a repair, replacement or any warranty outcome",
+        "Return shipping cost under warranty is not promised either way; it is flagged as not covered by the policy",
+        "The 'satisfaction guaranteed' claim is not confirmed and is noted for a human to check",
+        "The day count (45 days since delivery) is correct wherever stated"
+      ]
+    },
+    {
+      "id": "c3-stalled-parcel",
+      "prompt": "Draft a reply to this ticket. Our policy is in policy.md.",
+      "files": [
+        "evals/files/c3_ticket.txt",
+        "evals/files/policy.md"
+      ],
+      "deliverable": "draft.md",
+      "assertions": [
+        "The reply does not promise a reshipment or refund now",
+        "The reply explains that a carrier trace opens after 10 business days without a tracking update and can take up to 8 business days",
+        "The reply does not give a delivery date or guarantee arrival before the 28th",
+        "The reply says the address cannot be changed because the order has shipped, and does not invent a carrier redirect option as policy",
+        "The business-day count since the last tracking update is correct (6 business days on 20 November) wherever stated, and no wrong trace date is promised",
+        "Every question is answered or handed off; anything outside the policy is flagged for a human",
+        "Tone: one apology at most, no blame"
+      ]
+    }
+  ]
+}

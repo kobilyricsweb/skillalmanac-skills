@@ -1,0 +1,82 @@
+[
+  {
+    "query": "should I block GPTBot but allow OAI-SearchBot and ChatGPT-User in robots.txt? i want to be cited in answers but not used for training",
+    "should_trigger": true
+  },
+  {
+    "query": "do I need an llms.txt file? write one for my docs site and tell me if any assistant actually reads it",
+    "should_trigger": true
+  },
+  {
+    "query": "GEO question: how do I make my site more citable by ChatGPT, Perplexity and Google AI overviews?",
+    "should_trigger": true
+  },
+  {
+    "query": "make markdown versions of my main pages so AI agents can read them without parsing all the nav and JS junk",
+    "should_trigger": true
+  },
+  {
+    "query": "give me a robots.txt policy that separates training crawlers (CCBot, Google-Extended, ClaudeBot) from search/answer bots and user-triggered fetchers",
+    "should_trigger": true
+  },
+  {
+    "query": "perplexity never cites our site even though we rank top 3 on google. is something blocking their bot? check robots and the bot user agents",
+    "should_trigger": true
+  },
+  {
+    "query": "how can I tell if AI assistants can actually read my pages - we render everything client-side in Vue",
+    "should_trigger": true
+  },
+  {
+    "query": "publisher here - want to opt out of AI training but still show up in ChatGPT search results. what exactly do I allow and disallow",
+    "should_trigger": true
+  },
+  {
+    "query": "set up .md endpoints plus an llms.txt index for our API documentation so coding agents can pull clean content",
+    "should_trigger": true
+  },
+  {
+    "query": "audit my site for AI readiness: robots rules for AI bots, llms.txt, content negotiation for markdown, and whether answers can quote us cleanly",
+    "should_trigger": true
+  },
+  {
+    "query": "build me a python scraper with playwright that crawls a list of product pages and saves prices to csv",
+    "should_trigger": false
+  },
+  {
+    "query": "googlebot is wasting crawl budget on faceted nav URLs on my ecommerce site, how do I fix it",
+    "should_trigger": false
+  },
+  {
+    "query": "write a CLAUDE.md for this repo describing the build commands and code style conventions",
+    "should_trigger": false
+  },
+  {
+    "query": "is there a way to make my AI-generated blog posts pass GPTZero? they get flagged as AI",
+    "should_trigger": false
+  },
+  {
+    "query": "build a chatbot for my website that answers questions about our products using our docs",
+    "should_trigger": false
+  },
+  {
+    "query": "how do I rate limit requests per IP in nginx to protect my API from abuse? 10 req/s burst 20",
+    "should_trigger": false
+  },
+  {
+    "query": "write an AGENTS.md so codex knows how to run tests in my monorepo",
+    "should_trigger": false
+  },
+  {
+    "query": "scrapers are hammering my site at 5k req/hour from a few ASNs, write a cloudflare WAF rule to block them",
+    "should_trigger": false
+  },
+  {
+    "query": "how does Google's crawler decide how often to recrawl my pages? we have 2M URLs",
+    "should_trigger": false
+  },
+  {
+    "query": "implement a robots.txt parser in Go that respects Crawl-delay for my own crawler",
+    "should_trigger": false
+  }
+]

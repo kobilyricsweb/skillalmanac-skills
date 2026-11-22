@@ -1,0 +1,37 @@
+keyword,cluster_representative,is_representative,intent,avg12,cluster_trend,last3_vs_prev3_pct,yoy_3m_pct,flags,merge_rules
+standing desk,standing desk,1,unclassified,60500.0,flat,0.0,0.0,,same words after plural/punctuation
+standing desks,standing desk,0,unclassified,60500.0,flat,0.0,0.0,,same words after plural/punctuation
+uplift desk,uplift desk,1,navigational-brand,22200.0,flat,0.0,0.0,,same words after plural/punctuation
+uplift desks,uplift desk,0,navigational-brand,22200.0,flat,0.0,0.0,,same words after plural/punctuation
+ikea standing desk,ikea standing desk,1,navigational-brand,14800.0,flat,0.0,0.0,,
+electric standing desk,electric standing desk,1,unclassified,14266.7,falling,-38.2,-68.2,one-month-rebound-after-decline; 76%-below-peak,same words after plural/punctuation
+electric standing desks,electric standing desk,0,unclassified,14266.7,falling,-38.2,-68.2,one-month-rebound-after-decline; 76%-below-peak,same words after plural/punctuation
+adjustable height desk,adjustable height desk,1,unclassified,12100.0,flat,0.0,0.0,,"identical series, same word set; same words after plural/punctuation"
+height adjustable desk,adjustable height desk,0,unclassified,12100.0,flat,0.0,0.0,,"identical series, same word set; same words after plural/punctuation"
+adjustable height desks,adjustable height desk,0,unclassified,12100.0,flat,0.0,0.0,,"identical series, same word set; same words after plural/punctuation"
+best standing desk,best standing desk,1,commercial,9900.0,flat,0.0,0.0,,"identical series, same word set; same words after plural/punctuation"
+best standing desks,best standing desk,0,commercial,9900.0,flat,0.0,0.0,,"identical series, same word set; same words after plural/punctuation"
+standing desk best,best standing desk,0,commercial,9900.0,flat,0.0,0.0,,"identical series, same word set; same words after plural/punctuation"
+standing desk converter,standing desk converter,1,unclassified,6600.0,flat,0.0,0.0,,same words after plural/punctuation
+standing desk converters,standing desk converter,0,unclassified,6600.0,flat,0.0,0.0,,same words after plural/punctuation
+flexispot standing desk,flexispot standing desk,1,navigational-brand,5400.0,flat,0.0,0.0,,
+standing desk mat,standing desk mat,1,unclassified,4400.0,flat,0.0,0.0,,same words after plural/punctuation
+standing desk mats,standing desk mat,0,unclassified,4400.0,flat,0.0,0.0,,same words after plural/punctuation
+standing desk work from home,standing desk work from home,1,unclassified,3825.0,falling,-28.7,-70.6,77%-below-peak,
+standing desk chair,standing desk chair,1,unclassified,3600.0,flat,0.0,0.0,,
+standing desk black friday,standing desk black friday,1,unclassified,3316.7,flat,0.0,0.0,one-off-spike; 99%-below-peak,
+standing desk benefits,standing desk benefits,1,unclassified,2900.0,flat,0.0,0.0,,"identical series, avg >= 500"
+benefits of standing desk,standing desk benefits,0,unclassified,2900.0,flat,0.0,0.0,,"identical series, avg >= 500"
+benefits of a standing desk,standing desk benefits,0,unclassified,2900.0,flat,0.0,0.0,,"identical series, avg >= 500"
+walking pad for standing desk,walking pad for standing desk,1,unclassified,2541.7,rising,59.6,647.4,,
+standing desk height calculator,standing desk height calculator,1,transactional,1900.0,flat,0.0,0.0,,
+desk standing fan,desk standing fan,1,excluded,1600.0,flat,0.0,0.0,,
+how to use a standing desk,how to use a standing desk,1,informational,1400.0,rising,20.0,104.5,,
+tiny desk standing room tickets,tiny desk standing room tickets,1,excluded,1300.0,flat,0.0,0.0,,
+standing desk vs sitting,standing desk vs sitting,1,commercial,1000.0,flat,0.0,0.0,,"identical series, same word set"
+sitting vs standing desk,standing desk vs sitting,0,commercial,1000.0,flat,0.0,0.0,,"identical series, same word set"
+are standing desks worth it,are standing desks worth it,1,commercial,880.0,flat,0.0,0.0,,
+standing desk posture,standing desk posture,1,unclassified,720.0,flat,0.0,0.0,,
+standing desk for vr,standing desk for vr,1,unclassified,220.0,rising,126.6,,new-in-last-12-months,
+standing desk diy plans,standing desk diy plans,1,unclassified,170.0,flat,0.0,0.0,,
+standing desk cable tray,standing desk cable tray,1,unclassified,170.0,flat,0.0,0.0,,

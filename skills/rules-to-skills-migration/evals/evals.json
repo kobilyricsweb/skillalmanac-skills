@@ -1,0 +1,57 @@
+{
+  "skill_name": "rules-to-skills-migration",
+  "note": "Scripted assertions are run by ../_tools/check_runs.py, an independent checker (not the skill's inventory script).",
+  "evals": [
+    {
+      "id": "m1-full-migration",
+      "prompt": "We're moving crm-web/ off Cursor-only rules so that Claude Code and Codex users get the same guidance. Migrate what's in .cursor/rules and the old .cursorrules file. Write reply.md in the working folder with what went where.",
+      "files": [
+        "evals/files/m1-full-migration/crm-web/"
+      ],
+      "assertions": [
+        "[script] A root AGENTS.md holds the always-on conventions (src/schemas, useFlag, default exports, pnpm)",
+        "[script] The rule that existed only in .cursorrules (toastError) is in AGENTS.md",
+        "[script] The hotfix procedure is not in the root AGENTS.md, and AGENTS.md is at most 80 lines",
+        "[script] The release, migration, hotfix and performance procedures each exist as a skill (their marker commands appear inside a skill folder)",
+        "[script] Every created SKILL.md has a valid name equal to its folder and a description of at least 80 characters that says when to use it",
+        "[script] Skills are installed where both tool families look: under .agents/skills and under .claude/skills",
+        "[script] The component rules (cva, stories) exist outside .cursor/",
+        "[judge] The reply maps every one of the seven source files to a destination",
+        "[judge] The reply says the hotfix rule was an always-on rule that should load on demand, and says what happens to the old Cursor files"
+      ]
+    },
+    {
+      "id": "m2-single-rule-to-skill",
+      "prompt": "Turn payments/.cursor/rules/refund-handling.mdc into a proper agent skill that also works outside Cursor. Write reply.md in the working folder with what you did.",
+      "files": [
+        "evals/files/m2-single-rule-to-skill/payments/"
+      ],
+      "assertions": [
+        "[script] A SKILL.md exists whose name is valid, vendor-neutral and equal to its folder",
+        "[script] The frontmatter uses only open-spec keys (name, description, license, compatibility, metadata, allowed-tools)",
+        "[script] The description is 150 to 1024 characters, third person, says when to use it and states a boundary",
+        "[script] The facts survive: the idempotency key format, the 90 day rule, the disputed-charge rule, ledger_adjustments, REFUND_EXCEEDS_CAPTURE",
+        "[script] The body is a numbered workflow and the SQL check is kept",
+        "[judge] The description uses words a user would type (refund, chargeback, double refund) rather than the rule's title",
+        "[judge] The incident background was cut or moved out of the main body rather than copied verbatim",
+        "[judge] The reply says where the skill was placed and how each tool finds it"
+      ]
+    },
+    {
+      "id": "m3-plan-only",
+      "prompt": "Don't change anything yet. In data-platform/ we want to consolidate the Windsurf rules and the Copilot instructions into AGENTS.md plus skills. Tell me what would go where and what we would lose. Answer in reply.md in the working folder.",
+      "files": [
+        "evals/files/m3-plan-only/data-platform/"
+      ],
+      "assertions": [
+        "[script] No file under data-platform/ was changed or added",
+        "[script] The reply names all five source files",
+        "[judge] Each source is mapped by its activation type: always-on to AGENTS.md, model-decided runbook to a skill, glob rule to a path-scoped home",
+        "[judge] The pnpm versus yarn conflict for docs-site is reported and settled from the lockfile",
+        "[judge] The reply states what is lost or weakened (file-pattern auto-attachment) and what replaces it",
+        "[judge] The duplicated rules (polars, idempotent DAGs, type hints) are merged once rather than copied twice",
+        "[judge] The plan includes a check after migration (for example asking each tool what instructions it loaded)"
+      ]
+    }
+  ]
+}

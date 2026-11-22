@@ -1,0 +1,1 @@
+I based AGENTS.md on the files in geo-pipeline/: Makefile, ci.yml, README.md, pyproject.toml, docker-compose.yml, the docstrings in geo/loader.py and tests/conftest.py, and the header in geo/generated/schema.py. No .claude/skills/ folder was present in the workspace. The file is at geo-pipeline/AGENTS.md.

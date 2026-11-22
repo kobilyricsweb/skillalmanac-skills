@@ -1,0 +1,300 @@
+{
+ "p1-saved-carts": {
+  "A": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "R6 'Saved carts expire after N days (see open question 1)'; open question 1 'Retention: 30 or 90 days? ... Undecided ... This is a recommendation, not a decision.'"
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "'Not defined in the source notes. Needs an owner decision before build.' Candidates listed with 'no targets proposed'."
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "Only 23% and 'about 40 tickets/month' appear as facts; no other baseline, percentage or launch date. (Header 'Date: 2026-11-20' is the document date, not a claim about the project.)"
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "'Out of scope (v1): Guest carts ... Android app (being rewritten; revisit after) ... Reminder emails for saved carts.'"
+    },
+    {
+     "n": 5,
+     "passed": true,
+     "evidence": "'Launch date. The CEO wants it live \"for the holidays\". No date or eng estimate in the notes.'"
+    },
+    {
+     "n": 6,
+     "passed": false,
+     "evidence": "Requirements table has columns '# | Requirement | Source' only: identifiers yes, but no priority and no acceptance check for any of R1-R6."
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "R3 'Edits on two devices merge; per-item quantity = the higher of the two'; R4/R5 inline 'price changed' / 'no longer available' notices."
+    }
+   ],
+   "score": 6,
+   "other_defects": [
+    "States 'The PM decided it is a separate project' for reminder emails; the notes only record Hana's position against the loyalty team's wish, not a recorded decision.",
+    "Merge described as 'union of items' - a reasonable inference, but the notes only say 'merge, keep the higher quantity'.",
+    "Success-metric candidate pairs 'share of abandoners who later purchase' with the 23% abandonment figure as its baseline; 23% is not a baseline for that metric.",
+    "No priorities or acceptance checks, so engineering cannot tell what is Must or how done is verified.",
+    "reply.md gives the path 'p1-saved-carts/prd.md', which may not match where the user finds the file."
+   ]
+  },
+  "B": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "R5 'The length of the period is not decided (see Open questions)'; Decisions needed 1: '30 days (Leo, support) or 90 days (loyalty team, relayed by Marta)? Nobody decided on the call.'"
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "'target [needs data]' on both metrics; 'nobody on the call named a number to hit'."
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "Facts are 23% and 'about 40 tickets a month'; quantities 2 and 3 appear only inside a test example for R4. No invented baseline or date."
+    },
+    {
+     "n": 4,
+     "passed": false,
+     "evidence": "Non-goals list only guest carts and Android; 'Reminder emails: not listed as a non-goal or a requirement because the notes disagree'. Notes: 'Hana says not in the first version, separate project'."
+    },
+    {
+     "n": 5,
+     "passed": true,
+     "evidence": "'What does \"for the holidays\" (CEO) mean as a date ... No date is in the notes.'"
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "R1-R7 each have an ID, a Must/Should label and an 'Accept:' line. Caveat: R7's check is only 'see Open questions' (not testable) and R5's is conditional on the retention decision."
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "R4 '...for an item present on both the higher quantity is kept' with a 2-vs-3 test; R6 notice 'price changed' / 'no longer available', no popup (marked [proposed])."
+    }
+   ],
+   "score": 7,
+   "other_defects": [
+    "R7 (guest items kept on login) is an added requirement not in the notes and sits close to Marta's 'Guest carts cannot be in v1'. It is labelled as not discussed, but it is given Should priority and the reply's 'Marked as proposed or assumed: 2 lines' does not count it.",
+    "Reopens reminder emails as a 'Decision needed' although the PM who took the notes said not in the first version; reply says they were 'Left out on purpose' while also saying they are 'neither a requirement nor a non-goal' - confusing.",
+    "Deciders are assigned as if known ('Decider: Hana', 'Decider: Marta', 'Decider: CEO with Marta'); the notes name no deciders. Only the first is worded as a suggestion.",
+    "Success metric 1 uses the 23% add-and-leave rate as the thing to move; saved carts would not obviously change that rate (partly acknowledged in the [assumption] line).",
+    "reply.md ends 'Check: PASS (prd_check.py with notes.md)' - refers to a script the user was not told about and cannot verify."
+   ]
+  },
+  "preferred": "B",
+  "reason": "B gives engineering priorities and concrete acceptance tests and names who must decide each open item, which makes it closer to a buildable PRD. A is cleaner and more faithful on reminder emails (and its 30-day reasoning is useful), but its requirements are bare one-liners. Close call; both pass 6 of 7.",
+  "assertion_notes": "Assertion 4 is debatable for reminder emails: the notes do show a disagreement (loyalty wants them, PM says no), so B's 'open question' reading is defensible, though the PM's statement makes non-goal the more natural reading. Assertion 6 passes B only leniently: R7 has no real acceptance check. Assertion 3's 'no invented date' does not say whether a document date header counts; I treated it as not a project fact."
+ },
+ "p2-bulk-export": {
+  "A": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "R5 'The expiry period is not decided (24 hours or 7 days, see Open questions)'; open question lists Tobias 24 hours / Yael 7 days."
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "R6 'Which roles is not decided'; 'Who may export? Positions: admins only (Tobias, an assumption) / any accountant role (Ines).'"
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "'Risk: a \"Q1\" promise to Hollis & Wren Accounting exists against an estimate of 8 weeks of work after design, and design has not started ... whether Q1 is feasible cannot be judged here.' Non-goals: 'Date commitments to customers: this PRD gives none'."
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "Figures are 6 customers, 500 invoices, 14 minutes, 8 weeks, 24h/7d, 1 customer - all in notes. 'baseline 0 of 6 [assumption]' is marked; targets '[needs data]'; '3 invoices' only in test examples."
+    },
+    {
+     "n": 5,
+     "passed": true,
+     "evidence": "Non-goals: 'Scheduled monthly export by email: only 1 customer asked for it, so it is Could, not part of the first release'; R7 is (Could)."
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "'Do exports include voided invoices? Positions: none; nobody knows what customers expect. Decider: Ines.'"
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "R1-R7 each have ID, Must/Could and 'Accept:'. R5/R6 checks are conditional ('once decided, open a link after the period and see an expired message')."
+    }
+   ],
+   "score": 8,
+   "other_defects": [
+    "Scheduled monthly export appears both under Non-goals and as requirement R7 (Could) and again as an open question - internally inconsistent about whether it is in the document's scope.",
+    "'Not for this version: any other customer segment, because the notes show no requests from them' - an invented restriction; the notes do not say the feature is limited to accounting firms.",
+    "R2 acceptance says the CSV has 'the data fields shown in the product' - a detail not in the notes, unmarked.",
+    "Deciders are assigned ('Decider: Ines with Tobias', 'Decider: Carla') although the notes name none; presented as fact rather than suggestion in most lines.",
+    "Does not quantify the Q1 risk at all (no rough check of 8 weeks against the quarter), so the reader gets less help on the most urgent issue than from B.",
+    "reply.md says 'ready to send to eng' while four blocking decisions are open, and ends with 'Check: PASS (prd_check.py with notes.md)', an unexplained script reference."
+   ]
+  },
+  "B": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "'Download links expire (duration undecided, see open decisions)'; table row 2 'Tobias: 24h. Yael (Security): 7 days is fine'."
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "Open decisions row 1: 'Who may export? Tobias: admins only. Ines: any accountant role'."
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "'Sales (Carla) told Hollis & Wren Accounting it would ship in Q1. Tobias was not consulted.' Risk: 'Unvalidated Q1 promise to a named customer.' 'there is no ship date'."
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "Adds 'Today is 2026-11-20 and Q1 ends 2027-03-31, about 19 weeks away ... roughly 11 weeks' but marks it: 'This arithmetic is mine from the notes; eng should confirm.' I recomputed: 18.7 weeks, so 19 and 11 are right. Lenient pass - see assertion_notes."
+    },
+    {
+     "n": 5,
+     "passed": true,
+     "evidence": "'Not in v1 / unconfirmed: Scheduled monthly export emailed automatically. Only one of six customers asked. Proposed as a follow-up, not v1'."
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "Open decisions row 3: 'Include voided invoices? Nobody knows what customers expect'."
+    },
+    {
+     "n": 7,
+     "passed": false,
+     "evidence": "Requirements are unnumbered bullets under 'Must (v1)'; no identifiers and no acceptance checks."
+    }
+   ],
+   "score": 6,
+   "other_defects": [
+    "The Q1 arithmetic assumes Q1 means calendar Q1 2027 and takes the run date as 'today'; neither is in the notes (the promise could be a fiscal quarter). It says the arithmetic is 'from the notes', which is not accurate for the dates.",
+    "Access control is only an open decision; there is no requirement that export be restricted to permitted roles at all.",
+    "'Needed from: PM + Security' / 'Security + Eng' assigns owners the notes do not name (Security was not part of the who-may-export disagreement).",
+    "No acceptance criteria, so eng would still have to write their own definition of done.",
+    "reply.md gives the path 'p2-bulk-export/prd.md', which may not match where the user finds the file."
+   ]
+  },
+  "preferred": "A",
+  "reason": "A is the fuller PRD: numbered, prioritised requirements with acceptance tests and every open item carrying positions and an owner. B is accurate and its rough Q1 feasibility arithmetic is the single most useful insight in either document, but as a requirements doc for engineering it is thin.",
+  "assertion_notes": "Assertion 4 is ambiguous for B: it introduces dates (2026-11-20, 2027-03-31) and week counts beyond the notes, but flags them as its own arithmetic to be confirmed; I passed it, a strict reader could fail it. That arithmetic is arguably a strength, so the assertion penalises useful analysis. Assertion 5 is met by A only loosely, since A also keeps the scheduled export as requirement R7."
+ },
+ "p3-reminders": {
+  "A": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "R1 'at a set time before each appointment (timing: open question 1)'; '48h vs 24h ... Undecided.'"
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "'Client opt-in required before any text, recorded with a date. Legal requirement (Idris), not optional.' and R4. No explicit 'Must' label (the doc has no priorities), but it is in v1 scope and stated as non-optional. Lenient pass."
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "'Out of v1: WhatsApp. It needs a business account approval we do not have (Pavel).'"
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "'no target was set. Baseline is 18%. ... none is proposed here'."
+    },
+    {
+     "n": 5,
+     "passed": true,
+     "evidence": "'Who pays for SMS? Us or the salon; currently \"figure out later\".'"
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "18%, $0.012, about 70% all match. One derived number: 'For scale, 10,000 reminders cost $120' - arithmetic is correct (10,000 x 0.012 = 120) and framed as an illustration, not an actual cost total. Lenient pass."
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "'coverage caps the achievable drop in no-shows'; R6 'Clients with no mobile number get no reminder'."
+    }
+   ],
+   "score": 6,
+   "other_defects": [
+    "Requirements have no priorities and no acceptance checks.",
+    "'Felix wants it later' misstates the notes: Felix 'wants WhatsApp too'; it was Pavel who limited v1 to SMS.",
+    "The 10,000-reminder volume is a made-up illustration; the notes give no volume, and a reader could take $120 as a meaningful estimate.",
+    "Drops the context that the customers are hair and beauty salons (minor).",
+    "reply.md gives the path 'p3-reminders/prd.md', which may not match where the user finds the file."
+   ]
+  },
+  "B": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "R1 'The lead time is not decided (see Open questions)'; 'Reminder timing: 24 hours or 48 hours, or both?' with Gwen/Noor/Felix positions."
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "'R2 (Must) The client's opt-in is recorded with its date before any text is sent'; 'Risk: legal (Idris) says opt-in is not optional.'"
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "Non-goals: 'WhatsApp. Felix wants it, but Pavel says SMS only in the first version because WhatsApp needs a business account approval we do not have.'"
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "'No-show rate: baseline 18% ... target [needs data] (nobody set one)'."
+    },
+    {
+     "n": 5,
+     "passed": true,
+     "evidence": "'Who pays for the SMS, us or the salon? Positions: undecided; Felix said \"figure out later\".'"
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "Only 18%, $0.012 and 'About 70%' appear; no cost totals computed."
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "'Risk: only about 70% of clients have a mobile number on file ... the no-show gain is bounded by that coverage'; non-goal 'Reminders for clients without a mobile number on file'."
+    }
+   ],
+   "score": 8,
+   "other_defects": [
+    "R6 (salon sees confirmed/cancelled/no response) is an added requirement not in the notes; it is labelled as such but given Should priority with no real acceptance check, and the reply's 'Marked as proposed or assumed: 2 lines' does not count it.",
+    "Success metric 'SMS cost per message ... target is to stay at the current figure' is an invented, unmarked target and not really a success metric.",
+    "Decision 3 'How is opt-in collected for clients who booked by phone and have no number on file?' is muddled: clients with no number cannot be texted regardless of opt-in; the real gap is opt-in collection for all existing clients.",
+    "Deciders ('Decider: Felix with Noor', 'Idris with Felix') are assigned as fact; the notes name none.",
+    "reply.md ends 'Check: PASS (prd_check.py with notes.md)', an unexplained script reference the user cannot verify."
+   ]
+  },
+  "preferred": "B",
+  "reason": "Both are factually faithful and both pass every assertion; B is more usable because each requirement has a priority and a concrete test and the open items have suggested owners. A is tighter and has no invented requirement, but leaves eng to work out priority and done-ness.",
+  "assertion_notes": "Assertion 2 asks for a 'Must' requirement; A has no priority scheme at all, so I passed it on its 'not optional' wording - a strict reading would fail A. Assertion 6 is ambiguous about A's '$120 for 10,000 reminders' illustration (correct arithmetic, hypothetical volume). This packet has no assertion on priorities/acceptance checks, unlike the other two, so equal pass counts hide a real usability gap."
+ }
+}

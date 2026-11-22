@@ -1,0 +1,133 @@
+/* Plan card / Pro (design node 12:25). Uses tokens from src/tokens.css and the shared .btn / .icon classes from src/components.css. */
+
+.plan-card-pro {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+  width: 100%;
+  max-width: 360px;
+  margin: 0;
+  padding: var(--space-8);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+/* Badge (node 12:2) */
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--color-accent-subtle);
+  border-radius: var(--radius-pill);
+  color: var(--color-accent);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  line-height: 1.333;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Header (node 12:8) */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Spec value kept on purpose: 6px is not on the token scale (see notes.md). */
+  gap: 6px;
+  align-self: stretch;
+}
+
+.plan-name {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Price row (node 12:7) */
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  margin: 0;
+}
+
+.price {
+  color: var(--color-text);
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  line-height: 1.167;
+  letter-spacing: -0.02em;
+}
+
+.period {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Divider (node 12:9) */
+.divider {
+  align-self: stretch;
+  flex-shrink: 0;
+  width: auto;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: var(--color-border);
+}
+
+/* Features (node 12:22) */
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  align-self: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.feature-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  align-self: stretch;
+  margin: 0;
+  padding: 0;
+}
+
+.feature-row .icon {
+  color: var(--color-accent);
+}
+
+.feature-row .icon path {
+  stroke: currentColor;
+}
+
+.feature {
+  flex: 1 1 0;
+  min-width: 0;
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* CTA: built on the shared .btn--primary.btn--lg.btn--block classes (padding 14px 24px, radius 8px, 600 weight).
+   Only the stretch behaviour is local. */
+.plan-card-pro .btn {
+  align-self: stretch;
+}

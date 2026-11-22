@@ -1,0 +1,82 @@
+[
+  {
+    "query": "create a subagent that reviews my SQL migrations and gets used automatically",
+    "should_trigger": true
+  },
+  {
+    "query": "how do I use subagents in claude code for this refactor? split the work up for me",
+    "should_trigger": true
+  },
+  {
+    "query": "my custom agent never gets invoked on its own, here's the file, fix it",
+    "should_trigger": true
+  },
+  {
+    "query": "write the prompts you'd give to parallel agents to audit these 5 services",
+    "should_trigger": true
+  },
+  {
+    "query": "design a team of agents for our repo: one for tests, one for docs, one for review. write the agent files",
+    "should_trigger": true
+  },
+  {
+    "query": "should this be a subagent or a skill? I want something that searches the codebase and reports back",
+    "should_trigger": true
+  },
+  {
+    "query": "the subagent returns way too much text and blows up my context. tighten its definition",
+    "should_trigger": true
+  },
+  {
+    "query": "set up a read-only research subagent with limited tools",
+    "should_trigger": true
+  },
+  {
+    "query": "cursor subagents: write me one for running the test suite and summarising failures",
+    "should_trigger": true
+  },
+  {
+    "query": "I'm about to delegate this investigation to a sub-agent, write a good brief for it",
+    "should_trigger": true
+  },
+  {
+    "query": "build a multi-agent customer support bot with LangGraph",
+    "should_trigger": false
+  },
+  {
+    "query": "write a skill that formats commit messages",
+    "should_trigger": false
+  },
+  {
+    "query": "add a hook that blocks rm -rf",
+    "should_trigger": false
+  },
+  {
+    "query": "what is the difference between an AI agent and a chatbot",
+    "should_trigger": false
+  },
+  {
+    "query": "write a job description for a real estate agent",
+    "should_trigger": false
+  },
+  {
+    "query": "review this pull request for bugs",
+    "should_trigger": false
+  },
+  {
+    "query": "create an OpenAI Assistants API agent with function calling in Python",
+    "should_trigger": false
+  },
+  {
+    "query": "write AGENTS.md for this repo",
+    "should_trigger": false
+  },
+  {
+    "query": "set up a GitHub Actions workflow that runs tests in parallel",
+    "should_trigger": false
+  },
+  {
+    "query": "explain how the agent loop works in the Agent SDK",
+    "should_trigger": false
+  }
+]

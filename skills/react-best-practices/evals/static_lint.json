@@ -1,0 +1,37 @@
+{
+  "skill": "react-best-practices",
+  "fail": 0,
+  "warn": 0,
+  "items": [
+    {
+      "level": "PASS",
+      "code": "frontmatter-keys",
+      "message": "only open-spec keys used"
+    },
+    {
+      "level": "PASS",
+      "code": "name-format",
+      "message": "name 'react-best-practices' is valid"
+    },
+    {
+      "level": "PASS",
+      "code": "description-length",
+      "message": "description is 562 chars"
+    },
+    {
+      "level": "PASS",
+      "code": "body-lines",
+      "message": "SKILL.md body has 84 lines"
+    },
+    {
+      "level": "PASS",
+      "code": "body-tokens",
+      "message": "body is about 1684 tokens by chars/4"
+    },
+    {
+      "level": "PASS",
+      "code": "package-size",
+      "message": "package is 45591 bytes in 5 files"
+    }
+  ]
+}

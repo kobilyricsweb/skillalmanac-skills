@@ -1,0 +1,14 @@
+{
+  "m1-marketing-sync": {
+    "A": "baseline",
+    "B": "with_skill"
+  },
+  "m2-client-call": {
+    "A": "with_skill",
+    "B": "baseline"
+  },
+  "m3-retro": {
+    "A": "baseline",
+    "B": "with_skill"
+  }
+}

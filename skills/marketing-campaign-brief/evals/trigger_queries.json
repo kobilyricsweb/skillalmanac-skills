@@ -1,0 +1,82 @@
+[
+  {
+    "query": "write a one-page campaign brief for our spring launch of the new cold brew line. $40k budget, goal is 5k first-time buyers in 8 weeks",
+    "should_trigger": true
+  },
+  {
+    "query": "marketing plan for a b2b webinar series - need objective, audience, offer, channel split with budgets that add up, and how we measure it",
+    "should_trigger": true
+  },
+  {
+    "query": "review this campaign brief and tell me if the objective is actually measurable and whether the channel budgets sum to the total",
+    "should_trigger": true
+  },
+  {
+    "query": "campaign brief please: local dentist, wants more invisalign consults, $6k/month, google + meta, 90 days",
+    "should_trigger": true
+  },
+  {
+    "query": "can you turn my messy notes into a proper marketing brief? there's a budget of 25k across paid social, email and influencers and i need an assumptions list",
+    "should_trigger": true
+  },
+  {
+    "query": "need a brief for the Black Friday campaign: target CAC under $18, audience is lapsed customers, 15% offer, channel plan with spend per channel",
+    "should_trigger": true
+  },
+  {
+    "query": "we want to launch a mobile app in the UK next quarter - draft the campaign brief with KPIs, channel mix, budget allocation, and what we're assuming",
+    "should_trigger": true
+  },
+  {
+    "query": "my boss wants a one-pager marketing plan for the product hackathon event. objective, audience, offer, channels, budget, measurement, assumptions",
+    "should_trigger": true
+  },
+  {
+    "query": "is this brief any good? objective says 'increase awareness' and the budget lines add to $52k but the total says $50k",
+    "should_trigger": true
+  },
+  {
+    "query": "build the campaign brief for a nonprofit year-end giving drive: goal $120k raised, donors 35-60, email + direct mail + social, budget table, tracking plan",
+    "should_trigger": true
+  },
+  {
+    "query": "write 5 variations of ad copy for our facebook ads promoting the cold brew, under 125 characters each",
+    "should_trigger": false
+  },
+  {
+    "query": "write a 3-email welcome sequence for new newsletter subscribers",
+    "should_trigger": false
+  },
+  {
+    "query": "develop our brand positioning, voice, and archetype - we're a new sustainable sneaker brand",
+    "should_trigger": false
+  },
+  {
+    "query": "write a PRD for the new onboarding flow, with user stories and acceptance criteria",
+    "should_trigger": false
+  },
+  {
+    "query": "make a project plan with milestones and sprint timeline for migrating our backend to microservices",
+    "should_trigger": false
+  },
+  {
+    "query": "help me prep for a sales discovery call with a VP of operations at a logistics firm",
+    "should_trigger": false
+  },
+  {
+    "query": "write a press release announcing our Series A, quote from CEO included",
+    "should_trigger": false
+  },
+  {
+    "query": "give me 10 tweet ideas for our product launch day",
+    "should_trigger": false
+  },
+  {
+    "query": "what's a good LTV:CAC ratio for a subscription box business?",
+    "should_trigger": false
+  },
+  {
+    "query": "create a content calendar for instagram for the month of March with post themes per day",
+    "should_trigger": false
+  }
+]

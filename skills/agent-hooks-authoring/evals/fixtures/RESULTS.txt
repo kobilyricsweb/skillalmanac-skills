@@ -1,0 +1,44 @@
+### bad config
+$ python scripts/hook_config_lint.py evals/fixtures/bad/.claude/settings.json
+exit code 1 (expected 1) -> ok
+ERROR preToolUse: unknown event name; event names are case-sensitive, did you mean 'PreToolUse'?
+WARN  PreToolUse[0]: matcher 'bash' will not match the tool 'Bash': tool names are capitalised
+WARN  PreToolUse[0].hooks[0]: timeout 5000 is in seconds (83 minutes); it looks like a millisecond value
+WARN  PreToolUse[0].hooks[0]: script path '.claude/hooks/guard.js' is relative to the current directory, which changes during a session; use "$CLAUDE_PROJECT_DIR"/claude/hooks/guard.js
+WARN  PreToolUse[0].hooks[0]: guard.js exits with 1 and never with 2; exit 1 is a non-blocking error, only exit 2 blocks
+WARN  PreToolUse[0].hooks[0]: guard.js reads a tool_input field that the built-in tools do not send; Bash sends 'command', the editing tools send 'file_path'
+ERROR PreToolUse[1]: handler is one level too high; wrap it as {"hooks": [ {"type": ..., "command": ...} ]}
+WARN  Stop[0]: Stop takes no matcher; 'Bash' is ignored and the hook fires every time
+WARN  Stop[0].hooks[0]: $CLAUDE_PROJECT_DIR is used outside double quotes; a project path with a space will break the command
+WARN  Stop[0].hooks[0]: gate.js never reads stop_hook_active; a check that keeps failing keeps the agent running
+
+2 error(s), 8 warning(s). This check does not run the hooks: fire each one with a sample payload.
+
+### good config
+$ python scripts/hook_config_lint.py evals/fixtures/good/.claude/settings.json
+exit code 0 (expected 0) -> ok
+
+0 error(s), 0 warning(s). This check does not run the hooks: fire each one with a sample payload.
+
+### invalid JSON
+$ python scripts/hook_config_lint.py evals/fixtures/broken/.claude/settings.json
+exit code 1 (expected 1) -> ok
+ERROR file: not valid JSON: Expecting ',' delimiter: line 1 column 32 (char 31). The harness ignores a settings file it cannot parse
+
+1 error(s), 0 warning(s). This check does not run the hooks: fire each one with a sample payload.
+
+### empty file
+$ python scripts/hook_config_lint.py evals/fixtures/empty/.claude/settings.json
+exit code 2 (expected 2) -> ok
+<local-path> is empty; nothing to check
+
+### eval fixture h3 (warnings only)
+$ python scripts/hook_config_lint.py evals/files/h3-debug-broken-hook/infra-tools/.claude/settings.json
+exit code 0 (expected 0) -> ok
+WARN  PreToolUse[0].hooks[0]: timeout 5000 is in seconds (83 minutes); it looks like a millisecond value
+WARN  PreToolUse[0].hooks[0]: script path '.claude/hooks/guard.js' is relative to the current directory, which changes during a session; use "$CLAUDE_PROJECT_DIR"/claude/hooks/guard.js
+WARN  PreToolUse[0].hooks[0]: guard.js exits with 1 and never with 2; exit 1 is a non-blocking error, only exit 2 blocks
+WARN  PreToolUse[0].hooks[0]: guard.js reads a tool_input field that the built-in tools do not send; Bash sends 'command', the editing tools send 'file_path'
+
+0 error(s), 4 warning(s). This check does not run the hooks: fire each one with a sample payload.
+

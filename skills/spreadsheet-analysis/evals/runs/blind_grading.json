@@ -1,0 +1,123 @@
+{
+  "s1-sales-by-region": {
+    "A": {
+      "assertions": [
+        {"n": 1, "passed": true, "evidence": "Table: North $24,700 / South $22,575 / East $17,275 / West $13,550 / All $78,100 - matches my recomputation from the CSV."},
+        {"n": 2, "passed": true, "evidence": "\"North was the biggest region, about $2,125 ahead of South.\""},
+        {"n": 3, "passed": true, "evidence": "\"The file's own \\\"Total\\\" row ($66,925) is not used\""},
+        {"n": 4, "passed": true, "evidence": "\"Duplicate rows removed: SO-1009 ($325, North) and SO-1023 ($3,175, East) each appear twice; counted once.\""},
+        {"n": 5, "passed": true, "evidence": "\"Region names normalised (\\\"north \\\", \\\"NORTH\\\", \\\" North\\\" counted as North).\""},
+        {"n": 6, "passed": true, "evidence": "\"Amounts like \\\"$2,725.00\\\" converted to numbers\" and \"SO-1013 (North, Devon, 2026-09-07) has no amount, so it is counted as 0.\" (no count of text amounts given)"},
+        {"n": 7, "passed": true, "evidence": "\"it does not match the data (it appears to skip the amounts stored as text and does not remove duplicates)\""}
+      ],
+      "score": 8,
+      "other_defects": [
+        "Does not give the number of text-stored amounts (8) or any row numbers, so the user has to hunt for the cells to fix.",
+        "The explanation of the wrong Total row is hedged (\"appears to\") and not reconciled numerically; it is in fact exactly right (81,600 - 14,675 = 66,925).",
+        "Blank amount described as \"counted as 0\" - disclosed, and the caveat that North is understated is given, so not misleading.",
+        "Lists four North variants in the examples but not lowercase \"north\" (row 22); totals are still correct."
+      ]
+    },
+    "B": {
+      "assertions": [
+        {"n": 1, "passed": true, "evidence": "Table: North 24,700 / South 22,575 / East 17,275 / West 13,550 / All 78,100 - matches my recomputation."},
+        {"n": 2, "passed": true, "evidence": "\"Answer: North was the biggest region.\""},
+        {"n": 3, "passed": true, "evidence": "\"Row 40 (\\\"Total\\\", 66,925) is a total row. It was left out of every figure and used only for reconciliation.\""},
+        {"n": 4, "passed": true, "evidence": "\"SO-1009 (file rows 10 and 17) and SO-1023 (rows 25 and 33)\" - row numbers verified against the CSV."},
+        {"n": 5, "passed": true, "evidence": "\"\\\"North\\\" was typed five ways: \\\"North\\\", \\\"north \\\", \\\"NORTH\\\", \\\" North\\\" and \\\"north\\\". These were merged into one North.\" (verified: five variants)"},
+        {"n": 6, "passed": true, "evidence": "\"8 amounts are stored as text (for example \\\"$2,725.00\\\" in row 5)\" and \"SO-1013 (row 14, North, rep Devon) has a blank amount. It was left out, not treated as zero.\""},
+        {"n": 7, "passed": true, "evidence": "\"The file's own total of 66,925 is wrong. It equals the sum that skips the 8 text amounts and still counts the two duplicates (81,600 minus 14,675 of text amounts).\" - verified exact."}
+      ],
+      "score": 9,
+      "other_defects": [
+        "No currency symbol on any figure (the file uses $ on some cells); minor.",
+        "Longer than the question needs; the 'no date issue' line and 'Not checked' list are padding for a two-part question, though nothing in them is wrong.",
+        "\"8 amounts are stored as text\" counts the duplicated SO-1009 row twice (7 unique orders); consistent with the ground truth's 8 rows, but not spelled out."
+      ]
+    },
+    "preferred": "B",
+    "reason": "Both get every number right and pass all assertions. B is more actionable: it gives file row numbers, counts the text cells, proves exactly why the file's Total is 66,925, and shows the with/without-duplicates table; A is shorter and equally correct but leaves the user to locate the problems.",
+    "assertion_notes": "Assertion 6 does not say whether a count of text amounts is required; I passed A, which reports the issue with one example but no count. Assertion 3 and 7 overlap heavily. No assertion rewards giving row locations or explaining the cause of the wrong Total, which is the main quality difference here."
+  },
+  "s2-expenses-by-category": {
+    "A": {
+      "assertions": [
+        {"n": 1, "passed": true, "evidence": "\"Rows 14 and 27 (\\\"Subtotal Q1\\\" 5,121.20 and \\\"Subtotal Q2\\\" 47,397.30) are subtotal rows. They were left out of every figure\""},
+        {"n": 2, "passed": true, "evidence": "\"\\\"(120.00)\\\" (row 19, read as -120, a refund)\"; Software 2,577.00"},
+        {"n": 3, "passed": true, "evidence": "\"Office 45,000 ... It is probably a typo (450 or 4,500)\"; table With row 17 46,344.85 / Without 1,344.85; \"Was the Office entry meant to be 45,000?\""},
+        {"n": 4, "passed": true, "evidence": "\"\\\"Software\\\" appears three ways: \\\"Software\\\", \\\"software\\\" (row 7) and \\\"Software \\\" (row 16). These were merged into one category.\""},
+        {"n": 5, "passed": true, "evidence": "Travel 2,966.90, Marketing 6,085.00"},
+        {"n": 6, "passed": true, "evidence": "\"Dates come in two formats (YYYY-MM-DD and \\\"Mon D, YYYY\\\")\"; \"6 rows use \\\"Mon D, YYYY\\\"\" (verified: 6)"},
+        {"n": 7, "passed": true, "evidence": "\"Row 25 (Travel, Hotel Meridian, 2026-06-18, note \\\"receipt missing\\\") has a blank amount. It was left out, not treated as zero, so Travel is a floor.\""}
+      ],
+      "score": 9,
+      "other_defects": [
+        "\"typical range of about 70 to 520\" for Office: the other Office entries actually run 68 to 450; no Office entry is near 520.",
+        "Shows Office without the 45,000 row (1,344.85) but not the most likely corrected value (450 -> 1,794.85), although it names 450 as a candidate.",
+        "No currency symbol; headline table leads with the inflated Office figure, though the caveat follows immediately.",
+        "Does not notice that the file stops at 2026-10-20 or that Q3 has no subtotal row."
+      ]
+    },
+    "B": {
+      "assertions": [
+        {"n": 1, "passed": true, "evidence": "\"Subtotal rows in the data (\\\"Subtotal Q1\\\" $5,121.20, \\\"Subtotal Q2\\\" $47,397.30; no date). Excluded to avoid double counting.\""},
+        {"n": 2, "passed": true, "evidence": "\"Docubox refund 2026-05-04: (120.00) ... Treated as negative.\"; Software $2,577.00 \"(incl. a -$120 refund)\""},
+        {"n": 3, "passed": true, "evidence": "\"Probably a misplaced decimal ($450.00)\"; \"If the $45,000 office entry is really $450.00: Office = $1,794.85 and total = $13,423.75\"; reply: \"Please confirm which is correct.\" (shows as-typed and if-450, not strictly 'without'; passes via the 'or the user asked' branch)"},
+        {"n": 4, "passed": true, "evidence": "\"category case/spacing (\\\"software\\\", \\\"Software \\\") merged into one\"; single Software row with 14 entries"},
+        {"n": 5, "passed": true, "evidence": "Travel $2,966.90, Marketing $6,085.00"},
+        {"n": 6, "passed": true, "evidence": "\"dates both as 2026-01-08 and \\\"Jan 29, 2026\\\"\""},
+        {"n": 7, "passed": true, "evidence": "\"Hotel Meridian, 2026-06-18, Travel: no amount (\\\"receipt missing\\\"). Counted as 0, so Travel is understated.\" - disclosed, not silent; table shows \"7 (+1 with no amount)\""}
+      ],
+      "score": 8,
+      "other_defects": [
+        "reply.md says \"other office expenses are $45 to $450\"; the smallest Office entry in the file is 68.00, so $45 is wrong (answer.md does not repeat this).",
+        "Only offers the 450 correction; does not show Office with the row simply removed (1,344.85) or mention 4,500 as an alternative.",
+        "No row numbers, so each flagged item has to be found by date/vendor (workable, since dates and vendors are given).",
+        "\"nothing for the last month (as of 2026-11-20)\" relies on the current date, which is not in the file; reasonable but an assumption.",
+        "Useful extras A lacks, all verified true: no Q3 subtotal row, Chartly appears only Feb/Apr/Aug, the double charge behind the refund is not visible (April and May each show one $240)."
+      ]
+    },
+    "preferred": "A",
+    "reason": "Both produce identical, correct totals and pass every assertion. A is slightly more useful to act on: row numbers for every issue, an explicit with/without table, subtotal reconciliation, and the observation that the refund is half a normal charge; B is tighter and adds good gap-spotting (Chartly, missing Q3 subtotal, nothing after Oct 20) but has one wrong figure in the reply ($45).",
+    "assertion_notes": "Assertion 3 is loosely worded: 'with and without it, or the user asked' lets B pass although it shows 'if 450' instead of 'without'; arguably 'if 450' is the more useful figure. Assertion 7's 'not treated as zero silently' is passed by B, which treats it as zero but says so. No assertion covers the real differentiators (row references, the reply's wrong $45, the missing-data observations)."
+  },
+  "s3-unique-customers": {
+    "A": {
+      "assertions": [
+        {"n": 1, "passed": true, "evidence": "\"Unique customers: 50\""},
+        {"n": 2, "passed": true, "evidence": "\"5 are duplicates. Matching on email (ignoring case and spaces): jon.hale9 (exact duplicate row), and DEV.JAIN3, rae.brooks17 (trailing space), Chloe.Evans28 and PIA.DIAZ41\""},
+        {"n": 3, "passed": true, "evidence": "Pro 30 / $870, Team 7 / $553, Basic 13 / $117, Total 50 / $1,540"},
+        {"n": 4, "passed": true, "evidence": "\"Plan names normalised (\\\"basic\\\", \\\"BASIC \\\", \\\"PRO \\\" etc.)\"; three plan rows in the table"},
+        {"n": 5, "passed": true, "evidence": "\"The \\\"Grand Total\\\" row (1,453) was excluded; it does not match the data (1,715 if duplicates were counted, 1,540 after removing them).\""},
+        {"n": 6, "passed": true, "evidence": "\"Fees stored as text (\\\"$29\\\") converted\" (no count or locations)"}
+      ],
+      "score": 9,
+      "other_defects": [
+        "Adds an unrequested month-by-month cumulative MRR table; I recomputed all ten rows and they are correct, and the assumption (no cancellations, pays from signup month) is stated. It addresses the other plausible reading of 'monthly revenue', but a hurried reader could mistake it for billed revenue.",
+        "Does not say how many fees are text (8) or where, and does not explain why the file's Grand Total is 1,453 (it is the raw sum minus the 8 text fees: 1,715 - 262).",
+        "Does not show the per-plan figures with duplicates kept (only the 1,715 total), and gives no row numbers for the repeats.",
+        "Only mentions \"$29\" as a text fee example; \"$9\" and \"$79\" text cells also exist."
+      ]
+    },
+    "B": {
+      "assertions": [
+        {"n": 1, "passed": true, "evidence": "\"you have 50 unique customers\""},
+        {"n": 2, "passed": true, "evidence": "\"5 customers appear twice, 55 rows becoming 50 customers: dev.jain3@example.com: rows 5 and 53 ... pia.diaz41@example.com: rows 44 and 56\" - all five row pairs verified in the workbook."},
+        {"n": 3, "passed": true, "evidence": "Pro 870, Team 553, Basic 117, Total 1,540; plus both-ways table: \"Nothing removed | 55 | 126 | 957 | 632 | 1,715\""},
+        {"n": 4, "passed": true, "evidence": "\"Plan has spelling variants (\\\"Pro\\\" / \\\"PRO \\\", \\\"basic\\\" / \\\"Basic\\\" / \\\"BASIC \\\"). They were merged into Basic, Pro and Team.\""},
+        {"n": 5, "passed": true, "evidence": "\"Row 57 (\\\"Grand Total\\\", 1,453) is a total row and was left out of every figure.\""},
+        {"n": 6, "passed": true, "evidence": "\"8 fees are stored as text (for example \\\"$29\\\" in rows 4, 10, 22, 29, 35, 41 and \\\"$9\\\" in row 16, \\\"$79\\\" in row 47)\" - all eight cells verified."}
+      ],
+      "score": 9,
+      "other_defects": [
+        "Internal inconsistency: \"Raw Email count is 54 distinct as typed, 53 if only exact duplicate rows are removed\" and the table row \"Only exact duplicate rows removed (2 rows) | 53\". Only one row (27, Jon Hale) is an exact duplicate; row 54 differs by a trailing space. Removing exact duplicates gives 54, not 53. The 53 / 1,627 figures correspond to 'exact + trailing-space' and are mislabelled.",
+        "Does not attempt the month-by-month reading; it states why (no billing history) and asks for a payments table, which is a defensible choice but leaves that reading unanswered where A answers it with a stated assumption.",
+        "Long for a two-part question; no currency symbol.",
+        "Grand Total explanation is exact and verified: 1,715 - 262 = 1,453."
+      ]
+    },
+    "preferred": "tie",
+    "reason": "Both give the correct 50 customers and 117/870/553 and pass all assertions. B is the better audit (row numbers, all 8 text cells, exact cause of the wrong Grand Total, both-ways table) but contains a mislabelled '53 / exact duplicates (2 rows)' line; A is cleaner and additionally answers the month-by-month reading with a correct, caveated table but gives far less detail for fixing the file.",
+    "assertion_notes": "Assertion 6 passes for A on a single parenthetical example; a stricter wording (count or location) would separate the two. 'Monthly revenue by plan' is ambiguous (MRR per plan vs revenue per month); the assertions only test the MRR reading, so A's verified month-by-month table earns nothing and B's explicit statement of its interpretation earns nothing either."
+  }
+}

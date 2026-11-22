@@ -1,0 +1,47 @@
+{
+  "skill": "terse-output-mode",
+  "fail": 0,
+  "warn": 2,
+  "items": [
+    {
+      "level": "PASS",
+      "code": "frontmatter-keys",
+      "message": "only open-spec keys used"
+    },
+    {
+      "level": "PASS",
+      "code": "name-format",
+      "message": "name 'terse-output-mode' is valid"
+    },
+    {
+      "level": "PASS",
+      "code": "description-length",
+      "message": "description is 601 chars"
+    },
+    {
+      "level": "PASS",
+      "code": "body-lines",
+      "message": "SKILL.md body has 116 lines"
+    },
+    {
+      "level": "PASS",
+      "code": "body-tokens",
+      "message": "body is about 1417 tokens by chars/4"
+    },
+    {
+      "level": "PASS",
+      "code": "package-size",
+      "message": "package is 15380 bytes in 4 files"
+    },
+    {
+      "level": "WARN",
+      "code": "evidence-file",
+      "message": "LISTING.md is missing (required before publishing)"
+    },
+    {
+      "level": "WARN",
+      "code": "evidence-file",
+      "message": "VERIFICATION.md is missing (required before publishing)"
+    }
+  ]
+}

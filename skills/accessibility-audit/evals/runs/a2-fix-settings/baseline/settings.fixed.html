@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workspace settings | Tallybird</title>
+<style>
+  body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #1d1d1f; background: #f6f6f4; }
+  main { max-width: 640px; margin: 0 auto; padding: 32px 16px; }
+  .card { background: #fff; border: 1px solid #dcdcd8; border-radius: 10px; padding: 24px; margin-bottom: 16px; }
+  .row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
+  :focus-visible { outline: 3px solid #1558d6; outline-offset: 2px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  .link { color: #1558d6; cursor: pointer; text-decoration: underline; }
+  button.link { background: none; border: 0; padding: 0; margin: 0; font: inherit; color: #1558d6; cursor: pointer; text-decoration: underline; }
+  .switch { width: 44px; height: 24px; border: 0; padding: 0; margin: 0; border-radius: 12px; background: #8a8a85; position: relative; cursor: pointer; flex: none; }
+  .switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: left .15s; }
+  .switch.on { background: #1558d6; }
+  .switch.on::after { left: 22px; }
+  @media (prefers-reduced-motion: reduce) { .switch::after { transition: none; } }
+  .dropdown { position: relative; width: 200px; }
+  .dropdown-value { display: block; width: 100%; box-sizing: border-box; margin: 0; font: inherit; color: #1d1d1f; text-align: left; border: 1px solid #8a8a85; border-radius: 6px; padding: 8px 12px; background: #fff; cursor: pointer; }
+  .dropdown-list { display: none; position: absolute; top: 44px; left: 0; right: 0; background: #fff; border: 1px solid #8a8a85; border-radius: 6px; z-index: 5; }
+  .dropdown.open .dropdown-list { display: block; }
+  .dropdown-item { padding: 8px 12px; cursor: pointer; }
+  .dropdown-item:hover { background: #eef3fd; }
+  .dropdown-item:focus-visible { outline-offset: -3px; }
+  .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); }
+  .overlay.open { display: block; }
+  .modal { background: #fff; border-radius: 10px; max-width: 420px; margin: 15vh auto 0; padding: 24px; position: relative; }
+  .modal-title { font-size: 20px; font-weight: 700; margin: 0 0 8px; }
+  .close { position: absolute; top: 12px; right: 16px; font-size: 22px; line-height: 1.5; font-family: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+  .btn { border: 0; border-radius: 6px; padding: 10px 16px; font-size: 16px; cursor: pointer; }
+  .btn-danger { background: #b3261e; color: #fff; }
+  .btn-plain { background: #e9e9e5; color: #1d1d1f; }
+  .field { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #8a8a85; border-radius: 6px; font-size: 16px; margin: 12px 0; }
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #1d1d1f; color: #fff; padding: 10px 16px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<div id="status" role="status" aria-live="polite" class="sr-only"></div>
+
+<main id="page">
+  <h1>Workspace settings</h1>
+
+  <div class="card">
+    <h2>Notifications</h2>
+    <div class="row">
+      <span id="weekly-label">Email me a weekly summary</span>
+      <button type="button" class="switch on" id="weekly" role="switch" aria-checked="true" aria-labelledby="weekly-label" onclick="toggleSwitch(this)"></button>
+    </div>
+    <div class="row">
+      <span id="theme-label">Theme</span>
+      <div class="dropdown" id="theme">
+        <button type="button" class="dropdown-value" id="theme-value" aria-haspopup="listbox" aria-expanded="false" aria-controls="theme-list" aria-labelledby="theme-label theme-value" onclick="toggleDropdown()" onkeydown="onDropdownButtonKey(event)">System</button>
+        <div class="dropdown-list" id="theme-list" role="listbox" aria-labelledby="theme-label" onkeydown="onDropdownListKey(event)">
+          <div class="dropdown-item" role="option" tabindex="-1" aria-selected="true" onclick="pick('System')">System</div>
+          <div class="dropdown-item" role="option" tabindex="-1" aria-selected="false" onclick="pick('Light')">Light</div>
+          <div class="dropdown-item" role="option" tabindex="-1" aria-selected="false" onclick="pick('Dark')">Dark</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Danger zone</h2>
+    <p>Deleting the workspace removes all 14 projects and cannot be undone.</p>
+    <button type="button" class="link" aria-haspopup="dialog" onclick="openModal()">Delete this workspace</button>
+  </div>
+</main>
+
+<div class="overlay" id="overlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button type="button" class="close" aria-label="Close" onclick="closeModal()"><span aria-hidden="true">&times;</span></button>
+    <h2 class="modal-title" id="modal-title">Delete workspace?</h2>
+    <p><label for="confirm-name">Type the workspace name <b>tallybird-hq</b> to confirm.</label></p>
+    <input class="field" id="confirm-name" placeholder="Workspace name" aria-describedby="confirm-error">
+    <p class="sr-only" id="confirm-error" aria-live="assertive"></p>
+    <button type="button" class="btn btn-danger" onclick="doDelete()">Delete workspace</button>
+    <button type="button" class="btn btn-plain" onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<script>
+  var statusEl = document.getElementById('status');
+  var lastFocus = null;
+
+  function toggleSwitch(el) {
+    el.classList.toggle('on');
+    el.setAttribute('aria-checked', el.classList.contains('on') ? 'true' : 'false');
+    toast('Saved');
+  }
+
+  function toggleDropdown(force) {
+    var dd = document.getElementById('theme');
+    var btn = document.getElementById('theme-value');
+    var open = (typeof force === 'boolean') ? force : !dd.classList.contains('open');
+    dd.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) {
+      var sel = document.querySelector('#theme-list [aria-selected="true"]') || document.querySelector('#theme-list [role="option"]');
+      if (sel) sel.focus();
+    }
+  }
+
+  function pick(v) {
+    var btn = document.getElementById('theme-value');
+    btn.textContent = v;
+    document.querySelectorAll('#theme-list [role="option"]').forEach(function (o) {
+      o.setAttribute('aria-selected', o.textContent === v ? 'true' : 'false');
+    });
+    toggleDropdown(false);
+    btn.focus();
+    toast('Theme set to ' + v);
+  }
+
+  function onDropdownButtonKey(e) {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); toggleDropdown(true); }
+    else if (e.key === 'Escape') { toggleDropdown(false); }
+  }
+
+  function onDropdownListKey(e) {
+    var opts = Array.prototype.slice.call(document.querySelectorAll('#theme-list [role="option"]'));
+    var i = opts.indexOf(document.activeElement);
+    switch (e.key) {
+      case 'ArrowDown': e.preventDefault(); opts[Math.min(i + 1, opts.length - 1)].focus(); break;
+      case 'ArrowUp': e.preventDefault(); opts[Math.max(i - 1, 0)].focus(); break;
+      case 'Home': e.preventDefault(); opts[0].focus(); break;
+      case 'End': e.preventDefault(); opts[opts.length - 1].focus(); break;
+      case 'Enter':
+      case ' ':
+        e.preventDefault();
+        if (i >= 0) pick(opts[i].textContent);
+        break;
+      case 'Escape':
+        e.preventDefault();
+        toggleDropdown(false);
+        document.getElementById('theme-value').focus();
+        break;
+      case 'Tab':
+        toggleDropdown(false);
+        break;
+    }
+  }
+
+  function openModal() {
+    lastFocus = document.activeElement;
+    document.getElementById('overlay').classList.add('open');
+    document.getElementById('page').inert = true;
+    document.getElementById('confirm-name').focus();
+  }
+
+  function closeModal() {
+    var input = document.getElementById('confirm-name');
+    document.getElementById('overlay').classList.remove('open');
+    document.getElementById('page').inert = false;
+    input.removeAttribute('aria-invalid');
+    document.getElementById('confirm-error').textContent = '';
+    if (lastFocus) lastFocus.focus();
+  }
+
+  function doDelete() {
+    var input = document.getElementById('confirm-name');
+    if (input.value !== 'tallybird-hq') {
+      input.style.borderColor = '#b3261e';
+      input.setAttribute('aria-invalid', 'true');
+      document.getElementById('confirm-error').textContent = 'The name does not match. Type tallybird-hq to confirm.';
+      input.focus();
+      return;
+    }
+    closeModal();
+    toast('Workspace scheduled for deletion');
+  }
+
+  // Keep focus inside the open dialog and close it on Escape.
+  document.addEventListener('keydown', function (e) {
+    var overlay = document.getElementById('overlay');
+    if (!overlay.classList.contains('open')) return;
+    if (e.key === 'Escape') { e.preventDefault(); closeModal(); return; }
+    if (e.key !== 'Tab') return;
+    var items = overlay.querySelectorAll('button, input');
+    var first = items[0];
+    var last = items[items.length - 1];
+    var inside = overlay.contains(document.activeElement);
+    if (e.shiftKey && (!inside || document.activeElement === first)) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && (!inside || document.activeElement === last)) { e.preventDefault(); first.focus(); }
+  });
+
+  function toast(msg) {
+    // Announce through the persistent live region; the visual toast is hidden from assistive tech.
+    statusEl.textContent = '';
+    setTimeout(function () { statusEl.textContent = msg; }, 50);
+    var t = document.createElement('div');
+    t.className = 'toast';
+    t.setAttribute('aria-hidden', 'true');
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(function () { t.remove(); }, 2500);
+  }
+</script>
+</body>
+</html>

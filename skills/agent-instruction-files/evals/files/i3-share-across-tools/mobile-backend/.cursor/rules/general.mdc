@@ -1,0 +1,15 @@
+---
+description: General project conventions
+alwaysApply: true
+---
+
+# mobile-backend conventions
+
+- Build with `make build`, test with `make test` (run `make db-up` first), lint with `make lint`.
+- Run `make sqlc` after editing files in `internal/db/queries/`.
+- Go 1.21. Do not use features from later versions.
+- Handlers in `internal/api/` call services in `internal/service/`, never the DB package.
+- SQL only in `internal/db/queries/`; never edit `internal/db/gen/`.
+- Wrap errors with `%w`.
+- Money is integer cents.
+- Never log request bodies. They contain PII and the logs are shipped to a third party.

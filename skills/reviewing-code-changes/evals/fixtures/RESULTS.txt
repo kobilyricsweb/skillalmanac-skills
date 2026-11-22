@@ -1,0 +1,84 @@
+### r1 diff
+$ python scripts/diff_risk_map.py evals/files/r1-changed-contract/pricing-svc/change.diff
+exit code 0 (expected 0) -> ok
+3 file(s), +11 -16
+
+Read in this order:
+1. tests/test_discounts.py  [test, modified, +2 -5]
+     ! test removed: test_unknown_tier_is_zero
+     ! assertion weakened:8: self.assertIsNotNone(calculate_discount(10000, "gold"))
+2. pricing/discounts.py  [source, modified, +5 -7]
+3. checkout/cart.py  [source, modified, +4 -4]
+
+Definitions changed or removed. Search the whole repo for every use, including files outside the diff:
+  calculate_discount, cart_total, test_unknown_tier_is_zero
+
+Leads only: confirm each in the code. Not detected: callers, logic errors, anything needing the code to be understood.
+
+### r2 diff
+$ python scripts/diff_risk_map.py evals/files/r2-new-endpoints/orders-node/change.diff
+exit code 0 (expected 0) -> ok
+2 file(s), +35 -0
+
+Read in this order:
+1. src/routes/orders.js  [source, modified, +28 -0]
+     ! SQL built from a string:29: const { rows } = await db.query(`SELECT * FROM invoices WHERE order_id = ${req.params.id}`);
+     ! swallowed error:39: } catch (err) {}
+2. src/refunds.js  [source, new, +7 -0]
+
+No test file is touched by this change.
+
+Leads only: confirm each in the code. Not detected: callers, logic errors, anything needing the code to be understood.
+
+### r3 diff
+$ python scripts/diff_risk_map.py evals/files/r3-quiet-refactor/notifier/change.diff
+exit code 0 (expected 0) -> ok
+5 file(s), +34 -21
+
+Read in this order:
+1. migrations/0007_add_channel.sql  [migration, new, +3 -0]
+     ! NOT NULL column added without a default:2: ALTER TABLE notifications ADD COLUMN channel text NOT NULL;
+     ! index built without the online option:3: CREATE INDEX idx_notifications_channel ON notifications (channel);
+2. notifier/retry.py  [source, new, +16 -0]
+     ! broad exception caught:13: except Exception:
+3. notifier/settings.py  [config, new, +3 -0]
+4. notifier/sender.py  [source, modified, +7 -21]
+5. tests/test_sender.py  [test, modified, +5 -0]
+
+Definitions changed or removed. Search the whole repo for every use, including files outside the diff:
+  post, send, send_batch
+
+Numeric constants whose old value does not reappear (changed or dropped):
+  TIMEOUT_S = 30 (was in notifier/sender.py); now possibly DEFAULT_TIMEOUT_S = 3 (notifier/settings.py:3)
+
+Leads only: confirm each in the code. Not detected: callers, logic errors, anything needing the code to be understood.
+
+### clean diff
+$ python scripts/diff_risk_map.py evals/fixtures/clean.diff
+exit code 0 (expected 0) -> ok
+1 file(s), +1 -0
+
+Read in this order:
+1. src/util.py  [source, modified, +1 -0]
+
+No test file is touched by this change.
+
+Leads only: confirm each in the code. Not detected: callers, logic errors, anything needing the code to be understood.
+
+### stdin
+$ python scripts/diff_risk_map.py -
+exit code 0 (expected 0) -> ok
+1 file(s), +1 -0
+
+Read in this order:
+1. src/util.py  [source, modified, +1 -0]
+
+No test file is touched by this change.
+
+Leads only: confirm each in the code. Not detected: callers, logic errors, anything needing the code to be understood.
+
+### not a diff
+$ python scripts/diff_risk_map.py evals/fixtures/not_a_diff.txt
+exit code 2 (expected 2) -> ok
+no file changes found; the input must be a unified diff (git diff output)
+

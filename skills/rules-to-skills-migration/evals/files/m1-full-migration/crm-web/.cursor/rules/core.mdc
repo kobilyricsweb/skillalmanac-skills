@@ -1,0 +1,10 @@
+---
+description: Core conventions
+alwaysApply: true
+---
+
+- Package manager is pnpm. Never run npm or yarn here.
+- Request and form validation uses zod schemas in `src/schemas/`. Do not validate by hand.
+- Feature flags are read with the `useFlag` hook. Never read `window.__FLAGS__` directly.
+- No default exports, except Next.js pages.
+- Run `pnpm typecheck` and `pnpm test` before saying a change is done.

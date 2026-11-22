@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing plan card - Pro</title>
+  <link rel="stylesheet" href="src/tokens.css">
+  <link rel="stylesheet" href="src/components.css">
+  <link rel="stylesheet" href="plan-card.css">
+</head>
+<body class="plan-card-page">
+  <main>
+    <article class="plan-card">
+      <span class="plan-card__badge">Most popular</span>
+
+      <header class="plan-card__header">
+        <h2 class="plan-card__name">Pro</h2>
+        <p class="plan-card__price-row">
+          <span class="plan-card__price">$29</span>
+          <span class="plan-card__period">/ month</span>
+        </p>
+      </header>
+
+      <hr class="plan-card__divider">
+
+      <ul class="plan-card__features">
+        <li class="plan-card__feature">
+          <svg class="icon plan-card__check" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d="M3 10 L7.5 14.5 L17 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Unlimited projects</span>
+        </li>
+        <li class="plan-card__feature">
+          <svg class="icon plan-card__check" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d="M3 10 L7.5 14.5 L17 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Priority support within 4 hours</span>
+        </li>
+        <li class="plan-card__feature">
+          <svg class="icon plan-card__check" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d="M3 10 L7.5 14.5 L17 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Export to CSV and PDF</span>
+        </li>
+      </ul>
+
+      <button type="button" class="btn btn--primary btn--lg btn--block plan-card__cta">Start 14-day trial</button>
+    </article>
+  </main>
+</body>
+</html>

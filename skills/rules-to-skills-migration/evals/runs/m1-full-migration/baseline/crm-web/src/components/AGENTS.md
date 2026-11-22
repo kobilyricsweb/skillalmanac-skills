@@ -1,0 +1,5 @@
+# Component conventions (src/components/**/*.tsx)
+
+- Variants are declared with `cva`, not with string concatenation of class names.
+- Every component has a sibling `*.stories.tsx` file with at least the default state.
+- Props are a named `type`, exported, called `<Component>Props`.

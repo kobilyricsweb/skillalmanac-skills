@@ -1,0 +1,122 @@
+{
+ "grader": "sub-agent, 'sonnet' model alias, 2026-11-20",
+ "ab_key": {
+  "h1-protect-files": "A=baseline",
+  "h2-format-and-test-gate": "A=baseline",
+  "h3-debug-broken-hook": "A=with_skill"
+ },
+ "grading": {
+  "h1-protect-files": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Reply states the hook was test-fired with sample input and shows/summarises results",
+      "passed": true,
+      "evidence": "\"Tested with sample inputs: `.env`, `.env.production`, `Migrations\\002.sql` and `package-lock.json` are blocked. `src/app.js` and `docs/migrations-guide.md` are allowed.\""
+     },
+     {
+      "text": "Reply states shell commands can still change these files",
+      "passed": true,
+      "evidence": "\"It does not stop edits made through shell commands (for example `sed -i` via Bash).\""
+     }
+    ],
+    "score": 7
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Reply states the hook was test-fired with sample input and shows/summarises results",
+      "passed": true,
+      "evidence": "\"Tested (all fired with sample payloads): Blocked (exit 2): `.env`, `.env.production`, ... Allowed (exit 0): ...; Empty, malformed JSON and missing path: exit 2\""
+     },
+     {
+      "text": "Reply states shell commands can still change these files",
+      "passed": true,
+      "evidence": "\"Not covered: shell commands that write these files (`echo > .env`, `sed -i`, `npm install` rewriting package-lock.json)\""
+     }
+    ],
+    "score": 8
+   },
+   "preference": "B",
+   "reason": "Both work and meet both assertions; B tests far more cases (relative/.. paths, cwd-relative, backslash, malformed input), fails closed on missing path, and is explicit about what was not run (macOS/Linux). A is correct but thinner and does not handle ../ or cwd-relative paths."
+  },
+  "h2-format-and-test-gate": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Stop hook cannot loop forever (stop_hook_active, bounded retries, or reply explains built-in cap)",
+      "passed": false,
+      "evidence": "require-tests.js has no stop_hook_active check or counter; reply says \"Caveat: if the agent cannot fix a failing test, the Stop hook will keep blocking it. Interrupt the session manually if that happens.\""
+     },
+     {
+      "text": "Reply states both hooks were test-fired incl. the failing-test case",
+      "passed": false,
+      "evidence": "\"I checked the format hook and the Stop hook by running them by hand... the Stop hook returned exit 0 with tests passing.\" No failing-test run reported."
+     }
+    ],
+    "score": 4
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Stop hook cannot loop forever",
+      "passed": true,
+      "evidence": "tests-before-stop.js has MAX_TRIES = 5 with a per-session counter; reply: \"After 5 consecutive blocked stops it lets the turn end... Claude Code itself also ends the turn after 8 consecutive stop-hook continuations.\""
+     },
+     {
+      "text": "Reply states both hooks were test-fired incl. failing-test case",
+      "passed": true,
+      "evidence": "Table row: \"Stop: tests failing | exit 2, with test output\" and \"stop_hook_active true, failing | exit 2 for tries 1 to 4, then exit 0 on the 5th\""
+     }
+    ],
+    "score": 7
+   },
+   "preference": "B",
+   "reason": "B bounds the Stop hook and verified the failing-test path, while A has an unbounded gate and only tested the passing case. B did overwrite src/my routes.js with a one-line test file (now just 'x = 1;'), which it honestly disclosed, costing it points."
+  },
+  "h3-debug-broken-hook": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Names wrong input field cmd vs command",
+      "passed": true,
+      "evidence": "\"The guard read `tool_input.cmd`; Claude Code's Bash payload field is `tool_input.command`.\""
+     },
+     {
+      "text": "Names exit code 1 does not block, 2 does",
+      "passed": true,
+      "evidence": "\"It blocked with `exit(1)`. Only exit 2 blocks a PreToolUse call; exit 1 is a non-blocking error\""
+     },
+     {
+      "text": "Names relative script path as reason it failed inside packages/api",
+      "passed": true,
+      "evidence": "\"`node .claude/hooks/guard.js` resolves against the current directory. Once the agent was inside `packages/api` the script was not found\""
+     }
+    ],
+    "score": 9
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Names wrong input field cmd vs command",
+      "passed": true,
+      "evidence": "\"`guard.js` read `tool_input.cmd`, but the Bash tool sends `tool_input.command`.\""
+     },
+     {
+      "text": "Names exit code 1 does not block, 2 does",
+      "passed": true,
+      "evidence": "\"The hook exited with 1, which Claude Code treats as a non-blocking error... Only exit code 2 blocks\""
+     },
+     {
+      "text": "Names relative script path as reason it failed inside packages/api",
+      "passed": true,
+      "evidence": "\"`node .claude/hooks/guard.js`, which resolves against the current working directory. Inside `packages/api` the file does not exist\""
+     }
+    ],
+    "score": 8
+   },
+   "preference": "A",
+   "reason": "Both name all three required causes and fix them. A additionally fixed the timeout unit bug (5000 left as-is in B's settings.json), parsed compound commands more robustly, and flagged the session-root caveat."
+  }
+ }
+}

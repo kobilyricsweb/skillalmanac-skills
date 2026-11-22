@@ -1,0 +1,82 @@
+[
+  {
+    "query": "keyword research for 'standing desk converter' - how many people actually search for this per month in the US, all the variants combined?",
+    "should_trigger": true
+  },
+  {
+    "query": "i have a csv export of 4k keywords for our meal prep niche, can you cluster them and tell me the real total demand without double counting 'meal prep ideas' and 'ideas for meal prep'",
+    "should_trigger": true
+  },
+  {
+    "query": "is interest in pickleball paddles growing or is it a fad? need trend + volume numbers before we commit to a content hub",
+    "should_trigger": true
+  },
+  {
+    "query": "size the search demand for 'sourdough starter' vs 'sourdough discard recipes'. which is bigger and what's the intent behind each (informational, transactional?)",
+    "should_trigger": true
+  },
+  {
+    "query": "pulled ahrefs data for 'home battery backup' + related terms. dedupe the close variants and give me one number i can put in the deck, not a sum of 300 overlapping rows",
+    "should_trigger": true
+  },
+  {
+    "query": "How big is the market for 'lyrics meaning' type searches? I want to know total monthly demand for song meaning queries, labeled by intent",
+    "should_trigger": true
+  },
+  {
+    "query": "can you look at google trends and keyword volumes for 'ai note taker' and say whether demand is seasonal, rising, or flat",
+    "should_trigger": true
+  },
+  {
+    "query": "need a demand estimate for the topic 'tax software for freelancers' - cluster the keywords, mark which are commercial vs informational, and report a de-duplicated total",
+    "should_trigger": true
+  },
+  {
+    "query": "we're deciding between 3 blog topics (cold plunge, red light therapy, sauna blanket). rank them by total search demand from keyword data please",
+    "should_trigger": true
+  },
+  {
+    "query": "keyword demand sizing, topic: electric bike conversion kits. group the variants, flag branded queries, and give me the trend over the last 24 months",
+    "should_trigger": true
+  },
+  {
+    "query": "audit this product page's SEO - title, h1, internal links, whatever's wrong, tell me what to fix",
+    "should_trigger": false
+  },
+  {
+    "query": "write a 1500 word blog post targeting the keyword 'best standing desk converter', friendly tone, include an FAQ",
+    "should_trigger": false
+  },
+  {
+    "query": "my Google Ads campaign for 'running shoes' has CPC of $3.40, how should I set my bids and negative keywords?",
+    "should_trigger": false
+  },
+  {
+    "query": "I have a spreadsheet with 20k rows of customer addresses, dedupe it and fix the inconsistent capitalization in the city column",
+    "should_trigger": false
+  },
+  {
+    "query": "write the iOS App Store keyword field (100 chars) and subtitle for my habit tracker app, need ASO help",
+    "should_trigger": false
+  },
+  {
+    "query": "give me 30 instagram hashtags for a sourdough baking reel, mix of big and small ones",
+    "should_trigger": false
+  },
+  {
+    "query": "which keyword should be my primary on this page? it already ranks #14 and I want to tweak the on-page copy to push it higher",
+    "should_trigger": false
+  },
+  {
+    "query": "set up exact/phrase/broad match types for my search campaign and suggest a daily budget split across ad groups",
+    "should_trigger": false
+  },
+  {
+    "query": "in excel, how do I remove duplicate rows based on two columns and keep the one with the highest value?",
+    "should_trigger": false
+  },
+  {
+    "query": "rewrite the meta description for our pricing page so it uses the phrase 'project management software' naturally",
+    "should_trigger": false
+  }
+]

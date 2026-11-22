@@ -1,0 +1,14 @@
+{
+  "r1-retail-to-customer-success": {
+    "A": "with_skill",
+    "B": "baseline"
+  },
+  "r2-accountant-to-fpa": {
+    "A": "with_skill",
+    "B": "baseline"
+  },
+  "r3-teacher-to-instructional-designer": {
+    "A": "with_skill",
+    "B": "baseline"
+  }
+}

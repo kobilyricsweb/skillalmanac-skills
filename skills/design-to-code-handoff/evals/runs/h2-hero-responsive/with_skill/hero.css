@@ -1,0 +1,151 @@
+/* Hero section.
+   Mobile first: the base rules are Hero / Mobile (375px).
+   Breakpoints add Hero / Desktop (1440px) and the sizes between the two frames.
+   Shared classes (.btn, .btn--lg, .btn--primary, .btn--secondary, .btn--block) come from src/components.css. */
+
+body {
+  margin: 0;
+  background-color: var(--color-bg-page);
+}
+
+.hero {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-5);
+  background-color: var(--color-bg-page);
+  font-family: var(--font-sans);
+}
+
+.hero__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  align-self: stretch;
+  min-width: 0;
+}
+
+.hero__eyebrow {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  line-height: 1.429;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero__headline {
+  margin: 0;
+  align-self: stretch;
+  color: var(--color-text);
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  line-height: 1.222;
+  letter-spacing: -0.02em;
+  overflow-wrap: break-word;
+}
+
+.hero__body {
+  margin: 0;
+  align-self: stretch;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  line-height: 1.5;
+}
+
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-3);
+  align-self: stretch;
+}
+
+/* Buttons keep the 52px height of the design: 14px padding + 24px line + 1px border, border-box. */
+.hero .btn {
+  box-sizing: border-box;
+}
+
+.hero__media {
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 335 / 240;
+  flex-shrink: 0;
+  border-radius: var(--radius-xl);
+  background-color: var(--color-accent-subtle);
+}
+
+/* Tablet and small laptop: stacked, larger type, buttons side by side, no full-width buttons. */
+@media (min-width: 640px) {
+  .hero {
+    gap: var(--space-8);
+    padding: var(--space-16) var(--space-8);
+  }
+
+  .hero__copy {
+    gap: var(--space-6);
+  }
+
+  .hero__headline {
+    font-size: var(--font-size-4xl);
+    line-height: 1.167;
+  }
+
+  .hero__body {
+    font-size: var(--font-size-lg);
+    line-height: 1.556;
+  }
+
+  .hero__actions {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .hero__actions .btn--block {
+    width: auto;
+  }
+
+  .hero__media {
+    aspect-ratio: 13 / 10;
+  }
+}
+
+/* Desktop: two columns. Content is capped at 1200px and centred; the side inset is 120px at 1440
+   (the design value) and shrinks to 48px below that. The background stays full width. */
+@media (min-width: 1120px) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-16);
+    padding-block: var(--space-24);
+    padding-inline: max(var(--space-12), calc((100% - 1200px) / 2));
+  }
+
+  .hero__copy {
+    flex: 1 1 0;
+    align-self: auto;
+  }
+
+  .hero__actions {
+    align-self: auto;
+  }
+
+  .hero__media {
+    flex: 0 1 520px;
+    width: auto;
+    max-width: none;
+  }
+}
+
+/* Wide desktop: the largest headline size. */
+@media (min-width: 1280px) {
+  .hero__headline {
+    font-size: var(--font-size-5xl);
+    line-height: 1.143;
+  }
+}

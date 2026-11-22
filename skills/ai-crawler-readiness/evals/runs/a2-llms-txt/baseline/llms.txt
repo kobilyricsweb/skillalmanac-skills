@@ -1,0 +1,60 @@
+# Tidewater Jobs
+
+> Tidewater Jobs is a hosted scheduler for data jobs: a cron replacement with retries, secrets and an HTTP API.
+
+Docs pages are also available as Markdown by adding `.md` to the URL (for example https://www.tidewater-jobs.example/docs/quick-start.md).
+
+## Docs
+
+- [Quick start](https://www.tidewater-jobs.example/docs/quick-start.md): First steps with Tidewater Jobs
+- [Installation](https://www.tidewater-jobs.example/docs/install.md): How to install the tools
+- [Job file reference](https://www.tidewater-jobs.example/docs/job-file.md): Structure and fields of a job file
+- [Scheduling syntax](https://www.tidewater-jobs.example/docs/schedules.md): How to write job schedules
+- [Retries and timeouts](https://www.tidewater-jobs.example/docs/retries.md): Retry and timeout behavior for jobs
+- [Secrets](https://www.tidewater-jobs.example/docs/secrets.md): Storing and using secrets in jobs
+- [HTTP API overview](https://www.tidewater-jobs.example/docs/api.md): Introduction to the HTTP API
+- [API: jobs](https://www.tidewater-jobs.example/docs/api/jobs.md): Jobs endpoints
+- [API: runs](https://www.tidewater-jobs.example/docs/api/runs.md): Runs endpoints
+- [API: webhooks](https://www.tidewater-jobs.example/docs/api/webhooks.md): Webhooks endpoints
+- [CLI reference](https://www.tidewater-jobs.example/docs/cli.md): Command-line reference
+- [Migrating from 1.x](https://www.tidewater-jobs.example/docs/migrate-1x.md): Upgrade guide from version 1.x
+- [Self-hosting](https://www.tidewater-jobs.example/docs/self-hosting.md): Running Tidewater Jobs on your own infrastructure
+- [Troubleshooting](https://www.tidewater-jobs.example/docs/troubleshooting.md): Common problems and fixes
+- [Glossary](https://www.tidewater-jobs.example/docs/glossary.md): Terms used in the product
+- [FAQ](https://www.tidewater-jobs.example/docs/faq.md): Frequently asked questions
+- [SDK: Python](https://www.tidewater-jobs.example/docs/sdk/python.md): Python SDK
+- [SDK: Node](https://www.tidewater-jobs.example/docs/sdk/node.md): Node SDK
+
+## Product
+
+- [Pricing](https://www.tidewater-jobs.example/pricing): Plans and pricing
+- [Security overview](https://www.tidewater-jobs.example/security): How the service is secured
+- [Integrations](https://www.tidewater-jobs.example/integrations): Available integrations
+- [Integration: Slack](https://www.tidewater-jobs.example/integrations/slack): Slack integration
+- [Integration: PagerDuty](https://www.tidewater-jobs.example/integrations/pagerduty): PagerDuty integration
+- [Changelog](https://www.tidewater-jobs.example/changelog): Product release history
+- [Status](https://www.tidewater-jobs.example/status): Current service status
+
+## Customers
+
+- [Customer stories](https://www.tidewater-jobs.example/customers): Overview of customer stories
+- [Customer story: Northwind](https://www.tidewater-jobs.example/customers/northwind): How Northwind uses Tidewater Jobs
+
+## Blog
+
+- [Why we rewrote the scheduler](https://www.tidewater-jobs.example/blog/scheduler-rewrite): Background on the scheduler rewrite
+- [Cron pitfalls](https://www.tidewater-jobs.example/blog/cron-pitfalls): Common problems with cron scheduling
+
+## Optional
+
+- [Home](https://www.tidewater-jobs.example/): Main landing page
+- [Sign up](https://www.tidewater-jobs.example/signup): Create an account
+- [Login](https://www.tidewater-jobs.example/login): Sign in to an existing account
+- [Careers](https://www.tidewater-jobs.example/careers): Open positions
+- [Blog: Hiring a support engineer](https://www.tidewater-jobs.example/blog/hiring-support): Hiring announcement
+- [Blog: Our 2025 offsite](https://www.tidewater-jobs.example/blog/offsite-2025): Company offsite recap
+- [Brand assets](https://www.tidewater-jobs.example/brand): Logos and brand materials
+- [Contact](https://www.tidewater-jobs.example/contact): Contact the team
+- [Terms](https://www.tidewater-jobs.example/legal/terms): Terms of service
+- [Privacy](https://www.tidewater-jobs.example/legal/privacy): Privacy policy
+- [Cookie policy](https://www.tidewater-jobs.example/legal/cookies): Cookie policy

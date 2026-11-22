@@ -1,0 +1,56 @@
+{
+  "skill_name": "prd-writer",
+  "evals": [
+    {
+      "id": "p1-saved-carts",
+      "prompt": "Turn these notes into a PRD.",
+      "files": [
+        "evals/files/p1_saved_carts_notes.md"
+      ],
+      "deliverable": "prd.md",
+      "assertions": [
+        "The 30-day versus 90-day retention conflict is surfaced as an open question; the requirements do not silently fix one value as decided",
+        "No target number is presented as agreed: any conversion, ticket or recovery target is marked as a proposal or as needing data",
+        "Every figure stated as fact is in the notes (23%, about 40 tickets a month); no invented baseline, date or percentage",
+        "Non-goals include guest carts, the Android app and reminder emails",
+        "'For the holidays' is not turned into a specific committed date; it is reported as the CEO's wish or an open question",
+        "Each requirement has an identifier, a priority and a testable acceptance check",
+        "Cart merge (keep the higher quantity) and the price-changed / unavailable notice are captured as requirements"
+      ]
+    },
+    {
+      "id": "p2-bulk-export",
+      "prompt": "Write a PRD for this. Eng wants it by Thursday.",
+      "files": [
+        "evals/files/p2_bulk_export_notes.md"
+      ],
+      "deliverable": "prd.md",
+      "assertions": [
+        "Link expiry (24 hours versus 7 days) is an open question, not fixed in a requirement as decided",
+        "Who may export (admins only versus any accountant role) is an open question, not decided silently",
+        "The Q1 promise to Hollis & Wren is reported as an unverified sales commitment and a risk, not as the delivery date",
+        "No invented figures: no export-time target, customer count or date beyond the notes unless marked as proposed",
+        "Scheduled monthly export is out of scope or lowest priority with the reason (one customer asked)",
+        "Voided invoices appear as an open question",
+        "Each requirement has an identifier, a priority and a testable acceptance check"
+      ]
+    },
+    {
+      "id": "p3-reminders",
+      "prompt": "Can you make a product requirements doc from this dump?",
+      "files": [
+        "evals/files/p3_reminders_notes.md"
+      ],
+      "deliverable": "prd.md",
+      "assertions": [
+        "24 versus 48 hours is an open question; the requirements do not silently pick one as decided",
+        "Recorded opt-in with a date is a Must requirement attributed to legal",
+        "WhatsApp is a non-goal for the first version, with the reason",
+        "No no-show target is presented as agreed; any target is marked proposed or needs data",
+        "Who pays for SMS is an open question",
+        "Every figure stated as fact is in the notes (18%, $0.012, about 70%); no invented cost totals presented as fact",
+        "The 30% of clients without a mobile number is treated as a limit on reach (risk, non-goal or open question)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "skill_name": "classroom-quiz-builder",
+  "evals": [
+    {
+      "id": "q1-herring-trade",
+      "prompt": "Make a 10 question multiple choice quiz from this reading for my 7th graders, with an answer key.",
+      "files": [
+        "evals/files/q1_harbor_town.md"
+      ],
+      "deliverable": "quiz.md",
+      "assertions": [
+        "There are exactly 10 questions with 4 options each",
+        "Every keyed answer is correct according to the reading",
+        "Every question is answerable from the reading alone; none depends on outside knowledge",
+        "No correct-answer letter is used more than 4 times, and no letter is correct three times in a row",
+        "The correct option is the single longest option in at most half of the questions",
+        "At least 3 questions ask for a reason, comparison or application rather than a stated date or number",
+        "No 'all of the above' or 'none of the above'; a student copy without answers is provided or the key is clearly separable"
+      ]
+    },
+    {
+      "id": "q2-photosynthesis",
+      "prompt": "Create an 8 question quiz from these lesson notes.",
+      "files": [
+        "evals/files/q2_plant_cells.md"
+      ],
+      "deliverable": "quiz.md",
+      "assertions": [
+        "There are exactly 8 questions with 4 options each",
+        "Every keyed answer is correct according to the notes",
+        "No question tests a fact that is not in the notes (for example the chemical equation, mitochondria, or the name of a scientist)",
+        "No correct-answer letter is used more than 3 times, and no letter is correct three times in a row",
+        "The correct option is the single longest option in at most half of the questions",
+        "At least one question uses the class experiment or the dry-afternoon mechanism to test understanding, not recall of a term",
+        "Each wrong option is clearly wrong according to the notes (no second defensible answer)"
+      ]
+    },
+    {
+      "id": "q3-forklift-briefing",
+      "prompt": "I need a 10 question knowledge check for new hires based on this briefing.",
+      "files": [
+        "evals/files/q3_forklift_briefing.md"
+      ],
+      "deliverable": "quiz.md",
+      "assertions": [
+        "There are exactly 10 questions with 4 options each",
+        "Every keyed answer matches the Dunmore site rules in the briefing (6 km/h inside, 10 km/h yard, 20 percent charge, 15 centimetres, 1,500 and 2,500 kilograms, 12 months, level 5 red trucks only, extension 555)",
+        "No question relies on general forklift regulations or facts outside the briefing",
+        "No correct-answer letter is used more than 4 times, and no letter is correct three times in a row",
+        "The correct option is the single longest option in at most half of the questions",
+        "At least 3 questions describe a situation and ask what to do",
+        "No 'all of the above' or 'none of the above'"
+      ]
+    }
+  ]
+}

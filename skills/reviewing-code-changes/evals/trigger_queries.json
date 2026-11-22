@@ -1,0 +1,82 @@
+[
+  {
+    "query": "review this PR before I merge it",
+    "should_trigger": true
+  },
+  {
+    "query": "code review my diff, here's git diff main...feature",
+    "should_trigger": true
+  },
+  {
+    "query": "can you look over my changes and tell me if anything is broken",
+    "should_trigger": true
+  },
+  {
+    "query": "do a pull request review of #482 and find bugs, not style nits",
+    "should_trigger": true
+  },
+  {
+    "query": "I refactored the billing module, sanity check the change before I push",
+    "should_trigger": true
+  },
+  {
+    "query": "review the staged changes for security problems and missing tests",
+    "should_trigger": true
+  },
+  {
+    "query": "is this change safe to merge? be critical",
+    "should_trigger": true
+  },
+  {
+    "query": "act as a senior reviewer on this branch and give me a verdict",
+    "should_trigger": true
+  },
+  {
+    "query": "codex code review skill equivalent: review what the agent just wrote",
+    "should_trigger": true
+  },
+  {
+    "query": "second pair of eyes on this commit please, especially what could break callers",
+    "should_trigger": true
+  },
+  {
+    "query": "write unit tests for the billing module",
+    "should_trigger": false
+  },
+  {
+    "query": "refactor this function to be more readable",
+    "should_trigger": false
+  },
+  {
+    "query": "explain what this code does line by line",
+    "should_trigger": false
+  },
+  {
+    "query": "fix the failing test in test_cart.py",
+    "should_trigger": false
+  },
+  {
+    "query": "write a PR description for my changes",
+    "should_trigger": false
+  },
+  {
+    "query": "review my resume and suggest improvements",
+    "should_trigger": false
+  },
+  {
+    "query": "set up a GitHub Action that requires two approvals",
+    "should_trigger": false
+  },
+  {
+    "query": "audit this skill folder for prompt injection before I install it",
+    "should_trigger": false
+  },
+  {
+    "query": "review this contract clause for risks",
+    "should_trigger": false
+  },
+  {
+    "query": "generate a changelog from the last 20 commits",
+    "should_trigger": false
+  }
+]

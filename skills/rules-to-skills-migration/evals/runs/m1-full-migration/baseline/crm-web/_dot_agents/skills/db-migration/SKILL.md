@@ -1,0 +1,12 @@
+---
+name: db-migration
+description: Write a Prisma migration for the CRM database. Use when changing prisma/schema.prisma or creating a migration.
+---
+
+# Prisma migrations
+
+1. Edit `prisma/schema.prisma`.
+2. Preview the SQL first: `pnpm prisma migrate diff --from-schema-datasource prisma/schema.prisma --to-schema-datamodel prisma/schema.prisma --script`.
+3. Create the migration with `pnpm prisma migrate dev --name <change>`. This needs the shadow database; start it with `pnpm db:shadow`.
+4. Open the generated SQL. If it drops a column or a table, stop and split the change: add first, backfill, drop in a later release.
+5. Never edit a migration that has been merged.

@@ -1,0 +1,37 @@
+{
+  "skill": "marketing-campaign-brief",
+  "fail": 0,
+  "warn": 0,
+  "items": [
+    {
+      "level": "PASS",
+      "code": "frontmatter-keys",
+      "message": "only open-spec keys used"
+    },
+    {
+      "level": "PASS",
+      "code": "name-format",
+      "message": "name 'marketing-campaign-brief' is valid"
+    },
+    {
+      "level": "PASS",
+      "code": "description-length",
+      "message": "description is 591 chars"
+    },
+    {
+      "level": "PASS",
+      "code": "body-lines",
+      "message": "SKILL.md body has 98 lines"
+    },
+    {
+      "level": "PASS",
+      "code": "body-tokens",
+      "message": "body is about 1327 tokens by chars/4"
+    },
+    {
+      "level": "PASS",
+      "code": "package-size",
+      "message": "package is 23005 bytes in 4 files"
+    }
+  ]
+}

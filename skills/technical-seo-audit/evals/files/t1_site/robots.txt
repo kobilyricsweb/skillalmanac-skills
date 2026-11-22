@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /sale
+Disallow: /cart
+
+Sitemap: http://www.northfield-kettles.example/sitemap.xml

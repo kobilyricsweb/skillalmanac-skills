@@ -1,0 +1,15 @@
+---
+name: release-process
+description: Cut a release of crm-web: version bump, changelog, tag, deploy-prod, rollback. Use when asked to release.
+---
+
+# Cutting a release
+
+1. Make sure `main` is green in CI.
+2. Run `pnpm version minor` (or `patch`). This bumps package.json and creates the commit.
+3. Run `pnpm release:notes` to generate the CHANGELOG.md entry from merged PR titles. Edit it by hand: remove chores, group by area.
+4. Tag `vX.Y.Z` and push the tag. The `deploy-prod` workflow starts from the tag.
+5. Wait for `deploy-prod` to finish. If the smoke step fails, do not retry: roll back with the `rollback-prod` workflow and open an incident.
+6. Post the changelog entry in #releases.
+
+Never release on a Friday after 14:00 local time.

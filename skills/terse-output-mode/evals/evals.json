@@ -1,0 +1,47 @@
+{
+  "skill_name": "terse-output-mode",
+  "note": "Word counts are measured by ../_tools/check_runs.py (words outside fenced code blocks). It is independent of the skill's own script.",
+  "evals": [
+    {
+      "id": "t1-undo-pushed-commit",
+      "prompt": "caveman mode. how do I undo my last commit? already pushed to main, teammates pulled it. Write your answer to reply.md in the working folder, exactly as you would say it to me.",
+      "files": [],
+      "assertions": [
+        "[script] The answer contains the git revert command",
+        "[script] At most 60 words outside code blocks",
+        "[judge] The commands are exact, copyable and in a code block, including the push",
+        "[judge] It warns against, or clearly rules out, reset plus force-push on the shared branch",
+        "[judge] Nothing a reader needs to act safely is missing, and nothing is wrong",
+        "[judge] No greeting, no restating of the question, no closing offer"
+      ]
+    },
+    {
+      "id": "t2-diagnose-log",
+      "prompt": "terse mode. orders-api/ keeps dying under load, the log is in orders-api/logs/error.log. why, and what's the fix? Write your answer to reply.md in the working folder, exactly as you would say it to me.",
+      "files": [
+        "evals/files/t2-diagnose-log/orders-api/"
+      ],
+      "assertions": [
+        "[script] The exact error text 'sorry, too many clients already' is quoted",
+        "[script] At most 90 words outside code blocks",
+        "[judge] The root cause is right: a new connection pool is created on every request (routes/orders.js line 7 via getPool) and never closed",
+        "[judge] The cause is tied to a file and line",
+        "[judge] The fix is given as code: one shared pool created once",
+        "[judge] No filler, hedging or restating of the question"
+      ]
+    },
+    {
+      "id": "t3-rotate-password",
+      "prompt": "Be terse from now on. Give me the steps to rotate the production Postgres password for our app with zero downtime. The app reads DATABASE_URL from env; 3 app servers behind a load balancer; one DB role today (app_user). Write your answer to reply.md in the working folder, exactly as you would say it to me.",
+      "files": [],
+      "assertions": [
+        "[script] At most 150 words outside code blocks",
+        "[script] At least 4 numbered steps",
+        "[judge] The order is safe: a new working credential exists before the old one is touched, and servers are restarted one at a time",
+        "[judge] The step that removes or invalidates the old credential is marked as the point of no return, with a check to run before it",
+        "[judge] That warning is written as a complete, unambiguous sentence rather than clipped fragments",
+        "[judge] SQL and commands are exact and copyable"
+      ]
+    }
+  ]
+}

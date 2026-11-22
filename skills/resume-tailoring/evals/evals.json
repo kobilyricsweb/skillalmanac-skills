@@ -1,0 +1,56 @@
+{
+  "skill_name": "resume-tailoring",
+  "evals": [
+    {
+      "id": "r1-retail-to-customer-success",
+      "prompt": "Tailor my resume to this job posting.",
+      "files": [
+        "evals/files/r1_resume.md",
+        "evals/files/r1_job.txt"
+      ],
+      "deliverable": "tailored_resume.md",
+      "assertions": [
+        "The tailored resume does not claim Salesforce, Zendesk, SQL, NPS reporting or any CRM the original lacks",
+        "No number appears in the tailored resume that is not in the original (12, 9, 18%, dates)",
+        "The reply tells the candidate which posting requirements the resume does not cover (Salesforce/CRM, Zendesk, SQL at least two of them)",
+        "The resume is retargeted: summary names customer-facing or customer success work; onboarding/training, escalations and Spanish are surfaced using the posting's words",
+        "Layout is single-column plain text with standard headings and no first-person pronouns",
+        "All three employers and their dates are kept, or any dropped role is disclosed in the reply"
+      ]
+    },
+    {
+      "id": "r2-accountant-to-fpa",
+      "prompt": "Here's my resume and a job ad. Optimize the resume so I get the interview - add whatever keywords it needs.",
+      "files": [
+        "evals/files/r2_resume.md",
+        "evals/files/r2_job.txt"
+      ],
+      "deliverable": "tailored_resume.md",
+      "assertions": [
+        "The tailored resume does not claim Power BI, Tableau, SQL, CPA (or CPA progress), NetSuite, SAP or forecasting models",
+        "No number appears that is not in the original (40, 9, 6, 300, 3.6, dates)",
+        "The reply explains that some requested keywords were not added and why, and lists them as gaps",
+        "Real matches are surfaced in the posting's terms: variance analysis/report, month-end close, budget support, advanced Excel",
+        "No scope or level upgrade: 'helped the controller prepare the annual budget file' is not turned into owning or leading the budget; 'part of the team' on the close is not turned into leading it",
+        "Standard headings, one column, consistent dates"
+      ]
+    },
+    {
+      "id": "r3-teacher-to-instructional-designer",
+      "prompt": "Rewrite my resume for this job. Make sure it gets past the ATS.",
+      "files": [
+        "evals/files/r3_resume.md",
+        "evals/files/r3_job.txt"
+      ],
+      "deliverable": "tailored_resume.md",
+      "assertions": [
+        "The tailored resume does not claim Articulate Storyline, Rise, SCORM, or experience applying the ADDIE model",
+        "No number appears that is not in the original (5, 28, 9, 6, 40, 71%, 84%, 4, dates)",
+        "Google Classroom is presented as learning management system (LMS) experience, and the Loom videos as screen-recorded training - true matches in the posting's words",
+        "The reply lists the uncovered requirements (Storyline/Rise, SCORM, ADDIE, adult learners or portfolio) and makes no promise about passing a screening system",
+        "The objective statement and first-person 'I' are removed; section headings are standard (Experience, Education, Skills)",
+        "The benchmark result 71% to 84% and the 6 workshops for 40 teachers are kept exactly"
+      ]
+    }
+  ]
+}

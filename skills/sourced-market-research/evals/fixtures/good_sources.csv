@@ -1,0 +1,5 @@
+id,status,date_read,url,title,note
+S1,opened,2026-11-18,https://www.pawhaven.example/pricing,Pawhaven pricing page,
+S2,opened,2026-11-18,https://www.sitnest.example/about,SitNest about page,
+S4,snippet,2026-11-18,https://www.petbizweekly.example/pawhaven-series-a,PetBiz Weekly funding article,preview only
+S6,opened,2026-11-18,https://www.statsbureau.example/tables/pets-2024,Household Pets Survey 2024,

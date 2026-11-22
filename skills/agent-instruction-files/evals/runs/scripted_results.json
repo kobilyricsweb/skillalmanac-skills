@@ -1,0 +1,174 @@
+{
+ "i1-audit-bloated|baseline": [
+  {
+   "assertion": "no dead commands or paths",
+   "passed": true,
+   "detail": "still present: []"
+  },
+  {
+   "assertion": "staging key removed",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "at most 50% of original lines",
+   "passed": true,
+   "detail": "24 of 83 lines"
+  },
+  {
+   "assertion": "four project rules survive",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "assertion": "tabs contradiction gone",
+   "passed": true,
+   "detail": ""
+  }
+ ],
+ "i1-audit-bloated|with_skill": [
+  {
+   "assertion": "no dead commands or paths",
+   "passed": true,
+   "detail": "still present: []"
+  },
+  {
+   "assertion": "staging key removed",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "at most 50% of original lines",
+   "passed": true,
+   "detail": "24 of 83 lines"
+  },
+  {
+   "assertion": "four project rules survive",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "assertion": "tabs contradiction gone",
+   "passed": true,
+   "detail": ""
+  }
+ ],
+ "i2-write-from-scratch|baseline": [
+  {
+   "assertion": "AGENTS.md exists, at most 80 lines",
+   "passed": true,
+   "detail": "26 lines"
+  },
+  {
+   "assertion": "real commands present",
+   "passed": true,
+   "detail": "missing []"
+  },
+  {
+   "assertion": "every make target exists",
+   "passed": true,
+   "detail": "unknown []"
+  },
+  {
+   "assertion": "generated file not hand-edited",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "(lon, lat) order stated",
+   "passed": true,
+   "detail": ""
+  }
+ ],
+ "i2-write-from-scratch|with_skill": [
+  {
+   "assertion": "AGENTS.md exists, at most 80 lines",
+   "passed": true,
+   "detail": "19 lines"
+  },
+  {
+   "assertion": "real commands present",
+   "passed": true,
+   "detail": "missing []"
+  },
+  {
+   "assertion": "every make target exists",
+   "passed": true,
+   "detail": "unknown []"
+  },
+  {
+   "assertion": "generated file not hand-edited",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "(lon, lat) order stated",
+   "passed": true,
+   "detail": ""
+  }
+ ],
+ "i3-share-across-tools|baseline": [
+  {
+   "assertion": "AGENTS.md holds shared rules",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "CLAUDE.md imports @AGENTS.md, at most 20 lines",
+   "passed": true,
+   "detail": "6 lines"
+  },
+  {
+   "assertion": "Claude-only notes kept in CLAUDE.md",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "Cursor-only rule (request bodies) now in AGENTS.md",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "Go drift resolved to 1.22",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "Cursor rule no longer duplicates",
+   "passed": true,
+   "detail": "removed"
+  }
+ ],
+ "i3-share-across-tools|with_skill": [
+  {
+   "assertion": "AGENTS.md holds shared rules",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "CLAUDE.md imports @AGENTS.md, at most 20 lines",
+   "passed": true,
+   "detail": "6 lines"
+  },
+  {
+   "assertion": "Claude-only notes kept in CLAUDE.md",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "Cursor-only rule (request bodies) now in AGENTS.md",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "Go drift resolved to 1.22",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "Cursor rule no longer duplicates",
+   "passed": true,
+   "detail": "removed"
+  }
+ ]
+}

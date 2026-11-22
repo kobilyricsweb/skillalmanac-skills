@@ -1,0 +1,82 @@
+[
+  {
+    "query": "make a 10 question multiple choice quiz from this reading for my 7th graders, with an answer key",
+    "should_trigger": true
+  },
+  {
+    "query": "create a quiz from this chapter",
+    "should_trigger": true
+  },
+  {
+    "query": "I need a knowledge check for new hires based on this safety briefing",
+    "should_trigger": true
+  },
+  {
+    "query": "ai quiz generator: turn my lesson notes into a test with answers",
+    "should_trigger": true
+  },
+  {
+    "query": "write comprehension questions with 4 options each for this passage",
+    "should_trigger": true
+  },
+  {
+    "query": "can you make practice exam questions from these lecture notes",
+    "should_trigger": true
+  },
+  {
+    "query": "quiz maker request: 8 MCQs on the attached handout, student copy and key separately",
+    "should_trigger": true
+  },
+  {
+    "query": "build a short test from this training document to check people actually read it",
+    "should_trigger": true
+  },
+  {
+    "query": "chatgpt for teachers: generate a multiple choice quiz on this text",
+    "should_trigger": true
+  },
+  {
+    "query": "make a quiz from this article for my ESL class, questions should only use what's in the article",
+    "should_trigger": true
+  },
+  {
+    "query": "grade these 25 student essays using my rubric",
+    "should_trigger": false
+  },
+  {
+    "query": "write a lesson plan on photosynthesis for grade 6",
+    "should_trigger": false
+  },
+  {
+    "query": "make flashcards for the periodic table",
+    "should_trigger": false
+  },
+  {
+    "query": "quiz me on AWS exam topics, one question at a time",
+    "should_trigger": false
+  },
+  {
+    "query": "write an essay prompt and rubric for a unit on the Silk Road",
+    "should_trigger": false
+  },
+  {
+    "query": "explain photosynthesis to a 10 year old",
+    "should_trigger": false
+  },
+  {
+    "query": "create a trivia quiz about 90s movies for a party",
+    "should_trigger": false
+  },
+  {
+    "query": "check whether this student essay was written by AI",
+    "should_trigger": false
+  },
+  {
+    "query": "write a worksheet with fill-in-the-blank grammar exercises",
+    "should_trigger": false
+  },
+  {
+    "query": "make a study schedule for my finals",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "skill_name": "reviewing-code-changes",
+  "note": "Each repo is in its post-change state; change.diff is the change under review and PR.md is its description. Planted defects are listed in evals/planted_defects.md, which executors never see.",
+  "evals": [
+    {
+      "id": "r1-changed-contract",
+      "prompt": "Review the change in pricing-svc/ before I merge it. The diff is pricing-svc/change.diff, the description is pricing-svc/PR.md, and the repo is checked out with the change applied. Write the review to reply.md in the working folder.",
+      "files": [
+        "evals/files/r1-changed-contract/pricing-svc/"
+      ],
+      "assertions": [
+        "[script] The review names billing/invoice.py",
+        "[judge] It finds that billing/invoice.py, which is not in the diff, still treats the result as a percentage, so discounted invoice totals are now wrong",
+        "[judge] It finds that the gold test was weakened to an is-not-None check",
+        "[judge] It finds that the unknown-tier test was deleted",
+        "[judge] The invoice bug is ranked as the top or blocking finding and the verdict is not an approval",
+        "[judge] Findings cite file and line and say what was verified (for example tests run, callers searched)",
+        "[judge] Style remarks, if any, are kept apart from the blocking findings and number three or fewer"
+      ]
+    },
+    {
+      "id": "r2-new-endpoints",
+      "prompt": "Review the change in orders-node/ before I merge it. The diff is orders-node/change.diff, the description is orders-node/PR.md, and the repo is checked out with the change applied. Write the review to reply.md in the working folder.",
+      "files": [
+        "evals/files/r2-new-endpoints/orders-node/"
+      ],
+      "assertions": [
+        "[script] The review mentions requireOwner",
+        "[judge] It finds that the invoice endpoint lacks the ownership check that the sibling routes use, so any signed-in user can read any invoice",
+        "[judge] It finds the SQL built by string interpolation in the invoice endpoint",
+        "[judge] It finds the pagination offset error: page 1 skips the first 20 orders",
+        "[judge] It finds that a failed refund is swallowed and the order is still marked cancelled",
+        "[judge] Each finding has a concrete failure scenario and a suggested fix",
+        "[judge] It notes the missing tests for the new endpoints without presenting style points as blockers"
+      ]
+    },
+    {
+      "id": "r3-quiet-refactor",
+      "prompt": "Review the change in notifier/ before I merge it. The diff is notifier/change.diff, the description is notifier/PR.md, and the repo is checked out with the change applied. Write the review to reply.md in the working folder.",
+      "files": [
+        "evals/files/r3-quiet-refactor/notifier/"
+      ],
+      "assertions": [
+        "[script] The review mentions the migration (0007 or NOT NULL)",
+        "[judge] It finds that the timeout changed from 30 to 3 seconds and that this contradicts the 'no behaviour change' description",
+        "[judge] It connects the 3 second timeout to the provider latency stated in the README (about 8 seconds p99), or otherwise shows why the value is harmful",
+        "[judge] It finds that the retry now catches every exception rather than only connection errors",
+        "[judge] It finds that adding a NOT NULL column without a default fails on a table that already has rows",
+        "[judge] It raises the plain index build on a 40 million row table, or the mismatch between 'index migration' and a schema change",
+        "[judge] It reports six or fewer findings in total and none of them is a style preference presented as a problem"
+      ]
+    }
+  ]
+}

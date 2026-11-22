@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": ["Bash(npm test)", "Bash(npm run lint)"],
+    "deny": ["Read(./secrets/**)"]
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/notify.js\"" }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/format-file.js\"" }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/require-tests.js\"", "timeout": 300 }
+        ]
+      }
+    ]
+  }
+}

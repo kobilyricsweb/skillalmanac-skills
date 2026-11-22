@@ -1,0 +1,128 @@
+{
+ "m1-marketing-sync": {
+  "A": {
+   "assertions": [
+    {"n": 1, "passed": true, "evidence": "Decisions: 'Launch date: Monday 8 December 2026. Moved from the originally proposed 1 December' (date right; weekday wrong, see 7)"},
+    {"n": 2, "passed": true, "evidence": "'Paid budget: $18,500. Mei corrected her earlier figure of $15,000, which was last year's number.'"},
+    {"n": 3, "passed": true, "evidence": "Action 6: 'Update the landing page (it still shows the old date and old prices) | **No owner assigned** | Before launch'"},
+    {"n": 4, "passed": true, "evidence": "Borderline: filed under the 'Decisions' heading, but worded 'Newsletter vendor switch: parked until January'; not shown as a decision to switch or as an action"},
+    {"n": 5, "passed": true, "evidence": "'Customer photo permission is unknown'; action 7 owner '**No owner confirmed** (Victor said he would have to look at the forms but did not commit)'"},
+    {"n": 6, "passed": true, "evidence": "'Send Victor the final discount terms text | Omar | Tue 17 Nov'; 'Finish the three social banner variants and send them to Mei | Dana | Wed 18 Nov'; 'Send Rachel the ad schedule for the new launch date | Mei | Fri 20 Nov'"},
+    {"n": 7, "passed": false, "evidence": "'Monday 8 December 2026' - 8 Dec 2026 is a Tuesday (computed; the meeting, 16 Nov, is the Monday). Also 'Legal review of discount terms: not started' - transcript says only 'isn't finished'"}
+   ],
+   "score": 7,
+   "other_defects": [
+    "Wrong weekday on the headline decision: 'Monday 8 December 2026' is a Tuesday. A user copying this into a plan or invite could be misled.",
+    "'Legal review of discount terms: not started' is not in the transcript (Victor: 'isn't finished').",
+    "Action 5 'Load ad creatives before launch | Mei | Before 8 Dec' is built from Mei's remark about the superseded 1 Dec date ('I can have the creatives loaded by then'); nobody set it as an action or tied it to 8 Dec.",
+    "'This could block the ads' and 'The 8 December date depends on Legal finishing around 24 Nov' are the writer's inferences, not marked as such.",
+    "Reply states 'today is 20 November' - not from the transcript and not verifiable from the inputs.",
+    "'social banner variants' - transcript says 'social variants'; the hero banner is a separate item."
+   ]
+  },
+  "B": {
+   "assertions": [
+    {"n": 1, "passed": true, "evidence": "'Winter campaign launch is December 8th. Replaces: December 1st.'"},
+    {"n": 2, "passed": true, "evidence": "'Paid budget for the campaign is 18,500 dollars. Replaces: 15,000 dollars, a misread figure.'"},
+    {"n": 3, "passed": true, "evidence": "'Unassigned | Update the landing page, which still shows the old date and the old prices | No date set (\"before launch\")'"},
+    {"n": 4, "passed": true, "evidence": "Under 'Discussed, not decided': 'Switching the newsletter from the current email tool to the new vendor. Parked until January.'"},
+    {"n": 5, "passed": true, "evidence": "Open questions: 'Do we have approval to use the customer photos ...? Victor said he would have to look at the release forms; no owner or date was agreed.'"},
+    {"n": 6, "passed": true, "evidence": "'Omar | Send Victor the final discount terms text | 2026-11-17 (\"tomorrow\")'; 'Dana | ... send them to Mei when done | 2026-11-18 (\"by Wednesday\")'; 'Mei | Send Rachel the ad schedule for the new date | 2026-11-20 (\"by Friday\")'"},
+    {"n": 7, "passed": true, "evidence": "All names, dates and figures trace to the transcript; the computed dates 17/18/20 Nov are correct for a Monday 16 Nov meeting; Victor's due stays 'the 24th at the earliest'"}
+   ],
+   "score": 9,
+   "other_defects": [
+    "Source citation slip: the photo question cites '(Dana asked; Victor, 00:09:15)' - 00:09:15 is Dana's line; Victor answered at 00:09:27.",
+    "Drops the status updates (blog posts ready, hero banner done) that A kept.",
+    "Reply ends with an unexplained 'Check: PASS', which means nothing to the user."
+   ]
+  },
+  "preferred": "B",
+  "reason": "B is fully faithful to the transcript and separates decisions, actions, open questions and parked items cleanly, with traceable sources. A is readable and has a useful status section, but puts a wrong weekday on the key decision, adds an unstated 'not started' status and a derived action.",
+  "assertion_notes": "Assertion 4 is ambiguous: Rachel's 'park it until January' is itself a decision to defer, so A filing it under Decisions as 'parked' is defensible; I passed it. Assertion 5 says 'listed as an open question' - A lists it both as an unowned action and as an open item; passed on substance."
+ },
+ "m2-client-call": {
+  "A": {
+   "assertions": [
+    {"n": 1, "passed": true, "evidence": "'Sam | Take the 25% service credit request to finance and come back to Samir with an answer | end of next week'; open question: 'Sam could not commit a number on the call'"},
+    {"n": 2, "passed": true, "evidence": "'took checkout down for 4 hours and 10 minutes and affected 17 stores'; 14 appears only in the reply as 'corrected from 14 to 17'"},
+    {"n": 3, "passed": true, "evidence": "'Sam | Send the invites for the twice-weekly check-ins | No date set | Sam, 00:06:09'"},
+    {"n": 4, "passed": true, "evidence": "Sam's rows are all Northgate-side (finance, invites, raise premium tier); Samir appears only as requester: 'Proposed by Sam, accepted by Samir'"},
+    {"n": 5, "passed": true, "evidence": "'Raise the request to move Pellow Retail to the premium tier at no cost ... (no promises made)'; open question: 'Above Sam's level; no commitment.'"},
+    {"n": 6, "passed": true, "evidence": "'Julia | Send the full root-cause report ... | 2026-11-16 (\"by Monday\")'; 'Julia | ... dedicated escalation line | 2026-11-12 (\"today\")'; 'Ken | Send Northgate the list of affected stores | 2026-11-13 (\"tomorrow\")'"},
+    {"n": 7, "passed": true, "evidence": "Open questions: 'Should Pellow Retail get read access to the status page API? Julia said she would think about what is involved.'"}
+   ],
+   "score": 8,
+   "other_defects": [
+    "Omits the SLA figures (99.2% actual vs 99.9% contract), the factual basis of the credit claim, and the 40 minutes during which Pellow could not reach anyone.",
+    "'Discussed, not decided: None' sits oddly beside three unresolved requests filed as open questions.",
+    "Obligations are not split by company although the user asked 'who owes what' (the owner column still answers it).",
+    "Reply ends with internal jargon: 'Check: PASS (three harmless capitalisation warnings ...)'."
+   ]
+  },
+  "B": {
+   "assertions": [
+    {"n": 1, "passed": true, "evidence": "'Answer on the service credit, after taking it to finance | Sam | End of next week (Fri 20 Nov)'; under 'Requested but NOT committed': 'Service credit of 25% of the monthly fee. Sam did not commit to a figure'"},
+    {"n": 2, "passed": true, "evidence": "'The affected-store count was corrected from 14 to **17** (three more reported the next morning)'; 'Send the list of the 17 affected stores'"},
+    {"n": 3, "passed": true, "evidence": "'Send calendar invites for twice-weekly check-ins ... | Sam (Julia is out Thu/Fri)'"},
+    {"n": 4, "passed": true, "evidence": "Sam owns the finance, invites and premium-tier rows; 'Samir pointed out that last month's uptime was 99.2%', 'Samir expects \"an answer, not another meeting.\"' - no mix-up"},
+    {"n": 5, "passed": true, "evidence": "'Free upgrade to the premium tier for the rest of the contract. Sam said it is above his level; he will raise it but made no promises.'"},
+    {"n": 6, "passed": true, "evidence": "'Send the dedicated escalation phone number | Julia | Today (12 Nov)'; 'Send the full root-cause report | Julia | Monday 16 Nov'; 'Send the list of the 17 affected stores | Ken | Tomorrow (Fri 13 Nov)'"},
+    {"n": 7, "passed": true, "evidence": "'Read access to Northgate's status page API. Julia said \"possibly\" and will think about what is involved. No commitment and no date.'"}
+   ],
+   "score": 9,
+   "other_defects": [
+    "Open question 'Exact start date and duration of the twice-weekly check-ins' - the duration was stated ('for the next month') and the notes themselves say so two sections earlier.",
+    "'End of next week (Fri 20 Nov)' and 'before the new cadence starts' are the writer's glosses, not spoken; 20 Nov is a reasonable reading (the call was Thu 12 Nov) but is shown as the due date.",
+    "Uses 'he/his' for Sam; the transcript gives no gender.",
+    "'Northgate acknowledges the missed SLA' is filed under 'Agreed'; it was a concession by Sam, not an agreement. Minor."
+   ]
+  },
+  "preferred": "B",
+  "reason": "Both are accurate on every tested point. B answers 'who owes what' more directly (split by company, with a clear requested-but-not-committed section) and keeps the SLA numbers and the 40-minute unreachable complaint that A drops.",
+  "assertion_notes": "All seven pass on both sides, so the assertions do not discriminate here; the difference is completeness and structure. B's added '(Fri 20 Nov)' on assertion 1 is an interpretation and was not penalised."
+ },
+ "m3-retro": {
+  "A": {
+   "assertions": [
+    {"n": 1, "passed": true, "evidence": "'Write a QA checklist for future projects (reassigned from Tom, who is on leave from Monday) | Lena | Before the next sprint starts'"},
+    {"n": 2, "passed": true, "evidence": "'31 bugs in total, of which 13 were launch-blocking'"},
+    {"n": 3, "passed": true, "evidence": "Decisions: 'Staging sign-off step for the next project. Nothing goes live before it is signed off by both design and QA.'"},
+    {"n": 4, "passed": true, "evidence": "Under 'Not decided (needs follow-up)': 'Weekly client demo ... Not resolved; Bea said the group will come back to it.'"},
+    {"n": 5, "passed": true, "evidence": "Under 'Unowned items': 'Archiving the old Figma files. Everyone agreed someone should, but no one was assigned.'"},
+    {"n": 6, "passed": true, "evidence": "Borderline on heading: under 'Unowned items' - 'Ownership of the analytics dashboard since Priyanka left. Nobody knew who owns it now.' Open in substance"},
+    {"n": 7, "passed": false, "evidence": "'Talk to the agency about the invoice overrun | Arjun | By 30 Nov' - transcript says only 'by the 30th' and carries no meeting date or month, so 'Nov' is invented. (Sprint start, Tom's leave and the overrun amount are left undated/unstated, as required.)"}
+   ],
+   "score": 7,
+   "other_defects": [
+    "Invented month: 'By 30 Nov', repeated in the reply. The transcript is undated.",
+    "Invented commitment: 'Size of the agency overrun. Not known; Arjun to find out when he speaks to the agency' - Arjun said only that he did not have the number.",
+    "Overstated consensus: 'The group agreed this is still too many' (only Bea said it) and 'Everyone agreed someone should' archive the Figma files (only Bea responded).",
+    "'Tom disagreed with both, arguing it is the only time the client looks at the work' - that argument was against dropping the demo; on every-two-weeks he said only 'I don't think that's better'. Minor.",
+    "'Bea (facilitator)' is an inferred role. Minor."
+   ]
+  },
+  "B": {
+   "assertions": [
+    {"n": 1, "passed": true, "evidence": "'Lena | Write the QA checklist for use on the next project (replaces Tom's earlier offer to write it) | before the next sprint starts'"},
+    {"n": 2, "passed": true, "evidence": "'Corrected figures: 13 launch-blocking bugs and 31 total in the first week'"},
+    {"n": 3, "passed": true, "evidence": "Decisions: 'The next project has a staging sign-off step before anything goes live; design and QA both sign.'"},
+    {"n": 4, "passed": true, "evidence": "Under 'Discussed, not decided': 'Dropping the weekly demo to the client, or making it every two weeks ... Bea said it will be revisited.'"},
+    {"n": 5, "passed": true, "evidence": "'Unassigned | Archive the old Figma files (three versions of everything) | No date set'"},
+    {"n": 6, "passed": true, "evidence": "Open questions: 'Who owns the analytics dashboard now that Priyanka left? (Tom asked; Bea did not know)'"},
+    {"n": 7, "passed": true, "evidence": "'by the 30th'; '\"today\" (meeting date not given)'; 'before the next sprint starts'; overrun amount kept as an open question; no date for Tom's leave"}
+   ],
+   "score": 8,
+   "other_defects": [
+    "Title reads 'Website redesign retro, date not given in the transcript' - a note to the requester left inside a document meant to go to the team; needs editing before sending.",
+    "Thin as minutes: no account of what went wrong (QA chaos, dev straight to live); the bug figures are a trailing 'Corrected figures' line, and telling the team about Tom's misstatement is unnecessary.",
+    "The Source column with verbatim quotes is clutter in a team-facing document.",
+    "The reason the checklist moved (Tom on leave from Monday) is in the reply only, not in the notes.",
+    "Reply ends with internal jargon: 'Check: PASS (one harmless warning on the possessive \"Tom's\")'."
+   ]
+  },
+  "preferred": "B",
+  "reason": "Close call. B invents nothing and files every item in the right bucket, which matters most for minutes going to a team. A reads better as minutes (retro narrative, context) but adds a month to 'the 30th', a commitment Arjun did not make, and group agreement where only Bea spoke.",
+  "assertion_notes": "Assertion 7 is badly scoped: its headline says no dates are invented, but its list names only the sprint start, Tom's leave and the overrun amount. A is clean on those three and fails only on the headline via '30 Nov'; a narrow reading would pass A. Assertion 6 demands 'open question' - A files it under 'Unowned items'; passed on substance."
+ }
+}

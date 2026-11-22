@@ -1,0 +1,82 @@
+[
+  {
+    "query": "write a CLAUDE.md for this repo",
+    "should_trigger": true
+  },
+  {
+    "query": "claude.md best practices: can you review ours and tell me what to cut",
+    "should_trigger": true
+  },
+  {
+    "query": "create an AGENTS.md so codex and cursor know how to build and test this project",
+    "should_trigger": true
+  },
+  {
+    "query": "the agent keeps ignoring my CLAUDE.md, it's 600 lines. fix it",
+    "should_trigger": true
+  },
+  {
+    "query": "set up one instruction file that works for claude code, cursor and copilot",
+    "should_trigger": true
+  },
+  {
+    "query": "claude.md examples for a python monorepo? write one for mine",
+    "should_trigger": true
+  },
+  {
+    "query": "audit our agents.md, I think half the commands in it are stale",
+    "should_trigger": true
+  },
+  {
+    "query": "should this rule go in CLAUDE.md or somewhere else? help me restructure our agent instructions",
+    "should_trigger": true
+  },
+  {
+    "query": "add nested AGENTS.md files for the frontend and backend packages",
+    "should_trigger": true
+  },
+  {
+    "query": "do a context engineering pass on our project memory file, it wastes tokens",
+    "should_trigger": true
+  },
+  {
+    "query": "write a README for this project",
+    "should_trigger": false
+  },
+  {
+    "query": "write a system prompt for my customer support chatbot",
+    "should_trigger": false
+  },
+  {
+    "query": "create a CONTRIBUTING.md with our PR process",
+    "should_trigger": false
+  },
+  {
+    "query": "convert my cursor rules into skills",
+    "should_trigger": false
+  },
+  {
+    "query": "add a hook that runs the linter after each edit",
+    "should_trigger": false
+  },
+  {
+    "query": "document the public API of this module with docstrings",
+    "should_trigger": false
+  },
+  {
+    "query": "write a skill that generates changelogs",
+    "should_trigger": false
+  },
+  {
+    "query": "what is the context window size of the latest models",
+    "should_trigger": false
+  },
+  {
+    "query": "write onboarding docs for new engineers joining the team",
+    "should_trigger": false
+  },
+  {
+    "query": "create a .gitignore for a Node project",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "skill_name": "technical-seo-audit",
+  "evals": [
+    {
+      "id": "t1-site-snapshot",
+      "prompt": "Audit this site snapshot before our relaunch on Monday and tell me what to fix first. The folder has the raw HTML of each template, urls.csv, robots.txt and the sitemap. Put your full audit in reply.md.",
+      "files": [
+        "evals/files/t1_site/"
+      ],
+      "assertions": [
+        "Finds the noindex page that is listed in the sitemap (copper-kettle)",
+        "Finds that /sale is blocked in robots.txt while noindex and in the sitemap, and explains that the noindex cannot be read",
+        "Finds the two conflicting canonicals on steel-kettle",
+        "Finds that the descale guide's content is missing from the raw HTML (JavaScript-rendered) and that its JSON-LD does not parse",
+        "Finds page 2 canonicalised to page 1, or the duplicate titles between them",
+        "Ranks indexing-blocking problems above cosmetic ones",
+        "Does not present title or description character ranges as a search-engine requirement",
+        "Lists what was not checked"
+      ]
+    },
+    {
+      "id": "t2-not-indexed",
+      "prompt": "Our pricing page has not shown up in Google for three weeks. Lighthouse gives it SEO 100, so the technical side should be fine, right? Here are the saved HTML, urls.csv, robots.txt and sitemap. What is going on? Put your answer in reply.md.",
+      "files": [
+        "evals/files/t2_pricing/"
+      ],
+      "assertions": [
+        "Names the canonical pointing to the staging host as the main cause",
+        "Gives the exact corrected canonical tag",
+        "Flags max-snippet:0 and what it does",
+        "Explains that a lab SEO score of 100 does not cover this",
+        "Does not blame the title length or robots.txt for the indexing problem",
+        "Says what still has to be checked (index status / search console, staging crawlability or response headers)",
+        "Makes no promise about when or whether the page will rank"
+      ]
+    },
+    {
+      "id": "t3-crawl-export",
+      "prompt": "Here is our crawler export. The tool's health score is 96, so are we done? Give me the top fixes. Put your answer in reply.md.",
+      "files": [
+        "evals/files/t3_crawl_export.csv"
+      ],
+      "assertions": [
+        "Says no, and that a tool score is not the definition of done",
+        "Finds the 3-hop redirect chain starting at /old-tents",
+        "Finds the orphan guide pages (0 inlinks)",
+        "Finds sitemap entries that are 301, 404 or canonicalised elsewhere",
+        "Finds the soft 404 (200 with 'Page not found')",
+        "Finds the sort / filter parameter URLs reached by internal links",
+        "Gives a threshold for at least three findings (for example chains at most 1 hop, 0 orphans, depth at most 3)",
+        "Lists what the export cannot show"
+      ]
+    }
+  ]
+}

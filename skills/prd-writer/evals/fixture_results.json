@@ -1,0 +1,20 @@
+[
+  {
+    "fixture": "good PRD",
+    "command": "python scripts/prd_check.py evals/fixtures/prd_good.md --notes evals/files/p1_saved_carts_notes.md",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "PRD CHECK\r\n  OK    all sections present; 4 requirements with ID, priority and acceptance check; numbers trace to the notes or are marked\r\n\r\nRESULT: PASS (0 fail, 0 warn)\r\n"
+  },
+  {
+    "fixture": "bad PRD",
+    "command": "python scripts/prd_check.py evals/fixtures/prd_bad.md --notes evals/files/p1_saved_carts_notes.md",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "PRD CHECK\r\n  FAIL  section 'Users' is missing\r\n  FAIL  section 'Non-goals' is missing\r\n  FAIL  section 'Risks and assumptions' is missing\r\n  FAIL  2 numbered requirement(s) found; write each as a line starting with an ID such as R1 (need at least 3)\r\n  FAIL  R1 (line 11): no acceptance check; add 'Accept: <what a tester does and sees>'\r\n  FAIL  R2 (line 12): no acceptance check; add 'Accept: <what a tester does and sees>'\r\n  FAIL  success metric without a number or [needs data]: '- Make carts easy to find again'\r\n  FAIL  line 4: number(s) ['250000'] are not in the notes; take them from the notes, or mark the line [proposed] or [assumption]\r\n  FAIL  line 8: number(s) ['15'] are not in the notes; take them from the notes, or mark the line [proposed] or [assumption]\r\n  WARN  R1 (line 11): untestable word(s) ['quickly', 'seamlessly']; replace with a number or a named behaviour\r\n  WARN  R2 (line 12): untestable word(s) ['intuitive']; replace with a number or a named behaviour\r\n  WARN  1 'TBD' marker(s); move each to Open questions with an owner\r\n  WARN  Open questions contains no question mark; phrase each item as a question someone can answer\r\n\r\nRESULT: FAIL (9 fail, 4 warn)\r\n"
+  }
+]

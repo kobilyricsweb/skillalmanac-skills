@@ -1,0 +1,44 @@
+{
+ "r1-changed-contract|baseline": [
+  {
+   "assertion": "review mentions billing/invoice.py or invoice.py",
+   "passed": true,
+   "detail": ""
+  }
+ ],
+ "r1-changed-contract|with_skill": [
+  {
+   "assertion": "review mentions billing/invoice.py or invoice.py",
+   "passed": true,
+   "detail": ""
+  }
+ ],
+ "r2-new-endpoints|baseline": [
+  {
+   "assertion": "review mentions requireOwner",
+   "passed": true,
+   "detail": ""
+  }
+ ],
+ "r2-new-endpoints|with_skill": [
+  {
+   "assertion": "review mentions requireOwner",
+   "passed": true,
+   "detail": ""
+  }
+ ],
+ "r3-quiet-refactor|baseline": [
+  {
+   "assertion": "review mentions 0007 or NOT NULL",
+   "passed": true,
+   "detail": ""
+  }
+ ],
+ "r3-quiet-refactor|with_skill": [
+  {
+   "assertion": "review mentions 0007 or NOT NULL",
+   "passed": true,
+   "detail": ""
+  }
+ ]
+}

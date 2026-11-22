@@ -1,0 +1,20 @@
+[
+  {
+    "fixture": "good draft",
+    "command": "python scripts/reply_check.py evals/fixtures/draft_good.md --ticket evals/files/c1_ticket.txt --policy evals/files/policy.md",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "SUPPORT REPLY CHECK\r\n  OK    no unbacked numbers, promise words or placeholders; internal note complete\r\n\r\n  Questions in the ticket - confirm by eye that the reply answers each one:\r\n   [ ] How long will the refund take?\r\n   [ ] Do I really have to pack up broken glass and take it to the post office myself?\r\n\r\nRESULT: PASS (0 fail, 0 warn)\r\nNot checked: whether the policy was applied correctly. A person approves the reply before sending.\r\n"
+  },
+  {
+    "fixture": "bad draft",
+    "command": "python scripts/reply_check.py evals/fixtures/draft_bad.md --ticket evals/files/c1_ticket.txt --policy evals/files/policy.md",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "SUPPORT REPLY CHECK\r\n  FAIL  no '## Internal note' heading\r\n  FAIL  UNBACKED NUMBER '2' is in neither the policy nor the ticket: \"...y and you will definitely see it within 2-3 business days...\"\r\n  FAIL  PROMISE WORD 'guaranteed': the policy does not use it; say what will happen and when, as the policy states it\r\n  FAIL  PROMISE WORD 'definitely': the policy does not use it; say what will happen and when, as the policy states it\r\n  FAIL  PROMISE WORD 'immediately': the policy does not use it; say what will happen and when, as the policy states it\r\n  FAIL  PROMISE WORD 'rest assured': the policy does not use it; say what will happen and when, as the policy states it\r\n  FAIL  square-bracket placeholder left in the reply: '[Customer Name]'\r\n  WARN  blaming or lecturing phrase 'you should have'\r\n  WARN  blaming or lecturing phrase 'per our policy'\r\n  WARN  3 apologies; one is enough\r\n  WARN  the customer's name 'Teresa' is not used in the reply\r\n\r\n  Questions in the ticket - confirm by eye that the reply answers each one:\r\n   [ ] How long will the refund take?\r\n   [ ] Do I really have to pack up broken glass and take it to the post office myself?\r\n\r\nRESULT: FAIL (7 fail, 4 warn)\r\nNot checked: whether the policy was applied correctly. A person approves the reply before sending.\r\n"
+  }
+]

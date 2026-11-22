@@ -1,0 +1,82 @@
+[
+  {
+    "query": "seo audit of https://example-shop.com please - titles, canonicals, robots, sitemap, the whole technical side",
+    "should_trigger": true
+  },
+  {
+    "query": "why isn't this page indexed? GSC says 'Crawled - currently not indexed' for about 3k of my product URLs",
+    "should_trigger": true
+  },
+  {
+    "query": "our robots.txt might be blocking /assets/ and google can't render the pages properly. can you check how rendering looks vs the raw HTML",
+    "should_trigger": true
+  },
+  {
+    "query": "check my hreflang setup, we have en-us, en-gb and de and I think the return tags are broken",
+    "should_trigger": true
+  },
+  {
+    "query": "i migrated to a new domain last week and traffic fell off a cliff. can you check redirects, canonicals and whether the old sitemap is still being submitted",
+    "should_trigger": true
+  },
+  {
+    "query": "got a bunch of pages with both a canonical to another URL and noindex. is that a problem? audit the template and tell me what google will do",
+    "should_trigger": true
+  },
+  {
+    "query": "Run a technical SEO check on our blog: duplicate titles, missing meta descriptions, paginated pages, sitemap lastmod, the usual",
+    "should_trigger": true
+  },
+  {
+    "query": "GSC shows 'Duplicate, Google chose different canonical than user' on lots of pages. figure out why",
+    "should_trigger": true
+  },
+  {
+    "query": "Is our JS-rendered React site getting indexed properly? Compare what Googlebot sees to what users see and flag anything blocking indexing",
+    "should_trigger": true
+  },
+  {
+    "query": "sitemap has 120k URLs but only 9k are indexed. diagnose - is it noindex, soft 404s, thin pages, canonical conflicts, what?",
+    "should_trigger": true
+  },
+  {
+    "query": "do keyword research for a new site about cast iron cookware, what are people searching",
+    "should_trigger": false
+  },
+  {
+    "query": "write the intro and 5 sections of an article about how to season a cast iron pan",
+    "should_trigger": false
+  },
+  {
+    "query": "draft an outreach email for guest posts and link building to home improvement blogs",
+    "should_trigger": false
+  },
+  {
+    "query": "write me the Product schema JSON-LD for this page with price and availability",
+    "should_trigger": false
+  },
+  {
+    "query": "my LCP is 4.2s, help me refactor the image loading code and lazy load the hero properly in Next.js",
+    "should_trigger": false
+  },
+  {
+    "query": "run an accessibility audit on our checkout - contrast, aria labels, keyboard nav",
+    "should_trigger": false
+  },
+  {
+    "query": "can you do a security audit of our nginx config? worried about headers and TLS settings",
+    "should_trigger": false
+  },
+  {
+    "query": "what's the best anchor text distribution for backlinks to a money page?",
+    "should_trigger": false
+  },
+  {
+    "query": "write a title tag and meta description for each of these 10 category pages",
+    "should_trigger": false
+  },
+  {
+    "query": "set up a 301 redirect map in apache from /old-blog/* to /blog/*, just need the .htaccess rules",
+    "should_trigger": false
+  }
+]

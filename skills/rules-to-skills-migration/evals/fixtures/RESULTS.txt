@@ -1,0 +1,49 @@
+### mixed rule set (eval fixture m1)
+$ python scripts/rules_inventory.py evals/files/m1-full-migration/crm-web
+exit code 0 (expected 0) -> ok
+7 source file(s); 1743 bytes are loaded in every session today.
+
+| File | Format | Activation | Lines | Steps | Suggested destination |
+|---|---|---|---|---|---|
+| .cursorrules | cursor-legacy | always | 4 | 0 | root AGENTS.md |
+| .cursor/rules/core.mdc | cursor-rule | always | 5 | 0 | root AGENTS.md |
+| .cursor/rules/db-migration.mdc | cursor-rule | model-decision | 6 | 5 | skill |
+| .cursor/rules/hotfix.mdc | cursor-rule | always | 17 | 7 | skill, with a one-line pointer in AGENTS.md |
+| .cursor/rules/react-components.mdc | cursor-rule | glob | 3 | 0 | src/components/AGENTS.md (nested) |
+| .cursor/rules/release-process.mdc | cursor-rule | model-decision | 8 | 6 | skill |
+| .cursor/rules/scratch.mdc | cursor-rule | manual | 5 | 0 | skill |
+
+Flags:
+- .cursor/rules/hotfix.mdc: procedure filed as always-on (17 lines, 7 steps): loads in every session
+- .cursor/rules/scratch.mdc: no description: one must be written before it can trigger as a skill
+
+Same line in more than one source (merge once):
+- "no default exports except nextjs pages" in .cursor/rules/core.mdc, .cursorrules
+
+Not detected: reworded duplicates, conflicting facts between sources, and rules kept in application settings. Read the sources for those.
+
+### windsurf and copilot set (eval fixture m3)
+$ python scripts/rules_inventory.py evals/files/m3-plan-only/data-platform
+exit code 0 (expected 0) -> ok
+5 source file(s); 594 bytes are loaded in every session today.
+
+| File | Format | Activation | Lines | Steps | Suggested destination |
+|---|---|---|---|---|---|
+| .windsurfrules | windsurf-legacy | always | 2 | 0 | root AGENTS.md |
+| .github/copilot-instructions.md | copilot-instructions | always | 6 | 0 | root AGENTS.md |
+| .windsurf/rules/general.md | windsurf-rule | always | 4 | 0 | root AGENTS.md |
+| .windsurf/rules/incident-runbook.md | windsurf-rule | model-decision | 6 | 5 | skill |
+| .windsurf/rules/python-style.md | windsurf-rule | glob | 3 | 0 | root AGENTS.md (pattern spans the repo; exact glob scope is lost) |
+
+Not detected: reworded duplicates, conflicting facts between sources, and rules kept in application settings. Read the sources for those.
+
+### repo with no rules
+$ python scripts/rules_inventory.py evals/fixtures/empty_repo
+exit code 0 (expected 0) -> ok
+No rule or instruction files of a known format were found. User-level rules stored in an application's settings are not on disk; ask the user.
+
+### missing folder
+$ python scripts/rules_inventory.py does-not-exist
+exit code 2 (expected 2) -> ok
+<local-path> is not a folder
+

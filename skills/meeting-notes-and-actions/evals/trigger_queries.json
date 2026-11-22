@@ -1,0 +1,82 @@
+[
+  {
+    "query": "here's the transcript from today's sync, write up the meeting notes with action items",
+    "should_trigger": true
+  },
+  {
+    "query": "summarize this client call and tell me who owes what",
+    "should_trigger": true
+  },
+  {
+    "query": "minutes for this retro pls, need to send to the team",
+    "should_trigger": true
+  },
+  {
+    "query": "turn these zoom captions into notes, decisions and next steps",
+    "should_trigger": true
+  },
+  {
+    "query": "ai note taker gave me this raw transcript. can you make proper meeting minutes",
+    "should_trigger": true
+  },
+  {
+    "query": "what did we actually decide in this meeting? transcript attached",
+    "should_trigger": true
+  },
+  {
+    "query": "write a recap email from this call transcript with each person's to-dos",
+    "should_trigger": true
+  },
+  {
+    "query": "pull the action items and owners out of these meeting notes",
+    "should_trigger": true
+  },
+  {
+    "query": "I missed the standup, here's the recording text, what do I need to know and do",
+    "should_trigger": true
+  },
+  {
+    "query": "clean up my rough notes from the board meeting into formal minutes",
+    "should_trigger": true
+  },
+  {
+    "query": "transcribe this audio file of our meeting",
+    "should_trigger": false
+  },
+  {
+    "query": "write an agenda for next week's planning meeting",
+    "should_trigger": false
+  },
+  {
+    "query": "summarize this 30-page PDF report",
+    "should_trigger": false
+  },
+  {
+    "query": "schedule a meeting with the design team for Tuesday",
+    "should_trigger": false
+  },
+  {
+    "query": "take notes on this youtube lecture about photosynthesis",
+    "should_trigger": false
+  },
+  {
+    "query": "write talking points for my 1:1 with my manager",
+    "should_trigger": false
+  },
+  {
+    "query": "summarize this email thread about the vendor contract",
+    "should_trigger": false
+  },
+  {
+    "query": "create a project plan with milestones from our kickoff",
+    "should_trigger": false
+  },
+  {
+    "query": "what's a good template for a meeting invitation?",
+    "should_trigger": false
+  },
+  {
+    "query": "translate these meeting minutes into Spanish",
+    "should_trigger": false
+  }
+]

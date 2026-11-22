@@ -1,0 +1,82 @@
+[
+  {
+    "query": "here's my resume and the job posting, can you tailor it for this role",
+    "should_trigger": true
+  },
+  {
+    "query": "optimize my cv for this job ad so it gets past the ATS",
+    "should_trigger": true
+  },
+  {
+    "query": "which keywords from this job description are missing from my resume?",
+    "should_trigger": true
+  },
+  {
+    "query": "rewrite my resume to match this customer success posting, I'm coming from retail",
+    "should_trigger": true
+  },
+  {
+    "query": "chatgpt resume help: I need my resume targeted at this financial analyst job",
+    "should_trigger": true
+  },
+  {
+    "query": "can you adjust my CV for the attached vacancy without making stuff up",
+    "should_trigger": true
+  },
+  {
+    "query": "I'm a teacher applying for an instructional designer job. make my resume fit the listing",
+    "should_trigger": true
+  },
+  {
+    "query": "tweak my resume bullets for this posting, and tell me what I'm missing",
+    "should_trigger": true
+  },
+  {
+    "query": "ai resume builder style request: take my old resume + this job link text and give me a targeted version",
+    "should_trigger": true
+  },
+  {
+    "query": "is my resume a good match for this job? fix it if not",
+    "should_trigger": true
+  },
+  {
+    "query": "write a cover letter for this job",
+    "should_trigger": false
+  },
+  {
+    "query": "prep me for the interview on Thursday, ask me likely questions",
+    "should_trigger": false
+  },
+  {
+    "query": "rewrite my LinkedIn about section",
+    "should_trigger": false
+  },
+  {
+    "query": "write a job description for a senior accountant we want to hire",
+    "should_trigger": false
+  },
+  {
+    "query": "screen these 40 resumes and rank the candidates for me",
+    "should_trigger": false
+  },
+  {
+    "query": "how do I list AI skills on a resume in general?",
+    "should_trigger": false
+  },
+  {
+    "query": "draft a resignation letter",
+    "should_trigger": false
+  },
+  {
+    "query": "summarize this candidate's resume in three bullets for the hiring manager",
+    "should_trigger": false
+  },
+  {
+    "query": "make me a resume, I have 5 years as a nurse, just invent some good achievements",
+    "should_trigger": false
+  },
+  {
+    "query": "convert my resume PDF to Word",
+    "should_trigger": false
+  }
+]

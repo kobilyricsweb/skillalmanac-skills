@@ -1,0 +1,29 @@
+[
+  {
+    "fixture": "good quiz",
+    "command": "python scripts/quiz_check.py evals/fixtures/quiz_good.md --source evals/files/q1_harbor_town.md --count 5",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "QUIZ CHECK\r\n  5 questions; answer letters: A=2 B=1 C=1 D=1; levels: recall=2 understand=2 apply=1\r\n  OK    format valid; every answer cites a line that exists in the material\r\n\r\nRESULT: PASS (0 fail, 0 warn)\r\nNot checked: that each quoted line really proves the answer, and that wrong options are clearly wrong. Read the key once before use.\r\n"
+  },
+  {
+    "fixture": "bad quiz",
+    "command": "python scripts/quiz_check.py evals/fixtures/quiz_bad.md --source evals/files/q1_harbor_town.md --count 10",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "QUIZ CHECK\r\n  5 questions; answer letters: A=0 B=4 C=0 D=0; levels: recall=4 understand=0 apply=0\r\n  FAIL  5 questions found, 10 were requested\r\n  FAIL  Q1: option 'all of the above' tests reading the options, not the material; write a real alternative\r\n  FAIL  Q1: source quote is not in the material word for word: \"The first public building was the salt store, built by the f\"\r\n  FAIL  Q2: two options are the same\r\n  FAIL  Q2: source quote is under 4 words\r\n  FAIL  Q3: needs exactly four options lettered A to D (found ABC)\r\n  FAIL  Q3: level tag must be one of recall, understand, apply (found 'hard')\r\n  FAIL  Q4: 'Answer:' must be one letter that matches an option (found 'E')\r\n  FAIL  Q4: no 'Source:' line\r\n  FAIL  the correct option is clearly the longest one in 4 of 4 questions; even out option lengths\r\n  WARN  Q1: no 'Why:' line for the answer key\r\n  WARN  Q2: no 'Why:' line for the answer key\r\n  WARN  Q3: no 'Why:' line for the answer key\r\n  WARN  Q4: no 'Why:' line for the answer key\r\n  WARN  Q5: no 'Why:' line for the answer key\r\n  WARN  Q5: negative wording in the question; put NOT / EXCEPT in capitals or rephrase positively\r\n  WARN  the same answer letter appears 4 times in a row\r\n  WARN  only 0 of 5 questions go beyond recall\r\n\r\nRESULT: FAIL (10 fail, 8 warn)\r\nNot checked: that each quoted line really proves the answer, and that wrong options are clearly wrong. Read the key once before use.\r\n"
+  },
+  {
+    "fixture": "student copy has no answers",
+    "command": "python scripts/quiz_check.py evals/fixtures/quiz_good.md --student",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "# Port Calder herring trade: check quiz\r\n\r\nName: ____________________   Date: ____________\r\n\r\n**1.** What was the first public building in Port Calder?\r\n\r\n   A. The town hall\r\n   B. The salt store\r\n   C. The smokehouse\r\n   D. The museum\r\n\r\n**2.** Why did the herring fleet grow so much after 1823?\r\n\r\n   A. The council paid fishermen to build boats\r\n   B. Steam boats could fish in bad weather\r\n   C. A new harbor master protected the bay\r\n   D. The canal made transport cheaper and faster\r\n\r\n**3.** What did the Net Rule of 1838 ban?\r\n\r\n   A. Nets with a mesh smaller than one inch\r\n   B. Fishing in Calder Bay during autumn\r\n   C. Boats with more than three sails\r\n   D. Selling herring outside the town\r\n\r\n**4.** According to the reading, why did the Net Rule stop working?\r\n\r\n   A. Captains voted to cancel the rule\r\n   B. The rule only applied to steam boats\r\n   C. Nobody was paid to enforce it any more\r\n   D. Young herring learned to avoid nets\r\n\r\n**5.** A town today has a good fishing rule but plans to cut the inspector's job to save money. Based on Port Calder's story, what is most likely to happen?\r\n\r\n   A. The rule will be ignored within a few seasons\r\n   B. Fishermen will ask for a stricter rule\r\n   C. The fish will move to another bay\r\n   D. Catches will fall in the first year\r\n\r\n"
+  }
+]

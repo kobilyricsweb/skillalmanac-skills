@@ -1,0 +1,55 @@
+{
+  "skill_name": "agent-hooks-authoring",
+  "note": "Scripted assertions are run by ../_tools/check_runs.py, which fires the configured hook commands with sample payloads. It is independent of the skill's own lint script.",
+  "evals": [
+    {
+      "id": "h1-protect-files",
+      "prompt": "Add a hook to this project (shop-api/) that stops the coding agent from editing .env files, anything under migrations/, and package-lock.json. The team is on macOS, Linux and Windows (Git Bash). Write a short reply.md in the working folder saying what you did.",
+      "files": [
+        "evals/files/h1-protect-files/shop-api/"
+      ],
+      "assertions": [
+        "[script] settings.json is valid JSON and the existing permissions and Notification hook are still there",
+        "[script] An Edit of .env, a Write of migrations/002_add.sql and an Edit of package-lock.json are each blocked (exit 2 or a deny decision)",
+        "[script] An Edit of .env.production is blocked",
+        "[script] A path written as src/../.env and a Windows backslash path into migrations are blocked",
+        "[script] Edits of src/app.js and docs/migrations-guide.md are allowed",
+        "[judge] The reply states that the hook was test-fired with sample input and shows or summarises the results",
+        "[judge] The reply states the limit that shell commands can still change these files, or the hook also covers shell commands"
+      ]
+    },
+    {
+      "id": "h2-format-and-test-gate",
+      "prompt": "Set up two hooks for this repo (shop-api/): (1) after the coding agent edits a .js or .ts file, run our formatter on just that file (npm run format -- <file>); (2) don't let the agent end its turn while npm test is failing, it should keep working until the tests pass. The team is on macOS, Linux and Windows (Git Bash). Write a short reply.md in the working folder saying what you did.",
+      "files": [
+        "evals/files/h2-format-and-test-gate/shop-api/"
+      ],
+      "assertions": [
+        "[script] settings.json is valid JSON and the existing permissions and Notification hook are still there",
+        "[script] After an Edit of src/app.js the formatter ran on that file and only that file",
+        "[script] After an Edit of README.md the formatter did not run",
+        "[script] A file whose path contains a space is formatted correctly",
+        "[script] With failing tests the Stop hook blocks and gives a non-empty reason; with passing tests it does not block",
+        "[judge] The Stop hook cannot loop forever: it checks stop_hook_active, bounds retries, or the reply explains the built-in cap it relies on",
+        "[judge] The reply states that both hooks were test-fired with sample input, including the failing-test case"
+      ]
+    },
+    {
+      "id": "h3-debug-broken-hook",
+      "prompt": "The hook in infra-tools/ is supposed to block git force-pushes and rm -rf, but yesterday the agent still ran a force-push while working inside packages/api. Find out why and fix it. Write reply.md in the working folder with the causes you found.",
+      "files": [
+        "evals/files/h3-debug-broken-hook/infra-tools/"
+      ],
+      "assertions": [
+        "[script] git push --force origin main, git push origin main --force and git push -f origin main are blocked",
+        "[script] rm -rf build/ and rm -fr build are blocked",
+        "[script] git status, git push origin main, rm build/tmp.txt and grep -rf patterns.txt src are allowed",
+        "[script] The hook still blocks when the working directory is packages/api",
+        "[script] The timeout is no longer 5000",
+        "[judge] The reply names the wrong input field (cmd instead of command) as a cause",
+        "[judge] The reply names the exit code (1 does not block, 2 does) as a cause",
+        "[judge] The reply names the relative script path as the reason it failed inside packages/api"
+      ]
+    }
+  ]
+}

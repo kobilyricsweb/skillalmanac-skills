@@ -1,0 +1,7 @@
+{
+  "permissions": { "allow": ["Bash(npm test)"] },
+  "hooks": {
+    "PreToolUse": [ { "matcher": "Edit|Write", "hooks": [ { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/guard.js", "timeout": 10 } ] } ],
+    "Stop": [ { "hooks": [ { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/gate.js", "timeout": 300 } ] } ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "skill_name": "structured-data-jsonld",
+  "evals": [
+    {
+      "id": "s1-review-article",
+      "prompt": "Add schema to this review page so we get stars and FAQ dropdowns in Google. Give me the JSON-LD to paste and tell me what to expect. Put your answer in reply.md.",
+      "files": [
+        "evals/files/s1_blender_review.html"
+      ],
+      "assertions": [
+        "States that FAQ rich results are no longer shown, and does not promise FAQ dropdowns",
+        "Does not put the Amazon rating (4.8 / 2,314) into aggregateRating or any rating markup",
+        "Marks up the editorial score as a Review by the named author with ratingValue 8.7 and bestRating 10",
+        "Dates, author, canonical URL and price in the markup match the visible page",
+        "The JSON-LD parses and uses absolute URLs",
+        "Does not rely on HowTo markup for a rich result",
+        "Says markup gives eligibility, not a guarantee, and points to the official tester"
+      ]
+    },
+    {
+      "id": "s2-fix-errors",
+      "prompt": "Search Console shows structured data errors on this page. Fix them and give me the corrected JSON-LD. Put your answer in reply.md.",
+      "files": [
+        "evals/files/s2_app_page.html"
+      ],
+      "assertions": [
+        "Adds offers with a price to SoftwareApplication using only prices visible on the page",
+        "Changes the rating to the visible values (4.6 from 212) and says why",
+        "Fixes the date to ISO 8601",
+        "Makes image and @id absolute",
+        "Removes or flags the Organization's rating of itself as not eligible",
+        "Flags HowTo as earning no rich result",
+        "Adds a time zone to uploadDate or notes the page is not a watch page",
+        "The corrected JSON-LD parses"
+      ]
+    },
+    {
+      "id": "s3-list-page",
+      "prompt": "Make this 'best of' page eligible for review stars and a carousel in Google. Give me the JSON-LD. Put your answer in reply.md.",
+      "files": [
+        "evals/files/s3_category.html"
+      ],
+      "assertions": [
+        "Says rating markup is not allowed on a list / 'best of' page and removes the page-level aggregateRating",
+        "Does not keep per-item aggregateRating on the list page",
+        "Says a carousel is not available for this kind of page (restricted types or limited beta)",
+        "Offers the correct alternative: Article plus ItemList of URLs, stars on the individual review pages",
+        "Does not promise stars or a carousel",
+        "The JSON-LD parses and matches the visible page (author, date, five items)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+ "grader": "sub-agent, 'sonnet' model alias, 2026-11-20",
+ "ab_key": {
+  "t1-undo-pushed-commit": "A=with_skill",
+  "t2-diagnose-log": "A=with_skill",
+  "t3-rotate-password": "A=baseline"
+ },
+ "grading": {
+  "t1-undo-pushed-commit": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Commands exact, copyable, in a code block, including the push",
+      "passed": true,
+      "evidence": "```\ngit revert HEAD\ngit push origin main\n```"
+     },
+     {
+      "text": "Warns against reset plus force-push on shared branch",
+      "passed": true,
+      "evidence": "\"Warning: do not use `git reset` followed by `git push --force` on main, because teammates already pulled the commit...\""
+     },
+     {
+      "text": "Nothing needed is missing and nothing is wrong",
+      "passed": true,
+      "evidence": "Revert + push is correct; minor omission: no mention of merge commit (-m 1) or git pull first, not essential."
+     },
+     {
+      "text": "No greeting, restating, or closing offer",
+      "passed": true,
+      "evidence": "Starts directly with \"Use `git revert`.\" and ends on the warning."
+     }
+    ],
+    "score": 9
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Commands exact, copyable, in a code block, including the push",
+      "passed": true,
+      "evidence": "Indented block: git checkout main / git pull / git revert HEAD / git push origin main (indented, not fenced, but still a code block)."
+     },
+     {
+      "text": "Warns against reset plus force-push on shared branch",
+      "passed": true,
+      "evidence": "\"Do not do `git reset --hard` + `git push --force` on main.\""
+     },
+     {
+      "text": "Nothing needed is missing and nothing is wrong",
+      "passed": false,
+      "evidence": "Adds useful merge (-m 1) and -n cases, but the force-push-if-secret-leaked advice is shaky, and broken-English prose (\"Revert make new commit\", \"Big mess, lost work, angry team\") hurts clarity; the safety warning is clipped."
+     },
+     {
+      "text": "No greeting, restating, or closing offer",
+      "passed": false,
+      "evidence": "Opens by restating the situation: \"Commit pushed to main, teammates pulled.\""
+     }
+    ],
+    "score": 6
+   },
+   "preference": "A",
+   "reason": "A gives the exact fix and a clear complete warning in six lines. B restates the question, pads with extra cases and slangy broken grammar, and the secret-leak force-push advice adds risk."
+  },
+  "t2-diagnose-log": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Root cause right: new pool per request, never closed",
+      "passed": true,
+      "evidence": "\"each request builds a new `Pool` ... and never closes it, so Postgres connections leak\""
+     },
+     {
+      "text": "Tied to file and line",
+      "passed": true,
+      "evidence": "\"`orders-api/src/db.js:4`, called at `orders-api/src/routes/orders.js:7`\" (verified: orders.js line 7 is `const pool = getPool();`, db.js line 4 is new Pool)."
+     },
+     {
+      "text": "Fix given as code: one shared pool created once",
+      "passed": true,
+      "evidence": "db.js snippet: `const pool = new Pool({...max: 20}); module.exports = { getPool: () => pool };` keeps route unchanged compatible."
+     },
+     {
+      "text": "No filler, hedging or restating",
+      "passed": true,
+      "evidence": "Starts with \"Cause:\"; no preamble."
+     }
+    ],
+    "score": 9
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Root cause right: new pool per request, never closed",
+      "passed": true,
+      "evidence": "\"`getPool()` in `src/db.js` builds a new `Pool` (max 20) on every call, and `src/routes/orders.js` calls it on every request... none are ever closed.\""
+     },
+     {
+      "text": "Tied to file and line",
+      "passed": false,
+      "evidence": "Names files (src/db.js, src/routes/orders.js) but gives no line number."
+     },
+     {
+      "text": "Fix given as code: one shared pool created once",
+      "passed": false,
+      "evidence": "Only an inline one-liner inside a numbered step: `const pool = new Pool(...); module.exports = { pool };`, route change described in prose, no code block."
+     },
+     {
+      "text": "No filler, hedging or restating",
+      "passed": true,
+      "evidence": "Starts with \"Cause:\"; no preamble."
+     }
+    ],
+    "score": 6
+   },
+   "preference": "A",
+   "reason": "A cites exact lines and provides copyable code blocks for the fix, B lacks line numbers and gives the fix mostly as prose. Both identify the cause correctly."
+  },
+  "t3-rotate-password": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Safe order: new credential first, servers restarted one at a time",
+      "passed": true,
+      "evidence": "Step 1 creates app_user_b, step 3 tests it, step 4 \"one server at a time: drain ... Restart ... put it back in\", old role touched only in step 6."
+     },
+     {
+      "text": "Old-credential removal marked as point of no return with a pre-check",
+      "passed": false,
+      "evidence": "Step 5 has the pg_stat_activity check and step 6 \"Retire the old role\", but nothing is called a point of no return; the rollback line even treats it as reversible."
+     },
+     {
+      "text": "Warning is a complete unambiguous sentence",
+      "passed": false,
+      "evidence": "No warning sentence about irreversibility exists; only \"Rollback: until step 6, point DATABASE_URL back at app_user.\""
+     },
+     {
+      "text": "SQL and commands exact and copyable",
+      "passed": true,
+      "evidence": "CREATE ROLE app_user_b LOGIN PASSWORD '<new>' IN ROLE app_user; select usename, count(*) from pg_stat_activity group by 1; ALTER ROLE app_user NOLOGIN; (inline, with one dangling \"...\" in ALTER ROLE ... SET)."
+     }
+    ],
+    "score": 6
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Safe order: new credential first, servers restarted one at a time",
+      "passed": true,
+      "evidence": "Step 2 creates app_user_v2; step 3 \"Roll one server at a time: drain from the load balancer, restart, confirm healthy, re-add, next.\"; old role changed only in step 5."
+     },
+     {
+      "text": "Old-credential removal marked with a pre-check",
+      "passed": true,
+      "evidence": "\"Warning: step 5 invalidates the old password, so run it only after the count above is 0 on all three servers and the app is healthy.\" preceded by the pg_stat_activity check. Not literally labelled point of no return, but clearly gated."
+     },
+     {
+      "text": "Warning is a complete unambiguous sentence",
+      "passed": true,
+      "evidence": "Same full sentence quoted above."
+     },
+     {
+      "text": "SQL and commands exact and copyable",
+      "passed": true,
+      "evidence": "Fenced bash and sql blocks: openssl rand ..., CREATE ROLE app_user_v2 ... IN ROLE app_user INHERIT;, ALTER ROLE app_user PASSWORD '<RANDOM_UNUSED>';"
+     }
+    ],
+    "score": 8
+   },
+   "preference": "B",
+   "reason": "B gates the old-password invalidation with an explicit pre-check and a full warning sentence in fenced copyable blocks. A is sound in order but never flags the final step as dangerous."
+  }
+ }
+}

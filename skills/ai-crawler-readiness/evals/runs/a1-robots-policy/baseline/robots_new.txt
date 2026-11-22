@@ -1,0 +1,29 @@
+# Training crawlers: blocked (no use of content to train models)
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Meta-ExternalAgent
+User-agent: Bytespider
+User-agent: CCBot
+Disallow: /
+
+# AI assistants that cite and link to our articles: allowed (search and user-triggered fetches)
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /internal-search
+
+# All other crawlers (including Googlebot and Bingbot): unchanged
+User-agent: *
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /internal-search
+
+Sitemap: https://www.harborlight-press.example/sitemap.xml

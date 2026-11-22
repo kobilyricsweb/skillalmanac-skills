@@ -1,0 +1,47 @@
+[
+  {
+    "fixture": "clean file",
+    "command": "python scripts/sheet_profile.py evals/fixtures/good.csv",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "SPREADSHEET AUDIT\r\n  Source: delimiter ','\r\n  3 data rows, 3 columns; data starts at file row 2\r\n\r\nCOLUMNS\r\n  A 'id': number, 3 values, 0 blank, min 1, max 3, sum 6, mean 2\r\n  B 'name': text, 3 filled, 0 blank, 3 distinct\r\n  C 'amount': number, 3 values, 0 blank, min 10, max 30, sum 60.5, mean 20.17\r\n\r\nDATA PROBLEMS (none found)\r\n\r\nNot checked: whether values are true, near-duplicates that differ by a typo, units, and anything on other sheets.\r\n"
+  },
+  {
+    "fixture": "defective file",
+    "command": "python scripts/sheet_profile.py evals/fixtures/bad.csv",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "SPREADSHEET AUDIT\r\n  Source: delimiter ','\r\n  38 data rows, 5 columns; data starts at file row 2\r\n\r\nCOLUMNS\r\n  A 'Order ID': text, 38 filled, 0 blank, 36 distinct\r\n  B 'Date': date, 38 filled, 0 blank, formats: YYYY-MM-DD x38\r\n  C 'Region': text, 38 filled, 0 blank, 8 distinct\r\n      values: East x10; North x12; South x10; West x6\r\n  D 'Rep': text, 38 filled, 0 blank, 5 distinct\r\n      values: Avery x6; Blake x10; Casey x9; Devon x10; Emery x3\r\n  E 'Amount': number, 37 values, 1 blank, min 325, max 4,125, sum 81,600, mean 2,205.41\r\n\r\nDATA PROBLEMS\r\n  1. TOTAL ROWS inside the data at file rows [40]: summing the column counts these twice\r\n  2. 2 EXACT DUPLICATE row(s): file rows 17 (same as 10), 33 (same as 25). Ask whether they are real repeats or copy errors\r\n  3. column 'Order ID': mostly unique, but 2 value(s) REPEAT after ignoring case and spaces (36 distinct of 38): 'so-1009' at rows [10, 17]; 'so-1023' at rows [25, 33]. If this column should be unique per row, these are double entries\r\n  4. column 'Region': SPELLING VARIANTS of the same value (case or spaces): 'North' / 'north ' / 'NORTH' / ' North' / 'north'. Grouping on the raw text splits these\r\n  5. column 'Amount': 8 NUMBER(S) STORED AS TEXT (currency sign, comma, percent, brackets or spaces), e.g. row 5; a plain spreadsheet SUM skips or misreads these\r\n  6. column 'Amount': 1 blank cell(s); decide whether blank means zero or unknown before averaging\r\n\r\nNot checked: whether values are true, near-duplicates that differ by a typo, units, and anything on other sheets.\r\n"
+  },
+  {
+    "fixture": "compute on defective file",
+    "command": "python scripts/sheet_profile.py evals/fixtures/bad.csv --sum Amount --by Region",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "COMPUTE sum of 'Amount' by 'Region'  [left out: 1 total row(s), 0 blank row(s)]\r\n\r\n  -- duplicates kept: 38 rows --\r\n  East: 20,450  (n=10)\r\n  North: 25,025  (n=11)\r\n  South: 22,575  (n=10)\r\n  West: 13,550  (n=6)\r\n  ALL: 81,600  (n=37)\r\n  skipped 1 row(s) with a blank or non-numeric 'Amount': file rows [14]\r\n\r\n  -- exact duplicates removed: 36 rows --\r\n  East: 17,275  (n=9)\r\n  North: 24,700  (n=10)\r\n  South: 22,575  (n=10)\r\n  West: 13,550  (n=6)\r\n  ALL: 78,100  (n=35)\r\n  skipped 1 row(s) with a blank or non-numeric 'Amount': file rows [14]\r\n\r\nReport which of these figures you used and why.\r\n"
+  },
+  {
+    "fixture": "xlsx with unique-by",
+    "command": "python scripts/sheet_profile.py evals/files/s3_customers.xlsx --sum Monthly fee --by Plan --unique-by Email",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "COMPUTE sum of 'Monthly fee' by 'Plan'  [left out: 1 total row(s), 0 blank row(s)]\r\n\r\n  -- duplicates kept: 55 rows --\r\n  Basic: 126  (n=14)\r\n  Pro: 957  (n=33)\r\n  Team: 632  (n=8)\r\n  ALL: 1,715  (n=55)\r\n\r\n  -- exact duplicates removed: 53 rows --\r\n  Basic: 117  (n=13)\r\n  Pro: 957  (n=33)\r\n  Team: 553  (n=7)\r\n  ALL: 1,627  (n=53)\r\n\r\n  -- one row per distinct 'Email' (case and spaces ignored, first row kept): 50 rows --\r\n  Basic: 117  (n=13)\r\n  Pro: 870  (n=30)\r\n  Team: 553  (n=7)\r\n  ALL: 1,540  (n=50)\r\n\r\nReport which of these figures you used and why.\r\n"
+  },
+  {
+    "fixture": "missing file",
+    "command": "python scripts/sheet_profile.py nope.csv",
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "ERROR: cannot read nope.csv: No such file or directory. Check the path.\r\n"
+  }
+]

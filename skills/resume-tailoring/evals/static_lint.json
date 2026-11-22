@@ -1,0 +1,37 @@
+{
+  "skill": "resume-tailoring",
+  "fail": 0,
+  "warn": 0,
+  "items": [
+    {
+      "level": "PASS",
+      "code": "frontmatter-keys",
+      "message": "only open-spec keys used"
+    },
+    {
+      "level": "PASS",
+      "code": "name-format",
+      "message": "name 'resume-tailoring' is valid"
+    },
+    {
+      "level": "PASS",
+      "code": "description-length",
+      "message": "description is 553 chars"
+    },
+    {
+      "level": "PASS",
+      "code": "body-lines",
+      "message": "SKILL.md body has 83 lines"
+    },
+    {
+      "level": "PASS",
+      "code": "body-tokens",
+      "message": "body is about 1301 tokens by chars/4"
+    },
+    {
+      "level": "PASS",
+      "code": "package-size",
+      "message": "package is 20403 bytes in 4 files"
+    }
+  ]
+}

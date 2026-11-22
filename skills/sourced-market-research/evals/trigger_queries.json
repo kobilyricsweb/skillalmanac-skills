@@ -1,0 +1,82 @@
+[
+  {
+    "query": "do a competitor analysis of Notion, Coda and Craft for small agencies. every number needs a source and tell me which ones you only saw in a snippet",
+    "should_trigger": true
+  },
+  {
+    "query": "market research: how big is the US pet insurance market and who are the top 5 players? cite everything, mark estimates as estimates",
+    "should_trigger": true
+  },
+  {
+    "query": "i wrote this research draft on the EV charging market - fact check it against the sources i linked and flag any claim the sources don't support",
+    "should_trigger": true
+  },
+  {
+    "query": "need a source ledger for our competitor pricing table. which pages did you actually open vs only saw in search results",
+    "should_trigger": true
+  },
+  {
+    "query": "research the competitive landscape for AI meeting notetakers - pricing, funding, user counts - no unsourced figures please",
+    "should_trigger": true
+  },
+  {
+    "query": "Can you verify the stats in section 3 of my market sizing memo? Some feel too round to be real",
+    "should_trigger": true
+  },
+  {
+    "query": "market research on the meal kit industry in Europe: size, growth, main competitors, with a table of what's verified vs unverified",
+    "should_trigger": true
+  },
+  {
+    "query": "who are the main competitors of a small-business invoicing app in Canada? pull pricing and positioning from their own sites and label how you got each fact",
+    "should_trigger": true
+  },
+  {
+    "query": "give me a sourced overview of the used-EV resale market. if you can't find a number, say so instead of guessing",
+    "should_trigger": true
+  },
+  {
+    "query": "competitor analysis for my Shopify app - compare features and pricing of the 6 closest alternatives and keep a list of sources with confidence levels",
+    "should_trigger": true
+  },
+  {
+    "query": "how many monthly searches does 'meal kit delivery' get and is it trending up",
+    "should_trigger": false
+  },
+  {
+    "query": "do a literature review of peer-reviewed papers on remote work and productivity, APA citations",
+    "should_trigger": false
+  },
+  {
+    "query": "synthesize these 12 user interview transcripts into themes and pain points",
+    "should_trigger": false
+  },
+  {
+    "query": "build a DCF valuation for this SaaS company with 5 year projections and a terminal value",
+    "should_trigger": false
+  },
+  {
+    "query": "scrape LinkedIn for the emails and phone numbers of every VP of marketing at fintech companies in Texas",
+    "should_trigger": false
+  },
+  {
+    "query": "create a 12-slide pitch deck for our seed round, with market, traction, and ask slides",
+    "should_trigger": false
+  },
+  {
+    "query": "write a LinkedIn post announcing our new feature, punchy, with a hook",
+    "should_trigger": false
+  },
+  {
+    "query": "summarize this PDF for me in 5 bullets",
+    "should_trigger": false
+  },
+  {
+    "query": "what's our TAM/SAM/SOM calculation in the financial model - fix the formulas in my excel, the SOM cell is off",
+    "should_trigger": false
+  },
+  {
+    "query": "run a survey design for 300 customers about willingness to pay, give me the questions and sampling plan",
+    "should_trigger": false
+  }
+]

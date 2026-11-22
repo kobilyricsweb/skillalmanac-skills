@@ -1,0 +1,6 @@
+{
+  "name": "crm-web",
+  "private": true,
+  "packageManager": "pnpm@9.12.0",
+  "scripts": { "typecheck": "tsc --noEmit", "test": "vitest run", "release:notes": "node tools/notes.mjs", "db:shadow": "docker compose up -d shadow" }
+}

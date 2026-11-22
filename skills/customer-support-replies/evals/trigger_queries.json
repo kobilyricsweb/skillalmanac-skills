@@ -1,0 +1,82 @@
+[
+  {
+    "query": "draft a reply to this ticket, our policy is in policy.md",
+    "should_trigger": true
+  },
+  {
+    "query": "customer is angry about a broken lamp and wants a refund plus a discount. write the response",
+    "should_trigger": true
+  },
+  {
+    "query": "answer this support email, here's our returns policy",
+    "should_trigger": true
+  },
+  {
+    "query": "write a response to this complaint about a late delivery",
+    "should_trigger": true
+  },
+  {
+    "query": "chatgpt for customer service: reply to this customer asking for a refund after 45 days",
+    "should_trigger": true
+  },
+  {
+    "query": "help me respond to this chat message, the customer wants to change the shipping address",
+    "should_trigger": true
+  },
+  {
+    "query": "can you write a macro reply for this ticket about a warranty claim",
+    "should_trigger": true
+  },
+  {
+    "query": "reply to this 1-star complaint email politely but don't promise anything we can't do",
+    "should_trigger": true
+  },
+  {
+    "query": "how should I answer this customer? ticket pasted below, policy attached",
+    "should_trigger": true
+  },
+  {
+    "query": "draft the customer response for ticket 48213",
+    "should_trigger": true
+  },
+  {
+    "query": "write a cold outreach email to prospects about our new product",
+    "should_trigger": false
+  },
+  {
+    "query": "write our returns policy from scratch",
+    "should_trigger": false
+  },
+  {
+    "query": "analyze these 500 support tickets and tell me the top complaint categories",
+    "should_trigger": false
+  },
+  {
+    "query": "build a customer support chatbot for our website",
+    "should_trigger": false
+  },
+  {
+    "query": "write a newsletter announcing our holiday sale",
+    "should_trigger": false
+  },
+  {
+    "query": "draft a response to this letter from the customer's lawyer threatening to sue",
+    "should_trigger": false
+  },
+  {
+    "query": "write a follow-up email after my sales call with Acme",
+    "should_trigger": false
+  },
+  {
+    "query": "write a reply to my landlord about the rent increase",
+    "should_trigger": false
+  },
+  {
+    "query": "create a training manual for new support agents",
+    "should_trigger": false
+  },
+  {
+    "query": "summarize this ticket thread for the engineering team",
+    "should_trigger": false
+  }
+]

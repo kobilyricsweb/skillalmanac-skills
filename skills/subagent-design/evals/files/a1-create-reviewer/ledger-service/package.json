@@ -1,0 +1,5 @@
+{
+  "name": "ledger-service",
+  "private": true,
+  "scripts": { "migrate": "node db/run.js up", "migrate:down": "node db/run.js down", "test": "node test/run.js" }
+}

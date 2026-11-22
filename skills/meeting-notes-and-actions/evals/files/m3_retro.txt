@@ -1,0 +1,32 @@
+website redesign retro (pasted from the call captions, no timestamps)
+
+Bea: ok everyone, retro for the redesign. what went well, what didn't, what do we change. Tom you start.
+Tom: QA was chaos. we found bugs after launch that we should have caught. I counted 31 launch-blocking bugs in the first week.
+Arjun: 31 blocking? that sounds high.
+Tom: no wait, sorry. 13 were launch-blocking. 31 was the total in the first week.
+Bea: ok 13 blocking, 31 total. still too many.
+Tom: I'll write up a QA checklist so we have it for next time.
+Lena: the other thing is we had no staging sign-off. things went from dev straight to live.
+Bea: I want to propose that the next project has a staging sign-off step before anything goes live. design and QA both sign. any objection?
+Arjun: none from me.
+Tom: yes please.
+Lena: agreed.
+Bea: good, that's decided.
+Arjun: also, we agreed last time to freeze scope two weeks before launch, and we didn't do it.
+Bea: true. noted.
+Arjun: honestly I think we should drop the weekly demo to the client. it eats a day of prep every week.
+Tom: I disagree, the demo is the only time the client actually looks at the work.
+Arjun: then make it every two weeks.
+Tom: I don't think that's better.
+Bea: we're not going to settle this today. let's come back to it.
+Bea: Tom, you're on leave from Monday aren't you? Lena, can you take the QA checklist instead?
+Lena: sure. I'll have it done before the next sprint starts.
+Tom: thanks Lena, I'll send you my notes today.
+Arjun: the agency invoice came in over the estimate. I'll talk to the agency about the overrun by the 30th.
+Bea: how much over?
+Arjun: I don't have the number in front of me.
+Lena: the old Figma files are a mess, three versions of everything. somebody should archive them.
+Bea: yeah somebody should.
+Tom: one question, who owns the analytics dashboard now that Priyanka left?
+Bea: good question. I don't know.
+Bea: ok we're at time. thanks all.

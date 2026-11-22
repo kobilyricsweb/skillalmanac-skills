@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<style>
+body { color: #999; background: #fff; }
+.btn { background: #7fb8ff; color: #ffffff; }
+a:focus, button:focus { outline: none; }
+.topbar { position: fixed; top: 0; }
+.close { width: 16px; height: 16px; }
+.spin { animation: spin 2s infinite; }
+</style>
+</head>
+<body>
+<div class="topbar"><img src="logo.png"><div onclick="openMenu()">Menu</div></div>
+<h1>Join</h1>
+<h4>Your details</h4>
+<form>
+  <input type="text" name="email" placeholder="Email">
+  <input type="password" name="pw" id="pw" autocomplete="off" aria-labeledby="pwl">
+  <span id="pwl">Password</span>
+  <select name="plan"></select>
+  <input type="text" id="phone" aria-describedby="nohelp" tabindex="3">
+  <label for="phone">Phone</label>
+  <button class="close"><svg viewBox="0 0 10 10"><path d="M0 0L10 10"/></svg></button>
+  <a href="/terms">click here</a>
+  <a href="/x"><img src="x.png" alt=""></a>
+</form>
+<table><tr><td>Plan</td><td>Price</td></tr><tr><td>Pro</td><td>9</td></tr></table>
+<video autoplay src="a.mp4"></video>
+<iframe src="map.html"></iframe>
+<div aria-hidden="true"><button>Hidden but focusable</button></div>
+<span role="buton">Typo role</span>
+<div id="dup"></div><div id="dup"></div>
+</body>
+</html>

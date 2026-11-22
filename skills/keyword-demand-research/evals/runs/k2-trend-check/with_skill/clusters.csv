@@ -1,0 +1,10 @@
+keyword,cluster_representative,is_representative,intent,avg12,cluster_trend,last3_vs_prev3_pct,yoy_3m_pct,flags,merge_rules
+habit tracker app,habit tracker app,1,transactional,15025.0,falling,-24.3,-23.2,one-off-spike; 80%-below-peak,same words after plural/punctuation
+habit tracker apps,habit tracker app,0,transactional,15025.0,falling,-24.3,-23.2,one-off-spike; 80%-below-peak,same words after plural/punctuation
+best habit tracker app,best habit tracker app,1,transactional,4341.7,falling,-24.7,-6.9,one-off-spike; 80%-below-peak,same words after plural/punctuation
+best habit tracker apps,best habit tracker app,0,transactional,4341.7,falling,-24.7,-6.9,one-off-spike; 80%-below-peak,same words after plural/punctuation
+free habit tracker app,free habit tracker app,1,transactional,2975.0,falling,-23.7,-21.1,one-off-spike; 80%-below-peak,
+how to build a habit tracker in notion,how to build a habit tracker in notion,1,informational,1344.2,falling,-21.9,-32.3,one-off-spike; 80%-below-peak,
+ai habit tracker,ai habit tracker,1,unclassified,1180.8,falling,-25.0,35900.0,32%-below-peak,
+habit tracker for adhd,habit tracker for adhd,1,unclassified,822.5,falling,-18.1,84.5,55%-below-peak,
+habit tracker widget iphone,habit tracker widget iphone,1,unclassified,816.7,flat,-12.6,-6.2,one-off-spike; 69%-below-peak,

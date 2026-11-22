@@ -1,0 +1,31 @@
+### bad agent
+$ python scripts/agent_def_lint.py evals/fixtures/bad_agent.md
+exit code 1 (expected 1) -> ok
+<local-path>
+  WARN  name 'Helper Agent' is not lowercase words joined by hyphens; callers have to type it
+  ERROR description is too thin to trigger delegation (16 characters): say what it does, then 'Use when ...'
+  ERROR no 'tools' list: the agent inherits every tool of the caller, including file writes; this role reads and reports, so list read-only tools (Read, Grep, Glob)
+  ERROR body assumes the earlier conversation ('discussed above'); the agent starts without it
+  ERROR body tells the agent to consult the user ('ask the user'); it cannot, have it state assumptions and return open questions
+  ERROR body invites changes ('Feel free to fix') although the role reads and reports
+  ERROR no report format; say exactly what the final message must contain
+  WARN  body does not say how the agent finds its input (a command, a folder, or the caller's message)
+
+6 error(s). Form only: try the agent on two or three real requests.
+
+### good agent
+$ python scripts/agent_def_lint.py evals/fixtures/good_agent.md
+exit code 0 (expected 0) -> ok
+<local-path>
+  OK    no findings
+
+0 error(s). Form only: try the agent on two or three real requests.
+
+### no frontmatter
+$ python scripts/agent_def_lint.py evals/fixtures/no_frontmatter.md
+exit code 1 (expected 1) -> ok
+<local-path>
+  ERROR no YAML frontmatter; the file must start with '---', the fields, then '---'
+
+1 error(s). Form only: try the agent on two or three real requests.
+

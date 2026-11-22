@@ -1,0 +1,49 @@
+{
+  "skill_name": "accessibility-audit",
+  "evals": [
+    {
+      "id": "a1-audit-signup",
+      "files": [
+        "evals/files/a1/signup.html"
+      ],
+      "prompt": "Audit signup.html for accessibility against WCAG 2.2 level AA. Do not change the HTML file. Write the audit to audit.md: every issue with where it is, why it is a problem and how to fix it.",
+      "assertions": [
+        "Finds at least 17 of the 22 seeded defects in the answer key",
+        "Finds at least 4 of the 6 defects that need reading behaviour (error message, colour-only required marker, strength meter, timeout, CAPTCHA, blocked paste)",
+        "Each finding cites a correct WCAG success criterion",
+        "No invented defects (claims that are false for this file)",
+        "States what was not tested and makes no conformance claim"
+      ]
+    },
+    {
+      "id": "a2-fix-settings",
+      "files": [
+        "evals/files/a2/settings.html"
+      ],
+      "prompt": "Make settings.html accessible for keyboard and screen reader users. Keep the look and the behaviour. Save the result as settings.fixed.html and list what you changed in changes.md.",
+      "assertions": [
+        "Dialog: role or native dialog, accessible name, focus moves in, focus is contained, Escape closes, focus returns to the trigger",
+        "Trigger and close control are buttons with names",
+        "Theme chooser is a native select or a complete listbox/combobox pattern with keys and a label",
+        "Switch exposes its state and works from the keyboard with a label",
+        "Toast and error use a live region that exists before the message; the confirm field has a label and a text error",
+        "Visible focus indicator restored",
+        "Look and behaviour preserved"
+      ]
+    },
+    {
+      "id": "a3-audit-product",
+      "files": [
+        "evals/files/a3/product.html"
+      ],
+      "prompt": "Audit product.html for accessibility against WCAG 2.2 level AA. Do not change the HTML file. Write the audit to audit.md: every issue with where it is, why it is a problem and how to fix it.",
+      "assertions": [
+        "Finds at least 15 of the 20 seeded defects in the answer key",
+        "Finds at least 4 of the 7 behaviour defects (carousel auto-rotation, price by strikethrough, rating image, cart count not announced, selected swatch by border, French passage, bottom bar covering focus)",
+        "Each finding cites a correct WCAG success criterion",
+        "No invented defects",
+        "States what was not tested and makes no conformance claim"
+      ]
+    }
+  ]
+}

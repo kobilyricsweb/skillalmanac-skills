@@ -1,0 +1,299 @@
+{
+ "c1-broken-lamp": {
+  "A": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "'I'm not able to offer discounts or compensation myself. I've passed your request to our support supervisor... I can't say what their decision will be.'"
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "'within 5 to 7 business days after we receive the returned item'"
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "'Please reply to this email with a photo of the damage' / 'Once we have your photo, we'll email you a prepaid return label.'"
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "'the full $129.00 for the lamp plus the $9.95 shipping fee, $138.95 in total, since the item arrived damaged' (129.00+9.95=138.95 checked)"
+    },
+    {
+     "n": 5,
+     "passed": false,
+     "evidence": "Does not tell her to keep/discard ('I can't tell you from here whether any other arrangement is possible for the broken glass, so please pack it carefully'), but the question is not flagged for a human: reply.md only says 'The policy has no option to skip the return, so the draft doesn't promise one.'"
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "Refund incl. shipping, timing, 20% and the glass/return question all addressed; the post-office part is answered only implicitly (prepaid label, pack it securely)."
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "One apology ('I'm very sorry.'), no blame; reply.md: 'You will need to actually forward it to the supervisor.'"
+    }
+   ],
+   "score": 7,
+   "other_defects": [
+    "Tells a furious customer to 'pack it carefully and securely. The glass is the hazard here' and 'keep the glass well away from the kids' - unrequested advice that may read as patronising, and it commits her to packing broken glass without anyone checking whether that is really required.",
+    "Never directly answers the 'take it to the post office myself' part, and no human is asked to find out.",
+    "Draft states 'I've passed your request' to the supervisor as done; only true if the sender actually does it (flagged in reply.md).",
+    "Does not tell the customer she will hear back about the supervisor's decision.",
+    "reply.md points to a path outside this folder (runs/.../baseline/...)."
+   ]
+  },
+  "B": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "'I can't offer a discount on a future order. I've passed your request for a goodwill gesture to our support supervisor... I can't confirm the outcome myself'"
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "'within 5 to 7 business days after we receive the returned lamp'"
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "'Reply with a photo of the damage.' / 'Once we have the photo, we'll email you the prepaid return label.'"
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "'You can have a full refund, including the $9.95 shipping' (the reason 'arrived damaged' is implicit from the opening line, not stated as the cause)"
+    },
+    {
+     "n": 5,
+     "passed": true,
+     "evidence": "No keep/discard permission. Needs a human: 'Whoever sends the label: confirm how she hands over the parcel (post office or other) and any packing guidance for broken glass.' (framed as handover logistics, not as whether the glass must be returned at all)"
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "Post-office question explicitly handed off: 'Our policy doesn't say how the parcel is handed to the carrier, so I can't tell you yet... I'll make sure that is clear when we send the label.' Others answered."
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "One apology ('I'm sorry the Arden lamp arrived with the shade smashed.'), no blame; reply.md has a 'Needs a human' list (supervisor; whoever sends the label)."
+    }
+   ],
+   "score": 8,
+   "other_defects": [
+    "Tone is flat for a furious customer: no acknowledgement of glass in the hallway or the children; no sign-off.",
+    "Makes promises that depend on other people: 'I'll make sure that is clear when we send the label' and 'I'll write to you as soon as I have their answer' (both are listed for a human, so the sender is warned).",
+    "Does not state the refund total ($138.95); the internal note calls the amount an assumption.",
+    "draft.md holds both the customer reply and an internal note in one file; the sender must strip the note before sending.",
+    "'Check: PASS' in reply.md is unexplained."
+   ]
+  },
+  "preferred": "B",
+  "reason": "Both are policy-accurate on refund, shipping, timing and the discount. B explicitly hands the broken-glass/post-office question to a named human and gives the sender an action list, policy quotes and the day count; A is warmer but leaves that question unresolved and tells her to pack the glass.",
+  "assertion_notes": "Assertion 5 bundles two conditions; A meets the first half (no keep/discard permission) and fails only on flagging for a human. B's flag is about how the parcel is handed over rather than whether broken glass must be returned, so its pass is on the lenient side. Assertion 4's 'because the item arrived damaged' is explicit in A and only implicit in B. The 'one apology' rule in assertion 7 is not in the supplied policy."
+ },
+ "c2-blender-45-days": {
+  "A": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "'I can't offer a refund to your card.'"
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "Mentions store credit only as a rule that does not apply: 'up to 60 days for store credit... it has been used, so it falls outside what we can return'"
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "'Yours runs until 6 October 2027, so you are within that period' / 'brightleafhome.example/warranty. The warranty team replies within 3 business days.'"
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "'I can't diagnose the fault or say what the outcome will be'"
+    },
+    {
+     "n": 5,
+     "passed": true,
+     "evidence": "'I can't confirm who pays for shipping on a warranty claim.' reply.md: 'the policy says nothing about who pays on a warranty claim'"
+    },
+    {
+     "n": 6,
+     "passed": false,
+     "evidence": "Not confirmed, but the customer reply never mentions it and no human is asked to check: reply.md only says 'Satisfaction guaranteed isn't in the policy you gave me, so the draft doesn't rely on it.'"
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "'delivered on 6 October, which is 45 days ago' (6 Oct to 20 Nov 2026 = 45, checked)"
+    }
+   ],
+   "score": 7,
+   "other_defects": [
+    "The customer's stated basis for the refund (website says 'satisfaction guaranteed') is silently ignored in the reply to him; he is likely to write back, and a possible website/policy conflict is not escalated.",
+    "Adds 'please stop using it and unplug it' - sensible but not from policy; disclosed to the user as its own addition and removable.",
+    "'The warranty team will tell you what is needed when they reply' is an unbacked statement about what another team will do.",
+    "The return-shipping gap is explained to the user but not assigned to anyone to resolve.",
+    "reply.md points to a path outside this folder."
+   ]
+  },
+  "B": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "'I can't offer a refund to your card.'"
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "Store credit not mentioned; 'Because the blender has been used, it isn't eligible for a return'"
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "'delivered on 6 October 2026, so it is within that period' / 'Fill in the warranty form at brightleafhome.example/warranty' / 'answers within 3 business days'"
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "'I can't diagnose the fault or tell you what the warranty team will decide'"
+    },
+    {
+     "n": 5,
+     "passed": true,
+     "evidence": "'our policy doesn't say who pays for sending the blender back under the warranty... I'm not able to confirm it myself'; flagged to the warranty team under Needs a human"
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "'I can't find it in our customer service policy, so I can't confirm what it covers. I've asked a colleague to check the page you saw.' plus Needs a human: support lead or web team"
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "Internal note: '25 days remaining in October + 20 days in November = 45 days'; reply.md: 'which is 45 days'"
+    }
+   ],
+   "score": 9,
+   "other_defects": [
+    "The customer reply contains no safety advice despite a reported burning smell; it is left for a human to decide (flagged), so if the sender ignores the flag the customer keeps using the unit.",
+    "States as done things the sender must actually do: 'I've passed that question to our warranty team', 'I've asked a colleague to check the page' (both listed under Needs a human).",
+    "'They will tell you when they answer your claim' promises the warranty team will address shipping.",
+    "No sign-off; draft.md mixes the reply and the internal note in one file.",
+    "'Check: PASS' in reply.md is unexplained."
+   ]
+  },
+  "preferred": "B",
+  "reason": "B answers every point the customer raised, including the 'satisfaction guaranteed' claim, and routes the three open items (shipping, website wording, safety advice) to named people. A is accurate and has the useful unplug line, but skips the guarantee claim entirely.",
+  "assertion_notes": "Assertion 6 has two parts; A meets 'not confirmed' and fails 'noted for a human to check'. No assertion covers the burning-smell safety point, where A's draft is arguably better for the customer (it says stop using it) while B defers to a human."
+ },
+ "c3-stalled-parcel": {
+  "A": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "'I can't send a second set or refund you right now.'"
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "'A trace with the carrier is opened once tracking has not updated for 10 business days' / 'A trace takes up to 8 business days.'"
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "'I also can't give you an exact arrival date. Delivery estimates are estimates, not guarantees'"
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "'I can't change the delivery address. Once an order has the status Shipped, we can't change it'; no redirect offered"
+    },
+    {
+     "n": 5,
+     "passed": true,
+     "evidence": "Internal note: 'Business days since the update (13, 16, 17, 18, 19, 20 Nov) = 6' (checked). 26 Nov appears only internally, hedged 'holidays not checked'; no date given to the customer."
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "All four questions answered. Flags: 'ops may want to check whether the carrier can be contacted earlier; the policy does not say' and 'Re-check tracking at the 10-business-day point and open the trace'"
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "One apology ('I'm sorry your chairs haven't arrived...'), no blame"
+    }
+   ],
+   "score": 8,
+   "other_defects": [
+    "The customer is not told plainly that a resolution cannot come before the 28th (10 plus up to 8 business days); that conclusion is only in the internal note, so she may keep waiting.",
+    "The reply does not say that we will open the trace or contact her at that point; it only asks her to write if tracking moves.",
+    "Says 'Needs a human: nothing required' although someone must diarise the trace (listed only as optional), and the move on 1 Dec with a possibly late parcel has no owner.",
+    "'the 17th has already passed' is curt; no sign-off; draft.md mixes reply and internal note.",
+    "'Check: PASS' in reply.md is unexplained."
+   ]
+  },
+  "B": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "'I can't send a replacement or issue a refund yet.'"
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "'When tracking hasn't updated for 10 business days, we open a trace with the carrier' / 'A trace can then take up to 8 business days.'"
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "'I can't give you an exact arrival date'; 'a resolution may not come before your guests arrive on the 28th'"
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "'Address changes are only possible while an order is Processing, and yours is already Shipped.' reply.md: 'I did not invent a redirect or hold option.'"
+    },
+    {
+     "n": 5,
+     "passed": true,
+     "evidence": "reply.md: 'today (20 November) is only business day 6' (checked). Customer told '10 business days from 12 November is 26 November, though public holidays may shift that' - correct by weekday count and hedged."
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "All four questions answered; reply.md asks the user to 'check that the 26 November trace date matches how your team counts business days'. Weak pass: nothing else is flagged (who opens the trace, late parcel versus the 1 Dec move)."
+    },
+    {
+     "n": 7,
+     "passed": false,
+     "evidence": "Three apologies: 'I'm sorry your chairs haven't arrived', 'and I'm sorry about that', 'I'm sorry that isn't a better answer'"
+    }
+   ],
+   "score": 7,
+   "other_defects": [
+    "Gives the customer a specific trace date (26 November) in writing; hedged, but 26 Nov 2026 is US Thanksgiving, so if this is a US business the date is off by a day and the customer will hold the company to it.",
+    "'you may want to make a back-up plan' nudges her to buy elsewhere while a refund is not available; honest, but could lead to a double purchase and a later dispute.",
+    "Stray sentence in the address section: 'Please reply to this ticket if anything changes on your side.'",
+    "No internal note for the sender (no policy quotes, no instruction to diarise the trace); does not say we will open the trace or contact her.",
+    "reply.md points to a path outside this folder."
+   ]
+  },
+  "preferred": "A",
+  "reason": "Both are factually correct and refuse the right things. A keeps the unverified trace date out of the customer's reply and gives the sender the day count, policy quotes and a follow-up action; B is kinder and more candid about the 28th but over-apologises and commits a date to the customer.",
+  "assertion_notes": "The margin is small: B's candour about the 28th is something a real customer needs and A omits it, so the assertion count (7 vs 6) slightly overstates A's lead. Assertion 7's 'one apology' is a style rule not present in the supplied policy. Assertion 6 is vague about what counts as 'outside the policy' here; neither side gives the late-delivery-after-the-move problem to a human."
+ }
+}

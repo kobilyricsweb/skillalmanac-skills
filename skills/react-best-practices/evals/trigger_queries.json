@@ -1,0 +1,82 @@
+[
+  {
+    "query": "review this React component, something is off with the state",
+    "should_trigger": true
+  },
+  {
+    "query": "my useEffect runs in an infinite loop, here is the component",
+    "should_trigger": true
+  },
+  {
+    "query": "the input loses focus every time I type a letter, react 18",
+    "should_trigger": true
+  },
+  {
+    "query": "can you check OrderList.tsx against react best practices",
+    "should_trigger": true
+  },
+  {
+    "query": "search results flicker and sometimes show the old query's results, fix the hook",
+    "should_trigger": true
+  },
+  {
+    "query": "refactor this custom hook, it fetches twice and never cleans up",
+    "should_trigger": true
+  },
+  {
+    "query": "build a TSX component for inviting team members with validation and loading states",
+    "should_trigger": true
+  },
+  {
+    "query": "list items keep the wrong checkbox state after I delete one, why",
+    "should_trigger": true
+  },
+  {
+    "query": "too many re-renders error in my cart component, help",
+    "should_trigger": true
+  },
+  {
+    "query": "is it ok to use index as key here, and anything else wrong with this list component",
+    "should_trigger": true
+  },
+  {
+    "query": "make this react page look nicer, better spacing and colours",
+    "should_trigger": false
+  },
+  {
+    "query": "convert this Vue component to use the composition api",
+    "should_trigger": false
+  },
+  {
+    "query": "fix the layout of my React Native screen on small phones",
+    "should_trigger": false
+  },
+  {
+    "query": "write an express route that returns the orders as json",
+    "should_trigger": false
+  },
+  {
+    "query": "set up a pre-commit hook that runs eslint",
+    "should_trigger": false
+  },
+  {
+    "query": "audit the page for wcag issues",
+    "should_trigger": false
+  },
+  {
+    "query": "implement this figma export as css exactly",
+    "should_trigger": false
+  },
+  {
+    "query": "write cypress end to end tests for the login form",
+    "should_trigger": false
+  },
+  {
+    "query": "explain what a closure is in javascript",
+    "should_trigger": false
+  },
+  {
+    "query": "review my python flask handlers",
+    "should_trigger": false
+  }
+]

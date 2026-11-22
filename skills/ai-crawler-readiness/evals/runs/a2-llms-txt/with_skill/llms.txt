@@ -1,0 +1,47 @@
+# Tidewater Jobs
+
+> Tidewater Jobs is a hosted scheduler for data jobs: a cron replacement with retries, secrets and an HTTP API.
+
+Documentation pages are also available as Markdown: add `.md` to the page URL, for example https://www.tidewater-jobs.example/docs/quick-start.md.
+
+## Docs
+
+- [Quick start](https://www.tidewater-jobs.example/docs/quick-start.md): install and run a first job
+- [Installation](https://www.tidewater-jobs.example/docs/install.md): how to install Tidewater Jobs
+- [Job file reference](https://www.tidewater-jobs.example/docs/job-file.md): fields of a job file
+- [Scheduling syntax](https://www.tidewater-jobs.example/docs/schedules.md): how schedules are written
+- [Retries and timeouts](https://www.tidewater-jobs.example/docs/retries.md): retry and timeout behaviour
+- [Secrets](https://www.tidewater-jobs.example/docs/secrets.md): storing and using secrets in jobs
+- [HTTP API overview](https://www.tidewater-jobs.example/docs/api.md): the HTTP API
+- [API: jobs](https://www.tidewater-jobs.example/docs/api/jobs.md): job endpoints
+- [API: runs](https://www.tidewater-jobs.example/docs/api/runs.md): run endpoints
+- [API: webhooks](https://www.tidewater-jobs.example/docs/api/webhooks.md): webhook endpoints
+- [CLI reference](https://www.tidewater-jobs.example/docs/cli.md): command-line commands and options
+- [Self-hosting](https://www.tidewater-jobs.example/docs/self-hosting.md): running the scheduler on your own servers
+- [Troubleshooting](https://www.tidewater-jobs.example/docs/troubleshooting.md): common problems and fixes
+- [Migrating from 1.x](https://www.tidewater-jobs.example/docs/migrate-1x.md): moving jobs from version 1.x
+- [Glossary](https://www.tidewater-jobs.example/docs/glossary.md): terms used in the product
+- [FAQ](https://www.tidewater-jobs.example/docs/faq.md): frequently asked questions
+- [Python SDK](https://www.tidewater-jobs.example/docs/sdk/python.md): the Python client library
+- [Node SDK](https://www.tidewater-jobs.example/docs/sdk/node.md): the Node client library
+
+## Product
+
+- [Pricing](https://www.tidewater-jobs.example/pricing): plans and prices
+- [Security overview](https://www.tidewater-jobs.example/security): how the service handles security
+- [Integrations](https://www.tidewater-jobs.example/integrations): tools that work with Tidewater Jobs
+- [Slack integration](https://www.tidewater-jobs.example/integrations/slack): connecting Slack
+- [PagerDuty integration](https://www.tidewater-jobs.example/integrations/pagerduty): connecting PagerDuty
+- [Customer stories](https://www.tidewater-jobs.example/customers): how customers use the service
+- [Status](https://www.tidewater-jobs.example/status): current service status
+
+## Optional
+
+- [Changelog](https://www.tidewater-jobs.example/changelog): release history
+- [Blog: Why we rewrote the scheduler](https://www.tidewater-jobs.example/blog/scheduler-rewrite)
+- [Blog: Cron pitfalls](https://www.tidewater-jobs.example/blog/cron-pitfalls)
+- [Customer story: Northwind](https://www.tidewater-jobs.example/customers/northwind)
+- [Terms](https://www.tidewater-jobs.example/legal/terms)
+- [Privacy](https://www.tidewater-jobs.example/legal/privacy)
+- [Brand assets](https://www.tidewater-jobs.example/brand)
+- [Contact](https://www.tidewater-jobs.example/contact)

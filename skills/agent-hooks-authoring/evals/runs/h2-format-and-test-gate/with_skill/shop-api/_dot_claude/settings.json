@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": ["Bash(npm test)", "Bash(npm run lint)"],
+    "deny": ["Read(./secrets/**)"]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/format-edited.js\"", "timeout": 60 }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/tests-before-stop.js\"", "timeout": 300 }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/notify.js\"" }
+        ]
+      }
+    ]
+  }
+}

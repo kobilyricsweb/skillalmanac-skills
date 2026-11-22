@@ -1,0 +1,82 @@
+[
+  {
+    "query": "implement this figma frame exactly, the node json export is in design/card.json",
+    "should_trigger": true
+  },
+  {
+    "query": "here is the design export for the pricing card, build it with our existing tokens",
+    "should_trigger": true
+  },
+  {
+    "query": "the build doesn't match the design, compare with the spec and fix spacing and type",
+    "should_trigger": true
+  },
+  {
+    "query": "turn the hero mockup (desktop and mobile frames exported as json) into responsive html and css",
+    "should_trigger": true
+  },
+  {
+    "query": "design handoff: build the text field component from the variants in text-field.json",
+    "should_trigger": true
+  },
+  {
+    "query": "convert this design file export to code, pixel perfect please",
+    "should_trigger": true
+  },
+  {
+    "query": "we got redlines from the designer for the nav bar, apply them to the css",
+    "should_trigger": true
+  },
+  {
+    "query": "translate auto layout from the exported nodes into flexbox for the sidebar",
+    "should_trigger": true
+  },
+  {
+    "query": "code up the checkout summary from the design json using our Button component",
+    "should_trigger": true
+  },
+  {
+    "query": "design to code for the settings panel, json export attached, use tokens.css",
+    "should_trigger": true
+  },
+  {
+    "query": "design a landing page for my dog walking business",
+    "should_trigger": false
+  },
+  {
+    "query": "create design tokens and a dark theme for our product",
+    "should_trigger": false
+  },
+  {
+    "query": "make a logo for my startup",
+    "should_trigger": false
+  },
+  {
+    "query": "rename the layers in my design file and tidy the components",
+    "should_trigger": false
+  },
+  {
+    "query": "review this react hook for bugs",
+    "should_trigger": false
+  },
+  {
+    "query": "check the contrast and accessibility of this page",
+    "should_trigger": false
+  },
+  {
+    "query": "build an html email template for our newsletter",
+    "should_trigger": false
+  },
+  {
+    "query": "make a dashboard with kpi cards for these numbers",
+    "should_trigger": false
+  },
+  {
+    "query": "write the copy for the hero section",
+    "should_trigger": false
+  },
+  {
+    "query": "generate an image of a mockup phone",
+    "should_trigger": false
+  }
+]

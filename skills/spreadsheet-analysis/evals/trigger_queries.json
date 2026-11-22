@@ -1,0 +1,82 @@
+[
+  {
+    "query": "here's our Q3 sales export, what were total sales per region?",
+    "should_trigger": true
+  },
+  {
+    "query": "can you analyze this excel file and tell me the average order value by month",
+    "should_trigger": true
+  },
+  {
+    "query": "how many unique customers are in this csv?",
+    "should_trigger": true
+  },
+  {
+    "query": "something's off with the totals in this spreadsheet, can you check the data",
+    "should_trigger": true
+  },
+  {
+    "query": "ai data analysis: summarize expenses by category from the attached xlsx",
+    "should_trigger": true
+  },
+  {
+    "query": "break down this sheet by rep and tell me who sold the most",
+    "should_trigger": true
+  },
+  {
+    "query": "is this data clean? find duplicates and weird values before I send it to finance",
+    "should_trigger": true
+  },
+  {
+    "query": "claude for excel question: sum column D grouped by column B in this file",
+    "should_trigger": true
+  },
+  {
+    "query": "give me a quick summary of what's in this spreadsheet and anything suspicious",
+    "should_trigger": true
+  },
+  {
+    "query": "count how many signups per plan in customers.xlsx",
+    "should_trigger": true
+  },
+  {
+    "query": "write a VLOOKUP formula that pulls the price from sheet 2",
+    "should_trigger": false
+  },
+  {
+    "query": "build me a 3-year financial model for my startup in excel",
+    "should_trigger": false
+  },
+  {
+    "query": "make a bar chart of these numbers for my slides",
+    "should_trigger": false
+  },
+  {
+    "query": "write a SQL query to get revenue by region from our orders table",
+    "should_trigger": false
+  },
+  {
+    "query": "forecast next quarter's sales from this history",
+    "should_trigger": false
+  },
+  {
+    "query": "create a blank budget template spreadsheet for a household",
+    "should_trigger": false
+  },
+  {
+    "query": "convert this PDF table into an excel file",
+    "should_trigger": false
+  },
+  {
+    "query": "how do I turn on Copilot in Excel?",
+    "should_trigger": false
+  },
+  {
+    "query": "write a python script that scrapes prices into a csv every day",
+    "should_trigger": false
+  },
+  {
+    "query": "explain what a pivot table is",
+    "should_trigger": false
+  }
+]

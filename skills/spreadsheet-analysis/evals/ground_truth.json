@@ -1,0 +1,58 @@
+{
+  "s1-sales-by-region": {
+    "per_region": {
+      "North": 24700,
+      "South": 22575,
+      "East": 17275,
+      "West": 13550
+    },
+    "all": 78100,
+    "biggest": "North",
+    "file_total_row": 66925,
+    "duplicate_order_ids": [
+      "SO-1009",
+      "SO-1023"
+    ],
+    "blank_amount_order": "SO-1013",
+    "text_amount_rows": 8,
+    "naive_sum_of_column_including_total_row": "not a valid answer",
+    "note": "truth = 36 unique orders, region variants merged, Total row excluded, blank amount excluded"
+  },
+  "s2-expenses-by-category": {
+    "per_category_as_typed": {
+      "Software": 2577.0,
+      "Travel": 2966.9,
+      "Office": 46344.85,
+      "Marketing": 6085.0
+    },
+    "office_without_45000_row": 1344.85,
+    "office_if_45000_was_450": 1794.85,
+    "blank_amount": "Travel, Hotel Meridian, 2026-06-18",
+    "refund": "Software -120.00 on 2026-05-04",
+    "date_formats": "YYYY-MM-DD and 'Mon D, YYYY'",
+    "subtotal_rows": 2,
+    "note": "truth excludes both Subtotal rows, reads (120.00) as -120, merges software/Software variants"
+  },
+  "s3-unique-customers": {
+    "unique_customers": 50,
+    "data_rows_in_file": 55,
+    "customers_per_plan": {
+      "Basic": 13,
+      "Pro": 30,
+      "Team": 7
+    },
+    "monthly_revenue_by_plan_each_customer_once": {
+      "Basic": 117,
+      "Pro": 870,
+      "Team": 553
+    },
+    "monthly_revenue_all": 1540,
+    "revenue_by_plan_if_all_rows_counted": {
+      "Basic": 126,
+      "Pro": 957,
+      "Team": 632
+    },
+    "repeated_customers": 5,
+    "note": "4 repeats differ only by case or a trailing space in the email; 1 is an exact duplicate row; Grand Total row excluded"
+  }
+}

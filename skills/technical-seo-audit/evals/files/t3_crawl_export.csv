@@ -1,0 +1,29 @@
+url,status,redirect_target,canonical,indexable,inlinks,depth,in_sitemap,title
+https://www.fernbank-outdoor.example/,200,,https://www.fernbank-outdoor.example/,yes,40,0,yes,"Fernbank Outdoor: tents, packs and stoves"
+https://www.fernbank-outdoor.example/tents,200,,https://www.fernbank-outdoor.example/tents,yes,30,1,yes,Tents
+https://www.fernbank-outdoor.example/packs,200,,https://www.fernbank-outdoor.example/packs,yes,30,1,yes,Packs
+https://www.fernbank-outdoor.example/stoves,200,,https://www.fernbank-outdoor.example/stoves,yes,30,1,yes,Stoves
+https://www.fernbank-outdoor.example/sleeping-bags,200,,https://www.fernbank-outdoor.example/sleeping-bags,yes,30,1,yes,Sleeping Bags
+https://www.fernbank-outdoor.example/guides,200,,https://www.fernbank-outdoor.example/guides,yes,30,1,yes,Guides
+https://www.fernbank-outdoor.example/tents/ridge-2,200,,https://www.fernbank-outdoor.example/tents/ridge-2,yes,6,2,yes,Tents/Ridge 2
+https://www.fernbank-outdoor.example/tents/ridge-3,200,,https://www.fernbank-outdoor.example/tents/ridge-3,yes,6,2,yes,Tents/Ridge 3
+https://www.fernbank-outdoor.example/packs/day-22,200,,https://www.fernbank-outdoor.example/packs/day-22,yes,6,2,yes,Packs/Day 22
+https://www.fernbank-outdoor.example/packs/trek-55,200,,https://www.fernbank-outdoor.example/packs/trek-55,yes,6,2,yes,Packs/Trek 55
+https://www.fernbank-outdoor.example/stoves/pocket,200,,https://www.fernbank-outdoor.example/stoves/pocket,yes,6,2,yes,Stoves/Pocket
+https://www.fernbank-outdoor.example/sleeping-bags/down-600,200,,https://www.fernbank-outdoor.example/sleeping-bags/down-600,yes,6,2,yes,Sleeping Bags/Down 600
+https://www.fernbank-outdoor.example/old-tents,301,https://www.fernbank-outdoor.example/tents-2024,,no,12,2,yes,Old Tents
+https://www.fernbank-outdoor.example/tents-2024,301,https://www.fernbank-outdoor.example/tents-sale,,no,1,3,no,Tents 2024
+https://www.fernbank-outdoor.example/tents-sale,301,https://www.fernbank-outdoor.example/tents,,no,1,4,no,Tents Sale
+https://www.fernbank-outdoor.example/guides/pitching-in-wind,200,,https://www.fernbank-outdoor.example/guides/pitching-in-wind,yes,0,,yes,Guides/Pitching In Wind
+https://www.fernbank-outdoor.example/guides/seam-sealing,200,,https://www.fernbank-outdoor.example/guides/seam-sealing,yes,0,,yes,Guides/Seam Sealing
+https://www.fernbank-outdoor.example/guides/stove-fuel-types,200,,https://www.fernbank-outdoor.example/guides/stove-fuel-types,yes,0,,no,Guides/Stove Fuel Types
+https://www.fernbank-outdoor.example/packs/trek-65,404,,,no,4,2,yes,Packs/Trek 65
+https://www.fernbank-outdoor.example/stoves/discontinued-x1,200,,https://www.fernbank-outdoor.example/stoves/discontinued-x1,yes,2,3,yes,Page not found
+https://www.fernbank-outdoor.example/tents?sort=price,200,,https://www.fernbank-outdoor.example/tents,no,30,2,no,Tents
+https://www.fernbank-outdoor.example/tents?sort=price&colour=green,200,,https://www.fernbank-outdoor.example/tents,no,14,3,no,Tents
+https://www.fernbank-outdoor.example/packs?sort=weight,200,,https://www.fernbank-outdoor.example/packs,no,30,2,no,Packs
+https://www.fernbank-outdoor.example/guides/archive/2019/winter/layering/base,200,,https://www.fernbank-outdoor.example/guides/archive/2019/winter/layering/base,yes,1,6,yes,Guides/Archive/2019/Winter/Layering/Base
+https://www.fernbank-outdoor.example/guides/archive/2019/winter/layering/mid,200,,https://www.fernbank-outdoor.example/guides/archive/2019/winter/layering/mid,yes,1,6,yes,Guides/Archive/2019/Winter/Layering/Mid
+https://www.fernbank-outdoor.example/checkout,200,,https://www.fernbank-outdoor.example/checkout,yes,45,1,yes,Checkout
+https://www.fernbank-outdoor.example/api/stock.json,500,,,no,6,2,no,Api/Stock.Json
+https://www.fernbank-outdoor.example/sleeping-bags/down-800,200,,https://www.fernbank-outdoor.example/sleeping-bags/down-600,no,5,2,yes,Sleeping Bags/Down 800

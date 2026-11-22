@@ -1,0 +1,232 @@
+{
+ "grader": "sub-agent, 'sonnet' model alias, 2026-11-20",
+ "ab_key": {
+  "r1-changed-contract": "A=baseline",
+  "r2-new-endpoints": "A=baseline",
+  "r3-quiet-refactor": "A=with_skill"
+ },
+ "grading": {
+  "r1-changed-contract": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Finds invoice.py still treats result as percentage",
+      "passed": true,
+      "evidence": "`invoice_total(20000, \"gold\")` returns `19970.0`. Before the change it returned `17000`"
+     },
+     {
+      "text": "Finds gold test weakened",
+      "passed": true,
+      "evidence": "`test_gold` changed from `assertEqual(..., 15)` to `assertIsNotNone(...)`"
+     },
+     {
+      "text": "Finds unknown-tier test deleted",
+      "passed": true,
+      "evidence": "`test_unknown_tier_is_zero` was deleted outright"
+     },
+     {
+      "text": "Invoice bug top/blocking, not approval",
+      "passed": true,
+      "evidence": "Verdict: do not merge as is; Blocking #1 is billing/invoice.py"
+     },
+     {
+      "text": "Findings cite file and line and say what was verified",
+      "passed": false,
+      "evidence": "Cites files and says 'I ran it on the checked-out repo' but gives no line numbers and no explicit checked/not-checked list"
+     },
+     {
+      "text": "Style remarks kept apart and <=3",
+      "passed": false,
+      "evidence": "Non-blocking section is separate but has 4 bullets (Decimal, unused arg, docstring praise, test_cart)"
+     }
+    ],
+    "score": 8
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Finds invoice.py still treats result as percentage",
+      "passed": true,
+      "evidence": "billing/invoice.py:6-7 (not in the diff) ... `invoice_total(20000, \"gold\")` returns `19970.0`, expected `17000`"
+     },
+     {
+      "text": "Finds gold test weakened",
+      "passed": true,
+      "evidence": "gold test weakened from `assertEqual(..., 15)` to `assertIsNotNone(...)`"
+     },
+     {
+      "text": "Finds unknown-tier test deleted",
+      "passed": true,
+      "evidence": "`test_unknown_tier_is_zero` was deleted though the behaviour still exists"
+     },
+     {
+      "text": "Invoice bug top/blocking, not approval",
+      "passed": true,
+      "evidence": "Verdict: Do not merge ... Blocking 1. billing/invoice.py:6-7"
+     },
+     {
+      "text": "Findings cite file and line and say what was verified",
+      "passed": true,
+      "evidence": "'billing/invoice.py:6-7', 'tests/test_discounts.py:8'; 'Checked: ran the suite (4 tests, OK...); searched the whole repo for calculate_discount'"
+     },
+     {
+      "text": "Style remarks kept apart and <=3",
+      "passed": true,
+      "evidence": "No style remarks; only a Notes line about test command"
+     }
+    ],
+    "score": 9
+   },
+   "preference": "B",
+   "reason": "Both find every planted defect and refuse approval, but B cites line numbers, gives per-finding failure scenarios and an explicit checked/not-checked list. A is longer, and its non-blocking list exceeds three items."
+  },
+  "r2-new-endpoints": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Finds missing ownership check",
+      "passed": true,
+      "evidence": "The route uses only `requireAuth`, not `requireOwner(loadOrder)` ... any logged-in user can download the invoice of any order id"
+     },
+     {
+      "text": "Finds SQL interpolation",
+      "passed": true,
+      "evidence": "`req.params.id` is concatenated straight into the SQL string"
+     },
+     {
+      "text": "Finds pagination offset error",
+      "passed": true,
+      "evidence": "the first page returned skips the first 20 orders ... Use `(page - 1) * PAGE_SIZE`"
+     },
+     {
+      "text": "Finds swallowed refund failure",
+      "passed": true,
+      "evidence": "the error is silently ignored, the order is marked `cancelled`, and the client gets `{ ok: true }`"
+     },
+     {
+      "text": "Each finding has failure scenario and fix",
+      "passed": true,
+      "evidence": "Each of the four has a scenario and a fix; the idempotency/SELECT * items are less concrete"
+     },
+     {
+      "text": "Notes missing tests without style blockers",
+      "passed": true,
+      "evidence": "'No tests are included for any of the three endpoints' under Minor/nits"
+     }
+    ],
+    "score": 8
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Finds missing ownership check",
+      "passed": true,
+      "evidence": "orders.js:28 - the invoice route has only `requireAuth` ... user A requests `/orders/<B's order id>/invoice` -> 200 with B's invoice"
+     },
+     {
+      "text": "Finds SQL interpolation",
+      "passed": true,
+      "evidence": "orders.js:29 - invoice query is built with a template string"
+     },
+     {
+      "text": "Finds pagination offset error",
+      "passed": true,
+      "evidence": "OFFSET 20, so the user's first 20 orders are never returned"
+     },
+     {
+      "text": "Finds swallowed refund failure",
+      "passed": true,
+      "evidence": "`catch (err) {}` swallows any refund failure, and the status update then runs anyway"
+     },
+     {
+      "text": "Each finding has failure scenario and fix",
+      "passed": true,
+      "evidence": "Every item has 'Fails when:' and 'Fix:' lines with line numbers"
+     },
+     {
+      "text": "Notes missing tests without style blockers",
+      "passed": true,
+      "evidence": "'7. No tests are added for any of the three endpoints' under Should fix"
+     }
+    ],
+    "score": 9
+   },
+   "preference": "B",
+   "reason": "Both catch all four planted bugs. B is tighter, with line cites, an explicit 'Fails when' scenario per finding and a checked/not-checked statement, while A is longer and pads with extra nits."
+  },
+  "r3-quiet-refactor": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Finds timeout 30->3 contradicting description",
+      "passed": true,
+      "evidence": "timeout dropped from 30 s to 3 s ... the 'pure refactor' changes timeout and retry behaviour"
+     },
+     {
+      "text": "Connects to README 8s p99",
+      "passed": true,
+      "evidence": "README says p99 is about 8 s at peak, so every request slower than 3 s now times out"
+     },
+     {
+      "text": "Finds retry catches every exception",
+      "passed": true,
+      "evidence": "`except Exception` replaces `except ConnectionError`, so every error is now retried"
+     },
+     {
+      "text": "Finds NOT NULL without default fails",
+      "passed": true,
+      "evidence": "`ADD COLUMN channel text NOT NULL` with no default ... Postgres rejects it"
+     },
+     {
+      "text": "Raises plain index build / mismatch",
+      "passed": true,
+      "evidence": "`CREATE INDEX` without `CONCURRENTLY` takes a write-blocking lock on a 40M-row table; PR.md says not a pure refactor"
+     },
+     {
+      "text": "Six or fewer findings, no style as problem",
+      "passed": true,
+      "evidence": "Exactly 6 numbered findings; none about style"
+     }
+    ],
+    "score": 9
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Finds timeout 30->3 contradicting description",
+      "passed": true,
+      "evidence": "tenfold reduction ... contradicts \"No behaviour change\""
+     },
+     {
+      "text": "Connects to README 8s p99",
+      "passed": true,
+      "evidence": "README says the provider's p99 latency is about 8 seconds at peak"
+     },
+     {
+      "text": "Finds retry catches every exception",
+      "passed": true,
+      "evidence": "`except Exception`, so it also retries timeouts, programming errors such as `TypeError`"
+     },
+     {
+      "text": "Finds NOT NULL without default fails",
+      "passed": true,
+      "evidence": "PostgreSQL rejects it with a not-null violation, so the migration fails"
+     },
+     {
+      "text": "Raises plain index build / mismatch",
+      "passed": true,
+      "evidence": "`CREATE INDEX` without `CONCURRENTLY` takes a lock that blocks writes"
+     },
+     {
+      "text": "Six or fewer findings, no style as problem",
+      "passed": false,
+      "evidence": "3 blockers (one with 3 sub-points) plus 5 non-blocking bullets (tests, migration test, naming, description) is more than six; the naming bullet is noise"
+     }
+    ],
+    "score": 8
+   },
+   "preference": "A",
+   "reason": "Both find all five planted defects and refuse approval. A stays at six focused findings with line cites and run evidence, while B exceeds the findings limit with nits and has no explicit verified list."
+  }
+ }
+}

@@ -1,0 +1,54 @@
+{
+  "skill_name": "subagent-design",
+  "note": "Scripted assertions are run by ../_tools/check_runs.py, an independent checker (not the skill's lint script).",
+  "evals": [
+    {
+      "id": "a1-create-reviewer",
+      "prompt": "Create a subagent for this project (ledger-service/) that reviews database migration files before they get merged. I want it to be picked up automatically whenever migrations are touched. Write a short reply.md in the working folder saying what you created and why.",
+      "files": [
+        "evals/files/a1-create-reviewer/ledger-service/"
+      ],
+      "assertions": [
+        "[script] An agent definition file exists under .claude/agents/ with name and description frontmatter",
+        "[script] The description says when to delegate (mentions migrations) and is at least 80 characters",
+        "[script] A tools restriction is present and gives no file-writing tool",
+        "[script] The body carries at least 4 of the 5 project rules from CONTRIBUTING.md (down file, lock_timeout, CONCURRENTLY, expand and contract, no backfills)",
+        "[script] The body defines the report the agent must return (a format or sections)",
+        "[judge] The definition does not assume the agent can see the main conversation and tells it what to read to find the change",
+        "[judge] The report format makes the main agent's next step easy: a verdict plus findings with file and line"
+      ]
+    },
+    {
+      "id": "a2-delegation-brief",
+      "prompt": "In storefront/ I need three things: find every place that reads the LEGACY_BILLING flag, separately check which npm dependencies are unused, and then write the plan for removing the flag. Use subagents where it makes sense. Don't run them: I want to see the exact prompts you would send first. Write your answer to reply.md in the working folder.",
+      "files": [
+        "evals/files/a2-delegation-brief/storefront/"
+      ],
+      "assertions": [
+        "[judge] The answer decides for each of the three pieces whether to delegate it, with a reason",
+        "[judge] The removal plan (the synthesis) stays with the main agent rather than being delegated",
+        "[judge] Each brief is self-contained: goal, scope (paths), and what done looks like, with no reference to this conversation",
+        "[judge] Each brief fixes the return format and asks for evidence (file and line) rather than a narrative",
+        "[judge] The flag-search brief warns about indirect reads (dynamic keys, env or deploy config, tests, docs), not only a literal text search in src",
+        "[judge] The briefs say the agents must not change files",
+        "[judge] The answer says how the returned results will be checked before they are relied on"
+      ]
+    },
+    {
+      "id": "a3-fix-bad-agent",
+      "prompt": "The subagent in webapp/.claude/agents/helper.md never gets picked automatically, and when I do call it, it comes back with a wall of text and sometimes edits files it shouldn't. Fix it. Write reply.md in the working folder with what was wrong.",
+      "files": [
+        "evals/files/a3-fix-bad-agent/webapp/"
+      ],
+      "assertions": [
+        "[script] The description is specific (at least 80 characters, mentions finding or locating code) and no longer 'Helps with code.'",
+        "[script] A tools restriction is present and gives no file-writing tool",
+        "[script] The body no longer relies on earlier conversation ('discussed above') and no longer tells the agent to ask the user",
+        "[script] The body no longer invites fixing files and sets a bounded report (a length limit or fixed fields)",
+        "[judge] The reply explains each symptom with its cause: vague description, inherited tools, missing output contract",
+        "[judge] The reply notes that a subagent starts without the main conversation, so the brief must carry the question",
+        "[judge] The model choice is addressed (a smaller or inherited model for a search job) with a reason"
+      ]
+    }
+  ]
+}

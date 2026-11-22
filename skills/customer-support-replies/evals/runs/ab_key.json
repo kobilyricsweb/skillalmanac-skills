@@ -1,0 +1,14 @@
+{
+  "c1-broken-lamp": {
+    "A": "baseline",
+    "B": "with_skill"
+  },
+  "c2-blender-45-days": {
+    "A": "baseline",
+    "B": "with_skill"
+  },
+  "c3-stalled-parcel": {
+    "A": "with_skill",
+    "B": "baseline"
+  }
+}

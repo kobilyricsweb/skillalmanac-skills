@@ -1,0 +1,47 @@
+{
+  "skill": "subagent-design",
+  "fail": 0,
+  "warn": 2,
+  "items": [
+    {
+      "level": "PASS",
+      "code": "frontmatter-keys",
+      "message": "only open-spec keys used"
+    },
+    {
+      "level": "PASS",
+      "code": "name-format",
+      "message": "name 'subagent-design' is valid"
+    },
+    {
+      "level": "PASS",
+      "code": "description-length",
+      "message": "description is 574 chars"
+    },
+    {
+      "level": "PASS",
+      "code": "body-lines",
+      "message": "SKILL.md body has 95 lines"
+    },
+    {
+      "level": "PASS",
+      "code": "body-tokens",
+      "message": "body is about 1822 tokens by chars/4"
+    },
+    {
+      "level": "PASS",
+      "code": "package-size",
+      "message": "package is 22605 bytes in 6 files"
+    },
+    {
+      "level": "WARN",
+      "code": "evidence-file",
+      "message": "LISTING.md is missing (required before publishing)"
+    },
+    {
+      "level": "WARN",
+      "code": "evidence-file",
+      "message": "VERIFICATION.md is missing (required before publishing)"
+    }
+  ]
+}

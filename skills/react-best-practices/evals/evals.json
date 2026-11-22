@@ -1,0 +1,48 @@
+{
+  "skill_name": "react-best-practices",
+  "evals": [
+    {
+      "id": "r1-review-orderlist",
+      "files": [
+        "evals/files/r1/OrderList.jsx"
+      ],
+      "prompt": "Review OrderList.jsx (React 18, client-side app, no framework). Do not change the file. Write the review to review.md: every problem with where it is, what the user would see, and the fix.",
+      "assertions": [
+        "Finds at least 12 of the 16 seeded defects in the answer key",
+        "Gives the triggering sequence or visible symptom for the bugs",
+        "Findings are ordered by severity with real bugs first",
+        "No invented defects or advice that is wrong for React 18",
+        "Says what was not verified"
+      ]
+    },
+    {
+      "id": "r2-fix-productsearch",
+      "files": [
+        "evals/files/r2/ProductSearch.jsx"
+      ],
+      "prompt": "ProductSearch.jsx has bugs: users report old results flashing over new ones, a stray 0 on the page, results not updating when the category changes, and a console warning about an uncontrolled input. Fix the component. Keep its props and its UI. Save the fixed file as ProductSearch.fixed.jsx and write notes.md with what you changed and why.",
+      "assertions": [
+        "Request race fixed with cancellation or an ignore flag, and the query is URL-encoded",
+        "category prop is used directly (or state resets correctly) so results update when it changes",
+        "Sorted results are derived during render without mutating state; no state-syncing effect",
+        "No stray 0; stable keys; controlled input from the first render",
+        "Loading is cleared on failure and an error state exists; res.ok is checked",
+        "Result items are keyboard operable",
+        "Props and UI kept; no unrelated rewrites"
+      ]
+    },
+    {
+      "id": "r3-build-invite",
+      "files": [],
+      "prompt": "Write InviteMembers.tsx for a React 18 + TypeScript app (no data library). Props: teamId: string. It shows the team's pending invites loaded from GET /api/invites?team=<teamId> (returns [{id, email, sentAt}]), and a form to add several email addresses as removable chips and send them with POST /api/invites (body {teamId, emails}). Validate emails, prevent duplicates, show loading, error and empty states, and keep it accessible. teamId can change while the component is mounted. Save the file as InviteMembers.tsx and write notes.md with your decisions.",
+      "assertions": [
+        "Fetch on teamId change is cancelled or guarded against races and checks res.ok",
+        "Loading, error and empty states for the list; pending and error states for the submit, with double submit prevented",
+        "State is minimal: no derived state stored, no mutation, stable keys for chips and invites",
+        "Stale data handled when teamId changes (list and form reset or clearly scoped)",
+        "Accessible: labelled input, chip remove buttons with names, errors and status announced, real buttons",
+        "Types are sound: no any, status modelled without contradictory booleans"
+      ]
+    }
+  ]
+}

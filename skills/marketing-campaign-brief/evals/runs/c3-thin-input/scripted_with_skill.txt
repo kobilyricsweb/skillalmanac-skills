@@ -1,0 +1,4 @@
+BRIEF CHECK: 0 FAIL, 0 WARN
+Channels: 4 rows, budgets sum 1,500, stated total 1,500; [assumption] lines: 18, listed for owner: 14
+
+This check covers completeness and arithmetic. Whether the plan is the right plan is the owner's call.

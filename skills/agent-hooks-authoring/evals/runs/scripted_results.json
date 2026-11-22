@@ -1,0 +1,174 @@
+{
+ "h1-protect-files|baseline": [
+  {
+   "assertion": "settings intact",
+   "passed": true,
+   "detail": "permissions and Notification hook present"
+  },
+  {
+   "assertion": "blocks .env, migrations/, package-lock.json",
+   "passed": true,
+   "detail": "[True, True, True]"
+  },
+  {
+   "assertion": "blocks .env.production",
+   "passed": true,
+   "detail": "['rc=2 blocked=True']"
+  },
+  {
+   "assertion": "blocks src/../.env and a backslash path",
+   "passed": true,
+   "detail": "[True, True]"
+  },
+  {
+   "assertion": "allows src/app.js and docs/migrations-guide.md",
+   "passed": true,
+   "detail": "[False, False]"
+  }
+ ],
+ "h1-protect-files|with_skill": [
+  {
+   "assertion": "settings intact",
+   "passed": true,
+   "detail": "permissions and Notification hook present"
+  },
+  {
+   "assertion": "blocks .env, migrations/, package-lock.json",
+   "passed": true,
+   "detail": "[True, True, True]"
+  },
+  {
+   "assertion": "blocks .env.production",
+   "passed": true,
+   "detail": "['rc=2 blocked=True']"
+  },
+  {
+   "assertion": "blocks src/../.env and a backslash path",
+   "passed": true,
+   "detail": "[True, True]"
+  },
+  {
+   "assertion": "allows src/app.js and docs/migrations-guide.md",
+   "passed": true,
+   "detail": "[False, False]"
+  }
+ ],
+ "h2-format-and-test-gate|baseline": [
+  {
+   "assertion": "settings intact",
+   "passed": true,
+   "detail": "permissions and Notification hook present"
+  },
+  {
+   "assertion": "formatter ran on src/app.js only",
+   "passed": true,
+   "detail": "log=['<local-path>']"
+  },
+  {
+   "assertion": "formatter not run for README.md",
+   "passed": true,
+   "detail": "log=''"
+  },
+  {
+   "assertion": "path with a space is formatted",
+   "passed": true,
+   "detail": "log='<local-path> routes.js'"
+  },
+  {
+   "assertion": "Stop blocks on failing tests with a reason, not on passing tests",
+   "passed": true,
+   "detail": "fail: blocked=True reason_len=169; pass: blocked=False"
+  },
+  {
+   "assertion": "(info, not an assertion) with stop_hook_active=true the hook lets the turn end",
+   "passed": false,
+   "detail": "blocked=True"
+  }
+ ],
+ "h2-format-and-test-gate|with_skill": [
+  {
+   "assertion": "settings intact",
+   "passed": true,
+   "detail": "permissions and Notification hook present"
+  },
+  {
+   "assertion": "formatter ran on src/app.js only",
+   "passed": true,
+   "detail": "log=['<local-path>']"
+  },
+  {
+   "assertion": "formatter not run for README.md",
+   "passed": true,
+   "detail": "log=''"
+  },
+  {
+   "assertion": "path with a space is formatted",
+   "passed": true,
+   "detail": "log='<local-path> routes.js'"
+  },
+  {
+   "assertion": "Stop blocks on failing tests with a reason, not on passing tests",
+   "passed": true,
+   "detail": "fail: blocked=True reason_len=188; pass: blocked=False"
+  },
+  {
+   "assertion": "(info, not an assertion) with stop_hook_active=true the hook lets the turn end",
+   "passed": false,
+   "detail": "blocked=True"
+  }
+ ],
+ "h3-debug-broken-hook|baseline": [
+  {
+   "assertion": "blocks the three force-push forms",
+   "passed": true,
+   "detail": "[True, True, True]"
+  },
+  {
+   "assertion": "blocks rm -rf and rm -fr",
+   "passed": true,
+   "detail": "[True, True]"
+  },
+  {
+   "assertion": "allows git status, plain push, plain rm, grep -rf",
+   "passed": true,
+   "detail": "[False, False, False, False]"
+  },
+  {
+   "assertion": "still blocks from packages/api",
+   "passed": true,
+   "detail": "True"
+  },
+  {
+   "assertion": "timeout is no longer 5000",
+   "passed": false,
+   "detail": "timeouts=[5000]"
+  }
+ ],
+ "h3-debug-broken-hook|with_skill": [
+  {
+   "assertion": "blocks the three force-push forms",
+   "passed": true,
+   "detail": "[True, True, True]"
+  },
+  {
+   "assertion": "blocks rm -rf and rm -fr",
+   "passed": true,
+   "detail": "[True, True]"
+  },
+  {
+   "assertion": "allows git status, plain push, plain rm, grep -rf",
+   "passed": true,
+   "detail": "[False, False, False, False]"
+  },
+  {
+   "assertion": "still blocks from packages/api",
+   "passed": true,
+   "detail": "True"
+  },
+  {
+   "assertion": "timeout is no longer 5000",
+   "passed": true,
+   "detail": "timeouts=[5]"
+  }
+ ]
+}

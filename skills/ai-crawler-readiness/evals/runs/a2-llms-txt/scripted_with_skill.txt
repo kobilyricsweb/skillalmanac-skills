@@ -1,0 +1,8 @@
+AI ACCESS CHECK: 0 FAIL, 0 WARN, 1 NOTE
+
+NOTE llms.txt: 3 sections, 33 links; has an 'Optional' section
+
+Limits:
+  - robots.txt is a request, not an access control; user-initiated fetchers may not follow it
+  - a firewall, CDN bot rule or login wall can block a crawler that robots.txt allows; check server logs or the CDN settings
+  - no file here controls whether an assistant cites the site; that depends on being indexed and on the content

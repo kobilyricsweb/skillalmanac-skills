@@ -1,0 +1,47 @@
+{
+  "skill": "agent-hooks-authoring",
+  "fail": 0,
+  "warn": 2,
+  "items": [
+    {
+      "level": "PASS",
+      "code": "frontmatter-keys",
+      "message": "only open-spec keys used"
+    },
+    {
+      "level": "PASS",
+      "code": "name-format",
+      "message": "name 'agent-hooks-authoring' is valid"
+    },
+    {
+      "level": "PASS",
+      "code": "description-length",
+      "message": "description is 549 chars"
+    },
+    {
+      "level": "PASS",
+      "code": "body-lines",
+      "message": "SKILL.md body has 102 lines"
+    },
+    {
+      "level": "PASS",
+      "code": "body-tokens",
+      "message": "body is about 1728 tokens by chars/4"
+    },
+    {
+      "level": "PASS",
+      "code": "package-size",
+      "message": "package is 34515 bytes in 11 files"
+    },
+    {
+      "level": "WARN",
+      "code": "evidence-file",
+      "message": "LISTING.md is missing (required before publishing)"
+    },
+    {
+      "level": "WARN",
+      "code": "evidence-file",
+      "message": "VERIFICATION.md is missing (required before publishing)"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "skill_name": "meeting-notes-and-actions",
+  "evals": [
+    {
+      "id": "m1-marketing-sync",
+      "prompt": "Here's the transcript from today's sync. Can you write up the meeting notes with action items?",
+      "files": [
+        "evals/files/m1_marketing_sync.txt"
+      ],
+      "deliverable": "notes.md",
+      "assertions": [
+        "The launch date is recorded as December 8th as the decision; December 1st appears only as the superseded date, if at all",
+        "The paid budget is given as 18,500 dollars; 15,000 is not presented as the budget",
+        "Updating the landing page is listed as an action with no owner (unassigned or flagged), not assigned to a named person",
+        "Switching the newsletter vendor is shown as parked or not decided, not as a decision or an action",
+        "The customer-photo approval is listed as an open question; it is not reported as approved, and Victor is not given a firm commitment he did not make",
+        "Actions for Dana (social variants to Mei, Wednesday), Omar (final terms to Victor, tomorrow) and Mei (ad schedule to Rachel, Friday) are present with those owners and due dates",
+        "Nothing in the notes is absent from the transcript (no invented reasons, names, dates or figures)"
+      ]
+    },
+    {
+      "id": "m2-client-call",
+      "prompt": "Summarize this client call and tell me who owes what.",
+      "files": [
+        "evals/files/m2_client_call.txt"
+      ],
+      "deliverable": "notes.md",
+      "assertions": [
+        "The 25% service credit is recorded as requested and not agreed; Sam's action is to take it to finance and answer by the end of next week",
+        "The number of affected stores is 17 (14 is not given as the figure)",
+        "Sending the invites for the twice-weekly check-ins is owned by Sam, not Julia",
+        "Sam and Samir are never confused: every action is attributed to the right one",
+        "The premium-tier request is recorded as raised with no commitment, not as agreed",
+        "Julia's two actions are present: root-cause report by Monday, dedicated escalation number today; Ken's store list tomorrow",
+        "Status page API access is recorded as undecided or open, not as agreed"
+      ]
+    },
+    {
+      "id": "m3-retro",
+      "prompt": "minutes for this retro pls, need to send to the team",
+      "files": [
+        "evals/files/m3_retro.txt"
+      ],
+      "deliverable": "notes.md",
+      "assertions": [
+        "The QA checklist is owned by Lena (not Tom), due before the next sprint starts",
+        "Bug figures are 13 launch-blocking and 31 total in the first week",
+        "The staging sign-off step is recorded as a decision",
+        "Dropping or changing the weekly client demo is recorded as not decided",
+        "Archiving the old Figma files has no owner and is flagged as such",
+        "Who owns the analytics dashboard is listed as an open question",
+        "No dates are invented: no calendar date is given for 'before the next sprint starts' or for Tom's leave, and the invoice overrun has no amount"
+      ]
+    }
+  ]
+}

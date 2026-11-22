@@ -1,0 +1,14 @@
+{
+  "s1-sales-by-region": {
+    "A": "baseline",
+    "B": "with_skill"
+  },
+  "s2-expenses-by-category": {
+    "A": "with_skill",
+    "B": "baseline"
+  },
+  "s3-unique-customers": {
+    "A": "baseline",
+    "B": "with_skill"
+  }
+}

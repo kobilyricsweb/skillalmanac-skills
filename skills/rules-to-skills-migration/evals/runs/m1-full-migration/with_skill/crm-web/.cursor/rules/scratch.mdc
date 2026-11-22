@@ -1,0 +1,10 @@
+---
+alwaysApply: false
+---
+
+# Performance investigation checklist (attach by hand when needed)
+
+- Record with the React Profiler before changing anything; save the flamegraph in the PR.
+- Turn on why-did-you-render for the suspect component only.
+- Check the network tab for request waterfalls before blaming rendering.
+- Measure again after the change, same scenario, and put both numbers in the PR.

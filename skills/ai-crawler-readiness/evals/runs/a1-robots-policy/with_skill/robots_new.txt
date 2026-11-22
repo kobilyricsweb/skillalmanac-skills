@@ -1,0 +1,42 @@
+# Everyone not named below: public pages may be crawled.
+# Private areas stay closed to every crawler.
+User-agent: *
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /internal-search
+
+# Model training: not allowed.
+# GPTBot (OpenAI training), ClaudeBot (Anthropic training),
+# Google-Extended (Gemini training and grounding; does not remove the site
+# from Google Search or from AI features inside Search).
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+Disallow: /
+
+# Other training crawlers, blocked in the previous policy.
+# Not checked against their operators' documentation in this revision.
+User-agent: anthropic-ai
+User-agent: CCBot
+Disallow: /
+
+# Answer search: allowed so articles can be cited in assistant answers.
+# Its own group, so the private paths are repeated.
+User-agent: OAI-SearchBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /internal-search
+
+# User-requested fetches: allowed when a person asks an assistant to open a page.
+# Their operators say robots.txt may not apply to these fetchers.
+# Its own group, so the private paths are repeated.
+User-agent: ChatGPT-User
+User-agent: Claude-User
+User-agent: Perplexity-User
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /internal-search
+
+Sitemap: https://www.harborlight-press.example/sitemap.xml

@@ -1,0 +1,18 @@
+BRIEF CHECK: 12 FAIL, 2 WARN
+Channels: 5 rows, budgets sum 1,500, stated total none; [assumption] lines: 3, listed for owner: 0
+FAIL SECTION      missing section: budget
+FAIL SECTION      missing section: timeline
+FAIL OBJECTIVE    the objective has no number; state the metric, the target value and the baseline
+FAIL OBJECTIVE    the objective has no deadline (a date, month or quarter)
+FAIL CHANNELS     the channel table has no 'kpi' column
+FAIL UNTAGGED     line 7: figure $1,500. is not tagged [given], [assumption] or [calc]: A short spring promotion for the bakery, run mainly through local paid social an
+FAIL UNTAGGED     line 42: figure $600 is not tagged [given], [assumption] or [calc]: | Local paid social (Meta/Instagram, geo-targeted) | $600 | Reach nearby adults,
+FAIL UNTAGGED     line 43: figure $300 is not tagged [given], [assumption] or [calc]: | Google Business Profile posts and local search ads | $300 | Capture "bakery ne
+FAIL UNTAGGED     line 44: figure $100 is not tagged [given], [assumption] or [calc]: | Email and SMS to existing customers | $100 | Tools and send costs; reactivate 
+FAIL UNTAGGED     line 45: figure $350 is not tagged [given], [assumption] or [calc]: | In-store signage, flyers, and table tents | $350 | Printing and POS cards for 
+FAIL UNTAGGED     line 46: figure $150 is not tagged [given], [assumption] or [calc]: | Contingency and boosted posts | $150 | Extend the best-performing ad or post |
+FAIL ASSUMPTIONS  the assumptions and open questions section lists nothing; write the items or 'none'
+WARN OBJECTIVE    no baseline in the objective; write the current value or 'no baseline: first weeks establish it'
+WARN MEASUREMENT  no decision rule (for example: 'if cost per lead is above X after 2 weeks, pause the channel')
+
+This check covers completeness and arithmetic. Whether the plan is the right plan is the owner's call.

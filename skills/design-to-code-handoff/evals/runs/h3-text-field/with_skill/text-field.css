@@ -1,0 +1,111 @@
+/* Text field. Source: design/text-field.json (component set "Text field", states Default, Focus, Error, Disabled).
+   Uses the semantic tokens from src/tokens.css. Values with no token are marked and listed in notes.md. */
+
+/* Wrapper: the design's 320px component, fluid below that. */
+.text-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px; /* spec value, no token (nearest --space-1 4px / --space-2 8px). Kept so the stack matches the design's 96px height. */
+  width: 100%;
+  max-width: 320px;
+  font-family: var(--font-sans);
+}
+
+.text-field__label {
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  line-height: 1.429; /* 20px on 14px */
+}
+
+.text-field__input {
+  box-sizing: border-box;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 100%;
+  height: 44px; /* fixed control height from the design; a single-line input scrolls, it does not grow */
+  margin: 0;
+  padding: 0 var(--space-3); /* horizontal 12px token; the design's 10px vertical padding is replaced by centring inside the 44px height */
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-control);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-md);
+  font-weight: 400;
+  line-height: 1.5; /* 24px on 16px */
+}
+
+.text-field__input::placeholder {
+  color: var(--color-text-placeholder);
+  opacity: 1;
+}
+
+/* Focus. The design draws a 2px border; the extra 1px is an inset shadow so the layout does not shift.
+   The .is-focus class is only used by the static demo specimen in text-field.html; real focus uses :focus-visible. */
+.text-field__input:focus-visible,
+.text-field__input.is-focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow:
+    inset 0 0 0 1px var(--color-accent),
+    0 0 0 3px rgba(11, 92, 173, 0.25); /* no accent-alpha token; value from design, palette-blue-600 at 25% */
+}
+
+/* Error. Set with aria-invalid="true". The design has no focused-error frame; the danger ring below is a decision, not in the design. */
+.text-field__input[aria-invalid="true"] {
+  border-color: var(--color-border-danger);
+}
+
+.text-field__input[aria-invalid="true"]:focus-visible {
+  box-shadow:
+    inset 0 0 0 1px var(--color-border-danger),
+    0 0 0 3px rgba(180, 35, 24, 0.25); /* not in the design */
+}
+
+/* Disabled */
+.text-field__input:disabled {
+  background-color: var(--color-surface-disabled);
+  border-color: var(--color-border);
+  color: var(--color-text-placeholder);
+  cursor: not-allowed;
+}
+
+.text-field:has(> .text-field__input:disabled) .text-field__label {
+  color: var(--color-text-placeholder);
+}
+
+.text-field__hint {
+  align-self: stretch;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  line-height: 1.429;
+}
+
+/* Error message: replaces the hint in the Error state. */
+.text-field__message {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* spec value, no token (see .text-field gap) */
+  align-self: stretch;
+  margin: 0;
+}
+
+.text-field__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--color-border-danger);
+}
+
+.text-field__message-text {
+  flex: 1 1 0;
+  min-width: 0;
+  color: var(--color-text-danger);
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  line-height: 1.429;
+}

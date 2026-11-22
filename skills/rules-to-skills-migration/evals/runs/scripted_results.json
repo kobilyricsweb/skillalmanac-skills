@@ -1,0 +1,154 @@
+{
+ "m1-full-migration|baseline": [
+  {
+   "assertion": "root AGENTS.md holds the conventions",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": ".cursorrules-only rule (toastError) in AGENTS.md",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "hotfix procedure not in AGENTS.md; at most 80 lines",
+   "passed": true,
+   "detail": "12 lines"
+  },
+  {
+   "assertion": "four procedures exist as skills",
+   "passed": true,
+   "detail": "found ['release:notes', 'prisma migrate diff', 'cherry-pick -x', 'why-did-you-render']"
+  },
+  {
+   "assertion": "every SKILL.md has valid name and description",
+   "passed": true,
+   "detail": "bad: []"
+  },
+  {
+   "assertion": "skills under .agents/skills and .claude/skills",
+   "passed": true,
+   "detail": "8 skill folders"
+  },
+  {
+   "assertion": "component rules exist outside .cursor",
+   "passed": true,
+   "detail": ""
+  }
+ ],
+ "m1-full-migration|with_skill": [
+  {
+   "assertion": "root AGENTS.md holds the conventions",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": ".cursorrules-only rule (toastError) in AGENTS.md",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "hotfix procedure not in AGENTS.md; at most 80 lines",
+   "passed": true,
+   "detail": "19 lines"
+  },
+  {
+   "assertion": "four procedures exist as skills",
+   "passed": true,
+   "detail": "found ['release:notes', 'prisma migrate diff', 'cherry-pick -x', 'why-did-you-render']"
+  },
+  {
+   "assertion": "every SKILL.md has valid name and description",
+   "passed": true,
+   "detail": "bad: []"
+  },
+  {
+   "assertion": "skills under .agents/skills and .claude/skills",
+   "passed": true,
+   "detail": "8 skill folders"
+  },
+  {
+   "assertion": "component rules exist outside .cursor",
+   "passed": true,
+   "detail": ""
+  }
+ ],
+ "m2-single-rule-to-skill|baseline": [
+  {
+   "assertion": "name valid, vendor-neutral, equals folder",
+   "passed": true,
+   "detail": "name='refund-handling' folder='refund-handling'"
+  },
+  {
+   "assertion": "only open-spec frontmatter keys",
+   "passed": true,
+   "detail": "extra=[]"
+  },
+  {
+   "assertion": "description 150-1024, third person, when + boundary",
+   "passed": false,
+   "detail": "291 chars"
+  },
+  {
+   "assertion": "facts survive",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "assertion": "numbered workflow and SQL check kept",
+   "passed": false,
+   "detail": "0 numbered lines"
+  }
+ ],
+ "m2-single-rule-to-skill|with_skill": [
+  {
+   "assertion": "name valid, vendor-neutral, equals folder",
+   "passed": true,
+   "detail": "name='refund-handling' folder='refund-handling'"
+  },
+  {
+   "assertion": "only open-spec frontmatter keys",
+   "passed": true,
+   "detail": "extra=[]"
+  },
+  {
+   "assertion": "description 150-1024, third person, when + boundary",
+   "passed": true,
+   "detail": "387 chars"
+  },
+  {
+   "assertion": "facts survive",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "assertion": "numbered workflow and SQL check kept",
+   "passed": true,
+   "detail": "5 numbered lines"
+  }
+ ],
+ "m3-plan-only|baseline": [
+  {
+   "assertion": "no file changed or added",
+   "passed": true,
+   "detail": "changed/added: []"
+  },
+  {
+   "assertion": "reply names all five sources",
+   "passed": true,
+   "detail": "missing []"
+  }
+ ],
+ "m3-plan-only|with_skill": [
+  {
+   "assertion": "no file changed or added",
+   "passed": true,
+   "detail": "changed/added: []"
+  },
+  {
+   "assertion": "reply names all five sources",
+   "passed": true,
+   "detail": "missing []"
+  }
+ ]
+}

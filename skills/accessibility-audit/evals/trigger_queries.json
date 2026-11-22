@@ -1,0 +1,82 @@
+[
+  {
+    "query": "can you do an accessibility audit of our checkout page? html attached",
+    "should_trigger": true
+  },
+  {
+    "query": "is this signup form WCAG 2.2 AA compliant, and what do I need to fix",
+    "should_trigger": true
+  },
+  {
+    "query": "our client got an ADA demand letter, check the homepage for a11y problems",
+    "should_trigger": true
+  },
+  {
+    "query": "make this modal work with a screen reader and keyboard",
+    "should_trigger": true
+  },
+  {
+    "query": "screen reader users say they can't use the date picker component, find out why",
+    "should_trigger": true
+  },
+  {
+    "query": "check this page for section 508 issues before we send it to the agency",
+    "should_trigger": true
+  },
+  {
+    "query": "the dropdown menu isn't keyboard accessible, fix it",
+    "should_trigger": true
+  },
+  {
+    "query": "review my react form component for accessibility problems, labels errors etc",
+    "should_trigger": true
+  },
+  {
+    "query": "need an a11y review of pricing.html, list issues with the wcag criterion for each",
+    "should_trigger": true
+  },
+  {
+    "query": "are the focus states and tab order on this settings page ok for keyboard users",
+    "should_trigger": true
+  },
+  {
+    "query": "redesign this signup page so it looks more modern",
+    "should_trigger": false
+  },
+  {
+    "query": "run an SEO audit on the homepage, titles and meta descriptions",
+    "should_trigger": false
+  },
+  {
+    "query": "the page takes 5 seconds to load, find the bottleneck",
+    "should_trigger": false
+  },
+  {
+    "query": "write a VPAT conformance statement our lawyer can sign",
+    "should_trigger": false
+  },
+  {
+    "query": "translate the form labels into Spanish",
+    "should_trigger": false
+  },
+  {
+    "query": "write Playwright tests for the checkout flow",
+    "should_trigger": false
+  },
+  {
+    "query": "review this pull request for bugs",
+    "should_trigger": false
+  },
+  {
+    "query": "pick a colour palette and tokens for our new design system",
+    "should_trigger": false
+  },
+  {
+    "query": "make the pdf report accessible with tags",
+    "should_trigger": false
+  },
+  {
+    "query": "build a landing page for my bakery",
+    "should_trigger": false
+  }
+]

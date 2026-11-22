@@ -1,0 +1,21 @@
+Financial Analyst, FP&A - Brightwater Foods (Austin, TX, hybrid)
+
+Brightwater Foods is a regional grocery distributor. The FP&A team supports budgeting, forecasting and monthly reporting for six business units.
+
+Responsibilities
+- Build and maintain forecasting models for revenue and operating expenses.
+- Prepare the monthly variance analysis (actuals vs budget) and explain the drivers to business unit leaders.
+- Support the annual budget process.
+- Build dashboards in Power BI for sales and margin reporting.
+- Pull data with SQL from the finance data warehouse.
+- Partner with accounting during month-end close.
+
+Requirements
+- Bachelor's degree in accounting or finance.
+- 2-4 years of experience in FP&A, accounting or financial analysis.
+- Advanced Excel (pivot tables, lookups, modeling).
+- Experience with Power BI or Tableau.
+- SQL experience.
+- CPA or progress toward CPA preferred.
+- Experience with an ERP such as NetSuite or SAP is a plus.
+- Able to present findings to non-finance managers.

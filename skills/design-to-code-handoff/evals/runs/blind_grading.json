@@ -1,0 +1,224 @@
+{
+  "h1-plan-card": {
+    "checks": [
+      "1 Card is a vertical flex column with gap 24px (--space-6)",
+      "2 Card padding 32px (--space-8)",
+      "3 Card background --color-surface",
+      "4 Card border 1px solid --color-border",
+      "5 Card radius 12px (--radius-lg)",
+      "6 Card shadow --shadow-card",
+      "7 Card not fixed at 360px wide (max-width or parent-controlled)",
+      "8 Badge hugs its width (not stretched on the card)",
+      "9 Badge padding 4px 12px (--space-1 / --space-3)",
+      "10 Badge pill radius (--radius-pill)",
+      "11 Badge background --color-accent-subtle",
+      "12 Badge 12px, 16px line, 600 weight, 0.04em tracking, uppercase via CSS",
+      "13 Badge text colour --color-accent",
+      "14 Header gap 6px (off-token, kept as literal)",
+      "15 Plan name 'Pro' 20px/28px, 600, --color-text",
+      "16 Price row horizontal, gap 4px (--space-1), baseline alignment",
+      "17 Price '$29' 48px/56px, 700 weight, -0.02em tracking",
+      "18 Period '/ month' 16px/24px, 400 weight, muted colour (nearest token)",
+      "19 Hidden 'Old price' layer not rendered",
+      "20 Divider 1px tall, full width, --color-border",
+      "21 Feature list vertical gap 12px (--space-3), full width",
+      "22 Feature rows: horizontal gap 12px, centred; .icon 20x20 and non-shrinking",
+      "23 Feature text 16px/24px in --color-text and fills the row",
+      "24 Features built as a list with the three exact texts",
+      "25 CTA reuses .btn .btn--primary .btn--lg .btn--block with label 'Start 14-day trial', not restyled locally",
+      "26 No raw hex or --palette-* tokens in the card CSS",
+      "27 notes.md reports the off-token values and decisions (header 6px, period colour)",
+      "28 notes.md states the hidden layer was skipped",
+      "29 notes.md states that hover/focus/other states come from .btn (not in design)",
+      "30 notes.md flags the check icon asset as needed"
+    ],
+    "A": {
+      "items": {
+        "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true, "10": true,
+        "11": true, "12": true, "13": true, "14": true, "15": true, "16": true, "17": true, "18": true, "19": true, "20": true,
+        "21": true, "22": true, "23": false, "24": true, "25": true, "26": true, "27": true, "28": true, "29": false, "30": true
+      },
+      "met": 28,
+      "total": 30,
+      "defects": [
+        "Feature text span has no flex grow or min-width rule ('.plan-card__feature' sets only gap and font), so it does not fill the row as the key requires.",
+        "notes.md never mentions hover, focus or other button states; it only says the CTA is 'a button' with no state discussion.",
+        "Header gap 6px and line-heights/letter-spacing are literal values; flagged in notes, so not a silent defect.",
+        "Media query at max-width 400px changes card padding to 24px, which is not in the design; disclosed as a judgement call."
+      ],
+      "score": 7,
+      "notes": "Token use is clean: the card CSS has no hex or palette references and maps surface, border, radius, shadow and spacing to the semantic tokens, and the CTA reuses '.btn .btn--primary .btn--lg .btn--block'. Misses are the feature span with no fill rule (plan-card.css '.plan-card__feature' has no flex: 1) and the notes, which omit any hover or focus statement."
+    },
+    "B": {
+      "items": {
+        "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true, "10": true,
+        "11": true, "12": true, "13": true, "14": true, "15": true, "16": true, "17": true, "18": true, "19": true, "20": true,
+        "21": true, "22": true, "23": true, "24": true, "25": true, "26": true, "27": true, "28": true, "29": true, "30": true
+      },
+      "met": 30,
+      "total": 30,
+      "defects": [
+        "Check icon path is an approximation inferred from the bounding box (both submissions do this); the notes flag it for the designer.",
+        "'.plan-card-pro .btn { align-self: stretch; }' is a local rule on the shared button, but it only affects layout, not appearance."
+      ],
+      "score": 9,
+      "notes": "Every stated value is reproduced: '.plan-card-pro' uses 'gap: var(--space-6)' and 'padding: var(--space-8)', '.feature' uses 'flex: 1 1 0; min-width: 0' so the text fills the row, and '.badge' uses 'align-self' via 'align-items: flex-start' on the card. notes.md covers the 6px header gap, the period colour substitution, the omitted hidden 'Old price' layer, and the states that come from '.btn'."
+    },
+    "better": "B",
+    "reason": "Both submissions match the key on values and token use, but B meets all 30 checks while A leaves the feature text unfilled (no flex rule) and its notes say nothing about button states."
+  },
+  "h2-hero-responsive": {
+    "checks": [
+      "1 Mobile base: flex direction column (stacked)",
+      "2 Mobile cross-axis: children stretch or flex-start",
+      "3 Mobile copy-to-media gap 32px (--space-8)",
+      "4 Desktop copy-to-media gap 64px (--space-16)",
+      "5 Mobile padding 48px 20px (--space-12 / --space-5)",
+      "6 Desktop vertical padding 96px (--space-24)",
+      "7 Desktop side inset 120px at 1440 (off-token, must be reported)",
+      "8 Mobile copy block gap 16px (--space-4)",
+      "9 Mobile headline 36px/44px, 700 weight, -0.02em tracking",
+      "10 Desktop headline 56px/64px, 700 weight, -0.02em tracking",
+      "11 Mobile body 16px/24px in muted colour",
+      "12 Desktop body 18px/28px",
+      "13 Mobile action gap 12px in a column",
+      "14 Mobile buttons full width (.btn--block or equivalent)",
+      "15 Desktop: copy and media side by side in a row",
+      "16 Copy block flexes (flex 1, min-width 0) beside the 520px media",
+      "17 Media 240px tall and full width on mobile",
+      "18 Media radius 16px (--radius-xl) at both sizes",
+      "19 Media image fill is cover and clipped",
+      "20 Background --color-bg-page",
+      "21 Eyebrow 14px/20px, 600 weight, 0.04em, uppercase, --color-accent",
+      "22 Eyebrow, headline and button labels match the design text",
+      "23 Buttons reuse .btn with btn--lg primary/secondary and no local restyle",
+      "24 No fixed 1440 or 375 widths",
+      "25 Breakpoint in the roughly 768 to 1024px range where the row stops fitting",
+      "26 Semantics: section, h1, and image with alt or labelled background",
+      "27 Actions are links or buttons",
+      "28 notes.md reports the off-token 120px inset",
+      "29 notes.md states the breakpoint choice",
+      "30 notes.md lists unspecified tablet and wider-than-1440 layouts",
+      "31 notes.md flags the image asset and alt text as needed",
+      "32 notes.md says hover and focus come from .btn (not in design)"
+    ],
+    "A": {
+      "items": {
+        "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true, "10": true,
+        "11": true, "12": true, "13": true, "14": true, "15": true, "16": true, "17": true, "18": true, "19": false, "20": true,
+        "21": true, "22": true, "23": true, "24": true, "25": false, "26": false, "27": true, "28": true, "29": true, "30": true,
+        "31": false, "32": true
+      },
+      "met": 28,
+      "total": 32,
+      "defects": [
+        "No image element: '.hero__media' is an empty aria-hidden div with a background colour, so there is no cover fill to clip.",
+        "Main breakpoint is 1120px ('@media (min-width: 1120px)'), above the expected roughly 768 to 1024px range for where the row stops fitting.",
+        "Image has no alt text or text alternative (media marked aria-hidden, no image asset or label), so the semantics check fails.",
+        "Notes say the image asset is needed but never mention alt text."
+      ],
+      "score": 7,
+      "notes": "Mobile stacking is correct and the desktop row uses 'padding-block: var(--space-24)' and 'gap: var(--space-16)', with the 120px side inset disclosed as an off-token calc. The misses are the empty aria-hidden '.hero__media' div (no 'object-fit: cover' image, no alt text) and a 1120px breakpoint that is above the expected roughly 768 to 1024px range."
+    },
+    "B": {
+      "items": {
+        "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": false, "9": false, "10": false,
+        "11": true, "12": true, "13": true, "14": true, "15": true, "16": true, "17": false, "18": true, "19": false, "20": true,
+        "21": true, "22": true, "23": true, "24": true, "25": true, "26": false, "27": true, "28": true, "29": true, "30": true,
+        "31": true, "32": false
+      },
+      "met": 25,
+      "total": 32,
+      "defects": [
+        "Mobile copy gap is 24px ('.hero__copy { gap: var(--space-6) }' at all widths) where the key requires 16px; notes say the gap is 'uniform 24px'.",
+        "Mobile headline line-height is 1.18 (about 42.5px at 36px), not the 44px in the key; desktop headline is also 1.18 (about 66px at 56px), not 64px.",
+        "Media height is ratio-driven (aspect-ratio 7/5), giving about 239px at the 335px content width rather than 240px.",
+        "No image element: '.hero__media' is an empty aria-hidden div, so there is no cover fill and no alt text.",
+        "Hover and focus states for the buttons are not mentioned in notes.md."
+      ],
+      "score": 6,
+      "notes": "Desktop structure is right ('.hero__inner' grid with 'minmax(0, 616fr) minmax(0, 520fr)' and 'column-gap: var(--space-16)'), and the 120px side inset is reported as a calc that equals 120px at 1440. Several mobile type and spacing values miss: '.hero__copy { gap: var(--space-6) }' keeps 24px instead of 16px, and '.hero__headline { line-height: 1.18 }' gives no 44px line at 36px."
+    },
+    "better": "A",
+    "reason": "A matches more checks (28 of 32 against 25) and has the correct mobile copy gap, headline line-heights and media height, while B misses the 16px copy gap, both headline line-heights and the hover/focus note."
+  },
+  "h3-text-field": {
+    "checks": [
+      "1 Label above input in a vertical flex column",
+      "2 Gap label to input 6px (off-token, kept as literal)",
+      "3 Gap input to hint or message 6px",
+      "4 Component width fluid (not a fixed 320px)",
+      "5 Label 14px/20px, 500 weight, --color-text",
+      "6 Disabled label colour is the placeholder token",
+      "7 Input height 44px (min-height acceptable)",
+      "8 Input vertical padding 10px kept to reach 44px",
+      "9 Input horizontal padding 12px (--space-3)",
+      "10 Input radius 8px (--radius-md)",
+      "11 Field surface --color-surface",
+      "12 Input text 16px/24px in --color-text",
+      "13 Default border 1px solid --color-border-control",
+      "14 Placeholder colour --color-text-placeholder",
+      "15 Focus: 2px accent edge plus 3px ring at 25% accent",
+      "16 Focus does not shift layout",
+      "17 Focus text colour --color-text",
+      "18 Focus mapped to :focus-visible or :focus (not a hand-toggled class only)",
+      "19 Error border 1px solid --color-border-danger",
+      "20 Error styling keyed to [aria-invalid=\"true\"]",
+      "21 aria-describedby links the input to its hint or error message",
+      "22 Error message row: 16px icon, 6px gap, 14px/20px, danger colour, exact text",
+      "23 Error message replaces the hint",
+      "24 Disabled: surface-disabled background, --color-border border, placeholder-coloured text",
+      "25 Disabled styled via the :disabled selector",
+      "26 Hint 14px/20px in muted colour",
+      "27 Hint text exact: 'We only use this for sign-in links.'",
+      "28 Label for/id association",
+      "29 Input type email",
+      "30 Error icon is decorative (aria-hidden)",
+      "31 notes.md reports the off-token 6px gaps",
+      "32 notes.md states the 10px padding decision",
+      "33 notes.md states undrawn states (hover, read-only, focus plus error)",
+      "34 notes.md flags the alert icon asset as needed",
+      "35 No raw hex or --palette-* tokens in component CSS"
+    ],
+    "A": {
+      "items": {
+        "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": false, "9": true, "10": true,
+        "11": true, "12": true, "13": true, "14": true, "15": true, "16": true, "17": true, "18": true, "19": true, "20": true,
+        "21": true, "22": true, "23": true, "24": true, "25": true, "26": true, "27": true, "28": true, "29": true, "30": true,
+        "31": true, "32": true, "33": true, "34": true, "35": true
+      },
+      "met": 34,
+      "total": 35,
+      "defects": [
+        "The 10px vertical padding is dropped rather than kept; the 44px height is set and text is centred instead.",
+        "Focus and error rings use raw rgba values (rgba(11,92,173,0.25) and rgba(180,35,24,0.25)) instead of tokens.",
+        "Focus border stays 1px and the 2px look is simulated with an inset box-shadow, so the design's 2px border is not literally reproduced.",
+        "Error ring is an invented state not in the design (disclosed in notes)."
+      ],
+      "score": 9,
+      "notes": "The error state is driven by '.text-field__input[aria-invalid=\"true\"]' and the disabled state by ':disabled', with '.text-field:has(> .text-field__input:disabled) .text-field__label' for the label, so no hand-toggled class is needed. Notes disclose the 6px gaps, the dropped 10px padding, the undrawn hover and read-only states, and the alert icon asset, but the 10px drop is the one value that misses the key."
+    },
+    "B": {
+      "items": {
+        "1": true, "2": true, "3": true, "4": false, "5": true, "6": true, "7": true, "8": false, "9": true, "10": true,
+        "11": true, "12": true, "13": true, "14": true, "15": true, "16": false, "17": true, "18": true, "19": true, "20": false,
+        "21": true, "22": true, "23": true, "24": true, "25": false, "26": true, "27": true, "28": true, "29": true, "30": true,
+        "31": true, "32": false, "33": false, "34": true, "35": true
+      },
+      "met": 28,
+      "total": 35,
+      "defects": [
+        "Component width is a fixed 'width: 320px' on '.text-field' (max-width: 100% only shrinks it), not the fluid width the key requires.",
+        "Focus sets 'border-width: 2px' on '.text-field__control' with no padding compensation, so the field's content box shifts by 1px on focus.",
+        "Error styling is keyed to a '.text-field--error' modifier class rather than [aria-invalid=\"true\"], so the error state is hand-toggled.",
+        "Disabled colours are keyed to '.text-field--disabled' classes; only the cursor uses :disabled.",
+        "The 10px vertical padding is not kept or mentioned in notes.md.",
+        "notes.md does not mention hover, read-only, or the focus-plus-error combination as undrawn states."
+      ],
+      "score": 6,
+      "notes": "The 6px gaps, 44px control, 12px horizontal padding, token colours and the 3px focus ring with 25% accent are correctly built using 'color-mix(in srgb, var(--color-accent) 25%, transparent)'. The misses are the fixed 'width: 320px', the focus 'border-width: 2px' that shifts layout, and error/disabled states driven by '.text-field--error' and '.text-field--disabled' classes rather than '[aria-invalid=\"true\"]' and ':disabled'."
+    },
+    "better": "A",
+    "reason": "A meets 34 of 35 checks, with state styling on aria-invalid and :disabled and no layout shift on focus, while B meets 28 and keys error and disabled styling on hand-toggled classes, uses a fixed 320px width and shifts the layout on focus."
+  }
+}

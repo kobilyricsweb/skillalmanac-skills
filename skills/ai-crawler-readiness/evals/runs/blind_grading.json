@@ -1,0 +1,292 @@
+{
+ "ab_key": {
+  "a1-robots-policy": {
+   "A": "with_skill",
+   "B": "baseline"
+  },
+  "a2-llms-txt": {
+   "A": "with_skill",
+   "B": "baseline"
+  },
+  "a3-not-cited": {
+   "A": "baseline",
+   "B": "with_skill"
+  }
+ },
+ "grader": "sub-agent, sonnet alias, 2026-11-20; saw outputs as A/B with ground truth",
+ "grading": {
+  "a1-robots-policy": {
+   "A": {
+    "assertions": [
+     {
+      "text": "SCRIPTED: in robots_new.txt GPTBot and ClaudeBot are blocked on /articles/some-post",
+      "passed": true,
+      "evidence": "scripted: GPTBot BLOCK, ClaudeBot BLOCK"
+     },
+     {
+      "text": "SCRIPTED: OAI-SearchBot, Claude-SearchBot and PerplexityBot are allowed on /articles/some-post",
+      "passed": true,
+      "evidence": "scripted: allow on /articles/some-post"
+     },
+     {
+      "text": "SCRIPTED: OAI-SearchBot, Claude-SearchBot and PerplexityBot are still blocked on /admin/ and /checkout/",
+      "passed": true,
+      "evidence": "scripted: BLOCK on /admin/ and /checkout/"
+     },
+     {
+      "text": "Says the existing 'GPT-Bot' group has no effect because the token is wrong",
+      "passed": true,
+      "evidence": "GPT-Bot changed to GPTBot. The old token was misspelled, so the group did nothing"
+     },
+     {
+      "text": "Explains that Google-Extended does not remove the site from AI answers inside Google Search, and that doing so has a search-snippet cost for the owner to decide",
+      "passed": true,
+      "evidence": "Google-Extended controls only Gemini training and grounding... nosnippet or max-snippet:0... reduce or remove search visibility. This is an owner decision"
+     },
+     {
+      "text": "Notes that user-requested fetchers may not follow robots.txt, or that robots.txt is not enforcement",
+      "passed": true,
+      "evidence": "Their operators say robots.txt may not apply to these fetchers"
+     },
+     {
+      "text": "Makes no promise that the site will be cited",
+      "passed": true,
+      "evidence": "robots.txt does not guarantee citation"
+     }
+    ],
+    "defects": [
+     "Keeps anthropic-ai blocked and calls it unverified (honest, harmless)"
+    ],
+    "score": 9
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "SCRIPTED: in robots_new.txt GPTBot and ClaudeBot are blocked on /articles/some-post",
+      "passed": true,
+      "evidence": "scripted: block"
+     },
+     {
+      "text": "SCRIPTED: OAI-SearchBot, Claude-SearchBot and PerplexityBot are allowed on /articles/some-post",
+      "passed": true,
+      "evidence": "scripted: allow"
+     },
+     {
+      "text": "SCRIPTED: OAI-SearchBot, Claude-SearchBot and PerplexityBot are still blocked on /admin/ and /checkout/",
+      "passed": true,
+      "evidence": "scripted: blocked on private paths"
+     },
+     {
+      "text": "Says the existing 'GPT-Bot' group has no effect because the token is wrong",
+      "passed": true,
+      "evidence": "The original file blocks GPT-Bot. That is not OpenAI's token, so the rule never matched"
+     },
+     {
+      "text": "Explains that Google-Extended does not remove the site from AI answers inside Google Search, and that doing so has a search-snippet cost for the owner to decide",
+      "passed": true,
+      "evidence": "Google-Extended only controls use for Gemini training and grounding... nosnippet... removes snippets in Search too... product decision"
+     },
+     {
+      "text": "Notes that user-requested fetchers may not follow robots.txt, or that robots.txt is not enforcement",
+      "passed": true,
+      "evidence": "robots.txt is a request, not enforcement; user-triggered bots may not be bound"
+     },
+     {
+      "text": "Makes no promise that the site will be cited",
+      "passed": true,
+      "evidence": "Allowing them... is not a guarantee"
+     }
+    ],
+    "defects": [
+     "Adds Applebot-Extended, Meta-ExternalAgent, Bytespider beyond request (flagged as removable)",
+     "Tokens not verified against docs (disclosed)"
+    ],
+    "score": 8
+   },
+   "preference": "tie",
+   "reason": "Both files pass all checks and both reply.md files cover every point; A is slightly more complete (explicit private-path rationale, check output), B adds unrequested bots but flags them."
+  },
+  "a2-llms-txt": {
+   "A": {
+    "assertions": [
+     {
+      "text": "SCRIPTED: llms.txt passes the format lint (single H1 first, well-formed link items, absolute URLs)",
+      "passed": true,
+      "evidence": "scripted lint 0 FAIL; 33 links"
+     },
+     {
+      "text": "The file is a curated index (docs, API, CLI, SDKs), not all 40 pages; login, signup and legal pages are left out",
+      "passed": true,
+      "evidence": "33 of 40 pages; login, signup, careers, cookie policy omitted; only Terms/Privacy under Optional"
+     },
+     {
+      "text": "Docs links point to the .md versions",
+      "passed": true,
+      "evidence": "all docs links end .md"
+     },
+     {
+      "text": "Has an Optional section or otherwise separates secondary links",
+      "passed": true,
+      "evidence": "## Optional section"
+     },
+     {
+      "text": "Says Google does not use llms.txt for Search / AI Overviews",
+      "passed": true,
+      "evidence": "llms.txt files are not needed for Search and do not affect visibility"
+     },
+     {
+      "text": "Says the effect on ChatGPT or other assistants is unproven, and makes no promise",
+      "passed": true,
+      "evidence": "no operator statement that ChatGPT, Claude or Perplexity read it; Short answer: no"
+     },
+     {
+      "text": "Names what does matter (indexing, snippet eligibility, crawler access)",
+      "passed": true,
+      "evidence": "indexed, no noindex/nosnippet, OAI-SearchBot allowed, raw HTML"
+     }
+    ],
+    "defects": [
+     "Assumes every /docs page has a .md twin (disclosed)"
+    ],
+    "score": 9
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "SCRIPTED: llms.txt passes the format lint (single H1 first, well-formed link items, absolute URLs)",
+      "passed": true,
+      "evidence": "scripted lint 0 FAIL; 40 links"
+     },
+     {
+      "text": "The file is a curated index (docs, API, CLI, SDKs), not all 40 pages; login, signup and legal pages are left out",
+      "passed": false,
+      "evidence": "All 40 pages listed, including Login, Sign up, Careers, Cookie policy, hiring and offsite blog posts (in Optional) - not curated"
+     },
+     {
+      "text": "Docs links point to the .md versions",
+      "passed": true,
+      "evidence": "docs links end .md"
+     },
+     {
+      "text": "Has an Optional section or otherwise separates secondary links",
+      "passed": true,
+      "evidence": "## Optional section"
+     },
+     {
+      "text": "Says Google does not use llms.txt for Search / AI Overviews",
+      "passed": true,
+      "evidence": "does not use llms.txt for Search or AI Overviews"
+     },
+     {
+      "text": "Says the effect on ChatGPT or other assistants is unproven, and makes no promise",
+      "passed": true,
+      "evidence": "no confirmed evidence that ChatGPT reads llms.txt; not a route into"
+     },
+     {
+      "text": "Names what does matter (indexing, snippet eligibility, crawler access)",
+      "passed": true,
+      "evidence": "indexing, crawl access, robots.txt/WAF"
+     }
+    ],
+    "defects": [
+     "Reply claims login/signup/legal were put under Optional to signal low priority, but they should be omitted",
+     "Some Google claims stated from memory without source (disclosed)"
+    ],
+    "score": 7
+   },
+   "preference": "A",
+   "reason": "A delivers a genuinely curated index that leaves out login/signup/careers, whereas B dumps all 40 pages; the replies are otherwise equally honest."
+  },
+  "a3-not-cited": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Identifies the CDN 'Block AI bots' rule as the main cause, citing the 403 responses to the AI crawlers in the log",
+      "passed": true,
+      "evidence": "Block AI bots... returns HTTP 403 ... table OAI-SearchBot 6, ClaudeBot 4, Claude-SearchBot 3, PerplexityBot 1 all 403"
+     },
+     {
+      "text": "Notes Googlebot receives 200, so the block is specific to AI crawlers",
+      "passed": true,
+      "evidence": "Googlebot/2.1 | 6 | 200 in table; contrasts with AI crawlers (implicit inference)"
+     },
+     {
+      "text": "Flags nosnippet on the guide page and what it does",
+      "passed": true,
+      "evidence": "nosnippet tells engines not to show text snippets... removes quotable excerpts"
+     },
+     {
+      "text": "Flags that the guide content is missing from the raw HTML (JavaScript-rendered)",
+      "passed": true,
+      "evidence": "empty <main id=\"root\">... Server-render or prerender"
+     },
+     {
+      "text": "Treats the GPTBot 200 requests with caution (possible impostor; verify by IP range) or at least notes the inconsistency",
+      "passed": true,
+      "evidence": "GPTBot got 200 while OAI-SearchBot got 403; user agent strings can be spoofed... verify against published IP ranges"
+     },
+     {
+      "text": "Says how to verify the fix (200s in logs per crawler) and how to measure afterwards",
+      "passed": true,
+      "evidence": "re-run the log filter... confirm 200s; then check whether guides appear"
+     },
+     {
+      "text": "Makes no promise of citation",
+      "passed": true,
+      "evidence": "no promise; notes delay"
+     }
+    ],
+    "defects": [
+     "Lists ClaudeBot (training crawler) among search/answer crawlers to allow",
+     "Gives no explicit measurement plan beyond log re-check (no referral/prompt set)"
+    ],
+    "score": 8
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Identifies the CDN 'Block AI bots' rule as the main cause, citing the 403 responses to the AI crawlers in the log",
+      "passed": true,
+      "evidence": "managed rule On; answer-search crawlers get 403; 512-byte block page"
+     },
+     {
+      "text": "Notes Googlebot receives 200, so the block is specific to AI crawlers",
+      "passed": true,
+      "evidence": "table: Googlebot 200 vs AI bots 403 (implicit)"
+     },
+     {
+      "text": "Flags nosnippet on the guide page and what it does",
+      "passed": true,
+      "evidence": "nosnippet stops snippets which Google's AI features need"
+     },
+     {
+      "text": "Flags that the guide content is missing from the raw HTML (JavaScript-rendered)",
+      "passed": true,
+      "evidence": "empty <main id=\"root\">... crawlers that do not run JavaScript see no guide text"
+     },
+     {
+      "text": "Treats the GPTBot 200 requests with caution (possible impostor; verify by IP range) or at least notes the inconsistency",
+      "passed": true,
+      "evidence": "GPTBot gets 200 vs OAI-SearchBot 403 unexplained; verify IP ranges against operators' lists"
+     },
+     {
+      "text": "Says how to verify the fix (200s in logs per crawler) and how to measure afterwards",
+      "passed": true,
+      "evidence": "Measure: status codes per token per day before/after; referral visits; 20-50 prompts"
+     },
+     {
+      "text": "Makes no promise of citation",
+      "passed": true,
+      "evidence": "Unproven: Whether unblocking the CDN brings citations"
+     }
+    ],
+    "defects": [
+     "Does not name GPTBot 200s as likely impostors, only as unexplained (acceptable)"
+    ],
+    "score": 9
+   },
+   "preference": "B",
+   "reason": "Both find all four causes; B classifies crawlers correctly, scopes the CDN fix to training bots, and gives a fuller measurement plan with an explicit unproven section."
+  }
+ }
+}

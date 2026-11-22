@@ -1,0 +1,319 @@
+{
+ "ab_key": {
+  "t1-site-snapshot": {
+   "A": "with_skill",
+   "B": "baseline"
+  },
+  "t2-not-indexed": {
+   "A": "with_skill",
+   "B": "baseline"
+  },
+  "t3-crawl-export": {
+   "A": "with_skill",
+   "B": "baseline"
+  }
+ },
+ "grader": "sub-agent, sonnet alias, 2026-11-20; saw outputs as A/B with ground truth",
+ "grading": {
+  "t1-site-snapshot": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Finds the noindex page that is listed in the sitemap (copper-kettle)",
+      "passed": true,
+      "evidence": "#1 /copper-kettle noindex, follow and listed in sitemap.xml"
+     },
+     {
+      "text": "Finds that /sale is blocked in robots.txt while noindex and in the sitemap, and explains that the noindex cannot be read",
+      "passed": true,
+      "evidence": "the crawler cannot fetch the page, so it never reads the noindex"
+     },
+     {
+      "text": "Finds the two conflicting canonicals on steel-kettle",
+      "passed": true,
+      "evidence": "Two canonicals: https www and http non-www"
+     },
+     {
+      "text": "Finds that the descale guide's content is missing from the raw HTML (JavaScript-rendered) and that its JSON-LD does not parse",
+      "passed": true,
+      "evidence": "Raw HTML body has 5 visible words... JSON-LD does not parse: trailing comma"
+     },
+     {
+      "text": "Finds page 2 canonicalised to page 1, or the duplicate titles between them",
+      "passed": true,
+      "evidence": "#6 canonical points to /kettles; #7 identical title and description"
+     },
+     {
+      "text": "Ranks indexing-blocking problems above cosmetic ones",
+      "passed": true,
+      "evidence": "Blocking table first, Presentation and Hygiene last; fix-first list"
+     },
+     {
+      "text": "Does not present title or description character ranges as a search-engine requirement",
+      "passed": true,
+      "evidence": "Basis: convention ... not a search-engine rule; it may be truncated, not penalised"
+     },
+     {
+      "text": "Lists what was not checked",
+      "passed": true,
+      "evidence": "Not checked section: status codes, redirects, rendered DOM, link graph, CWV, index coverage"
+     }
+    ],
+    "defects": [
+     "Guide title stated as 84 characters; ground truth is 87",
+     "Says sitemap+noindex pages are 'dropped' with certainty; minor",
+     "Blocking count of 6 and extra counts are a little padded"
+    ],
+    "score": 9
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Finds the noindex page that is listed in the sitemap (copper-kettle)",
+      "passed": true,
+      "evidence": "#1 copper-kettle noindex while listed in sitemap.xml"
+     },
+     {
+      "text": "Finds that /sale is blocked in robots.txt while noindex and in the sitemap, and explains that the noindex cannot be read",
+      "passed": true,
+      "evidence": "Google cannot read a noindex on a page it is not allowed to crawl"
+     },
+     {
+      "text": "Finds the two conflicting canonicals on steel-kettle",
+      "passed": true,
+      "evidence": "two conflicting canonicals, https www and http non-www"
+     },
+     {
+      "text": "Finds that the descale guide's content is missing from the raw HTML (JavaScript-rendered) and that its JSON-LD does not parse",
+      "passed": true,
+      "evidence": "empty <div id=\"app\">; JSON-LD has a trailing comma, invalid JSON"
+     },
+     {
+      "text": "Finds page 2 canonicalised to page 1, or the duplicate titles between them",
+      "passed": true,
+      "evidence": "canonical /kettles; reuses the exact title and meta description of page 1"
+     },
+     {
+      "text": "Ranks indexing-blocking problems above cosmetic ones",
+      "passed": true,
+      "evidence": "Blockers first, then 'Fix soon', then 'Minor clean-up'"
+     },
+     {
+      "text": "Does not present title or description character ranges as a search-engine requirement",
+      "passed": true,
+      "evidence": "Only says title about 87 chars 'will be truncated', shorten to about 60; no range stated as a rule, but not labelled a convention either"
+     },
+     {
+      "text": "Lists what was not checked",
+      "passed": true,
+      "evidence": "Not verifiable section: status codes, redirects, headers incl X-Robots-Tag, JS files, speed, linking"
+     }
+    ],
+    "defects": [
+     "Title/description length not labelled as a convention; 'will be truncated' stated as fact",
+     "Item 8 (identical body copy, no Product schema) is a content opinion beyond the evidence, though factual",
+     "Does not flag lastmod/sitemap http as separate lastmod item order; fine"
+    ],
+    "score": 9
+   },
+   "preference": "tie",
+   "reason": "Both find every seeded blocker, rank them well and list limits; A is more explicit that length limits are conventions, B is more concise and adds the X-Robots-Tag caveat."
+  },
+  "t2-not-indexed": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Names the canonical pointing to the staging host as the main cause",
+      "passed": true,
+      "evidence": "Root cause: canonical href staging.acme-scheduler.example/pricing"
+     },
+     {
+      "text": "Gives the exact corrected canonical tag",
+      "passed": true,
+      "evidence": "<link rel=\"canonical\" href=\"https://www.acme-scheduler.example/pricing\">"
+     },
+     {
+      "text": "Flags max-snippet:0 and what it does",
+      "passed": true,
+      "evidence": "removes the text snippet and eligibility for AI answer features"
+     },
+     {
+      "text": "Explains that a lab SEO score of 100 does not cover this",
+      "passed": true,
+      "evidence": "does not compare the canonical to the page's own URL, the sitemap or the index"
+     },
+     {
+      "text": "Does not blame the title length or robots.txt for the indexing problem",
+      "passed": true,
+      "evidence": "Title 'not related to the missing page'; robots.txt is fine"
+     },
+     {
+      "text": "Says what still has to be checked (index status / search console, staging crawlability or response headers)",
+      "passed": true,
+      "evidence": "Not checked: live status, staging reachable/indexed, Search Console URL Inspection"
+     },
+     {
+      "text": "Makes no promise about when or whether the page will rank",
+      "passed": true,
+      "evidence": "No timing or ranking is promised; Google decides when to reindex"
+     }
+    ],
+    "defects": [
+     "Claims Lighthouse passes a cross-host canonical; stated as fact though versions vary",
+     "Response headers (X-Robots-Tag) only implied by 'live response matches'"
+    ],
+    "score": 9
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Names the canonical pointing to the staging host as the main cause",
+      "passed": true,
+      "evidence": "The cause (high confidence): canonical to staging host"
+     },
+     {
+      "text": "Gives the exact corrected canonical tag",
+      "passed": true,
+      "evidence": "Change the canonical to https://www.acme-scheduler.example/pricing (URL given, full tag not written out)"
+     },
+     {
+      "text": "Flags max-snippet:0 and what it does",
+      "passed": true,
+      "evidence": "tells Google to show no text snippet; does not block indexing"
+     },
+     {
+      "text": "Explains that a lab SEO score of 100 does not cover this",
+      "passed": true,
+      "evidence": "does not know which host you meant to be canonical... not an indexing guarantee"
+     },
+     {
+      "text": "Does not blame the title length or robots.txt for the indexing problem",
+      "passed": true,
+      "evidence": "robots.txt crawlable; title reasonable length"
+     },
+     {
+      "text": "Says what still has to be checked (index status / search console, staging crawlability or response headers)",
+      "passed": true,
+      "evidence": "Limits: Search Console, X-Robots-Tag header, live site, staging host"
+     },
+     {
+      "text": "Makes no promise about when or whether the page will rank",
+      "passed": false,
+      "evidence": "Wait. Recrawl and reselection usually take days to a couple of weeks"
+     }
+    ],
+    "defects": [
+     "Gives a reindex timing estimate",
+     "Garbled sentence 'A fix-then-pass score does not prove...'",
+     "Ties staging-noindex advice but says nothing of whether the corrected tag must be a full tag; minor"
+    ],
+    "score": 8
+   },
+   "preference": "A",
+   "reason": "A gives the full corrected tag and avoids any timing statement, while B includes a 'days to a couple of weeks' expectation."
+  },
+  "t3-crawl-export": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Says no, and that a tool score is not the definition of done",
+      "passed": true,
+      "evidence": "Are we done at health score 96? No. ... a tool convention"
+     },
+     {
+      "text": "Finds the 3-hop redirect chain starting at /old-tents",
+      "passed": true,
+      "evidence": "Redirect chain of 3 hops, 12 inlinks"
+     },
+     {
+      "text": "Finds the orphan guide pages (0 inlinks)",
+      "passed": true,
+      "evidence": "3 orphan indexable pages: 0 inlinks"
+     },
+     {
+      "text": "Finds sitemap entries that are 301, 404 or canonicalised elsewhere",
+      "passed": true,
+      "evidence": "Sitemap summary: old-tents, trek-65, discontinued-x1, down-800"
+     },
+     {
+      "text": "Finds the soft 404 (200 with 'Page not found')",
+      "passed": true,
+      "evidence": "Soft 404: returns 200 with title \"Page not found\""
+     },
+     {
+      "text": "Finds the sort / filter parameter URLs reached by internal links",
+      "passed": true,
+      "evidence": "/tents?sort=price ... 30, 14 and 30 inlinks"
+     },
+     {
+      "text": "Gives a threshold for at least three findings (for example chains at most 1 hop, 0 orphans, depth at most 3)",
+      "passed": true,
+      "evidence": "Threshold column: 0 orphans; At most 1 hop; At most 3 clicks for 95% of pages"
+     },
+     {
+      "text": "Lists what the export cannot show",
+      "passed": true,
+      "evidence": "Not checked: raw HTML, robots.txt, noindex reasons, field performance, logs, index status"
+     }
+    ],
+    "defects": [
+     "Title-length finding included as item 10 with 30-60 range, labelled convention (fine)",
+     "Refers to the skill's own checklist rules in prose, slightly noisy"
+    ],
+    "score": 10
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Says no, and that a tool score is not the definition of done",
+      "passed": true,
+      "evidence": "No. ... Track those, not the health score"
+     },
+     {
+      "text": "Finds the 3-hop redirect chain starting at /old-tents",
+      "passed": true,
+      "evidence": "Redirect chain 3 hops, 12 inlinks"
+     },
+     {
+      "text": "Finds the orphan guide pages (0 inlinks)",
+      "passed": true,
+      "evidence": "Three orphaned guides with 0 inlinks"
+     },
+     {
+      "text": "Finds sitemap entries that are 301, 404 or canonicalised elsewhere",
+      "passed": true,
+      "evidence": "5 of the 21 sitemap URLs should not be there"
+     },
+     {
+      "text": "Finds the soft 404 (200 with 'Page not found')",
+      "passed": true,
+      "evidence": "soft 404 (200 status, title Page not found)"
+     },
+     {
+      "text": "Finds the sort / filter parameter URLs reached by internal links",
+      "passed": true,
+      "evidence": "Sort and filter URLs get heavy internal linking, 30 inlinks"
+     },
+     {
+      "text": "Gives a threshold for at least three findings (for example chains at most 1 hop, 0 orphans, depth at most 3)",
+      "passed": false,
+      "evidence": "absent; no numeric thresholds like at most 1 hop, 0 orphans, depth 3 stated"
+     },
+     {
+      "text": "Lists what the export cannot show",
+      "passed": true,
+      "evidence": "Caveat: no h1, meta description, response time or structured data columns; crawl completeness (no index status or rendering)"
+     }
+    ],
+    "defects": [
+     "Says 'a money page that is being de-indexed' for down-800 as if certain",
+     "Speculates orphans were found only through the sitemap, which contradicts its own note that one is not in the sitemap",
+     "Never mentions /packs/trek-65 successor guess 'probably trek-55' without evidence"
+    ],
+    "score": 7
+   },
+   "preference": "A",
+   "reason": "A covers all the same defects with explicit thresholds and a fuller list of what the export cannot show, while B has no numeric thresholds and adds speculative claims."
+  }
+ }
+}

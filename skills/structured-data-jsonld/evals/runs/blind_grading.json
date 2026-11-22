@@ -1,0 +1,301 @@
+{
+ "ab_key": {
+  "s1-review-article": {
+   "A": "baseline",
+   "B": "with_skill"
+  },
+  "s2-fix-errors": {
+   "A": "with_skill",
+   "B": "baseline"
+  },
+  "s3-list-page": {
+   "A": "with_skill",
+   "B": "baseline"
+  }
+ },
+ "grader": "sub-agent, sonnet alias, 2026-11-20; saw outputs as A/B with ground truth",
+ "grading": {
+  "s1-review-article": {
+   "A": {
+    "assertions": [
+     {
+      "text": "States that FAQ rich results are no longer shown, and does not promise FAQ dropdowns",
+      "passed": true,
+      "evidence": "FAQ dropdowns will not appear ... restricted to well-known government and health sites in August 2023"
+     },
+     {
+      "text": "Does not put the Amazon rating (4.8 / 2,314) into aggregateRating or any rating markup",
+      "passed": true,
+      "evidence": "Amazon rating left out on purpose; no aggregateRating in JSON-LD"
+     },
+     {
+      "text": "Marks up the editorial score as a Review by the named author with ratingValue 8.7 and bestRating 10",
+      "passed": true,
+      "evidence": "Review, author Maya Okonkwo, ratingValue 8.7, bestRating 10"
+     },
+     {
+      "text": "Dates, author, canonical URL and price in the markup match the visible page",
+      "passed": true,
+      "evidence": "2026-10-14, 2026-11-09, Maya Okonkwo, canonical URL match; price deliberately omitted, nothing wrong"
+     },
+     {
+      "text": "The JSON-LD parses and uses absolute URLs",
+      "passed": true,
+      "evidence": "valid JSON, all URLs absolute"
+     },
+     {
+      "text": "Does not rely on HowTo markup for a rich result",
+      "passed": true,
+      "evidence": "Cleaning steps: no rich result. HowTo rich results were removed"
+     },
+     {
+      "text": "Says markup gives eligibility, not a guarantee, and points to the official tester",
+      "passed": true,
+      "evidence": "Review stars: possible, not guaranteed ... Rich Results Test"
+     }
+    ],
+    "defects": [
+     "Review is top-level with itemReviewed rather than Product with nested review (still valid)",
+     "Publisher name KitchenBench inferred (flagged)",
+     "Dates lack time zone",
+     "FAQ retirement dated to 2023 restriction, does not say fully retired in 2026 but outcome is the same"
+    ],
+    "score": 8
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "States that FAQ rich results are no longer shown, and does not promise FAQ dropdowns",
+      "passed": true,
+      "evidence": "FAQ dropdowns: none ... no longer shown from 7 May 2026"
+     },
+     {
+      "text": "Does not put the Amazon rating (4.8 / 2,314) into aggregateRating or any rating markup",
+      "passed": true,
+      "evidence": "Amazon rating: another site's ratings cannot be marked up"
+     },
+     {
+      "text": "Marks up the editorial score as a Review by the named author with ratingValue 8.7 and bestRating 10",
+      "passed": true,
+      "evidence": "Product with Review by Maya Okonkwo, ratingValue 8.7, bestRating 10"
+     },
+     {
+      "text": "Dates, author, canonical URL and price in the markup match the visible page",
+      "passed": true,
+      "evidence": "dates, author, URL match; price omitted with reason"
+     },
+     {
+      "text": "The JSON-LD parses and uses absolute URLs",
+      "passed": true,
+      "evidence": "valid JSON, absolute URLs"
+     },
+     {
+      "text": "Does not rely on HowTo markup for a rich result",
+      "passed": true,
+      "evidence": "HowTo ... retired since 2023"
+     },
+     {
+      "text": "Says markup gives eligibility, not a guarantee, and points to the official tester",
+      "passed": true,
+      "evidence": "valid markup only makes the page eligible; Rich Results Test"
+     }
+    ],
+    "defects": [
+     "Reply references internal checker/skill details and a scratch path; minor noise",
+     "Dates use T00:00:00+00:00 invented time (flagged to replace)"
+    ],
+    "score": 9
+   },
+   "preference": "B",
+   "reason": "Both pass everything; B uses the recommended Product with nested Review and states the FAQ retirement accurately and concisely."
+  },
+  "s2-fix-errors": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Adds offers with a price to SoftwareApplication using only prices visible on the page",
+      "passed": true,
+      "evidence": "Free price 0 and Team price 6 USD, both on page"
+     },
+     {
+      "text": "Changes the rating to the visible values (4.6 from 212) and says why",
+      "passed": true,
+      "evidence": "Markup now uses 4.6 and 212 to match the page"
+     },
+     {
+      "text": "Fixes the date to ISO 8601",
+      "passed": true,
+      "evidence": "datePublished 2026-03-12 (guessed day/month, flagged to confirm)"
+     },
+     {
+      "text": "Makes image and @id absolute",
+      "passed": true,
+      "evidence": "@id https://www.planpilot.example/app#app; absolute image"
+     },
+     {
+      "text": "Removes or flags the Organization's rating of itself as not eligible",
+      "passed": true,
+      "evidence": "Organization aggregateRating removed"
+     },
+     {
+      "text": "Flags HowTo as earning no rich result",
+      "passed": true,
+      "evidence": "gives no rich result"
+     },
+     {
+      "text": "Adds a time zone to uploadDate or notes the page is not a watch page",
+      "passed": false,
+      "evidence": "uploadDate left as 2026-10-01T09:00:00; no watch-page note"
+     },
+     {
+      "text": "The corrected JSON-LD parses",
+      "passed": true,
+      "evidence": "valid JSON"
+     }
+    ],
+    "defects": [
+     "Invented a datePublished not visible on page (day/month guess)",
+     "Kept VideoObject without time zone and with an added description not from the page",
+     "Kept operatingSystem not visible",
+     "Weaker reason for removing Organization rating"
+    ],
+    "score": 6
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Adds offers with a price to SoftwareApplication using only prices visible on the page",
+      "passed": true,
+      "evidence": "Offer price 0 USD from Free for up to 5 people"
+     },
+     {
+      "text": "Changes the rating to the visible values (4.6 from 212) and says why",
+      "passed": true,
+      "evidence": "aggregateRating 4.9 / 1280: not on the page. Replaced with visible figures 4.6 / 212"
+     },
+     {
+      "text": "Fixes the date to ISO 8601",
+      "passed": false,
+      "evidence": "datePublished removed as ambiguous, not converted"
+     },
+     {
+      "text": "Makes image and @id absolute",
+      "passed": true,
+      "evidence": "https://www.planpilot.example/app#software and absolute image"
+     },
+     {
+      "text": "Removes or flags the Organization's rating of itself as not eligible",
+      "passed": true,
+      "evidence": "a company rating its own testimonials is not eligible"
+     },
+     {
+      "text": "Flags HowTo as earning no rich result",
+      "passed": true,
+      "evidence": "HowTo: none (retired)"
+     },
+     {
+      "text": "Adds a time zone to uploadDate or notes the page is not a watch page",
+      "passed": true,
+      "evidence": "video is one section of the page, not its main content; restore on a watch page with a time zone"
+     },
+     {
+      "text": "The corrected JSON-LD parses",
+      "passed": true,
+      "evidence": "valid JSON @graph"
+     }
+    ],
+    "defects": [
+     "Team plan $6 per user per month not marked up (justified)",
+     "Dropped the date instead of fixing it",
+     "Removed VideoObject, which is arguably right"
+    ],
+    "score": 8
+   },
+   "preference": "B",
+   "reason": "B avoids invented values and handles the video correctly; A guesses a date and leaves the video error unresolved."
+  },
+  "s3-list-page": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Says rating markup is not allowed on a list / 'best of' page and removes the page-level aggregateRating",
+      "passed": true,
+      "evidence": "ratings on a list, category or comparison page are not allowed; rating nodes removed"
+     },
+     {
+      "text": "Does not keep per-item aggregateRating on the list page",
+      "passed": true,
+      "evidence": "ItemList with no ratings"
+     },
+     {
+      "text": "Says a carousel is not available for this kind of page (restricted types or limited beta)",
+      "passed": true,
+      "evidence": "restricted to course, movie, recipe and restaurant pages"
+     },
+     {
+      "text": "Offers the correct alternative: Article plus ItemList of URLs, stars on the individual review pages",
+      "passed": true,
+      "evidence": "ItemList of five URLs; stars via Product with one Review on each review page (Article omitted, weakly justified)"
+     },
+     {
+      "text": "Does not promise stars or a carousel",
+      "passed": true,
+      "evidence": "Expected result: none (semantic only)"
+     },
+     {
+      "text": "The JSON-LD parses and matches the visible page (author, date, five items)",
+      "passed": false,
+      "evidence": "five items match, but author Jonas Feld and date 3 November 2026 are not in the markup"
+     }
+    ],
+    "defects": [
+     "No Article markup with visible author and dateModified; reason given (no publish date) is weak"
+    ],
+    "score": 8
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Says rating markup is not allowed on a list / 'best of' page and removes the page-level aggregateRating",
+      "passed": false,
+      "evidence": "removes aggregateRating because scores are editorial, but never says rating markup is disallowed on list pages"
+     },
+     {
+      "text": "Does not keep per-item aggregateRating on the list page",
+      "passed": false,
+      "evidence": "replaced by per-item Review with reviewRating on the list page, same policy violation"
+     },
+     {
+      "text": "Says a carousel is not available for this kind of page (restricted types or limited beta)",
+      "passed": false,
+      "evidence": "I do not know of one for best-of lists. Treat the markup as necessary but not sufficient"
+     },
+     {
+      "text": "Offers the correct alternative: Article plus ItemList of URLs, stars on the individual review pages",
+      "passed": false,
+      "evidence": "only a fallback mention of moving Reviews to /reviews/<slug> if the test rejects"
+     },
+     {
+      "text": "Does not promise stars or a carousel",
+      "passed": false,
+      "evidence": "so Google can show stars; carousel only not guaranteed"
+     },
+     {
+      "text": "The JSON-LD parses and matches the visible page (author, date, five items)",
+      "passed": true,
+      "evidence": "Jonas Feld, dateModified 2026-11-03, five items, valid JSON"
+     }
+    ],
+    "defects": [
+     "Keeps rating markup on a list page, risking a manual action",
+     "Implies stars are achievable from this page",
+     "Claims the scores are a Review snippet case, contradicting the policy",
+     "Author attributed per-review is a stretch: the list byline is not a per-product review author"
+    ],
+    "score": 2
+   },
+   "preference": "A",
+   "reason": "A correctly strips all rating markup and says no stars or carousel are available, while B keeps rating markup on the list and implies stars."
+  }
+ }
+}

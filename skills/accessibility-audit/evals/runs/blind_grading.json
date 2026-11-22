@@ -1,0 +1,70 @@
+{
+  "a1-audit-signup": {
+    "A": {
+      "items": {"1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true, "10": true, "11": true, "12": true, "13": true, "14": true, "15": true, "16": true, "17": true, "18": true, "19": true, "20": true, "21": true, "22": true},
+      "met": 22,
+      "total": 22,
+      "false_claims": [],
+      "score": 9,
+      "notes": "Every seeded defect is named with its line and fix, for example row 3: \"aria-labelledby=\"pw-label\" points at an id that does not exist\" and row 16: \"The error is shown on page load ... It says only 'Invalid'\", which is tied to the field with aria-describedby. The audit also has a \"Checked, no failure found\" section and a \"Not tested\" section, and the source confirms the claims I spot-checked (no aria-invalid, phone hint not linked, 18px .check)."
+    },
+    "B": {
+      "items": {"1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true, "10": true, "11": true, "12": true, "13": true, "14": true, "15": true, "16": true, "17": true, "18": true, "19": true, "20": true, "21": true, "22": true},
+      "met": 22,
+      "total": 22,
+      "false_claims": [
+        "Item 32 maps the eye icon overlapping the typed password to 1.4.12 Text Spacing, which does not cover that situation.",
+        "Item 20 cites 2.4.6 Headings and Labels for the 'Click here' link text, which is not a heading or label issue for links.",
+        "Item 12 says the captcha 'image URL also uses a fixed id, so the same challenge is served each time', which the static source cannot show."
+      ],
+      "score": 7,
+      "notes": "All 22 seeded defects are identified with line references, including the timeout at lines 90-91 (\"The page redirects regardless of user activity after 120 seconds\") and the broken aria-labelledby. Coverage is as complete as A, but the three false or unsupported claims listed above lower its reliability."
+    },
+    "better": "A",
+    "reason": "Both audits catch all 22 defects, but B cites two wrong WCAG criteria (1.4.12 and 2.4.6) and one unsupported server claim, while A makes no false claims about the file."
+  },
+  "a2-fix-settings": {
+    "A": {
+      "items": {"1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true, "10": true, "11": true, "12": true, "13": true},
+      "met": 13,
+      "total": 13,
+      "false_claims": [],
+      "score": 9,
+      "notes": "The fixed HTML uses a native role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"modal-title\", focuses confirm-name on open (\"document.getElementById('confirm-name').focus()\"), traps Tab, closes on Escape, and returns focus via lastFocus. The theme control stays a button-plus-listbox with aria-haspopup, arrow/Home/End/Enter/Escape keys, a #status role=\"status\" live region, and a role=\"switch\" button with aria-checked updated in toggleSwitch; the only visible change is the off-track colour (#b9b9b4 to #8a8a85), which is disclosed."
+    },
+    "B": {
+      "items": {"1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true, "10": true, "11": true, "12": true, "13": false},
+      "met": 12,
+      "total": 13,
+      "false_claims": [
+        "changes.md item 7 says the original dialog 'could only be closed with the mouse', but the original Cancel control was a real button that keyboard users could already activate."
+      ],
+      "score": 7,
+      "notes": "The fixed dialog is correct: role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"modal-title\", focus moves to confirm-name, main is inert, Tab is trapped, Escape closes, and focus returns to delete-open; the toasts sit in a role=\"status\" container that exists at load. Item 13 fails because the theme control is replaced by a native select with a new visible \"Workspace name\" label and a native arrow (changes.md: \"The Theme control is a native select with a native arrow, not the old custom list\"), so the visual design is not preserved."
+    },
+    "better": "A",
+    "reason": "Both fixes meet the dialog, widget and focus items, but A keeps the original theme control and look while B swaps it for a native select and adds visible changes, plus B's changes.md misstates the original's keyboard behaviour."
+  },
+  "a3-audit-product": {
+    "A": {
+      "items": {"1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true, "10": true, "11": true, "12": true, "13": true, "14": true, "15": true, "16": true, "17": true, "18": true, "19": true, "20": true},
+      "met": 20,
+      "total": 20,
+      "false_claims": [],
+      "score": 9,
+      "notes": "Each seeded defect is named with its line: row 11 \"setInterval(function () { move(1); }, 3000)\" for auto-rotation, row 20 \"alt=\"tote-front.jpg\"\" for the filename alt, and row 12 for the cart count with \"c.textContent = ...\" and a fix via role=\"status\". The fix recommendations check out against the source, and the contrast figures I recalculated (#ff9a3c with white 2.11:1, #a33f00 with white about 6.4:1, #1c1c1c on #ff9a3c about 8:1) are correct."
+    },
+    "B": {
+      "items": {"1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true, "10": true, "11": true, "12": true, "13": true, "14": true, "15": true, "16": true, "17": true, "18": true, "19": true, "20": true},
+      "met": 20,
+      "total": 20,
+      "false_claims": [
+        "Item 2 cites 2.5.3 Label in Name for the icon-only quantity buttons, but 2.5.3 applies to controls with visible text and these buttons have none."
+      ],
+      "score": 8,
+      "notes": "All 20 seeded defects are covered with line numbers, for example item 6 \"setInterval(function () { move(1); }, 3000);\" and item 17 \"addToCart() sets c.textContent ... which is not a live region\". Item 2 misapplies 2.5.3, which lowers its reliability on an otherwise complete audit."
+    },
+    "better": "A",
+    "reason": "Both audits cover all 20 defects, but B cites 2.5.3 for icon-only buttons where it does not apply, while A has no wrong criteria."
+  }
+}

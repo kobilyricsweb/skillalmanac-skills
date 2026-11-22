@@ -1,0 +1,131 @@
+/* Pricing plan card (Pro). Node 12:25 "Plan card / Pro" in design/plan-card.json.
+   Uses semantic tokens from src/tokens.css and the shared .btn / .icon classes from src/components.css. */
+
+.plan-card-page {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--space-8) var(--space-4);
+  background-color: var(--color-bg-page);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+/* Card frame: white surface, 1px inside border, 12px radius, 32px padding, 24px gap. */
+.plan-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-8);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+/* Badge: pill, accent-subtle fill, accent label, 12px semibold uppercase, 0.04em tracking. */
+.plan-card__badge {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Header: plan name over price row, 6px gap (from design). */
+.plan-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.plan-card__name {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  line-height: 28px;
+  color: var(--color-text);
+}
+
+.plan-card__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  margin: 0;
+}
+
+.plan-card__price {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.plan-card__period {
+  font-size: var(--font-size-md);
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-text-muted);
+}
+
+/* Divider: 1px rule in the border colour, full width. */
+.plan-card__divider {
+  margin: 0;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  background-color: var(--color-border);
+}
+
+/* Feature list: 12px between rows. */
+.plan-card__features {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.plan-card__feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--font-size-md);
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-text);
+}
+
+.plan-card__check {
+  color: var(--color-accent);
+}
+
+/* CTA uses the shared .btn--primary.btn--lg.btn--block classes; only its layout is set here. */
+.plan-card__cta {
+  margin: 0;
+}
+
+@media (max-width: 400px) {
+  .plan-card-page {
+    padding: var(--space-4);
+  }
+
+  .plan-card {
+    padding: var(--space-6);
+  }
+}

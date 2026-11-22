@@ -1,0 +1,59 @@
+{
+  "monthly_totals_dedup": {
+    "2025-08": 16110,
+    "2025-09": 16110,
+    "2025-10": 16190,
+    "2025-11": 19830,
+    "2025-12": 23870,
+    "2026-01": 68680,
+    "2026-02": 46900,
+    "2026-03": 32180,
+    "2026-04": 26900,
+    "2026-05": 22600,
+    "2026-06": 18490,
+    "2026-07": 15430,
+    "2026-08": 15300,
+    "2026-09": 12460,
+    "2026-10": 15430
+  },
+  "peak_month": "2026-01",
+  "peak": 68680,
+  "oct_2026": 15430,
+  "oct_vs_peak_pct": -77.5,
+  "last3_aug_oct_2026_avg": 14396.7,
+  "prev3_may_jul_2026_avg": 18840.0,
+  "last3_vs_prev3_pct": -23.6,
+  "year_ago3_aug_oct_2025_avg": 16136.7,
+  "yoy_3m_pct": -10.8,
+  "oct_vs_sep_pct": 23.8,
+  "ai_habit_tracker": {
+    "series": {
+      "2025-08": 0,
+      "2025-09": 0,
+      "2025-10": 10,
+      "2025-11": 20,
+      "2025-12": 70,
+      "2026-01": 880,
+      "2026-02": 1300,
+      "2026-03": 1600,
+      "2026-04": 1900,
+      "2026-05": 1900,
+      "2026-06": 1600,
+      "2026-07": 1300,
+      "2026-08": 1300,
+      "2026-09": 1000,
+      "2026-10": 1300
+    },
+    "peak": 1900,
+    "oct_2026": 1300,
+    "note": "near zero a year ago, so a year-on-year percentage is arithmetic, not growth; it peaked at 1,900 in Apr-May 2026 and is 1,300 now"
+  },
+  "correct_reading": [
+    "The topic is falling in recent direction (Aug-Oct vs May-Jul) and far below its January 2026 peak",
+    "Against the same months a year ago it is lower, not higher (total)",
+    "October is up on September by one bucket step for most keywords: one month, not a trend",
+    "January peak suggests a New-Year season, but only one cycle is visible in 15 months",
+    "Raw totals double count: 'apps' plural variants duplicate two series",
+    "The AI keyword is small in absolute terms (about 1,300 a month) and itself below its peak"
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "caveman mode",
+    "should_trigger": true
+  },
+  {
+    "query": "stop the fluff. answer in as few tokens as possible from now on",
+    "should_trigger": true
+  },
+  {
+    "query": "be terse. no preamble, no summaries, just the answer",
+    "should_trigger": true
+  },
+  {
+    "query": "can you talk like a caveman to save tokens",
+    "should_trigger": true
+  },
+  {
+    "query": "your replies are way too long and it's burning my usage limit, compress them",
+    "should_trigger": true
+  },
+  {
+    "query": "ultra brief mode for the rest of this session please",
+    "should_trigger": true
+  },
+  {
+    "query": "less words. why use many word when few do trick",
+    "should_trigger": true
+  },
+  {
+    "query": "switch to concise output, I only want commands and one-line explanations",
+    "should_trigger": true
+  },
+  {
+    "query": "caveman skill: turn it on at the lite level",
+    "should_trigger": true
+  },
+  {
+    "query": "token saving mode on, keep the code exact though",
+    "should_trigger": true
+  },
+  {
+    "query": "summarize this 20-page PDF into 5 bullet points",
+    "should_trigger": false
+  },
+  {
+    "query": "shorten this blog post to 300 words",
+    "should_trigger": false
+  },
+  {
+    "query": "write a funny story about a caveman discovering fire",
+    "should_trigger": false
+  },
+  {
+    "query": "minify this JavaScript bundle",
+    "should_trigger": false
+  },
+  {
+    "query": "how many tokens does this prompt use with the tokenizer",
+    "should_trigger": false
+  },
+  {
+    "query": "make this email more concise and professional",
+    "should_trigger": false
+  },
+  {
+    "query": "compress these PNG images without losing quality",
+    "should_trigger": false
+  },
+  {
+    "query": "give me a tl;dr of the linked article",
+    "should_trigger": false
+  },
+  {
+    "query": "reduce the context window usage of my RAG pipeline by chunking better",
+    "should_trigger": false
+  },
+  {
+    "query": "translate this paragraph into simple English for a 10 year old",
+    "should_trigger": false
+  }
+]

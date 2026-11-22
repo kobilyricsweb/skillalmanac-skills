@@ -1,0 +1,81 @@
+{
+  "r1-review-orderlist": {
+    "A": {
+      "items": {"1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true, "10": true, "11": true, "12": true, "13": true, "14": true, "15": true, "16": true},
+      "met": 16,
+      "total": 16,
+      "false_claims_or_bugs": [
+        "Says clicking trash 'usually does nothing visible', but splice mutates state in place, so the row disappears on the next unrelated re-render (overstated, not a seeded defect)."
+      ],
+      "score": 9,
+      "notes": "Every seeded defect is named with the right location and consequence, e.g. 'handleExport() is called during render, not passed as a handler' and 'sorted.length && (' rendering 0 is flagged in item 4. Bonus items (context value, div/img a11y, unlabelled search, unencoded query) are also covered."
+    },
+    "B": {
+      "items": {"1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true, "10": true, "11": true, "12": true, "13": true, "14": true, "15": true, "16": true},
+      "met": 16,
+      "total": 16,
+      "false_claims_or_bugs": [
+        "Item 17 says column reordering can reuse DOM nodes, but columns is never reordered (overstated).",
+        "Fix for item 3 calls an undefined helper fetchOrders (sketch only, minor)."
+      ],
+      "score": 9,
+      "notes": "All 16 seeded defects are identified with evidence, e.g. 'Two setSelected(selected + 1) calls read the same stale selected' and 'removeOrder splices orders ... setOrders(orders) passes the same reference'. Bonus items are covered as well, with fixes that include concrete code."
+    },
+    "better": "tie",
+    "reason": "Both reviews identify all 16 seeded defects with accurate consequences and no material false claims; the differences are presentation and minor overstatements."
+  },
+  "r2-fix-productsearch": {
+    "A": {
+      "items": {"1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true, "10": true, "11": true, "12": true, "13": true},
+      "met": 13,
+      "total": 13,
+      "false_claims_or_bugs": [
+        "Item sort comparator a.name.localeCompare(b.name) throws if a product has no name (minor, not guarded unlike the other submission).",
+        "Key falls back to index when p.id is absent; this is stated as an assumption in notes, so it is disclosed rather than a false claim."
+      ],
+      "score": 9,
+      "notes": "The effect uses 'const controller = new AbortController()' with 'return () => controller.abort()' and deps '[query, category]', and the error path shows 'Could not load products.' with role alert. Results are copied before sorting ('[...results].sort') and the list is guarded with 'sortedResults.length > 0'; the button inside li makes items keyboard operable."
+    },
+    "B": {
+      "items": {"1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true, "10": false, "11": true, "12": false, "13": true},
+      "met": 11,
+      "total": 13,
+      "false_claims_or_bugs": [
+        "Item 12 not met: result rows keep onClick on the li ('<li key={p.id ?? i} onClick={() => onSelect(p)}>'), so they are not keyboard operable.",
+        "Failed requests clear results and stop loading but show no error message, although notes present it as handled; there is no error state in the code.",
+        "Key fallback to index when p.id is absent, disclosed in notes."
+      ],
+      "score": 6,
+      "notes": "The race is handled with AbortController and the deps are '[query, category]', but the catch branch only does 'setResults([]); setLoading(false);' with no user-facing error. The result items remain plain li elements with onClick, so keyboard users cannot select a product."
+    },
+    "better": "A",
+    "reason": "A meets all 13 items including error display and keyboard-operable results; B misses the error state and keyboard operability, while both fix the race, encoding, deps, and sort mutation."
+  },
+  "r3-build-invite": {
+    "A": {
+      "items": {"1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true, "10": true, "11": true, "12": true, "13": true},
+      "met": 13,
+      "total": 13,
+      "false_claims_or_bugs": [
+        "Enter is not guarded during IME composition (handleKeyDown has no isComposing check), so committing a Japanese or Chinese candidate with Enter adds a chip prematurely (minor).",
+        "After a successful send the pending list is replaced by 'Loading pending invites...' during the reload, a UX flicker rather than a correctness bug."
+      ],
+      "score": 9,
+      "notes": "Team change is handled by remounting with 'return <InviteMembersForTeam key={teamId} teamId={teamId} />', so no effect syncs state. Enter with an empty draft is left to submit ('Enter with an empty draft is left alone so it submits the form'), and the invalid/duplicate checks are case-insensitive via parseCandidates with knownEmails."
+    },
+    "B": {
+      "items": {"1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": false, "10": true, "11": true, "12": false, "13": true},
+      "met": 11,
+      "total": 13,
+      "false_claims_or_bugs": [
+        "Enter with an empty draft is always preventDefault-ed ('if (event.key === \"Enter\" || event.key === \",\") { event.preventDefault(); applyAdd(draft); }'), so pressing Enter cannot submit the form and item 12 is not met.",
+        "Team change is reset through an effect ('useEffect(() => { setInvites([]); setChips([]); ... }, [teamId])'), which is the state-sync-by-effect pattern the key penalises, and the first render after a team change still shows the old invites until the effect runs.",
+        "Notes claim the teamId reset is complete, but the stale first render contradicts that."
+      ],
+      "score": 6,
+      "notes": "Load and send use AbortController or teamRef guards, and error, loading and empty states exist with 'Try again'. However the reset-by-effect on teamId and the non-submitting Enter key ('event.preventDefault(); applyAdd(draft);' with no submit path) fail items 9 and 12."
+    },
+    "better": "A",
+    "reason": "A meets all 13 items with a key-based reset and Enter submitting an empty form; B relies on a sync effect for team reset and blocks Enter-to-submit, missing items 9 and 12."
+  }
+}

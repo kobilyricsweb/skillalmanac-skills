@@ -1,0 +1,26 @@
+/* Existing shared components. Reuse these classes; do not restyle buttons per screen. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn--md { padding: var(--space-2) var(--space-4); }
+.btn--lg { padding: 14px var(--space-6); }
+.btn--block { display: flex; width: 100%; }
+.btn--primary { background-color: var(--color-accent); color: var(--color-text-on-accent); }
+.btn--primary:hover { background-color: var(--color-accent-hover); }
+.btn--secondary { background-color: transparent; color: var(--color-text); border-color: var(--color-border-control); }
+.btn--secondary:hover { background-color: var(--color-bg-page); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.icon { width: 20px; height: 20px; flex-shrink: 0; }

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier Dumont canvas tote | Northgate Goods</title>
+<style>
+  body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #1c1c1c; background: #fff; padding-bottom: 80px; }
+  *:focus { outline: 0; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  .title { font-size: 30px; font-weight: 700; }
+  .section-title { font-size: 20px; font-weight: 700; margin-top: 32px; }
+  .carousel { position: relative; height: 360px; background: #f1efe9; overflow: hidden; }
+  .slide { position: absolute; inset: 0; display: none; }
+  .slide.current { display: block; }
+  .arrow { position: absolute; top: 45%; font-size: 28px; cursor: pointer; padding: 4px 10px; background: #fff; }
+  .arrow.next { right: 8px; } .arrow.prev { left: 8px; }
+  .dots { text-align: center; margin-top: 8px; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #c9c5ba; margin: 0 3px; cursor: pointer; }
+  .dot.current { background: #1c1c1c; }
+  .badge { display: inline-block; background: #ff9a3c; color: #ffffff; font-size: 13px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+  .old { text-decoration: line-through; color: #777; }
+  .new { color: #c0271b; font-weight: 700; }
+  .swatches { display: flex; gap: 8px; }
+  .swatch { width: 32px; height: 32px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; }
+  .swatch.selected { border-color: #1c1c1c; }
+  .qty { display: flex; align-items: center; gap: 6px; }
+  .icon-btn { width: 20px; height: 20px; padding: 0; border: 1px solid #777; background: #fff; border-radius: 4px; }
+  .qty input { width: 48px; padding: 6px; border: 1px solid #777; border-radius: 4px; }
+  .tip { display: none; background: #1c1c1c; color: #fff; padding: 6px 10px; border-radius: 4px; font-size: 13px; }
+  .wishlist li { padding: 8px; border: 1px solid #ddd; margin-bottom: 4px; cursor: grab; list-style: none; }
+  table { border-collapse: collapse; margin-top: 8px; }
+  td { border: 1px solid #ccc; padding: 6px 12px; }
+  .buybar { position: fixed; bottom: 0; left: 0; right: 0; height: 72px; background: #fff; border-top: 1px solid #ddd; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+  .buy { background: #1c1c1c; color: #fff; border: 0; border-radius: 6px; padding: 12px 20px; font-size: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a href="/">Northgate Goods</a> / <a href="/bags">Bags</a>
+
+  <div class="carousel" id="carousel">
+    <div class="slide current"><img src="/img/tote-front.jpg" alt="tote-front.jpg" width="960" height="360"></div>
+    <div class="slide"><img src="/img/tote-side.jpg" alt="Side view of the tote showing the 12 cm gusset" width="960" height="360"></div>
+    <div class="slide"><img src="/img/tote-inside.jpg" alt="Inside pocket with zip" width="960" height="360"></div>
+    <span class="arrow prev" onclick="move(-1)">&#8249;</span>
+    <span class="arrow next" onclick="move(1)">&#8250;</span>
+  </div>
+  <div class="dots">
+    <span class="dot current" onclick="go(0)"></span><span class="dot" onclick="go(1)"></span><span class="dot" onclick="go(2)"></span>
+  </div>
+
+  <div class="title">Atelier Dumont canvas tote</div>
+  <p>Fabriqué à la main à Lyon, en toile de coton épaisse.</p>
+  <p><span class="badge">SALE</span> <span class="old">$80</span> <span class="new">$60</span></p>
+  <p><img src="/img/stars-4.png" alt="" width="100" height="20"> <a href="#reviews">Read more</a></p>
+
+  <div class="section-title">Colour</div>
+  <div class="swatches">
+    <div class="swatch selected" style="background:#8a2b1d" onclick="pickColour(this)"></div>
+    <div class="swatch" style="background:#1f3d5c" onclick="pickColour(this)"></div>
+    <div class="swatch" style="background:#c9b68a" onclick="pickColour(this)"></div>
+  </div>
+
+  <div class="section-title">Quantity</div>
+  <div class="qty">
+    <label for="qty">Quantity</label>
+    <button class="icon-btn" onclick="step(-1)"><svg viewBox="0 0 10 10" width="10" height="10"><path d="M1 5h8" stroke="#000"/></svg></button>
+    <input id="qty" value="1" inputmode="numeric">
+    <button class="icon-btn" onclick="step(1)"><svg viewBox="0 0 10 10" width="10" height="10"><path d="M1 5h8M5 1v8" stroke="#000"/></svg></button>
+  </div>
+
+  <p><span onmouseover="document.getElementById('tip').style.display='inline-block'" onmouseout="document.getElementById('tip').style.display='none'">Shipping info &#9432;</span>
+  <span class="tip" id="tip">Ships in 2 working days. Free returns for 30 days.</span></p>
+
+  <div class="section-title">See it in use</div>
+  <video src="/video/tote-story.mp4" width="640" height="360" autoplay loop></video>
+
+  <div class="section-title">Size guide</div>
+  <table>
+    <tr><td>Size</td><td>Width</td><td>Height</td><td>Strap drop</td></tr>
+    <tr><td>Medium</td><td>38 cm</td><td>34 cm</td><td>24 cm</td></tr>
+    <tr><td>Large</td><td>46 cm</td><td>40 cm</td><td>26 cm</td></tr>
+  </table>
+  <iframe src="/embed/size-calculator" width="400" height="200"></iframe>
+
+  <div class="section-title">Your wishlist (drag to reorder)</div>
+  <ul class="wishlist" id="wishlist">
+    <li draggable="true">Atelier Dumont canvas tote</li>
+    <li draggable="true">Waxed cotton backpack</li>
+    <li draggable="true">Leather key loop</li>
+  </ul>
+
+  <div class="section-title" id="reviews">Reviews</div>
+  <p>"Carries a week of groceries." <a href="/reviews/1">Read more</a></p>
+  <p>"The strap is the right length." <a href="/reviews/2">Read more</a></p>
+</div>
+
+<div class="buybar">
+  <span>Cart: <span id="cart-count">0</span> items</span>
+  <label for="qty" style="display:none">Qty</label>
+  <button class="buy" onclick="addToCart()">Add to cart</button>
+</div>
+
+<script>
+  var i = 0, slides = document.querySelectorAll('.slide'), dots = document.querySelectorAll('.dot');
+  function go(n) { slides[i].classList.remove('current'); dots[i].classList.remove('current'); i = (n + slides.length) % slides.length; slides[i].classList.add('current'); dots[i].classList.add('current'); }
+  function move(d) { go(i + d); }
+  setInterval(function () { move(1); }, 3000);
+  function pickColour(el) { document.querySelectorAll('.swatch').forEach(function (s) { s.classList.remove('selected'); }); el.classList.add('selected'); }
+  function step(d) { var q = document.getElementById('qty'); q.value = Math.max(1, (parseInt(q.value, 10) || 1) + d); }
+  function addToCart() { var c = document.getElementById('cart-count'); c.textContent = parseInt(c.textContent, 10) + parseInt(document.getElementById('qty').value, 10); }
+  var dragged;
+  document.querySelectorAll('#wishlist li').forEach(function (li) {
+    li.addEventListener('dragstart', function () { dragged = li; });
+    li.addEventListener('dragover', function (e) { e.preventDefault(); });
+    li.addEventListener('drop', function () { li.parentNode.insertBefore(dragged, li); });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+{
+ "a1-create-reviewer|baseline": [
+  {
+   "assertion": "agent file with name and description",
+   "passed": true,
+   "detail": "migration-reviewer.md"
+  },
+  {
+   "assertion": "description says when (migration) and is 80+ chars",
+   "passed": true,
+   "detail": "283 chars"
+  },
+  {
+   "assertion": "tools restricted, no write tool",
+   "passed": true,
+   "detail": "tools=['Bash', 'Glob', 'Grep', 'Read']"
+  },
+  {
+   "assertion": "body carries at least 4 of 5 project rules",
+   "passed": true,
+   "detail": "['down file', 'lock_timeout', 'CONCURRENTLY', 'expand/contract', 'backfill']"
+  },
+  {
+   "assertion": "body defines the report",
+   "passed": true,
+   "detail": ""
+  }
+ ],
+ "a1-create-reviewer|with_skill": [
+  {
+   "assertion": "agent file with name and description",
+   "passed": true,
+   "detail": "migration-reviewer.md"
+  },
+  {
+   "assertion": "description says when (migration) and is 80+ chars",
+   "passed": true,
+   "detail": "304 chars"
+  },
+  {
+   "assertion": "tools restricted, no write tool",
+   "passed": true,
+   "detail": "tools=['Bash', 'Glob', 'Grep', 'Read']"
+  },
+  {
+   "assertion": "body carries at least 4 of 5 project rules",
+   "passed": true,
+   "detail": "['down file', 'lock_timeout', 'CONCURRENTLY', 'expand/contract', 'backfill']"
+  },
+  {
+   "assertion": "body defines the report",
+   "passed": true,
+   "detail": ""
+  }
+ ],
+ "a2-delegation-brief|baseline": [],
+ "a2-delegation-brief|with_skill": [],
+ "a3-fix-bad-agent|baseline": [
+  {
+   "assertion": "description specific (80+ chars, about locating code)",
+   "passed": true,
+   "detail": "268 chars"
+  },
+  {
+   "assertion": "tools restricted, no write tool",
+   "passed": true,
+   "detail": "tools=['Glob', 'Grep', 'Read']"
+  },
+  {
+   "assertion": "no reliance on earlier conversation, no ask-the-user",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "no invitation to fix files, and a bounded report",
+   "passed": true,
+   "detail": "length-limit=True fixed-format=False"
+  }
+ ],
+ "a3-fix-bad-agent|with_skill": [
+  {
+   "assertion": "description specific (80+ chars, about locating code)",
+   "passed": true,
+   "detail": "340 chars"
+  },
+  {
+   "assertion": "tools restricted, no write tool",
+   "passed": true,
+   "detail": "tools=['Glob', 'Grep', 'Read']"
+  },
+  {
+   "assertion": "no reliance on earlier conversation, no ask-the-user",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "no invitation to fix files, and a bounded report",
+   "passed": true,
+   "detail": "length-limit=True fixed-format=True"
+  }
+ ]
+}

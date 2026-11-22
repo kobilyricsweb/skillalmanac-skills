@@ -1,0 +1,29 @@
+---
+name: hotfix
+description: Hotfix procedure for a broken production that cannot wait for the next release. Use only for production breaks.
+disable-model-invocation: true
+---
+
+# Hotfix procedure
+
+Use this only when production is broken and the fix cannot wait for the next release.
+
+1. Branch from the last release tag, not from main: `git switch -c hotfix/<ticket> vX.Y.Z`.
+2. Make the smallest possible fix. No refactors, no dependency bumps.
+3. Open a PR against the `release` branch. One reviewer is enough; say "HOTFIX" in the title.
+4. After merge, tag `vX.Y.Z+1` on `release` and push the tag.
+5. Bring the fix back to main with `git cherry-pick -x <sha>` so the commit message records where it came from.
+6. Add a line to CHANGELOG.md under the new version.
+7. Write the incident note in `docs/incidents/` within one working day.
+
+Do not:
+
+- Do not merge `release` into `main`.
+- Do not skip the cherry-pick; a hotfix that is missing from main comes back as a regression in the next release.
+- Do not use the hotfix path for anything that is not a production break.
+
+Checks before tagging:
+
+- The fix has a test that fails without it.
+- `pnpm typecheck` and `pnpm test` pass on the hotfix branch.
+- The on-call engineer has been told in #incidents.

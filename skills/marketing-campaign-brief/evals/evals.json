@@ -1,0 +1,53 @@
+{
+  "skill_name": "marketing-campaign-brief",
+  "evals": [
+    {
+      "id": "c1-from-notes",
+      "prompt": "Turn these kickoff notes into a campaign brief I can share with the team. Save the brief as brief.md and put any covering note in reply.md.",
+      "files": [
+        "evals/files/c1_kickoff_notes.md"
+      ],
+      "assertions": [
+        "SCRIPTED: channel budgets in brief.md add up to the stated total",
+        "One primary objective in trial signups with the 310 baseline, a target and a deadline inside the 6-week window",
+        "The $18k versus $20k contradiction is surfaced, not silently resolved",
+        "The target is marked as an assumption or open question (none was given), not presented as a given",
+        "'Get paid 2x faster' is not used as a claim, and is flagged",
+        "No benchmark appears as fact that is not in the notes; the given CPC $3.10 and 5.2% are used where search is planned",
+        "TikTok or creator work is framed as a test with assumed numbers, not as the main driver",
+        "Lists assumptions and open questions for the owner"
+      ]
+    },
+    {
+      "id": "c2-review-brief",
+      "prompt": "Review this brief before I send it to the CEO. What is wrong with it? Put your review in reply.md.",
+      "files": [
+        "evals/files/c2_existing_brief.md"
+      ],
+      "assertions": [
+        "Finds that the channel budgets add up to $30,500, not the stated $28,000",
+        "Shows by the brief's own numbers that paid search cannot reach 300 leads ($12,000 / $4 x 2% = 60)",
+        "Flags the objective: two goals, no baseline, no metric for awareness",
+        "Flags the podcast line with no KPI or target",
+        "Flags 'Guaranteed 3x ROAS' and the '#1' / 'cuts no-shows in half' claims",
+        "Flags the 4.5% CTR, 2% conversion and $4 CPC as unsupported assumptions",
+        "Does not introduce new benchmarks as fact",
+        "Leads with the most serious problems"
+      ]
+    },
+    {
+      "id": "c3-thin-input",
+      "prompt": "Need a campaign brief for our spring promo for the bakery. Budget is $1,500. I'm in a rush, give me a first draft now and tell me what you need from me. Save the draft as brief.md and put your note in reply.md.",
+      "files": [],
+      "assertions": [
+        "SCRIPTED: channel budgets in brief.md add up to $1,500",
+        "Delivers a draft, not only questions",
+        "Every supplied figure other than the $1,500 is visibly marked as an assumption or placeholder",
+        "No invented baseline or benchmark is stated as fact",
+        "The objective has a metric, a target and a deadline, and says the baseline is unknown",
+        "Ends with a short, specific list of what is needed from the owner",
+        "No outcome promises"
+      ]
+    }
+  ]
+}

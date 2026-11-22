@@ -1,0 +1,8 @@
+Example Docs
+==========
+
+## Docs
+- Quick start: /docs/quick-start
+- [HTTP API](/docs/api)
+### Deep
+# Second title

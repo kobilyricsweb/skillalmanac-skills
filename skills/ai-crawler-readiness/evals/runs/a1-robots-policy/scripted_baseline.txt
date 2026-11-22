@@ -1,0 +1,22 @@
+AI ACCESS CHECK: 0 FAIL, 0 WARN, 1 NOTE
+
+token              operator    role           group    /articles/some-post  /admin/(private)  /checkout/(private)  /internal-search(private)
+GPTBot             OpenAI      training       GPTBot   BLOCK                BLOCK             BLOCK                BLOCK                    
+OAI-SearchBot      OpenAI      search         OAI-Sear allow                BLOCK             BLOCK                BLOCK                    
+ChatGPT-User       OpenAI      user           ChatGPT- allow                BLOCK             BLOCK                BLOCK                    
+OAI-AdsBot         OpenAI      ads            *        allow                BLOCK             BLOCK                BLOCK                    
+ClaudeBot          Anthropic   training       ClaudeBo BLOCK                BLOCK             BLOCK                BLOCK                    
+Claude-SearchBot   Anthropic   search         Claude-S allow                BLOCK             BLOCK                BLOCK                    
+Claude-User        Anthropic   user           Claude-U allow                BLOCK             BLOCK                BLOCK                    
+PerplexityBot      Perplexity  search         Perplexi allow                BLOCK             BLOCK                BLOCK                    
+Perplexity-User    Perplexity  user           Perplexi allow                BLOCK             BLOCK                BLOCK                    
+Google-Extended    Google      control        Google-E BLOCK                BLOCK             BLOCK                BLOCK                    
+Googlebot          Google      search-engine  *        allow                BLOCK             BLOCK                BLOCK                    
+Bingbot            Microsoft   search-engine  *        allow                BLOCK             BLOCK                BLOCK                    
+
+NOTE Google-Extended is disallowed: this limits Gemini training and grounding only; it does not remove pages from Google Search or its AI answers
+
+Limits:
+  - robots.txt is a request, not an access control; user-initiated fetchers may not follow it
+  - a firewall, CDN bot rule or login wall can block a crawler that robots.txt allows; check server logs or the CDN settings
+  - no file here controls whether an assistant cites the site; that depends on being indexed and on the content

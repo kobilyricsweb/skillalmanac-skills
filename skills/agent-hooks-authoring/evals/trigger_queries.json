@@ -1,0 +1,82 @@
+[
+  {
+    "query": "set up a claude code hook that runs prettier every time a file is edited",
+    "should_trigger": true
+  },
+  {
+    "query": "what are hooks in claude code and can you add one that blocks edits to our prod config",
+    "should_trigger": true
+  },
+  {
+    "query": "my PreToolUse hook isn't firing, here's my settings.json, what's wrong",
+    "should_trigger": true
+  },
+  {
+    "query": "I want the agent to be stopped from running rm -rf or force pushing. make it deterministic, not a prompt rule",
+    "should_trigger": true
+  },
+  {
+    "query": "write a Stop hook that makes the agent keep going until the tests pass",
+    "should_trigger": true
+  },
+  {
+    "query": "claude code hooks examples: show me one that logs every bash command to a file and install it in this repo",
+    "should_trigger": true
+  },
+  {
+    "query": "add a hook that injects the current git branch and open ticket into context at session start",
+    "should_trigger": true
+  },
+  {
+    "query": "our hook blocks everything now, even safe commands. debug it",
+    "should_trigger": true
+  },
+  {
+    "query": "can you make it so a notification pops up on my desktop when the agent needs my input (hook)",
+    "should_trigger": true
+  },
+  {
+    "query": "convert this instruction in CLAUDE.md ('always run lint after editing') into a hook so it actually happens every time",
+    "should_trigger": true
+  },
+  {
+    "query": "write a React custom hook for debouncing a search input",
+    "should_trigger": false
+  },
+  {
+    "query": "add a husky pre-commit hook that runs eslint",
+    "should_trigger": false
+  },
+  {
+    "query": "set up a GitHub webhook receiver in Express",
+    "should_trigger": false
+  },
+  {
+    "query": "explain the rules of hooks in React and why useEffect runs twice",
+    "should_trigger": false
+  },
+  {
+    "query": "write a git pre-push hook that runs the test suite",
+    "should_trigger": false
+  },
+  {
+    "query": "add permissions to settings.json so npm test doesn't prompt me",
+    "should_trigger": false
+  },
+  {
+    "query": "write a CLAUDE.md for this repo",
+    "should_trigger": false
+  },
+  {
+    "query": "create a subagent that reviews my migrations",
+    "should_trigger": false
+  },
+  {
+    "query": "write a catchy hook for my YouTube video intro",
+    "should_trigger": false
+  },
+  {
+    "query": "configure a Stripe webhook endpoint and verify the signature",
+    "should_trigger": false
+  }
+]

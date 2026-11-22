@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join Harbour Cycling Club</title>
+<style>
+html { scroll-padding-top: 72px; }
+body { color: #1c1c1c; background: #ffffff; }
+.btn { background: #0b5cad; color: #ffffff; min-height: 44px; }
+:focus-visible { outline: 2px solid #0b5cad; outline-offset: 2px; }
+.topbar { position: sticky; top: 0; background: #ffffff; }
+.hint { color: #595959; }
+@media (prefers-reduced-motion: no-preference) { .fade { animation: fade .2s; } }
+</style>
+</head>
+<body>
+<header class="topbar"><a href="/"><img src="logo.png" alt="Harbour Cycling Club home"></a></header>
+<main>
+<h1>Join the club</h1>
+<h2>Your details</h2>
+<form>
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-hint">
+  <p class="hint" id="email-hint">We send ride reminders here.</p>
+  <label for="pw">Password</label>
+  <input type="password" id="pw" name="pw" autocomplete="new-password">
+  <fieldset><legend>Membership</legend>
+    <label><input type="radio" name="tier" value="a"> Adult</label>
+    <label><input type="radio" name="tier" value="y"> Youth</label>
+  </fieldset>
+  <button class="btn" type="submit">Create account</button>
+</form>
+<table><caption>Membership prices</caption>
+<tr><th scope="col">Tier</th><th scope="col">Price per year</th></tr>
+<tr><td>Adult</td><td>60</td></tr></table>
+<p><a href="/terms">Read the membership terms</a></p>
+</main>
+</body>
+</html>

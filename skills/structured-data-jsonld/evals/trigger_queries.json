@@ -1,0 +1,82 @@
+[
+  {
+    "query": "write schema markup for a recipe page - ingredients, cook time, nutrition, and aggregate rating",
+    "should_trigger": true
+  },
+  {
+    "query": "does FAQ rich result still show in Google in 2026 or did they kill it? should I still add FAQPage markup to my blog posts?",
+    "should_trigger": true
+  },
+  {
+    "query": "can I put review stars on my own company homepage using Review schema? what are the self-serving review rules",
+    "should_trigger": true
+  },
+  {
+    "query": "here's my JSON-LD for a local business, validate it and tell me what's missing or wrong for rich results",
+    "should_trigger": true
+  },
+  {
+    "query": "need Product JSON-LD with offers, priceValidUntil, shippingDetails and return policy for a shopify store",
+    "should_trigger": true
+  },
+  {
+    "query": "which schema.org types still actually earn rich results right now and which ones are deprecated or pointless?",
+    "should_trigger": true
+  },
+  {
+    "query": "add Article + BreadcrumbList + Organization structured data to this next.js layout, as json-ld in a script tag",
+    "should_trigger": true
+  },
+  {
+    "query": "rich results test says 'Missing field aggregateRating' and 'Invalid object type for field author'. fix my markup",
+    "should_trigger": true
+  },
+  {
+    "query": "how do i mark up a music album page with MusicAlbum and MusicRecording and the tracklist in json-ld?",
+    "should_trigger": true
+  },
+  {
+    "query": "structured data for an event listing site: Event type, offers, performer, eventAttendanceMode, online vs offline",
+    "should_trigger": true
+  },
+  {
+    "query": "write a JSON Schema (draft 2020-12) to validate the request body of my POST /users endpoint",
+    "should_trigger": false
+  },
+  {
+    "query": "design a postgres schema for orders, order_items and customers with proper foreign keys",
+    "should_trigger": false
+  },
+  {
+    "query": "my open graph image isn't showing when I share on Facebook, fix the og:image and twitter:card tags",
+    "should_trigger": false
+  },
+  {
+    "query": "do a full SEO audit of my site and give me a prioritized fix list",
+    "should_trigger": false
+  },
+  {
+    "query": "write a GraphQL schema with types for Book, Author and Review plus a few queries and mutations",
+    "should_trigger": false
+  },
+  {
+    "query": "my tsconfig.json has a trailing comma and the parser throws 'Unexpected token }' - fix the JSON",
+    "should_trigger": false
+  },
+  {
+    "query": "write the meta title and description for our landing page and add canonical tag",
+    "should_trigger": false
+  },
+  {
+    "query": "how do I migrate a mongo collection schema to add a new required field with default?",
+    "should_trigger": false
+  },
+  {
+    "query": "explain what the Zod schema for my form should look like, with email and password validation",
+    "should_trigger": false
+  },
+  {
+    "query": "our sitemap.xml is returning 404, how do I generate it with next-sitemap?",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,30 @@
+Call recording transcript - Northgate Hosting / Pellow Retail - 12 November 2026
+Participants: Sam (Northgate, account manager), Julia (Northgate, support lead), Samir (Pellow Retail, CTO), Ken (Pellow Retail, operations)
+
+[00:01:02] Samir: Let me be direct. The outage on 3 November took our checkout down for 4 hours and 10 minutes on a Tuesday. That is not acceptable.
+[00:01:20] Sam: Understood, and I'm sorry. Julia will walk through what we know.
+[00:01:31] Julia: The primary database node failed and traffic did not move to the standby as designed. We are still confirming why. I will send the full root-cause report by Monday.
+[00:02:05] Ken: Did the failover even trigger?
+[00:02:11] Julia: That is exactly what the report will answer. I don't want to guess.
+[00:02:40] Samir: Your own dashboard shows uptime of 99.2% for last month. The contract says 99.9%.
+[00:02:52] Sam: Yes, we missed the SLA. No argument.
+[00:03:10] Samir: So we want a service credit. 25% of the monthly fee.
+[00:03:24] Sam: I can't commit to a number on this call. I'll take it to finance and come back to you by the end of next week.
+[00:03:40] Samir: Fine, but I expect an answer, not another meeting.
+[00:04:15] Ken: During the outage we could not reach anyone for forty minutes. We need a direct escalation phone number.
+[00:04:28] Julia: Yes. We'll set up a dedicated line for you. I'll send the number today.
+[00:04:50] Samir: How many stores were affected? I think 14.
+[00:04:58] Ken: It was 17. Three more reported the next morning.
+[00:05:05] Samir: 17 then. Ken, send Northgate the list of affected stores.
+[00:05:12] Ken: I'll send it tomorrow.
+[00:05:40] Sam: I'd like to propose we move our weekly check-in to twice a week for the next month, until you're comfortable again.
+[00:05:52] Samir: Let's do that.
+[00:05:55] Sam: Agreed. Julia, can you set those up?
+[00:06:03] Julia: Actually I'm out Thursday and Friday. Sam, can you do it?
+[00:06:09] Sam: OK, I'll send the invites.
+[00:06:35] Samir: One more thing. We want to be moved to the premium tier at no cost for the rest of the contract.
+[00:06:47] Sam: That's above my level. I'll raise it, but no promises.
+[00:07:02] Samir: Raise it.
+[00:07:20] Ken: Should we also get read access to your status page API?
+[00:07:29] Julia: Possibly. Let me think about what's involved.
+[00:07:41] Sam: OK. Thank you both. We'll be in touch.

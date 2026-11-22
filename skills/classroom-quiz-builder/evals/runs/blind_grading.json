@@ -1,0 +1,297 @@
+{
+ "q1-herring-trade": {
+  "A": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "10 blocks Q1-Q10, each with options A-D (counted by script)."
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "All 10 keys checked against the reading, e.g. Q8 'Answer: C' (1879) vs 'The record catch came in 1879.'; Q1 B vs 'the trip took two days by barge'."
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "Recall items quote the reading; Q9/Q10 are new-situation items but say 'Using what happened in Port Calder' and resolve from 'the town stopped paying someone to enforce it' / 'fewer survived to breed'."
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "Key sequence BDACADBCDA: A=3 B=2 C=2 D=3, no run of three."
+    },
+    {
+     "n": 5,
+     "passed": false,
+     "evidence": "Correct option is the single longest in 7 of 10 (Q2,3,4,5,6,7,10), e.g. Q7 B is 70 chars vs 56/60/51; Q10 A is 74 vs 64/57/58."
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "Q2 'Why was the salt store the first public building', Q3, Q5, Q6, Q7 are reason questions; Q9 and Q10 are application."
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "No all/none of the above; separate student.md 'questions only, with name and date lines'."
+    }
+   ],
+   "score": 8,
+   "other_defects": [
+    "reply.md 'Check: PASS' covers quotes and key spread but is silent on the longest-option tell, which the quiz has in 7 of 10 questions; a test-wise student can exploit it.",
+    "Q7: all four options start 'The council', and the keyed one is clearly the longest and most detailed.",
+    "Level tags are slightly off: Q6 is tagged [recall] though it is a 'why' question (harmless; tags are teacher-only).",
+    "quiz.md teacher copy interleaves Answer/Source/Why with each question, so only student.md is printable; this is stated in the reply."
+   ]
+  },
+  "B": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "10 numbered questions, each with A-D."
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "Key B C A C D A B A D C all verified, e.g. 4 C '210' vs 'to 210 boats in 1850'; 9 D vs 'In 1988 the regional government declared Calder Bay a protected breeding area'."
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "All stems restate the reading; reply: 'Every answer comes straight from the text'. No outside knowledge needed."
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "Key sequence BCACDABADC: A=3 B=2 C=3 D=2, no run of three."
+    },
+    {
+     "n": 5,
+     "passed": false,
+     "evidence": "Correct option is the single longest in 6 of 10 (Q2,3,6,8,9,10); Q3 A is 86 chars vs 46/37/40, Q8 A is 85 vs 30/42/40."
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "Q1 'Why did the first families settle', Q3 'How did the canal ... change the herring trade', Q6, Q8 'What was the problem', Q10 'why did the Net Rule fail' ask for reasons. None is an application question."
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "No all/none of the above; key sits under a '---' rule and '## Answer Key' heading at the bottom of the same file, so separable but not a separate copy."
+    }
+   ],
+   "score": 7,
+   "other_defects": [
+    "Length tell is severe on the long items: Q3, Q6, Q8, Q9 correct answers are roughly twice as long as any distractor.",
+    "Several distractors are implausible on sight (Q1 C 'The regional government asked them to start a museum', Q2 D 'A smokehouse, because the town had no road'), so some items can be answered without reading.",
+    "No application or inference item; every question is locate-in-text. Q3's keyed option contains the cause and the effect, giving the answer away.",
+    "Reply says 'you can print it as is', but the answer key is in the same file directly below question 10 and must be cut off first.",
+    "Q10 says 'the historians quoted in the reading'; the reading paraphrases historians and quotes no one (trivial)."
+   ]
+  },
+  "preferred": "A",
+  "reason": "Both are accurate and tie on assertions (6/7 each, same failure). A is more useful: two real application questions, more even distractors, a separate student copy and a source quote per answer; B is all look-up questions with obvious length giveaways.",
+  "assertion_notes": "Assertion 5 was measured by character count of option text; 'single longest' means strictly longer than every other option. Assertion 6 does not distinguish 'why' questions whose answer is a copied sentence from real application, so it passes B although B has no application item. Assertion 7's 'clearly separable' is loose enough that a key at the bottom of the same file passes."
+ },
+ "q2-photosynthesis": {
+  "A": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "8 blocks Q1-Q8, each with A-D."
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "All 8 keys verified, e.g. Q2 A Xylem vs 'narrow tubes called xylem'; Q4 B vs 'absorbs red and blue light and reflects green light'."
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "No equation, mitochondria or scientist. Q5 (cell with no chloroplasts) is an inference from 'Photosynthesis happens inside chloroplasts' and 'Roots have no chloroplasts ... cannot make food'."
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "Key sequence CADBDBAC: 2 each, no run of three."
+    },
+    {
+     "n": 5,
+     "passed": false,
+     "evidence": "Correct option is the single longest in 5 of 8 (Q3,4,5,7,8), above half; Q3 D is 63 chars vs 51/50/50. Q4 and Q8 are longest by only 1-2 characters."
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "Q3 'Why does photosynthesis slow down on a hot, dry afternoon?' keyed 'The stomata close to save water, so less carbon dioxide gets in'; Q6 uses the iodine experiment."
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "Distractors checked: Q5 A 'cannot store any starch' and B contradicted by roots; Q8 D 'Mostly cellulose' contradicted by 'A potato is mostly stored starch'; no second defensible answer found."
+    }
+   ],
+   "score": 8,
+   "other_defects": [
+    "reply.md 'Parts of the material not covered: phloem and cellulose' understates the gaps: guard cells, where stomata are, oxygen as a product, light as the energy source and the meaning of the word are also untested.",
+    "'Check: PASS' does not mention that the keyed answer is the longest option in 5 of 8 questions.",
+    "Q6 and Q7 keyed answers are near-verbatim sentences from the notes ('made starch only where light reached it'), so they test recognition more than understanding.",
+    "Q3 says 'The stomata close'; the notes say the guard cells go limp and the opening closes. Accurate but skips the guard-cell step."
+   ]
+  },
+  "B": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": false,
+     "evidence": "Only Q1-Q7 have four options; '8. Short answer: A potato is mostly stored starch. Name one other thing a plant can do with the glucose it makes.'"
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "Key B C D B A D A verified; Q8 accepted answers (energy, starch, cellulose, moved via phloem) all match the 'What happens to the sugar' section."
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "Every item traces to the notes; no equation, mitochondria or scientist."
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "MC key sequence BCDBADA: A=2 B=2 C=1 D=2, no run of three."
+    },
+    {
+     "n": 5,
+     "passed": true,
+     "evidence": "Correct option is the single longest in 3 of 7 MC items (Q4,5,7), 3 of 8 overall; though Q5 A is 79 chars vs 39/30/57."
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "Q5 dry-afternoon mechanism ('guard cells close the stomata to save water, so less carbon dioxide gets in'); Q7 describes the geranium experiment and asks what it showed."
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "Distractors are wrong per the notes. Borderline: Q3 option B 'Cellulose' is made from glucose, but the notes list 'Products: glucose and oxygen' and the key explains the distinction."
+    }
+   ],
+   "score": 7,
+   "other_defects": [
+    "Q3 stem is clumsy: 'Which of these is a product of photosynthesis (including the leftover product)?' The bracket points straight at oxygen, and cellulose is a mildly arguable distractor for a 6th grader.",
+    "Q1-Q4 are one-term recall and Q8's stem gives away a fact ('A potato is mostly stored starch'); the quiz is easier and shallower than it could be, and chlorophyll/green light and night-time are untested.",
+    "Q6 distractor C 'They are too thick for light to pass through' is not addressed by the notes; a student could find it plausible, though the notes give the chloroplast reason explicitly.",
+    "Answer key is in the same file with no student copy; the reply does not tell the teacher to remove it before printing.",
+    "Reply's coverage summary omits what was left out (chlorophyll and colour, xylem/phloem, night)."
+   ]
+  },
+  "preferred": "A",
+  "reason": "A has the better spread of thinking levels (colour mechanism, no-chloroplast inference, night-time), a balanced key and a separate student copy. B is accurate and its short-answer item has a good marking guide, but half of it is one-word recall and it has no clean student copy.",
+  "assertion_notes": "Assertion 1 is harsh on B: the user asked for 'an 8 question quiz', not multiple choice, and B disclosed the mixed format and offered to change it. B's fail there is a format mismatch with the rubric, not an error. Assertion 5 fails A partly on 1-2 character margins (Q4, Q8), which no student would notice; the real tells are Q3 and Q7. Assertion 6 passes both, but A's Q6 and B's Q7 ask only for the experiment's stated conclusion."
+ },
+ "q3-forklift-briefing": {
+  "A": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "10 blocks Q1-Q10, each with A-D."
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "Q1 C '12 months', Q3 D '20 percent', Q8 B '2,500 kilograms' for red trucks; all 10 keys match the briefing. Speed, 15 cm, level 5 and ext. 555 are not keyed anywhere."
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "Each answer carries a verbatim Source quote from the briefing, e.g. Q4 'stay in the seat, hold the wheel, and lean away from the fall. Do not jump.'"
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "Key sequence CADBDACBAD: A=3 B=2 C=2 D=3, no run of three."
+    },
+    {
+     "n": 5,
+     "passed": true,
+     "evidence": "Correct option is the single longest in 2 of 10 (Q6, Q9); Q7's correct answer 'Drive in reverse' is the shortest."
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "Q4 'A forklift starts to tip over while you are driving it. What should you do?', Q5 faulty brakes, Q6 crossing with a pedestrian, Q7 blocked view, Q2 new hire with old licence."
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "No all/none of the above in any option."
+    }
+   ],
+   "score": 8,
+   "other_defects": [
+    "Neither speed limit (6 km/h inside, 10 km/h yard) is tested; 6 km/h appears only inside a wrong option in Q6. For a site knowledge check that is a real gap, and the fork travel height, level 5 rule and extension 555 are also untested.",
+    "reply.md's 'Parts of the material not covered' list is incomplete: it omits speed limits, fork height/tilt, who does the pre-use check, and horn rules.",
+    "Q7's correct answer is conspicuously the shortest option (16 chars vs 39-45).",
+    "Q9 and Q10 test the reason behind a rule; useful, but they take two slots that could have held hard site figures.",
+    "Q5 Source quote drops the 'attach a red \"Do not use\" tag' part that the keyed answer relies on (the tag is in the briefing, so the answer is still right)."
+   ]
+  },
+  "B": {
+   "assertions": [
+    {
+     "n": 1,
+     "passed": true,
+     "evidence": "10 numbered questions, each with A-D."
+    },
+    {
+     "n": 2,
+     "passed": true,
+     "evidence": "Q4: 15 percent charge keyed C 'Take the truck to the charging bay and do not start a job with it' (below 20); Q6 A '6 km/h'; key notes '12 months', '10 km/h applies in the loading yard'. Load limits, level 5 and 555 appear only in the follow-up note, correctly."
+    },
+    {
+     "n": 3,
+     "passed": true,
+     "evidence": "All items come from the briefing; header repeats 'These are Dunmore site rules; other sites differ.'"
+    },
+    {
+     "n": 4,
+     "passed": true,
+     "evidence": "Key sequence DABCAADADB: A=4 B=2 C=1 D=3; A,A at Q5-Q6 only, no run of three."
+    },
+    {
+     "n": 5,
+     "passed": false,
+     "evidence": "Correct option is the single longest in 7 of 10 (Q2,3,4,5,8,9,10); Q8 A is 103 chars vs 46/43/61, Q5 A is 76 vs 37/40/35."
+    },
+    {
+     "n": 6,
+     "passed": true,
+     "evidence": "Q4 'you notice the battery charge is at 15 percent. What do you do?', Q9 'You clip the racking ... What do you do?', Q10 'A truck starts to tip over. What should you do?', Q5 fault found."
+    },
+    {
+     "n": 7,
+     "passed": true,
+     "evidence": "No all/none of the above in any option."
+    }
+   ],
+   "score": 7,
+   "other_defects": [
+    "Strong length tell: in the procedural questions the right answer is the long, fully worded one and the distractors are short and careless-sounding (Q5 'Use the truck but drive more slowly'), so a new hire can pass without knowing the briefing.",
+    "Q8 keyed option bundles two rules (fork height/tilt and reversing when the view is blocked) into one 103-character answer.",
+    "Load limits (1,500/2,500 kg), level 5 red-trucks-only, and the collision procedure with extension 555 are not tested; this is disclosed in the reply and in a supervisor follow-up note, which is honest and useful.",
+    "Answer key is in the same file; the reply does tell the user to 'remove that section before you hand the quiz to new hires'.",
+    "Q1 distractor C 'Drive a forklift on level 1 to 4 only' is oddly worded (levels are racking levels)."
+   ]
+  },
+  "preferred": "A",
+  "reason": "A's options are evenly weighted so the check measures knowledge, it has five scenario questions and a separate copy without answers. B has the best single item (15 percent charge applied to the 20 percent rule), tests the speed limit and is more candid about gaps, but 7 of 10 answers can be picked by length.",
+  "assertion_notes": "Assertion 2 lists eight site figures, but neither quiz keys all of them (A omits both speed limits, 15 cm, level 5 and 555; B omits the load limits, level 5 and 555). I read it as 'every keyed answer that touches these figures matches', and both pass; if it was meant as a coverage requirement both would fail. Assertion 6's 'describe a situation' is generous to bare one-line set-ups such as B's Q5."
+ }
+}

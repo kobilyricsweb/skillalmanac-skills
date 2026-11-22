@@ -1,0 +1,57 @@
+{
+  "skill_name": "design-to-code-handoff",
+  "evals": [
+    {
+      "id": "h1-plan-card",
+      "files": [
+        "evals/files/h1/design/plan-card.json",
+        "evals/files/h1/src/tokens.css",
+        "evals/files/h1/src/components.css"
+      ],
+      "prompt": "Implement the pricing plan card from design/plan-card.json (a node export from our design tool) as plan-card.html plus plan-card.css. Use the project's tokens (src/tokens.css) and existing components (src/components.css). Match the design exactly. Write notes.md with anything the designer or reviewer should know.",
+      "assertions": [
+        "Spacing, radius, border, shadow and type values match the answer key",
+        "Uses semantic tokens instead of raw values; no palette tokens or raw hex in the card CSS",
+        "Reuses the existing .btn classes instead of restyling the button",
+        "Hidden layer (Old price $39) is not rendered",
+        "Both off-token values (6px gap, #5d5b57) are reported with the decision taken",
+        "Card is not a fixed 360px width; text is in natural case with CSS uppercase; letter-spacing in em",
+        "Sensible semantics (heading, list, button or link)"
+      ]
+    },
+    {
+      "id": "h2-hero-responsive",
+      "files": [
+        "evals/files/h2/design/hero.json",
+        "evals/files/h2/src/tokens.css",
+        "evals/files/h2/src/components.css"
+      ],
+      "prompt": "Implement the hero section from design/hero.json as hero.html plus hero.css. The export has two frames, 'Hero / Desktop' (1440) and 'Hero / Mobile' (375). Make it responsive between and beyond them. Use src/tokens.css and src/components.css. Write notes.md with decisions and open questions.",
+      "assertions": [
+        "Every difference between the two frames in the answer key is implemented",
+        "Values at each size match the key",
+        "Fluid between the frames: no fixed 1440 or 375 widths; breakpoint choice explained",
+        "Reuses .btn classes; uses tokens; off-token 120px padding reported",
+        "Image is a real img with alt and cover behaviour and the specified radius",
+        "Notes list what the design does not specify"
+      ]
+    },
+    {
+      "id": "h3-text-field",
+      "files": [
+        "evals/files/h3/design/text-field.json",
+        "evals/files/h3/src/tokens.css",
+        "evals/files/h3/src/components.css"
+      ],
+      "prompt": "Build the text field component from design/text-field.json (a component set with variants State=Default, Focus, Error, Disabled) as text-field.html (a demo showing each state) plus text-field.css. Use src/tokens.css. Match the design. Write notes.md with decisions and open questions.",
+      "assertions": [
+        "Variant states map to real selectors (:focus-visible or :focus, [aria-invalid], :disabled), not only to manual classes",
+        "State values match the answer key",
+        "No layout shift between the 1px and 2px border states",
+        "Label tied to input; error message tied with aria-describedby; hint present",
+        "Tokens used; the off-token 6px and 10px values reported with the decision",
+        "Notes list states not in the design (hover, placeholder, read-only)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "turn these notes into a PRD",
+    "should_trigger": true
+  },
+  {
+    "query": "write a product requirements doc for saved carts from this slack dump",
+    "should_trigger": true
+  },
+  {
+    "query": "I need a product spec for the bulk export feature, notes attached, eng wants it Thursday",
+    "should_trigger": true
+  },
+  {
+    "query": "can you draft a one-pager feature brief from our planning meeting notes",
+    "should_trigger": true
+  },
+  {
+    "query": "review my PRD and tell me what's missing or vague",
+    "should_trigger": true
+  },
+  {
+    "query": "make a requirements document out of these customer requests and eng comments",
+    "should_trigger": true
+  },
+  {
+    "query": "ai for product managers: help me write the PRD for appointment reminders",
+    "should_trigger": true
+  },
+  {
+    "query": "write up requirements with acceptance criteria for this feature idea",
+    "should_trigger": true
+  },
+  {
+    "query": "here's a messy idea doc. structure it into a proper PRD with open questions",
+    "should_trigger": true
+  },
+  {
+    "query": "product spec please: problem, goals, non-goals, requirements, from the thread below",
+    "should_trigger": true
+  },
+  {
+    "query": "write the technical design doc for the export service, including the database schema",
+    "should_trigger": false
+  },
+  {
+    "query": "break this PRD into Jira tickets with story points",
+    "should_trigger": false
+  },
+  {
+    "query": "build a product roadmap for next year",
+    "should_trigger": false
+  },
+  {
+    "query": "do market research on appointment reminder apps and their pricing",
+    "should_trigger": false
+  },
+  {
+    "query": "write release notes for version 2.4",
+    "should_trigger": false
+  },
+  {
+    "query": "stress test my plan for the referral program, ask me hard questions",
+    "should_trigger": false
+  },
+  {
+    "query": "write user interview questions for discovering scheduling pain points",
+    "should_trigger": false
+  },
+  {
+    "query": "create a pitch deck for our seed round",
+    "should_trigger": false
+  },
+  {
+    "query": "write the marketing announcement for saved carts",
+    "should_trigger": false
+  },
+  {
+    "query": "estimate how many engineer-weeks this feature will take",
+    "should_trigger": false
+  }
+]

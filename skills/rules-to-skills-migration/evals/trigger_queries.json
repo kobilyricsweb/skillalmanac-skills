@@ -1,0 +1,82 @@
+[
+  {
+    "query": "convert my cursor rules to skills",
+    "should_trigger": true
+  },
+  {
+    "query": "we have a giant .cursorrules file, migrate it to AGENTS.md and skills",
+    "should_trigger": true
+  },
+  {
+    "query": "cursor rules examples are all over our repo in .cursor/rules, consolidate them so claude code can use them too",
+    "should_trigger": true
+  },
+  {
+    "query": "turn this .mdc rule into a SKILL.md",
+    "should_trigger": true
+  },
+  {
+    "query": "windsurf skills vs workflows vs rules: move our windsurf rules into something portable",
+    "should_trigger": true
+  },
+  {
+    "query": "our copilot-instructions.md and cursor rules say different things, merge them into one portable setup",
+    "should_trigger": true
+  },
+  {
+    "query": "which of these rules should stay always-on and which should become on-demand skills? then do the migration",
+    "should_trigger": true
+  },
+  {
+    "query": "port our CLAUDE.md procedures into skills, it's 500 lines of runbooks",
+    "should_trigger": true
+  },
+  {
+    "query": "make an inventory of every agent rule file in this repo and plan the move to skills",
+    "should_trigger": true
+  },
+  {
+    "query": "migrate .windsurfrules to the agent skills format",
+    "should_trigger": true
+  },
+  {
+    "query": "write eslint rules for our import order",
+    "should_trigger": false
+  },
+  {
+    "query": "create a new skill from scratch that generates release notes",
+    "should_trigger": false
+  },
+  {
+    "query": "write a CLAUDE.md for this project",
+    "should_trigger": false
+  },
+  {
+    "query": "what are cursor rules and how do they work",
+    "should_trigger": false
+  },
+  {
+    "query": "migrate our database from MySQL to Postgres",
+    "should_trigger": false
+  },
+  {
+    "query": "convert these firewall rules from iptables to nftables",
+    "should_trigger": false
+  },
+  {
+    "query": "find me a good skill for code review",
+    "should_trigger": false
+  },
+  {
+    "query": "migrate this codebase from JavaScript to TypeScript",
+    "should_trigger": false
+  },
+  {
+    "query": "set up cursor on my new laptop",
+    "should_trigger": false
+  },
+  {
+    "query": "add a hook that blocks edits to generated files",
+    "should_trigger": false
+  }
+]

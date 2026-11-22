@@ -1,0 +1,3 @@
+env:
+  LEGACY_BILLING: "1"
+  NODE_ENV: production

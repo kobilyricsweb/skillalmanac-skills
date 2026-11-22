@@ -1,0 +1,55 @@
+{
+  "skill_name": "spreadsheet-analysis",
+  "evals": [
+    {
+      "id": "s1-sales-by-region",
+      "prompt": "Here's our Q3 sales export. What were total sales per region, and which region was biggest?",
+      "files": [
+        "evals/files/s1_sales_q3.csv"
+      ],
+      "deliverable": "answer.md",
+      "assertions": [
+        "Per-region totals equal the ground truth (unique orders, variants merged, Total row excluded)",
+        "The biggest region named is the ground-truth biggest region",
+        "The Total row is identified and excluded, and the answer says so",
+        "The duplicate order rows are identified with their order IDs or row numbers",
+        "The region spelling variants are reported as merged",
+        "The blank amount and the amounts stored as text are reported",
+        "The answer notes that the file's own Total row does not match the computed total"
+      ]
+    },
+    {
+      "id": "s2-expenses-by-category",
+      "prompt": "How much have we spent per category so far this year? Also flag anything odd in the file.",
+      "files": [
+        "evals/files/s2_expenses_2026.csv"
+      ],
+      "deliverable": "answer.md",
+      "assertions": [
+        "Subtotal rows are excluded from the category totals and this is stated",
+        "The bracketed amount is treated as a negative (refund) and the Software total equals the ground truth",
+        "The 45,000 Office value is flagged as a likely typo, with the Office total shown with and without it, or the user asked",
+        "Category spelling variants are merged (one Software group)",
+        "Travel and Marketing totals equal the ground truth",
+        "The mixed date formats are mentioned",
+        "The blank amount is reported and not treated as zero silently"
+      ]
+    },
+    {
+      "id": "s3-unique-customers",
+      "prompt": "How many unique customers do we have, and what's our monthly revenue by plan?",
+      "files": [
+        "evals/files/s3_customers.xlsx"
+      ],
+      "deliverable": "answer.md",
+      "assertions": [
+        "Unique customers equals the ground truth (emails compared ignoring case and spaces)",
+        "The repeated emails are identified as the same customers and listed or counted",
+        "Revenue by plan equals the ground truth with each customer counted once, or both figures are shown with the difference explained",
+        "Plan spelling variants are merged into three plans",
+        "The Grand Total row is excluded and this is stated",
+        "Fees stored as text are reported"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,927 @@
+{
+ "name": "Marketing site",
+ "document": {
+  "id": "0:0",
+  "name": "Document",
+  "type": "DOCUMENT",
+  "children": [
+   {
+    "id": "0:1",
+    "name": "Home",
+    "type": "CANVAS",
+    "children": [
+     {
+      "id": "12:36",
+      "name": "Hero / Desktop",
+      "type": "FRAME",
+      "blendMode": "PASS_THROUGH",
+      "absoluteBoundingBox": {
+       "x": 0,
+       "y": 0,
+       "width": 1440,
+       "height": 592
+      },
+      "constraints": {
+       "vertical": "TOP",
+       "horizontal": "LEFT"
+      },
+      "fills": [
+       {
+        "type": "SOLID",
+        "blendMode": "NORMAL",
+        "color": {
+         "r": 0.9686,
+         "g": 0.9647,
+         "b": 0.9529,
+         "a": 1.0
+        }
+       }
+      ],
+      "strokes": [],
+      "effects": [],
+      "children": [
+       {
+        "id": "12:34",
+        "name": "Copy",
+        "type": "FRAME",
+        "blendMode": "PASS_THROUGH",
+        "absoluteBoundingBox": {
+         "x": 120,
+         "y": 96,
+         "width": 616,
+         "height": 300
+        },
+        "constraints": {
+         "vertical": "TOP",
+         "horizontal": "LEFT"
+        },
+        "fills": [],
+        "strokes": [],
+        "effects": [],
+        "children": [
+         {
+          "id": "12:26",
+          "name": "Eyebrow",
+          "type": "TEXT",
+          "blendMode": "PASS_THROUGH",
+          "absoluteBoundingBox": {
+           "x": 120,
+           "y": 96,
+           "width": 200,
+           "height": 20
+          },
+          "constraints": {
+           "vertical": "TOP",
+           "horizontal": "LEFT"
+          },
+          "fills": [
+           {
+            "type": "SOLID",
+            "blendMode": "NORMAL",
+            "color": {
+             "r": 0.0431,
+             "g": 0.3608,
+             "b": 0.6784,
+             "a": 1.0
+            }
+           }
+          ],
+          "strokes": [],
+          "effects": [],
+          "characters": "Field service software",
+          "style": {
+           "fontFamily": "Inter",
+           "fontPostScriptName": "Inter-Regular",
+           "fontWeight": 600,
+           "fontSize": 14,
+           "textAlignHorizontal": "LEFT",
+           "textAlignVertical": "TOP",
+           "letterSpacing": 0.56,
+           "lineHeightPx": 20,
+           "lineHeightPercent": 100,
+           "lineHeightUnit": "PIXELS",
+           "textAutoResize": "WIDTH_AND_HEIGHT",
+           "textCase": "UPPER"
+          }
+         },
+         {
+          "id": "12:27",
+          "name": "Headline",
+          "type": "TEXT",
+          "blendMode": "PASS_THROUGH",
+          "absoluteBoundingBox": {
+           "x": 120,
+           "y": 140,
+           "width": 616,
+           "height": 128
+          },
+          "constraints": {
+           "vertical": "TOP",
+           "horizontal": "LEFT"
+          },
+          "fills": [
+           {
+            "type": "SOLID",
+            "blendMode": "NORMAL",
+            "color": {
+             "r": 0.1098,
+             "g": 0.1059,
+             "b": 0.098,
+             "a": 1.0
+            }
+           }
+          ],
+          "strokes": [],
+          "effects": [],
+          "characters": "Dispatch the right technician the first time",
+          "style": {
+           "fontFamily": "Inter",
+           "fontPostScriptName": "Inter-Regular",
+           "fontWeight": 700,
+           "fontSize": 56,
+           "textAlignHorizontal": "LEFT",
+           "textAlignVertical": "TOP",
+           "letterSpacing": -1.12,
+           "lineHeightPx": 64,
+           "lineHeightPercent": 100,
+           "lineHeightUnit": "PIXELS",
+           "textAutoResize": "HEIGHT"
+          },
+          "layoutSizingHorizontal": "FILL"
+         },
+         {
+          "id": "12:28",
+          "name": "Body",
+          "type": "TEXT",
+          "blendMode": "PASS_THROUGH",
+          "absoluteBoundingBox": {
+           "x": 120,
+           "y": 286,
+           "width": 616,
+           "height": 84
+          },
+          "constraints": {
+           "vertical": "TOP",
+           "horizontal": "LEFT"
+          },
+          "fills": [
+           {
+            "type": "SOLID",
+            "blendMode": "NORMAL",
+            "color": {
+             "r": 0.3608,
+             "g": 0.3529,
+             "b": 0.3373,
+             "a": 1.0
+            }
+           }
+          ],
+          "strokes": [],
+          "effects": [],
+          "characters": "Routewise matches each job to the nearest technician with the right parts on the van, and tells your customer when to expect them.",
+          "style": {
+           "fontFamily": "Inter",
+           "fontPostScriptName": "Inter-Regular",
+           "fontWeight": 400,
+           "fontSize": 18,
+           "textAlignHorizontal": "LEFT",
+           "textAlignVertical": "TOP",
+           "letterSpacing": 0,
+           "lineHeightPx": 28,
+           "lineHeightPercent": 100,
+           "lineHeightUnit": "PIXELS",
+           "textAutoResize": "HEIGHT"
+          },
+          "layoutSizingHorizontal": "FILL"
+         },
+         {
+          "id": "12:33",
+          "name": "Actions",
+          "type": "FRAME",
+          "blendMode": "PASS_THROUGH",
+          "absoluteBoundingBox": {
+           "x": 120,
+           "y": 386,
+           "width": 396,
+           "height": 52
+          },
+          "constraints": {
+           "vertical": "TOP",
+           "horizontal": "LEFT"
+          },
+          "fills": [],
+          "strokes": [],
+          "effects": [],
+          "children": [
+           {
+            "id": "12:30",
+            "name": "Button / Primary",
+            "type": "INSTANCE",
+            "blendMode": "PASS_THROUGH",
+            "absoluteBoundingBox": {
+             "x": 0,
+             "y": 0,
+             "width": 190,
+             "height": 52
+            },
+            "constraints": {
+             "vertical": "TOP",
+             "horizontal": "LEFT"
+            },
+            "fills": [
+             {
+              "type": "SOLID",
+              "blendMode": "NORMAL",
+              "color": {
+               "r": 0.0431,
+               "g": 0.3608,
+               "b": 0.6784,
+               "a": 1.0
+              }
+             }
+            ],
+            "strokes": [],
+            "effects": [],
+            "children": [
+             {
+              "id": "12:29",
+              "name": "Label",
+              "type": "TEXT",
+              "blendMode": "PASS_THROUGH",
+              "absoluteBoundingBox": {
+               "x": 0,
+               "y": 0,
+               "width": 120,
+               "height": 24
+              },
+              "constraints": {
+               "vertical": "TOP",
+               "horizontal": "LEFT"
+              },
+              "fills": [
+               {
+                "type": "SOLID",
+                "blendMode": "NORMAL",
+                "color": {
+                 "r": 1.0,
+                 "g": 1.0,
+                 "b": 1.0,
+                 "a": 1.0
+                }
+               }
+              ],
+              "strokes": [],
+              "effects": [],
+              "characters": "Book a demo",
+              "style": {
+               "fontFamily": "Inter",
+               "fontPostScriptName": "Inter-Regular",
+               "fontWeight": 600,
+               "fontSize": 16,
+               "textAlignHorizontal": "LEFT",
+               "textAlignVertical": "TOP",
+               "letterSpacing": 0,
+               "lineHeightPx": 24,
+               "lineHeightPercent": 100,
+               "lineHeightUnit": "PIXELS",
+               "textAutoResize": "WIDTH_AND_HEIGHT"
+              }
+             }
+            ],
+            "componentId": "4:20",
+            "layoutMode": "HORIZONTAL",
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "CENTER",
+            "paddingLeft": 24,
+            "paddingRight": 24,
+            "paddingTop": 14,
+            "paddingBottom": 14,
+            "cornerRadius": 8,
+            "layoutSizingHorizontal": "HUG",
+            "layoutSizingVertical": "HUG",
+            "componentProperties": {
+             "Variant": {
+              "type": "VARIANT",
+              "value": "Primary"
+             },
+             "Size": {
+              "type": "VARIANT",
+              "value": "Large"
+             }
+            }
+           },
+           {
+            "id": "12:32",
+            "name": "Button / Secondary",
+            "type": "INSTANCE",
+            "blendMode": "PASS_THROUGH",
+            "absoluteBoundingBox": {
+             "x": 0,
+             "y": 0,
+             "width": 190,
+             "height": 52
+            },
+            "constraints": {
+             "vertical": "TOP",
+             "horizontal": "LEFT"
+            },
+            "fills": [],
+            "strokes": [
+             {
+              "type": "SOLID",
+              "blendMode": "NORMAL",
+              "color": {
+               "r": 0.4471,
+               "g": 0.4392,
+               "b": 0.4196,
+               "a": 1.0
+              }
+             }
+            ],
+            "effects": [],
+            "children": [
+             {
+              "id": "12:31",
+              "name": "Label",
+              "type": "TEXT",
+              "blendMode": "PASS_THROUGH",
+              "absoluteBoundingBox": {
+               "x": 0,
+               "y": 0,
+               "width": 120,
+               "height": 24
+              },
+              "constraints": {
+               "vertical": "TOP",
+               "horizontal": "LEFT"
+              },
+              "fills": [
+               {
+                "type": "SOLID",
+                "blendMode": "NORMAL",
+                "color": {
+                 "r": 0.1098,
+                 "g": 0.1059,
+                 "b": 0.098,
+                 "a": 1.0
+                }
+               }
+              ],
+              "strokes": [],
+              "effects": [],
+              "characters": "See pricing",
+              "style": {
+               "fontFamily": "Inter",
+               "fontPostScriptName": "Inter-Regular",
+               "fontWeight": 600,
+               "fontSize": 16,
+               "textAlignHorizontal": "LEFT",
+               "textAlignVertical": "TOP",
+               "letterSpacing": 0,
+               "lineHeightPx": 24,
+               "lineHeightPercent": 100,
+               "lineHeightUnit": "PIXELS",
+               "textAutoResize": "WIDTH_AND_HEIGHT"
+              }
+             }
+            ],
+            "componentId": "4:21",
+            "layoutMode": "HORIZONTAL",
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "CENTER",
+            "paddingLeft": 24,
+            "paddingRight": 24,
+            "paddingTop": 14,
+            "paddingBottom": 14,
+            "cornerRadius": 8,
+            "layoutSizingHorizontal": "HUG",
+            "layoutSizingVertical": "HUG",
+            "componentProperties": {
+             "Variant": {
+              "type": "VARIANT",
+              "value": "Secondary"
+             },
+             "Size": {
+              "type": "VARIANT",
+              "value": "Large"
+             }
+            },
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE"
+           }
+          ],
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 16,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+         }
+        ],
+        "layoutMode": "VERTICAL",
+        "itemSpacing": 24,
+        "layoutSizingHorizontal": "FILL",
+        "layoutSizingVertical": "HUG"
+       },
+       {
+        "id": "12:35",
+        "name": "Media",
+        "type": "FRAME",
+        "blendMode": "PASS_THROUGH",
+        "absoluteBoundingBox": {
+         "x": 0,
+         "y": 0,
+         "width": 520,
+         "height": 400
+        },
+        "constraints": {
+         "vertical": "TOP",
+         "horizontal": "LEFT"
+        },
+        "fills": [
+         {
+          "type": "IMAGE",
+          "scaleMode": "FILL",
+          "imageRef": "a1b2c3",
+          "blendMode": "NORMAL"
+         }
+        ],
+        "strokes": [],
+        "effects": [],
+        "children": [],
+        "cornerRadius": 16,
+        "clipsContent": true,
+        "layoutSizingHorizontal": "FIXED",
+        "layoutSizingVertical": "FIXED"
+       }
+      ],
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 64,
+      "paddingLeft": 120,
+      "paddingRight": 120,
+      "paddingTop": 96,
+      "paddingBottom": 96,
+      "counterAxisAlignItems": "CENTER",
+      "primaryAxisSizingMode": "FIXED",
+      "counterAxisSizingMode": "FIXED",
+      "layoutSizingHorizontal": "FIXED",
+      "layoutSizingVertical": "HUG"
+     },
+     {
+      "id": "12:47",
+      "name": "Hero / Mobile",
+      "type": "FRAME",
+      "blendMode": "PASS_THROUGH",
+      "absoluteBoundingBox": {
+       "x": 0,
+       "y": 0,
+       "width": 375,
+       "height": 760
+      },
+      "constraints": {
+       "vertical": "TOP",
+       "horizontal": "LEFT"
+      },
+      "fills": [
+       {
+        "type": "SOLID",
+        "blendMode": "NORMAL",
+        "color": {
+         "r": 0.9686,
+         "g": 0.9647,
+         "b": 0.9529,
+         "a": 1.0
+        }
+       }
+      ],
+      "strokes": [],
+      "effects": [],
+      "children": [
+       {
+        "id": "12:45",
+        "name": "Copy",
+        "type": "FRAME",
+        "blendMode": "PASS_THROUGH",
+        "absoluteBoundingBox": {
+         "x": 20,
+         "y": 48,
+         "width": 335,
+         "height": 300
+        },
+        "constraints": {
+         "vertical": "TOP",
+         "horizontal": "LEFT"
+        },
+        "fills": [],
+        "strokes": [],
+        "effects": [],
+        "children": [
+         {
+          "id": "12:37",
+          "name": "Eyebrow",
+          "type": "TEXT",
+          "blendMode": "PASS_THROUGH",
+          "absoluteBoundingBox": {
+           "x": 20,
+           "y": 48,
+           "width": 200,
+           "height": 20
+          },
+          "constraints": {
+           "vertical": "TOP",
+           "horizontal": "LEFT"
+          },
+          "fills": [
+           {
+            "type": "SOLID",
+            "blendMode": "NORMAL",
+            "color": {
+             "r": 0.0431,
+             "g": 0.3608,
+             "b": 0.6784,
+             "a": 1.0
+            }
+           }
+          ],
+          "strokes": [],
+          "effects": [],
+          "characters": "Field service software",
+          "style": {
+           "fontFamily": "Inter",
+           "fontPostScriptName": "Inter-Regular",
+           "fontWeight": 600,
+           "fontSize": 14,
+           "textAlignHorizontal": "LEFT",
+           "textAlignVertical": "TOP",
+           "letterSpacing": 0.56,
+           "lineHeightPx": 20,
+           "lineHeightPercent": 100,
+           "lineHeightUnit": "PIXELS",
+           "textAutoResize": "WIDTH_AND_HEIGHT",
+           "textCase": "UPPER"
+          }
+         },
+         {
+          "id": "12:38",
+          "name": "Headline",
+          "type": "TEXT",
+          "blendMode": "PASS_THROUGH",
+          "absoluteBoundingBox": {
+           "x": 20,
+           "y": 92,
+           "width": 335,
+           "height": 88
+          },
+          "constraints": {
+           "vertical": "TOP",
+           "horizontal": "LEFT"
+          },
+          "fills": [
+           {
+            "type": "SOLID",
+            "blendMode": "NORMAL",
+            "color": {
+             "r": 0.1098,
+             "g": 0.1059,
+             "b": 0.098,
+             "a": 1.0
+            }
+           }
+          ],
+          "strokes": [],
+          "effects": [],
+          "characters": "Dispatch the right technician the first time",
+          "style": {
+           "fontFamily": "Inter",
+           "fontPostScriptName": "Inter-Regular",
+           "fontWeight": 700,
+           "fontSize": 36,
+           "textAlignHorizontal": "LEFT",
+           "textAlignVertical": "TOP",
+           "letterSpacing": -0.72,
+           "lineHeightPx": 44,
+           "lineHeightPercent": 100,
+           "lineHeightUnit": "PIXELS",
+           "textAutoResize": "HEIGHT"
+          },
+          "layoutSizingHorizontal": "FILL"
+         },
+         {
+          "id": "12:39",
+          "name": "Body",
+          "type": "TEXT",
+          "blendMode": "PASS_THROUGH",
+          "absoluteBoundingBox": {
+           "x": 20,
+           "y": 238,
+           "width": 335,
+           "height": 72
+          },
+          "constraints": {
+           "vertical": "TOP",
+           "horizontal": "LEFT"
+          },
+          "fills": [
+           {
+            "type": "SOLID",
+            "blendMode": "NORMAL",
+            "color": {
+             "r": 0.3608,
+             "g": 0.3529,
+             "b": 0.3373,
+             "a": 1.0
+            }
+           }
+          ],
+          "strokes": [],
+          "effects": [],
+          "characters": "Routewise matches each job to the nearest technician with the right parts on the van, and tells your customer when to expect them.",
+          "style": {
+           "fontFamily": "Inter",
+           "fontPostScriptName": "Inter-Regular",
+           "fontWeight": 400,
+           "fontSize": 16,
+           "textAlignHorizontal": "LEFT",
+           "textAlignVertical": "TOP",
+           "letterSpacing": 0,
+           "lineHeightPx": 24,
+           "lineHeightPercent": 100,
+           "lineHeightUnit": "PIXELS",
+           "textAutoResize": "HEIGHT"
+          },
+          "layoutSizingHorizontal": "FILL"
+         },
+         {
+          "id": "12:44",
+          "name": "Actions",
+          "type": "FRAME",
+          "blendMode": "PASS_THROUGH",
+          "absoluteBoundingBox": {
+           "x": 20,
+           "y": 338,
+           "width": 335,
+           "height": 116
+          },
+          "constraints": {
+           "vertical": "TOP",
+           "horizontal": "LEFT"
+          },
+          "fills": [],
+          "strokes": [],
+          "effects": [],
+          "children": [
+           {
+            "id": "12:41",
+            "name": "Button / Primary",
+            "type": "INSTANCE",
+            "blendMode": "PASS_THROUGH",
+            "absoluteBoundingBox": {
+             "x": 0,
+             "y": 0,
+             "width": 335,
+             "height": 52
+            },
+            "constraints": {
+             "vertical": "TOP",
+             "horizontal": "LEFT"
+            },
+            "fills": [
+             {
+              "type": "SOLID",
+              "blendMode": "NORMAL",
+              "color": {
+               "r": 0.0431,
+               "g": 0.3608,
+               "b": 0.6784,
+               "a": 1.0
+              }
+             }
+            ],
+            "strokes": [],
+            "effects": [],
+            "children": [
+             {
+              "id": "12:40",
+              "name": "Label",
+              "type": "TEXT",
+              "blendMode": "PASS_THROUGH",
+              "absoluteBoundingBox": {
+               "x": 0,
+               "y": 0,
+               "width": 120,
+               "height": 24
+              },
+              "constraints": {
+               "vertical": "TOP",
+               "horizontal": "LEFT"
+              },
+              "fills": [
+               {
+                "type": "SOLID",
+                "blendMode": "NORMAL",
+                "color": {
+                 "r": 1.0,
+                 "g": 1.0,
+                 "b": 1.0,
+                 "a": 1.0
+                }
+               }
+              ],
+              "strokes": [],
+              "effects": [],
+              "characters": "Book a demo",
+              "style": {
+               "fontFamily": "Inter",
+               "fontPostScriptName": "Inter-Regular",
+               "fontWeight": 600,
+               "fontSize": 16,
+               "textAlignHorizontal": "LEFT",
+               "textAlignVertical": "TOP",
+               "letterSpacing": 0,
+               "lineHeightPx": 24,
+               "lineHeightPercent": 100,
+               "lineHeightUnit": "PIXELS",
+               "textAutoResize": "WIDTH_AND_HEIGHT"
+              }
+             }
+            ],
+            "componentId": "4:20",
+            "layoutMode": "HORIZONTAL",
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "CENTER",
+            "paddingLeft": 24,
+            "paddingRight": 24,
+            "paddingTop": 14,
+            "paddingBottom": 14,
+            "cornerRadius": 8,
+            "layoutSizingHorizontal": "FILL",
+            "layoutSizingVertical": "HUG",
+            "componentProperties": {
+             "Variant": {
+              "type": "VARIANT",
+              "value": "Primary"
+             },
+             "Size": {
+              "type": "VARIANT",
+              "value": "Large"
+             }
+            }
+           },
+           {
+            "id": "12:43",
+            "name": "Button / Secondary",
+            "type": "INSTANCE",
+            "blendMode": "PASS_THROUGH",
+            "absoluteBoundingBox": {
+             "x": 0,
+             "y": 0,
+             "width": 335,
+             "height": 52
+            },
+            "constraints": {
+             "vertical": "TOP",
+             "horizontal": "LEFT"
+            },
+            "fills": [],
+            "strokes": [
+             {
+              "type": "SOLID",
+              "blendMode": "NORMAL",
+              "color": {
+               "r": 0.4471,
+               "g": 0.4392,
+               "b": 0.4196,
+               "a": 1.0
+              }
+             }
+            ],
+            "effects": [],
+            "children": [
+             {
+              "id": "12:42",
+              "name": "Label",
+              "type": "TEXT",
+              "blendMode": "PASS_THROUGH",
+              "absoluteBoundingBox": {
+               "x": 0,
+               "y": 0,
+               "width": 120,
+               "height": 24
+              },
+              "constraints": {
+               "vertical": "TOP",
+               "horizontal": "LEFT"
+              },
+              "fills": [
+               {
+                "type": "SOLID",
+                "blendMode": "NORMAL",
+                "color": {
+                 "r": 0.1098,
+                 "g": 0.1059,
+                 "b": 0.098,
+                 "a": 1.0
+                }
+               }
+              ],
+              "strokes": [],
+              "effects": [],
+              "characters": "See pricing",
+              "style": {
+               "fontFamily": "Inter",
+               "fontPostScriptName": "Inter-Regular",
+               "fontWeight": 600,
+               "fontSize": 16,
+               "textAlignHorizontal": "LEFT",
+               "textAlignVertical": "TOP",
+               "letterSpacing": 0,
+               "lineHeightPx": 24,
+               "lineHeightPercent": 100,
+               "lineHeightUnit": "PIXELS",
+               "textAutoResize": "WIDTH_AND_HEIGHT"
+              }
+             }
+            ],
+            "componentId": "4:21",
+            "layoutMode": "HORIZONTAL",
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "CENTER",
+            "paddingLeft": 24,
+            "paddingRight": 24,
+            "paddingTop": 14,
+            "paddingBottom": 14,
+            "cornerRadius": 8,
+            "layoutSizingHorizontal": "FILL",
+            "layoutSizingVertical": "HUG",
+            "componentProperties": {
+             "Variant": {
+              "type": "VARIANT",
+              "value": "Secondary"
+             },
+             "Size": {
+              "type": "VARIANT",
+              "value": "Large"
+             }
+            },
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE"
+           }
+          ],
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 12,
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+         }
+        ],
+        "layoutMode": "VERTICAL",
+        "itemSpacing": 16,
+        "layoutSizingHorizontal": "FILL",
+        "layoutSizingVertical": "HUG"
+       },
+       {
+        "id": "12:46",
+        "name": "Media",
+        "type": "FRAME",
+        "blendMode": "PASS_THROUGH",
+        "absoluteBoundingBox": {
+         "x": 0,
+         "y": 0,
+         "width": 335,
+         "height": 240
+        },
+        "constraints": {
+         "vertical": "TOP",
+         "horizontal": "LEFT"
+        },
+        "fills": [
+         {
+          "type": "IMAGE",
+          "scaleMode": "FILL",
+          "imageRef": "a1b2c3",
+          "blendMode": "NORMAL"
+         }
+        ],
+        "strokes": [],
+        "effects": [],
+        "children": [],
+        "cornerRadius": 16,
+        "clipsContent": true,
+        "layoutSizingHorizontal": "FILL",
+        "layoutSizingVertical": "FIXED"
+       }
+      ],
+      "layoutMode": "VERTICAL",
+      "itemSpacing": 32,
+      "paddingLeft": 20,
+      "paddingRight": 20,
+      "paddingTop": 48,
+      "paddingBottom": 48,
+      "counterAxisAlignItems": "MIN",
+      "primaryAxisSizingMode": "AUTO",
+      "counterAxisSizingMode": "FIXED",
+      "layoutSizingHorizontal": "FIXED",
+      "layoutSizingVertical": "HUG"
+     }
+    ]
+   }
+  ]
+ }
+}

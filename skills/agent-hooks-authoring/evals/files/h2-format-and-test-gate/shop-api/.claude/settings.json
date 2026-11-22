@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": ["Bash(npm test)", "Bash(npm run lint)"],
+    "deny": ["Read(./secrets/**)"]
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/notify.js\"" }
+        ]
+      }
+    ]
+  }
+}

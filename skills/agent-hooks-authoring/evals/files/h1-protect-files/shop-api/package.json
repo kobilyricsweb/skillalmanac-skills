@@ -1,0 +1,10 @@
+{
+  "name": "shop-api",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node test/run.js",
+    "format": "node tools/fmt.js",
+    "lint": "node tools/lint.js"
+  }
+}

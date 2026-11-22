@@ -1,0 +1,117 @@
+{
+  "r1-retail-to-customer-success": {
+    "A": {
+      "assertions": [
+        {"n": 1, "passed": true, "evidence": "Skills: 'Lightspeed POS, Excel, staff scheduling, Spanish (conversational)'; no Salesforce/Zendesk/SQL/NPS/CRM anywhere in the resume."},
+        {"n": 2, "passed": true, "evidence": "Only 12, 9, 18%, 2023 and the original dates appear (digit diff against inputs/resume.md is empty)."},
+        {"n": 3, "passed": true, "evidence": "Reply: 'Salesforce or another CRM ... your resume shows no CRM', 'Zendesk or ticketing: none shown', 'SQL: none shown'."},
+        {"n": 4, "passed": true, "evidence": "Marginal pass. Summary: 'Customer-facing retail assistant manager ... Handle escalated customer complaints, train staff on software'; bullet '(retention outreach)'. But the word 'onboarding' is never used and Spanish is only retained, still last in Skills, not surfaced."},
+        {"n": 5, "passed": true, "evidence": "Single column, headings Summary/Experience/Education/Skills, no I/my."},
+        {"n": 6, "passed": true, "evidence": "Harlow (Mar 2021 - Present), Harlow (Jun 2018 - Mar 2021), Corner Bean (Sep 2016 - May 2018) all kept."}
+      ],
+      "score": 7,
+      "other_defects": [
+        "Removed the candidate's own skill 'conflict resolution' (disclosed in reply), although the posting asks for 'a calm approach to escalations' and her escalation bullet backs it; over-cautious and loses a relevant term.",
+        "Reply cites 'Posting terms now covered: 5 of 19 -> 7 of 19 on the script's count' and 'Fact check: PASS (script found ...)': refers to a script the user never saw; the count is unexplained and of little use to the user.",
+        "Tailoring is light: Spanish (a listed plus) is not promoted; the summary still reads as a retail manager rather than a customer-success candidate."
+      ]
+    },
+    "B": {
+      "assertions": [
+        {"n": 1, "passed": true, "evidence": "No Salesforce/Zendesk/SQL/NPS/CRM in the resume; the only tools in Skills are 'Lightspeed POS, Excel'."},
+        {"n": 2, "passed": true, "evidence": "Only 12, 9, 18%, 2023 and the original dates appear (digit diff empty)."},
+        {"n": 3, "passed": true, "evidence": "Reply: 'Salesforce or another CRM, and Zendesk', 'SQL and NPS reporting. You don't have these on your resume.'"},
+        {"n": 4, "passed": true, "evidence": "Summary: 'Customer-facing professional ... escalation handling, training new team members on software, and retention outreach ... Conversational Spanish.' Skills: 'Customer onboarding and training, escalation handling, retention outreach'."},
+        {"n": 5, "passed": true, "evidence": "Single column, standard headings, no first-person pronouns."},
+        {"n": 6, "passed": true, "evidence": "All three roles and dates kept unchanged."}
+      ],
+      "score": 6,
+      "other_defects": [
+        "Skills claims 'Customer onboarding and training'; the original only shows training 9 new hires (staff), never customer onboarding. An interviewer for a role whose first duty is customer onboarding would probe this. The reply even calls the staff training 'software onboarding'.",
+        "Summary: 'Experienced in small-business-style retail environments' has no basis in the original (nothing says Harlow Home Goods is small-business-like); invented to echo the posting.",
+        "Summary: 'comfortable with a calm, solution-first approach to difficult conversations' is unsupported self-description lifted from the posting; 'as the store's point of escalation' is a mild added scope claim.",
+        "Reply states 'Nothing in the resume is invented', which is not accurate given the items above, so the user is not warned to check them."
+      ]
+    },
+    "preferred": "A",
+    "reason": "Both pass every assertion, and B is the more visibly retargeted resume (Spanish and posting terms in the summary). A is preferred narrowly because B adds an unsupported 'customer onboarding' skill and a made-up 'small-business-style' line while telling the user nothing was invented; A is thinner but everything in it is true.",
+    "assertion_notes": "Assertion 4 is vague on 'surfaced': A keeps Spanish only where it already was and never uses the word 'onboarding' (A's reply explains it deliberately did not relabel staff training as customer onboarding, the more honest choice), so A's pass is marginal and a stricter reader could fail it. As written the assertion rewards B for wording ('customer onboarding') that is itself an overclaim not caught by assertion 1."
+  },
+  "r2-accountant-to-fpa": {
+    "A": {
+      "assertions": [
+        {"n": 1, "passed": true, "evidence": "Skills unchanged: 'Excel (pivot tables, VLOOKUP, charts), QuickBooks, account reconciliation, accounts payable, Korean (fluent)'; none of the listed tools or credentials appear."},
+        {"n": 2, "passed": true, "evidence": "Only 40, 9, 6, 300, 3.6 and the original dates appear (digit diff empty)."},
+        {"n": 3, "passed": true, "evidence": "Reply: 'I did not add keywords you cannot back up: a term in the job ad is not evidence you have it', then 'Gaps (not added): Power BI or Tableau ... SQL ... Forecasting models ... CPA ... ERP'."},
+        {"n": 4, "passed": true, "evidence": "Summary: 'experience in monthly variance reporting, budget support and month-end close. Builds Excel pivot tables and lookups'. Does not say 'advanced Excel' or 'variance analysis' (deliberate, per reply)."},
+        {"n": 5, "passed": true, "evidence": "Bullets verbatim: 'Helped the controller prepare the annual budget file.', 'Part of the team that cut month-end close from 9 days to 6 days.' Summary says only 'budget support'."},
+        {"n": 6, "passed": true, "evidence": "Headings Summary/Experience/Education/Skills, one column, all dates in 'Aug 2022 - Present' form."}
+      ],
+      "score": 7,
+      "other_defects": [
+        "Very light tailoring: only a two-sentence summary and bullet reordering; Skills untouched, so true terms such as variance reporting/analysis, month-end close and budgeting never reach the skills line. Refusing 'advanced' Excel and 'variance analysis' for someone who builds the pivot/lookup variance report is over-cautious.",
+        "Reply cites 'Posting terms now covered: 9 of 29 -> 10 of 29 on the script's count' and 'Fact check: PASS (script ...; its warnings were only month abbreviations)': internal tooling talk the user cannot interpret.",
+        "The summary's second sentence duplicates the first bullet word for word."
+      ]
+    },
+    "B": {
+      "assertions": [
+        {"n": 1, "passed": true, "evidence": "Skills: 'Excel (pivot tables, VLOOKUP, charts), variance analysis, budgeting support, month-end close, account reconciliation, accounts payable, QuickBooks, Korean (fluent)'; no Power BI/Tableau/SQL/CPA/NetSuite/SAP/forecasting."},
+        {"n": 2, "passed": true, "evidence": "Only 40, 9, 6, 300, 3.6 and original dates in the resume (digit diff empty)."},
+        {"n": 3, "passed": true, "evidence": "Reply: 'Keywords I did not add ... I only added ones that are true for you', followed by Power BI/Tableau, SQL, forecasting models, CPA, ERP."},
+        {"n": 4, "passed": true, "evidence": "'monthly variance report (actuals vs budget)'; skills 'variance analysis, budgeting support, month-end close'; 'Excel-based variance reporting'. 'Advanced' Excel not used."},
+        {"n": 5, "passed": false, "evidence": "Bullets are verbatim, but the summary upgrades scope: 'a record of speeding up month-end close' (original: 'Part of the team that cut ...') and 'Experienced explaining financial results to department heads' (original: report 'sent to department heads'; nothing says he explained or presented anything)."},
+        {"n": 6, "passed": true, "evidence": "All-caps standard headings, one column, dates consistently in 'August 2022 - Present' form."}
+      ],
+      "score": 6,
+      "other_defects": [
+        "'Experienced explaining financial results to department heads' is invented and maps directly onto the posting's 'explain the drivers to business unit leaders'; it is not flagged in the reply, so the user will not know to check it.",
+        "Added '(actuals vs budget)' to the variance report bullet; the original never says what the variance is measured against (could be prior period or forecast). Copied from the posting, not from the candidate.",
+        "Tutor bullet gained 'explaining technical concepts to non-specialists' (disclosed in reply; a stretch, since first-year accounting students are not non-finance managers).",
+        "Reply says 'about 4 years of relevant experience': the staff role is about 4.25 years (Aug 2022 to Nov 2026) plus a 2-month internship, so roughly right, but asserted without showing the count."
+      ]
+    },
+    "preferred": "A",
+    "reason": "B covers more true keywords (variance analysis, budgeting support, month-end close in Skills) and has the clearer reply, but its summary invents that he explains results to department heads and gives him personal credit for the faster close, without flagging either. A is thinner but fully accurate, and its gap list is more complete (it also notes presenting and 'advanced/modeling' as unproven). The margin is small.",
+    "assertion_notes": "Assertion 4 lists 'advanced Excel' but neither side uses the word 'advanced'; I passed both on the other three terms plus the Excel specifics. Assertion 5's two named examples are not literally violated by B (no 'led' or 'owned'), but its headline 'no scope or level upgrade' is, via the summary; a literal reader could pass B. The assertion count understates how close these are: B is the stronger keyword match, A the safer document."
+  },
+  "r3-teacher-to-instructional-designer": {
+    "A": {
+      "assertions": [
+        {"n": 1, "passed": true, "evidence": "No Storyline, Rise, SCORM or ADDIE in the resume; reply: 'I did not claim the framework'."},
+        {"n": 2, "passed": true, "evidence": "Only 5, 28, 9, 6, 40, 71%, 84%, 4, grade labels and original dates (digit diff empty)."},
+        {"n": 3, "passed": false, "evidence": "LMS half met: 'Google Classroom (learning management system)'. Loom half not met: the bullet is still the original wording 'Posted weekly video walkthroughs recorded with Loom', never called video or screen-recorded training."},
+        {"n": 4, "passed": true, "evidence": "Reply lists 'Articulate Storyline or Rise, and SCORM packages', 'ADDIE', 'Adult learning principles', 'Portfolio'; and 'I cannot promise it will get past any particular ATS.'"},
+        {"n": 5, "passed": true, "evidence": "Objective replaced by Summary; 'Designed a full-year science curriculum' (no 'I'); headings Summary/Experience/Education/Skills."},
+        {"n": 6, "passed": true, "evidence": "'pass rate on the district benchmark went from 71% to 84% over three years'; 'Led 6 professional development workshops for 40 teachers on using Google Classroom.'"}
+      ],
+      "score": 6,
+      "other_defects": [
+        "Under-tailored for the stated goal: never uses 'instructional design', 'training', 'adult learners' or 'assessment data', even though 40 teachers are plainly adults and the test rewrite is plainly assessment-driven revision. The Skills line is the original list reordered. The reply itself reports only '4 of 21 -> 5 of 21' posting terms.",
+        "Reply cites 'the script's count' and 'Fact check: PASS (script found ...)': internal tooling talk the user cannot interpret.",
+        "Reply says she did not 'administer' Google Classroom, so LMS management was not claimed; a teacher running her own courses in it arguably does manage courses there, so this gap is drawn more conservatively than needed."
+      ]
+    },
+    "B": {
+      "assertions": [
+        {"n": 1, "passed": true, "evidence": "No Storyline, Rise, SCORM or ADDIE in the resume; reply: 'I did not claim the model by name.'"},
+        {"n": 2, "passed": false, "evidence": "Summary: 'Curriculum designer with 7 years of experience' - '7 years' is not in the original (derived from Aug 2019 - Jun 2026, about 6 years 10 months; the reply asks the user to check it)."},
+        {"n": 3, "passed": true, "evidence": "'Google Classroom, a learning management system (LMS)'; summary 'creating video training'; skills 'video training (Loom)'. Does not use the exact phrase 'screen-recorded'."},
+        {"n": 4, "passed": true, "evidence": "Reply lists 'Articulate Storyline or Rise, and SCORM', 'ADDIE', 'Portfolio', 'Corporate or SME work'; says 'No ATS trick or keyword list can honestly make up for these' and only that the layout means 'ATS software can read it' - no promise of passing. Adult-learning principles not listed as a gap."},
+        {"n": 5, "passed": true, "evidence": "Objective replaced by Summary; no 'I'; headings Summary/Experience/Education/Skills."},
+        {"n": 6, "passed": true, "evidence": "'pass rate on the district benchmark rose from 71% to 84% over three years'; 'Led 6 professional development workshops for 40 teachers on using Google Classroom'. Verb changed from 'went' to 'rose', figures exact."}
+      ],
+      "score": 7,
+      "other_defects": [
+        "Job title changed to 'Curriculum Designer and 7th Grade Science Teacher'. She never held a 'Curriculum Designer' title; an employment verification would show only the teacher title. Disclosed in the reply with a revert option, but the safer default would have been the real title.",
+        "'managed courses in Google Classroom' and summary 'managing courses in a learning management system': the original says she 'Built all course materials in Google Classroom'; managing is added (plausible for a teacher, but not stated).",
+        "Workshops labelled '(adult learners, train-the-trainer format)'. Adult learners is true; train-the-trainer is a stretch, since teaching teachers to use a tool themselves is end-user training, not preparing them to train others.",
+        "Summary 'building and improving training in a classroom setting' relabels K-12 teaching as 'training'; new skills 'instructional design', 'assessment design and data analysis', 'professional development facilitation' are inferred labels not in the original.",
+        "Reply gives no explicit statement that passing an ATS cannot be guaranteed, though the user asked to 'make sure it gets past the ATS'; it only declines to keyword-stuff."
+      ]
+    },
+    "preferred": "B",
+    "reason": "The user asked for a rewrite that survives keyword screening; B actually translates real experience into the posting's vocabulary (LMS, video training, adult learners, assessment data) and flags its two judgement calls (title, '7 years') for the user to confirm, while A is close to the original with one parenthetical added. B's invented job title is its real risk and the user should revert it.",
+    "assertion_notes": "Each side fails one assertion, so the count is level. Assertion 2 penalises B for a derived tenure figure ('7 years', really about 6.9) that is disclosed and that A's own reply also states ('about 7 years of curriculum work'); a fair literal fail but a minor one. Assertion 3 expects 'screen-recorded training' wording; B says 'video training' (the posting says 'video or screen-recorded training'), which I accepted. B's most consequential defect, the changed job title, is not covered by any assertion."
+  }
+}

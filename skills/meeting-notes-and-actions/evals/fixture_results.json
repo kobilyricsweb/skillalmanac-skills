@@ -1,0 +1,20 @@
+[
+  {
+    "fixture": "good notes",
+    "command": "python scripts/notes_check.py evals/files/m1_marketing_sync.txt evals/fixtures/notes_good.md",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "MEETING NOTES CHECK\r\n  OK    structure complete; owners, dates, numbers and quotations trace to the transcript\r\n\r\nRESULT: PASS (0 fail, 0 warn)\r\nNot checked by this script: whether each decision was really agreed, and whether an action was missed. Read the transcript end to end for those.\r\n"
+  },
+  {
+    "fixture": "bad notes",
+    "command": "python scripts/notes_check.py evals/files/m1_marketing_sync.txt evals/fixtures/notes_bad.md",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "MEETING NOTES CHECK\r\n  FAIL  section 'Open Questions' is missing (use it as a heading; write 'None' under it if empty)\r\n  FAIL  action 1: owner 'Priya' does not appear in the transcript\r\n  FAIL  action 1: due '2026-11-25' cannot be traced; give the date as said, or a computed date followed by the spoken phrase in double quotes\r\n  FAIL  action 2: Due is empty (write 'No date set' if no date was said)\r\n  FAIL  action 3: due 'Next Tuesday' cannot be traced; give the date as said, or a computed date followed by the spoken phrase in double quotes\r\n  FAIL  NEW NUMBER '20000' is in the notes but not in the transcript\r\n  FAIL  quotation not found word for word in the transcript: \"we are fully committed to this date no matter what\"\r\n  WARN  action 1: Source is empty (speaker and time or line)\r\n  WARN  action 2: 'Send variants' is too short to act on (verb + object + enough detail)\r\n\r\nRESULT: FAIL (7 fail, 2 warn)\r\nNot checked by this script: whether each decision was really agreed, and whether an action was missed. Read the transcript end to end for those.\r\n"
+  }
+]

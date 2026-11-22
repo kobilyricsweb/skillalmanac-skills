@@ -1,0 +1,16 @@
+{
+ "@context": "https://schema.org",
+ "@type": "CollectionPage",
+ "name": "Lamps",
+ "url": "https://www.example.com/lamps",
+ "mainEntity": {
+  "@type": "ItemList",
+  "itemListElement": [
+   {
+    "@type": "ListItem",
+    "position": 1,
+    "url": "https://www.example.com/p/trail-lamp"
+   }
+  ]
+ }
+}

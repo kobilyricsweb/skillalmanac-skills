@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /app/
+Disallow: /billing/
+
+Sitemap: https://www.acme-scheduler.example/sitemap.xml

@@ -1,0 +1,59 @@
+### bad file (eval fixture i1)
+$ python scripts/instruction_file_audit.py evals/files/i1-audit-bloated/web-dashboard/CLAUDE.md --root evals/files/i1-audit-bloated/web-dashboard
+exit code 1 (expected 1) -> ok
+<local-path> 67 non-blank lines, 2872 bytes, about 718 tokens loaded every session
+checked 7 paths; knows 6 package scripts, 0 make targets
+  PROBLEM wrong-package-manager  line 19: file uses `npm` but the lockfile says pnpm
+  PROBLEM possible-credential    line 21: looks like a credential; remove it, rotate it, and do not quote it in replies
+  PROBLEM missing-script         line 25: `npm run test:unit`: no package.json in the repo defines a script named 'test:unit'
+  PROBLEM missing-path           line 54: `src/utils/helpers.ts` does not exist under web-dashboard
+  PROBLEM missing-path           line 55: `legacy/admin/` does not exist under web-dashboard
+  NOTE    vague                  line 5: generic line an agent already follows or cannot act on: You are an expert senior full-stack engineer with deep knowledge of React and Ty
+  NOTE    vague                  line 6: generic line an agent already follows or cannot act on: Always write clean, maintainable, high-quality code. Follow best practices at al
+  NOTE    vague                  line 7: generic line an agent already follows or cannot act on: Think step by step and be thorough. Do not make mistakes.
+  NOTE    vague                  line 30: generic line an agent already follows or cannot act on: - Tests are important.
+  NOTE    vague                  line 40: generic line an agent already follows or cannot act on: - Use arrow functions where appropriate.
+  NOTE    vague                  line 41: generic line an agent already follows or cannot act on: - Use meaningful variable names.
+  NOTE    vague                  line 42: generic line an agent already follows or cannot act on: - Keep functions small.
+  NOTE    vague                  line 49: generic line an agent already follows or cannot act on: - Follow the DRY principle.
+  NOTE    vague                  line 50: generic line an agent already follows or cannot act on: - Follow SOLID principles.
+  NOTE    vague                  line 66: generic line an agent already follows or cannot act on: - Write good commit messages.
+  NOTE    vague                  line 68: generic line an agent already follows or cannot act on: - Be careful with git.
+  NOTE    vague                  line 74: generic line an agent already follows or cannot act on: - IMPORTANT: Be careful.
+  NOTE    vague                  line 75: generic line an agent already follows or cannot act on: - ALWAYS double-check your work.
+  NOTE    vague                  line 76: generic line an agent already follows or cannot act on: - NEVER break existing functionality.
+  NOTE    vague                  line 77: generic line an agent already follows or cannot act on: - When in doubt, ask.
+  NOTE    vague                  line 78: generic line an agent already follows or cannot act on: - Quality matters.
+  NOTE    vague                  line 79: generic line an agent already follows or cannot act on: - Think about edge cases.
+  NOTE    vague                  line 80: generic line an agent already follows or cannot act on: - Think about performance.
+  NOTE    vague                  line 81: generic line an agent already follows or cannot act on: - Think about security.
+  NOTE    vague                  line 82: generic line an agent already follows or cannot act on: - Think about accessibility.
+  NOTE    vague                  line 83: generic line an agent already follows or cannot act on: - Remember: the user is counting on you.
+  NOTE    emphasis               file: 7 emphasis markers (IMPORTANT, ALWAYS, NEVER, !!); keep them for the two or three rules that matter most
+
+5 problem(s), 22 note(s). Not checked: contradictions between rules, and whether a true rule is worth its line.
+
+### good file
+$ python scripts/instruction_file_audit.py evals/fixtures/good_repo/AGENTS.md
+exit code 0 (expected 0) -> ok
+<local-path> 5 non-blank lines, 163 bytes, about 40 tokens loaded every session
+checked 1 paths; knows 0 package scripts, 2 make targets
+
+0 problem(s), 0 note(s). Not checked: contradictions between rules, and whether a true rule is worth its line.
+
+### missing import and make target
+$ python scripts/instruction_file_audit.py evals/fixtures/good_repo/BROKEN.md
+exit code 1 (expected 1) -> ok
+<local-path> 4 non-blank lines, 112 bytes, about 28 tokens loaded every session
+checked 0 paths; knows 0 package scripts, 2 make targets
+  PROBLEM missing-make-target    line 1: `make deploy`: the Makefile has no such target
+  PROBLEM missing-import         line 1: import `@docs/missing.md` points to a file that does not exist
+  NOTE    duplicate              line 6: repeats line 5
+
+2 problem(s), 1 note(s). Not checked: contradictions between rules, and whether a true rule is worth its line.
+
+### missing file
+$ python scripts/instruction_file_audit.py nope.md
+exit code 2 (expected 2) -> ok
+cannot read <local-path> not a file
+

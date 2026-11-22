@@ -1,0 +1,14 @@
+{
+  "q1-herring-trade": {
+    "A": "with_skill",
+    "B": "baseline"
+  },
+  "q2-photosynthesis": {
+    "A": "with_skill",
+    "B": "baseline"
+  },
+  "q3-forklift-briefing": {
+    "A": "with_skill",
+    "B": "baseline"
+  }
+}

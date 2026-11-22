@@ -1,0 +1,51 @@
+KEYWORD DEMAND REPORT
+Input: 36 keywords, 15 months (2025-08 to 2026-10)
+Raw sum of 12-month averages (every keyword):   334476.7
+De-duplicated sum (one per cluster):            175710.1   <- working figure
+Counted (minus excluded and brand-navigational): 130410.1 in 19 clusters
+Double counting removed: 158766.6
+
+By intent:
+  unclassified           14 clusters    115330.1
+  navigational-brand      3 clusters     42400.0
+  commercial              3 clusters     11780.0
+  excluded                2 clusters      2900.0
+  transactional           1 clusters      1900.0
+  informational           1 clusters      1400.0
+
+Total trend (counted clusters): flat; last 3 months vs previous 3: -1.9%; vs same 3 months a year ago: -9.7%
+  peak 2025-11 = 168460.0; last month = 121840.0; flags: 28%-below-peak
+  windows: last3 = 2026-08, 2026-09, 2026-10, prev3 = 2026-05, 2026-06, 2026-07
+
+Clusters (largest first):
+  representative                         intent                 avg12 trend          3m%   yoy3m%  variants / flags
+  standing desk                          unclassified         60500.0 flat           0.0      0.0  2 variants (same words after plural/punctuation)
+  uplift desk                            navigational-brand   22200.0 flat           0.0      0.0  2 variants (same words after plural/punctuation)
+  ikea standing desk                     navigational-brand   14800.0 flat           0.0      0.0  
+  electric standing desk                 unclassified         14266.7 falling      -38.2    -68.2  2 variants (same words after plural/punctuation) | one-month-rebound-after-decline | 76%-below-peak
+  adjustable height desk                 unclassified         12100.0 flat           0.0      0.0  3 variants (identical series, same word set; same words after plural/punctuation)
+  best standing desk                     commercial            9900.0 flat           0.0      0.0  3 variants (identical series, same word set; same words after plural/punctuation)
+  standing desk converter                unclassified          6600.0 flat           0.0      0.0  2 variants (same words after plural/punctuation)
+  flexispot standing desk                navigational-brand    5400.0 flat           0.0      0.0  
+  standing desk mat                      unclassified          4400.0 flat           0.0      0.0  2 variants (same words after plural/punctuation)
+  standing desk work from home           unclassified          3825.0 falling      -28.7    -70.6  77%-below-peak
+  standing desk chair                    unclassified          3600.0 flat           0.0      0.0  
+  standing desk black friday             unclassified          3316.7 flat           0.0      0.0  one-off-spike | 99%-below-peak
+  standing desk benefits                 unclassified          2900.0 flat           0.0      0.0  3 variants (identical series, avg >= 500)
+  walking pad for standing desk          unclassified          2541.7 rising        59.6    647.4  
+  standing desk height calculator        transactional         1900.0 flat           0.0      0.0  
+  desk standing fan                      excluded              1600.0 flat           0.0      0.0  
+  how to use a standing desk             informational         1400.0 rising        20.0    104.5  
+  tiny desk standing room tickets        excluded              1300.0 flat           0.0      0.0  
+  standing desk vs sitting               commercial            1000.0 flat           0.0      0.0  2 variants (identical series, same word set)
+  are standing desks worth it            commercial             880.0 flat           0.0      0.0  
+  standing desk posture                  unclassified           720.0 flat           0.0      0.0  
+  standing desk for vr                   unclassified           220.0 rising       126.6     None  new-in-last-12-months
+  standing desk diy plans                unclassified           170.0 flat           0.0      0.0  
+  standing desk cable tray               unclassified           170.0 flat           0.0      0.0  
+
+Limits:
+  - Volumes from ad platforms are buckets, not counts; close variants often share one number.
+  - Intent labels come from word rules; read the top clusters by eye and fix the rules file.
+  - Searches inside AI assistants, apps and marketplaces are not in any keyword export.
+  - Identical-series merges can be wrong; the merge rule is listed per cluster for review.

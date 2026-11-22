@@ -1,0 +1,38 @@
+[
+  {
+    "fixture": "good tailored resume",
+    "command": "python scripts/resume_check.py compare evals/files/r1_resume.md evals/fixtures/tailored_good.md --job evals/files/r1_job.txt",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "RESUME FACT CHECK\r\n  WARN  posting words now used that the original did not use: software (fine as wording; not fine as a new claim)\r\n  OK    no new numbers and no named skills beyond the original\r\n\r\nRESULT: PASS (0 fail, 1 warn)\r\n"
+  },
+  {
+    "fixture": "bad tailored resume",
+    "command": "python scripts/resume_check.py compare evals/files/r1_resume.md evals/fixtures/tailored_bad.md --job evals/files/r1_job.txt",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "RESUME FACT CHECK\r\n  FAIL  NEW NUMBER '35' is not in the original resume or the confirmed facts\r\n  FAIL  NEW NUMBER '80' is not in the original resume or the confirmed facts\r\n  FAIL  ADDED FROM JOB POSTING 'NPS': named in the posting, not in the original resume\r\n  FAIL  ADDED FROM JOB POSTING 'Salesforce': named in the posting, not in the original resume\r\n  FAIL  ADDED FROM JOB POSTING 'SQL': named in the posting, not in the original resume\r\n  FAIL  ADDED FROM JOB POSTING 'Success': named in the posting, not in the original resume\r\n  FAIL  ADDED FROM JOB POSTING 'Zendesk': named in the posting, not in the original resume\r\n  WARN  years in the original that are gone: 2016, 2023 (a dropped job or date; tell the candidate)\r\n  WARN  new capitalised term 'Advanced' (check it is a real fact from the candidate, or a heading)\r\n  WARN  new capitalised term 'Level' (check it is a real fact from the candidate, or a heading)\r\n  WARN  posting words now used that the original did not use: account, onboard, renewal, report (fine as wording; not fine as a new claim)\r\n  WARN  table found (lines with | columns); parsers often scramble tables - use plain lines\r\n  WARN  no standard 'skills' heading found (use a plain heading such as 'Skills')\r\n  WARN  first-person pronoun (I, my, me) found; resume bullets normally drop them\r\n\r\nRESULT: FAIL (7 fail, 7 warn)\r\nFix: remove each FAIL item, or ask the candidate; if they confirm it, add their answer to the confirmed-facts file and re-run.\r\n"
+  },
+  {
+    "fixture": "match mode",
+    "command": "python scripts/resume_check.py match evals/files/r1_resume.md evals/files/r1_job.txt",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "JOB TERM COVERAGE\r\n  5 of 19 posting terms appear in the resume\r\n  Named tools, skills, credentials found   : Associate, Customer\r\n  Named tools, skills, credentials MISSING : CRM, NPS, SQL, Salesforce, Success, Tallyroo, Zendesk\r\n  Repeated posting words found             : retail, train, escalat\r\n  Repeated posting words missing           : account, software, run, onboard, support, renewal, report\r\n\r\nA missing term is a question for the candidate, not something to add.\r\nWord stems are compared, so 'managed' matches 'management'. Some terms are company names or noise; ignore those.\r\n"
+  },
+  {
+    "fixture": "missing file",
+    "command": "python scripts/resume_check.py match nope.md evals/files/r1_job.txt",
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "expected_text_missing": [],
+    "pass": true,
+    "output": "ERROR: cannot read nope.md: No such file or directory. Check the path.\r\n"
+  }
+]

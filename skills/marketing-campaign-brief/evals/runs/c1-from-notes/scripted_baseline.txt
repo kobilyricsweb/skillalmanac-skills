@@ -1,0 +1,33 @@
+BRIEF CHECK: 27 FAIL, 2 WARN
+Channels: 0 rows, budgets sum 0, stated total none; [assumption] lines: 0, listed for owner: 0
+FAIL SECTION      missing section: audience
+FAIL SECTION      missing section: risks
+FAIL SECTION      missing section: assumptions
+FAIL OBJECTIVE    the objective has no deadline (a date, month or quarter)
+FAIL CHANNELS     no channel table; use columns Channel | Role | Budget | KPI | Target | Owner
+FAIL BUDGET       no 'Total budget: <amount>' line in the budget section
+FAIL UNTAGGED     line 7: figure $12 is not tagged [given], [assumption] or [calc]: Ledgerly launches recurring invoices on **Feb 3, 2027**. The feature lets a free
+FAIL UNTAGGED     line 15: figure $12 is not tagged [given], [assumption] or [calc]: - **Plan:** Solo, $12/month, 30-day free trial.
+FAIL UNTAGGED     line 21: figure 22% is not tagged [given], [assumption] or [calc]: - **Paid conversions:** not set. Trial-to-paid was 22% over the last 3 months, s
+FAIL UNTAGGED     line 29: figure 22% is not tagged [given], [assumption] or [calc]: | Trial to paid | 22% | Same period |
+FAIL UNTAGGED     line 31: figure $3.10 is not tagged [given], [assumption] or [calc]: | Google search ads, avg CPC | $3.10 | Last quarter |
+FAIL UNTAGGED     line 32: figure 5.2% is not tagged [given], [assumption] or [calc]: | Landing page to trial, search traffic | 5.2% | Last quarter |
+FAIL UNTAGGED     line 33: figure $6,000 is not tagged [given], [assumption] or [calc]: | Google search spend | $6,000 | Last quarter total |
+FAIL UNTAGGED     line 37: figure $3.10, 5.2%, $59.60 is not tagged [given], [assumption] or [calc]: - Cost per trial from search: $3.10 / 5.2% = about **$59.60**.
+FAIL UNTAGGED     line 38: figure $59.60, 22%, $271 is not tagged [given], [assumption] or [calc]: - Cost per paid conversion from search: $59.60 / 22% = about **$271**. This assu
+FAIL UNTAGGED     line 41: figure $6,000 is not tagged [given], [assumption] or [calc]: Gaps: the notes do not say how many clicks or trials the $6,000 produced, nor th
+FAIL UNTAGGED     line 45: figure $18,000. is not tagged [given], [assumption] or [calc]: - **Budget: $18,000.**
+FAIL UNTAGGED     line 46: figure $20,000., $18,000 is not tagged [given], [assumption] or [calc]: - **OPEN - budget may be $20,000.** Later in the call Sam said "20 if we really 
+FAIL UNTAGGED     line 58: figure $59.60 is not tagged [given], [assumption] or [calc]: At $59.60 per trial (section 4), a search-only plan gives roughly:
+FAIL UNTAGGED     line 60: figure $18,000 is not tagged [given], [assumption] or [calc]: - $18,000: about **300 trials** from search alone.
+FAIL UNTAGGED     line 61: figure $20,000 is not tagged [given], [assumption] or [calc]: - $20,000: about **335 trials** from search alone.
+FAIL UNTAGGED     line 88: figure $12 is not tagged [given], [assumption] or [calc]: - Mention the 30-day free trial and the $12/month Solo price where accurate.
+FAIL UNTAGGED     line 100: figure $18k, $20k is not tagged [given], [assumption] or [calc]: - **Before launch (before Feb 3, 2027):** agree goal number, budget ($18k vs $20
+FAIL UNTAGGED     line 109: figure 5.2% is not tagged [given], [assumption] or [calc]: - Landing page to trial rate (baseline 5.2% for search).
+FAIL UNTAGGED     line 110: figure 22% is not tagged [given], [assumption] or [calc]: - Trial to paid rate (baseline 22%), tracked for campaign trials once they have 
+FAIL UNTAGGED     line 116: figure $18,000, $20,000 is not tagged [given], [assumption] or [calc]: 2. **Budget:** $18,000 confirmed in the notes; $20,000 mentioned but not confirm
+FAIL UNTAGGED     line 120: figure $6,000, is not tagged [given], [assumption] or [calc]: 6. **Last quarter's search results in full:** clicks and trials from the $6,000,
+WARN OBJECTIVE    no baseline in the objective; write the current value or 'no baseline: first weeks establish it'
+WARN MEASUREMENT  no decision rule (for example: 'if cost per lead is above X after 2 weeks, pause the channel')
+
+This check covers completeness and arithmetic. Whether the plan is the right plan is the owner's call.

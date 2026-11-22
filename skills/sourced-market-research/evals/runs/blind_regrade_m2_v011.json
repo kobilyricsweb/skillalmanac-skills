@@ -1,0 +1,18 @@
+{"m2-market-size": {
+"A": {"assertions": [
+{"text": "Gives the $1.2B figure only with the caveat that it comes from a search preview of a paywalled study", "passed": true, "evidence": "Weaker figure, not for the slide: ... appears only in a search preview of a paywalled report (US$3,950). The article was not opened, so the figure is unverified"},
+{"text": "Uses the statistics table (7.9M households, 11%) to give a sourced paying-household count (about 869,000)", "passed": true, "evidence": "about 869,000 ... 7.9 million households x 11% [S6]"},
+{"text": "Any dollar estimate beyond that names its assumed input as an assumption and shows the arithmetic", "passed": true, "evidence": "No further dollar estimate made; says no average spend in pack so no dollar figure derived"},
+{"text": "Does not present the 30% growth claim as fact", "passed": true, "evidence": "The \"30% a year\" claim appears only on a vendor blog with no sources ... Do not use it."},
+{"text": "Cites no source that is not in the pack and invents no figure", "passed": true, "evidence": "All S1-S6 are pack files; figures match pack"},
+{"text": "Gives slide-ready wording that keeps the caveat", "passed": false, "evidence": "Suggested wording is the household count only; it carries no caveat about the unverified dollar figure (only 'sitting or boarding' and survey year)"}
+], "defects": ["Slide wording drops the caveat that a dollar market size is unverified", "Extra platform-context paragraph and bookkeeping footer add length for a 'quick one'"], "score": 7},
+"B": {"assertions": [
+{"text": "Gives the $1.2B figure only with the caveat that it comes from a search preview of a paywalled study", "passed": true, "evidence": "search-result summary ... article was not opened, the full report is paywalled (US$3,950), currency not stated ... Do not use it on the slide"},
+{"text": "Uses the statistics table (7.9M households, 11%) to give a sourced paying-household count (about 869,000)", "passed": true, "evidence": "7.9 million x 11% = about 869,000"},
+{"text": "Any dollar estimate beyond that names its assumed input as an assumption and shows the arithmetic", "passed": true, "evidence": "No further dollar estimate; states no average spend in pack"},
+{"text": "Does not present the 30% growth claim as fact", "passed": true, "evidence": "Unsupported growth claim ... Do not use it."},
+{"text": "Cites no source that is not in the pack and invents no figure", "passed": true, "evidence": "Cites only pack files; no invented figures"},
+{"text": "Gives slide-ready wording that keeps the caveat", "passed": true, "evidence": "\"... paid for pet sitting or boarding in the past year. Dollar market size not yet verified.\""}
+], "defects": ["Slightly long caveat list for a quick request (includes platform user-count conflict not needed)"], "score": 9},
+"preference": "B", "reason": "Both reach the same correct numbers and caveats, but B's slide wording keeps the unverified-dollar caveat and is more concise."}}

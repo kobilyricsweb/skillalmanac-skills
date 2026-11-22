@@ -1,0 +1,300 @@
+{
+ "ab_key": {
+  "k1-demand-size": {
+   "A": "with_skill",
+   "B": "baseline"
+  },
+  "k2-trend-check": {
+   "A": "baseline",
+   "B": "with_skill"
+  },
+  "k3-collection-plan": {
+   "A": "with_skill",
+   "B": "baseline"
+  }
+ },
+ "grader": "sub-agent, sonnet alias, 2026-11-20; saw outputs as A/B with ground truth",
+ "grading": {
+  "k1-demand-size": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Close variants are merged: the working total is not the raw sum of all rows (raw 334,477; de-duplicated 175,710)",
+      "passed": true,
+      "evidence": "Raw 334,477, de-duplicated 175,710 (24 clusters), double counting removed 158,767; working figure 130,410"
+     },
+     {
+      "text": "Competitor brand searches (ikea, uplift, flexispot) are kept out of the targetable total",
+      "passed": true,
+      "evidence": "Brand-navigational: uplift desk, ikea standing desk, flexispot standing desk = 42,400 left out of the total"
+     },
+     {
+      "text": "The two off-topic keywords (desk standing fan; tiny desk standing room tickets) are excluded and named",
+      "passed": true,
+      "evidence": "Other meanings: tiny desk standing room tickets (1,300; concert), desk standing fan (1,600; fans)"
+     },
+     {
+      "text": "The Black Friday keyword is recognised as a one-month spike, not a 3,000-a-month topic",
+      "passed": true,
+      "evidence": "averages 3,317 only because of one month (Nov 2025 = 33,100...). Without that spike it is about 480"
+     },
+     {
+      "text": "'electric standing desk' is described as falling, with the October rise not called a recovery",
+      "passed": true,
+      "evidence": "Falling -38%; -68% on a year ago; October rose from 5,400 to 6,600: one month, not a trend"
+     },
+     {
+      "text": "Every trend statement names the periods compared",
+      "passed": true,
+      "evidence": "Trend column headed 'Aug-Oct vs May-Jul'; '-9.7% against Aug-Oct 2025'; '590 (Aug 2025) to 5,400 (Oct 2026)'"
+     },
+     {
+      "text": "The answer states limits of the data (bucketed volumes, rule-based intent, or what was not measured)",
+      "passed": true,
+      "evidence": "Limits section: bucketed Google Ads figures, intent rule-based plus my reading, vs/alternative searches not obtained"
+     }
+    ],
+    "defects": [
+     "Rounds the working figure to 125,700 'adjusted' by hand while the script says 130,410; clearly disclosed so minor",
+     "Pasted a local script name into the reply (keyword_cluster.py, run.txt) which the user may not have"
+    ],
+    "score": 9
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Close variants are merged: the working total is not the raw sum of all rows (raw 334,477; de-duplicated 175,710)",
+      "passed": true,
+      "evidence": "Merge variants: 318,240 to 167,140 (24 topics); uses Oct 2026 values rather than 12-month averages but merges correctly"
+     },
+     {
+      "text": "Competitor brand searches (ikea, uplift, flexispot) are kept out of the targetable total",
+      "passed": true,
+      "evidence": "Remove competitor brand terms: uplift desk 22,200; ikea 14,800; flexispot 5,400"
+     },
+     {
+      "text": "The two off-topic keywords (desk standing fan; tiny desk standing room tickets) are excluded and named",
+      "passed": true,
+      "evidence": "Remove off-topic terms: tiny desk standing room tickets 1,300 and desk standing fan 1,600"
+     },
+     {
+      "text": "The Black Friday keyword is recognised as a one-month spike, not a 3,000-a-month topic",
+      "passed": true,
+      "evidence": "480 in every month except Nov 2025 (33,100)... treat Black Friday as a one-off seasonal spike"
+     },
+     {
+      "text": "'electric standing desk' is described as falling, with the October rise not called a recovery",
+      "passed": true,
+      "evidence": "18,100 (Aug 2025) to 27,100 to 5,400 (Sep 2026), then 6,600 in Oct. Down about 64%; calls it volatile, no recovery claim"
+     },
+     {
+      "text": "Every trend statement names the periods compared",
+      "passed": false,
+      "evidence": "Trend column just says 'Flat' / 'Up about 9x' / 'Flat'; 'still rising every quarter', 'doubling' with no windows; no recent-3-month comparison anywhere"
+     },
+     {
+      "text": "The answer states limits of the data (bucketed volumes, rule-based intent, or what was not measured)",
+      "passed": true,
+      "evidence": "Google Ads rounds volumes into bands; no keyword difficulty, CPC; 'vs' queries not in export"
+     }
+    ],
+    "defects": [
+     "Headline 'targetable demand about 60,000' excludes the head term as well as brand and off-topic; stated openly but the number is on Oct 2026 not 12-month average",
+     "Unsupported claims: benefits topic 'crowded with health sites', walking pad has 'fewer entrenched pages'",
+     "Puts a topic with no volume (comparison article) at #2 and counts brand total as its audience"
+    ],
+    "score": 6
+   },
+   "preference": "A",
+   "reason": "A is as accurate and names comparison windows for every trend; B's trend statements lack periods and its headline total is an Oct-only figure with the head term removed."
+  },
+  "k2-trend-check": {
+   "A": {
+    "assertions": [
+     {
+      "text": "States the total is falling in recent direction: Aug-Oct 2026 against May-Jul 2026 (about -24%)",
+      "passed": false,
+      "evidence": "absent; only per-row YoY and Jan-to-Sep fall; no Aug-Oct vs May-Jul total"
+     },
+     {
+      "text": "States the peak (January 2026) and that October 2026 is far below it (about -78%)",
+      "passed": true,
+      "evidence": "Every non-AI row spiked in January 2026... Oct (8,100) is still 80% below January (per head term, not the total)"
+     },
+     {
+      "text": "Says the September-to-October rise is one month and not a trend",
+      "passed": true,
+      "evidence": "Oct is back to where it was in Jul and Aug; the uptick is not new growth; one month cannot separate a trend from seasonality"
+     },
+     {
+      "text": "Says the year-on-year percentage for 'ai habit tracker' comes from a near-zero base and gives absolute numbers",
+      "passed": true,
+      "evidence": "It was 0 in Aug and Sep 2025 and 10 in Oct 2025... 1,300/month; peaked at 1,900"
+     },
+     {
+      "text": "Does not double count the plural variants when giving totals",
+      "passed": false,
+      "evidence": "'Summed across all 9 rows, Oct 2026 is 25.9k and Oct 2025 was 28.5k' and 'about 5% of the nine-row total' use raw sums; correct de-duplicated Oct 2026 is 15,430"
+     },
+     {
+      "text": "Mentions that a January peak may be seasonal but only one cycle is visible",
+      "passed": true,
+      "evidence": "New Year's resolutions... We have only one January and no full prior year"
+     },
+     {
+      "text": "Gives a recommendation tied to the numbers, without converting volume into traffic or revenue as fact",
+      "passed": true,
+      "evidence": "Treat AI as small niche at ~1,300/month, pilot a few pages; publish Nov-Dec; no traffic or revenue figures"
+     }
+    ],
+    "defects": [
+     "Total figures (25.9k, -9% YoY, -14% without AI) are double-counted raw sums",
+     "Says Sep-Oct uptick 'looks like the start of the next winter ramp' although Sep-Oct 2025 was flat (16,110 to 16,190)",
+     "Peak-to-trough 'roughly 4x' understates the head-term swing (40,500 vs 6,600)",
+     "Affirms both cofounder claims as 'true' before correcting; fine but never gives the total's recent decline"
+    ],
+    "score": 5
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "States the total is falling in recent direction: Aug-Oct 2026 against May-Jul 2026 (about -24%)",
+      "passed": true,
+      "evidence": "Aug-Oct 2026 (avg 14,400) vs May-Jul 2026 (avg 18,840) falling, -23.6%"
+     },
+     {
+      "text": "States the peak (January 2026) and that October 2026 is far below it (about -78%)",
+      "passed": true,
+      "evidence": "Oct 2026 vs Jan 2026 peak: 78% below peak (15,430 vs 68,680)"
+     },
+     {
+      "text": "Says the September-to-October rise is one month and not a trend",
+      "passed": true,
+      "evidence": "It is one month, not a trend... Nov and Dec 2026 must both come in above 15,430"
+     },
+     {
+      "text": "Says the year-on-year percentage for 'ai habit tracker' comes from a near-zero base and gives absolute numbers",
+      "passed": true,
+      "evidence": "Arithmetic, not growth. 0 in Aug-Sep 2025 and 10 in Oct 2025... 1,300 in Oct 2026; 32% below its peak"
+     },
+     {
+      "text": "Does not double count the plural variants when giving totals",
+      "passed": true,
+      "evidence": "Raw sum 45,900 vs de-duplicated; 19,400 (42%) is double counting; monthly totals 12,460 to 15,430 match de-duplicated"
+     },
+     {
+      "text": "Mentions that a January peak may be seasonal but only one cycle is visible",
+      "passed": true,
+      "evidence": "possible season, one cycle seen; data has only one cycle (15 months)"
+     },
+     {
+      "text": "Gives a recommendation tied to the numbers, without converting volume into traffic or revenue as fact",
+      "passed": true,
+      "evidence": "Start small, aim for January window, niche angles; 'Searches are not visits: I have not converted these volumes into traffic or revenue'"
+     }
+    ],
+    "defects": [
+     "Quotes script yoy +35,900% (compares avg to ~3) before dismissing it; harmless",
+     "'head terms 4x their October level' is loose (40,500 vs 8,100 is 5x)",
+     "Speculation that new terms show in tools with a delay is unsupported"
+    ],
+    "score": 9
+   },
+   "preference": "B",
+   "reason": "B gets the de-duplicated totals, the -23.6% recent direction and the -78% from peak right; A double-counts its totals and never states the recent total decline."
+  },
+  "k3-collection-plan": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Credentials are read from the user's environment or config; no key is embedded or requested in chat",
+      "passed": true,
+      "evidence": "KEY = os.environ[\"KEYWORD_API_KEY\"]; 'Do not paste it into chat'; never written to logs or saved responses"
+     },
+     {
+      "text": "A spend cap below the available credit is set and enforced before each paid call, with a cost estimate",
+      "passed": true,
+      "evidence": "Proposed cap $20 (50% of $40); 'if spent + price > CAP_USD: raise SystemExit'; dry estimate per round shown for a yes"
+     },
+     {
+      "text": "Raw responses are saved and re-used; a spend ledger is kept",
+      "passed": true,
+      "evidence": "raw/ saved before parsing, 'if f.exists(): return' on re-run; ledger.csv; reconcile_spend()"
+     },
+     {
+      "text": "Keyword collection runs in rounds with a stated stop rule",
+      "passed": true,
+      "evidence": "Rounds 1-3 plus volume pass; 'Stop when new volume is mostly close variants or under about 15% of the list's volume'"
+     },
+     {
+      "text": "Close variants are de-duplicated before totals; raw and de-duplicated sums are both reported",
+      "passed": true,
+      "evidence": "Report format: 'Raw sum for reference: <raw> (n keywords in m clusters; x removed as double counting)'; cluster script prints both"
+     },
+     {
+      "text": "Other meanings of the phrase and brand-navigational searches are separated by rules plus a manual read",
+      "passed": true,
+      "evidence": "--brand and --exclude patterns (utility-scale, EV/phone/laptop), then 'I read by eye every cluster over 2% and at least the top 30'"
+     },
+     {
+      "text": "The plan lists limits or a not-obtained section and invents no volumes",
+      "passed": true,
+      "evidence": "Section 11 limits; 'not obtained' list for keywords the endpoint rejects; no volumes invented"
+     }
+    ],
+    "defects": [
+     "Command line cites a local scratchpad script path the user may not have",
+     "Asks the user to confirm items before work; fine for a plan"
+    ],
+    "score": 9
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Credentials are read from the user's environment or config; no key is embedded or requested in chat",
+      "passed": true,
+      "evidence": "API_KEY from environment variable (never in the file)"
+     },
+     {
+      "text": "A spend cap below the available credit is set and enforced before each paid call, with a cost estimate",
+      "passed": true,
+      "evidence": "Hard stop at $32 with $8 reserve; assert_within_budget(projected); dry-run projection; pilot call before scale"
+     },
+     {
+      "text": "Raw responses are saved and re-used; a spend ledger is kept",
+      "passed": true,
+      "evidence": "writes every request payload and raw response to raw/ BEFORE parsing; append-only spend.csv; resumable (skip keywords already in volumes.csv)"
+     },
+     {
+      "text": "Keyword collection runs in rounds with a stated stop rule",
+      "passed": false,
+      "evidence": "Phases A-E are a fixed pipeline (expand once, then volume); no rule for stopping when new rounds add little"
+     },
+     {
+      "text": "Close variants are de-duplicated before totals; raw and de-duplicated sums are both reported",
+      "passed": false,
+      "evidence": "Detects identical volume series and keeps one, but reports the cluster total 'as a range (head terms only versus everything)', not raw and de-duplicated sums"
+     },
+     {
+      "text": "Other meanings of the phrase and brand-navigational searches are separated by rules plus a manual read",
+      "passed": true,
+      "evidence": "NEGATIVES list and is_relevant filter, brand regex bucket, 'review candidates by hand (drop junk)'"
+     },
+     {
+      "text": "The plan lists limits or a not-obtained section and invents no volumes",
+      "passed": true,
+      "evidence": "Section 0 unknowns and section 6 pitfalls; no volumes invented; spend estimate labelled as unconfirmed"
+     }
+    ],
+    "defects": [
+     "No explicit not-obtained section",
+     "Trend windows are not named (only 'YoY change')",
+     "Spend estimates ($4, $10, $10) are placeholders presented as caps before prices are known"
+    ],
+    "score": 6
+   },
+   "preference": "A",
+   "reason": "A has the iterative rounds with a stop rule and raw-versus-de-duplicated reporting that B lacks, with equal safety on credentials and budget."
+  }
+ }
+}

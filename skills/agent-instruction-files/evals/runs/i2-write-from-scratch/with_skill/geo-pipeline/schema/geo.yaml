@@ -1,0 +1,3 @@
+tables:
+  boundary:
+    columns: [id, name, geom]

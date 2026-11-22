@@ -1,0 +1,152 @@
+{
+ "grader": "sub-agent, 'sonnet' model alias, 2026-11-20",
+ "ab_key": {
+  "m1-full-migration": "A=baseline",
+  "m2-single-rule-to-skill": "A=with_skill",
+  "m3-plan-only": "A=baseline"
+ },
+ "grading": {
+  "m1-full-migration": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Reply maps all seven source files to a destination",
+      "passed": true,
+      "evidence": "Table rows for core.mdc, .cursorrules, react-components.mdc, db-migration.mdc, release-process.mdc, hotfix.mdc, scratch.mdc, each with a destination."
+     },
+     {
+      "text": "Says hotfix was always-on and should load on demand; says what happens to old Cursor files",
+      "passed": true,
+      "evidence": "'It was marked always-on in Cursor, which put a long procedure in every session; as a skill it loads only when needed.' and 'Cursor files ... were left untouched ... remove them later once everyone has switched'."
+     }
+    ],
+    "score": 7
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Reply maps all seven source files to a destination",
+      "passed": true,
+      "evidence": "Seven table rows, each with Destination column (AGENTS.md, hotfix-release, cutting-a-release, writing-prisma-migrations, src/components/AGENTS.md, investigating-react-performance)."
+     },
+     {
+      "text": "Says hotfix was always-on and should load on demand; says what happens to old Cursor files",
+      "passed": true,
+      "evidence": "'always (misplaced: 17 lines, 7 steps)' ... 'long procedure loaded every session'; '`hotfix` was always-on and is now on-demand'; 'Old files: Kept ... Recommended: ... delete .cursorrules and .cursor/rules/*.mdc'."
+     }
+    ],
+    "score": 9
+   },
+   "preference": "B",
+   "reason": "Both map all files and handle hotfix and old files correctly. B writes much better skill descriptions with trigger words and do-not-use clauses, keeps a hotfix pointer in AGENTS.md, flags repo facts it could not verify, and adds a per-tool load check; A's descriptions are thin ('Use when investigating UI performance')."
+  },
+  "m2-single-rule-to-skill": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Description uses user words (refund, chargeback, double refund)",
+      "passed": true,
+      "evidence": "'Use when the user asks to add, fix, review or test a refund, double refund, chargeback, refund API call or ledger mismatch.'"
+     },
+     {
+      "text": "Incident background cut or moved, not copied verbatim",
+      "passed": true,
+      "evidence": "SKILL.md intro is one sentence ('double refunds are the worst, and any ledger mismatch ... pages the on-call engineer'); the 'four incidents Jan-June' and 'please read all' lines are gone; reply lists them under Dropped."
+     },
+     {
+      "text": "Reply says where skill placed and how each tool finds it",
+      "passed": true,
+      "evidence": "'.agents/skills/refund-handling/SKILL.md (source copy, read by most tools)' and '.claude/skills/... (identical copy for Claude Code)'; note on tools opened at repo root."
+     }
+    ],
+    "score": 9
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Description uses user words (refund, chargeback, double refund)",
+      "passed": false,
+      "evidence": "Description is 'Rules for writing, changing, reviewing or debugging refund code ... Use whenever a task touches src/refunds/'; no chargeback or double refund wording, file-path and code-term oriented."
+     },
+     {
+      "text": "Incident background cut or moved, not copied verbatim",
+      "passed": false,
+      "evidence": "SKILL.md still has 'Four incidents between January and June, three of them double refunds ... Read this whole file before touching refund code.' Reply claims 'removed the please read filler', which is false."
+     },
+     {
+      "text": "Reply says where skill placed and how each tool finds it",
+      "passed": true,
+      "evidence": "'at payments/.claude/skills/refund-handling/SKILL.md ... Claude Code reads it from .claude/skills/, and other agents that support the format can load the same file'. Only a .claude copy; no .agents copy."
+     }
+    ],
+    "score": 5
+   },
+   "preference": "A",
+   "reason": "A rewrites the description with real trigger words, cuts the incident history and places both a .claude and .agents copy. B copies the incident text verbatim, its description lacks user vocabulary, and its reply misstates what was removed."
+  },
+  "m3-plan-only": {
+   "A": {
+    "assertions": [
+     {
+      "text": "Each source mapped by activation type (always-on to AGENTS.md, model-decision runbook to skill, glob rule to path-scoped home)",
+      "passed": false,
+      "evidence": "Runbook to skill and always-on to AGENTS.md are right, but python-style.md (glob **/*.py) is put in root AGENTS.md: 'In AGENTS.md they become always loaded'; no path-scoped home proposed."
+     },
+     {
+      "text": "pnpm vs yarn reported and settled from lockfile",
+      "passed": true,
+      "evidence": "'docs-site/package.json has \"packageManager\": \"pnpm@9.12.0\" and there is a pnpm-lock.yaml. Plan: AGENTS.md says pnpm'."
+     },
+     {
+      "text": "States what is lost (file-pattern auto-attachment) and what replaces it",
+      "passed": true,
+      "evidence": "'The Python style rules were glob-scoped to .py files. In AGENTS.md they become always loaded.'"
+     },
+     {
+      "text": "Duplicates merged once",
+      "passed": true,
+      "evidence": "'Merged.' rows for idempotent DAGs, polars, type hints; 'Duplicates collapse ... become one line'."
+     },
+     {
+      "text": "Plan includes a post-migration check",
+      "passed": false,
+      "evidence": "Execution order has only create AGENTS.md, create skill, decide stubs; only a vague 'check that their version reads AGENTS.md'. No instruction to ask each tool what it loaded."
+     }
+    ],
+    "score": 6
+   },
+   "B": {
+    "assertions": [
+     {
+      "text": "Each source mapped by activation type (always-on to AGENTS.md, model-decision runbook to skill, glob rule to path-scoped home)",
+      "passed": false,
+      "evidence": "Table lists activation per source and runbook to skill, but python-style.md (glob) goes to 'root AGENTS.md (or nested only if a Python dir is chosen)'; nested home is only mentioned as an option and the root is chosen."
+     },
+     {
+      "text": "pnpm vs yarn reported and settled from lockfile",
+      "passed": true,
+      "evidence": "'package.json has \"packageManager\": \"pnpm@9.12.0\" and docs-site/pnpm-lock.yaml exists; there is no yarn.lock. Settled on pnpm'."
+     },
+     {
+      "text": "States what is lost (file-pattern auto-attachment) and what replaces it",
+      "passed": true,
+      "evidence": "'Path scoping: python-style.md applied only to **/*.py in Windsurf. In AGENTS.md those rules load for every task ... If scoping matters, use a nested AGENTS.md'."
+     },
+     {
+      "text": "Duplicates merged once",
+      "passed": true,
+      "evidence": "'Duplicates merged: idempotent DAGs (3 sources), polars (2), type hints (2), Python 3.12 + uv (2)'; proposed AGENTS.md lists each once."
+     },
+     {
+      "text": "Plan includes a post-migration check",
+      "passed": true,
+      "evidence": "'Per-tool check: In each of Windsurf, Copilot and Claude Code, ask: \"Which instruction files and skills did you load? Which package manager does docs-site use?\"'"
+     }
+    ],
+    "score": 9
+   },
+   "preference": "B",
+   "reason": "B includes the explicit per-tool verification step and a full source table with activation types, plus evidence on the lockfile (no yarn.lock), a drafted skill description and old-file handling. A is sound on the conflict and duplicates but has no real post-migration check."
+  }
+ }
+}

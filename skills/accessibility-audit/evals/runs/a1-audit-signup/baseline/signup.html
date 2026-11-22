@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Create your account | Larkspur Payroll</title>
+<style>
+  body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #222; background: #fff; }
+  .topbar { position: sticky; top: 0; height: 64px; background: #fff; border-bottom: 1px solid #ddd; display: flex; align-items: center; padding: 0 24px; }
+  main { max-width: 480px; margin: 0 auto; padding: 32px 16px; }
+  h1 { font-size: 28px; }
+  h3 { font-size: 18px; margin-top: 32px; }
+  .row { margin-bottom: 20px; }
+  input[type=text], input[type=password] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; box-sizing: border-box; }
+  input:focus, select:focus, a:focus { outline: none; }
+  .hint { color: #9a9a9a; font-size: 13px; }
+  .req { color: #d00; }
+  .err { color: #d00; font-size: 13px; }
+  .invalid { border-color: #d00 !important; }
+  .meter { height: 6px; border-radius: 3px; background: #e33; width: 30%; }
+  .plans label { margin-right: 16px; }
+  .check { display: inline-block; width: 18px; height: 18px; border: 1px solid #888; border-radius: 3px; vertical-align: middle; cursor: pointer; }
+  .check.on { background: #2a6df4; }
+  .btn { display: inline-block; background: #5fa8ff; color: #ffffff; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+  .icon-btn { width: 18px; height: 18px; border: 0; background: none; padding: 0; position: absolute; right: 10px; top: 10px; }
+  .pw-wrap { position: relative; }
+  .captcha img { display: block; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="/"><img src="/img/larkspur-logo.svg" width="120" height="28"></a>
+</div>
+<main>
+  <h1>Create your account</h1>
+  <p>Fields marked in red are required.</p>
+
+  <form id="signup" action="/signup" method="post">
+    <h3>Your details</h3>
+
+    <div class="row">
+      <span>Full name <span class="req">*</span></span>
+      <input type="text" name="fullname" id="fullname" tabindex="1">
+    </div>
+
+    <div class="row">
+      <input type="text" name="email" id="email" class="invalid" placeholder="Work email *" tabindex="2">
+      <span class="err">Invalid</span>
+    </div>
+
+    <div class="row">
+      <label for="phone">Phone</label>
+      <input type="text" name="phone" id="phone">
+      <span class="hint">We only call about payroll deadlines.</span>
+    </div>
+
+    <div class="row pw-wrap">
+      <input type="password" name="password" id="password" aria-labelledby="pw-label" onpaste="return false" autocomplete="off">
+      <button type="button" class="icon-btn" onclick="togglePw()"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 5c-7 0-10 7-10 7s3 7 10 7 10-7 10-7-3-7-10-7zm0 11a4 4 0 110-8 4 4 0 010 8z"/></svg></button>
+      <div class="meter" id="meter"></div>
+    </div>
+
+    <h3>Plan</h3>
+    <div class="row plans">
+      <label><input type="radio" name="plan" value="starter"> Starter</label>
+      <label><input type="radio" name="plan" value="team"> Team</label>
+      <label><input type="radio" name="plan" value="scale"> Scale</label>
+    </div>
+
+    <div class="row captcha">
+      <img src="/captcha/7f3a.png" alt="captcha">
+      <label for="captcha">Type the characters you see</label>
+      <input type="text" name="captcha" id="captcha">
+    </div>
+
+    <div class="row">
+      <div class="check" id="terms" onclick="this.classList.toggle('on')"></div>
+      I agree to the terms. <a href="/terms">Click here</a>
+    </div>
+
+    <a class="btn" onclick="document.getElementById('signup').submit()">Create account</a>
+  </form>
+</main>
+<script>
+  function togglePw() { var p = document.getElementById('password'); p.type = p.type === 'password' ? 'text' : 'password'; }
+  document.getElementById('password').addEventListener('input', function (e) {
+    var m = document.getElementById('meter'); var n = e.target.value.length;
+    m.style.width = Math.min(100, n * 10) + '%'; m.style.background = n < 6 ? '#e33' : n < 10 ? '#e6a700' : '#2a9d4b';
+  });
+  // Security: sign the visitor out of the form after two minutes.
+  setTimeout(function () { window.location.href = '/signup/timeout'; }, 120000);
+</script>
+</body>
+</html>

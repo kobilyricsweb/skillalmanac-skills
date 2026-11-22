@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /internal-search
+
+User-agent: GPT-Bot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://www.harborlight-press.example/sitemap.xml

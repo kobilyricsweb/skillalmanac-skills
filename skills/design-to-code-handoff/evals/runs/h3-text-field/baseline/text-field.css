@@ -1,0 +1,160 @@
+/* Text field. Source: design/text-field.json (component set "Text field", id 12:71).
+   Uses semantic tokens from src/tokens.css only. */
+
+.text-field {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-1) * 1.5); /* 6px, the design's itemSpacing */
+  box-sizing: border-box;
+  width: 320px;
+  max-width: 100%;
+  font-family: var(--font-sans);
+}
+
+.text-field__label {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--color-text);
+}
+
+.text-field__control {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-control);
+  border-radius: var(--radius-md);
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.text-field__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: var(--font-size-md);
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-text);
+}
+
+.text-field__input::placeholder {
+  color: var(--color-text-placeholder);
+  opacity: 1;
+}
+
+.text-field__hint,
+.text-field__message {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.text-field__hint {
+  color: var(--color-text-muted);
+}
+
+.text-field__message {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--space-1) * 1.5);
+  color: var(--color-text-danger);
+}
+
+.text-field__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Focus: accent border (2px) plus a 3px accent ring at 25% alpha. */
+.text-field__control:focus-within,
+.text-field--focus .text-field__control {
+  border-width: 2px;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 25%, transparent);
+}
+
+/* Error: danger border and danger message. Value text stays in the default text colour. */
+.text-field--error .text-field__control {
+  border-color: var(--color-border-danger);
+}
+
+/* Disabled: tinted surface, light border, placeholder-coloured label and value. */
+.text-field--disabled .text-field__label,
+.text-field--disabled .text-field__input {
+  color: var(--color-text-placeholder);
+}
+
+.text-field--disabled .text-field__control {
+  background-color: var(--color-surface-disabled);
+  border-color: var(--color-border);
+  cursor: not-allowed;
+}
+
+.text-field--disabled .text-field__input {
+  cursor: not-allowed;
+}
+
+.text-field__input:disabled {
+  cursor: not-allowed;
+}
+
+.text-field__input:focus-visible {
+  outline: none;
+}
+
+/* Demo page layout only. */
+.demo {
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: var(--space-6) var(--space-4);
+  background-color: var(--color-bg-page);
+  font-family: var(--font-sans);
+  color: var(--color-text);
+}
+
+.demo__title {
+  margin: 0 0 var(--space-6);
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.demo__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-8) var(--space-6);
+}
+
+.demo__state {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.demo__caption {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 400px) {
+  .demo {
+    padding: var(--space-4);
+  }
+}

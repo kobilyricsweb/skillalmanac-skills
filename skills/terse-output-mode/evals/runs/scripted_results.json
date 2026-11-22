@@ -1,0 +1,74 @@
+{
+ "t1-undo-pushed-commit|baseline": [
+  {
+   "assertion": "contains 'git revert'",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "at most 60 words outside code",
+   "passed": false,
+   "detail": "121 words"
+  }
+ ],
+ "t1-undo-pushed-commit|with_skill": [
+  {
+   "assertion": "contains 'git revert'",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "at most 60 words outside code",
+   "passed": true,
+   "detail": "45 words"
+  }
+ ],
+ "t2-diagnose-log|baseline": [
+  {
+   "assertion": "contains 'sorry, too many clients already'",
+   "passed": false,
+   "detail": ""
+  },
+  {
+   "assertion": "at most 90 words outside code",
+   "passed": false,
+   "detail": "115 words"
+  }
+ ],
+ "t2-diagnose-log|with_skill": [
+  {
+   "assertion": "contains 'sorry, too many clients already'",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "assertion": "at most 90 words outside code",
+   "passed": true,
+   "detail": "67 words"
+  }
+ ],
+ "t3-rotate-password|baseline": [
+  {
+   "assertion": "at most 150 words outside code",
+   "passed": false,
+   "detail": "236 words"
+  },
+  {
+   "assertion": "at least 4 numbered steps",
+   "passed": true,
+   "detail": "7 steps"
+  }
+ ],
+ "t3-rotate-password|with_skill": [
+  {
+   "assertion": "at most 150 words outside code",
+   "passed": false,
+   "detail": "155 words"
+  },
+  {
+   "assertion": "at least 4 numbered steps",
+   "passed": true,
+   "detail": "5 steps"
+  }
+ ]
+}

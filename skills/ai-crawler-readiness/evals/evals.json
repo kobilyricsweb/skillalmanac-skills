@@ -1,0 +1,53 @@
+{
+  "skill_name": "ai-crawler-readiness",
+  "evals": [
+    {
+      "id": "a1-robots-policy",
+      "prompt": "We publish long-form articles. We want ChatGPT, Claude and Perplexity to be able to cite our articles, but we do not want our content used to train models. Legal also wants us 'out of Google's AI'. Update our robots.txt (attached as a1_robots.txt). Save the new file as robots_new.txt and explain your changes in reply.md.",
+      "files": [
+        "evals/files/a1_robots.txt"
+      ],
+      "assertions": [
+        "SCRIPTED: in robots_new.txt GPTBot and ClaudeBot are blocked on /articles/some-post",
+        "SCRIPTED: OAI-SearchBot, Claude-SearchBot and PerplexityBot are allowed on /articles/some-post",
+        "SCRIPTED: OAI-SearchBot, Claude-SearchBot and PerplexityBot are still blocked on /admin/ and /checkout/",
+        "Says the existing 'GPT-Bot' group has no effect because the token is wrong",
+        "Explains that Google-Extended does not remove the site from AI answers inside Google Search, and that doing so has a search-snippet cost for the owner to decide",
+        "Notes that user-requested fetchers may not follow robots.txt, or that robots.txt is not enforcement",
+        "Makes no promise that the site will be cited"
+      ]
+    },
+    {
+      "id": "a2-llms-txt",
+      "prompt": "Write an llms.txt for our site from the page list in a2_site_pages.md. Save it as llms.txt. Also tell me honestly: will this get us into Google AI Overviews and ChatGPT answers? Put your explanation in reply.md.",
+      "files": [
+        "evals/files/a2_site_pages.md"
+      ],
+      "assertions": [
+        "SCRIPTED: llms.txt passes the format lint (single H1 first, well-formed link items, absolute URLs)",
+        "The file is a curated index (docs, API, CLI, SDKs), not all 40 pages; login, signup and legal pages are left out",
+        "Docs links point to the .md versions",
+        "Has an Optional section or otherwise separates secondary links",
+        "Says Google does not use llms.txt for Search / AI Overviews",
+        "Says the effect on ChatGPT or other assistants is unproven, and makes no promise",
+        "Names what does matter (indexing, snippet eligibility, crawler access)"
+      ]
+    },
+    {
+      "id": "a3-not-cited",
+      "prompt": "Our robots.txt allows everything, but we never show up in ChatGPT or Claude answers. Why? The folder has what I could export: robots.txt, CDN settings, an access log sample and the raw HTML of one guide. Put your diagnosis in reply.md.",
+      "files": [
+        "evals/files/a3_pack/"
+      ],
+      "assertions": [
+        "Identifies the CDN 'Block AI bots' rule as the main cause, citing the 403 responses to the AI crawlers in the log",
+        "Notes Googlebot receives 200, so the block is specific to AI crawlers",
+        "Flags nosnippet on the guide page and what it does",
+        "Flags that the guide content is missing from the raw HTML (JavaScript-rendered)",
+        "Treats the GPTBot 200 requests with caution (possible impostor; verify by IP range) or at least notes the inconsistency",
+        "Says how to verify the fix (200s in logs per crawler) and how to measure afterwards",
+        "Makes no promise of citation"
+      ]
+    }
+  ]
+}

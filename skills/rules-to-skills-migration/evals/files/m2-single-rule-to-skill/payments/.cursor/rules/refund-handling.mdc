@@ -1,0 +1,43 @@
+---
+description: Refund handling rules for the payments service
+alwaysApply: false
+---
+
+# Refund handling
+
+Background: refunds are the most common source of money bugs in this service. Between January and June we had four incidents, three of them double refunds. Finance reconciles the ledger every night and any mismatch pages the on-call engineer. The rules below came out of those incident reviews. Please read all of it before touching refund code.
+
+When a refund is requested, first work out which kind it is. A full refund returns the whole captured amount. A partial refund returns part of it; several partial refunds may exist for one charge but their sum can never exceed the captured amount. A refund on a charge older than 90 days cannot go back through the card network and must be issued as account credit instead. A refund on a disputed charge (chargeback open) must not be issued at all: the dispute process returns the money, and refunding as well pays the customer twice.
+
+| Situation | Action | Ledger entry |
+|---|---|---|
+| Full refund, charge 90 days old or newer | call processor refund API | `refund_full` |
+| Partial refund, sum of refunds at or below captured amount | call processor refund API with amount | `refund_partial` |
+| Partial refund that would exceed captured amount | reject with error `REFUND_EXCEEDS_CAPTURE` | none |
+| Charge older than 90 days | issue account credit, no processor call | `credit_issued` |
+| Chargeback open on the charge | reject with error `CHARGE_DISPUTED` | none |
+
+Every call to the processor refund API must carry an idempotency key built as `refund:<charge_id>:<request_id>`. Never generate a random key and never reuse the key of the original charge. Retrying with the same key is safe; retrying with a new key is how double refunds happen.
+
+Every refund writes a row to `ledger_adjustments` in the same database transaction as the row in `refunds`. If the processor call succeeds and the transaction fails, do not retry the processor call: enqueue a `reconcile_refund` job with the processor's refund id.
+
+Amounts are integer minor units (cents). Never use floats. Currency must equal the currency of the original charge.
+
+Before you say a refund change is done, check all of these:
+
+- there is a test for the double-submit case (same request twice returns the same refund)
+- there is a test for the partial refund that would exceed the captured amount
+- there is a test for the charge older than 90 days
+- there is a test for the disputed charge
+- the idempotency key format is asserted in a test
+- the ledger row and the refund row are written in one transaction
+
+To find refunds without a ledger row on a local database:
+
+```sql
+SELECT r.id FROM refunds r
+LEFT JOIN ledger_adjustments l ON l.refund_id = r.id
+WHERE l.id IS NULL;
+```
+
+If that query returns rows after your change, the change is wrong.

@@ -1,0 +1,12 @@
+# Example Docs
+
+> Documentation for Example, a tool for scheduling data jobs.
+
+## Docs
+
+- [Quick start](https://www.example.com/docs/quick-start.md): install and first job
+- [HTTP API](https://www.example.com/docs/api.md)
+
+## Optional
+
+- [Changelog](https://www.example.com/changelog.md)
