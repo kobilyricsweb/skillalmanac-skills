@@ -1,0 +1,16 @@
+feat(parser): add trailing comma support
+---
+fix(api)!: drop the v1 endpoints
+
+The v1 routes were removed in this release.
+
+BREAKING CHANGE: clients must move to the v2 routes.
+---
+docs: update the install steps
+---
+Added a login page.
+---
+feat!: remove the legacy config flag
+The flag is no longer read.
+---
+wibble(core): fixed the crash that happens when the cache is empty during startup

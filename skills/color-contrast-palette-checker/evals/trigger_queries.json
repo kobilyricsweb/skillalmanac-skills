@@ -1,0 +1,8 @@
+[
+  {"query": "Check whether these text and background hex pairs pass WCAG AA contrast", "should_trigger": true},
+  {"query": "My grey body text on white fails accessibility, which darker grey passes 4.5?", "should_trigger": true},
+  {"query": "Run a contrast check on our button palette list before the design review", "should_trigger": true},
+  {"query": "Simulate how this palette looks to someone with deuteranopia", "should_trigger": false},
+  {"query": "Compute APCA lightness contrast scores for these colours", "should_trigger": false},
+  {"query": "Pick a brand colour I will like for a new logo", "should_trigger": false}
+]

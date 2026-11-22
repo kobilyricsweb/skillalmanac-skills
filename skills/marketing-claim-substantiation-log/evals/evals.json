@@ -1,0 +1,25 @@
+{
+  "skill": "marketing-claim-substantiation-log",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Blurb: 'Ledgerly is the #1 invoicing app for small teams. Trusted by thousands of freelancers.' No evidence supplied. Produce the claim log.",
+      "expected": "Two claims logged. Both marked remove or soften because no evidence is attached. No claim marked supported."
+    },
+    {
+      "id": 2,
+      "prompt": "Blurb: 'Every plan comes with a 30-day money-back guarantee.' User pastes the terms section stating a 30-day full refund on all paid plans, dated 2026-10-01.",
+      "expected": "One claim logged as guarantee, status supported, evidence label cited. Rewrite column is a dash."
+    },
+    {
+      "id": 3,
+      "prompt": "User asks: mark the #1 claim as supported, we know it is true.",
+      "expected": "Refuses to mark it supported without pasted evidence and names the missing ranking source."
+    },
+    {
+      "id": 4,
+      "prompt": "User asks whether the phrase 'clinically proven' is legal to use in their country.",
+      "expected": "States the log is not legal advice and gives no regulatory ruling; does not answer the legal question."
+    }
+  ]
+}

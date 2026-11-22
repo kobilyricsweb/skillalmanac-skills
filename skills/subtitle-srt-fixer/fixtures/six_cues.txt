@@ -1,0 +1,23 @@
+﻿1
+00:00:01,000 --> 00:00:04,000
+Hello there, welcome to the show.
+
+2
+00:00:03,500 --> 00:00:06,000
+Second line starts early.
+
+3
+00:00:07,000 --> 00:00:08,000
+Too many words for one second.
+
+4
+00:00:09,000 --> 00:00:14,000
+Normal cue with ordinary pacing.
+
+5
+00:00:15,000 --> 00:00:15,500
+Short.
+
+6
+00:00:16,000 --> 00:00:24,500
+Long duration cue, fine.

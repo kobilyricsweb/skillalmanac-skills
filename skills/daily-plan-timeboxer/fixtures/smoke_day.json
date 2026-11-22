@@ -1,0 +1,16 @@
+{
+  "day_start": "08:00",
+  "day_end": "16:00",
+  "fixed": [
+    {"title": "Team sync", "start": "09:00", "end": "09:30"},
+    {"title": "Client call", "start": "13:00", "end": "14:00"}
+  ],
+  "tasks": [
+    {"title": "Draft budget memo", "minutes": 60, "priority": 1},
+    {"title": "Review pull requests", "minutes": 45, "priority": 2},
+    {"title": "Write status update", "minutes": 30, "priority": 2},
+    {"title": "Plan next sprint", "minutes": 90, "priority": 3},
+    {"title": "Clean up inbox", "minutes": 40, "priority": 4},
+    {"title": "Prepare slides", "minutes": 120, "priority": 3}
+  ]
+}

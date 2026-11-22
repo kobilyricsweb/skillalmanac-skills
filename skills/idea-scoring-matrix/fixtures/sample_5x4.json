@@ -1,0 +1,15 @@
+{
+  "criteria": [
+    {"name": "impact", "weight": 0.4},
+    {"name": "feasibility", "weight": 0.3},
+    {"name": "novelty", "weight": 0.2},
+    {"name": "cost", "weight": 0.1}
+  ],
+  "ideas": [
+    {"name": "Weekly idea review", "scores": {"impact": 4, "feasibility": 5, "novelty": 2, "cost": 5}},
+    {"name": "Idea marketplace", "scores": {"impact": 5, "feasibility": 2, "novelty": 4, "cost": 2}},
+    {"name": "Shared scoring board", "scores": {"impact": 4, "feasibility": 4, "novelty": 3, "cost": 4}},
+    {"name": "Hackathon sprint", "scores": {"impact": 3, "feasibility": 3, "novelty": 5, "cost": 3}},
+    {"name": "Expert panel", "scores": {"impact": 4, "feasibility": 3, "novelty": 2, "cost": 2}}
+  ]
+}

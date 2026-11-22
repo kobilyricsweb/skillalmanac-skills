@@ -1,0 +1,8 @@
+[
+  {"query": "Check this list of campaign links for inconsistent utm_source and utm_campaign values before we launch.", "should_trigger": true},
+  {"query": "Our spring report shows the same campaign twice because some utm_medium values are capitalized. Can you find them?", "should_trigger": true},
+  {"query": "Which of these 40 tracked URLs have a space or %20 inside utm_campaign?", "should_trigger": true},
+  {"query": "Build me UTM links for a new email campaign for our podcast.", "should_trigger": false},
+  {"query": "Is this landing page URL live and returning a 200 status?", "should_trigger": false},
+  {"query": "Explain how last-click attribution differs from data-driven attribution in GA4.", "should_trigger": false}
+]

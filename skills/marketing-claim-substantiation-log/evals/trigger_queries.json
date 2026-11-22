@@ -1,0 +1,7 @@
+[
+  {"query": "Our landing page says #1 invoicing app and trusted by thousands. Which of these can we back up with what we have?", "should_trigger": true},
+  {"query": "Check our ad copy: 3x faster and a 30-day money-back guarantee. Log each claim and its evidence.", "should_trigger": true},
+  {"query": "Make a list of every claim in this email that needs proof before we send it.", "should_trigger": true},
+  {"query": "Is it legal in Germany to say our supplement is clinically proven?", "should_trigger": false},
+  {"query": "Write a new launch email for our project management tool.", "should_trigger": false}
+]

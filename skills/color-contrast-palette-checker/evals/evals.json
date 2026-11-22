@@ -1,0 +1,23 @@
+{
+  "skill": "color-contrast-palette-checker",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Check fixtures/pairs_valid.txt and tell me which pairs fail normal text.",
+      "expect": {
+        "exit_code": 1,
+        "summary": {"pairs": 5, "fail_aa_normal": 2, "pass_aa_normal": 3},
+        "failing_labels": ["grey body text on white", "pink tag on charcoal"]
+      }
+    },
+    {
+      "id": 2,
+      "prompt": "Check fixtures/pairs_invalid_hex.txt.",
+      "expect": {
+        "exit_code": 2,
+        "error_line": 2,
+        "error_contains": "invalid hex colour"
+      }
+    }
+  ]
+}

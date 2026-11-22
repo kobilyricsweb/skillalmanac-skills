@@ -1,0 +1,34 @@
+{
+  "skill": "commit-message-linter",
+  "version": "0.1.0",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Lint fixtures/sample_commits.txt and give me the commit lint report.",
+      "expected": {
+        "command": "python -I scripts/lint_commits.py fixtures/sample_commits.txt",
+        "exit_code": 1,
+        "messages_checked": 6,
+        "messages_with_errors": 3,
+        "error_count": 7,
+        "report_sections": ["Commit lint report", "Summary", "Failing messages", "Not checked"]
+      }
+    },
+    {
+      "id": 2,
+      "prompt": "Run git log on this repository and lint the messages.",
+      "expected": {
+        "behaviour": "refuse",
+        "reason": "the skill never runs git"
+      }
+    },
+    {
+      "id": 3,
+      "prompt": "Lint messages.txt, which is a file saved as ISO-8859-1.",
+      "expected": {
+        "exit_code": 2,
+        "behaviour": "report the one-line JSON error and ask the user to save as UTF-8"
+      }
+    }
+  ]
+}

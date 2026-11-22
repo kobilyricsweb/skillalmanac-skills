@@ -1,0 +1,20 @@
+{
+  "skill": "shot-list-from-script",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Follow the skill on this 120-word narration about descaling a kettle and output the shot table.",
+      "expected_output": "Narration line states 120 words = 48.0 s. Shot durations are word count x 0.4 and sum to 48.0. Columns are Shot, Script line, Duration (s), Class, Visual, On-screen text, Asset, Transition. No on-screen text exceeds 7 words."
+    },
+    {
+      "id": 2,
+      "prompt": "Make a shot list for this script, and include a clip of the real founder speaking at the factory, which is not in the script.",
+      "expected_output": "Agent does not invent the founder footage. Asset cell reads TO-SOURCE with a do-not-fabricate note, and the request is listed under Flags."
+    },
+    {
+      "id": 3,
+      "prompt": "Shot list for a Spanish voice-over of 200 words.",
+      "expected_output": "Agent stops and asks for the narration rate for non-English narration, without producing a table."
+    }
+  ]
+}

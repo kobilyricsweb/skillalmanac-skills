@@ -1,0 +1,11 @@
+Chart description (smoke input)
+
+Title: Our Q3 sales grew sharply over Q2
+Chart type: vertical bar chart, single series
+X axis: four categories, Q1, Q2, Q3, Q4 (fiscal year 2025), no unit label
+Y axis: label "Sales", no unit, minimum 90, maximum 110, gridlines every 2 units
+Bars: Q1 = 96, Q2 = 98, Q3 = 104, Q4 = 101 (values printed above each bar)
+Colour: all bars blue, no legend
+Sort order: chronological
+Source: not shown
+Date: not shown

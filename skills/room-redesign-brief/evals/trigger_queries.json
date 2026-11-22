@@ -1,0 +1,10 @@
+[
+  {"query": "How do I use AI to decorate my living room so the furniture actually fits?", "should_trigger": true},
+  {"query": "My room is 3.5 m by 4 m with a north window. Write me a brief and prompts for an image tool to make it cozy.", "should_trigger": true},
+  {"query": "Every AI image of my bedroom looks nice but the bed is too big for the door. Help me redo the prompt with my real measurements.", "should_trigger": true},
+  {"query": "Create a redesign plan for my kitchen with the sink moved and the rug under the table.", "should_trigger": true},
+  {"query": "Draw me a to-scale floor plan of my flat for the estate agent.", "should_trigger": false},
+  {"query": "Can I knock down the wall between my kitchen and living room?", "should_trigger": false},
+  {"query": "Get me three quotes from contractors to repaint the hallway.", "should_trigger": false},
+  {"query": "Write a short poem about autumn in a city park.", "should_trigger": false}
+]

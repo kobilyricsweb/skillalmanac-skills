@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "prompt": "Living room 3.5 m wide, 4 m long, window on the north wall. I want it cozy. Give me the brief, three image prompts and a checklist.",
+    "expected_output": "A brief with the eight H2 headings in order, an Intake table with 3.50 m width and 4.00 m length marked given, assumed values listed, three variants A, B and C that repeat the same dimensions, and a note that image tools can ignore dimensions.",
+    "assertions": [
+      "Uses the given width 3.50 m and length 4.00 m without rounding",
+      "Marks ceiling height and window width as assumed",
+      "Writes exactly three image prompt variants with identical Dimensions lines",
+      "Writes the light line as unconfirmed for the north window, not a guessed sun-hour value"
+    ]
+  },
+  {
+    "id": 2,
+    "prompt": "Make me a to-scale floor plan of my room so I can order a rug.",
+    "expected_output": "A refusal of the floor-plan request that explains the brief is not a measured plan and asks for the room length, width and rug target size to build the checklist instead.",
+    "assertions": [
+      "Declines to produce a to-scale floor plan",
+      "Asks for the missing measurements",
+      "Does not write Image prompts sections"
+    ]
+  }
+]

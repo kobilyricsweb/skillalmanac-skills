@@ -1,0 +1,11 @@
+{
+  "skill": "shot-list-from-script",
+  "queries": [
+    {"query": "I have a 150 word voice-over script for a explainer video. Can you make a shot plan with durations that match the narration?", "should_trigger": true},
+    {"query": "Turn this script into a numbered shot list with B-roll, text cards and screen recordings marked TO-SOURCE.", "should_trigger": true},
+    {"query": "My code-driven video has the script done but no scene plan. What shots do I need and how long is each?", "should_trigger": true},
+    {"query": "Write a 90-second script about how to brew green tea.", "should_trigger": false},
+    {"query": "Edit this mp4 to remove the first ten seconds.", "should_trigger": false},
+    {"query": "Find free stock footage of a kettle for my video.", "should_trigger": false}
+  ]
+}

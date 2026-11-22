@@ -1,0 +1,8 @@
+[
+  {"query": "Check these commit messages from our release branch against conventional commits", "should_trigger": true},
+  {"query": "Validate the commit titles in this exported git log before we cut the release", "should_trigger": true},
+  {"query": "Our changelog script breaks on some commit messages, can you check the format of this list", "should_trigger": true},
+  {"query": "Review the diff of this pull request for security problems", "should_trigger": false},
+  {"query": "Rewrite my last three commit messages to sound better", "should_trigger": false},
+  {"query": "Run git rebase on the feature branch and squash the commits", "should_trigger": false}
+]

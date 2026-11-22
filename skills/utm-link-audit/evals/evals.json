@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "prompt": "Run the UTM audit on fixtures/campaign_urls.txt and list every finding with its line number.",
+    "expected_output": "Four findings: UPPERCASE on line 2, SPACE on line 4, MISSING_PARAM on line 5 (utm_medium), DUPLICATE on line 8 (same as line 1). Exit code 1."
+  },
+  {
+    "id": 2,
+    "prompt": "Audit a file of URLs where utm_medium is paid_social. Use the default allowed list.",
+    "expected_output": "BAD_MEDIUM finding for the line with paid_social, with the default allowed list shown in the output. Exit code 1."
+  }
+]

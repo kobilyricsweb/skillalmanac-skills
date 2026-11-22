@@ -1,0 +1,5 @@
+[
+  {"expression": "0 9 13 * 5", "start": "2026-01-01T00:00", "count": 4},
+  {"expression": "30 6 * JAN,JUL MON-FRI/2", "start": "2026-06-30T12:00:00Z", "count": 3},
+  {"expression": "0 0 31 2 *", "start": "2026-01-01T00:00Z", "count": 2}
+]

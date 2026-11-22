@@ -1,0 +1,8 @@
+https://www.example.com/landing?utm_source=google&utm_medium=cpc&utm_campaign=spring-launch
+https://www.example.com/pricing?utm_source=Newsletter&utm_medium=email&utm_campaign=spring-launch
+https://www.example.com/docs?utm_source=linkedin&utm_medium=social&utm_campaign=fall_promo
+https://www.example.com/blog/post-1?utm_source=partner&utm_medium=referral&utm_campaign=spring%20launch
+https://www.example.com/contact?utm_source=google&utm_campaign=search-brand
+https://www.example.com/about?utm_source=bing&utm_medium=display&utm_campaign=fall_promo
+https://www.example.com/shop?utm_source=google&utm_medium=cpc&utm_campaign=winter-sale
+https://www.example.com/landing?utm_medium=cpc&utm_source=google&utm_campaign=spring-launch

@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "name": "Ann",
+  "nickname": "A",
+  "created": "2024-01-02T03:04:05Z",
+  "contact": "ann@example.com",
+  "tags": ["x", "y"]
+}

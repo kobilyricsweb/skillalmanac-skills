@@ -1,0 +1,8 @@
+Study: two independent groups compared on a single session score.
+Outcome: continuous score, ratio scale, 0 to 100.
+Groups: control (n = 14) and training (n = 16). Participants were allocated at random and no participant appears in both groups.
+Observations: one score per participant.
+Distribution: scores are right-skewed; sample skewness is about 1.4 in the control group and about 1.2 in the training group.
+Group standard deviations differ by a ratio of about 2.6.
+Question: is the training group's score higher than the control group's?
+Design: randomised experiment.

@@ -1,0 +1,8 @@
+[
+  {"query": "I need a flyer for our bake sale on Saturday. What should the text say and how big should it be?", "should_trigger": true},
+  {"query": "Before I open my design app, help me plan an Instagram post for our charity run. Give me the headline and the budgets.", "should_trigger": true},
+  {"query": "Write me a brief for a 16:9 slide that announces the new product line. Include copy limits and two layout ideas.", "should_trigger": true},
+  {"query": "Draw a picture of a cupcake for my flyer.", "should_trigger": false},
+  {"query": "Make up a logo and pick brand colours for my bakery.", "should_trigger": false},
+  {"query": "Does the design tool I use have a background remover?", "should_trigger": false}
+]

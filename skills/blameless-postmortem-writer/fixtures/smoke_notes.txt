@@ -1,0 +1,21 @@
+Incident: checkout 5xx spike after connection pool config change (fictional example)
+Date: 2026-03-12. All times UTC.
+
+Notes from the responder channel, copied as written:
+14:02 config change to the checkout service connection pool max size applied to production (change made by the on-call engineer).
+14:05 first 5xx responses in the checkout service logs.
+14:09 alert "checkout 5xx above 5 percent" fired and paged on-call.
+14:19 on-call acknowledged the page and began checking dashboards. Ten minutes went by with no entries.
+14:31 decision to roll back the config change.
+14:33 rollback applied and the service restarted. Rollback complete.
+14:40 5xx rate back to baseline.
+14:52 incident declared resolved after 12 minutes of watching the error rate.
+
+Impact from the payments dashboard (supplied by the user): 12,400 failed checkout attempts. Number of affected customers was not counted.
+Severity criteria supplied by the user: SEV1 = checkout unavailable for more than 15 minutes; SEV2 = partial failures for more than 15 minutes; SEV3 = anything shorter.
+
+Review remarks from the team (copied):
+- The change was not load tested in staging.
+- The config review checklist has no line for pool limits.
+- The rollback runbook does not give the config file path, so it had to be found during the incident.
+- The 5xx alert needs 4 minutes of sustained errors before it fires.

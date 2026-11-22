@@ -1,0 +1,21 @@
+{
+  "skill": "social-flyer-design-brief",
+  "version": "0.1.0",
+  "evals": [
+    {
+      "id": "bake-sale-flyer",
+      "prompt": "Bake sale for the school library. Audience: parents and neighbours. Saturday 13 June, 09:00 to 13:00, school main hall. All proceeds go to new library books. Flyer, US Letter. No price, contact or brand assets supplied.",
+      "expect": [
+        "Headings appear in the order defined by the output contract",
+        "Primary message is one sentence",
+        "Copy deck has a Budget and Count column for every block",
+        "Every Count is at or below its Budget, or the status is trimmed",
+        "Date, time and place match the prompt exactly",
+        "No price, contact or brand colour is invented",
+        "Exactly two layout options with different anchors",
+        "Contrast line says colours not supplied",
+        "Open questions name price, contact and brand colours"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+#777,#fff,grey body text on white
+#000,#fff,black on white
+#1a5fb4,#ffffff,brand blue on white
+#ffffff,#0b3d91,white on navy button
+#f0a,#222,pink tag on charcoal

@@ -1,0 +1,7 @@
+[
+  {"query": "This pull request touches 60 files and a lockfile. How big is it and what should I check first?", "should_trigger": true},
+  {"query": "Score this git diff --numstat output for size and risk flags.", "should_trigger": true},
+  {"query": "Our PR has a database migration and CI changes mixed with features. Give me a size band and a split plan.", "should_trigger": true},
+  {"query": "Is this change to the payment handler correct?", "should_trigger": false},
+  {"query": "Run git diff for me and fetch the open pull request from the remote.", "should_trigger": false}
+]

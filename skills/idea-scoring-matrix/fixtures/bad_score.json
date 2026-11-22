@@ -1,0 +1,10 @@
+{
+  "criteria": [
+    {"name": "impact", "weight": 1},
+    {"name": "effort", "weight": 1}
+  ],
+  "ideas": [
+    {"name": "Alpha", "scores": {"impact": 6, "effort": 2}},
+    {"name": "Beta", "scores": {"impact": 3, "effort": 3}}
+  ]
+}

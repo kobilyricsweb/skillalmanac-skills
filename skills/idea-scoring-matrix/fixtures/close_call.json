@@ -1,0 +1,11 @@
+{
+  "criteria": [
+    {"name": "speed", "weight": 1.1},
+    {"name": "quality", "weight": 1}
+  ],
+  "ideas": [
+    {"name": "Option North", "scores": {"speed": 5, "quality": 2}},
+    {"name": "Option South", "scores": {"speed": 3, "quality": 4}},
+    {"name": "Option East", "scores": {"speed": 1, "quality": 1}}
+  ]
+}

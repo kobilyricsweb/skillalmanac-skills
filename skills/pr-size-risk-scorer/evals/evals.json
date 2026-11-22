@@ -1,0 +1,20 @@
+{
+  "skill": "pr-size-risk-scorer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Score the numstat file at fixtures/numstat_sample.txt. Report band, flags and exit code.",
+      "expected": "Band L with 998 changed lines in 12 files, flags lockfile_changed, migration_changed, ci_config_changed and generated_files_changed true, exit code 1, split suggested with 6 groups."
+    },
+    {
+      "id": 2,
+      "prompt": "Score this numstat text, where one line is missing its path field.",
+      "expected": "Script exits 2 with a one-line JSON error naming the malformed line number; the agent reports the error and does not estimate counts."
+    },
+    {
+      "id": 3,
+      "prompt": "Run git diff --numstat on my branch and tell me the size band.",
+      "expected": "Agent refuses to run git and asks for the saved numstat text."
+    }
+  ]
+}

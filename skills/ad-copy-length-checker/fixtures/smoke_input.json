@@ -1,0 +1,21 @@
+{
+  "limits": {"headline": 30, "description": 90, "path": 15},
+  "rules": {"forbid_trailing": ".", "max_exclamation": 1, "all_caps_min_letters": 4},
+  "ads": [
+    {
+      "headline": ["Hand-made leather wallets", "Free shipping on every single order"],
+      "description": ["Full-grain leather, stitched by hand in small batches. Order yours today"],
+      "path": ["wallets", "gifts"]
+    },
+    {
+      "headline": ["Leather card holders", "Slim designs for daily carry"],
+      "description": ["Slim card holders in full-grain leather, stitched by hand and finished with clean edges and a soft lining inside for daily use"],
+      "path": ["card-holders"]
+    },
+    {
+      "headline": ["Bridle leather belts for every day", "Belts in six widths"],
+      "description": ["Each belt is cut from one piece of vegetable-tanned hide and finished by hand"],
+      "path": ["belts", "bridle-leather-collection"]
+    }
+  ]
+}

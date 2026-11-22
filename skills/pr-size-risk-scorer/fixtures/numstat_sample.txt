@@ -1,0 +1,12 @@
+120	40	src/api/handlers/users.py
+85	12	src/api/handlers/orders.py
+180	60	src/core/pricing.py
+60	3	src/core/tax.py
+90	10	tests/api/test_users.py
+40	5	tests/core/test_pricing.py
+30	0	migrations/0042_add_orders_index.sql
+150	20	package-lock.json
+12	4	.github/workflows/ci.yml
+25	8	docs/pricing.md
+40	0	src/api/generated/schema.py
+3	1	README.md
