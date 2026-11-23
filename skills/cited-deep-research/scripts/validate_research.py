@@ -2,6 +2,10 @@
 """Validate a finished research report and its source log.
 
     python validate_research.py REPORT.md SOURCES.md [--today YYYY-MM-DD]
+                                [--reply REPLY.txt --max-words N]
+
+With --reply and --max-words the script also counts the words of the chat
+reply file and reports an error if it exceeds N (user word limits are hard).
 
 Reads the two files; writes nothing; no network. Prints one JSON object to
 stdout. Exit codes: 0 no errors (warnings allowed), 1 at least one error,
@@ -204,6 +208,7 @@ def paragraphs(lines, names, section_names):
 
 def main(argv):
     args, today = [], datetime.date.today()
+    reply, max_words = None, None
     it = iter(argv)
     for arg in it:
         if arg == "--today":
@@ -212,9 +217,17 @@ def main(argv):
             except (StopIteration, ValueError):
                 sys.stderr.write("--today needs a date like 2026-11-21\n")
                 return 2
+        elif arg == "--reply":
+            reply = next(it, None)
+        elif arg == "--max-words":
+            try:
+                max_words = int(next(it))
+            except (StopIteration, ValueError):
+                sys.stderr.write("--max-words needs an integer"+chr(92)+"n")
+                return 2
         else:
             args.append(arg)
-    if len(args) != 2:
+    if len(args) != 2 or (reply is None) != (max_words is None):
         sys.stderr.write("usage: validate_research.py REPORT.md SOURCES.md [--today YYYY-MM-DD]\n")
         return 2
     report_text, sources_text = read_text(args[0]), read_text(args[1])
@@ -311,10 +324,17 @@ def main(argv):
             if not cell(header, row, "resolution").strip():
                 rep.error("contradiction_no_resolution", where, "state how it was resolved, or write 'unresolved'")
 
+    reply_words = None
+    if reply is not None:
+        reply_words = len(read_text(reply).split())
+        if reply_words > max_words:
+            rep.error("reply_too_long", "REPLY", f"{reply_words} words; the limit is {max_words}; cut {reply_words - max_words}")
+
     out = {
         "ok": not rep.errors,
         "counts": {"sources": len(sources), "claims": len(claims), "contradictions": contradictions,
-                   "errors": len(rep.errors), "warnings": len(rep.warnings)},
+                   "errors": len(rep.errors), "warnings": len(rep.warnings),
+                   "reply_words": reply_words},
         "errors": rep.errors,
         "warnings": rep.warnings,
     }

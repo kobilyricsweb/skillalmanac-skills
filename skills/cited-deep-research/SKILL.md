@@ -1,11 +1,11 @@
 ---
 name: cited-deep-research
-description: Runs a research task as a fixed, auditable procedure (decompose the question, log every source with URL, access date and verbatim quote, build a claim table of claim, source id, quote and confidence, handle contradictions) and delivers a report where every paragraph cites, checked by a script that outputs strict JSON. Use when the user wants a sourced or cited research report, deep research with traceable claims, a source log, or an existing report checked for unsupported claims. Do not use for quick factual answers, formatting citations in APA or MLA, market sizing, or plagiarism checks.
+description: Runs a research task as an auditable procedure (source log with URL, access date and verbatim quote; claim table with source id, quote and confidence; contradiction table; report where every paragraph cites) and checks it with a stdlib script that outputs JSON. Use when the user wants a sourced or cited report, a literature review or evidence comparison with references, a source log, or an existing report fact-checked against its sources. Do not use for quick factual answers, one or two lookups, APA or MLA formatting, market sizing, or plagiarism checks.
 license: Apache-2.0
-compatibility: The checker script needs Python 3.9 or newer, standard library only. No network access is used by the script; reading sources needs whatever web or file access the agent already has. Without Python, follow the manual checks in step 8.
+compatibility: The checker script needs Python 3.9 or newer, standard library only. No network access is used by the script; reading sources needs whatever web or file access the agent already has. Without Python, follow the manual checks in step 7.
 metadata:
   author: Skill Almanac Editorial
-  version: "0.1.0"
+  version: "0.2.0"
   network: none
   license: Apache-2.0
   author_model: claude-sonnet-5-5
@@ -13,79 +13,50 @@ metadata:
 
 # Cited deep research
 
-A research report is only as good as the reader's ability to check it. This procedure makes every statement point to a quote in a page you actually opened, and gives the reader the confidence you hold and why. Domain-neutral: it governs how evidence is recorded, not what the topic is.
+Every statement must point to a quote in a source you actually opened. The checker proves structure and quote traceability; honesty in step 3 is on you.
+
+## Step 0: pick the size (stop early when you can)
+
+- **Small job** (one or two facts, one source, or the user wants a short answer): answer plainly in the user's format with source and quote inline. No tables, no script.
+- **No sources attached and no web or file access**: do not invent any. Say so in one line, list what you would need (named documents or URLs), and stop. Do not write URLs from memory.
+- **Brief is ambiguous and the answer would change** (undefined product, region, period): ask at most 3 questions and stop. If you cannot ask, state the assumption in one line and go on.
+- **User supplied a fixed layout, id set, count or word limit**: it overrides every template here. Follow it literally (exact columns, exact ids, every number asked for, the file names given).
+- Otherwise run the full procedure below.
 
 ## Rules that never bend
 
-1. A source enters the log only after you opened it and read the passage. A search snippet is a lead, not a source.
-2. The quote is copied from the opened text, not recalled. Keep it to the sentence you rely on.
-3. No claim without a source id and a quote. If nothing supports it, it is not a finding: move it to Gaps.
-4. Confidence belongs to the claim, not to your mood. Use the scale in step 4.
-5. Never average, merge or smooth conflicting sources. Record both.
-6. Do not edit `scripts/validate_research.py` to make a check pass.
+1. Log a source only after opening it and reading the passage. Snippets are leads.
+2. Copy the quote from the opened text; never recall it. One sentence.
+3. No claim without source id and quote; otherwise it goes to Gaps.
+4. Never average or smooth conflicting sources: record both.
+5. Use only the supplied files for file-based tasks. Mark any self-computed figure as `derived` with its arithmetic. Drop files that do not bear on the question and say which in Gaps.
+6. Never edit the checker to pass.
 
-## Workflow
+## Procedure
 
-```
-- [ ] 1 Pin and decompose the question
-- [ ] 2 Plan sources per sub-question
-- [ ] 3 Read and log sources (sources.md)
-- [ ] 4 Write the claim table
-- [ ] 5 Resolve contradictions
-- [ ] 6 Write the report
-- [ ] 7 Run the checker, fix, re-run
-- [ ] 8 Deliver with the fixed summary
-```
-
-1. **Pin and decompose.** Write the question in one sentence, then scope: time window, region, definitions of any term that could be read two ways. Split into 3 to 7 sub-questions. Each gets a done-condition ("a figure with a date and its method", "the decision and who made it"). Show this to the user if the scope is ambiguous and the answer would change; otherwise proceed and state the scope in the report.
-2. **Plan sources.** For each sub-question list the kind of source that would settle it, best first: the originating document or dataset, then an independent analysis, then reporting about it, then commentary. Note independence: two articles repeating one press release are one source. Details and tier examples: [references/sources-and-contradictions.md](references/sources-and-contradictions.md).
-3. **Read and log.** Open each source. Add one row to `sources.md` immediately: id (`S1`, `S2`, ...), title, url, accessed date (`YYYY-MM-DD`, the day you opened it), quote. Log pages that were dead, paywalled or irrelevant in your working notes, not in the table. If a page cannot be opened, say so in Gaps; do not cite it from memory.
-4. **Claim table.** One row per atomic claim: `claim_id` (`C1`, ...), the claim in one sentence, `source_ids`, a `quote` that is a verbatim fragment of what the cited source's logged quote says, and `confidence` from 0.0 to 1.0:
-
-   | Range | Meaning |
-   |---|---|
-   | 0.85 to 1.0 | Primary source states it directly, and an independent source agrees |
-   | 0.65 to 0.84 | One primary source states it, or two independent secondary sources agree |
-   | 0.45 to 0.64 | One secondary source, or a source with a known stake, or an inference of one step |
-   | 0.25 to 0.44 | Hearsay, anonymous, undated or unverifiable; show it only as a rumour |
-   | below 0.25 | Do not state as a finding; list in Gaps |
-
-   A single source above 0.8 is flagged by the checker: justify it or lower it.
-5. **Contradictions.** When two claims cannot both hold, add a row to the Contradictions table: topic, the claim ids, resolution. Test in this order: different definition or population, different date, different measurement method, higher-tier source against lower, one source copying the other. If one explanation fits, say which and why. If none does, resolution is `unresolved` and the report shows both numbers. Lower confidence on claims that stay in conflict. The script cannot find a conflict you did not list, so before validating, compare by hand every pair of claims on the same topic that carry different numbers or dates, and add a row for each that disagrees.
-6. **Write the report** to the contract below. Use claim ids in text, `[C1]` or `[C1, C2]`; the table maps them to sources.
-7. **Check.** Run:
+1. **Scope.** One-sentence question; time window, region, term definitions; 3 to 7 sub-questions (fewer for small topics), each with a done-condition.
+2. **Sources.** Best first: originating document, independent analysis, reporting, commentary. Two articles repeating one press release are one source. Tiers: [references/sources-and-contradictions.md](references/sources-and-contradictions.md).
+3. **Log.** One row per opened source in `sources.md`: `id | title | url | accessed | quote` (ids `S1..`, date `YYYY-MM-DD`). Dead or paywalled pages go in Gaps, never cited.
+4. **Claims.** One row per atomic claim: `claim_id | claim | source_ids | quote | confidence`. Quote must be verbatim from that source's logged quote. Confidence: 0.85-1.0 primary plus independent agreement; 0.65-0.84 one primary or two independent secondary; 0.45-0.64 one secondary, a source with a stake, or a one-step inference; 0.25-0.44 hearsay (rumour only); under 0.25 Gaps. A single source above 0.8 needs a justification.
+5. **Contradictions.** Compare by hand every pair on the same topic with different numbers or dates. Test in order: definition or population, date, method, source tier, copying. Table `topic | claim_ids | resolution`; `unresolved` shows both figures. Also note when two source types disagree (for example interviews vs survey) even if not asked.
+6. **Report.** Sections in order: Question, Summary, Findings, Claim table, Contradictions, Gaps ([templates](references/templates.md)). Every paragraph and list item in Summary and Findings ends with `[C#]`. If the user asked for counts (for example "3 of 6 interviews"), state each count in the text and cite the ids exactly as the user defined the set; do not add other source types to that id set.
+7. **Check.**
 
 ```bash
-python scripts/validate_research.py report.md sources.md
+python scripts/validate_research.py report.md sources.md [--reply reply.txt --max-words N]
 ```
 
-   It prints one JSON object: `ok`, `counts`, `errors`, `warnings`; each item has `code`, `where`, `message`. Exit 0 means no errors, 1 means errors, 2 means a missing or empty file. Fix every error, re-run until `ok` is true, and read the warnings. Run the script; do not edit it. Pass `--today YYYY-MM-DD` only to reproduce a past run.
-8. **Deliver** the report, the source log, and the fixed summary below. Without Python, check by hand: every claim row has a source id and a quote found in that source's logged quote; every source id is used; every body paragraph has a `[C#]`; confidence is within 0 to 1.
-
-## Report contract
-
-Formats, with a full skeleton, are in [references/templates.md](references/templates.md). Required level-2 sections, in order: Question, Summary, Findings, Claim table, Contradictions, Gaps.
-
-- Every paragraph and list item under Summary and Findings carries at least one `[C#]`. A paragraph that cannot cite is opinion: cut it or label it in Gaps.
-- Summary states only what the claim table supports, in the confidence the table gives. Conflicting figures appear as a range or as two figures, never one.
-- Claim table columns exactly: `claim_id | claim | source_ids | quote | confidence`. Contradictions columns exactly: `topic | claim_ids | resolution`. Source log columns exactly: `id | title | url | accessed | quote`.
-- Gaps lists sub-questions without an adequate source, pages that could not be opened, and claims dropped below 0.25.
-
-## Fixed summary to the user
+   JSON `ok/counts/errors/warnings`; exit 0 ok, 1 errors, 2 missing file. Fix and re-run until ok. `--reply` counts the words of your chat reply against the user's limit; trim the reply, never the evidence. Without Python: check by hand that each claim has an id and a quote found in its source, each source is used, each paragraph has `[C#]`.
+8. **Reply**, within any word limit (the summary below is the maximum; shrink it to fit):
 
 ```
-Question and scope: <one line>
-Sources: <n logged>, <n primary>; Claims: <n>; Contradictions: <n>, <n unresolved>
-Checker: ok true/false, <n warnings and what they were>
-Weakest points: <claims at or below 0.5 and why>
-Not checked: <what was not opened, not verified independently, or out of scope>
+Scope: <one line>
+Sources <n> (<n primary>); claims <n>; contradictions <n> (<n unresolved>)
+Checker: ok true/false, warnings <n>
+Weakest: <claims at or below 0.5, why>
+Not checked: <unopened, unverified, out of scope>
 ```
 
 ## Limits
 
-- The checker proves structure and traceability to the logged quotes. It cannot tell whether a quote supports the claim, whether the quote is genuine, or whether the page says it; that depends on step 3 being honest.
-- The quote-in-source test compares text after lowercasing and collapsing whitespace and quote marks; a paraphrased quote fails by design.
-- Confidence bands are working values, not calibrated probabilities.
-- The URL check tests shape only, not that the page exists.
-- Table cells cannot contain a bare `|`; escape it as `\|`.
-- Not for legal, medical or financial conclusions: the output is a traceable evidence summary, not advice.
+Checker cannot tell if a quote supports the claim or is genuine; paraphrased quotes fail by design; URL check is shape only; escape `|` in cells as `\|`. Evidence summary only, not legal, medical or financial advice.
