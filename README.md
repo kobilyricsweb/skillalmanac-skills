@@ -23,6 +23,127 @@ These packages were evaluated, rewritten once, and still showed no lift over the
 | [workspace-wiki-organizer](retired/workspace-wiki-organizer) | -1.4 pp | 0.0 pp (6 tasks) |
 | [backend-as-a-service-setup](retired/backend-as-a-service-setup) | -1.7 pp | 0.0 pp (6 tasks) |
 
+## Retired (relevance review, 2026-11-23)
+
+These packages passed lint and tests but a two-pass editorial relevance review found no search demand for the job and no capability beyond what a bare model does from the user's own inputs. The owner retired them on 2026-11-23. They stay here with history; their pages at skillalmanac.com return 410.
+
+| Package | Reason |
+| --- | --- |
+| [abbreviation-disambiguation-guide](retired/abbreviation-disambiguation-guide) | The job only restates a supplied glossary per occurrence, nobody searches for it, and the shipped checker validates JSON structure not correctness. |
+| [aggregation-grain-check](retired/aggregation-grain-check) | Fan-out and double-counting reasoning is something a bare model does from supplied keys; the package adds a JSON format, not knowledge. |
+| [api-error-example-builder](retired/api-error-example-builder) | Output restates supplied docs in a contract format, with no searchable intent and no capability beyond a bare model. |
+| [api-version-compatibility-brief](retired/api-version-compatibility-brief) | Comparing two supplied specs is bare-model work, and without a deterministic diff script the page cannot compete with openapi diff tools. |
+| [approval-path-mapper](retired/approval-path-mapper) | A JSON contract over rules the user already supplies, with no searchable intent. |
+| [archive-discovery-aid](retired/archive-discovery-aid) | Rebuilds a hierarchy the user already supplied; the one paired test shows no gain over a bare model and nobody searches for it. |
+| [assessment-accommodation-translation](retired/assessment-accommodation-translation) | A narrow compliance-flavoured job with no search intent and only a one-case 3/3 vs 2/3 signal; a bare model computes extra time unaided. |
+| [audience-assumption-annotator](retired/audience-assumption-annotator) | No search intent and no measured gain over a bare model on its one paired case. |
+| [cache-invalidation-scenario-designer](retired/cache-invalidation-scenario-designer) | A spec-restating table with no search intent and no knowledge beyond what the user supplies. |
+| [call-to-action-consistency-map](retired/call-to-action-consistency-map) | The checks only compare user-supplied rules to user-supplied copy, which a bare model does. |
+| [capacity-slot-allocation-table](retired/capacity-slot-allocation-table) | The one paired test shows the bare model allocates the slots equally well, and demand is absent. |
+| [caption-context-pack](retired/caption-context-pack) | A caption that restates supplied values is trivial for a bare model and nobody searches for the contract. |
+| [case-study-interview-kit](retired/case-study-interview-kit) | Interview questions are bare-model work and the only overlapping skill, testimonial-use-readiness, is also retired. |
+| [category-code-crosswalk](retired/category-code-crosswalk) | Only maps codes the user already supplied with notes; the one paired run shows no gain. |
+| [channel-format-adaptation-brief](retired/channel-format-adaptation-brief) | A bare model adapts a message to channel limits on request, and the paired test shows no gain. |
+| [cli-help-example-designer](retired/cli-help-example-designer) | Example generation from a given grammar is bare-model work and has no search intent. |
+| [cohort-membership-rule-table](retired/cohort-membership-rule-table) | Deterministic rule application a bare model does, with no searchable phrase. |
+| [compose-to-kubernetes-mapping](retired/compose-to-kubernetes-mapping) | Prompt-only, no parser or checker, and kompose plus a bare model already do the mapping; 50 monthly is the only demand. Same standard as dockerfile-from-project. |
+| [concept-contrast-table](retired/concept-contrast-table) | A bare model writes a comparison table directly; the only gain signal is one case. |
+| [conclusion-paragraph-writer](retired/conclusion-paragraph-writer) | The demand is real but a guide page would serve it; the skill itself adds only arbitrary length rules to something a bare model does well. |
+| [configuration-drift-explainer](retired/configuration-drift-explainer) | The diff and annotation of supplied snapshots is bare-model work, and no one searches for this contract. |
+| [content-refresh-plan](retired/content-refresh-plan) | A plan register over a supplied page and evidence that a bare model produces on request, with no matched demand. |
+| [contradiction-resolution-dossier](retired/contradiction-resolution-dossier) | A template for supplied sources with no search intent and no measured gain. |
+| [cross-reference-ambiguity-map](retired/cross-reference-ambiguity-map) | Machine-contract jargon with no persona or search phrase and bare-model parity. |
+| [data-lineage-hop-map](retired/data-lineage-hop-map) | Jargon-only contract over supplied notes with bare-model parity. |
+| [decision-evidence-ledger](retired/decision-evidence-ledger) | A prompt-only template over supplied notes with a pending licence and no demand. |
+| [dependency-upgrade-impact-map](retired/dependency-upgrade-impact-map) | The skill works only on usage lines the user pastes, which is weaker than an agent searching the repo itself. |
+| [dockerfile-from-project](retired/dockerfile-from-project) | A bare agent with repo access writes a better Dockerfile than a procedure working on pasted files only. |
+| [document-consistency-check](retired/document-consistency-check) | A prompt-only comparison a bare model performs on two pasted documents; the deterministic diff skills cover the tool-type need. |
+| [document-template-field-map](retired/document-template-field-map) | No search intent and a narrow jargon job, with only one paired case. |
+| [duplicate-record-triage](retired/duplicate-record-triage) | Contract-only classifier with no search phrase; an agent can dedupe a real file with code directly. |
+| [editorial-dependency-map](retired/editorial-dependency-map) | An internal-format dependency map over supplied statuses with no demand. |
+| [escalation-trigger-catalog](retired/escalation-trigger-catalog) | Reformats a policy the user supplies, with no search intent and weak paired signal. |
+| [event-promotion-asset-plan](retired/event-promotion-asset-plan) | Redundant with three sibling promotion skills and with a bare model asked for an asset list. |
+| [evidence-expiry-review-queue](retired/evidence-expiry-review-queue) | A review-date queue is simple model work without a script and no one searches for it. |
+| [example-set-diversifier](retired/example-set-diversifier) | Narrow instructional-design niche with no demand and one paired case. |
+| [feature-flag-retirement-planner](retired/feature-flag-retirement-planner) | Works only on pasted references, which is weaker than an agent inspecting the repository. |
+| [garden-bed-planting-plan](retired/garden-bed-planting-plan) | Measured NO_LIFT, prompt-only, and the arithmetic it asks the model to do by hand is exactly what a script would do better. |
+| [glossary-relationship-map](retired/glossary-relationship-map) | No demand and the bare model matched the skill on its paired case. |
+| [headline-variant-scorecard](retired/headline-variant-scorecard) | A bare model writes and ranks ten headlines against facts equally well, and the counts are not script-checked. |
+| [idempotency-key-behavior-spec](retired/idempotency-key-behavior-spec) | A matrix over rules the user supplies, with no search intent. |
+| [instruction-sequence-repair](retired/instruction-sequence-repair) | Topological reordering of a short list is bare-model work and nobody searches for it. |
+| [intake-form-completeness-spec](retired/intake-form-completeness-spec) | Bare model equals the skill on its paired case, and no one searches for this contract. |
+| [inventory-count-reconciliation-plan](retired/inventory-count-reconciliation-plan) | Simple arithmetic worksheet with no script and no demand; one paired case is not enough to keep it. |
+| [knowledge-article-split-plan](retired/knowledge-article-split-plan) | Restructuring advice for one article is bare-model work and has no search phrase. |
+| [landing-page-message-sequencer](retired/landing-page-message-sequencer) | No paired gain and tiny demand; the landing-page family should be one page. |
+| [landing-page-wireframe-brief](retired/landing-page-wireframe-brief) | A fixed six-section template that a bare model writes unaided. |
+| [lesson-activity-alignment-map](retired/lesson-activity-alignment-map) | No paired gain and no search phrase. |
+| [locale-resource-fallback-map](retired/locale-resource-fallback-map) | No paired gain and no demand. |
+| [log-message-contract-review](retired/log-message-contract-review) | A set-membership check over supplied lists with no demand. |
+| [merge-conflict-resolution-guide](retired/merge-conflict-resolution-guide) | Prompt-only decision tables, no script, no evals, no matched query; coding agents with git resolve conflicts well unaided. |
+| [message-asset-reuse-map](retired/message-asset-reuse-map) | No paired gain and three siblings do overlapping jobs. |
+| [metric-definition-card](retired/metric-definition-card) | No paired gain over a bare model and no matched demand. |
+| [misconception-diagnostic-set](retired/misconception-diagnostic-set) | Out of scope for the quiz demand and no paired gain. |
+| [missingness-pattern-brief](retired/missingness-pattern-brief) | An agent with data tools counts blanks directly and exactly, which beats counting by model. |
+| [narrative-timeline-reconstructor](retired/narrative-timeline-reconstructor) | No paired gain and no search phrase. |
+| [newsletter-issue-planner](retired/newsletter-issue-planner) | A template plan a bare model writes, with character counts that no script verifies. |
+| [null-semantics-comparison](retired/null-semantics-comparison) | Restates declared conventions the user supplies with no search intent. |
+| [nurture-sequence-logic-map](retired/nurture-sequence-logic-map) | No paired gain and two siblings cover the same ground. |
+| [objection-response-evidence-grid](retired/objection-response-evidence-grid) | The one paired test shows no gain and nobody searches for the grid format. |
+| [offer-comparison-matrix](retired/offer-comparison-matrix) | A comparison table over supplied data, with no demand and no script. |
+| [outlier-review-packet](retired/outlier-review-packet) | An agent with data tools finds outliers itself, which beats a packet built from pasted flags. |
+| [page-title-meta-checker](retired/page-title-meta-checker) | Measured NO_LIFT is decisive here: the bare model matched the script on the same CSV audit. |
+| [paint-quantity-calculator](retired/paint-quantity-calculator) | Measured NO_LIFT and the arithmetic is trivial, so the script adds nothing a model lacks. |
+| [parent-teacher-email-writer](retired/parent-teacher-email-writer) | A short factual email from supplied facts is bare-model work and the skill ships no script or reference. |
+| [peer-review-protocol](retired/peer-review-protocol) | A teacher can ask a bare model for this sequence; no demand and no script. |
+| [permission-matrix-spec](retired/permission-matrix-spec) | No paired gain and no search phrase. |
+| [persona-message-fit-table](retired/persona-message-fit-table) | Redundant with other message-mapping skills and with no demand. |
+| [phone-greeting-faq-script](retired/phone-greeting-faq-script) | Measured NO_LIFT: a bare model writes the same greeting and FAQ. |
+| [podcast-episode-outline](retired/podcast-episode-outline) | A bare model produces a timed episode outline from the same intake. |
+| [practice-spacing-schedule](retired/practice-spacing-schedule) | No paired gain and no search intent. |
+| [procedure-branch-test-matrix](retired/procedure-branch-test-matrix) | No paired gain and no search phrase; first pass said MERGE but it adds no distinct capability to procedure-to-flowchart. |
+| [product-update-announcement-frame](retired/product-update-announcement-frame) | A bare model writes a product update from release notes and release-notes-writer already covers the neighbourhood. |
+| [promotion-variant-check](retired/promotion-variant-check) | A one-field exact comparison that a diff or a bare model does, with no demand. |
+| [provenance-labeling-scheme](retired/provenance-labeling-scheme) | No paired gain and no search phrase. |
+| [python2-pattern-scan](retired/python2-pattern-scan) | A shrinking need with mature tools, and demand of 10 monthly does not justify its own page. |
+| [question-to-source-routing-guide](retired/question-to-source-routing-guide) | No paired gain and no search phrase. |
+| [reading-guide-question-ladder](retired/reading-guide-question-ladder) | The quiz-builder already owns the question-generation demand and a bare model writes passage questions unaided. |
+| [recurring-task-boundary-checker](retired/recurring-task-boundary-checker) | No paired gain and the skill declines the one action users would want. |
+| [referral-message-kit](retired/referral-message-kit) | A bare model writes referral copy from rules, and the paired gain is one case. |
+| [research-note-deduplication-plan](retired/research-note-deduplication-plan) | No demand and one paired case; clustering notes is bare-model work. |
+| [retro-meeting-facilitator](retired/retro-meeting-facilitator) | A bare model writes the same retro agenda and action list; the blame-free rewrite rule is the only distinctive part. |
+| [revision-rationale-log](retired/revision-rationale-log) | No paired gain and natural-prose-editor already covers revision work. |
+| [rubric-anchor-builder](retired/rubric-anchor-builder) | No paired gain and a bare model writes anchors from a rubric. |
+| [runbook-scenario-table](retired/runbook-scenario-table) | No paired gain and it excludes the remediation users actually want. |
+| [sampling-frame-coverage-note](retired/sampling-frame-coverage-note) | No paired gain and no search phrase. |
+| [scope-change-brief](retired/scope-change-brief) | Only a single-run LIFT supports it and a bare model compares a baseline with a request; reversible if a measured run later shows lift. |
+| [section-heading-coverage-check](retired/section-heading-coverage-check) | The proposed survivor requirement-to-section-coverage-map is equally weak, so merging adds nothing; both lack demand and measured gain. |
+| [serialization-roundtrip-casebook](retired/serialization-roundtrip-casebook) | No paired gain and no search phrase. |
+| [service-package-description](retired/service-package-description) | Measured NO_LIFT against a bare model. |
+| [service-request-routing-table](retired/service-request-routing-table) | No paired gain and nobody searches for the table format. |
+| [shot-list-from-script](retired/shot-list-from-script) | A bare model produces a shot table once told the pace, and nothing in the package checks the arithmetic. |
+| [sop-decision-point-extractor](retired/sop-decision-point-extractor) | No paired gain and the demand is for writing SOPs, which this skill refuses. |
+| [source-note-to-outline](retired/source-note-to-outline) | A bare model outlines notes unaided and one paired case is not enough to keep it. |
+| [state-machine-transition-table](retired/state-machine-transition-table) | No paired gain and no demand. |
+| [statistical-test-selector](retired/statistical-test-selector) | The decision table is textbook knowledge a bare model already applies, and there is no script or measured gain. |
+| [survey-question-bias-review](retired/survey-question-bias-review) | A bare model performs this wording check; the checklist thresholds are working values, not knowledge. |
+| [table-footnote-scope-map](retired/table-footnote-scope-map) | No paired gain and nobody searches for it. |
+| [taxonomy-gap-finder](retired/taxonomy-gap-finder) | No demand and the bare model nearly matched it. |
+| [taxonomy-structure-check](retired/taxonomy-structure-check) | A trivial parent-pointer check that an agent writes in a few lines, with no demand. |
+| [temporal-granularity-alignment](retired/temporal-granularity-alignment) | No paired gain and no search phrase. |
+| [terminology-consistency-editor](retired/terminology-consistency-editor) | No paired gain; glossary application is bare-model work and the neighbouring skills cover the demand. |
+| [testimonial-use-readiness](retired/testimonial-use-readiness) | No paired gain and no search phrase; it was proposed as a merge survivor but has no demand of its own. |
+| [tile-quantity-estimator](retired/tile-quantity-estimator) | Measured NO_LIFT and trivial arithmetic. |
+| [translation-glossary-consistency-check](retired/translation-glossary-consistency-check) | Measured NO_LIFT on its own script; first pass proposed a merge but the survivor gains little from a test that showed no lift. |
+| [tutorial-prerequisite-mapper](retired/tutorial-prerequisite-mapper) | No demand and a bare model finds hidden prerequisites unaided. |
+| [typography-scale-generator](retired/typography-scale-generator) | A one-line geometric scale a bare model writes correctly, with no measured gain. |
+| [ui-animation-timing-spec](retired/ui-animation-timing-spec) | Common motion-design defaults that a bare model gives from one prompt; the tables are labelled working values, not knowledge. |
+| [unit-conversion-calculator](retired/unit-conversion-calculator) | Measured NO_LIFT and search engines already do this instantly. |
+| [unit-normalization-plan](retired/unit-normalization-plan) | No paired gain and no search phrase. |
+| [validation-rule-conflict-map](retired/validation-rule-conflict-map) | No paired gain and no search phrase. |
+| [vendor-demo-question-set](retired/vendor-demo-question-set) | A bare model writes demo questions from requirements and the paired gain is one case. |
+| [worked-example-fading-plan](retired/worked-example-fading-plan) | No search phrase and a bare model plans a fading sequence unaided. |
+| [workspace-retention-label-map](retired/workspace-retention-label-map) | No paired gain and no search phrase. |
+
 ## Install a skill
 
 All four tools read the same folder. Pick a skill (here `action-title-rewriter`) and copy its folder into the tool's skills directory:
