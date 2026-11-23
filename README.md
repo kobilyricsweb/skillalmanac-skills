@@ -18,6 +18,7 @@ These packages were evaluated, rewritten once, and still showed no lift over the
 | --- | --- | --- |
 | [spreadsheet-analysis](retired/spreadsheet-analysis) | -4.0 pp | +0.4 pp (6 tasks) |
 | [paid-ads-builder](retired/paid-ads-builder) | +0.3 pp | 0.0 pp (12 tasks) |
+| [essay-outline-builder](retired/essay-outline-builder) | -15.4 pp (CI below zero, HARMED) | not attempted |
 | [workspace-wiki-organizer](retired/workspace-wiki-organizer) | -1.4 pp | 0.0 pp (6 tasks) |
 | [backend-as-a-service-setup](retired/backend-as-a-service-setup) | -1.7 pp | 0.0 pp (6 tasks) |
 
