@@ -1,0 +1,79 @@
+name: Cross-platform skill installation smoke
+on:
+  push:
+    branches: [codex/cross-platform-install-20261123]
+    paths: [.github/workflows/cross-platform-install.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  install-and-use:
+    name: Install and execute on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          sparse-checkout: skills/json-records-to-csv
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Install on macOS and Linux
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          set -eu
+          skillDestination="$RUNNER_TEMP/skill-almanac-test/.claude/skills/json-records-to-csv"
+          mkdir -p "$(dirname "$skillDestination")"
+          test ! -e "$skillDestination"
+          cp -r skills/json-records-to-csv "$skillDestination"
+          test -f "$skillDestination/SKILL.md"
+          if [ -e "$skillDestination" ]; then
+            printf '%s\n' 'Existing installation detected; overwrite prevented.'
+          else
+            exit 1
+          fi
+      - name: Install on Windows PowerShell
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $skillDestination = Join-Path $env:RUNNER_TEMP 'skill-almanac-test/.claude/skills/json-records-to-csv'
+          if (Test-Path -LiteralPath $skillDestination) { throw 'Unexpected existing test destination' }
+          New-Item -ItemType Directory -Force -Path (Split-Path -Parent $skillDestination) | Out-Null
+          Copy-Item -LiteralPath 'skills/json-records-to-csv' -Destination $skillDestination -Recurse
+          if (!(Test-Path -LiteralPath (Join-Path $skillDestination 'SKILL.md'))) { throw 'Skill missing' }
+          if (!(Test-Path -LiteralPath $skillDestination)) { throw 'Overwrite guard did not detect installation' }
+      - name: Execute actual helper and verify useful output
+        shell: python
+        run: |
+          import csv, hashlib, json, os, pathlib, platform, subprocess, sys
+          root = pathlib.Path(os.environ["RUNNER_TEMP"]) / "skill-almanac-test"
+          skill = root / ".claude/skills/json-records-to-csv"
+          payload = [
+              {"id":"00123","address":{"city":"Austin"},"tags":["new","trial"],"active":True},
+              {"id":"00124","address":{"city":"Boston"},"tags":[],"active":False},
+          ]
+          source = root / "orders.json"
+          target = root / "orders.csv"
+          source.write_text(json.dumps(payload), encoding="utf-8")
+          before = hashlib.sha256(source.read_bytes()).hexdigest()
+          helper = skill / "scripts/json_to_csv.py"
+          completed = subprocess.run([sys.executable, "-I", str(helper), str(source), str(target)], check=True, capture_output=True, text=True, timeout=20)
+          with target.open(encoding="utf-8", newline="") as stream:
+              reader = csv.DictReader(stream)
+              rows = list(reader)
+              assert reader.fieldnames == ["id", "address.city", "tags", "active"], reader.fieldnames
+          assert len(rows) == 2, rows
+          assert rows[0]["id"] == "00123", rows
+          assert rows[0]["address.city"] == "Austin", rows
+          assert rows[0]["tags"] == "new; trial", rows
+          assert rows[1]["tags"] == "", rows
+          assert rows[0]["active"].lower() == "true", rows
+          assert rows[1]["active"].lower() == "false", rows
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == before
+          print(json.dumps({"os": platform.platform(), "python": platform.python_version(), "rows":len(rows), "columns":4, "input_unchanged":True, "helper_sha256":hashlib.sha256(helper.read_bytes()).hexdigest(), "scope":"Folder installation and native Python helper execution; not Claude Code model activation"}))
