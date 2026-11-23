@@ -5,20 +5,20 @@ license: Apache-2.0
 compatibility: The check script needs Python 3.9 or newer (standard library only) and makes no network calls; it reads HTML files that were saved first. Fetching live pages uses the agent's own tools and the user's permission. Without Python, apply the checklist by hand.
 metadata:
   author: Skill Almanac Editorial
-  version: "0.1.0"
+  version: "0.1.1"
   network: none
 ---
 
 # Technical SEO audit
 
-Find the defects that stop pages from being crawled, indexed and shown correctly, and say for each one what was measured, what the threshold is and where the rule comes from. An audit that lists opinions without a threshold, or that calls a tool convention a search-engine requirement, is a failed audit.
+Find observed technical signals, conflicts, and evidence gaps that may affect crawling, rendering, canonicalization, indexing eligibility, or presentation. For each finding, state what was measured, the applicable documented rule or explicitly labelled local convention, and what the available evidence cannot prove. Do not turn a signal into a guaranteed indexing or ranking outcome.
 
 ## Ground rules
 
-1. **Measure, then judge.** Every finding states the observed value and the pass threshold ("title 78 characters; convention 30-60").
+1. **Measure, then judge.** Every finding states the observed value and either a documented boundary, an explicitly labelled local convention ("title 78 characters; convention 30-60"), or the evidence needed when no numeric threshold exists.
 2. **Label the basis.** `search-engine-doc` means a documented requirement or documented behaviour. `convention` means an audit-tool habit (title and description character ranges, one h1). Never present a convention as a rule of the search engine.
-3. **Signals must agree.** Most real damage comes from contradictions between files: a URL in the sitemap that is noindex, a canonical that points to a blocked or noindex page, robots.txt hiding a noindex. Check pairs, not only single tags.
-4. **Check the raw response.** Content that appears only after scripts run is checked separately; start from the HTML the server returns.
+3. **Compare signals.** Contradictions between files can create mixed guidance: a URL in the sitemap that is noindex, a canonical that points to a blocked or noindex page, or robots.txt preventing a crawler from seeing a noindex directive. Report the conflict without claiming which URL Google indexed unless index evidence is supplied.
+4. **Check raw and rendered evidence separately.** Start from the HTML the server returns, but do not treat content absent from raw HTML as an automatic block: Google renders JavaScript. Compare the rendered DOM when the question depends on rendered content.
 5. **No ranking promises.** Fixing a defect removes an obstacle. Never forecast positions, traffic or indexing dates.
 6. **Say what was not checked.** A page-level audit has not seen redirects, the link graph, field performance or the index. The report lists these every time.
 
@@ -60,10 +60,10 @@ Mark each rule as pass, fail (with the value), or not checked (with the reason).
 
 Order findings by effect, not by count:
 
-1. **Blocks indexing or crawling**: site-wide disallow, noindex on pages meant to rank, sitemap URLs that are blocked, noindex or canonicalised elsewhere, content absent from raw HTML, unparseable sitemap.
+1. **Documented crawl or indexing-eligibility barriers**: an unqualified site-wide disallow, noindex on pages intended for Search, sitemap URLs blocked from crawling, and an unparseable sitemap.
 2. **Splits or misdirects signals**: conflicting or cross-domain canonicals, duplicate titles on indexable pages, non-reciprocal hreflang, redirect chains.
-3. **Weakens presentation**: missing or duplicate descriptions, title length, missing alt text, missing social tags.
-4. **Hygiene**: heading order, generic anchors, image dimensions.
+3. **Needs additional evidence**: content sparse in raw HTML but potentially present after rendering, canonical preferences without selected-canonical/index evidence, and field-performance questions without field data.
+4. **Presentation and hygiene**: missing or duplicate descriptions, title length conventions, missing alt text or social tags, heading order, generic anchors, and image dimensions.
 
 ### 6. Report
 
@@ -79,11 +79,12 @@ Not checked: <list, with what would be needed>
 Re-test: <the command or tool to run after the fix>
 ```
 
-Give the fix as the exact tag or line to change. After fixes, re-run the script and report the new counts.
+Give an exact tag or line to change only when the supplied evidence supports that repair; otherwise give the verification step. After fixes, re-run the script and report the new counts without claiming indexing or ranking success.
 
 ## Limits
 
-- The script reads static HTML. It cannot see redirects, status codes, rendered DOM, performance, the link graph or index status.
+- The script reads static HTML. It cannot see redirects, status codes, rendered DOM, performance, the link graph, Google's selected canonical, or index status.
+- Google renders JavaScript, so sparse raw HTML is a local review heuristic. Confirm rendered content and relevant resources before classifying a rendering barrier.
 - Zero findings means these checks passed on these files, not that the site will rank. Thin or duplicated content passes every technical check.
 - Character ranges approximate pixel width; a title inside the range can still be truncated.
 - Rules follow one search engine's public documentation; other engines differ in details.

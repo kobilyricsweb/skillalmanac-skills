@@ -18,7 +18,7 @@ Six ground rules (measure then judge, label the basis, signals must agree, check
 ## Capabilities
 
 - `seo_page_check.py`: about 30 rule ids, FAIL / WARN / NOTE, each with basis `search-engine-doc` or `convention`.
-- A checklist reference with thresholds for page-level, site-level and performance gates, and a table of which signal wins in a conflict.
+- A checklist reference with documented boundaries separated from project and tool conventions, plus a table explaining signal conflicts without claiming a guaranteed index outcome.
 - A fixed report with verdict, prioritised table, conflicts explained, not checked, re-test.
 - Sources with the date read.
 
@@ -40,7 +40,7 @@ To be generated at publication: one pinned command per tool.
 
 ## Examples (from saved runs)
 
-1. Prompt: "Our pricing page has not shown up in Google for three weeks. Lighthouse gives it SEO 100." Saved run: `evals/runs/t2-not-indexed/with_skill/reply.md`. It names the canonical pointing at the staging host, gives the corrected tag and flags `max-snippet:0`. The baseline found the same cause but added a recrawl time estimate, which the grader marked as a promise.
+1. Prompt: "Our pricing page has not shown up in Google for three weeks. Lighthouse gives it SEO 100." The historical saved run in `evals/runs/t2-not-indexed/with_skill/reply.md` predates the accuracy revision. The revised contract treats the staging canonical as a strong visible candidate signal, not proven causation without selected-canonical and index evidence.
 2. Prompt: "Here is our crawler export. The tool's health score is 96, so are we done?" Saved run: `evals/runs/t3-crawl-export/with_skill/reply.md` (blind score 10 against 7): every seeded problem with a numeric threshold.
 
 ## Limits
@@ -57,7 +57,7 @@ See `VERIFICATION.md`. In short: 3 tasks, one run each way, one model (sonnet al
 ## Demo script (60 to 90 seconds)
 
 1. Show the saved folder: eight HTML files, urls.csv, robots.txt, sitemap.xml.
-2. Run the script: 7 FAIL, 13 WARN, 6 NOTE; highlight 'in the sitemap but noindex' and 'robots.txt blocks the URL, so the noindex cannot be read'.
+2. Run the script and record current counts; highlight 'in the sitemap but noindex' and 'robots.txt blocks the URL, so the noindex cannot be read'. Do not reuse historical counts after helper changes.
 3. Show the basis column: title length is `convention`.
 4. End on the report's 'Not checked' list.
 
@@ -73,6 +73,7 @@ See `VERIFICATION.md`. In short: 3 tasks, one run each way, one model (sonnet al
 
 ## Changelog
 
+- 0.1.1 (2026-11-23): accuracy revision for robots URL matching, JavaScript rendering, canonical/sitemap claims, Core Web Vitals boundaries, convention labels, and strict JSON-LD parsing.
 - 0.1.0 (2026-11-20): first batch version.
 
 ## License and authorship
