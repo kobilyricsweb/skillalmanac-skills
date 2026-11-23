@@ -30,7 +30,7 @@ const hits = [];
     lines.forEach((l, i) => { for (const [k, re] of Object.entries(PATTERNS)) if (re.test(l)) hits.push({ file: p.relative(root, f).split(p.sep).join('/'), line: i + 1, rule: k }); });
   }
 })(root);
-const inEvals = (f) => /^skills\/[^/]+\/evals\//.test(f);
+const inEvals = (f) => /^(skills|retired)\/[^/]+\/evals\//.test(f);
 const bad = hits.filter((h) => !inEvals(h.file));
 const byRule = {};
 for (const h of hits) { const k = (inEvals(h.file) ? 'evals:' : 'OUTSIDE:') + h.rule; byRule[k] = (byRule[k] || 0) + 1; }

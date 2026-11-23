@@ -10,6 +10,17 @@ Each folder under `skills/` is one self-contained skill in the open Agent Skills
 
 Many packages were drafted with AI assistance. Each `LISTING.md` states who wrote it and whether a human has reviewed it.
 
+## Retired (measured: no lift over the bare model)
+
+These packages were evaluated, rewritten once, and still showed no lift over the bare model on held-out tasks. They are no longer listed at skillalmanac.com and are kept here, with history, for transparency. Each folder has a `RETIRED.md` with the numbers.
+
+| Package | v1 delta | After rewrite |
+| --- | --- | --- |
+| [spreadsheet-analysis](retired/spreadsheet-analysis) | -4.0 pp | +0.4 pp (6 tasks) |
+| [paid-ads-builder](retired/paid-ads-builder) | +0.3 pp | 0.0 pp (12 tasks) |
+| [workspace-wiki-organizer](retired/workspace-wiki-organizer) | -1.4 pp | 0.0 pp (6 tasks) |
+| [backend-as-a-service-setup](retired/backend-as-a-service-setup) | -1.7 pp | 0.0 pp (6 tasks) |
+
 ## Install a skill
 
 All four tools read the same folder. Pick a skill (here `action-title-rewriter`) and copy its folder into the tool's skills directory:

@@ -1,6 +1,6 @@
 {
   "repo": "kobilyricsweb/skillalmanac-skills",
-  "count": 383,
+  "count": 379,
   "skills": [
     {
       "slug": "3d-scene-scripting",
@@ -162,13 +162,6 @@
       "one_line": "Use when reviewing a complete draft against a declared audience profile to identify evidenced assumptions about knowledge, access, motivation, or context and propose bounded clarifications.",
       "category": "research-science",
       "site_url": "https://skillalmanac.com/skills/skill-almanac/audience-assumption-annotator"
-    },
-    {
-      "slug": "backend-as-a-service-setup",
-      "name": "backend-as-a-service-setup",
-      "one_line": "Sets up or audits a hosted-backend project's auth, rules, storage, keys and environments, with a read-only audit script.",
-      "category": "backend-apis",
-      "site_url": "https://skillalmanac.com/skills/skill-almanac/backend-as-a-service-setup"
     },
     {
       "slug": "bank-statement-reconcile",
@@ -1473,13 +1466,6 @@
       "site_url": "https://skillalmanac.com/skills/skill-almanac/page-title-meta-checker"
     },
     {
-      "slug": "paid-ads-builder",
-      "name": "paid-ads-builder",
-      "one_line": "Builds a search or social ad campaign plan as checkable JSON, then validates copy, negatives, UTMs and budget arithmetic.",
-      "category": "agent-workflow",
-      "site_url": "https://skillalmanac.com/skills/skill-almanac/paid-ads-builder"
-    },
-    {
       "slug": "paint-quantity-calculator",
       "name": "paint-quantity-calculator",
       "one_line": "Estimates how many gallons of wall paint a room needs from its length, width, height, door and window counts, coat count and coverage per gallon, and prints the arithmetic step by step.",
@@ -2208,13 +2194,6 @@
       "site_url": "https://skillalmanac.com/skills/skill-almanac/split-leakage-check"
     },
     {
-      "slug": "spreadsheet-analysis",
-      "name": "spreadsheet-analysis",
-      "one_line": "Get totals from a spreadsheet that you can repeat in a meeting, with a list of what was wrong in the file.",
-      "category": "data-analytics",
-      "site_url": "https://skillalmanac.com/skills/skill-almanac/spreadsheet-analysis"
-    },
-    {
       "slug": "sql-and-database-helper",
       "name": "sql-and-database-helper",
       "one_line": "Safe SQL and schema changes for PostgreSQL, MySQL and SQLite: read-only by default, with a static checker.",
@@ -2640,13 +2619,6 @@
       "one_line": "Use when supplied document-type definitions, approved labels, mapping rules, exclusions, and synthetic file descriptions must become a draft retention-label map with manual-review cases.",
       "category": "business-finance-legal",
       "site_url": "https://skillalmanac.com/skills/skill-almanac/workspace-retention-label-map"
-    },
-    {
-      "slug": "workspace-wiki-organizer",
-      "name": "workspace-wiki-organizer",
-      "one_line": "Audits an exported team wiki (Notion, Confluence or similar, as Markdown or HTML files) for pages with no owner, stale pages, near-duplicate titles across spaces, orphan pages and broken internal lin…",
-      "category": "agent-workflow",
-      "site_url": "https://skillalmanac.com/skills/skill-almanac/workspace-wiki-organizer"
     },
     {
       "slug": "xlsx-cell-diff",
