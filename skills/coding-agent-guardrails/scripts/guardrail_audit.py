@@ -4,8 +4,9 @@
     python guardrail_audit.py <repo-dir> [--strict]
 
 Reads the directory tree under <repo-dir> (text files only, size-capped) and
-prints ONE JSON object on stdout. It never writes, deletes, runs or contacts
-anything. Checks: secret patterns in .gitignore, credential patterns
+prints ONE JSON object on stdout. It never writes, deletes or contacts a network.
+Its only subprocess is read-only Git check-ignore; no repository scripts or hooks
+are executed. Checks: secret patterns in .gitignore, credential patterns
 (AKIA keys, private key blocks, sk- and ghp_ tokens, password=) inside file contents, secret-looking files that are
 present but not ignored, agent instruction files, declared protected paths,
 a declared test command, lockfiles, and generated or vendored directories.
@@ -14,10 +15,10 @@ Exit codes: 0 = no check failed (with --strict: no fail and no warn),
 1 = at least one fail (or warn under --strict), 2 = usage error or the path
 is not a readable directory.
 """
-import fnmatch
 import json
 import os
 import re
+import subprocess
 import sys
 
 # Cap on files visited so a huge monorepo cannot hang the audit (reason: the
@@ -101,30 +102,48 @@ def read_text(path):
         return ""
 
 
-def ignore_patterns(root):
-    """Positive patterns from the root .gitignore (negations are skipped)."""
-    pats = []
-    for line in read_text(os.path.join(root, ".gitignore")).splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or line.startswith("!"):
-            continue
-        line = line.lstrip("/")
-        if line.startswith("**/"):
-            line = line[3:]
-        pats.append(line.rstrip("/"))
-    return pats
+def git_ignored_paths(root, files):
+    """Batch Git's real ignore decision, including negations, nested rules and index.
+
+    Do not use --no-index: a tracked file is not protected by an ignore rule.
+    On unavailable/failed authority, treat every file as exposed and fail the
+    authority check rather than trusting an approximate parser.
+    """
+    if not os.path.exists(os.path.join(root, ".git")):
+        return set(), "audit path must be a Git repository root (.git directory or worktree file)"
+    paths = set(files)
+    for _, _, samples in SECRET_SAMPLES:
+        paths.update(samples)
+    for rel in files:
+        parts = rel.split("/")
+        paths.update("/".join(parts[:n]) for n in range(1, len(parts)))
+    # NUL framing handles spaces/newlines and names beginning with a dash.
+    payload = b"\0".join(path.encode("utf-8") for path in sorted(paths)) + b"\0"
+    env = {key: value for key, value in os.environ.items()
+           if not key.upper().startswith("GIT_")}
+    env.update(GIT_OPTIONAL_LOCKS="0", GIT_TERMINAL_PROMPT="0")
+    try:
+        process = subprocess.run(
+            ["git", "--no-pager", "-c", "core.fsmonitor=false", "-C",
+             os.path.abspath(root), "check-ignore", "-z", "--stdin"],
+            input=payload, capture_output=True, timeout=10, env=env,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+    except (OSError, subprocess.TimeoutExpired):
+        return set(), "Git ignore authority unavailable or timed out; no ignore exclusions trusted"
+    if process.returncode not in (0, 1):
+        return set(), "Git ignore authority failed; no ignore exclusions trusted"
+    try:
+        ignored = {item.decode("utf-8") for item in process.stdout.split(b"\0") if item}
+    except UnicodeDecodeError:
+        return set(), "Git returned undecodable paths; no ignore exclusions trusted"
+    if not ignored.issubset(paths):
+        return set(), "Git returned unexpected paths; no ignore exclusions trusted"
+    return ignored, None
 
 
 def is_ignored(rel, pats):
-    """True when a relative posix path matches a .gitignore pattern."""
-    base = rel.rsplit("/", 1)[-1]
-    parts = rel.split("/")
-    for p in pats:
-        if fnmatch.fnmatch(base, p) or fnmatch.fnmatch(rel, p):
-            return True
-        if any(fnmatch.fnmatch(seg, p) for seg in parts[:-1]):
-            return True
-    return False
+    """True only for an exact path reported ignored by Git."""
+    return rel in pats
 
 
 def walk(root):
@@ -149,7 +168,9 @@ def audit(root):
     files, truncated = walk(root)
     fileset = set(files)
     checks = []
-    pats = ignore_patterns(root)
+    pats, ignore_error = git_ignored_paths(root, files)
+    add(checks, "gitignore-authority", "fail" if ignore_error else "pass",
+        ignore_error or "Git check-ignore resolved rules and tracked-file status")
 
     # 1. .gitignore secret coverage
     if ".gitignore" not in fileset:
@@ -186,6 +207,8 @@ def audit(root):
             leaks.append("%s:%d %s" % (rel, no, kind))
     if leaks:
         add(checks, "secret-values-in-files", "fail", "credential-like value in non-ignored file: " + ", ".join(leaks[:20]))
+    elif ignore_error:
+        add(checks, "secret-values-in-files", "warn", "no credential patterns found in scanned text, but Git ignore authority is unavailable")
     else:
         add(checks, "secret-values-in-files", "pass", "no credential patterns in non-ignored text files")
 

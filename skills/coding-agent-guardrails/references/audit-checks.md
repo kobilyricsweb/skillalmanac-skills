@@ -12,7 +12,8 @@ Read this after running `scripts/guardrail_audit.py`, for the ids that did not p
 
 | id | Meaning | Fix |
 |---|---|---|
-| `gitignore-present` | no `.gitignore` at the repo root | add one; nested ones are not read by the audit |
+| `gitignore-authority` | Git ignore status could not be established | verify Git is installed and the supplied path is a readable Git repository root; treat the audit as incomplete. No approximate ignore exclusions are trusted |
+| `gitignore-present` | no `.gitignore` at the repo root | add one if the project needs repository-level ignore rules; Git also considers nested rules and other configured excludes |
 | `gitignore-env` | `.env` or `.env.local` would not be ignored | add `.env*` and `!.env.example` |
 | `gitignore-keys` | `*.pem`, `*.key` or `id_rsa` not ignored | add `*.pem`, `*.key`, `id_rsa*` |
 | `gitignore-credentials` | `credentials.json` not ignored | add it, and any service-account file name the project uses |
