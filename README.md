@@ -35,6 +35,8 @@ cp -r skills/action-title-rewriter ~/.claude/skills/        # Claude Code, globa
 # Codex CLI: ~/.codex/skills/   Cursor: .cursor/skills/   Gemini CLI: ~/.gemini/skills/
 ```
 
+On Windows, run `git config --global core.longpaths true` once before cloning, or clone into a short path such as `C:\sa`: some paths in this repository are up to 140 characters and Windows caps the full path at 260.
+
 Check your tool's current documentation for the exact skills directory, since it changes between versions. Then ask the agent for the task the skill describes; the `description` in `SKILL.md` tells the agent when to use it. Read a skill's `SKILL.md` and `scripts/` before installing it.
 
 ## Report a problem
