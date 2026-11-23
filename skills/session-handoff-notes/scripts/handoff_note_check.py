@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Check a session handoff note for missing sections, vague items and unproven claims.
 
-    python handoff_note_check.py <note.md> [--root <repo-root>]
+    python handoff_note_check.py <note.md> [--root <repo-root>] [--short] [--max-words N]
 
+--short skips the section checks (small jobs); --max-words N fails a note over N words.
 Reads the note (and, with --root, looks up the file paths it names under that
 folder). Writes nothing and prints one JSON object to stdout:
 
@@ -127,7 +128,7 @@ def bullets(prose):
     return out
 
 
-def check(path, root):
+def check(path, root, short=False, max_words=None):
     findings = []
     with open(path, "rb") as fh:
         data = fh.read()
@@ -135,6 +136,19 @@ def check(path, root):
     lines = text.splitlines()
     if not text.strip():
         raise ValueError("the note is empty")
+
+    nwords = len(text.split())
+    if max_words is not None and nwords > max_words:
+        add(findings, "PROBLEM", "over_word_limit", 1, "note has %d words (whitespace split); the limit is %d. Cut it." % (nwords, max_words))
+    if short:
+        # Short mode: small job or user word limit. Only secrets and placeholders are checked.
+        for no, raw in enumerate(lines, 1):
+            am = SECRET_ASSIGN.search(raw)
+            if SECRET.search(raw) or (am and not NOT_A_VALUE.match(am.group(1))):
+                add(findings, "PROBLEM", "credential_like", no, "credential-like string; remove it. Value not repeated here.")
+            if PLACEHOLDER.search(raw):
+                add(findings, "PROBLEM", "placeholder_left", no, "unfilled placeholder or TODO marker.")
+        return findings
 
     if len(lines) > MAX_LINES:
         add(findings, "NOTE", "too_long", 1, "note has %d lines; over %d the next reader skims. Move detail to a linked file." % (len(lines), MAX_LINES))
@@ -248,13 +262,19 @@ def check(path, root):
 
 
 def main(argv):
-    args, root, note = list(argv), None, None
+    args, root, note, short, max_words = list(argv), None, None, False, None
     while args:
         a = args.pop(0)
         if a == "--root":
             if not args:
                 return emit({"file": note, "ok": False, "error": "--root needs a folder", "counts": {"PROBLEM": 0, "NOTE": 0}, "findings": []}, 2)
             root = args.pop(0)
+        elif a == "--short":
+            short = True
+        elif a == "--max-words":
+            if not args or not args[0].isdigit():
+                return emit({"file": note, "ok": False, "error": "--max-words needs a number", "counts": {"PROBLEM": 0, "NOTE": 0}, "findings": []}, 2)
+            max_words = int(args.pop(0))
         elif note is None:
             note = a
         else:
@@ -264,7 +284,7 @@ def main(argv):
     if root is not None and not os.path.isdir(root):
         return emit({"file": note, "ok": False, "error": "root is not a folder: %s" % root, "counts": {"PROBLEM": 0, "NOTE": 0}, "findings": []}, 2)
     try:
-        findings = check(note, root)
+        findings = check(note, root, short, max_words)
     except (OSError, ValueError) as exc:
         why = "file not found" if isinstance(exc, FileNotFoundError) else str(exc)
         return emit({"file": os.path.basename(note), "ok": False, "error": "cannot read note: %s" % why, "counts": {"PROBLEM": 0, "NOTE": 0}, "findings": []}, 2)

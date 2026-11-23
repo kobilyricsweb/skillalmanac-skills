@@ -1,79 +1,63 @@
 ---
 name: session-handoff-notes
-description: "Writes the session-continuation note that a coding agent leaves for its own next session, or another agent, when long work stops, from a fixed eight-section template, and validates it with a checker script: every success claim shows its command and result, every changed file exists, decisions are questions, no credential is pasted. Use when the user says handoff, hand off, wrap up the session, context is getting full, save progress for tomorrow, or asks to resume from a note. Do not use to audit a handover package for readiness (the handover-readiness-check skill does that), or for commit messages, pull request descriptions, changelogs, meeting notes or project documentation."
+description: "Use when the user says handoff, hand off, wrap up, new agent, switching sessions, context is getting full, save progress for tomorrow, continue tomorrow, or asks to resume from a note. Writes the note a coding agent leaves for its next session, sized to the job: nothing to hand off gets a plain sentence, a small job gets a short Done / Left / Not run note, a long messy session gets the full template. A checker script counts words, flags credentials and unproven success claims. Do not use for commit messages, pull request descriptions, changelogs, meeting notes, project docs, or auditing someone else's handover package (use handover-readiness-check)."
 license: Apache-2.0
 compatibility: Tool-neutral. The checker script needs Python 3.9 or newer (standard library only). No network access is used.
 metadata:
   author: Skill Almanac Editorial
   author_model: claude-sonnet-5-5
-  version: "0.2.0"
+  version: "0.3.0"
   network: none
 ---
 
 # Session handoff notes
 
-A handoff note is read cold by a reader with none of this session's memory. It is worth only what that reader can act on: a vague line forces them to rediscover the fact, and an unproven "it works" sends them down a path that may be broken. Write every line so it can be checked.
+A handoff note is read cold. Its worth is what the reader can act on. The most common failures are padding, invented detail and ignoring the user's length limit, so the main skill is deciding how little to write.
 
-## Scope
+## 1. Pick the size first
 
-This skill produces and validates the note itself: the note a session writes about its own work. It does not judge a handover package someone else supplies (acceptance criteria, ownership, readiness for a person to take over); for that use `handover-readiness-check`. If the user hands over an existing package and asks whether it is ready, stop and say so.
+| Situation | Write |
+|---|---|
+| No work was done, or the input shows nothing to carry over | One or two plain sentences saying there is nothing to hand off, plus any open question. No template, no invented goal. |
+| Small job (a rename, one fix, under about 10 log lines) or the user gave a word limit | Short note, see step 2. |
+| Long or messy session (many files, failed attempts, unfinished state) | Full template, see step 3. |
+| Two sessions in one request | One short block per session, each with its own goal. Never merge goals. |
 
-## Workflow
+The user's word limit always wins. Aim for 80% of it. Count words by whitespace split, as the checker does.
 
-### 1. Collect facts from the repository, not from memory
+## 2. Short note
 
-Run these and keep the output at hand:
-
-```bash
-git status --short
-git diff --stat
-git rev-parse --short HEAD
-git branch --show-current
-```
-
-Outside git, list the files you touched from your own tool history and say so in the note. Also gather what the diff cannot show: database or remote changes, environment variables set, services started, files outside the repository.
-
-### 2. Fill the template
-
-Copy [assets/handoff-template.md](assets/handoff-template.md) to the place the next session will look first (repository root, named `HANDOFF-YYYY-MM-DD.md`, unless the user names a place). Fill every section; delete none. Read [references/section-guide.md](references/section-guide.md) only for the section you are unsure about: it gives the rule, a weak line and its repair.
-
-Rules that decide quality:
-
-1. **Every change names a file** in backticks, with one line on what changed.
-2. **Every success claim carries evidence on the same line**: the command in backticks and its result (exit code, counts or key output). A check you skipped is written as "not run" with the reason.
-3. **Open decisions are questions** with options, a recommended default and who must answer.
-4. **Next steps are numbered**, step 1 re-establishes the baseline with a command, and each step names a file or a command.
-5. **Commands are literal and copyable**, with real values. Never include a secret; name where it lives instead.
-6. **Not verified is honest**: list what was only read, assumed, or untested.
-
-### 3. Verify the note
-
-```bash
-python scripts/handoff_note_check.py HANDOFF-YYYY-MM-DD.md --root .
-```
-
-Run the script, do not edit it. It prints one JSON object (`schema_version` 1, `file`, `ok`, `counts`, `findings` with `level`, `code`, `line`, `message`). Exit 0 means no PROBLEM, 1 at least one, 2 unreadable input. Credential patterns are case-insensitive and include `password = value`, `API_TOKEN: value`, AWS key ids, `sk-` and `ghp_` tokens and private key headers. Rule 4 is enforced as a NOTE (`first_step_not_concrete`): step 1 with no command or file in backticks. Fix every `PROBLEM` finding and re-run until `"ok": true`. Judge each `NOTE` finding and fix it unless it is a deliberate choice. The script checks that evidence is shown, paths exist and sections are filled; it cannot tell whether a stated result is true, so re-run the two or three most important commands yourself before you finish and correct the note if the output differs.
-
-Without Python, check by hand: both header lines present, all eight sections filled, every change names an existing file, every success claim has command plus result, every decision ends in a question, step 1 is a command.
-
-### 4. Report to the user
+Use only these labels, in this order, and nothing else:
 
 ```
-Note: <path> (<lines>)
-Checker: <ok true/false, PROBLEM and NOTE counts, or "not run: checked by hand">
-Re-run by me before finishing: <commands and results>
-Open decisions waiting on the user: <list, or none>
-Not verified: <list>
+Done: <what changed, with file names>
+Left: <what remains, most important first>
+Not run: <checks nobody ran, or "none">
 ```
+
+Add `Decision:` only if the input shows a real open question. Use only facts present in the transcript, log or diff. Do not add decisions, owners, aliases, commands or exit codes the input does not contain. If something is unknown, write "not recorded". Check it with `python scripts/handoff_note_check.py note.md --short --max-words N` (omit `--max-words` if there is no limit).
+
+## 3. Full note (long or messy sessions only)
+
+Collect facts from the repository, not memory: `git status --short`, `git diff --stat`, `git rev-parse --short HEAD`, `git branch --show-current`. Outside git, list files from your tool history and say so.
+
+Copy [assets/handoff-template.md](assets/handoff-template.md) to `HANDOFF-YYYY-MM-DD.md` (or the place the user names). Fill every section that has content. Write "none" for a section with nothing, rather than inventing text. Rules:
+
+1. Every change names a file in backticks and one line on what changed.
+2. Every success claim carries its command and result on the same line. A skipped check is "not run" with the reason, and a command whose exit code was never captured is listed under Not verified.
+3. Open decisions are questions with options, a recommended default and who must answer.
+4. Next steps are numbered; step 1 re-establishes the baseline with a command, and each step names a file or a command.
+5. Never write a secret. Name where it lives and say it should be rotated if it was exposed in the log.
+6. Not verified lists what was only read, assumed or untested.
+
+Verify: `python scripts/handoff_note_check.py HANDOFF-YYYY-MM-DD.md --root .` (add `--max-words N` if limited). It prints JSON; exit 0 means no PROBLEM, 1 at least one, 2 unreadable. Fix every PROBLEM and re-run until `"ok": true`; judge each NOTE. It checks form, not truth, so re-run the two or three key commands yourself. Without Python, check the same rules by hand.
+
+Section guidance is in [references/section-guide.md](references/section-guide.md); read only the section you are unsure about. Keep the full note under 200 lines.
+
+## 4. Report to the user
+
+Keep it to a few lines: the note path, checker result (or "checked by hand"), open decisions waiting on the user, and what is not verified. If the user set a word limit, the reply itself should be the note.
 
 ## Resuming from a note
 
-Read the whole note, then run the commands in step 1 of Next steps before doing anything else. If the repository state differs from the Repo state line (other commit, other modified files), say so to the user and reconcile before continuing. Treat every claim in the note as a lead until a command confirms it.
-
-## Limits
-
-- The script checks form and evidence, not truth; a note can pass and still be wrong.
-- It reads only the note and the paths the note names under `--root`; it never runs the commands in the note.
-- Notes go stale. A note older than the last commit, or written before other people pushed, needs the Repo state check above.
-- Do not paste secrets, tokens or personal data into a note; notes are often committed or shared.
-- The template is for notes that are filled in; the unfilled template fails the check by design.
+Read the whole note, then run step 1 of Next steps before anything else. If the repo differs from the Repo state line, tell the user and reconcile first. Treat every claim as a lead until a command confirms it.
