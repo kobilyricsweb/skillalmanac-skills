@@ -1,0 +1,58 @@
+{
+  "skill_name": "ieee-citation-format",
+  "note": "Four held-out tasks. Inputs differ from evals/fixtures. Expected strings were derived by hand from the IEEE Reference Guide V 3.28.2025 (see VERIFICATION.md), never from script output. [script] assertions inspect the delivered files only (score_task.py normalizes curly quotes and en dashes); [judge] assertions need a blind grader. No assertion needs the skill's own report.",
+  "evals": [
+    {
+      "id": "t1-journal-set",
+      "prompt": "I am writing a power-systems paper for an IEEE venue. sources.json has my five sources (I already gave the abbreviated journal and conference names, use those) and draft.txt is my paragraph with {key} markers where I cite. Write references.txt as a numbered IEEE reference list, one reference per line starting with [1], and draft_cited.txt as the paragraph with each marker replaced by the right bracketed numbers. Keep each marker group in the order I wrote it.",
+      "files": ["evals/files/t1-journal-set/sources.json", "evals/files/t1-journal-set/draft.txt"],
+      "assertions": [
+        "[script] references.txt has five lines numbered [1] to [5] whose first authors are Chen, Okafor, Lee, Marsh, Zhang in that order (order of first citation, not alphabetical)",
+        "[script] reference [2] is the eight-author article printed with the first author and et al., no pages, Art. no. 227118 after the date, and the DOI",
+        "[script] reference [3] keeps the one-word title Nature unabbreviated, writes M. Webb Jr. with no comma before Jr., and prints Sep. 2020",
+        "[script] references [1], [4] and [5] match the IEEE form exactly, including pp. ranges, 3rd ed., London, U.K.: Wiley, and the conference location and Oct. 5-8, 2022",
+        "[script] draft_cited.txt equals the paragraph with [1], [2], [3], [4], [5] numbering written out in full (no dash ranges and no combined bracket)",
+        "[judge] The reply says that Nature was left unabbreviated and does not invent any journal abbreviation"
+      ]
+    },
+    {
+      "id": "t2-fix-and-renumber",
+      "prompt": "My reference list (list.txt) was copied from several places and I think it is a mess, and my manuscript.txt cites it in a different order than the list numbers. Please produce references_fixed.txt as a correct IEEE numbered list, renumbered so the numbers follow the order in which the manuscript first cites them, and manuscript_fixed.txt with the in-text numbers updated to match. Do not drop any reference.",
+      "files": ["evals/files/t2-fix-and-renumber/list.txt", "evals/files/t2-fix-and-renumber/manuscript.txt"],
+      "assertions": [
+        "[script] references_fixed.txt has five numbered lines in the order Gupta, Adams, Roy, Singh, Chu",
+        "[script] the seven-author Gupta entry is printed as N. Gupta et al. with pp. 100-110, Nov. 2020, comma inside the closing quote, and doi: in lowercase with a space, ending with a period",
+        "[script] the Adams entry reads K. Adams and L. Brown with lowercase vol. and no., and Sep. 2019; the Singh entry reads 2nd ed. and Austin, TX, USA",
+        "[script] the web entry has Mar. 3, 2023 and no period after the URL; the Chu entry says to be published, not to appear",
+        "[script] manuscript_fixed.txt reads [1] after common, then [2] and [1] (or [1] and [2]) written out without a dash, then [3], [4], [5] in that order",
+        "[judge] The reply lists what it changed per reference and says the old range was written out because the current guide does not use dashes"
+      ]
+    },
+    {
+      "id": "t3-mixed-sources",
+      "prompt": "Make the IEEE reference list for draft.txt from the notes in sources.md. Write references.txt (numbered [1]..., IEEE style, in the order the draft first cites them) and draft_cited.txt (the draft with {key} markers replaced by bracketed numbers). Journal and conference names that are already abbreviated in my notes should be used as written.",
+      "files": ["evals/files/t3-mixed-sources/sources.md", "evals/files/t3-mixed-sources/draft.txt"],
+      "assertions": [
+        "[script] references.txt has six lines numbered [1] to [6] with first authors Brandt, Delgado, Haddad, Tanaka, Solberg, Costa",
+        "[script] the web page entry ends with the URL and no period after it, and has Accessed: Mar. 14, 2025 followed by [Online]. Available:",
+        "[script] the chapter entry has C. Mendes and R. Adler, Eds., Boston, MA, USA: Academic, 2017, ch. 6, pp. 141-170",
+        "[script] the talk is printed as presented at the Int. Symp. Power Semicond. Devices, Kyoto, Japan, May 12-16, 2024 with no in Proc. and no pages",
+        "[script] the book reads 4th ed. then Upper Saddle River, NJ, USA: Prentice-Hall, 2011, and the journal entry has Jan./Feb. 2024 with doi: and a final period",
+        "[script] draft_cited.txt equals the draft with [1], [2], [3], [4], [5], [6] in the right places and [2], [3] for the web pair",
+        "[judge] The blog post is treated as a dated post (publication date, no Accessed date) and the reply does not add facts the notes lack"
+      ]
+    },
+    {
+      "id": "t4-keep-the-correct",
+      "prompt": "Please check list.txt against IEEE style and fix only what is wrong. Where an entry is already correct leave it exactly as it is. Save the result as references_checked.txt (same numbering) and update manuscript.txt into manuscript_checked.txt so the citations follow current IEEE practice.",
+      "files": ["evals/files/t4-keep-the-correct/list.txt", "evals/files/t4-keep-the-correct/manuscript.txt"],
+      "assertions": [
+        "[script] references_checked.txt has six numbered lines and entries 1, 2, 3 and 6 are unchanged from the input (page dashes and quote style may differ)",
+        "[script] entry 4 reads Sep. 2021 with a final period and entry 5 reads pp. 4-9, Oct. 2019 with a final period",
+        "[script] entry 2 still has Jul./Aug. and entry 3 still has Art. no. 044011 and no pages",
+        "[script] manuscript_checked.txt writes the first four numbers out as [1], [2], [3], [4] with no dash range, and still cites [5] and [6]",
+        "[judge] The reply names exactly two entries that were changed and says the other four were left as they were"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+[1] W. Rafferty, “Ground antennas in NASA’s deep space telecommunications,” Proc. IEEE, vol. 82, no. 5, pp. 636-640, May 1994.
+[2] B. Klaus and P. Horn, Robot Vision. Cambridge, MA, USA: MIT Press, 1986.
+[3] A. Clark, “Title here,” CBS News, Aug. 30, 2024. [Online]. Available: https://example.com/a
+[4] J. Yanamadala et al., “Large study,” IEEE Trans. Biomed. Eng., vol. 58, no. 10, pp. 2787–2793, Oct. 2011, doi: 10.1109/TBME.2011.2158315.

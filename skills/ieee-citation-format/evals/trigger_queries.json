@@ -1,0 +1,12 @@
+[
+  {"query": "turn my list of sources into an IEEE reference list numbered in order of first citation", "should_trigger": true},
+  {"query": "is this IEEE reference formatted right? J. Smith, \"Title\", Journal, Vol. 3, pp 4-9, Sept 2020", "should_trigger": true},
+  {"query": "how do I write [1]-[4] in IEEE style when I cite four papers in a row", "should_trigger": true},
+  {"query": "format these conference papers and a website as IEEE references with et al. after six authors", "should_trigger": true},
+  {"query": "check my pasted reference list against the numbers in my paper, IEEE style", "should_trigger": true},
+  {"query": "format my bibliography in ACS style for a chemistry paper", "should_trigger": false},
+  {"query": "convert these references to Vancouver style with PubMed journal abbreviations", "should_trigger": false},
+  {"query": "write a BibTeX entry with the IEEEtran style file for this article", "should_trigger": false},
+  {"query": "give me a Harvard reference for this book", "should_trigger": false},
+  {"query": "find three recent papers on battery degradation that I can cite", "should_trigger": false}
+]

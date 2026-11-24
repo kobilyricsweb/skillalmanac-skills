@@ -1,0 +1,4 @@
+{"entries": [
+  {"id": "a", "type": "journal", "authors": [{"given": "A", "family": "Zed"}], "title": "No year", "journal": "Journal of Long Names"},
+  {"id": "b", "type": "book", "authors": [{"given": "B", "family": "Yu"}], "title": "T", "city": "Austin", "country": "USA", "publisher": "P", "year": 2000}
+], "citations": [["a", "b"]]}

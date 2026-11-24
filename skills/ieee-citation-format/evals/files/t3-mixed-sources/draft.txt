@@ -1,0 +1,1 @@
+Thermal limits of wide-gap devices are discussed in {brandt}. Practical load balancing is summarized online {delgado,haddad}. Fusion methods appear in {tanaka}, signal processing in {solberg}, and recovery theory in {costa}.

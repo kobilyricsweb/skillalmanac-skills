@@ -1,0 +1,1 @@
+Frequency regulation with storage is well studied {chen2021}. Degradation, wind inertia and system fundamentals are reviewed in {okafor2019,lee2020,marsh2018}. Scheduling is covered in {zhang2022}. Both {chen2021,zhang2022} used day-ahead models.

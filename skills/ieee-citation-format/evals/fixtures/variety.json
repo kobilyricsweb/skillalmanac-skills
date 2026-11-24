@@ -1,0 +1,32 @@
+{
+  "entries": [
+    {"id": "art", "type": "journal", "authors": [{"given": "Anna Maria", "family": "Lopez"}],
+     "title": "Optical gain", "journal": "Applied Physics Letters", "journal_abbrev": "Appl. Phys. Lett.",
+     "volume": "91", "issue": "6", "article_number": "061103", "month": "August", "year": 2007},
+    {"id": "one", "type": "journal", "authors": [{"given": "K.", "family": "Wu"}],
+     "title": "Short note", "journal": "Science", "journal_abbrev": "Sci.", "volume": 53, "pages": "475-475", "year": 1935},
+    {"id": "two", "type": "journal", "authors": [{"given": "Michael", "family": "Smith", "suffix": "Jr"}, {"given": "J", "family": "Bass"}],
+     "title": "Double issue", "journal": "Journal of Applied Things", "journal_abbrev": "J. Appl. Things",
+     "volume": "7", "issue": "7-8", "month": "Jul/Aug", "year": 2019, "pages": "10-19", "doi": "https://doi.org/10.1000/xyz123"},
+    {"id": "ea", "type": "journal", "authors": [{"given": "P", "family": "Chen"}, {"given": "Q", "family": "Li"}, {"given": "R", "family": "Zhao"}],
+     "title": "Early", "journal": "IEEE Communications Letters", "journal_abbrev": "IEEE Commun. Lett.",
+     "early_access": true, "month": 12, "day": 11, "year": 2018, "doi": "10.1109/LCOMM.2018.2886261"},
+    {"id": "tbp", "type": "journal", "authors": [{"given": "E. H.", "family": "Miller"}],
+     "title": "A note on reflector arrays", "journal": "IEEE Transactions on Antennas and Propagation",
+     "journal_abbrev": "IEEE Trans. Antennas Propag.", "status": "to_be_published"},
+    {"id": "conf", "type": "conference", "authors": [{"given": "S", "family": "Gao"}],
+     "title": "Sparse arrays", "conference": "Proc. 37th Southeastern Symp. Syst. Theory",
+     "city": "Tuskegee", "state": "AL", "country": "United States", "month": "Mar", "days": "20-22", "year": 2005, "pages": "124-129"},
+    {"id": "pres", "type": "conference", "authors": [{"given": "T", "family": "Ng"}],
+     "title": "Power paper", "conference": "IEEE Summer Power Meeting", "presented": true,
+     "city": "Dallas", "state": "TX", "country": "USA", "month": 6, "days": "22-27", "year": 1990, "paper": "90 SM 690-0 PWRS"},
+    {"id": "web", "type": "web", "authors": [{"given": "Jane", "family": "Smith"}],
+     "title": "Obama inaugurated as President", "website": "CNN.com",
+     "accessed": {"month": 2, "day": 1, "year": 2009}, "url": "http://www.cnn.com/POLITICS/index.html"},
+    {"id": "blog", "type": "web", "authors": [{"given": "Alan", "family": "Clark"}],
+     "title": "Big news", "website": "CBS News", "month": 8, "day": 30, "year": 2024, "url": "https://example.com/news"},
+    {"id": "bk", "type": "book", "authors": [{"given": "Paul", "family": "Rijeka"}],
+     "title": "Image Restoration", "edition": 2, "city": "Rijeka", "country": "Croatia", "publisher": "InTech", "year": 2012}
+  ],
+  "citations": [["art", "one", "two"], ["ea", "tbp"], ["conf", "pres", "web", "blog", "bk"]]
+}

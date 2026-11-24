@@ -1,0 +1,34 @@
+{
+  "entries": [
+    {"id": "rafferty", "type": "journal",
+     "authors": [{"given": "William", "family": "Rafferty"}],
+     "title": "Ground antennas in NASA's deep space telecommunications",
+     "journal": "Proceedings of the IEEE", "journal_abbrev": "Proc. IEEE",
+     "volume": 82, "issue": 5, "pages": "636-640", "month": "May", "year": 1994},
+    {"id": "klaus", "type": "book",
+     "authors": [{"given": "Berthold", "family": "Klaus"}, {"given": "Paul", "family": "Horn"}],
+     "title": "Robot Vision", "city": "Cambridge", "state": "MA", "country": "USA",
+     "publisher": "MIT Press", "year": 1986},
+    {"id": "stein", "type": "chapter",
+     "authors": [{"given": "Lincoln", "family": "Stein"}],
+     "title": "Random patterns", "book_title": "Computers and You",
+     "editors": [{"given": "John S.", "family": "Brake"}],
+     "city": "New York", "state": "NY", "country": "USA", "publisher": "Wiley",
+     "year": 1994, "pages": "55-70"},
+    {"id": "many", "type": "journal",
+     "authors": [{"given": "A", "family": "One"}, {"given": "B", "family": "Two"},
+                 {"given": "C", "family": "Three"}, {"given": "D", "family": "Four"},
+                 {"given": "E", "family": "Five"}, {"given": "F", "family": "Six"},
+                 {"given": "G", "family": "Seven"}],
+     "title": "Seven authors here", "journal": "Journal of Things", "journal_abbrev": "J. Things",
+     "volume": "3", "pages": "5", "month": 9, "year": 2020},
+    {"id": "unused", "type": "web", "title": "x", "website": "y", "url": "http://a.b", "accessed": {"month": 1, "day": 2, "year": 2020}}
+  ],
+  "citations": [
+    ["rafferty"],
+    ["klaus", "stein", "many"],
+    {"ids": ["rafferty"], "narrative": true},
+    {"ids": [{"id": "klaus", "locator": "pp. 5-10"}]},
+    {"ids": ["stein", "many"], "narrative": true}
+  ]
+}

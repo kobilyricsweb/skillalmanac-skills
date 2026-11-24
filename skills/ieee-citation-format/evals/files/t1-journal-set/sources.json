@@ -1,0 +1,25 @@
+{
+  "sources": {
+    "chen2021": {"kind": "journal article", "authors": ["Wei Chen", "Maria Gonzalez"],
+      "title": "Frequency regulation with distributed storage",
+      "journal": "IEEE Transactions on Power Systems", "journal_abbreviation": "IEEE Trans. Power Syst.",
+      "volume": "36", "issue": "4", "pages": "3101-3112", "published": "July 2021",
+      "doi": "10.1109/TPWRS.2021.3051234"},
+    "okafor2019": {"kind": "journal article",
+      "authors": ["Nneka Okafor", "Liam Brown", "Sara Ito", "Pavel Novak", "Tom Reyes", "Aisha Khan", "Jun Park", "Elena Rossi"],
+      "title": "Battery degradation under grid cycling",
+      "journal": "Journal of Power Sources", "journal_abbreviation": "J. Power Sources",
+      "volume": "440", "article_number": "227118", "published": "December 2019",
+      "doi": "10.1016/j.jpowsour.2019.227118"},
+    "lee2020": {"kind": "journal article", "authors": ["Daniel Lee", "Priya Patel", "Marcus Webb Jr."],
+      "title": "Grid inertia from wind farms", "journal": "Nature",
+      "volume": "585", "pages": "212-219", "published": "September 2020"},
+    "marsh2018": {"kind": "book", "authors": ["Helen Marsh", "Omar Said"],
+      "title": "Power Grid Fundamentals", "edition": "3rd", "city": "London", "country": "U.K.",
+      "publisher": "Wiley", "year": 2018},
+    "zhang2022": {"kind": "conference paper", "authors": ["Hao Zhang", "Ines Alvarez"],
+      "title": "Day-ahead scheduling with storage",
+      "conference": "Proc. 12th Int. Conf. Smart Grid Technol.", "city": "Denver", "state": "CO", "country": "USA",
+      "dates": "October 5-8, 2022", "pages": "401-406", "doi": "10.1109/SGT.2022.4455667"}
+  }
+}

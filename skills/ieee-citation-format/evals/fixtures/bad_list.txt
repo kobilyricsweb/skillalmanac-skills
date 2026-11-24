@@ -1,0 +1,7 @@
+[1] Smith, J., "A study of things", Journal of Stuff, Vol. 3, No. 2, pp. 5, September 2019, DOI: 10.1000/abc.
+[2] A. One, B. Two, C. Three, D. Four, E. Five, F. Six, and G. Seven, "Seven names," J. Things, vol. 3, pp. 5-9, Sept. 2020.
+[3] M. Smith, Jr., "Jr comma," in Proc. Fourth International Conference on Stuff, Dallas, TX, USA, Jun. 2020, pp. 8-16.
+[4] C. K. Kim, "To appear," IEEE Trans. Foo, to appear in 2021.
+[5] D. Lee, "Web," Site. Accessed: Feb 1, 2009. [Online]. Available: http://x.org/a.
+[6] B. Klaus, Robot Vision, 2nd Ed. Cambridge, MA, USA: MIT Press, 1986.
+[7] Z. Fan, "Online," in Proc. Conf., Austin, Texas, USA, Oct. 2020.

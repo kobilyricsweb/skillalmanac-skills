@@ -1,0 +1,6 @@
+[1] A. Reyes, “Sparse coding,” Neural Comput., vol. 12, no. 3, pp. 55-68, Mar. 2010.
+[2] B. Ono and C. Park, “Edge devices,” J. Embedded Syst., vol. 7, no. 7-8, pp. 1–9, Jul./Aug. 2018, doi: 10.1000/j.2018.77.
+[3] D. Voss, “Quantum notes,” Phys. Rev. Appl., vol. 9, May 2017, Art. no. 044011.
+[4] E. Wolfe, “Open data,” IEEE Data Eng. Bull., Sept. 2021.
+[5] F. Xu and G. Yee, “Tooling,” Softw. Pract., vol. 2, p. 4-9, Oct 2019
+[6] H. Zane, “Ledger basics,” Chain Notes. Accessed: Apr. 2, 2023. [Online]. Available: https://example.org/ledger

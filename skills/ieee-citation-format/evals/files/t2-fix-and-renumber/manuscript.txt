@@ -1,0 +1,1 @@
+Liquid cooling is now common [2]. Earlier surveys [1]-[2] covered loads, and the basics are online [5]. Design guidance exists [4], and heat reuse is coming [3].

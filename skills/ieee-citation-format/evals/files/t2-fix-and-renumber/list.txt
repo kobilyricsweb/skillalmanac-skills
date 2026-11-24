@@ -1,0 +1,5 @@
+[1] Adams, K., and L. Brown, "Cooling loads in data centers," IEEE Trans. Sustain. Comput., Vol. 4, No. 2, pp. 88-97, Sept. 2019.
+[2] N. Gupta, A. Hall, B. Ivey, C. Jones, D. Kim, E. Lopez, and F. Mora, "Liquid cooling trials", IEEE Access, vol. 8, p. 100-110, Nov 2020, DOI:10.1109/ACCESS.2020.3001234
+[3] M. Chu, "Heat reuse," to appear in Energy Rep.
+[4] R. Singh, Data Center Design, Second Edition. Austin, Texas, USA: Wiley, 2015.
+[5] S. Roy, "Cooling basics," Chill Blog. Accessed: Mar 3, 2023. [Online]. Available: https://example.org/cooling.
