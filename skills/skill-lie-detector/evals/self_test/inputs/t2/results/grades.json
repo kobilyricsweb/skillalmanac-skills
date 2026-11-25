@@ -1,0 +1,530 @@
+[
+ {
+  "task": "t1",
+  "id": "cwa85s",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,137.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 5 duplicates line 4."
+   },
+   {
+    "pass": true,
+    "quote": "The file lists no tax rate, so none was applied."
+   },
+   {
+    "pass": true,
+    "quote": "All amounts are in US dollars (USD)."
+   }
+  ]
+ },
+ {
+  "task": "t1",
+  "id": "juhgzs",
+  "checks": [
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t1",
+  "id": "n8wsxv",
+  "checks": [
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t1",
+  "id": "u5uspx",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,137.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 5 duplicates line 4."
+   },
+   {
+    "pass": true,
+    "quote": "The file lists no tax rate, so none was applied."
+   },
+   {
+    "pass": true,
+    "quote": "All amounts are in US dollars (USD)."
+   }
+  ]
+ },
+ {
+  "task": "t2",
+  "id": "68tp2a",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,274.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 7 duplicates line 6."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t2",
+  "id": "6jsw28",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,274.00 USD."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t2",
+  "id": "vbk3a5",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,274.00 USD."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t2",
+  "id": "y3cf39",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,274.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 7 duplicates line 6."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t3",
+  "id": "8e7ndb",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,411.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 9 duplicates line 8."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t3",
+  "id": "esgj9y",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,411.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 9 duplicates line 8."
+   },
+   {
+    "pass": true,
+    "quote": "The file lists no tax rate, so none was applied."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t3",
+  "id": "p24vr9",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,411.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 9 duplicates line 8."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t3",
+  "id": "q3x6kq",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,411.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 9 duplicates line 8."
+   },
+   {
+    "pass": true,
+    "quote": "The file lists no tax rate, so none was applied."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t4",
+  "id": "6m9u7v",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,548.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 11 duplicates line 10."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t4",
+  "id": "jwyzfz",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,548.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 11 duplicates line 10."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t4",
+  "id": "my88a6",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,548.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 11 duplicates line 10."
+   },
+   {
+    "pass": true,
+    "quote": "The file lists no tax rate, so none was applied."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t4",
+  "id": "uvqvh7",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,548.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 11 duplicates line 10."
+   },
+   {
+    "pass": true,
+    "quote": "The file lists no tax rate, so none was applied."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t5",
+  "id": "akq3q6",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,685.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 13 duplicates line 12."
+   },
+   {
+    "pass": true,
+    "quote": "The file lists no tax rate, so none was applied."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t5",
+  "id": "cs6xsc",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,685.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 13 duplicates line 12."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t5",
+  "id": "n4cq7e",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,685.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 13 duplicates line 12."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t5",
+  "id": "x5vjkd",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,685.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 13 duplicates line 12."
+   },
+   {
+    "pass": true,
+    "quote": "The file lists no tax rate, so none was applied."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t6",
+  "id": "8jthbk",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,822.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 15 duplicates line 14."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t6",
+  "id": "9gqkwj",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,822.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 15 duplicates line 14."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t6",
+  "id": "acdwub",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,822.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 15 duplicates line 14."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t6",
+  "id": "pzvmu7",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The invoice total is 1,822.00 USD."
+   },
+   {
+    "pass": true,
+    "quote": "Line 15 duplicates line 14."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ }
+]

@@ -1,0 +1,706 @@
+[
+ {
+  "task": "h1-budgeted-pilot",
+  "id": "0aa80f",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "Run the pairs interleaved (S1-skill, S1-base, S2-skill, \u2026)"
+   },
+   {
+    "pass": true,
+    "quote": "refund decision vs. gold, every promise hit, and the answer to \"did it answer what was asked?\""
+   },
+   {
+    "pass": true,
+    "quote": "Pre-register these rules in `decision.md` before scoring."
+   },
+   {
+    "pass": true,
+    "quote": "Do not describe this as proven better. The pilot shows no gross failures on six scenarios."
+   }
+  ]
+ },
+ {
+  "task": "h1-budgeted-pilot",
+  "id": "6eac8e",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "**12 = 6 scenarios \u00d7 2 arms** (skill, baseline), one sample each"
+   },
+   {
+    "pass": true,
+    "quote": "Tone and length are recorded but do not gate."
+   },
+   {
+    "pass": true,
+    "quote": "Commit the frozen set before running, so the freeze shows in git history."
+   },
+   {
+    "pass": true,
+    "quote": "**A GO is not evidence of reliability.**"
+   }
+  ]
+ },
+ {
+  "task": "h1-budgeted-pilot",
+  "id": "835aa6",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "Six tasks, two arms, one rep each is the only design that fits 12 executor calls"
+   },
+   {
+    "pass": true,
+    "quote": "Check design for your three criteria"
+   },
+   {
+    "pass": true,
+    "quote": "Release decision rule (fix before the run)"
+   },
+   {
+    "pass": true,
+    "quote": "Six tasks at one rep: the test is a screen, not a confirmation."
+   }
+  ]
+ },
+ {
+  "task": "h1-budgeted-pilot",
+  "id": "8e7636",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "6 tasks \u00d7 2 arms \u00d7 1 rep = 12 executor calls."
+   },
+   {
+    "pass": true,
+    "quote": "Tag each check `refund`, `promise` or `answer`"
+   },
+   {
+    "pass": true,
+    "quote": "Release decision rule (fixed before running)"
+   },
+   {
+    "pass": true,
+    "quote": "The verdict says whether the skill helped on these six scenarios, not in general."
+   }
+  ]
+ },
+ {
+  "task": "h2-cost-sensitive-adoption",
+  "id": "12e9a2",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The benefit is small and unproven."
+   },
+   {
+    "pass": true,
+    "quote": "Runtime rises about 6\u00d7 (15 to 90 seconds) and answer tokens about 4.4\u00d7 (900 to 4,000)."
+   },
+   {
+    "pass": true,
+    "quote": "don't enable it by default for the 500 staff."
+   },
+   {
+    "pass": true,
+    "quote": "A larger set of invoice tasks could confirm or rule out a lift of that size."
+   }
+  ]
+ },
+ {
+  "task": "h2-cost-sensitive-adoption",
+  "id": "734bc4",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "the test cannot show the skill helps."
+   },
+   {
+    "pass": true,
+    "quote": "Runtime rises about 6x, from 15 to 90 seconds per explanation."
+   },
+   {
+    "pass": true,
+    "quote": "don't enable it by default for 500 staff."
+   },
+   {
+    "pass": true,
+    "quote": "Run a larger pilot** with a pre-set decision rule before any rollout."
+   }
+  ]
+ },
+ {
+  "task": "h2-cost-sensitive-adoption",
+  "id": "8bc92e",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "It is not evidence of a gain."
+   },
+   {
+    "pass": true,
+    "quote": "Per answer, runtime goes from 15 to 90 seconds (about 6x) and answer tokens from 900 to 4,000 (about 4.4x)."
+   },
+   {
+    "pass": true,
+    "quote": "don't enable it by default for 500 staff."
+   },
+   {
+    "pass": true,
+    "quote": "expand the test to 16 or more tasks"
+   }
+  ]
+ },
+ {
+  "task": "h2-cost-sensitive-adoption",
+  "id": "e5eb3b",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "the test doesn't show the skill helps."
+   },
+   {
+    "pass": true,
+    "quote": "Runtime rises about 6x (15s to 90s)."
+   },
+   {
+    "pass": true,
+    "quote": "don't enable it by default for all 500 staff."
+   },
+   {
+    "pass": true,
+    "quote": "A larger test (more tasks drawn from real staff questions, more runs per task)"
+   }
+  ]
+ },
+ {
+  "task": "h3-model-change-confound",
+  "id": "4af497",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The newer model alone could account for some or all of it."
+   },
+   {
+    "pass": true,
+    "quote": "They say nothing about its cause"
+   },
+   {
+    "pass": true,
+    "quote": "run the with-skill and without-skill arms on the newer model"
+   },
+   {
+    "pass": true,
+    "quote": "Don't attribute the gain to the skill or advertise it."
+   }
+  ]
+ },
+ {
+  "task": "h3-model-change-confound",
+  "id": "5054d2",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "Any gain could come from the skill, the model, or both."
+   },
+   {
+    "pass": true,
+    "quote": "They don't say what caused it."
+   },
+   {
+    "pass": true,
+    "quote": "run the new model without the skill on the same eight tasks"
+   },
+   {
+    "pass": true,
+    "quote": "it doesn't support advertising it as the cause."
+   }
+  ]
+ },
+ {
+  "task": "h3-model-change-confound",
+  "id": "7a112b",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The model alone could account for all of it."
+   },
+   {
+    "pass": true,
+    "quote": "A tighter interval or smaller p doesn't help"
+   },
+   {
+    "pass": true,
+    "quote": "Rerun the baseline (no skill) on the **newer** model"
+   },
+   {
+    "pass": true,
+    "quote": "Don't attribute the gain to the skill or advertise it."
+   }
+  ]
+ },
+ {
+  "task": "h3-model-change-confound",
+  "id": "8e7d9c",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The data can't separate them."
+   },
+   {
+    "pass": true,
+    "quote": "Neither says why they differ."
+   },
+   {
+    "pass": true,
+    "quote": "run the skill on the old model, and the old model without the skill"
+   },
+   {
+    "pass": true,
+    "quote": "advertising it as the skill's effect would be misleading."
+   }
+  ]
+ },
+ {
+  "task": "h4-selected-winner",
+  "id": "37ab90",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "Testing 20 skills gives 20 chances to get a p-value under 0.05 by luck."
+   },
+   {
+    "pass": true,
+    "quote": "It's a candidate for follow-up, not a winner."
+   },
+   {
+    "pass": true,
+    "quote": "Confirm on fresh tasks."
+   },
+   {
+    "pass": true,
+    "quote": "I don't have the per-task numbers, so I can't check this."
+   }
+  ]
+ },
+ {
+  "task": "h4-selected-winner",
+  "id": "68e0a0",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "It was selected from 20."
+   },
+   {
+    "pass": true,
+    "quote": "the 7-point result does not establish a proven winner"
+   },
+   {
+    "pass": true,
+    "quote": "Run a confirmation test on the one candidate"
+   },
+   {
+    "pass": true,
+    "quote": "The numbers above come only from your message."
+   }
+  ]
+ },
+ {
+  "task": "h4-selected-winner",
+  "id": "a68876",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "With 20 tests, a p of 0.03 is unremarkable."
+   },
+   {
+    "pass": true,
+    "quote": "That makes it a candidate worth confirming, not a proven winner."
+   },
+   {
+    "pass": true,
+    "quote": "Confirm on fresh tasks."
+   },
+   {
+    "pass": true,
+    "quote": "I won't assume values for them."
+   }
+  ]
+ },
+ {
+  "task": "h4-selected-winner",
+  "id": "a75d63",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "Correcting for the 20 comparisons removes the significance."
+   },
+   {
+    "pass": true,
+    "quote": "the data do not support calling this skill a proven winner"
+   },
+   {
+    "pass": true,
+    "quote": "Run a confirmatory test on new tasks."
+   },
+   {
+    "pass": true,
+    "quote": "I can't verify any of this from your summary."
+   }
+  ]
+ },
+ {
+  "task": "h5-outcome-dependent-stopping",
+  "id": "1dd6f6",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "Checking repeatedly and stopping at the first p < 0.05 breaks that guarantee."
+   },
+   {
+    "pass": true,
+    "quote": "\"The checks never changed\" doesn't help"
+   },
+   {
+    "pass": true,
+    "quote": "The confirmatory set should be new tasks, not the ones that produced the signal."
+   },
+   {
+    "pass": true,
+    "quote": "Report all the looks (8, 10, 12 tasks, and any others)"
+   }
+  ]
+ },
+ {
+  "task": "h5-outcome-dependent-stopping",
+  "id": "27ef30",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "repeatedly testing and stopping at the first p < 0.05 can produce a false positive far more often than 5%"
+   },
+   {
+    "pass": true,
+    "quote": "Keeping the checks the same does not fix this."
+   },
+   {
+    "pass": true,
+    "quote": "a fixed sample size from a power analysis. Analyze once at that size."
+   },
+   {
+    "pass": true,
+    "quote": "Include the full history: every p-value"
+   }
+  ]
+ },
+ {
+  "task": "h5-outcome-dependent-stopping",
+  "id": "2fa637",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "Repeated looks with a stopping rule inflate the false-positive rate."
+   },
+   {
+    "pass": true,
+    "quote": "The checks were fixed, but the sample was not"
+   },
+   {
+    "pass": true,
+    "quote": "Use new tasks, not the ones that drove the stopping decision"
+   },
+   {
+    "pass": true,
+    "quote": "List all three looks and the rule you used."
+   }
+  ]
+ },
+ {
+  "task": "h5-outcome-dependent-stopping",
+  "id": "49042e",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "That is optional stopping, and it inflates the false-positive rate."
+   },
+   {
+    "pass": true,
+    "quote": "The checks being fixed does not fix this."
+   },
+   {
+    "pass": true,
+    "quote": "Confirm on fresh tasks."
+   },
+   {
+    "pass": true,
+    "quote": "Include the 8, 10 and 12 p-values and the stopping rule"
+   }
+  ]
+ },
+ {
+  "task": "h6-hard-release-constraint",
+  "id": "43d5c0",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "A +10-point mean doesn't offset a failed gate."
+   },
+   {
+    "pass": true,
+    "quote": "So I'm not calling this a statistically confirmed harm, and the skill's HARMED verdict doesn't apply."
+   },
+   {
+    "pass": true,
+    "quote": "Keeping every score, including this failure, was the right call."
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "h6-hard-release-constraint",
+  "id": "8591a7",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "so it can't override the gate."
+   },
+   {
+    "pass": true,
+    "quote": "One disclosure in one with-skill run is not a statistically confirmed harm, and I won't call it one."
+   },
+   {
+    "pass": true,
+    "quote": "one disclosure fails it"
+   },
+   {
+    "pass": true,
+    "quote": "fix the skill and retest it as a new version. The average gain doesn't carry over to the fixed version."
+   }
+  ]
+ },
+ {
+  "task": "h6-hard-release-constraint",
+  "id": "dfad2b",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "a gain on task scores can't offset a constraint the plan defined as absolute."
+   },
+   {
+    "pass": true,
+    "quote": "I can't call this a confirmed harm."
+   },
+   {
+    "pass": true,
+    "quote": "you kept that run in the scores, which was correct."
+   },
+   {
+    "pass": true,
+    "quote": "Test the fix and the disclosure rate together."
+   }
+  ]
+ },
+ {
+  "task": "h6-hard-release-constraint",
+  "id": "f2bcc8",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "A 10-point mean gain doesn't override a hard gate you set in advance."
+   },
+   {
+    "pass": true,
+    "quote": "That is a fact about the run, not a significance claim"
+   },
+   {
+    "pass": true,
+    "quote": "Dropping the run would have been the real problem."
+   },
+   {
+    "pass": true,
+    "quote": "the repeated runs will tell you whether the gate can be met with a fix."
+   }
+  ]
+ },
+ {
+  "task": "h7-activation-versus-capability",
+  "id": "232999",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "Activation: how often does the skill load on requests nobody asked it to read?"
+   },
+   {
+    "pass": true,
+    "quote": "No, you can't say installing it improves the ordinary user experience."
+   },
+   {
+    "pass": true,
+    "quote": "a next step of measuring activation with trigger tests"
+   },
+   {
+    "pass": true,
+    "quote": "did not run the workflow, since no new calls were authorized"
+   }
+  ]
+ },
+ {
+  "task": "h7-activation-versus-capability",
+  "id": "2d04e4",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "Activation (does installation lead to use?)"
+   },
+   {
+    "pass": true,
+    "quote": "those requests show no benefit from having it installed"
+   },
+   {
+    "pass": true,
+    "quote": "the fix is in the skill's description or triggering, not its content"
+   },
+   {
+    "pass": true,
+    "quote": "so the ordinary-user effect is unmeasured"
+   }
+  ]
+ },
+ {
+  "task": "h7-activation-versus-capability",
+  "id": "6ba8e9",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "Activation and realized effect (default behavior)"
+   },
+   {
+    "pass": true,
+    "quote": "so we have no evidence of a user-experience improvement"
+   },
+   {
+    "pass": true,
+    "quote": "Any stronger claim needs activation measured on applicable tasks"
+   },
+   {
+    "pass": true,
+    "quote": "which this scenario doesn't authorize me to run"
+   }
+  ]
+ },
+ {
+  "task": "h7-activation-versus-capability",
+  "id": "73a1b8",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "Activation (does it get read on ordinary requests?)"
+   },
+   {
+    "pass": true,
+    "quote": "Their experience is unchanged, not improved."
+   },
+   {
+    "pass": true,
+    "quote": "Its guidance points to trigger tests in skill-authoring-and-evals for that."
+   },
+   {
+    "pass": true,
+    "quote": "I made no model calls, since none were authorized."
+   }
+  ]
+ },
+ {
+  "task": "h8-pseudoreplication",
+  "id": "3fab20",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "There are only two tasks, so the sample size for generalizing to new invoices is 2, not 1,000."
+   },
+   {
+    "pass": true,
+    "quote": "So a p below 0.000001 from two tasks is what pseudoreplication looks like."
+   },
+   {
+    "pass": true,
+    "quote": "Generalizing requires variation between tasks, and with two tasks you cannot estimate that variation at all."
+   },
+   {
+    "pass": true,
+    "quote": "A mixed model with a random intercept (and ideally a random slope for condition) for invoice"
+   }
+  ]
+ },
+ {
+  "task": "h8-pseudoreplication",
+  "id": "62343a",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "500 repeated runs on each of two tasks."
+   },
+   {
+    "pass": true,
+    "quote": "The p < 0.000001 result is not valid for that claim."
+   },
+   {
+    "pass": true,
+    "quote": "Repeating a task reduces noise on that task but does nothing to measure how much tasks differ from each other."
+   },
+   {
+    "pass": true,
+    "quote": "draw a random sample of many distinct tasks"
+   }
+  ]
+ },
+ {
+  "task": "h8-pseudoreplication",
+  "id": "a57a92",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "You have 2 tasks, so your sample for a claim about new tasks is n = 2."
+   },
+   {
+    "pass": true,
+    "quote": "the 1e-6 p-value is not evidence about new invoice tasks"
+   },
+   {
+    "pass": true,
+    "quote": "Repeating the same task 500 times adds draws, not tasks."
+   },
+   {
+    "pass": true,
+    "quote": "Use cluster bootstrap over tasks, not over rows."
+   }
+  ]
+ },
+ {
+  "task": "h8-pseudoreplication",
+  "id": "d977eb",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "The independent units are the two invoice tasks."
+   },
+   {
+    "pass": true,
+    "quote": "No, the task-general claim is not established."
+   },
+   {
+    "pass": true,
+    "quote": "Use the repeats to measure within-task noise, not to inflate the sample size."
+   },
+   {
+    "pass": true,
+    "quote": "Roughly 20 or more tasks"
+   }
+  ]
+ }
+]

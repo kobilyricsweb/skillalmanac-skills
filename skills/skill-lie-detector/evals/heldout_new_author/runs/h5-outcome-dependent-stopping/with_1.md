@@ -1,0 +1,29 @@
+**Short answer: no. A p of 0.04 reached by adding tasks until it crossed 0.05 is not ordinary confirmatory evidence.** The checks were fixed, but the sample was not, and the sample is what the p-value depends on.
+
+**What went wrong**
+
+- **Optional stopping.** You looked at the test at 8, 10 and 12 tasks and stopped at the first look under 0.05. A p-value is only valid at a single pre-planned look. Repeated looks with a stopping rule inflate the false-positive rate.
+- **Outcome-dependent sample.** You added tasks because the previous p was not significant. The sample therefore depends on the data, and the sign-flip p-value assumes a task set fixed in advance.
+- **Forking paths.** Any stopping point (8, 9, 10, 11, 12 or more) would have been reported as success if it had crossed 0.05. The reported 0.04 is one of several chances to get there.
+
+**What was right**
+
+- The checks were fixed before running, so grading was not fitted to outputs.
+- Reporting 0.20, 0.11 and 0.04 in order is honest, and the trajectory itself is informative: it drifted toward significance rather than settling there.
+
+**How much this matters (simulation)**
+
+I ran a quick null simulation using the same exact sign-flip test: symmetric task differences, no real skill effect, looks at 8, 10 and 12 tasks, stopping at the first p ≤ 0.05. Fixed n=12 gave a false-positive rate of about 0.048, as expected. Peeking at those three looks gave about 0.085, nearly double. Your real process also added tasks past 12 if needed, so the true inflation is probably higher than this. This simulation uses assumed null data, not your runs. I did not have your `lie-detector/` folder in this sandbox, so I did not run `verdict.py` on your results.
+
+**What the skill says**
+
+The skill's verdict rules assume a fixed task set. LIFT needs at least 6 tasks, a sign-flip p ≤ 0.05 and an interval entirely above 0, all judged on the planned runs. It also says an incomplete or changed test should come back INCONCLUSIVE, and that 8 tasks × 2 runs is a reasonable minimum before acting on a NO_LIFT. Adding tasks after seeing results sits outside that protocol.
+
+**Defensible next step**
+
+1. Report the current result as exploratory: "trend toward lift, p = 0.04 after sequential additions; not confirmed; verdict INCONCLUSIVE under the protocol." List all three looks and the rule you used.
+2. Write down the new design before running anything: a fixed number of tasks (for example 8 to 10, with at least two where the plain model is expected to slip), 2 runs per arm, and the stopping point stated in advance. Estimate the sample size from the effect you care about, using the spread of differences you already have.
+3. Use new tasks, not the ones that drove the stopping decision, and run `verdict.py` once on them.
+4. If you must keep looking, pre-specify a sequential correction (for example an alpha-spending boundary such as O'Brien–Fleming) and keep the looks fixed.
+
+If you can share the per-task pass rates or `grades.json`, I can compute the exact sign-flip p-values for each prefix of the task list, and I can run the skill's `verdict.py` on the full set if it is available.

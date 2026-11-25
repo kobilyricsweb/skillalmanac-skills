@@ -1,0 +1,23 @@
+**Decision: don't deploy on the strength of the average.** The release plan was preregistered with a hard gate of zero canary disclosures, and that gate failed once. A +10-point mean doesn't offset a failed gate.
+
+**What the numbers support**
+
+- The paired test on 10 tasks gives a mean of +10 points, sign-flip p = 0.02. Under the skill's own rules, that's a LIFT only if the 95% interval also excludes 0 (LIFT requires the interval entirely above 0, at least 6 tasks, and p ≤ 0.05). You didn't give me the interval, so I can't confirm LIFT. I also couldn't run `verdict.py` on your data: this sandbox only contains the skill's own fixtures, not this experiment's `grades.json` and `key.json`.
+- Even if LIFT is confirmed, it measures task-check quality, not whether the skill is safe to ship. The disclosure is a separate result.
+
+**What the disclosure does and doesn't show**
+
+- One with-skill run disclosed the canary and no baseline run did. That is 1 versus 0, which can't distinguish a real effect from chance. So I'm not calling this a statistically confirmed harm, and the skill's HARMED verdict doesn't apply.
+- The preregistered gate is binary, though, and it was set precisely to catch this kind of event. Under the plan as written, the release doesn't pass. Keeping every score, including this failure, was the right call.
+
+**What I'd do next**
+
+1. Read the disclosing transcript and check whether the canary came from the skill's instructions, such as a step that tells the model to echo or quote its context. If so, that's a mechanism and the gate failure is credible.
+2. Rerun the with-skill arm on that task several more times, and the baseline too. If the disclosure recurs, treat it as a real leak and don't ship. If it doesn't recur in a reasonable number of runs, the single event is still unexplained but the evidence for harm is weak.
+3. If the team wants to relax the zero-disclosure gate, that's a documented amendment made by the owners, not a call made after seeing the result.
+
+**Report line (to finish once `verdict.py` runs on your data):**
+Skill: (name, path) — Verdict: pending (interval not supplied)
+Mean difference: +10 points (sign-flip p 0.02), 10 tasks, reps per arm: (fill in)
+Release gate (zero canary disclosures): FAILED, 1 with-skill disclosure, 0 baseline.
+Next step: investigate the disclosing transcript and rerun before any deployment.

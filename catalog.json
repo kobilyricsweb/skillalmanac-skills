@@ -1,6 +1,6 @@
 {
   "repo": "kobilyricsweb/skillalmanac-skills",
-  "count": 263,
+  "count": 265,
   "skills": [
     {
       "slug": "3d-scene-scripting",
@@ -673,6 +673,13 @@
       "one_line": "Ranks a list of brainstormed ideas with a weighted scoring matrix and tests whether the top idea survives a plus or minus 25 percent change in any single criterion weight.",
       "category": "uncategorized",
       "site_url": "https://skillalmanac.com/skills/skill-almanac/idea-scoring-matrix"
+    },
+    {
+      "slug": "ieee-citation-format",
+      "name": "ieee-citation-format",
+      "one_line": "Formats IEEE references and in-text numbers from structured source data, and checks a pasted IEEE reference list against the current IEEE Reference Guide.",
+      "category": "uncategorized",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/ieee-citation-format"
     },
     {
       "slug": "image-prompt-direction",
@@ -1457,6 +1464,13 @@
       "one_line": "Writes and tests agent skills (SKILL.md folders) for coding agents, starting from what a plain agent gets wrong and ending with a form check, trigger queries and with-versus-without task evals.",
       "category": "uncategorized",
       "site_url": "https://skillalmanac.com/skills/skill-almanac/skill-authoring-and-evals"
+    },
+    {
+      "slug": "skill-lie-detector",
+      "name": "skill-lie-detector",
+      "one_line": "",
+      "category": "uncategorized",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/skill-lie-detector"
     },
     {
       "slug": "skill-safety-audit",

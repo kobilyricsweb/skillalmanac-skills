@@ -1,0 +1,87 @@
+{
+ "tasks": 8,
+ "per_task": [
+  {
+   "task": "t1-plan",
+   "with": 100.0,
+   "without": 75.0,
+   "difference": 25.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t2-verdict",
+   "with": 100.0,
+   "without": 75.0,
+   "difference": 25.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t3-few",
+   "with": 100.0,
+   "without": 87.5,
+   "difference": 12.5,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t4-quotes",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t5-inject",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t6-after",
+   "with": 100.0,
+   "without": 75.0,
+   "difference": 25.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t7-leak",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t8-judge",
+   "with": 87.5,
+   "without": 87.5,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  }
+ ],
+ "wins": 4,
+ "ties": 4,
+ "losses": 0,
+ "length_chars": {
+  "with": 3059,
+  "without": 2771
+ },
+ "void_tasks": [],
+ "problems": [],
+ "verdict": "LIFT_UNCONFIRMED",
+ "mean_difference": 10.9,
+ "ci95": [
+  3.1,
+  18.8
+ ],
+ "sign_flip_p": 0.125,
+ "method": "percentile bootstrap over tasks, 10000 resamples, seed 20261125; exact two-sided sign-flip test over tasks",
+ "reason": "interval excludes 0, but confirmation needs at least 6 tasks and sign-flip p <= 0.05 (here 8 tasks, p 0.125)"
+}

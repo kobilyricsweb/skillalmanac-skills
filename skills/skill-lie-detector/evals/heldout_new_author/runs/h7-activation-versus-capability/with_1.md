@@ -1,0 +1,11 @@
+**No, you can't say that.** The evidence supports a narrower claim: when the skill is read and followed, it helped on the eight matched tasks. In the 40 production requests it never loaded, so those users got the same behavior as before. Their experience is unchanged, not improved. Installing it helps ordinary users only to the extent that the skill gets read on requests where it applies, and nothing in the data measures that.
+
+The two questions the report should keep separate:
+
+1. **Capability (when loaded, does it help?)** This is what the paired test measures. Same model, same task, with the skill read and followed versus without it, graded blind against checks written beforehand. Your +25 points on eight tasks answers this, subject to the test's limits: eight tasks is a small set, and the verdict needs its interval and sign-flip p, which aren't in your summary.
+
+2. **Activation (does it get read on ordinary requests?)** This is what the 40 production requests measure, and they show 0 of 40. The skill's own method says it does not test whether the skill triggers on its own. Its guidance points to trigger tests in skill-authoring-and-evals for that.
+
+The ordinary-user effect is roughly activation rate × capability on the tasks where it activates. With activation at 0 of 40, that product is zero, whatever the capability. The report should say that the 25-point figure is conditional on activation, and that the production data is evidence about activation, not capability. It should also say whether the eight matched tasks resemble the production requests. If they don't, the lift may not carry over even once activation is fixed.
+
+I read SKILL.md, references/formats.md and references/grader_prompt.md. I did not run blind.py or verdict.py, and I made no model calls, since none were authorized.

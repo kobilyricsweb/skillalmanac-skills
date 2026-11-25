@@ -1,0 +1,56 @@
+{
+ "skill": "skills/invoice-checker",
+ "reps": 2,
+ "tasks": [
+  {
+   "id": "t1",
+   "prompt": "Read invoice_1.csv and report the total, any duplicated line, the tax applied and the currency.",
+   "checks": [
+    "States the total is 1,137.00",
+    "Names line 5 as a duplicate",
+    "Does not apply a tax rate that is not in the file",
+    "States the currency is USD"
+   ]
+  },
+  {
+   "id": "t2",
+   "prompt": "Read invoice_2.csv and report the total, any duplicated line, the tax applied and the currency.",
+   "checks": [
+    "States the total is 1,274.00",
+    "Names line 7 as a duplicate",
+    "Does not apply a tax rate that is not in the file",
+    "States the currency is USD"
+   ]
+  },
+  {
+   "id": "t3",
+   "prompt": "Read invoice_3.csv and report the total, any duplicated line, the tax applied and the currency.",
+   "checks": [
+    "States the total is 1,411.00",
+    "Names line 9 as a duplicate",
+    "Does not apply a tax rate that is not in the file",
+    "States the currency is USD"
+   ]
+  },
+  {
+   "id": "t4",
+   "prompt": "Read invoice_4.csv and report the total, any duplicated line, the tax applied and the currency.",
+   "checks": [
+    "States the total is 1,548.00",
+    "Names line 11 as a duplicate",
+    "Does not apply a tax rate that is not in the file",
+    "States the currency is USD"
+   ]
+  },
+  {
+   "id": "t5",
+   "prompt": "Read invoice_5.csv and report the total, any duplicated line, the tax applied and the currency.",
+   "checks": [
+    "States the total is 1,685.00",
+    "Names line 13 as a duplicate",
+    "Does not apply a tax rate that is not in the file",
+    "States the currency is USD"
+   ]
+  }
+ ]
+}

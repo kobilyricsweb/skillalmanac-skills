@@ -1,0 +1,55 @@
+{
+ "tasks": 4,
+ "per_task": [
+  {
+   "task": "t1-orders",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t2-leading-zeros",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t3-ragged",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t4-wrapped",
+   "with": 0.0,
+   "without": 75.0,
+   "difference": -75.0,
+   "runs_with": 2,
+   "runs_without": 2
+  }
+ ],
+ "wins": 0,
+ "ties": 3,
+ "losses": 1,
+ "length_chars": {
+  "with": 598,
+  "without": 452
+ },
+ "void_tasks": [],
+ "problems": [],
+ "verdict": "NO_LIFT",
+ "mean_difference": -18.8,
+ "ci95": [
+  -56.2,
+  0.0
+ ],
+ "sign_flip_p": 1.0,
+ "method": "percentile bootstrap over tasks, 10000 resamples, seed 20261125; exact two-sided sign-flip test over tasks",
+ "reason": "the interval touches 0; treat the verdict as borderline"
+}

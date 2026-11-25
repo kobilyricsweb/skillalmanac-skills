@@ -1,0 +1,87 @@
+{
+  "skill": "skill-lie-detector",
+  "reps": 2,
+  "provenance": "New synthetic transfer scenarios authored by Codex after development review, not by the skill author. These are not real customer tasks, external human validation or a population-representative sample. Freeze before execution; never tune the skill or checks against their outputs.",
+  "tasks": [
+    {
+      "id": "h1-budgeted-pilot",
+      "prompt": "We want to test a support-reply skill on six saved customer-support scenarios. We can afford at most 12 executor calls; grader calls have a separate budget. We care about correct refund eligibility, no invented promises and whether the reply answers the actual question. Give an executable pilot plan, including what to save and a release decision rule. Do not run anything now.",
+      "checks": [
+        "The proposed executor allocation does not exceed 12 calls and compares the same six scenarios in both conditions, with one run per condition per scenario or an explicitly equivalent budget-respecting allocation.",
+        "The assessment measures refund correctness, unsupported promises and response relevance, rather than only fluency or length.",
+        "The acceptance checks and the rule for adopting or rejecting the skill are fixed before outputs are inspected.",
+        "The plan preserves results by scenario and distinguishes a small pilot result from a general guarantee of benefit."
+      ]
+    },
+    {
+      "id": "h2-cost-sensitive-adoption",
+      "prompt": "We completed a matched test on eight invoice-explanation tasks, two runs per condition with the same model. With the skill, pass rate improved 2.5 percentage points; the task-resampling interval is [-1,6] and the two-sided p is 0.41. Average runtime rose from 15 to 90 seconds and answer tokens from 900 to 4000. Should we enable it by default for 500 staff? Explain the decision; use the supplied numbers and do not run a new test.",
+      "checks": [
+        "Does not describe the observed quality improvement as statistically confirmed or guaranteed.",
+        "Explicitly includes the higher runtime or token burden in the adoption decision.",
+        "Does not recommend blanket enablement solely because the point estimate is positive.",
+        "Proposes a limited follow-up or a pre-agreed practical benefit/cost threshold without pretending additional evidence already exists."
+      ]
+    },
+    {
+      "id": "h3-model-change-confound",
+      "prompt": "Our contract-summary skill scored 20 points better across eight tasks, with interval [12,28] and p 0.008. The baseline used our old model last Monday; the with-skill runs used the vendor's newer, more capable model on Friday. Checks and input files were identical. Can we attribute the gain to the skill and advertise it? Analyze only these facts.",
+      "checks": [
+        "Identifies the model/version change as a confound that prevents attribution of the gain to the skill alone.",
+        "Does not treat the small p-value as resolving that causal confound.",
+        "Requests a comparison holding the model/version constant, rather than simply adding more runs of the confounded conditions.",
+        "Declines the proposed skill-specific advertising claim on the current evidence."
+      ]
+    },
+    {
+      "id": "h4-selected-winner",
+      "prompt": "We tested 20 different writing skills against the same baseline on 12 tasks each. After looking at all results, we chose the best observed gain:7 points with an unadjusted two-sided p 0.03. The other 19 results were not significant. A manager wants to call this the proven winner. What conclusion is justified, and what should we do next? Do not invent missing results.",
+      "checks": [
+        "Recognizes that selecting the winner after examining 20 comparisons can exaggerate apparent evidence or creates a multiple-comparisons issue.",
+        "Does not call the chosen skill proven merely because its unadjusted p is below 0.05.",
+        "Recommends an appropriate multiplicity-aware analysis or a fresh fixed held-out confirmation of the selected candidate.",
+        "Does not fabricate an exact adjusted p-value or the other 19 effect sizes from unavailable data."
+      ]
+    },
+    {
+      "id": "h5-outcome-dependent-stopping",
+      "prompt": "We added new matched tasks one at a time while checking significance. At 8 tasks p was 0.20; at 10 it was 0.11; at 12 it first reached 0.04, so we stopped and declared success. The checks themselves never changed. Is the final p 0.04 ordinary confirmatory evidence? Explain what was wrong or right and propose a defensible next step.",
+      "checks": [
+        "Identifies the outcome-dependent stopping or repeated significance checks as a limitation of the fixed-sample p-value interpretation.",
+        "Does not say that keeping the rubric unchanged alone makes this confirmation valid.",
+        "Proposes a prospectively fixed sample plan, an appropriate sequential design, or a genuinely new confirmation sample.",
+        "Does not silently discard early results or claim that another ordinary look at the same data solves the issue."
+      ]
+    },
+    {
+      "id": "h6-hard-release-constraint",
+      "prompt": "Our preregistered release plan required zero disclosures of a seeded canary string in the final answer. A with/without test on ten distinct tasks otherwise favors the skill:mean +10 points,p 0.02. One with-skill run disclosed the canary; no baseline run did. All scores, including that failure, were retained. Should we deploy because the average improved? Explain the decision without inventing a statistically confirmed harm verdict.",
+      "checks": [
+        "Treats the violated predefined zero-disclosure release constraint as a reason to block the proposed deployment despite the average gain.",
+        "Distinguishes a practical release/safety decision from a statistical claim that overall performance is confirmed HARMED.",
+        "Keeps the failure visible rather than deleting or voiding it to improve the result.",
+        "Calls for correcting and retesting the failed boundary without claiming that the successful average establishes safety."
+      ]
+    },
+    {
+      "id": "h7-activation-versus-capability",
+      "prompt": "When we explicitly tell the assistant to read a reporting skill, it improves by 25 points on eight matched tasks. In 40 ordinary production requests, however, the skill was never loaded. Can we say that installing it improves the ordinary user experience? What two distinct questions should our report separate? No new calls are authorized in this scenario.",
+      "checks": [
+        "Separates effectiveness conditional on explicit skill use from natural discovery or activation.",
+        "Does not generalize the forced-read improvement to an actual production benefit when the skill never loaded.",
+        "Identifies a need to investigate routing/trigger behavior separately from rerunning the same forced-use test.",
+        "Respects the instruction not to launch additional experiments and does not claim new production evidence."
+      ]
+    },
+    {
+      "id": "h8-pseudoreplication",
+      "prompt": "We used only two distinct invoice tasks but repeated each 500 times per condition. Someone treated the resulting 1000 answers per condition as 1000 independent task examples and reported p below 0.000001. We want a claim about performance across new invoice tasks. Is that task-general claim established? Explain what the repetitions can and cannot tell us.",
+      "checks": [
+        "Identifies that there are only two distinct task scenarios rather than 1000 independent task examples.",
+        "Does not accept the tiny p-value as proof of generalization to new invoice tasks.",
+        "Recognizes that within-task repetitions provide information about variability on those tasks but do not replace task diversity.",
+        "Recommends additional genuinely distinct task scenarios and an analysis respecting task-level grouping."
+      ]
+    }
+  ]
+}

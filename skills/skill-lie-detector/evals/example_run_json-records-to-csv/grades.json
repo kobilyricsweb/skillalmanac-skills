@@ -1,0 +1,354 @@
+[
+ {
+  "task": "t1-orders",
+  "id": "0b4101",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "order_id,customer_name,customer_email,items,total\nA-001,Dana Levi,dana@example.com,P1 x2; P7 x1,59.9\nA-002,\"Smith, John\",john@example.com,P3 x5,120\nA-003,\"Ana \"\"Ani\"\" Ruiz\",,,0"
+   },
+   {
+    "pass": true,
+    "quote": "customer_name,customer_email"
+   },
+   {
+    "pass": true,
+    "quote": "\"Smith, John\""
+   },
+   {
+    "pass": true,
+    "quote": "\"\"Ani\"\""
+   }
+  ]
+ },
+ {
+  "task": "t1-orders",
+  "id": "247ec7",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "order_id,customer_name,customer_email,items,total\nA-001,Dana Levi,dana@example.com,P1 x2; P7 x1,59.9\nA-002,\"Smith, John\",john@example.com,P3 x5,120\nA-003,\"Ana \"\"Ani\"\" Ruiz\",,,0"
+   },
+   {
+    "pass": true,
+    "quote": "customer_name,customer_email"
+   },
+   {
+    "pass": true,
+    "quote": "\"Smith, John\""
+   },
+   {
+    "pass": true,
+    "quote": "\"\"Ani\"\""
+   }
+  ]
+ },
+ {
+  "task": "t1-orders",
+  "id": "2b136e",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "order_id,customer.name,customer.email,items,total\nA-001,Dana Levi,dana@example.com,\"{\"\"sku\"\":\"\"P1\"\",\"\"qty\"\":2}; {\"\"sku\"\":\"\"P7\"\",\"\"qty\"\":1}\",59.9\nA-002,\"Smith, John\",john@example.com,\"{\"\"sku\"\":\"\"P3\"\",\"\"qty\"\":5}\",120\nA-003,\"Ana \"\"Ani\"\" Ruiz\",,,0"
+   },
+   {
+    "pass": true,
+    "quote": "customer.name,customer.email"
+   },
+   {
+    "pass": true,
+    "quote": "\"Smith, John\""
+   },
+   {
+    "pass": true,
+    "quote": "\"\"Ani\"\""
+   }
+  ]
+ },
+ {
+  "task": "t1-orders",
+  "id": "c63f6a",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "order_id,customer_name,customer_email,items,total\nA-001,Dana Levi,dana@example.com,\"P1 x2; P7 x1\",59.9\nA-002,\"Smith, John\",john@example.com,P3 x5,120\nA-003,\"Ana \"\"Ani\"\" Ruiz\",,,0"
+   },
+   {
+    "pass": true,
+    "quote": "customer_name,customer_email"
+   },
+   {
+    "pass": true,
+    "quote": "\"Smith, John\""
+   },
+   {
+    "pass": true,
+    "quote": "\"\"Ani\"\""
+   }
+  ]
+ },
+ {
+  "task": "t2-leading-zeros",
+  "id": "012244",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "00731,02134"
+   },
+   {
+    "pass": true,
+    "quote": "Double-clicking a CSV in Excel strips leading zeros"
+   },
+   {
+    "pass": true,
+    "quote": "`=SUM(A1:A9)`. Excel will evaluate it as a formula"
+   },
+   {
+    "pass": true,
+    "quote": "id,zip,phone,note\n00731,02134,0501234567,=SUM(A1:A9)\n00732,10001,0529876543,ok\n00733,07030,0541112222,+1 call back"
+   }
+  ]
+ },
+ {
+  "task": "t2-leading-zeros",
+  "id": "43be9a",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "00731,02134"
+   },
+   {
+    "pass": true,
+    "quote": "Excel strips them from `id`, `zip` and `phone`"
+   },
+   {
+    "pass": true,
+    "quote": "`=SUM(A1:A9)` will be evaluated as a formula"
+   },
+   {
+    "pass": true,
+    "quote": "id,zip,phone,note\n00731,02134,0501234567,=SUM(A1:A9)\n00732,10001,0529876543,ok\n00733,07030,0541112222,+1 call back"
+   }
+  ]
+ },
+ {
+  "task": "t2-leading-zeros",
+  "id": "44a405",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "00731,02134"
+   },
+   {
+    "pass": true,
+    "quote": "Excel strips leading zeros"
+   },
+   {
+    "pass": true,
+    "quote": "(`=SUM(A1:A9)`) and row 3 (`+1 call back`) may be read by Excel as formulas"
+   },
+   {
+    "pass": true,
+    "quote": "id,zip,phone,note\n00731,02134,0501234567,=SUM(A1:A9)\n00732,10001,0529876543,ok\n00733,07030,0541112222,+1 call back"
+   }
+  ]
+ },
+ {
+  "task": "t2-leading-zeros",
+  "id": "9f3b4c",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "00731,02134"
+   },
+   {
+    "pass": true,
+    "quote": "Excel strips them when it opens a CSV"
+   },
+   {
+    "pass": true,
+    "quote": "`=SUM(A1:A9)` in `note` will be evaluated as a formula"
+   },
+   {
+    "pass": true,
+    "quote": "id,zip,phone,note\n00731,02134,0501234567,=SUM(A1:A9)\n00732,10001,0529876543,ok\n00733,07030,0541112222,+1 call back"
+   }
+  ]
+ },
+ {
+  "task": "t3-ragged",
+  "id": "078208",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "name,price,stock,tags,discontinued"
+   },
+   {
+    "pass": true,
+    "quote": "Gadget,,12,blue,"
+   },
+   {
+    "pass": true,
+    "quote": "red;small"
+   },
+   {
+    "pass": true,
+    "quote": "name,price,stock,tags,discontinued\nWidget,9.5,,red;small,\nGadget,,12,blue,\nDoohickey,3,0,,true"
+   }
+  ]
+ },
+ {
+  "task": "t3-ragged",
+  "id": "147872",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "name,price,tags,stock,discontinued"
+   },
+   {
+    "pass": true,
+    "quote": "Gadget,,blue,12,"
+   },
+   {
+    "pass": true,
+    "quote": "red; small"
+   },
+   {
+    "pass": true,
+    "quote": "name,price,tags,stock,discontinued\nWidget,9.5,red; small,,\nGadget,,blue,12,\nDoohickey,3,,0,true"
+   }
+  ]
+ },
+ {
+  "task": "t3-ragged",
+  "id": "18afb2",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "name,price,tags,stock,discontinued"
+   },
+   {
+    "pass": true,
+    "quote": "Gadget,,blue,12,"
+   },
+   {
+    "pass": true,
+    "quote": "red; small"
+   },
+   {
+    "pass": true,
+    "quote": "name,price,tags,stock,discontinued\nWidget,9.5,red; small,,\nGadget,,blue,12,\nDoohickey,3,,0,true"
+   }
+  ]
+ },
+ {
+  "task": "t3-ragged",
+  "id": "215d82",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "name,price,tags,stock,discontinued"
+   },
+   {
+    "pass": true,
+    "quote": "Gadget,,blue,12,"
+   },
+   {
+    "pass": true,
+    "quote": "red;small"
+   },
+   {
+    "pass": true,
+    "quote": "name,price,tags,stock,discontinued\nWidget,9.5,red;small,,\nGadget,,blue,12,\nDoohickey,3,,0,true"
+   }
+  ]
+ },
+ {
+  "task": "t4-wrapped",
+  "id": "4370d9",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "city,temp_c,wind_kmh,wind_dir\nTel Aviv,24,12,W\nHaifa,21,30,NW"
+   },
+   {
+    "pass": true,
+    "quote": "wind_kmh,wind_dir"
+   },
+   {
+    "pass": true,
+    "quote": "city,temp_c,wind_kmh,wind_dir\nTel Aviv,24,12,W\nHaifa,21,30,NW\n```"
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t4-wrapped",
+  "id": "530087",
+  "checks": [
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t4-wrapped",
+  "id": "8fca51",
+  "checks": [
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ },
+ {
+  "task": "t4-wrapped",
+  "id": "9067f0",
+  "checks": [
+   {
+    "pass": true,
+    "quote": "city,temp_c,wind_kmh,wind_dir\nTel Aviv,24,12,W\nHaifa,21,30,NW"
+   },
+   {
+    "pass": true,
+    "quote": "wind_kmh,wind_dir"
+   },
+   {
+    "pass": true,
+    "quote": "city,temp_c,wind_kmh,wind_dir\nTel Aviv,24,12,W\nHaifa,21,30,NW\n```"
+   },
+   {
+    "pass": false,
+    "quote": ""
+   }
+  ]
+ }
+]

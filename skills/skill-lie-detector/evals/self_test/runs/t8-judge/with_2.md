@@ -1,0 +1,23 @@
+**No, not on this evidence.** The 9-of-10 result shows the judge preferred the skill's answers. It doesn't show the answers were better, and the 3x length gap is a likely explanation for the preference. I haven't run the lie-detector procedure, so nothing below is a measured verdict.
+
+**Why the pairwise judge result doesn't support the claim:**
+
+- **Length confound.** Judges often prefer longer, more thorough-looking answers. With answers 3x longer, the preference could be about length alone.
+- **No checks written in advance.** The lie-detector method grades each answer against pass/fail checks fixed before any run, so the checks can't be fitted to the outputs. A side-by-side preference has no such fixed criteria.
+- **Small sample.** 9 of 10 has a two-sided sign-test p of about 0.02. That is enough to say the judge preferred the skill, but it comes from one judge, one run per arm, and 10 tasks, and the skill's method requires at least 6 tasks for a LIFT verdict.
+- **Unverified arms.** Nothing I can see confirms the baseline runs didn't load the skill.
+- **The skill's own record.** The lie-detector's VERIFICATION.md shows that on one real skill, answers with the skill were also longer and the test came back NO_LIFT, with one task where the skill made the answer worse.
+
+**What would support an announcement:** run the actual procedure on your 10 tasks:
+
+1. Write 3–5 decidable checks per task before running anything.
+2. Run 2 reps per arm in fresh sessions, with the skill folder hidden from the baseline.
+3. Blind, grade with a fresh grader, and compute the verdict with `verdict.py`.
+
+To do that I need three things from you:
+
+- The path to the skill folder you want tested. I'm assuming it's your new skill, not the lie-detector itself.
+- Your 10 tasks, or permission for me to draft them from the skill's description for your OK.
+- Whether you have the 10 judged pairs saved. If so, I can check how many of the skill answers are longer and whether the judge's reasons cite length.
+
+Until a LIFT verdict or an equivalent check-based result is in, I'd avoid saying the skill makes answers better. The accurate internal line would be: "a judge preferred the skill's answers in 9 of 10 pairs; those answers were 3x longer; we haven't yet tested correctness."

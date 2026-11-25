@@ -1,0 +1,87 @@
+{
+ "tasks": 8,
+ "per_task": [
+  {
+   "task": "h1-budgeted-pilot",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "h3-model-change-confound",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "h4-selected-winner",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "h5-outcome-dependent-stopping",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "with": 87.5,
+   "without": 100.0,
+   "difference": -12.5,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "h8-pseudoreplication",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  }
+ ],
+ "wins": 0,
+ "ties": 7,
+ "losses": 1,
+ "length_chars": {
+  "with": 2991,
+  "without": 2798
+ },
+ "void_tasks": [],
+ "problems": [],
+ "verdict": "NO_LIFT",
+ "mean_difference": -1.6,
+ "ci95": [
+  -4.7,
+  0.0
+ ],
+ "sign_flip_p": 1.0,
+ "method": "percentile bootstrap over tasks, 10000 resamples, seed 20261125; exact two-sided sign-flip test over tasks",
+ "reason": "the interval touches 0; treat the verdict as borderline"
+}

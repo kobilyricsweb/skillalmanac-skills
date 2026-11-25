@@ -1,0 +1,89 @@
+I read `SKILL.md`, `references/formats.md`, `references/grader_prompt.md`, `scripts/blind.py` and `scripts/verdict.py`. I did not read `VERIFICATION.md` or `LISTING.md`. I ran nothing beyond reading.
+
+**Missing inputs.** The workspace has only `.tools/skill-lie-detector/` and an empty `stderr.txt`. I could not find the six scenarios or the support-reply skill. Before Stage A I need:
+- the six scenarios, with the policy text and order data each one uses;
+- the skill's folder path;
+- the expected refund decision for each scenario, taken from your policy. I won't infer these.
+
+## 1. Budget design
+
+Two reps per arm would need 6 × 2 × 2 = 24 executor calls, which is over budget. The only design that fits and can reach LIFT or HARMED is:
+
+- **6 tasks × 2 arms × 1 rep = 12 executor calls.** Zero spare calls.
+- **6 grader calls**, one per task, each grading that task's two blinded answers. These come from the separate grader budget.
+- **Total: 12 executor + 6 grader.**
+
+Two consequences of 1 rep:
+- LIFT needs all six task differences positive. Six positive, nonzero differences give a sign-flip p of 2/64 = 0.031. A single tie or loss makes p at least 0.0625, so LIFT becomes impossible. Each task needs enough checks that the plain model can slip on at least one, or a tie is likely. Use 4–5 checks per task.
+- If a run is lost, the task can be voided, but then only five tasks remain and LIFT cannot be confirmed. verdict.py still computes a verdict.
+
+## 2. Before any spend
+
+1. Write `lie-detector/tasks.json` in the format from `formats.md`, with `"reps": 1`. Put the policy and order files in `files` so both arms get identical inputs.
+2. Write 4–5 checks per task. Each check must be decidable from the answer and must be passable with a quote. verdict.py counts a pass with an empty or unfound quote as a fail, so write negative checks in positive form. Example: "Quote the sentence that states the refund decision." Do not write "Does not promise a refund".
+3. Tag each check `refund`, `promise` or `answer` in a separate `criteria.json` so you can score the three things you care about.
+4. Get your sign-off on `tasks.json` and the expected refund decisions. After Stage A starts, checks may be voided but not edited.
+5. Confirm the support-reply skill is not installed where baseline executors can load it. If it is, move it out for the test.
+
+## 3. Execution (12 executor calls)
+
+Run pairs task by task, so an interrupted budget still leaves matched pairs. Each run is a fresh subagent or `claude -p` session.
+
+- **With:** `Read <SKILL_PATH>/SKILL.md and the files it points to, then follow it for this task.` followed by the task text.
+- **Without:** the task text only, in a folder without the skill. Do not mention skills.
+
+Save only the final answer as `lie-detector/runs/<task>/with_1.md` or `without_1.md`. Keep a ledger at `lie-detector/ledger.md` with one line per call: task, arm, timestamp, whether the skill was read, and output length.
+
+- **Stage A (4 calls):** tasks 1 and 2, one easy and one where the plain model is expected to slip.
+  - Gate A checks harness health only: outputs saved and non-empty, answer-only, the with-run shows it read the skill, and no baseline run loaded it. Do not grade yet.
+  - If a baseline loaded the skill, stop and decide with you, because that run is voidable and the budget has no slack.
+- **Stage B (8 calls):** tasks 3–6.
+
+## 4. Blind, grade, compute
+
+```
+python .tools/skill-lie-detector/scripts/blind.py lie-detector
+```
+
+- Read every `possible_arm_leaks` line. If a line reveals the arm, delete `blind/` and `key.json` and re-run with `--redact=...`.
+- Read `one_arm_terms` and redact any that only name the arm.
+- Do not open `key.json` until grading is finished.
+
+Grade each task with one fresh grader. Use a different model from the executor if you can, to reduce shared blind spots. Copy `blind/<task>/` to a folder outside `lie-detector/`. Give the grader only `grader_prompt.md`, the task text, its checks, and those files. Save each output as `lie-detector/grades_<task>.json`, then merge them into `grades.json`. Spot-check two grades against their quotes.
+
+```
+python .tools/skill-lie-detector/scripts/verdict.py lie-detector > lie-detector/verdict.json
+```
+
+For per-criterion results, use a small read-only helper that imports `quote_problem` from `verdict.py` and reports pass rates by tag. Check that its totals match `verdict.json` before you use it.
+
+## 5. What to save
+
+- `tasks.json`, `criteria.json`, the executor prompt text, and the skill's SHA-256 hash.
+- `ledger.md`, with executor and grader call counts.
+- `runs/`, `grades.json`, `verdict.json`, and the per-criterion output.
+- `blind/` and `key.json`, kept until the decision is written.
+- Your notes on the quotes behind every critical check.
+
+## 6. Release decision rule (fixed before running)
+
+**Release** only if all of the following hold:
+1. `verdict.json` says LIFT: the interval is above 0, all six tasks are positive, and p ≤ 0.05.
+2. No critical regression: no task where a with-skill run fails a `refund` or `promise` check that the same task's without-skill run passed.
+3. Every with-skill run passes every `refund` check.
+4. You have read the quotes behind every `refund` and `promise` check in both arms and agree with them.
+
+**Block** if any of these hold:
+- verdict is HARMED;
+- any critical regression;
+- any with-skill answer makes a promise your policy does not support.
+
+**Hold** (no release, and no claim of benefit) if the verdict is LIFT_UNCONFIRMED, NO_LIFT, or the run is incomplete.
+
+## 7. Limits to state in the report
+
+- Six tasks at one rep each. The verdict says whether the skill helped on these six scenarios, not in general.
+- The grader is a model, so the criteria gates rely on your reading of the quotes.
+- Scenario-specific checks were written by you before the runs, so the test does not check whether the skill triggers on its own.
+
+Send me the scenarios, the policy, the skill path and the expected decisions, and I'll write `tasks.json` and `criteria.json` for your sign-off.

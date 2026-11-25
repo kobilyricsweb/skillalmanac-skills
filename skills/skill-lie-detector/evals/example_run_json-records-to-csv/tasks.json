@@ -1,0 +1,10 @@
+{"skill": "json-records-to-csv", "reps": 2, "tasks": [
+ {"id": "t1-orders", "prompt": "Convert the JSON in t1.json to a CSV I can open in Excel, one row per order. Put the whole CSV in your reply inside a code block, then add at most three short notes.",
+  "checks": ["The CSV has exactly 3 data rows plus one header row", "Customer name and email appear as separate columns (for example customer.name and customer.email)", "The value Smith, John is wrapped in double quotes so the comma does not split the field", "The embedded quotes in Ana \"Ani\" Ruiz are escaped by doubling them (\"\"Ani\"\")"]},
+ {"id": "t2-leading-zeros", "prompt": "Turn t2.json into CSV for a colleague who will open it in Excel. Put the whole CSV in your reply inside a code block, then add at most three short notes.",
+  "checks": ["The id 00731 appears with its leading zeros in the CSV", "The reply warns that Excel may drop leading zeros or treat ids/zip codes as numbers", "The reply mentions that the =SUM(A1:A9) value could be run as a formula (formula or CSV injection) when opened in a spreadsheet", "The CSV has exactly 3 data rows plus one header row"]},
+ {"id": "t3-ragged", "prompt": "Make a CSV from t3.json. Put the whole CSV in your reply inside a code block, then add at most three short notes.",
+  "checks": ["The header contains every key that appears in any record: name, price, tags, stock and discontinued", "Missing values are left as empty fields, not written as null, None or NaN", "The two tags of Widget stay in a single cell (joined, for example red;small or red|small)", "The CSV has exactly 3 data rows plus one header row"]},
+ {"id": "t4-wrapped", "prompt": "Convert t4.json to a CSV with one row per city. Put the whole CSV in your reply inside a code block, then add at most three short notes.",
+  "checks": ["The CSV has exactly 2 data rows (Tel Aviv and Haifa) plus one header row", "Wind speed and wind direction are separate columns (for example wind.kmh and wind.dir)", "The top-level generated date is not turned into a data row of its own", "The reply states that the records were taken from the results array"]}
+]}

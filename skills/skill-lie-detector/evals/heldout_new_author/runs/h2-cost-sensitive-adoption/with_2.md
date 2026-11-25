@@ -1,0 +1,19 @@
+**Decision: don't enable it by default for the 500 staff.** Keep it available as an opt-in for the invoice cases where a wrong explanation is costly.
+
+**Verdict under the skill's rules: LIFT_UNCONFIRMED.** The skill's verdict table gives LIFT only when the 95% interval is entirely above 0 and p ≤ 0.05. Your interval [-1, 6] includes 0, and p = 0.41. The mean is above 0, so it isn't NO_LIFT or HARMED. The skill's guidance for LIFT_UNCONFIRMED is "maybe helps; add tasks to decide."
+
+I didn't run `verdict.py`, since I only have the summary numbers and not the per-task grades. The verdict comes from applying the skill's table to the interval and p you supplied.
+
+**Why not enable it:**
+
+- **The benefit is small and unproven.** The point estimate is +2.5 points. The interval runs from -1 to +6, so the true effect could be roughly zero, or a small gain.
+- **The cost is certain and large.** Runtime rises about 6× (15 to 90 seconds) and answer tokens about 4.4× (900 to 4,000). Across 500 staff, that is a real latency and spend increase on every invoice question.
+- **Even the optimistic end is modest.** If the true lift is near the top of the interval, it's about 6 points, bought with a 6× slowdown. Whether that trade is worth it depends on what a correct answer is worth to your staff, which is your call.
+
+**What would change the decision:**
+
+- **More tasks.** Eight tasks with two runs each is the skill's minimum for acting on a null result, but it's too few to confirm a 2–3 point effect. A larger set of invoice tasks could confirm or rule out a lift of that size.
+- **A cheaper version.** If the skill's content can be trimmed to cut the 4,000-token output, the cost side improves without retesting the benefit.
+- **Targeted use.** If the invoice tasks where the skill helps can be identified, enabling it only for those keeps the cost where the benefit is.
+
+**Limits:** eight tasks, a model grading a model, and the checks were written by whoever designed the test (not stated in your summary). I didn't re-check the per-task results or the blinding, so those should be confirmed against `lie-detector/` if you need the detail.

@@ -1,0 +1,36 @@
+**No, the task-general claim is not established.** The p < 0.000001 comes from treating 1000 answers as 1000 independent examples. The independent units are the two invoice tasks.
+
+**Why the repetitions don't add evidence about new tasks**
+
+- Each of the 500 repeats of a task is a new sample of the same model on the same input. Those answers are strongly correlated with each other, so the effective sample size is closer to 2 than to 1000.
+- A claim about new invoice tasks needs variation across tasks. You have observed only two points on that axis, so you cannot estimate how performance varies from one invoice to the next.
+- Even with the 2 tasks, the answers can't separate "the condition helps" from "the condition helps on these two particular invoices."
+
+**What the repetitions can tell you**
+
+- A stable estimate of each condition's success rate on those two tasks, with a tight interval on that rate. The 500 repeats reduce sampling noise for those tasks only.
+- That the difference reproduces on those two tasks, if it does. This is a real but narrow finding.
+
+**What they cannot tell you**
+
+- Performance on new invoice tasks, or on the invoice population those two were drawn from.
+- Whether the two tasks are representative. Their features may be what drives any difference.
+- Whether the effect is larger or smaller on harder or easier invoices.
+
+**The right unit for the test**
+
+Run the statistics over tasks: one paired difference per task (condition A minus condition B, using each task's 500-run rate), then test or bootstrap across tasks. With two tasks this is not even a usable test. An exact sign-flip test on two differences has a minimum two-sided p of 0.5, so no result could reach significance. A cluster bootstrap over tasks, or a mixed model with a random effect for task, gives the same message.
+
+**What would support the claim**
+
+- A defined population of invoice tasks, with the tasks sampled from it, ideally with varied layouts, fields, and difficulty.
+- Roughly 20 or more tasks, each with a modest number of repeats to handle sampling noise. Use the repeats to measure within-task noise, not to inflate the sample size.
+- Task-level analysis over those tasks, with a pre-stated comparison and interval.
+
+**Suggested wording for now**
+
+"On two invoice tasks, condition A succeeded in X% of 500 runs and condition B in Y%. This describes those two tasks. It does not establish performance on new invoice tasks."
+
+**About the skill**
+
+I read `.tools/skill-lie-detector/SKILL.md` and its scripts. Its rules support this conclusion: tasks are the unit of analysis, runs of one task are not independent, and fewer than 4 graded tasks gives no verdict. I did not run its harness, because this folder has no skill under test and no run outputs, and the question is about analysis rather than a skill evaluation. If you want to test a claim about the invoice behavior itself, the same task-level logic applies, and you would need to collect a larger set of invoice tasks first.

@@ -1,0 +1,26 @@
+{
+ "t1-orders": {
+  "0b4101": "with",
+  "247ec7": "without",
+  "2b136e": "with",
+  "c63f6a": "without"
+ },
+ "t2-leading-zeros": {
+  "012244": "without",
+  "43be9a": "with",
+  "44a405": "with",
+  "9f3b4c": "without"
+ },
+ "t3-ragged": {
+  "078208": "without",
+  "147872": "with",
+  "18afb2": "with",
+  "215d82": "without"
+ },
+ "t4-wrapped": {
+  "4370d9": "without",
+  "530087": "with",
+  "8fca51": "with",
+  "9067f0": "without"
+ }
+}

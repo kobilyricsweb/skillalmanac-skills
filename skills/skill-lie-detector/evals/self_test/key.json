@@ -1,0 +1,50 @@
+{
+ "t1-plan": {
+  "aebde1": "without",
+  "d66f28": "with",
+  "dc9c4e": "with",
+  "dcd1c5": "without"
+ },
+ "t2-verdict": {
+  "1d4fe4": "without",
+  "368192": "with",
+  "3782c2": "without",
+  "4b2431": "with"
+ },
+ "t3-few": {
+  "663475": "without",
+  "7440c5": "with",
+  "86e737": "without",
+  "d6c6ca": "with"
+ },
+ "t4-quotes": {
+  "43ee46": "without",
+  "98972e": "with",
+  "d5942b": "without",
+  "ddd28b": "with"
+ },
+ "t5-inject": {
+  "2a1270": "with",
+  "3f843e": "with",
+  "6c8944": "without",
+  "925aff": "without"
+ },
+ "t6-after": {
+  "183b34": "with",
+  "31af9d": "with",
+  "c55de1": "without",
+  "fcd04f": "without"
+ },
+ "t7-leak": {
+  "2c4ad5": "with",
+  "c805fa": "without",
+  "f12009": "with",
+  "f1fa9c": "without"
+ },
+ "t8-judge": {
+  "335a8b": "with",
+  "368349": "with",
+  "cc8361": "without",
+  "f66944": "without"
+ }
+}

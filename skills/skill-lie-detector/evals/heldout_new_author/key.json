@@ -1,0 +1,50 @@
+{
+ "h1-budgeted-pilot": {
+  "0aa80f": "without",
+  "6eac8e": "without",
+  "835aa6": "with",
+  "8e7636": "with"
+ },
+ "h2-cost-sensitive-adoption": {
+  "12e9a2": "with",
+  "734bc4": "without",
+  "8bc92e": "with",
+  "e5eb3b": "without"
+ },
+ "h3-model-change-confound": {
+  "4af497": "with",
+  "5054d2": "without",
+  "7a112b": "with",
+  "8e7d9c": "without"
+ },
+ "h4-selected-winner": {
+  "37ab90": "without",
+  "68e0a0": "with",
+  "a68876": "without",
+  "a75d63": "with"
+ },
+ "h5-outcome-dependent-stopping": {
+  "1dd6f6": "without",
+  "27ef30": "without",
+  "2fa637": "with",
+  "49042e": "with"
+ },
+ "h6-hard-release-constraint": {
+  "43d5c0": "with",
+  "8591a7": "with",
+  "dfad2b": "without",
+  "f2bcc8": "without"
+ },
+ "h7-activation-versus-capability": {
+  "232999": "with",
+  "2d04e4": "without",
+  "6ba8e9": "without",
+  "73a1b8": "with"
+ },
+ "h8-pseudoreplication": {
+  "3fab20": "with",
+  "62343a": "without",
+  "a57a92": "without",
+  "d977eb": "with"
+ }
+}

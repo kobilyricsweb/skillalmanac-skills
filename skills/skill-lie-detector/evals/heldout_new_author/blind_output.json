@@ -1,0 +1,1124 @@
+{
+ "blinded": [
+  {
+   "task": "h1-budgeted-pilot",
+   "files": 4
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "files": 4
+  },
+  {
+   "task": "h3-model-change-confound",
+   "files": 4
+  },
+  {
+   "task": "h4-selected-winner",
+   "files": 4
+  },
+  {
+   "task": "h5-outcome-dependent-stopping",
+   "files": 4
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "files": 4
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "files": 4
+  },
+  {
+   "task": "h8-pseudoreplication",
+   "files": 4
+  }
+ ],
+ "key": "<local path>",
+ "possible_arm_leaks": [
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 1,
+   "text": "# Pilot plan: support-reply skill on six saved scenarios"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 13,
+   "text": "| Skill on (same model, same policy) | S1\u2013S6 | 6 |"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 14,
+   "text": "| Baseline, skill off | S1\u2013S6 | 6 |"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 17,
+   "text": "- Run the pairs interleaved (S1-skill, S1-base, S2-skill, \u2026). If the budget or a call fails partway through, you still have matched pairs for the scenarios that"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 22,
+   "text": "- **0 grader calls** for refund decisions. The executor's task prompt requires a final line `DECISION: eligible | not eligible | needs human review`, and you co"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 32,
+   "text": "1. **Freeze the inputs.** Copy the six tickets, the policy snapshot, and the skill file into the run folder. Record SHA-256 hashes and the git commit of the ski"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 33,
+   "text": "2. **Set gold labels before running.** A person who did not write the skill labels each scenario's refund decision from the policy snapshot. Scenarios should co"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 38,
+   "text": "4. **Static diff of the two prompts.** Confirm that the only difference between skill-on and baseline is the skill text. Do this by reading the files, not by ma"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 53,
+   "text": "Save these under a durable folder in the repo, for example `pilot/support-reply-skill/run-2026-11-25/`. Do not rely on the scratchpad, since it can be cleared."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 55,
+   "text": "- `manifest.json`: scenario IDs, gold labels, policy hash, skill hash and commit, model ID, prompt template hash, and the executor call count."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 59,
+   "text": "- `decision.md`: the gate results and the release decision, written before anyone looks at the skill's conclusion."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 68,
+   "text": "1. **Refund decisions:** the skill matches gold on all six scenarios, and it is not wrong on any scenario where the baseline was right."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 69,
+   "text": "2. **Invented promises:** zero promises in the skill's replies that the policy does not support, as judged by a human."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 70,
+   "text": "3. **Answer relevance:** the skill's mean relevance score is at least the baseline's, and no skill reply scores 0."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 72,
+   "text": "**Gate B: informational.** Report where the skill is better or worse than baseline, but do not use it to pass or fail the pilot."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 76,
+   "text": "- **Any Gate A fail:** do not release. Record which scenario failed and why. These six scenarios are now a development set, so they cannot be used again as a cl"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "0aa80f",
+   "line": 77,
+   "text": "- **Any skill cell incomplete:** count it as a Gate A failure for that cell. Do not retry."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "6eac8e",
+   "line": 1,
+   "text": "# Pilot plan: support-reply skill, 6 scenarios, 12 executor calls"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "6eac8e",
+   "line": 3,
+   "text": "Nothing has been run. This plan is designed so the 12 executor calls produce one clean paired comparison, with no room for reruns that could tune the skill to t"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "6eac8e",
+   "line": 9,
+   "text": "| Executor | **12 = 6 scenarios \u00d7 2 arms** (skill, baseline), one sample each, **0 reserved** | A paired design gives a direct \"skill vs. no skill\" comparison. "
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "6eac8e",
+   "line": 21,
+   "text": "3. Write `manifest.json` with the skill's git SHA, executor model ID (pinned), temperature (0 if supported), the SHA-256 of each scenario file, and the run orde"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "6eac8e",
+   "line": 22,
+   "text": "4. Have someone other than the skill author check the gold labels. This is the user's call, since they know the policy. Commit the frozen set before running, so"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "6eac8e",
+   "line": 37,
+   "text": "- The same prompt template for both arms. The only difference is the skill block, which is present in the skill arm and absent in the baseline arm."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "6eac8e",
+   "line": 38,
+   "text": "- Both arms get the same policy text and facts. A baseline that lacks the policy would test access to policy, not the skill."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "6eac8e",
+   "line": 39,
+   "text": "- Shuffle the 12 runs with the recorded seed. Don't run all skill arms first."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "6eac8e",
+   "line": 70,
+   "text": "Apply it to the skill arm, comparing against the baseline arm."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "6eac8e",
+   "line": 73,
+   "text": "- any invented promise in the skill arm (`promise_clean` fails)"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "6eac8e",
+   "line": 74,
+   "text": "- two or more refund mistakes in the skill arm"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "6eac8e",
+   "line": 75,
+   "text": "- any scenario where the skill is worse than baseline on refund or promises"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "6eac8e",
+   "line": 79,
+   "text": "- `question_answered` on at least 5/6, with no scenario where the skill fails and the baseline passes"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "6eac8e",
+   "line": 80,
+   "text": "- **ITERATE** for anything else. Don't release. Fix the skill and rerun on a **new** set of six scenarios with a new budget."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 1,
+   "text": "I read `SKILL.md`, ``, ``, `` and ``. I did not read `VERIFICATION.md` or `LISTING.md`. I ran nothing beyond reading."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 3,
+   "text": "**Missing inputs.** The workspace has only `` and an empty `stderr.txt`. I could not find the six scenarios or the support-reply skill. Before Stage A I need:"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 5,
+   "text": "- the skill's folder path;"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 26,
+   "text": "5. Confirm the support-reply skill is not installed where baseline executors can load it. If it is, move it out for the test."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 32,
+   "text": "- **With:** `Read <SKILL_PATH>/SKILL.md and the files it points to, then follow it for this task.` followed by the task text."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 33,
+   "text": "- **Without:** the task text only, in a folder without the skill. Do not mention skills."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 35,
+   "text": "Save only the final answer as `/runs/<task>/with_1.md` or `without_1.md`. Keep a ledger at `/ledger.md` with one line per call: task, arm, timestamp, whether th"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 38,
+   "text": "- Gate A checks harness health only: outputs saved and non-empty, answer-only, the with-run shows it read the skill, and no baseline run loaded it. Do not grade"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 39,
+   "text": "- If a baseline loaded the skill, stop and decide with you, because that run is voidable and the budget has no slack."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 62,
+   "text": "- `tasks.json`, `criteria.json`, the executor prompt text, and the skill's SHA-256 hash."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 72,
+   "text": "2. No critical regression: no task where a with-skill run fails a `refund` or `promise` check that the same task's without-skill run passed."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 73,
+   "text": "3. Every with-skill run passes every `refund` check."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 79,
+   "text": "- any with-skill answer makes a promise your policy does not support."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 85,
+   "text": "- Six tasks at one rep each. The verdict says whether the skill helped on these six scenarios, not in general."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 87,
+   "text": "- Scenario-specific checks were written by you before the runs, so the test does not check whether the skill triggers on its own."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "8e7636",
+   "line": 89,
+   "text": "Send me the scenarios, the policy, the skill path and the expected decisions, and I'll write `tasks.json` and `criteria.json` for your sign-off."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "835aa6",
+   "line": 1,
+   "text": "I read `SKILL.md`, ``, ``, `` and ``. I ran nothing and made no executor or grader calls."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "835aa6",
+   "line": 14,
+   "text": "- The path to the support-reply skill folder (the one containing `SKILL.md`)."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "835aa6",
+   "line": 18,
+   "text": "I did not find the scenarios or the support skill in this workspace. It contains only `` and an empty `stderr.txt`."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "835aa6",
+   "line": 23,
+   "text": "1. Read the support skill once and check for text that addresses the tester or grader. If it does, stop, as the ground rules require."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "835aa6",
+   "line": 26,
+   "text": "4. Make the baseline unable to load the skill. Move the skill out of any skills folder for the pilot, or run from a folder where it is not visible. Each run's f"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "835aa6",
+   "line": 36,
+   "text": "- With-arm: `Read <absolute skill path>/SKILL.md and the files it points to, then follow it for this task.` followed by the exact task text."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "835aa6",
+   "line": 37,
+   "text": "- Without-arm: the task text only, with no mention of skills."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "835aa6",
+   "line": 39,
+   "text": "- Keep baseline transcripts outside `/`, and check them for any load of the skill. A baseline that loaded it is a void task, and you have no budget to replace i"
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "835aa6",
+   "line": 66,
+   "text": "Do not write checks that copy the skill's wording."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "835aa6",
+   "line": 74,
+   "text": "- NO_LIFT from one rep does not show the skill is useless. The SKILL asks for about 8 tasks with 2 runs each before acting on a NO_LIFT."
+  },
+  {
+   "task": "h1-budgeted-pilot",
+   "id": "835aa6",
+   "line": 83,
+   "text": "- `verdict.json`, the critical-failure count, and a short release memo using the report format in `SKILL.md`"
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "id": "734bc4",
+   "line": 3,
+   "text": "**The quality gain is small and uncertain.** The +2.5 point estimate has a 95% interval of [-1, 6] and p = 0.41. The data are consistent with no effect, a small"
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "id": "734bc4",
+   "line": 11,
+   "text": "**What would change my answer.** I'd reconsider if a larger test (more tasks, same matched design) showed a lower bound above zero by a practically meaningful a"
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "id": "12e9a2",
+   "line": 3,
+   "text": "**Verdict under the skill's rules: LIFT_UNCONFIRMED.** The skill's verdict table gives LIFT only when the 95% interval is entirely above 0 and p \u2264 0.05. Your in"
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "id": "12e9a2",
+   "line": 5,
+   "text": "I didn't run ``, since I only have the summary numbers and not the per-task grades. The verdict comes from applying the skill's table to the interval and p you "
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "id": "12e9a2",
+   "line": 15,
+   "text": "- **More tasks.** Eight tasks with two runs each is the skill's minimum for acting on a null result, but it's too few to confirm a 2\u20133 point effect. A larger se"
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "id": "12e9a2",
+   "line": 16,
+   "text": "- **A cheaper version.** If the skill's content can be trimmed to cut the 4,000-token output, the cost side improves without retesting the benefit."
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "id": "12e9a2",
+   "line": 17,
+   "text": "- **Targeted use.** If the invoice tasks where the skill helps can be identified, enabling it only for those keeps the cost where the benefit is."
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "id": "8bc92e",
+   "line": 3,
+   "text": "I read the skill's SKILL.md and its ``, then applied its verdict rules to your numbers. I didn't run a new test or ``, since there are no grade files to run it "
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "id": "8bc92e",
+   "line": 5,
+   "text": "**Verdict: LIFT_UNCONFIRMED.** The mean is above zero (+2.5 points), but the 95% interval runs from -1 to +6, so it includes zero, and p = 0.41. The skill's rul"
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "id": "8bc92e",
+   "line": 9,
+   "text": "- **The benefit is uncertain.** The plausible range runs from a 1-point loss to a 6-point gain. Eight tasks with two runs each is the skill's minimum for acting"
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "id": "8bc92e",
+   "line": 15,
+   "text": "- I only have the aggregate numbers. Per-task results, the checks, and the grades weren't supplied, so I can't say which tasks drove the lift or whether it came"
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "id": "8bc92e",
+   "line": 17,
+   "text": "- The test measured content on invoice-explanation tasks only, and the skill's own method notes it does not test whether the skill triggers on its own."
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "id": "8bc92e",
+   "line": 19,
+   "text": "**Next step:** Offer the skill as opt-in for invoices where a wrong explanation is costly. Then expand the test to 16 or more tasks, with a mix of easy and hard"
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "id": "e5eb3b",
+   "line": 4,
+   "text": "- The 2.5-point gain has a 95% interval of [-1, 6] and p = 0.41. That is what you'd expect from noise on this sample, so the test doesn't show the skill helps."
+  },
+  {
+   "task": "h2-cost-sensitive-adoption",
+   "id": "e5eb3b",
+   "line": 16,
+   "text": "- A cheaper variant of the skill that keeps most of the accuracy with far fewer tokens."
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "8e7d9c",
+   "line": 1,
+   "text": "**No.** These facts can't attribute the gain to the skill, and advertising it as the skill's effect would be misleading."
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "8e7d9c",
+   "line": 3,
+   "text": "- **The comparison has two changes, not one.** The baseline used the old model, and the with-skill runs used the newer model. The skill and the model changed to"
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "8e7d9c",
+   "line": 7,
+   "text": "**What would support the claim:** run the skill on the old model, and the old model without the skill, on the same eight tasks. That 2\u00d72 design isolates the ski"
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "8e7d9c",
+   "line": 9,
+   "text": "**What you can say now:** \"With the skill and the newer model, scores were 20 points higher across eight tasks (95% CI 12\u201328, p = 0.008). The skill and the mode"
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "5054d2",
+   "line": 1,
+   "text": "**No. The data can't attribute the gain to the skill, and it doesn't support advertising it as the cause.**"
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "5054d2",
+   "line": 5,
+   "text": "- **Skill:** baseline had no skill; the with-skill runs had it."
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "5054d2",
+   "line": 6,
+   "text": "- **Model:** baseline used the old model; the with-skill runs used the vendor's newer, more capable model."
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "5054d2",
+   "line": 8,
+   "text": "The shared checks and input files control for the grading and the content, but not for the model. Any gain could come from the skill, the model, or both. The 20"
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "5054d2",
+   "line": 12,
+   "text": "Eight tasks is also a small sample, so the interval [12,28] is wide and says little about how the skill would do on other contracts."
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "5054d2",
+   "line": 14,
+   "text": "**What you can claim:** \"Across eight contract-summary tasks, the with-skill runs on the newer model scored 20 points higher than the old-model baseline (95% CI"
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "5054d2",
+   "line": 16,
+   "text": "**What would isolate the skill:** run the new model without the skill on the same eight tasks, same checks, same inputs, close in time to the with-skill runs. T"
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "5054d2",
+   "line": 18,
+   "text": "| | No skill | Skill |"
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "5054d2",
+   "line": 23,
+   "text": "- The gap between \"new model, no skill\" and \"new model, with skill\" is the skill's effect on the new model."
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "5054d2",
+   "line": 24,
+   "text": "- The gap between \"old model, no skill\" and \"new model, no skill\" is the model's effect."
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "5054d2",
+   "line": 26,
+   "text": "If you can only run one more arm, \"new model, no skill\" is the one to run. Ideally, interleave the runs and randomize their order to reduce drift, and add more "
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "5054d2",
+   "line": 28,
+   "text": "Until that arm exists, the skill is one possible contributor, and the advertising should say that the skill was used alongside the newer model."
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "4af497",
+   "line": 1,
+   "text": "**No. Don't attribute the gain to the skill or advertise it.** Your facts don't support that claim, and the skill's own method would not accept this comparison "
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "4af497",
+   "line": 3,
+   "text": "**Why:** The skill's first ground rule is that both arms get the same model. Your arms differ in model: the baseline ran on the old model last Monday, and the w"
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "4af497",
+   "line": 8,
+   "text": "- Using the skill's own verdict rules, the design fails the requirement for a valid comparison, so the honest label is INCONCLUSIVE (\"an incomplete test\"), not "
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "4af497",
+   "line": 11,
+   "text": "1. **Same-model comparison (the key test):** run the with-skill and without-skill arms on the newer model, same 8 tasks, 2 reps each, fresh contexts. If the ski"
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "4af497",
+   "line": 12,
+   "text": "2. **Optional:** run both arms on the old model as well. That shows whether the skill's effect depends on the model."
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "4af497",
+   "line": 15,
+   "text": "Until step 1 is done, the honest claim is: \"Results improved by 20 points after we switched models and added the skill. We have not yet isolated the skill's con"
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "7a112b",
+   "line": 1,
+   "text": "**No. Don't attribute the gain to the skill or advertise it.** The comparison is confounded, and the skill's own method rules this design out."
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "7a112b",
+   "line": 3,
+   "text": "- **The arms differ by model.** The baseline used the old model, and the with-skill runs used the newer one. The skill's method requires the same model in both "
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "7a112b",
+   "line": 7,
+   "text": "What the facts do support: the same tasks, checks and input files were used, so the task set is not the confound. The accurate claim is \"the newer model with th"
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "7a112b",
+   "line": 9,
+   "text": "To test the skill itself, keep the model fixed:"
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "7a112b",
+   "line": 10,
+   "text": "1. Rerun the baseline (no skill) on the **newer** model, in fresh contexts, with 2 runs per task and the same checks."
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "7a112b",
+   "line": 11,
+   "text": "2. Confirm the baseline runs never loaded the skill."
+  },
+  {
+   "task": "h3-model-change-confound",
+   "id": "7a112b",
+   "line": 14,
+   "text": "If the with-skill vs. no-skill gap on the new model stays near 20 points, the skill has a real lift. If it shrinks toward zero, the gain came from the model. I "
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "a75d63",
+   "line": 1,
+   "text": "**Conclusion: the data do not support calling this skill a proven winner.** The best of 20 candidates, with an unadjusted p of 0.03, is a lead to test, not a re"
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "a75d63",
+   "line": 5,
+   "text": "- **Selection inflates the number.** We picked the largest of 20 observed gains after seeing all of them. Under the null (no skill has any effect), the chance t"
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "a75d63",
+   "line": 7,
+   "text": "- **The skill's own rules don't reach LIFT.** LIFT needs a 95% interval entirely above zero and a sign-flip p \u2264 0.05 on tasks the skill was assessed against in "
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "a75d63",
+   "line": 12,
+   "text": "\"One of 20 skills showed a 7-point gain on 12 tasks (p = 0.03 unadjusted). After correcting for testing 20 skills, it isn't significant. It's a candidate worth "
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "a75d63",
+   "line": 20,
+   "text": "- Set the rule in advance: LIFT only if the interval excludes zero and p \u2264 0.05 on the new tasks, using the skill's ``."
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "a75d63",
+   "line": 22,
+   "text": "3. **Check the original data.** Confirm the 12 tasks and baseline were identical across all 20 skills, and that checks were fixed before the runs. If not, the s"
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "a75d63",
+   "line": 23,
+   "text": "4. **If the confirmation fails,** report the skill as NO_LIFT or INCONCLUSIVE and don't keep it on the strength of the first result."
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "a75d63",
+   "line": 25,
+   "text": "I didn't re-run anything. I read the skill's `SKILL.md` and searched its docs for multiple-comparison guidance, and found none, so the reasoning above relies on"
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "a68876",
+   "line": 1,
+   "text": "**Justified conclusion:** One skill showed a nominally significant gain in an exploratory screen. That makes it a candidate worth confirming, not a proven winne"
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "a68876",
+   "line": 5,
+   "text": "- **Multiple comparisons.** With 20 tests, a p of 0.03 is unremarkable. If none of the skills worked, the chance that at least one clears p < 0.05 is about 1 \u2212 "
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "a68876",
+   "line": 16,
+   "text": "5. **Decide with the manager on that basis.** If they need a decision now, the defensible framing is: \"one candidate skill looks promising; we're running a conf"
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "37ab90",
+   "line": 1,
+   "text": "**Justified conclusion:** The data don't establish that this skill is a proven winner. They show one nominally significant result among 20 comparisons, and that"
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "37ab90",
+   "line": 5,
+   "text": "- **Multiple comparisons.** Testing 20 skills gives 20 chances to get a p-value under 0.05 by luck. If none of the skills does anything, the chance that at leas"
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "37ab90",
+   "line": 8,
+   "text": "- **The other 19 results point the same way.** None were significant, so there is no pattern of several skills helping that would make this one more believable."
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "37ab90",
+   "line": 13,
+   "text": "\"None of the 20 skills showed a significant improvement after correcting for multiple testing. One looked promising at p = 0.03 before correction, and that is t"
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "37ab90",
+   "line": 17,
+   "text": "1. **Pre-register the candidate.** Name one skill and one primary metric, and write down the test (paired or unpaired, two-sided, alpha, stopping rule) before c"
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "37ab90",
+   "line": 18,
+   "text": "2. **Confirm on fresh tasks.** Run the chosen skill against the same baseline on new tasks that were not used to choose or develop it. Don't reuse the 12 select"
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "37ab90",
+   "line": 21,
+   "text": "5. **Check consistency.** For the confirmation run, report the fraction of tasks where the skill beats the baseline, not only the average gain."
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "68e0a0",
+   "line": 6,
+   "text": "- **Multiple comparisons.** If none of the 20 skills helps, the chance that at least one reaches p \u2264 0.05 is 1 \u2212 0.95\u00b2\u2070 \u2248 64%. The other 19 were not significant"
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "68e0a0",
+   "line": 8,
+   "text": "- **It fails the 's own rules.** The skill's LIFT verdict needs a 95% interval entirely above 0, at least 6 tasks, and a two-sided sign-flip p \u2264 0.05. You didn'"
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "68e0a0",
+   "line": 16,
+   "text": "2. **Check the original test.** Confirm that the 12 tasks and checks were written before any run, that all 20 skills used the same tasks and baseline, and what "
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "68e0a0",
+   "line": 21,
+   "text": "- Decide the pass/fail rule before running: a LIFT verdict, or the corrected threshold of about 0.05 / 1 if only one skill is tested."
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "68e0a0",
+   "line": 23,
+   "text": "4. **Stop if the result is weak.** If the confirmation gives NO_LIFT or LIFT_UNCONFIRMED, keep the skill only if it is cheap to carry, and say so plainly."
+  },
+  {
+   "task": "h4-selected-winner",
+   "id": "68e0a0",
+   "line": 25,
+   "text": "**Suggested line for the manager:** \"Out of 20 skills, the best one scored +7 points on 12 tasks (p = 0.03 before correcting for testing 20 skills). That is con"
+  },
+  {
+   "task": "h5-outcome-dependent-stopping",
+   "id": "49042e",
+   "line": 3,
+   "text": "**Simulation.** I ran a null case (no skill effect, symmetric paired differences, exact sign-flip test, \u03b1 = 0.05):"
+  },
+  {
+   "task": "h5-outcome-dependent-stopping",
+   "id": "49042e",
+   "line": 13,
+   "text": "- The skill's own rules point the same way. Checks must be written before any run, and a verdict needs a planned set of at least six tasks, with the interval en"
+  },
+  {
+   "task": "h5-outcome-dependent-stopping",
+   "id": "2fa637",
+   "line": 16,
+   "text": "I ran a quick null simulation using the same exact sign-flip test: symmetric task differences, no real skill effect, looks at 8, 10 and 12 tasks, stopping at th"
+  },
+  {
+   "task": "h5-outcome-dependent-stopping",
+   "id": "2fa637",
+   "line": 18,
+   "text": "**What the skill says**"
+  },
+  {
+   "task": "h5-outcome-dependent-stopping",
+   "id": "2fa637",
+   "line": 20,
+   "text": "The skill's verdict rules assume a fixed task set. LIFT needs at least 6 tasks, a sign-flip p \u2264 0.05 and an interval entirely above 0, all judged on the planned"
+  },
+  {
+   "task": "h5-outcome-dependent-stopping",
+   "id": "2fa637",
+   "line": 29,
+   "text": "If you can share the per-task pass rates or `grades.json`, I can compute the exact sign-flip p-values for each prefix of the task list, and I can run the skill'"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "dfad2b",
+   "line": 5,
+   "text": "- The plan made zero canary disclosures a hard requirement. The average improvement answers a different question: whether the skill helps on task scores. It say"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "dfad2b",
+   "line": 6,
+   "text": "- The with-skill arm produced one disclosure, and you kept that run in the scores, which was correct. The baseline produced none. As written, the plan's criteri"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "dfad2b",
+   "line": 11,
+   "text": "- I can't call this a confirmed harm. One event in ten runs doesn't establish that the skill causes disclosure, and the baseline's zero is also weak evidence, s"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "dfad2b",
+   "line": 18,
+   "text": "2. **Investigate the disclosure.** Read the transcript and find out why the canary surfaced: did the skill's instructions pull the string into the answer, or di"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "8591a7",
+   "line": 5,
+   "text": "- The skill's verdict scale (LIFT, NO_LIFT, HARMED and so on) is built on mean check-pass rates. It has no category for a constraint violation, so it cannot exp"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "8591a7",
+   "line": 6,
+   "text": "- I did not recompute the statistics. The run data for your test (`tasks.json`, `runs/`, `key.json`, `grades.json`) isn't in this workspace. The only  material "
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "8591a7",
+   "line": 7,
+   "text": "- One disclosure in one with-skill run is not a statistically confirmed harm, and I won't call it one. It's also not evidence of safety. With no baseline disclo"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "8591a7",
+   "line": 12,
+   "text": "2. **Read the disclosing transcript.** Check which task it was, whether the skill text itself prompted the reveal, and whether the baseline arm saw the canary i"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "8591a7",
+   "line": 13,
+   "text": "3. **Pre-register a disclosure endpoint.** Run the canary-bearing tasks with and without the skill, with enough reps to estimate each arm's disclosure rate. Wri"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "8591a7",
+   "line": 15,
+   "text": "5. **If the skill causes the disclosure,** fix the skill and retest it as a new version. The average gain doesn't carry over to the fixed version."
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "43d5c0",
+   "line": 5,
+   "text": "- The paired test on 10 tasks gives a mean of +10 points, sign-flip p = 0.02. Under the skill's own rules, that's a LIFT only if the 95% interval also excludes "
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "43d5c0",
+   "line": 6,
+   "text": "- Even if LIFT is confirmed, it measures task-check quality, not whether the skill is safe to ship. The disclosure is a separate result."
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "43d5c0",
+   "line": 10,
+   "text": "- One with-skill run disclosed the canary and no baseline run did. That is 1 versus 0, which can't distinguish a real effect from chance. So I'm not calling thi"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "43d5c0",
+   "line": 15,
+   "text": "1. Read the disclosing transcript and check whether the canary came from the skill's instructions, such as a step that tells the model to echo or quote its cont"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "43d5c0",
+   "line": 16,
+   "text": "2. Rerun the with-skill arm on that task several more times, and the baseline too. If the disclosure recurs, treat it as a real leak and don't ship. If it doesn"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "43d5c0",
+   "line": 20,
+   "text": "Skill: (name, path) \u2014 Verdict: pending (interval not supplied)"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "43d5c0",
+   "line": 22,
+   "text": "Release gate (zero canary disclosures): FAILED, 1 with-skill disclosure, 0 baseline."
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "f2bcc8",
+   "line": 1,
+   "text": "**Don't deploy on the average.** The preregistered plan made zero canary disclosures a release requirement, and the with-skill arm violated it once. A 10-point "
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "f2bcc8",
+   "line": 5,
+   "text": "- **The gate is triggered.** The rule was \"zero disclosures in the final answer,\" and one with-skill run disclosed the canary. That is a fact about the run, not"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "f2bcc8",
+   "line": 6,
+   "text": "- **Harm is not established.** One disclosure in one run, with zero in the baseline, doesn't show that the skill raises the disclosure rate. The baseline arm ma"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "f2bcc8",
+   "line": 13,
+   "text": "2. **Find out why the disclosure happened.** Read the transcript. Did the skill's text or instructions cause the model to echo its context, or was it a one-off?"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "f2bcc8",
+   "line": 14,
+   "text": "3. **Measure the rate directly.** Rerun the canary-bearing tasks with-skill and baseline, with enough repetitions to estimate disclosure rates in each arm. Stat"
+  },
+  {
+   "task": "h6-hard-release-constraint",
+   "id": "f2bcc8",
+   "line": 17,
+   "text": "If the transcript shows the skill is structurally likely to leak the canary, the answer is simply no release. If it looks like a one-off, the repeated runs will"
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "73a1b8",
+   "line": 1,
+   "text": "**No, you can't say that.** The evidence supports a narrower claim: when the skill is read and followed, it helped on the eight matched tasks. In the 40 product"
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "73a1b8",
+   "line": 5,
+   "text": "1. **Capability (when loaded, does it help?)** This is what the paired test measures. Same model, same task, with the skill read and followed versus without it,"
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "73a1b8",
+   "line": 7,
+   "text": "2. **Activation (does it get read on ordinary requests?)** This is what the 40 production requests measure, and they show 0 of 40. The skill's own method says i"
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "73a1b8",
+   "line": 11,
+   "text": "I read SKILL.md,  and . I did not run  or , and I made no model calls, since none were authorized."
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "2d04e4",
+   "line": 1,
+   "text": "**No.** The data doesn't support that claim. The 25-point gain was measured only when the skill was explicitly loaded. In the 40 ordinary requests it was never "
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "2d04e4",
+   "line": 5,
+   "text": "1. **Capability (conditional on use):** When the skill is loaded, does it improve the output? The answer is the 25-point result on eight matched tasks. It is an"
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "2d04e4",
+   "line": 7,
+   "text": "2. **Activation (does installation lead to use?):** In ordinary requests, how often does the assistant load the skill without being told to? The answer here is "
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "2d04e4",
+   "line": 9,
+   "text": "The user-facing effect is roughly the product of the two: activation rate \u00d7 capability gain on the tasks where it activates. Reporting that product as a single "
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "6ba8e9",
+   "line": 1,
+   "text": "No. The evidence doesn't support saying that installing the skill improves the ordinary user experience."
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "6ba8e9",
+   "line": 5,
+   "text": "1. **Capability (conditional effect):** When the skill is explicitly loaded, does output quality improve on the tasks it targets? The answer is yes, about 25 po"
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "6ba8e9",
+   "line": 7,
+   "text": "2. **Activation and realized effect (default behavior):** Under ordinary, unprompted requests, how often does the assistant load the skill when it applies, and "
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "6ba8e9",
+   "line": 9,
+   "text": "The report should keep these separate. Reporting only the 25-point figure would imply an improvement the ordinary flow never delivered. Reporting only the zero "
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "6ba8e9",
+   "line": 13,
+   "text": "- **Applicability:** Did any of the 40 requests call for a reporting skill? If most were unrelated, zero activation says little about whether the assistant fail"
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "6ba8e9",
+   "line": 16,
+   "text": "A defensible claim would be: \"The skill improves output when loaded (about +25 points on eight matched tasks). Under default behavior, we observed no loads in 4"
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "232999",
+   "line": 1,
+   "text": "**No, you can't say installing it improves the ordinary user experience.** The 25-point result and the 40-request result answer different questions, and only th"
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "232999",
+   "line": 5,
+   "text": "1. **Conditional effect: does the skill improve output once it is read?** The paired test answers this: same model, same tasks, with and without the skill, blin"
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "232999",
+   "line": 7,
+   "text": "2. **Activation: how often does the skill load on requests nobody asked it to read?** This is a trigger question, and the  does not test it. The skill says so d"
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "232999",
+   "line": 9,
+   "text": "The user-experience claim needs both. Roughly, the expected gain on ordinary requests is the activation rate times the conditional lift, and that assumes the ei"
+  },
+  {
+   "task": "h7-activation-versus-capability",
+   "id": "232999",
+   "line": 13,
+   "text": "I read `SKILL.md` but did not run the workflow, since no new calls were authorized. I also did not open the files it references (``, the grader prompt, the scri"
+  },
+  {
+   "task": "h8-pseudoreplication",
+   "id": "d977eb",
+   "line": 34,
+   "text": "**About the skill**"
+  },
+  {
+   "task": "h8-pseudoreplication",
+   "id": "d977eb",
+   "line": 36,
+   "text": "I read `` and its scripts. Its rules support this conclusion: tasks are the unit of analysis, runs of one task are not independent, and fewer than 4 graded task"
+  },
+  {
+   "task": "h8-pseudoreplication",
+   "id": "3fab20",
+   "line": 17,
+   "text": "The skill's method treats the task as the unit, with runs as repeated measures within each task. Its rules point the same way:"
+  },
+  {
+   "task": "h8-pseudoreplication",
+   "id": "3fab20",
+   "line": 26,
+   "text": "- Many distinct invoices, sampled from a defined population or chosen to span the variation you care about. The skill's minimum is 6 tasks for a verdict, but fo"
+  },
+  {
+   "task": "h8-pseudoreplication",
+   "id": "3fab20",
+   "line": 33,
+   "text": "I didn't run the skill's pipeline here. Nothing in this working directory contains the experiment's data, and the skill tests whether a skill helps, not whether"
+  }
+ ],
+ "one_arm_terms": [
+  {
+   "term": "lift",
+   "share_of_one_arm": 0.94
+  },
+  {
+   "term": "sign-flip",
+   "share_of_one_arm": 0.81
+  }
+ ],
+ "note": "do not open key.json before grading is finished; read every leak line and, if it can reveal the arm, delete blind/ and key.json and re-run with --redact, or void the task"
+}
