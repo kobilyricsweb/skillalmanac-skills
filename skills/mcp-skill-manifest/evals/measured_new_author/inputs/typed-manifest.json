@@ -1,0 +1,25 @@
+{
+  "resultType": "complete",
+  "ttlMs": 300000,
+  "cacheScope": "public",
+  "skills": [
+    {
+      "uri": "skill://eval.example/typed-review/SKILL.md",
+      "frontmatter": {
+        "name": "typed-review",
+        "description": "Review evidence.",
+        "metadata": {
+          "enabled": 1,
+          "count": 1.0
+        }
+      },
+      "resources": [
+        {
+          "uri": "skill://eval.example/typed-review/SKILL.md",
+          "digest": "sha256:05af98bd24c089ffe8203ce5046b223cd113654a1cac7d9beeaeff95793e815e",
+          "size": 128
+        }
+      ]
+    }
+  ]
+}

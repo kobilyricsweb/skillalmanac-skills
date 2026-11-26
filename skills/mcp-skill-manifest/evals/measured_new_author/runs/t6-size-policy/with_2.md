@@ -1,0 +1,40 @@
+## Classification: all four cases under the publisher policy
+
+The policy in `inputs/limits.json` says: "Do not publish a skill above 512 files or 16 MiB." Both limits are inclusive, so a skill exactly at a limit is allowed and only a value above it fails.
+
+| Case | Files (incl. SKILL.md) | Total bytes | Files vs 512 | Bytes vs 16,777,216 | Result |
+|---|---|---|---|---|---|
+| at-file-limit | 512 | 10,000 | at limit, 0 over | well under | **Pass** |
+| over-file-limit | 513 | 10,000 | 1 over | well under | **Fail** (files) |
+| at-byte-limit | 2 | 16,777,216 | within | exactly at limit, 0 over | **Pass** |
+| over-byte-limit | 2 | 16,777,217 | within | 1 byte over | **Fail** (bytes) |
+
+Two cases fail, one for each limit. Each limit is checked independently, so a skill can fail one and pass the other.
+
+## Boundary equality
+
+- **At the limit passes.** The policy says "above", so 512 files and 16,777,216 bytes are allowed.
+- **The same rule appears in the tooling.** `scripts/skill_manifest.py` uses `len(res) > MAX_RESOURCES` (line 352) and `total > MAX_BYTES` (line 354), so equality is accepted there too. Its error messages say "the limit is 512" and "the limit is 16777216 (16 MiB)".
+- **One byte over fails.** 16,777,217 is greater than 16,777,216, so it is rejected.
+
+## MiB conversion
+
+- 1 MiB = 1,048,576 bytes (2^20), not 1,000,000.
+- 16 MiB = 16 × 1,048,576 = **16,777,216 bytes**. The script computes this as `16 * 1024 * 1024`.
+- at-byte-limit: 16,777,216 ÷ 1,048,576 = **16.000000000 MiB**, which is exactly the limit.
+- over-byte-limit: 16,777,217 ÷ 1,048,576 ≈ **16.000000954 MiB**. It is about 0.95 µMiB over the limit, but still over.
+
+Because the limit is an exact byte count, a MB-based check (16,000,000 bytes) or a rounded MiB check would give a wrong answer here. Compare bytes, not rounded megabytes.
+
+## Publisher policy versus normative host requirements
+
+- **Normative source.** The MCP Skills extension (beta) says in its Limits section that at most 512 resources per skill, with SKILL.md included, and at most 16 MiB (16,777,216 bytes) as the sum of `size` are allowed. It also says "Servers SHOULD NOT serve a skill over either limit." This is a server-side SHOULD NOT. The numbers match the publisher policy.
+- **The policy is ours.** The file's own wording says these are "our publishing limits, not a universal host rejection rule." The policy decides what we publish. It does not claim that a host must refuse a skill.
+- **Host obligations are different.** The host MUST NOT use content on a digest mismatch, a size mismatch, an unlisted file, a frontmatter mismatch or an invalid `resources` value. None of these is a file-count or total-size rule. A host may also decline `"dynamic"` entries. So a skill that is over our policy is not automatically rejected by a host, and a skill that is within policy is not automatically accepted.
+- **Consequence for these cases.** The two over-limit skills fail our publishing gate and should not be published. The results say nothing about how any host will treat them.
+
+## Scope and limits of this check
+
+- These were measured counts from the input file. I did not build a manifest, generate files, install anything, or run any supplied skill.
+- Rules came from `skills/mcp-skill-manifest/references/spec_rules.md`, which records a read on 2026-11-26. The extension is in beta, so the rules may change. I did not run a web search.
+- The `total_bytes` values are taken as given. In the spec, a skill's byte total is the sum of each resource's `size` (raw bytes), so the measured values must follow that definition.

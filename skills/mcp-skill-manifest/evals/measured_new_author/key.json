@@ -1,0 +1,50 @@
+{
+ "t1-utf8-manifest": {
+  "352939": "without",
+  "cc7923": "with",
+  "e86c88": "without",
+  "fca632": "with"
+ },
+ "t2-digest-repair": {
+  "0363ca": "with",
+  "49bdf2": "with",
+  "9876e2": "without",
+  "e5ab5e": "without"
+ },
+ "t3-complete-inventory": {
+  "1089a2": "with",
+  "23e602": "without",
+  "8d6f69": "without",
+  "b8194d": "with"
+ },
+ "t4-post-build-drift": {
+  "38062d": "without",
+  "542614": "with",
+  "7569dc": "without",
+  "d7e0ea": "with"
+ },
+ "t5-frontmatter-types": {
+  "33dd41": "with",
+  "535f60": "without",
+  "aa50ff": "with",
+  "d53dec": "without"
+ },
+ "t6-size-policy": {
+  "402833": "with",
+  "7b09b5": "without",
+  "a583bc": "without",
+  "b88987": "with"
+ },
+ "t7-trust-and-dynamic": {
+  "01e9d4": "with",
+  "2915d6": "without",
+  "535985": "without",
+  "ca0b98": "with"
+ },
+ "t8-uri-boundary": {
+  "1d3315": "with",
+  "b9582d": "without",
+  "cf3911": "with",
+  "f5b1e2": "without"
+ }
+}

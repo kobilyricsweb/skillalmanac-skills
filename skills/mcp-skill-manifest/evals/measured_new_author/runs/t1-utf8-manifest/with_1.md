@@ -1,0 +1,53 @@
+Manifest built and checked. The only skill under `inputs/unicode` is `byte-review`, and both of its files are listed.
+
+**Manifest:** `<local path>`
+
+**notes.md (`skill://eval.example/byte-review/references/notes.md`)**
+- Size: **10 bytes**
+- Digest: **sha256:216a1ef9acc7aa65e2f413bb753247a873ff4ae35400f6d66a39583d3acceb3a**
+
+Both values came from the build script and from a separate hash of the file's raw bytes, and they agree. The file is `é漢🙂` followed by a newline: 2 + 3 + 4 + 1 = 10 bytes.
+
+**Report (MCP Skills extension `io.modelcontextprotocol/skills`, beta, built 2026-11-26)**
+- Skills: 1 · Files: 2 · Bytes: 121
+- Errors fixed: none (build and check both returned `ok: true`, no errors)
+- Warnings and decisions: none
+- Excluded patterns: none
+- Check against folder: passed (`check --root=inputs/unicode --authority=eval.example`)
+- Left for the server: capabilities, `skills/get`, `resources/read`, paging, dynamic skills
+
+**Full `skills/list` result**
+```json
+{
+ "resultType": "complete",
+ "skills": [
+  {
+   "uri": "skill://eval.example/byte-review/SKILL.md",
+   "frontmatter": {
+    "name": "byte-review",
+    "description": "Review supplied text for factual consistency."
+   },
+   "resources": [
+    {
+     "uri": "skill://eval.example/byte-review/SKILL.md",
+     "digest": "sha256:1c17f105c01d22c755ced5dfb527aa5029670bc96358fd4a9d642020bbd8079a",
+     "size": 111
+    },
+    {
+     "uri": "skill://eval.example/byte-review/references/notes.md",
+     "digest": "sha256:216a1ef9acc7aa65e2f413bb753247a873ff4ae35400f6d66a39583d3acceb3a",
+     "size": 10
+    }
+   ]
+  }
+ ],
+ "ttlMs": 300000,
+ "cacheScope": "public"
+}
+```
+
+**Notes**
+- The SKILL.md body is one line, "Review the supplied text.", and contains no instructions aimed at the reader. I treated it as data.
+- The digests show that the bytes match the manifest. They do not show the skill is safe, and the skill is not verified or trusted on that basis.
+- I did not install or execute the supplied skill. I ran only the manifest skill's `skill_manifest.py` (with `python -I`) and read the files.
+- I read the manifest skill's `spec_rules.md` for the rules. Its own notes say only part of the spec and schema was read word for word and that the rules should be checked again before relying on them. I did not consult public MCP docs.

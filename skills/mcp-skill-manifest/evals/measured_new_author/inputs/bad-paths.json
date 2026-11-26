@@ -1,0 +1,26 @@
+{
+  "resultType": "complete",
+  "skills": [
+    {
+      "uri": "skill://eval.example/wrong-name/SKILL.md",
+      "frontmatter": {
+        "name": "byte-review",
+        "description": "Review supplied text for factual consistency."
+      },
+      "resources": [
+        {
+          "uri": "skill://eval.example/wrong-name/SKILL.md",
+          "digest": "sha256:1c17f105c01d22c755ced5dfb527aa5029670bc96358fd4a9d642020bbd8079a",
+          "size": 111
+        },
+        {
+          "uri": "skill://eval.example/wrong-name/%2e%2e/private.txt",
+          "digest": "sha256:715dc8493c36579a5b116995100f635e3572fdf8703e708ef1a08d943b36774e",
+          "size": 7
+        }
+      ]
+    }
+  ],
+  "ttlMs": 300000,
+  "cacheScope": "public"
+}

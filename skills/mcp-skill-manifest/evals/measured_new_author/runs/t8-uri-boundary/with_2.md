@@ -1,0 +1,45 @@
+## Audit of `inputs/bad-paths.json`: 1 skill entry, 2 errors
+
+The structure-only check (`check` without `--root`, run with `python -I`) exits 1 with:
+
+```
+skill://eval.example/wrong-name/SKILL.md: the last segment of the skill path must equal frontmatter.name ('byte-review')
+skill://eval.example/wrong-name/SKILL.md: resource 'skill://eval.example/wrong-name/%2e%2e/private.txt' has an empty, . or .. path segment
+```
+
+I did not run `build`, did not use `--root`, and did not install or execute any supplied skill. Digests and sizes were not evaluated, as you asked.
+
+### Findings
+
+**1. Name mismatch (fails the name rule).**
+- `frontmatter.name` is `"byte-review"`.
+- The skill path in the SKILL.md URI is `skill://eval.example/wrong-name/SKILL.md`, so its last segment is `wrong-name`.
+- The spec rule is that the last segment of the skill path MUST equal `frontmatter.name` (`references/spec_rules.md`, Skill URIs). This is a violation.
+- The name `byte-review` itself is valid. The problem is the URI, not the name.
+
+**2. Resource escapes the skill folder (containment failure).**
+- The skill root is `skill://eval.example/wrong-name`.
+- The second resource URI is `skill://eval.example/wrong-name/%2e%2e/private.txt`.
+- The raw segment `%2e%2e` decodes to `..`. Resolving the decoded path gives `skill://eval.example/private.txt`, which is outside `wrong-name/`.
+- On disk, the equivalent is `<skills_root>/private.txt`, outside the skill's directory.
+- The rule is that each resource URI MUST be the SKILL.md or a file within the skill's directory (spec_rules, Resources). The script catches this only after decoding one level.
+- A host that decodes the URI in a different order, or decodes twice, could see different results. Per the script source, the single decode would treat `%252e%252e` as a plain segment and accept it. I read this from the code and did not run it.
+
+**3. Frontmatter vs. SKILL.md (not checkable here).** There is no `wrong-name/SKILL.md` among the inputs, so I could not compare the manifest's frontmatter field by field. The only SKILL.md in the inputs for this name is `inputs/drift/byte-review/SKILL.md`, which is a different path. I did not use it as a stand-in.
+
+### Why a server URI authority is not publisher authentication
+
+- `eval.example` is only a string in the URI. It has the form `skill://<authority>/...`, and nothing in the manifest proves who wrote it.
+- The spec forbids hosts from resolving the authority over DNS or the network (spec_rules, Skill URIs). So a host has no way to check that the authority belongs to the publisher, and any server can claim any authority.
+- The digests describe bytes, not origin. The spec says a digest match is not a security boundary, and the skill's own rules say a match does not show a skill is safe.
+- Identity would have to come from somewhere else, such as the server's TLS identity or signed content. Neither is in this manifest.
+- The `.example` TLD is reserved for documentation (RFC 2606), so this value identifies nothing in any case.
+
+### Limits of this audit
+
+- I read the spec through the supplied `spec_rules.md`, which says it covers 72% of the spec text and 41% of the schema word for word. I did not fetch the public spec.
+- Path encoding, symlinks and hidden files are not defined in the text read (SKILL.md Limits).
+
+### Recommendation
+
+Do not serve or load this manifest. Rename the entry so the URI and frontmatter agree, and remove the `%2e%2e` resource. Rebuild from the folder. Do not rely on the authority to decide who published it.

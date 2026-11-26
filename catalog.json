@@ -1,6 +1,6 @@
 {
   "repo": "kobilyricsweb/skillalmanac-skills",
-  "count": 265,
+  "count": 266,
   "skills": [
     {
       "slug": "3d-scene-scripting",
@@ -918,6 +918,13 @@
       "one_line": "Designs and reviews a Model Context Protocol (MCP) server: tool design rules, JSON Schema inputs, bounded outputs, error contract, tool vs resource vs prompt choice, stdio vs HTTP transport, auth and secrets, a client-harness test plan and a publish checklist, plus a script that validates a tool manifest.",
       "category": "uncategorized",
       "site_url": "https://skillalmanac.com/skills/skill-almanac/mcp-server-builder"
+    },
+    {
+      "slug": "mcp-skill-manifest",
+      "name": "mcp-skill-manifest",
+      "one_line": "Builds and checks the skills/list manifest of the MCP Skills extension (beta) for a folder of Agent Skills, with one entry per skill that carries its SKILL.md URI, its frontmatter as JSON and a complete resources array of sha256 digests and byte sizes.",
+      "category": "uncategorized",
+      "site_url": "https://skillalmanac.com/skills/skill-almanac/mcp-skill-manifest"
     },
     {
       "slug": "meal-plan-grocery-list",

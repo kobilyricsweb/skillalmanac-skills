@@ -1,0 +1,26 @@
+{
+  "resultType": "complete",
+  "skills": [
+    {
+      "uri": "skill://eval.example/byte-review/SKILL.md",
+      "frontmatter": {
+        "name": "byte-review",
+        "description": "Review supplied text for factual consistency."
+      },
+      "resources": [
+        {
+          "uri": "skill://eval.example/byte-review/SKILL.md",
+          "digest": "1C17F105C01D22C755CED5DFB527AA5029670BC96358FD4A9D642020BBD8079A",
+          "size": 111
+        },
+        {
+          "uri": "skill://eval.example/byte-review/references/notes.md",
+          "digest": "md5:d8c53bf264eaec5cb256481fe4f16a28",
+          "size": 10
+        }
+      ]
+    }
+  ],
+  "ttlMs": 300000,
+  "cacheScope": "public"
+}

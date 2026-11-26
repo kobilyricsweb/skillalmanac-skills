@@ -1,0 +1,87 @@
+{
+ "tasks": 8,
+ "per_task": [
+  {
+   "task": "t1-utf8-manifest",
+   "with": 100.0,
+   "without": 75.0,
+   "difference": 25.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t2-digest-repair",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t3-complete-inventory",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t4-post-build-drift",
+   "with": 100.0,
+   "without": 75.0,
+   "difference": 25.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t5-frontmatter-types",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t6-size-policy",
+   "with": 100.0,
+   "without": 75.0,
+   "difference": 25.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t7-trust-and-dynamic",
+   "with": 100.0,
+   "without": 50.0,
+   "difference": 50.0,
+   "runs_with": 2,
+   "runs_without": 2
+  },
+  {
+   "task": "t8-uri-boundary",
+   "with": 100.0,
+   "without": 100.0,
+   "difference": 0.0,
+   "runs_with": 2,
+   "runs_without": 2
+  }
+ ],
+ "wins": 4,
+ "ties": 4,
+ "losses": 0,
+ "length_chars": {
+  "with": 3094,
+  "without": 2668
+ },
+ "void_tasks": [],
+ "problems": [],
+ "verdict": "LIFT_UNCONFIRMED",
+ "mean_difference": 15.6,
+ "ci95": [
+  3.1,
+  28.1
+ ],
+ "sign_flip_p": 0.125,
+ "method": "percentile bootstrap over tasks, 10000 resamples, seed 20261125; exact two-sided sign-flip test over tasks",
+ "reason": "interval excludes 0, but confirmation needs at least 6 tasks and sign-flip p <= 0.05 (here 8 tasks, p 0.125)"
+}

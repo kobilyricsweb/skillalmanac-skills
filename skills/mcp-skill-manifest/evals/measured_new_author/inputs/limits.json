@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "name": "at-file-limit",
+      "files_including_SKILL_md": 512,
+      "total_bytes": 10000
+    },
+    {
+      "name": "over-file-limit",
+      "files_including_SKILL_md": 513,
+      "total_bytes": 10000
+    },
+    {
+      "name": "at-byte-limit",
+      "files_including_SKILL_md": 2,
+      "total_bytes": 16777216
+    },
+    {
+      "name": "over-byte-limit",
+      "files_including_SKILL_md": 2,
+      "total_bytes": 16777217
+    }
+  ],
+  "publisher_policy": "Do not publish a skill above 512 files or 16 MiB. Treat these as our publishing limits, not a universal host rejection rule."
+}
