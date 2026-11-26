@@ -11,7 +11,7 @@
         "Finds the noindex page that is listed in the sitemap (copper-kettle)",
         "Finds that /sale is blocked in robots.txt while noindex and in the sitemap, and explains that the noindex cannot be read",
         "Finds the two conflicting canonicals on steel-kettle",
-        "Finds that the descale guide's content is missing from the raw HTML (JavaScript-rendered) and that its JSON-LD does not parse",
+        "Finds that the descale guide is sparse in raw HTML, requires rendered-DOM verification rather than being declared blocked, and has JSON-LD that does not parse",
         "Finds page 2 canonicalised to page 1, or the duplicate titles between them",
         "Ranks indexing-blocking problems above cosmetic ones",
         "Does not present title or description character ranges as a search-engine requirement",
@@ -25,7 +25,7 @@
         "evals/files/t2_pricing/"
       ],
       "assertions": [
-        "Names the canonical pointing to the staging host as the main cause",
+        "Names the canonical pointing to the staging host as a documented strong signal and leading visible candidate, but does not claim it caused the observed absence without selected-canonical or index evidence",
         "Gives the exact corrected canonical tag",
         "Flags max-snippet:0 and what it does",
         "Explains that a lab SEO score of 100 does not cover this",
@@ -47,7 +47,7 @@
         "Finds sitemap entries that are 301, 404 or canonicalised elsewhere",
         "Finds the soft 404 (200 with 'Page not found')",
         "Finds the sort / filter parameter URLs reached by internal links",
-        "Gives a threshold for at least three findings (for example chains at most 1 hop, 0 orphans, depth at most 3)",
+        "Quantifies at least three findings and labels project or tool cutoffs (such as redirect hops or click depth) as conventions rather than search-engine requirements",
         "Lists what the export cannot show"
       ]
     }

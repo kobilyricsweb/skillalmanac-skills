@@ -150,9 +150,7 @@ def parse_robots(text):
 
 
 def robots_allows(groups, agent, path):
-    rules = groups.get(agent.lower())
-    if rules is None:
-        rules = groups.get("*", [])
+    rules = robots_rules(groups, agent)
     best = (-1, True)
     for allow, pattern in rules:
         if not pattern:
@@ -161,14 +159,35 @@ def robots_allows(groups, agent, path):
         if rx.endswith(r"\$"):
             rx = rx[:-2] + "$"
         if re.match(rx, path):
-            length = len(pattern)
+            # Google's examples treat a trailing `*` as equivalent to omitting it; wildcard
+            # and end-anchor syntax therefore must not gain precedence merely by existing.
+            length = len(pattern.replace("*", "").replace("$", ""))
             if length > best[0] or (length == best[0] and allow):
                 best = (length, allow)
     return best[1]
 
 
+def robots_rules(groups, agent):
+    """Return the applicable explicit-agent group, falling back to the wildcard group."""
+    rules = groups.get(agent.lower())
+    return rules if rules is not None else groups.get("*", [])
+
+
+def robots_blocks_entire_site(groups, agent):
+    """True only for an unqualified site-wide disallow with no Allow carve-out.
+
+    A check of `/` alone is insufficient: `Disallow: /$` blocks only the root, while an
+    `Allow` rule can carve crawlable URLs out of `Disallow: /` under Google's precedence.
+    """
+    rules = robots_rules(groups, agent)
+    has_universal_disallow = any(not allow and pattern in ("/", "/*") for allow, pattern in rules)
+    has_allow_carveout = any(allow and pattern for allow, pattern in rules)
+    return has_universal_disallow and not has_allow_carveout
+
+
 def read_text(path):
-    raw = open(path, "rb").read()
+    with open(path, "rb") as stream:
+        raw = stream.read()
     for enc in ("utf-8-sig", "cp1252"):
         try:
             return raw.decode(enc)
@@ -193,9 +212,10 @@ def main(argv):
     url_of = {}
     map_path = os.path.join(folder, "urls.csv")
     if os.path.isfile(map_path):
-        for row in csv.DictReader(open(map_path, encoding="utf-8-sig", newline="")):
-            if row.get("file") and row.get("url"):
-                url_of[row["file"].strip()] = norm_url(row["url"])
+        with open(map_path, encoding="utf-8-sig", newline="") as stream:
+            for row in csv.DictReader(stream):
+                if row.get("file") and row.get("url"):
+                    url_of[row["file"].strip()] = norm_url(row["url"])
     robots = parse_robots(read_text(os.path.join(folder, "robots.txt"))) if os.path.isfile(os.path.join(folder, "robots.txt")) else None
     sitemap_urls, sitemap_lastmods, sitemap_error = [], [], None
     sm_path = os.path.join(folder, "sitemap.xml")
@@ -265,7 +285,7 @@ def main(argv):
         # canonical
         distinct = sorted(set(canon))
         if not canon:
-            add("WARN", "C1", "search-engine-doc", name, "no rel=canonical link")
+            add("NOTE", "C1", "convention", name, "no explicit rel=canonical preference; Google can select a canonical without one, so review only when duplicates or a preferred URL matter")
         elif len(distinct) > 1:
             add("FAIL", "C2", "search-engine-doc", name, "conflicting canonicals: %s" % ", ".join(distinct))
         else:
@@ -273,13 +293,11 @@ def main(argv):
             if not c.startswith(("http://", "https://")):
                 add("WARN", "C3", "search-engine-doc", name, "canonical is not an absolute URL: '%s'" % c)
             elif url and norm_url(c) != url:
-                add("NOTE", "C4", "search-engine-doc", name, "canonical points to another URL (%s); this page is asking not to be the indexed version" % c)
+                add("NOTE", "C4", "search-engine-doc", name, "canonical points to another URL (%s); this is a strong preference signal, not proof of Google's selected canonical or index outcome" % c)
                 if split_url(c)[1] != split_url(url)[1]:
-                    add("WARN", "C7", "search-engine-doc", name, "canonical points to a different host (%s); if this is a staging or old domain the live page will not be indexed" % split_url(c)[1])
+                    add("WARN", "C7", "search-engine-doc", name, "canonical points to a different host (%s); verify intent, response headers and Google's selected canonical before attributing an indexing outcome" % split_url(c)[1])
             if d["noindex"] and url and c.startswith("http") and norm_url(c) != url:
                 add("FAIL", "C5", "search-engine-doc", name, "noindex together with a canonical to another URL: mixed signals; pick one")
-            if c.startswith("http://"):
-                add("WARN", "C3", "search-engine-doc", name, "canonical uses http, not https")
         # robots meta
         if d["noindex"]:
             add("NOTE", "R1", "search-engine-doc", name, "page is noindex (robots meta: '%s'); confirm this is intended" % d["robots_meta"])
@@ -303,12 +321,12 @@ def main(argv):
         # structured data syntax
         for block in p.jsonld:
             try:
-                json.loads(block)
+                json.loads(block, parse_constant=lambda value: (_ for _ in ()).throw(ValueError("non-finite JSON constant: " + value)))
             except ValueError as exc:
                 add("FAIL", "J1", "search-engine-doc", name, "a JSON-LD block does not parse: %s" % exc)
         # rendering
         if p.visible_words < THIN_RAW_TEXT_WORDS and p.scripts_src:
-            add("WARN", "B1", "search-engine-doc", name, "only %d visible words in the raw HTML and %d external scripts: main content may exist only after JavaScript runs" % (p.visible_words, p.scripts_src))
+            add("NOTE", "B1", "convention", name, "only %d visible words in raw HTML and %d external scripts (local 50-word heuristic); compare the rendered DOM because Google renders JavaScript and raw absence alone does not prove an indexing block" % (p.visible_words, p.scripts_src))
         if p.http_resources:
             add("WARN", "M1", "search-engine-doc", name, "%d resources loaded over http (mixed content), first: %s" % (len(p.http_resources), p.http_resources[0][:70]))
         generic = [a["text"] for a in p.anchors if a["text"].lower() in GENERIC_ANCHORS and a["href"]]
@@ -324,8 +342,9 @@ def main(argv):
             d["alts"] = {norm_url(h) for _, h in alts if h.startswith("http")}
         # robots.txt and sitemap cross-checks
         if url:
-            path = split_url(url)[2]
-            blocked = robots is not None and not robots_allows(robots, "googlebot", path)
+            _, _, path, query = split_url(url)
+            path_query = path + (("?" + query) if query else "")
+            blocked = robots is not None and not robots_allows(robots, "googlebot", path_query)
             in_sitemap = url in sitemap_urls
             if blocked and in_sitemap:
                 add("FAIL", "S2", "search-engine-doc", name, "URL is in the sitemap but robots.txt blocks crawling it")
@@ -356,7 +375,7 @@ def main(argv):
         for c in set(d["canon"]):
             target_name = by_url.get(norm_url(c)) if c.startswith("http") else None
             if target_name and target_name != n and pages[target_name]["noindex"]:
-                add("FAIL", "C6", "search-engine-doc", n, "canonical target %s is noindex" % target_name)
+                add("FAIL", "C6", "search-engine-doc", n, "canonical target %s is noindex; these signals conflict, but this offline check cannot prove which canonical Google will select" % target_name)
         for alt in d.get("alts", ()):
             other = by_url.get(alt)
             if other and other != n and d["url"] not in pages[other].get("alts", ()):
@@ -365,10 +384,7 @@ def main(argv):
         add("FAIL", "S0", "search-engine-doc", "sitemap.xml", "sitemap does not parse: %s" % sitemap_error)
     if len(sitemap_lastmods) > 3 and len(set(sitemap_lastmods)) == 1:
         add("WARN", "S4", "search-engine-doc", "sitemap.xml", "all %d lastmod values are identical (%s); lastmod is only used when it is consistently accurate" % (len(sitemap_lastmods), sitemap_lastmods[0]))
-    for u in sitemap_urls:
-        if not u.startswith("https://"):
-            add("WARN", "S5", "search-engine-doc", "sitemap.xml", "sitemap URL is not https: %s" % u)
-    if robots is not None and not robots_allows(robots, "googlebot", "/"):
+    if robots is not None and robots_blocks_entire_site(robots, "googlebot"):
         add("FAIL", "R0", "search-engine-doc", "robots.txt", "robots.txt blocks the whole site for search crawlers")
 
     order = {"FAIL": 0, "WARN": 1, "NOTE": 2}
