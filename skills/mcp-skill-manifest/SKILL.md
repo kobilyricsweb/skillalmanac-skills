@@ -7,7 +7,7 @@ metadata:
   author: Skill Almanac Editorial
   license: Apache-2.0
   author_model: claude-fable-5-2
-  version: "0.1.0"
+  version: "0.1.1"
   network: none
 ---
 

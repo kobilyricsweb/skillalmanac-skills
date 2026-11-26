@@ -2,6 +2,10 @@
 
 All runs on 2026-11-26.
 
+## Version boundary
+
+The with/without results below measure the frozen 0.1.0 candidate only. Version 0.1.1 fixes dynamic frontmatter comparison, rejects duplicate YAML keys and invalid descriptions, and resolves output paths before checking whether they fall inside the skills root. Its script fixtures were re-run, but its effect on model answers has not been re-measured. Passing script fixtures is not an effectiveness score or a safety certification.
+
 ## 1. Does the skill help? Positive, not confirmed
 
 **Headline: LIFT_UNCONFIRMED with both graders.** The skill won 4 of 8 tasks, tied 4 and lost none. That is a positive result that the test's own rules do not confirm.
@@ -31,13 +35,14 @@ Files: `evals/measured_new_author/` (tasks, inputs, runs, blinded copies, key, b
 
 ## 2. Scripts (fixtures)
 
-Command: `python evals/run_fixtures.py`. Result: 47/47 passed. The cases cover:
+Command: `python evals/run_fixtures.py`. Result: 53/53 passed on version 0.1.1. The cases cover:
 
 - **Build:** a clean build, byte sizes for non-ASCII text, raw sha256 digests, and the exclude and nested options.
 - **Check against the folder:** an edited file, same-size different bytes, changed line endings, an unlisted file, a missing file, changed frontmatter, and frontmatter types compared strictly.
 - **Refusals:** a bad name, a duplicate name, more than 512 files, more than 16 MiB, no frontmatter, NaN, a non-string key, a non-UTF-8 SKILL.md, and a manifest written inside the skills root.
 - **Manifests from elsewhere:** a missing SKILL.md entry, wrong digest forms, missing resources, a file outside the skill, URIs that leave the skill folder, a URI with no scheme, a non-object entry, and a wrong cache scope.
 - **The fallback YAML reader:** the same result as PyYAML on plain frontmatter, and a stop on anything else.
+- **Follow-up review:** dynamic entries still require matching frontmatter; duplicate YAML keys at the root and nested levels are refused; empty, whitespace-only and overlong descriptions are refused.
 
 ## 3. A run on real skills
 

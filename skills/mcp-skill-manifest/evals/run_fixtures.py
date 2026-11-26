@@ -251,6 +251,29 @@ def main():
         code, rep, err = raw_run("build", single, f"--authority={AUTH}")
         case("root-is-a-skill", code == 0 and rep["skills"] == 1 and not rep["warnings"])
 
+        # Dynamic content lacks digests, but frontmatter comparison is still required.
+        dynroot = os.path.join(tmp, "dynamic-fm")
+        skill(dynroot, "dynamic-fm")
+        _, dynrep = run("build", dynroot, f"--authority={AUTH}")
+        dyn = dynrep["manifest"]
+        dyn["skills"][0]["resources"] = "dynamic"
+        dyn["skills"][0]["frontmatter"]["description"] = "Wrong description"
+        dynfile = os.path.join(tmp, "dynamic-fm.json")
+        write(dynfile, json.dumps(dyn))
+        dc, dr = run("check", dynfile, f"--root={dynroot}", f"--authority={AUTH}")
+        case("dynamic-frontmatter-mismatch-refused", dc == 1 and has(dr, "frontmatter differs"))
+
+        for nested_key in (False, True):
+            extra = "metadata:\n  author: first\n  author: second\n" if nested_key else "description: second\n"
+            dup = one("dup-yaml", "dup-yaml", "---\nname: dup-yaml\ndescription: first\n" + extra + "---\n")
+            dc, dr, de = raw_run("build", dup, f"--authority={AUTH}")
+            case("duplicate-yaml-key-refused-" + str(nested_key), dc == 1 and has(dr, "appears twice") and "Traceback" not in de)
+
+        for label, value in (("empty", ""), ("whitespace", "   "), ("too-long", "x" * 1025)):
+            bad_desc = one("bad-desc", "bad-desc", "---\nname: bad-desc\ndescription: " + json.dumps(value) + "\n---\n")
+            dc, dr = run("build", bad_desc, f"--authority={AUTH}")
+            case("description-refused-" + label, dc == 1 and has(dr, "description must be non-empty"))
+
         # Fallback parser, with PyYAML hidden: plain frontmatter reads the same, anything else stops.
         r6 = one("fb1", "fb-skill", "---\nname: fb-skill\ndescription: Formats invoices (PDF). Use when asked.\nlicense: Apache-2.0\nmetadata:\n  version: \"0.1.0\"\n  author: Someone\n---\n")
         c1, rep1, _ = raw_run("build", r6, f"--authority={AUTH}", hide_yaml=True)

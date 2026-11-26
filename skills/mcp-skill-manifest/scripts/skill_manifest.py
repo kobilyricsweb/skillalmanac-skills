@@ -148,7 +148,18 @@ def parse_frontmatter(raw):
         data = mini_yaml(text)
     else:
         class Loader(yaml.SafeLoader):
-            pass
+            def construct_mapping(self, node, deep=False):
+                self.flatten_mapping(node)
+                seen = set()
+                for key_node, _ in node.value:
+                    key = self.construct_object(key_node, deep=deep)
+                    if isinstance(key, str):
+                        if key in seen:
+                            raise yaml.constructor.ConstructorError(
+                                "while reading frontmatter", node.start_mark,
+                                f"frontmatter key {key!r} appears twice", key_node.start_mark)
+                        seen.add(key)
+                return super().construct_mapping(node, deep=deep)
         # Keep dates as the text the author wrote; JSON has no date type.
         Loader.yaml_implicit_resolvers = {
             k: [(tag, rx) for tag, rx in v if tag != "tag:yaml.org,2002:timestamp"]
@@ -318,6 +329,8 @@ def entry_problems(entry, label=None):
     if not isinstance(fm, dict) or not isinstance(fm.get("name"), str) or not isinstance(fm.get("description"), str):
         out.append(f"{label}: frontmatter must be an object with string name and description")
     else:
+        if not 1 <= len(fm["description"]) <= 1024 or not fm["description"].strip():
+            out.append(f"{label}: description must be non-empty and at most 1024 characters")
         if last != fm["name"]:
             out.append(f"{label}: the last segment of the skill path must equal frontmatter.name ({fm['name']!r})")
         if not NAME.match(fm["name"]) or len(fm["name"]) > 64:
@@ -436,8 +449,10 @@ def cmd_build(argv):
         usage(f"not a folder: {root}")
     out_path = opts.get("out")
     if out_path:
-        inside = os.path.commonpath([os.path.abspath(root), os.path.abspath(out_path)]) == os.path.abspath(root) \
-            if os.path.splitdrive(os.path.abspath(root))[0] == os.path.splitdrive(os.path.abspath(out_path))[0] else False
+        root_real = os.path.normcase(os.path.realpath(root))
+        out_real = os.path.normcase(os.path.realpath(out_path))
+        inside = os.path.commonpath([root_real, out_real]) == root_real \
+            if os.path.splitdrive(root_real)[0] == os.path.splitdrive(out_real)[0] else False
         if inside:
             usage("--out is inside the skills root; write the manifest outside it, or it becomes a file of the skill")
     try:
@@ -496,13 +511,13 @@ def cmd_check(argv):
             errors.append(f"{uri}: skill is in the manifest but not in the folder")
         for uri in sorted(set(want) & set(have)):
             a, b = want[uri], have[uri]
-            if not isinstance(b.get("resources"), list):
-                continue
             fm_b = b.get("frontmatter") if isinstance(b.get("frontmatter"), dict) else {}
             if not same_json(a["frontmatter"], fm_b):
                 diff = sorted(k for k in set(a["frontmatter"]) | set(fm_b)
                               if k not in a["frontmatter"] or k not in fm_b or not same_json(a["frontmatter"][k], fm_b[k]))
                 errors.append(f"{uri}: frontmatter differs from SKILL.md in field(s): {', '.join(diff)}")
+            if not isinstance(b.get("resources"), list):
+                continue
             fa = {r["uri"]: r for r in a["resources"]}
             fb = {r["uri"]: r for r in b["resources"] if isinstance(r, dict) and isinstance(r.get("uri"), str)}
             for u in sorted(set(fa) - set(fb)):
